@@ -31,12 +31,12 @@
         </style>
 
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/css/system.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/css/bootstrap-readable.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/bootstrap/css/bootstrap-readable.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/css/cart.css" type="text/css" media="all" />
 
         <script src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/js/jquery-1.9.1.js" type="text/javascript"></script>
-        <script src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/js/bootstrap.js" type="text/javascript"></script>
-        <script src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <script src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/js/bootstrap-select.js"></script>
         <script src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/js/bootstrap-dropdown.js" type="text/javascript"></script>
 
