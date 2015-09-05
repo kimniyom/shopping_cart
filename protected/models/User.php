@@ -21,4 +21,10 @@ class User extends CActiveRecord {
         return $result;
     }
 
+    public function Check_address($pid = null) {
+        $query = "SELECT COUNT(*) AS TOTAL FROM address WHERE pid = '$pid' ";
+        $result = Yii::app()->db->createCommand($query)->queryRow();
+        return $result['TOTAL'];
+    }
+
 }
