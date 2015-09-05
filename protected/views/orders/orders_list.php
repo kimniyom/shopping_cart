@@ -3,15 +3,17 @@
 </style>
 <script>
     $(document).ready(function () {
+        load_address();
+    });
+
+    function load_address() {
         var url = "<?php echo Yii::app()->createUrl('frontend/user/address') ?>";
         var pid = "<?php echo Yii::app()->session['pid'] ?>";
         var data = {pid: pid};
         $.post(url, data, function (result) {
             $("#address_user").html(result);
         });
-        //$("#address_user").load("<?//php echo Yii::app()->createUrl('frontend/user/address_user') ?>");
-    });
-
+    }
 </script>
 
 <script type="text/javascript">
@@ -27,28 +29,6 @@
         );// endpost
     }
 </script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("#save_address").click(function () {
-            var url = "<?= Yii::app()->createUrl('frontend/user/edit_address') ?>";
-            var data = {
-                pid: $("#pid").val(),
-                address: $("#address").val(),
-                tel: $("#tel").val()
-            };
-
-            $.post(url, data,
-                    function (success) {
-                        alert('แก้ไขที่อยู่ใหม่แล้ว');
-                        window.location.reload();
-                    }
-            );// endpost
-
-        });
-    });
-</script>
-
 <div class="well" style="padding:3px; background:#FFF; margin-top:2px;">
     <table width="100%" class="table" id="order_list_use">
         <thead>
@@ -97,17 +77,9 @@
 
 
 <div class="panel panel-default">
-    <div class="panel-heading" style=" padding-bottom: 20px;">
+    <div class="panel-heading">
+        <i class="fa fa-train"></i>
         ข้อมูลที่อยู่จัดส่ง (กรุณาตรวจสอบความถูกต้อง) 
-        <div style=" float: right;">
-            <div class="btn btn-primary btn-sm" style="display:none; margin-left:10px;" id="save_address">
-                <i class=" glyphicon glyphicon-save"></i> บันทึกที่อยู่
-            </div>
-            <div class="btn btn-default btn-sm" id="edit_address">
-                <i class=" glyphicon glyphicon-edit"></i>
-                แก้ไขที่อยู่
-            </div>
-        </div>
     </div>
     <div class="panel-body">
         <div id="address_user"></div>
