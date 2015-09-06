@@ -29,54 +29,66 @@
         );// endpost
     }
 </script>
-<div class="well" style="padding:3px; background:#FFF; margin-top:2px;">
-    <table width="100%" class="table" id="order_list_use">
-        <thead>
-            <tr>
-                <td id="td_h">#</td>
-                <td id="td_h">ชื่อสินค้า</td>
-                <td id="td_h">รายละเอียด</td>
-                <td id="td_h">ราคา</td>
-                <td id="td_h">จำนวน</td>
-                <td id="td_h">ราคารวม</td>
-                <td id="td_h"></td>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $totalall = 0;
-            $i = 1;
-            foreach ($product as $products):
-                ?>
-                <tr class="success" id="tr_b">
-                    <td id="td_b"><?= $i++ ?></td>
-                    <td id="td_b"><?= $products['product_name']; ?></td>
-                    <td id="td_b"><?= $products['product_detail']; ?></td>
-                    <td id="td_b"><?= number_format($products['product_price']); ?></td>
-                    <td id="td_b"><?= $products['product_num']; ?></td>
-                    <td id="td_b"><?= number_format(($products['product_price'] * $products['product_num']), 2); ?></td>
-                    <td id="td_b">
-                        <img src="<?php echo Yii::app()->baseUrl; ?>/images/error.png" onclick="return del_list_order('<?= $products['id'] ?>', '<?= $products['product_id'] ?>');" id="del" title="ลบสินค้าออกจากตะกร้า"/>
-                    </td>
-                    <?php
-                    $total = (($products['product_price'] * $products['product_num']));
-                    $totalall = $totalall + $total;
-                    ?>
+<div class=" panel panel-danger">
+    <div class=" panel-heading">
+        <i class="fa fa-cart-plus"></i> รายการสินค้าของคุณ
+    </div>
+    <div class=" panel-body">
+        <table width="100%" class="table table-bordered" id="font-th">
+            <thead>
+                <tr>
+                    <td>#</td>
+                    <td>รูป</td>
+                    <td>ชื่อสินค้า</td>
+                    <td style="text-align: center;">ราคา</td>
+                    <td style="text-align: center;">จำนวน</td>
+                    <td style="text-align: center;">ราคารวม</td>
+                    <td style="text-align: center;">ลบ</td>
                 </tr>
-            <?php endforeach; ?>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="5" id="td_b2" align="center"><font style="text-decoration:underline;">รวมค่าสินค้า </font></td>
-                <td id="td_b2"><font style="text-decoration:underline;"><?= number_format($totalall, 2) ?></font> </td>
-                <td id="td_b2"></td>
-            </tr>
-        </tfoot>
-    </table>
+            </thead>
+            <tbody>
+                <?php
+                $totalall = 0;
+                $i = 1;
+                $product_model = new Product();
+                foreach ($product as $products):
+                    $img = $product_model->get_last_img($products['product_id']);
+                    //$link = Yii::app()->createUrl('backend/product/detail_product&product_id=' . $last['product_id']);
+                    ?>
+                    <tr>
+                        <td><?= $i++ ?></td>
+                        <td style=" width: 10%;">
+                            <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>" class="img-resize img-thumbnail" width="100%"/>
+                        </td>
+                        <td><?= $products['product_name']; ?></td>
+                        <td style=" text-align: right;"><?= number_format($products['product_price']); ?></td>
+                        <td style="text-align: center;"><?= $products['product_num']; ?></td>
+                        <td style="text-align: right;"><?= number_format(($products['product_price'] * $products['product_num']), 2); ?></td>
+                        <td style=" text-align: center;">
+                            <div class="btn btn-danger btn-xs" onclick="return del_list_order('<?= $products['id'] ?>', '<?= $products['product_id'] ?>');" id="del" title="ลบสินค้าออกจากตะกร้า">
+                                <i class="fa fa-remove"></i>
+                            </div>
+                        </td>
+                        <?php
+                        $total = (($products['product_price'] * $products['product_num']));
+                        $totalall = $totalall + $total;
+                        ?>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" align="center"><font style="text-decoration:underline;">รวมค่าสินค้า </font></td>
+                    <td style=" text-align: right;"><font style="text-decoration:underline;"><?= number_format($totalall, 2) ?></font> </td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 </div>
 
 
-<div class="panel panel-default">
+<div class="panel panel-danger">
     <div class="panel-heading">
         <i class="fa fa-train"></i>
         ข้อมูลที่อยู่จัดส่ง (กรุณาตรวจสอบความถูกต้อง) 
@@ -85,7 +97,11 @@
         <div id="address_user"></div>
     </div>
     <div class="panel-footer">
-        <?php if ($totalall != '0') { ?>
+        <?php
+        $user = new User();
+        $confirm = $user->Check_address_true(Yii::app()->session['pid']);
+        if (!empty($confirm)) {
+            ?>
             <center>
                 <a href="<?= Yii::app()->createUrl('frontend/orders/payments') ?>">
                     <div class="btn btn-info">ขั้นตอนถัดไป 
@@ -95,8 +111,7 @@
             </center>
         <?php } else { ?>
             <center>
-                <div class="btn btn-info disabled">ขั้นตอนถัดไป <i class="glyphicon glyphicon-share-alt"></i>
-                </div>
+                <i class="fa fa-warning"></i> ข้อมูลที่อยู่ไม่ครบถ้วนกรุณาตรวจสอบ
             </center>
         <?php } ?>
 
