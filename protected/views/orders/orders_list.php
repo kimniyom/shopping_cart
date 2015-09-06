@@ -29,6 +29,13 @@
         );// endpost
     }
 </script>
+
+<?php
+$this->breadcrumbs = array(
+    "รายการสินค้า",
+);
+?>
+
 <div class=" panel panel-danger">
     <div class=" panel-heading">
         <i class="fa fa-cart-plus"></i> รายการสินค้าของคุณ
@@ -53,14 +60,16 @@
                 $product_model = new Product();
                 foreach ($product as $products):
                     $img = $product_model->get_last_img($products['product_id']);
-                    //$link = Yii::app()->createUrl('backend/product/detail_product&product_id=' . $last['product_id']);
+                    $link = Yii::app()->createUrl('frontend/product/detail_product&product_id=' . $products['product_id']);
                     ?>
                     <tr>
                         <td><?= $i++ ?></td>
                         <td style=" width: 10%;">
                             <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>" class="img-resize img-thumbnail" width="100%"/>
                         </td>
-                        <td><?= $products['product_name']; ?></td>
+                        <td>
+                            <a href="<?php echo $link ?>"><?= $products['product_name']; ?></a>
+                        </td>
                         <td style=" text-align: right;"><?= number_format($products['product_price']); ?></td>
                         <td style="text-align: center;"><?= $products['product_num']; ?></td>
                         <td style="text-align: right;"><?= number_format(($products['product_price'] * $products['product_num']), 2); ?></td>
