@@ -89,7 +89,7 @@
     }
 </script>
 
-<div class="well">
+<div class="well" style=" background: #FFF;" id="font-th">
     <div class="btn btn-default btn-xs" onclick="edit_address()" style=" float: right;">
         <i class=" glyphicon glyphicon-edit"></i>
         แก้ไขที่อยู่
@@ -98,17 +98,17 @@
         คุณ <?php echo $address['name'] . ' ' . $address['lname'] ?>
     </label>
     <br/><br/>
-    เลขที่ : <?php echo $address['number'] ?><br/>
-    อาคาร : <?php echo $address['building'] ?><br/>
-    ชั้น : <?php echo $address['class'] ?><br/>
-    ห้อง : <?php echo $address['room'] ?><br/>
-    ตำบล : <?php echo $address['tambon'] ?><br/>
-    อำเภอ : <?php echo $address['ampur'] ?><br/>
-    จังหวัด : <?php echo $address['changwat'] ?><br/>
-    รหัสไปรษณีย์ : <?php echo $address['zipcode'] ?><br/>
+    <label>เลขที่</label> <?php echo $address['number'] ?>
+    <label>อาคาร</label> <?php echo $address['building'] ?>
+    <label>ชั้น</label> <?php echo $address['class'] ?>
+    <label>ห้อง</label> <?php echo $address['room'] ?><br/>
+    <label>ตำบล</label>  <?php echo $address['tambon_name'] ?><br/>
+    <label>อำเภอ</label>  <?php echo $address['ampur_name'] ?><br/>
+    <label>จังหวัด</label>  <?php echo $address['changwat_name'] ?><br/>
+    <label>รหัสไปรษณีย์</label>  <?php echo $address['zipcode'] ?>
     <br/><br/>
-    Tel : <?php echo $address['tel'] ?><br/>
-    Email : <?php echo $address['email'] ?>
+    <label>Tel </label> <?php echo $address['tel'] ?><br/>
+    <label>Email </label> <?php echo $address['email'] ?>
 </div>
 
 
