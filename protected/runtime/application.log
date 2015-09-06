@@ -6517,3 +6517,106 @@ Stack trace:
 REQUEST_URI=/shopping_cart/index.php?r=frontend/user/get_combobox
 in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\UserController.php (28)
 in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/09/06 13:07:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408193309
+---
+2015/09/06 13:07:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408193309
+---
+2015/09/06 13:07:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408193309
+---
+2015/09/06 13:08:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150407094310
+---
+2015/09/06 13:08:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150407094310
+---
+2015/09/06 17:43:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_order/from_show_order_product".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_order/from_show_order_product
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/show_order_list
+---
+2015/09/06 17:55:25 [error] [php] Undefined index: zipcode (C:\xampp\htdocs\shopping_cart\protected\views\user\address_user.php:108)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): UserController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\UserController.php(12): UserController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): UserController->actionAddress()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): UserController->runAction()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): UserController->runActionWithFilters()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): UserController->run()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/user/address
+in C:\xampp\htdocs\shopping_cart\protected\views\user\address_user.php (108)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\UserController.php (12)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/09/06 18:04:43 [error] [php] Undefined index: order_id (C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\OrdersController.php:76)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/payments
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\OrdersController.php (76)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/09/06 18:04:48 [error] [php] Undefined index: order_id (C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\OrdersController.php:76)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/payments
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\OrdersController.php (76)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/09/06 18:08:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "main_system".' in C:\xampp\htdocs\shopping_cart\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(270): CController->missingAction('main_system')
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('main_system')
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/main/m...')
+#3 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main/main_system
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408193309
+---
