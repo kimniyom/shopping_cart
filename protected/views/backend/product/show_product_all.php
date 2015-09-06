@@ -4,7 +4,7 @@
             //"sPaginationType": "full_numbers", // แสดงตัวแบ่งหน้า
             "bLengthChange": false, // แสดงจำนวน record ที่จะแสดงในตาราง
             "iDisplayLength": 20, // กำหนดค่า default ของจำนวน record 
-            "bFilter": true, // แสดง search box
+            "bFilter": true // แสดง search box
             //"sScrollY": "400px", // กำหนดความสูงของ ตาราง
 
         });
