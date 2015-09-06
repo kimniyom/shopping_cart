@@ -7,18 +7,21 @@ class User extends CActiveRecord {
     }
 
     public function Get_address($pid = null) {
-        $sql = "SELECT IFNULL(a.number,'-') AS number,
-                    IFNULL(a.building,'-') AS building,
-                    IFNULL(a.class,'-') AS class,
-                    IFNULL(a.room,'-') AS room,
-                    IFNULL(changwat_name,'-') AS changwat_name,
-                    IFNULL(ampur_name,'-') AS ampur_name,
-                    IFNULL(tambon_name,'-') AS tambon_name,
-                    IFNULL(m.name,'-') AS name,
-                    IFNULL(m.lname,'-') AS lname,
-                    IFNULL(m.tel,'-') AS tel,
-                    IFNULL(m.email,'-') AS email,
-                    IFNULL(a.zipcode,'-') AS zipcode
+        $sql = "SELECT a.number,
+                    a.building,
+                    a.class,
+                    a.room,
+                    a.changwat,
+                    a.ampur,
+                    a.tambon,
+                    changwat_name,
+                    ampur_name,
+                    tambon_name,
+                    m.name,
+                    m.lname,
+                    m.tel,
+                    m.email,
+                    a.zipcode
                 FROM address a RIGHT JOIN masuser m ON m.pid = a.pid 
                 INNER JOIN changwat c ON a.changwat = c.changwat_id
                 INNER JOIN ampur ap ON a.ampur = ap.ampur_id 
