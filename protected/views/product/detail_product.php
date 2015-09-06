@@ -8,8 +8,6 @@
     }
 </style>
 
-
-
 <script type="text/javascript">
     function Add_cart_success() {
         //$('.add-to-cart').on('click', function () {
