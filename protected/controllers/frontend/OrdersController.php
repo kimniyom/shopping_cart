@@ -40,9 +40,10 @@ class OrdersController extends Controller {
         }
     }
 
-    public function actionShow_order_list() {
+    public function actionOrder_list() {
+        $order_id = $_GET['order_id'];
         $order = new Orders();
-        $data['product'] = $order->_get_list_order();
+        $data['product'] = $order->_get_list_order($order_id);
 
         $this->render("//orders/orders_list", $data);
     }
@@ -69,7 +70,7 @@ class OrdersController extends Controller {
     public function actionDel_list_order() {
         $id = $_POST['id'];
         Yii::app()->db->createCommand()
-                ->delete("orders", "id = '$id' ");
+                ->delete("basket", "id = '$id' ");
     }
 
     public function actionPayments() {
