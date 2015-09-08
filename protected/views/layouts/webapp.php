@@ -267,7 +267,7 @@
                                 ?>
                             </div>
                             <br><br>
-                            <a href="<?= Yii::app()->createUrl('frontend/orders/show_order_list') ?>">ดูรายการสินค้า</a>
+                            <a href="<?= Yii::app()->createUrl('frontend/orders/order_list&order_id=' . Yii::app()->session['order_id']) ?>">ดูรายการสินค้า</a>
                             <a href="#" onclick="javascript:window.location.reload();" style=" float: right;"><span class="glyphicon glyphicon-refresh"></span></a>
                         </div>
 
