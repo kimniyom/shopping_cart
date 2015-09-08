@@ -48,11 +48,11 @@ class Orders {
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         return $rs;
     }
-    
-    function _get_list_order() {
+
+    function _get_list_order($order_id = null) {
         $sql = "SELECT p.product_id,l.id,p.product_price,l.product_num,p.product_name,p.product_detail
                 FROM basket l INNER JOIN product p ON l.product_id = p.product_id
-                WHERE order_id = '" . Yii::app()->session['order_id'] . "' ";
+                WHERE order_id = '$order_id' ";
 
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
