@@ -17,16 +17,18 @@
 </script>
 
 <script type="text/javascript">
-    function del_list_order(id, product_id) {
-        var url = "<?php echo Yii::app()->createUrl('frontend/orders/del_list_order') ?>";
-        var data = {id: id, product_id: product_id};
+    function del_list_order(id) {
+        var r = confirm("คุณแน่ใจหรือไม่ที่จะลบรายการนี้ ...?");
+        if (r == true) {
+            var url = "<?php echo Yii::app()->createUrl('frontend/orders/del_list_order') ?>";
+            var data = {id: id};
 
-        $.post(url, data,
-                function (success) {
-                    alert('ลบสินค้าออกจากตะกร้าแล้ว');
-                    window.location.reload();
-                }
-        );// endpost
+            $.post(url, data,
+                    function (success) {
+                        window.location.reload();
+                    }
+            );// endpost
+        }
     }
 </script>
 
@@ -74,7 +76,7 @@ $this->breadcrumbs = array(
                         <td style="text-align: center;"><?= $products['product_num']; ?></td>
                         <td style="text-align: right;"><?= number_format(($products['product_price'] * $products['product_num']), 2); ?></td>
                         <td style=" text-align: center;">
-                            <div class="btn btn-danger btn-xs" onclick="return del_list_order('<?= $products['id'] ?>', '<?= $products['product_id'] ?>');" id="del" title="ลบสินค้าออกจากตะกร้า">
+                            <div class="btn btn-danger btn-xs" onclick="return del_list_order('<?= $products['id'] ?>');" id="del" title="ลบสินค้าออกจากตะกร้า">
                                 <i class="fa fa-remove"></i>
                             </div>
                         </td>
@@ -113,7 +115,7 @@ $this->breadcrumbs = array(
             ?>
             <center>
                 <a href="<?= Yii::app()->createUrl('frontend/orders/payments') ?>">
-                    <div class="btn btn-info">ขั้นตอนถัดไป 
+                    <div class="btn btn-success">สั่งซื้อสินค้า 
                         <i class="glyphicon glyphicon-share-alt"></i>    
                     </div>
                 </a>
