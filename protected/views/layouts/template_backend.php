@@ -178,6 +178,8 @@
                            class="list-group-item"><span class="fa fa-smile-o"></span>  จัดการ โลโก้ เว็บ</a>
                         <a href="<?= Yii::app()->createUrl('web_system/menager_admin/from_show_webname') ?>"
                            class="list-group-item"><span class="fa fa-text-height"></span>  จัดการ ชื่อเว็บ</a>
+                        <a href="<?= Yii::app()->createUrl('backend/payment/view') ?>"
+                           class="list-group-item"><span class="fa fa-money"></span>  ช่องทางการชำระเงิน</a>
                     </div>
 
 
