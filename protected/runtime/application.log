@@ -6827,3 +6827,364 @@ Stack trace:
 REQUEST_URI=/shopping_cart/index.php?r=web_system/upload_images/from_show_logo
 HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/user/userall
 ---
+2015/09/08 19:03:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408193309
+---
+2015/09/08 19:03:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408193309
+---
+2015/09/08 19:03:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408193309
+---
+2015/09/08 19:03:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408193309
+---
+2015/09/08 19:03:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408193309
+---
+2015/09/08 19:03:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408193309
+---
+2015/09/08 19:55:58 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.bank_name' in 'field list'. The SQL statement executed was: SELECT p.*,p.bank_name,p.bank_img FROM payment p INNER JOIN bank b ON p.bank_id = b.id.
+in /Applications/MAMP/htdocs/shopping_cart/protected/models/Payment.php (7)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (10)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/08 19:55:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'p.bank_name' in 'field list'. The SQL statement executed was: SELECT p.*,p.bank_name,p.bank_img FROM payment p INNER JOIN bank b ON p.bank_id = b.id' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/models/Payment.php(7): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php(10): Payment->Get_patment()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): PaymentController->actionView()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('view')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/payment...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/view
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/Getproduct/&type_id=005
+---
+2015/09/09 11:53:19 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 11:55:17 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 11:55:39 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 11:56:24 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 11:57:40 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 11:57:56 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 11:58:09 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 11:59:03 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 11:59:16 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 11:59:31 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 11:59:54 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:01:40 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:02:35 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:03:06 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:03:49 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:04:00 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:04:07 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:04:16 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:04:24 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:04:38 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:04:49 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:04:57 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:05:49 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:07:26 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:08:05 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/09 12:08:14 [error] [php] Undefined index: bank_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): PaymentController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): PaymentController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): PaymentController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/payment/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
