@@ -57,6 +57,16 @@ class Orders {
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
 
+    function get_order_user($pid = null) {
+        $query = "SELECT o.order_id,SUM(b.product_num) AS product_total,SUM(b.product_price_sum) AS price_total,o.order_date
+                        FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                        WHERE pid = '$pid'
+                        GROUP BY o.order_id";
+        
+        $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+
     function autoId($table, $value, $number) {
         $rs = Yii::app()->db->createCommand("Select Max($value)+1 as MaxID from  $table")->queryRow(); //เลือกเอาค่า id ที่มากที่สุดในฐานข้อมูลและบวก 1 เข้าไปด้วยเลย
         $new_id = $rs['MaxID'];

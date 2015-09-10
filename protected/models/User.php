@@ -57,4 +57,38 @@ class User extends CActiveRecord {
         return $result['TOTAL'];
     }
 
+    public function Get_detail($pid = null) {
+        $sql = "SELECT 
+                    m.pid,
+                    m.alias,
+                    IF(sex = 'M','ชาย','หญิง') AS sex,
+                    a.number,
+                    a.building,
+                    a.class,
+                    a.room,
+                    a.changwat,
+                    a.ampur,
+                    a.tambon,
+                    changwat_name,
+                    ampur_name,
+                    tambon_name,
+                    m.name,
+                    m.lname,
+                    m.tel,
+                    m.email,
+                    m.birth,
+                    m.images,
+                    m.create_date,
+                    a.zipcode
+                FROM  masuser m 
+                LEFT JOIN address a  ON m.pid = m.pid 
+                INNER JOIN changwat c ON a.changwat = c.changwat_id
+                INNER JOIN ampur ap ON a.ampur = ap.ampur_id 
+                INNER JOIN tambon t ON a.tambon = t.tambon_id
+                WHERE m.pid = '$pid' ";
+        $result = Yii::app()->db->createCommand($sql)->queryRow();
+
+        return $result;
+    }
+
 }
