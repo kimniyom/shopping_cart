@@ -105,28 +105,30 @@ div.img-resize {
     background: rgba(255,0,0,0.4); 
 }
 
- @media screen and (orientation: portrait) {
-        #img {
-            //display: block;
-            //max-width:230px;
-            //max-height:100px;
-            width: auto;
-            height: auto;
-        }
+@media screen and (orientation: portrait) {
+    #img {
+        //display: block;
+        //max-width:230px;
+        //max-height:100px;
+        width: auto;
+        height: auto;
     }
+}
 
-    @media screen and (orientation: landscape) {
-        #img {
-            display: block;
-            max-width:230px;
-            max-height:100px;
-            width: auto;
-            height: auto;
-        }
+@media screen and (orientation: landscape) {
+    #img {
+        display: block;
+        max-width:230px;
+        max-height:100px;
+        width: auto;
+        height: auto;
     }
-    
-    #fontgreen14{ font-size: 14px; color:#33cc00;}
+}
 
+#fontgreen14{ font-size: 14px; color:#33cc00;}
+#font-16{font-size: 16px;}
+#font-18{font-size: 18px;}
+#font-20{font-size: 20px;}
 
 
 
