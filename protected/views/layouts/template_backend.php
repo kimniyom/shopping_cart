@@ -53,12 +53,9 @@
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/extensions/TableTools/css/dataTables.tableTools.css" type="text/css" media="all" />
 
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.css"/>
-        <!--
-                Grahp
-
-        <script src="<?//= Yii::app()->baseUrl; ?>chart/highcharts.js"></script>
-        <script src="<?//= Yii::app()->baseUrl; ?>chart/theam/grid-light.js"></script>
-        -->
+        <!-- highcharts -->
+        <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/highcharts.js"></script>
+        <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/themes/dark-unica.js"></script>
 
         <script type="text/javascript">
             function chkNumber(ele) {
@@ -193,7 +190,7 @@
                         $produce_type = $product_model->_get_product_type();
                         foreach ($produce_type as $produce_types):
                             ?>
-                            <a href="<?php echo Yii::app()->createUrl('backend/product/Getproduct/&type_id=' . $produce_types['type_id']) ?>"
+                            <a href="<?php echo Yii::app()->createUrl('backend/product/Getproduct&type_id=' . $produce_types['type_id']) ?>"
                                class="list-group-item"><i class="fa fa-cart-plus" style="color:green;"></i>
                                    <?php echo $produce_types['type_name']; ?>
                                 <span class="label label-default" style=" float: right; font-size: 16px;">

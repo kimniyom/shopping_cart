@@ -1,4 +1,4 @@
-<<table class="table">
+<table class="table">
     <tbody>
         <?php
         $i = 1;
@@ -15,7 +15,9 @@
                 <td><?php echo $rs['bank_branch']; ?></td>
                 <td><?php echo $rs['bookbank_number']; ?></td>
                 <td>
-                    <div class="btn btn-danger" onclick="delete_payment('<?php echo $rs['id'] ?>);"><i class="fa fa-trash"></i></div>
+                    <div class="btn btn-danger" onclick="delete_payment('<?php echo $rs['id'] ?>');" title="ลบ">
+                        <i class="fa fa-trash"></i>
+                    </div>
                 </td>
             </tr>
         <?php endforeach; ?>

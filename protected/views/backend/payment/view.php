@@ -1,22 +1,22 @@
 
 <script type="text/javascript">
-    $(documrnt).ready(function(){
+    $(document).ready(function () {
         load_data();
-    });
-    
-    function save_payment() {
-        var url = "<?php echo Yii::app()->createUrl('backend/payment/save_payment') ?>";
-        var data = $("#create_payment").serialize();
+        $('form').on('submit', function (e) {
+            e.preventDefault();
+            var url = "<?php echo Yii::app()->createUrl('backend/payment/save_payment') ?>";
+            var data = $("form").serialize();
 
-        $.ajax({
-            type: 'post',
-            url: url,
-            data: data,
-            success: function (success) {
-                load_data();
-            }
+            $.ajax({
+                type: 'post',
+                url: url,
+                data: data,
+                success: function () {
+                    load_data();
+                }
+            });
         });
-    }
+    });
 
     function delete_payment(id) {
         var r = confirm("คุณแน่ใจหรือไม่ที่จะลบ ...?");
@@ -32,6 +32,7 @@
     }
 
     function load_data() {
+        $("#load_data").html('<br/><center><i class="fa fa-spinner fa-spin fa-3x"></i></center><br/>');
         var url = "<?php echo Yii::app()->createUrl('backend/payment/load_data') ?>";
         var data = "";
         $.post(url, data, function (result) {
@@ -39,7 +40,13 @@
         });
     }
 </script>
-<form id="create_payment" onsubmit="save_payment();" method="post">
+
+<?php
+$title = "ช่องทางการชำระเงิน";
+$this->breadcrumbs = array($title,);
+?>
+
+<form>
     <div class="panel panel-default">
         <div class="panel-heading"><i class="fa fa-money"></i> ช่องทางการชำระเงิน</div>
         <div class="panel-body">
@@ -90,8 +97,8 @@
             </div>
         </div>
         <div class="panel-footer">
-            <button type="submit" class="btn btn-default"><i class="fa fa-save"></i> บันทึก</button>
-            <button type="reset" class="btn btn-primary"><i class="fa fa-remove"></i> ยกเลิก</button>
+            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i> บันทึก</button>
+            <button type="reset" class="btn btn-danger"><i class="fa fa-remove"></i> ยกเลิก</button>
         </div>
     </div>
 </form>

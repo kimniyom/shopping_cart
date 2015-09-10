@@ -39,21 +39,15 @@ $this->breadcrumbs = array(
                         <td><?php echo $rs['alias']; ?></td>
                         <td><?php echo $rs['tel']; ?></td>
                         <td style="text-align: center;">
-                            
+
                         </td>
                         <td style="text-align: center;">
                             <!-- Small button group -->
-                            <div class="btn-group">
-                                <button class="btn btn-default btn-xs dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    ตัวเลือก <span class="caret"></span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a href=""><i class="fa fa-list"></i> ดูแบบระเอียด</a></li>
-                                    <li><a href=""><i class="fa fa-pencil"></i> แก้ไข</a></li>
-                                    <li><a href=""><i class="fa fa-trash"></i> ลบ</a></li>
-                                    <li><a href=""><i class="fa fa-ban"></i> แบน</a></li>
-                                </ul>
+                            <div class="btn btn-primary btn-xs">
+                                <a href="<?php echo Yii::app()->createUrl('backend/user/detail&pid=' . $rs['pid']); ?>" title="ดูข้อมูล"><i class="fa fa-eye"></i></a>
                             </div>
+                            <a href="" title="ลบ"><div class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></div></a>
+                            <a href="" title="บล๊อค"><div class="btn btn-warning btn-xs"><i class="fa fa-ban"></i></div></a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
