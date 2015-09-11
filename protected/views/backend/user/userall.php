@@ -43,9 +43,10 @@ $this->breadcrumbs = array(
                         </td>
                         <td style="text-align: center;">
                             <!-- Small button group -->
-                            <div class="btn btn-primary btn-xs">
-                                <a href="<?php echo Yii::app()->createUrl('backend/user/detail&pid=' . $rs['pid']); ?>" title="ดูข้อมูล"><i class="fa fa-eye"></i></a>
-                            </div>
+                            <a href="<?php echo Yii::app()->createUrl('backend/user/detail&pid=' . $rs['pid']); ?>" title="ดูข้อมูล">
+                                <div class="btn btn-primary btn-xs">
+                                    <i class="fa fa-eye"></i>
+                                </div></a>
                             <a href="" title="ลบ"><div class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></div></a>
                             <a href="" title="บล๊อค"><div class="btn btn-warning btn-xs"><i class="fa fa-ban"></i></div></a>
                         </td>
