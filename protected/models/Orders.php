@@ -29,7 +29,9 @@ class Orders {
     }
 
     function duplicate_product($order_id = null, $product_id = null) {
-        $query = "SELECT COUNT(*) AS TOTAL FROM basket WHERE order_id = '$order_id' AND product_id = '$product_id' ";
+        $query = "SELECT COUNT(*) AS TOTAL 
+                        FROM basket
+                        WHERE order_id = '$order_id' AND product_id = '$product_id' ";
         $rs = Yii::app()->db->createCommand($query)->queryRow();
 
         if ($rs['TOTAL'] > 0) {
@@ -50,7 +52,7 @@ class Orders {
     }
 
     function _get_list_order($order_id = null) {
-        $sql = "SELECT p.product_id,l.id,p.product_price,l.product_num,p.product_name,p.product_detail
+        $sql = "SELECT p.product_id,l.id,p.product_price,l.product_num,l.product_price_sum,p.product_name,p.product_detail
                 FROM basket l INNER JOIN product p ON l.product_id = p.product_id
                 WHERE order_id = '$order_id' ";
 
@@ -62,6 +64,69 @@ class Orders {
                         FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
                         WHERE pid = '$pid'
                         GROUP BY o.order_id";
+
+        $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+
+    //หาจำนวนเงินการสั่งซื้อในแต่ละเดือน
+    function get_order_month($pid = null) {
+        $query = "SELECT m.id,m.month_th,
+                        IFNULL(Q1.PRICE_TOTAL,0) AS PRICE_TOTAL
+                        FROM `month` m 
+                        LEFT JOIN 
+                        (
+                        SELECT SUBSTR(o.order_date,6,2) AS id,
+                                SUM(b.product_num) AS PRODUCT_TOTAL,
+                                SUM(b.product_price_sum) AS PRICE_TOTAL
+                        FROM orders o
+                        INNER JOIN basket b ON o.order_id = b.order_id
+                        WHERE o.pid = '$pid' AND LEFT(o.order_date,4) = YEAR(NOW())
+                        GROUP BY SUBSTR(o.order_date,6,2)
+                        ) Q1 ON m.id = Q1.id
+
+                        ORDER BY m.id ";
+
+        $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+    
+     //หาจำนวนการสั่งซื้อในแต่ละเดือน
+    function get_order_month_visit($pid = null){
+        $query = "SELECT m.id,m.month_th,
+                        IFNULL(Q1.TOTAL,0) AS TOTAL
+                        FROM `month` m 
+                        LEFT JOIN 
+                        (
+                        SELECT SUBSTR(o.order_date,6,2) AS id,
+                        COUNT(*) AS TOTAL
+                        FROM orders o
+                        WHERE o.pid = '$pid' AND LEFT(o.order_date,4) = YEAR(NOW())
+                        GROUP BY SUBSTR(o.order_date,6,2)
+                        ) Q1 ON m.id = Q1.id
+
+                        ORDER BY m.id ";
+        
+        $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+    
+    //หาจำนวนการสั่งซื้อในแต่ประเภท
+    function get_order_type($pid = null){
+        $query = "SELECT t.type_name,IFNULL(Q1.price_total,0) AS TOTAL
+                        FROM product_type t
+
+                        LEFT JOIN 
+                        (
+                        SELECT p.type_id,SUM(b.product_price_sum) AS price_total
+                        FROM basket b INNER JOIN product p ON b.product_id = p.product_id
+                        INNER JOIN orders o ON b.order_id = o.order_id
+                        WHERE o.pid = '$pid' AND  LEFT(o.order_date,4) = YEAR(NOW())
+                        GROUP BY p.type_id
+                        ) Q1 
+
+                        ON t.type_id = Q1.type_id 
+                        ORDER BY t.type_id";
         
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;

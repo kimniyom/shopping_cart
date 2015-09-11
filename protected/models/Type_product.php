@@ -7,7 +7,7 @@ class Type_product extends CActiveRecord{
     }
 
     function Get_all() {
-        $query = "SELECT * FROM product_type";
+        $query = "SELECT * FROM product_type ORDER BY type_id";
         return Yii::app()->db->createCommand($query)->queryAll();
     }
 
