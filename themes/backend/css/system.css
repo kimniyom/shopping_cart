@@ -1,6 +1,22 @@
 @charset "utf-8";
 /* CSS Document */
+@font-face {
+    font-family:Th;
+    src: url('font-th/TH K2D July8 Bold.ttf') format('truetype');
+}
 
+body {
+    margin: 0;
+    //font-family:Th;
+}
+
+/* For the "inset" look only */
+html {
+    //font-family:Th;
+    overflow: auto;
+}
+
+#font-th{font-family: Th; font-size: 22px;}
 #font-product{color: #ff3300; font-size: 22px; font-family: Th;}
 #font-head{color: #ff3300; font-size: 28px; font-family: Th;}
 #box_product:hover{ box-shadow: 0px 10px 20px 0px #666666; opacity: 0.8;}
