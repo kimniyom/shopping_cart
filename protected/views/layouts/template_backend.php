@@ -12,26 +12,6 @@
             echo $web->get_webname();
             ?>
         </title>
-        <style type="text/css">
-            @font-face {
-                font-family:Th;
-                src: url('<?php echo Yii::app()->baseUrl; ?>/css/font/TH K2D July8 Bold.ttf') format('truetype');
-            }
-
-            body {
-                margin: 0;
-                //font-family:Th;
-            }
-
-            /* For the "inset" look only */
-            html {
-                //font-family:Th;
-                overflow: auto;
-            }
-
-            #font-th{font-family: Th; font-size: 22px;}
-
-        </style>
 
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/system.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/bootstrap-slate.css" type="text/css" media="all" />
@@ -58,6 +38,14 @@
         <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/themes/dark-unica.js"></script>
 
         <script type="text/javascript">
+
+            $(document).ready(function ()
+            {
+                $(document).bind("contextmenu", function (e) {
+                    return false;
+                });
+            });
+
             function chkNumber(ele) {
                 var vchar = String.fromCharCode(event.keyCode);
                 if ((vchar < '0' || vchar > '9') && (vchar != '.'))
@@ -108,7 +96,6 @@
                                 <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_type') ?>" id="font-th"> - รายงานการสั่งซื้อสินค้า(แยกประเภท)</a></li>
                                 <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_sale') ?>" id="font-th"> - รายงานรายได้</a></li>
                                 <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_user') ?>" id="font-th"> - รายงานการเข้าเป็นสมาชิก</a></li>
-
                             </ul>
                         </li>
                     </ul>
