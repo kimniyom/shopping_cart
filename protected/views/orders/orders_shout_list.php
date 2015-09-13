@@ -13,6 +13,7 @@
                     //alert('ลบสินค้าออกจากตะกร้าแล้ว');
                     //window.location.reload();
                     load_cart_list();
+                    load_box_cart();
                 }
         );// endpost
     }
@@ -31,6 +32,7 @@
                     //alert('ลบสินค้าออกจากตะกร้าแล้ว');
                     //window.location.reload();
                     load_cart_list();
+                    load_box_cart();
                 });
     }
 </script>
@@ -38,7 +40,7 @@
 
 
 
-<table width="100%" class="table table-hover" id="font-th">
+<table width="100%" class="table table-hover" id="font-18">
     <tbody>
         <?php
         $product_model = new Product();
@@ -92,7 +94,7 @@
                         <span class="glyphicon glyphicon-chevron-left"></span> 
                         ช๊อปสินค้าอื่น
                     </button></a>
-                <a href="<?php echo Yii::app()->createUrl('frontend/orders/show_order_list'); ?>">
+                <a href="<?php echo Yii::app()->createUrl('frontend/orders/order_list&order_id='.Yii::app()->session['order_id']); ?>">
                     <button class="btn btn-default" style=" font-size: 14px;">ทำรายการถัดไป 
                         <span class="glyphicon glyphicon-chevron-right"></span>
                     </button></a>
