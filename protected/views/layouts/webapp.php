@@ -11,24 +11,6 @@
             echo $web->get_webname();
             ?>
         </title>
-        <style type="text/css">
-            @font-face {
-                font-family:Th;
-                src: url('<?php echo Yii::app()->baseUrl; ?>/css/font/TH K2D July8 Bold.ttf') format('truetype');
-            }
-
-            body {
-                margin: 0;
-                font-family:Th;
-            }
-
-            /* For the "inset" look only */
-            html {
-                font-family:Th;
-                overflow: auto;
-            }
-
-        </style>
 
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/css/system.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/bootstrap/css/bootstrap-readable.css" type="text/css" media="all" />
@@ -123,6 +105,19 @@
             </div>
         </div>
 
+
+        <!-- Basket-->
+        <span class="navbar-brand" id="cart_box" data-toggle="popover" 
+              data-trigger="hover" data-placement="left" data-trigger="focus"
+              data-content="ตะกร้าสินค้า">
+            <a href="Javascript:void(0);" onclick="show_list_cart();">
+                <i class="shopping-cart"></i>
+            </a>
+            <div class="label label-success" id="load_inbox_cart" 
+                 style="text-align: center; font-size: 12px; position: absolute; top: 10px; right: 10px;">
+            </div>
+        </span>
+
         <!--<div class="container" style="margin-bottom:5%;"> navbar-fixed-top-->
         <nav class="navbar navbar-default" role="navigation" style="z-index:1; border-radius:0px; border: none; margin-bottom:0px; background: none;">
             <div class="container" style="background:url('<?php echo Yii::app()->baseUrl; ?>/themes/webapp/images/glass.png');">
@@ -135,7 +130,7 @@
             </div>
         </nav>
 
-        <nav class="navbar navbar-default" role="navigation" style="z-index:1; border-radius:0px; border: none; margin-bottom:0px; box-shadow: none;">
+        <nav class="navbar navbar-inverse" role="navigation" style="z-index:1; border-radius:0px; border: none; margin-bottom:0px; box-shadow: none;">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -210,6 +205,10 @@
             </div>
         </nav>
 
+
+        <!-- 
+        MenuLeft 
+        -->
         <div class="container" style="background:url(<?php echo Yii::app()->baseUrl; ?>/images/glass.png); padding-top:10px; padding-bottom:5px; margin-bottom:25px;">
             <div class="row">
 
@@ -217,58 +216,42 @@
 
                     <!--###################### USER #################-->
                     <?php if (Yii::app()->session['status'] != '') { ?>
-                        <div class="btn btn-warning disabled" id="h_menu">
-                            <img src="<?php echo Yii::app()->baseUrl; ?>/images/use-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> ผู้ใช้งาน
-                        </div>
-                        <div id="use">
-                            ชื่อ : <?= Yii::app()->session['username'] ?><br>
-                            สถานะ : <?php
-                            if (Yii::app()->session['status'] == 'A') {
-                                echo "ผู้ดูแลระบบ";
-                            } else if (Yii::app()->session['status'] == 'U') {
-                                echo "สมาชิก";
-                            } else {
-                                echo "ผู้ใช้งานทั่วไป";
-                            }
-                            ?><br/>
-                            <a href="<?= Yii::app()->createUrl('web_system/main_system/from_edit_register/'); ?>">ข้อมูลส่วนตัว</a>
-                        </div><br/>
-                    <?php } ?>
-
-                    <?php if (Yii::app()->session['status'] == 'U') { ?>
-                        <!-- รถเข็น -->
-                        <div class="btn btn-primary disabled" id="h_menu">
-                            <img src="<?php echo Yii::app()->baseUrl; ?>/images/Cart-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"/> ตะกร้าสินค้า
-                        </div>
-                        <div id="use">
-                            <div style="float:left; text-decoration:underline;">จำนวนสินค้า </div>
-                            <div style="float:right; text-decoration:underline; color:#F00; font-weight:bold;">
-                                <?php
-                                $count = $product_model->_get_cart_count();
-                                if (isset($count)) {
-                                    echo $count;
+                        <div class="panel panel-primary" id="font-18">
+                            <div class=" panel-heading">
+                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/use-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> ผู้ใช้งาน
+                            </div>
+                            <div class=" panel-body">
+                                ชื่อ : <?= Yii::app()->session['username'] ?><br>
+                                สถานะ : <?php
+                                if (Yii::app()->session['status'] == 'U') {
+                                    echo "สมาชิก";
                                 } else {
-                                    echo "0";
+                                    echo "ผู้ใช้งานทั่วไป";
                                 }
                                 ?>
                             </div>
-                            <br>          	
-                            <div style="float:left; text-decoration:underline;"> ราคา </div>
-                            <div style="float:right; text-decoration:underline; color:#F00; font-weight:bold;">
-                                <?php
-                                $sumall = 0;
-                                $result = $product_model->_get_cart_sum();
-                                foreach ($result as $data):
-                                    $sum = ($data['product_price'] * $data['product_num']);
-                                    $sumall = $sumall + $sum;
-                                endforeach;
-
-                                echo number_format($sumall);
-                                ?>
+                            <div class=" panel-footer">
+                                <a href="<?= Yii::app()->createUrl('web_system/main_system/from_edit_register/'); ?>">ข้อมูลส่วนตัว</a>
                             </div>
-                            <br><br>
-                            <a href="<?= Yii::app()->createUrl('frontend/orders/order_list&order_id=' . Yii::app()->session['order_id']) ?>">ดูรายการสินค้า</a>
-                            <a href="#" onclick="javascript:window.location.reload();" style=" float: right;"><span class="glyphicon glyphicon-refresh"></span></a>
+                        </div>
+                    <?php } ?>
+
+                    <!-- #################### รถเข็น #############-->
+                    <?php if (Yii::app()->session['status'] == 'U') { ?>
+
+                        <div class="panel panel-primary" id="font-18">
+                            <div class=" panel-heading">
+                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/Cart-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"/> ตะกร้าสินค้า
+                            </div>
+                            <div class="panel-body" id="box_cart">
+
+                            </div>
+                            <div class=" panel-footer">
+                                <a href="<?= Yii::app()->createUrl('frontend/orders/order_list&order_id=' . Yii::app()->session['order_id']) ?>">ดูรายการสินค้า</a>
+                                <div class="pull-right">
+                                    <a href="javascript:load_box_cart()" style=" float: right;"><span class="glyphicon glyphicon-refresh"></span></a>
+                                </div>
+                            </div>
                         </div>
 
                     <?php } ?>
@@ -396,7 +379,6 @@
                         </ol>
 
 
-
                         <div class="panel-body" style="padding:3px 3px 50px 3px; margin-top:0px;">
 
                             <?PHP
@@ -503,4 +485,88 @@
     </script>
 
 </html>
+
+<!-- Basket -->
+<!--
+       cart list
+-->
+<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="cartlist">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h5 class="modal-title">
+                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/full-shopping-cart-icon.png"/>
+                    <font style="padding-top: 10px;">ตะกร้าสินค้า</font>
+                </h5>
+            </div>
+            <div id="load_cart"></div>
+        </div>
+    </div>
+</div>
+<!--
+    End cart list
+-->
+
+<script type="text/javascript">
+    function show_list_cart() {
+        $("#load_cart").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
+        $("#cartlist").modal();
+        var url = "<?php echo Yii::app()->createUrl('frontend/orders/show_order_short_list'); ?>";
+        var order_id = "<?php echo Yii::app()->session['order_id'] ?>";
+        var data = {order_id: order_id};
+        $.post(url, data, function (result) {
+            $("#load_cart").html(result);
+        });
+    }
+
+    function load_cart_list() {
+        load_inbox_cart();
+        var url = "<?php echo Yii::app()->createUrl('frontend/orders/show_order_short_list'); ?>";
+        var order_id = "<?php echo Yii::app()->session['order_id'] ?>";
+        var data = {order_id: order_id};
+        $.post(url, data, function (result) {
+            $("#load_cart").html(result);
+        });
+    }
+
+    function load_inbox_cart() {
+        var url = "<?php echo Yii::app()->createUrl('frontend/orders/load_inbox_cart'); ?>";
+        var order_id = "<?php echo Yii::app()->session['order_id'] ?>";
+        var data = {order_id: order_id};
+        $.post(url, data, function (result) {
+            $("#load_inbox_cart").html(result);
+        });
+    }
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        load_inbox_cart();
+        load_box_cart();//load box cart Menu left
+        $('[data-toggle="popover"]').popover();
+
+        $('.img_zoom').magnificPopup({
+            delegate: 'a', // child items selector, by clicking on it popup will open
+            type: 'image',
+            gallery: {
+                enabled: true
+            }
+            // other options
+        });
+
+    });
+
+    function load_box_cart() {
+        $("#box_cart").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
+        var url = "<?php echo Yii::app()->createUrl('frontend/orders/load_box_cart') ?>";
+        var order_id = "<?php echo Yii::app()->session['order_id']; ?>";
+        var data = {order_id: order_id};
+
+        $.post(url, data, function (result) {
+            $("#box_cart").html(result);
+        });
+    }
+</script>
 
