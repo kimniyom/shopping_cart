@@ -41,16 +41,21 @@ class OrdersController extends Controller {
     }
 
     public function actionOrder_list() {
-        $order_id = $_GET['order_id'];
-        $order = new Orders();
-        $data['product'] = $order->_get_list_order($order_id);
-
+        $data['order_id'] = $_GET['order_id'];
         $this->render("//orders/orders_list", $data);
     }
 
-    public function actionShow_order_shout_list() {
+    public function actionOrder_list_load() {
         $order = new Orders();
-        $data['product'] = $order->_get_list_order();
+        $order_id = $_POST['order_id'];
+        $data['product'] = $order->_get_list_order($order_id);
+        $this->renderPartial("//orders/orders_list_load", $data);
+    }
+
+    public function actionShow_order_short_list() {
+        $order = new Orders();
+        $order_id = $_POST['order_id'];
+        $data['product'] = $order->_get_list_order($order_id);
 
         $this->renderPartial("//orders/orders_shout_list", $data);
     }
@@ -73,14 +78,34 @@ class OrdersController extends Controller {
                 ->delete("basket", "id = '$id' ");
     }
 
+    public function actionLoad_box_cart() {
+        $order_id = $_POST['order_id'];
+        $product_model = new Product();
+        $data['result'] = $product_model->_get_cart_sum($order_id);
+        $data['count'] = $product_model->_get_cart_count($order_id);
+
+        $this->renderPartial('//orders/box_cart', $data);
+    }
+
+    public function actionLoad_inbox_cart() {
+        $order_id = $_POST['order_id'];
+        $product = new Product();
+        $count = $product->_get_cart_count($order_id);
+        if (isset($count)) {
+            echo $count;
+        } else {
+            echo "0";
+        }
+    }
+
     public function actionPayments() {
         $order_id = $_GET['order_id'];
-        if ($order_id != "") {
-            $data['order_id'] = $order_id;
-        } else {
-            $data['order_id'] = "";
-        }
-
+        $pid = Yii::app()->session['pid'];
+        $order = new Orders();
+        $user = new User();
+        $data['product'] = $order->_get_list_order($order_id);
+        $data['address'] = $user->Get_address($pid);
+        
         $this->render("//orders/payments", $data);
     }
 

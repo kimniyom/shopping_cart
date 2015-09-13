@@ -122,16 +122,6 @@ class ProductController extends Controller {
         $this->render("//product/show_product_all", $data);
     }
 
-    public function actionLoad_inbox_cart() {
-        $product = new Product();
-        $count = $product->_get_cart_count();
-        if (isset($count)) {
-            echo $count;
-        } else {
-            echo "0";
-        }
-    }
-
     public function actionPages() {
         $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
         $type_id = $_POST["type_id"];
