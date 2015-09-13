@@ -2,13 +2,35 @@
 <style type="text/css">
     table tr td{ height:30px;}
     #im-resize{ width: 80px; height: 75px; padding: 5px; margin-bottom: 5px;}
-    #cart_box{
-        float: right; margin-top: 0px; padding-top: 15px;
-        position:fixed; top:10px; right:20px;z-index:3;
-    }
 </style>
 
 <script type="text/javascript">
+    function add_cart(order_id, product_id, price) {
+        var url = "<?= Yii::app()->createUrl('frontend/orders/add_cart') ?>";
+        var num = $("#num").val();
+        var price_total = (price * num);
+
+        var data = {
+            order_id: order_id,
+            product_id: product_id,
+            price: price,
+            num: num,
+            price_total: price_total
+        };
+
+        if (num == '' || num == '0') {
+            alert("กรุณากรอกจำนวน");
+            return false;
+        }
+        $.post(url, data,
+                function (success) {
+                    //alert('เพิ่มสินค้าในตะกร้าแล้ว');
+                    Add_cart_success();
+                    //window.location.reload();
+                }
+        ); // End post
+    }
+
     function Add_cart_success() {
         //$('.add-to-cart').on('click', function () {
         var cart = $('.shopping-cart');
@@ -48,37 +70,9 @@
                 $(this).detach();
             });
             load_inbox_cart();
+            load_box_cart();
         }
         //});
-    }
-</script>
-
-<script type="text/javascript">
-
-    function add_cart(order_id, product_id, price) {
-        var url = "<?= Yii::app()->createUrl('frontend/orders/add_cart') ?>";
-        var num = $("#num").val();
-        var price_total = (price * num);
-        alert(price_total);
-        var data = {
-            order_id: order_id,
-            product_id: product_id,
-            price: price,
-            num: num,
-            price_total: price_total
-        };
-
-        if (num == '' || num == '0') {
-            alert("กรุณากรอกจำนวน");
-            return false;
-        }
-        $.post(url, data,
-                function (success) {
-                    //alert('เพิ่มสินค้าในตะกร้าแล้ว');
-                    Add_cart_success();
-                    //window.location.reload();
-                }
-        ); // End post
     }
 </script>
 
@@ -98,53 +92,6 @@
     }
 </script>
 
-<script type="text/javascript">
-    function show_list_cart() {
-        $("#cartlist").modal();
-        var url = "<?php echo Yii::app()->createUrl('frontend/orders/show_order_shout_list'); ?>";
-        var data = "";
-        $.post(url, data, function (result) {
-            $("#load_cart").html(result);
-        });
-    }
-
-    function load_cart_list() {
-        load_inbox_cart();
-        var url = "<?php echo Yii::app()->createUrl('frontend/orders/show_order_shout_list'); ?>";
-        var data = "";
-        $.post(url, data, function (result) {
-            $("#load_cart").html(result);
-        });
-    }
-
-    function load_inbox_cart() {
-        var url = "<?php echo Yii::app()->createUrl('frontend/product/load_inbox_cart'); ?>";
-        var data = "";
-        $.post(url, data, function (result) {
-            $("#load_inbox_cart").html(result);
-        });
-    }
-
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        load_inbox_cart();
-        $('[data-toggle="popover"]').popover();
-
-        $('.img_zoom').magnificPopup({
-            delegate: 'a', // child items selector, by clicking on it popup will open
-            type: 'image',
-            gallery: {
-                enabled: true
-            }
-            // other options
-        });
-
-    });
-</script>
-
-
 <?php
 $this->breadcrumbs = array(
     $product['type_name'] => array('frontend/product/show_product_all&type_id=' . $product['type_id']),
@@ -154,41 +101,8 @@ $this->breadcrumbs = array(
 
 <?php
 $config = new Configweb_model();
-echo Yii::app()->session['order_id'];
 ?>
 
-
-<span class="navbar-brand" id="cart_box" data-toggle="popover" 
-      data-trigger="hover" data-placement="left" data-trigger="focus"
-      data-content="ตะกร้าสินค้า">
-    <a href="Javascript:void(0);" onclick="show_list_cart();">
-        <i class="shopping-cart"></i>
-    </a>
-    <div class="label label-success" id="load_inbox_cart" 
-         style="text-align: center; font-size: 12px; position: absolute; top: 10px; right: 10px;">
-    </div>
-</span>
-
-<!--
-       cart list
--->
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="cartlist">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h5 class="modal-title">
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/full-shopping-cart-icon.png"/>
-                    <font style="padding-top: 10px;">ตะกร้าสินค้า</font>
-                </h5>
-            </div>
-            <div class="modal-body" id="load_cart"></div>
-        </div>
-    </div>
-</div>
-<!--
-    End cart list
--->
 
 <div class="well" style=" width:100%; margin-top:20px; background:#FFF; text-align: left;">
     <div class="row">
