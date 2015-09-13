@@ -28,19 +28,19 @@ class Product {
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
 
-    function _get_cart_count() {
+    function _get_cart_count($order_id = null) {
         $sql = "SELECT SUM(product_num) AS total
                 FROM basket
-                WHERE order_id = '" . Yii::app()->session['order_id'] . "' ";
+                WHERE order_id = '$order_id' ";
 
         $result = Yii::app()->db->createCommand($sql)->queryRow();
         return $result['total'];
     }
 
-    function _get_cart_sum() {
+    function _get_cart_sum($order_id = null) {
         $sql = "SELECT p.product_id,p.product_price,l.product_num
                 FROM basket l INNER JOIN product p ON l.product_id = p.product_id
-                WHERE order_id = '" . Yii::app()->session['order_id'] . "' ";
+                WHERE order_id = '$order_id' ";
 
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
