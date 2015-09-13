@@ -6,44 +6,76 @@
 
 </script>
 
-<div class="well">
+
+
+<div class="form-group">
     <div class="row">
-        <div class="col-lg-3">
+        <div class="col-sm-3 col-lg-3">
             ชื่อ *
         </div>
         <div class="col-lg-9">
             <input type="text" id="name" name="name" class="form-control input-sm" value="<?php echo $address['name'] ?>"/>
-        </div><br/><br/>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
         <div class="col-lg-3">
             นามสกุล *
         </div>
         <div class="col-lg-9">
             <input type="text" id="lname" name="lname" class="form-control input-sm" value="<?php echo $address['lname'] ?>"/>
-        </div><br/><br/>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
         <div class="col-lg-3">
             เลขที่ *
         </div>
         <div class="col-lg-9">
             <input type="text" id="number" name="number" class="form-control input-sm" value="<?php echo $address['number'] ?>"/>
-        </div><br/><br/>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
         <div class="col-lg-3">
             อาคาร
         </div>
         <div class="col-lg-9">
             <input type="text" id="building" name="building" class="form-control input-sm" value="<?php echo $address['building'] ?>"/>
-        </div><br/><br/>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
         <div class="col-lg-3">
             ชั้น
         </div>
         <div class="col-lg-9">
             <input type="text" id="class" name="class" class="form-control input-sm" value="<?php echo $address['class'] ?>"/>
-        </div><br/><br/>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
         <div class="col-lg-3">
             ห้อง
         </div>
         <div class="col-lg-9">
             <input type="text" id="room" name="room" class="form-control input-sm" value="<?php echo $address['room'] ?>"/>
-        </div><br/><br/>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
         <div class="col-lg-3">
             จังหวัด *
         </div>
@@ -59,7 +91,12 @@
                     ?>><?php echo $ch['changwat_name'] ?></option>
                         <?php endforeach; ?>
             </select>
-        </div><br/><br/>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
         <div class="col-lg-3">
             อำเภอ *
         </div>
@@ -67,7 +104,12 @@
             <select id="ampur" name="ampur" class="form-control input-sm" onchange="chang_address('tambon', this.value, '')">
                 <option value="">เลือกอำเภอ</option>
             </select>
-        </div><br/><br/>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
         <div class="col-lg-3">
             ตำบล *
         </div>
@@ -75,12 +117,17 @@
             <select id="tambon" name="tambon" class="form-control input-sm">
                 <option value="">เลือกตำบล</option>
             </select>
-        </div><br/><br/>
+        </div>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="row">
         <div class="col-lg-3">
             รหัสไปรษณีย์ *
         </div>
         <div class="col-lg-9">
             <input type="text" id="zipcode" name="zipcode" class="form-control input-sm" maxlength="5" value="<?php echo $address['zipcode'] ?>"/>
-        </div><br/><br/>
+        </div>
     </div>
 </div>
