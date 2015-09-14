@@ -48,12 +48,19 @@
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/css/jquery.bxslider.css" type="text/css" media="all" />
         <script src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/js/jquery.bxslider.js" type="text/javascript"></script>
 
+        <!-- Bootstrap CheckBox -->
+        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
+
+        <!-- Uplasdify -->
+        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.css" type="text/css" media="all" />
+        <script src="<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/jquery.uploadify.js" type="text/javascript"></script>
+
         <script type="text/javascript">
             function chkNumber(ele) {
                 var vchar = String.fromCharCode(event.keyCode);
                 if ((vchar < '0' || vchar > '9') && (vchar != '.'))
                     return false;
-                ele.onKeyPress = vchar;
+                //ele.onKeyPress = vchar;
             }
         </script>
 
@@ -107,17 +114,18 @@
 
 
         <!-- Basket-->
-        <span class="navbar-brand" id="cart_box" data-toggle="popover" 
-              data-trigger="hover" data-placement="left" data-trigger="focus"
-              data-content="ตะกร้าสินค้า">
-            <a href="Javascript:void(0);" onclick="show_list_cart();">
-                <i class="shopping-cart"></i>
-            </a>
-            <div class="label label-success" id="load_inbox_cart" 
-                 style="text-align: center; font-size: 12px; position: absolute; top: 10px; right: 10px;">
-            </div>
-        </span>
-
+        <?php if (!empty(Yii::app()->session['status'])) { ?>
+            <span class="navbar-brand" id="cart_box" data-toggle="popover" 
+                  data-trigger="hover" data-placement="left" data-trigger="focus"
+                  data-content="ตะกร้าสินค้า">
+                <a href="Javascript:void(0);" onclick="show_list_cart();">
+                    <i class="shopping-cart"></i>
+                </a>
+                <div class="label label-success" id="load_inbox_cart" 
+                     style="text-align: center; font-size: 12px; position: absolute; top: 10px; right: 10px;">
+                </div>
+            </span>
+        <?php } ?>
         <!--<div class="container" style="margin-bottom:5%;"> navbar-fixed-top-->
         <nav class="navbar navbar-default" role="navigation" style="z-index:1; border-radius:0px; border: none; margin-bottom:0px; background: none;">
             <div class="container" style="background:url('<?php echo Yii::app()->baseUrl; ?>/themes/webapp/images/glass.png');">
@@ -144,7 +152,7 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="<?= Yii::app()->createUrl('frontend/main/main_system') ?>">
+                            <a href="<?= Yii::app()->createUrl('frontend/main') ?>">
                                 <span class="glyphicon glyphicon-home"></span> 
                                 <font id="font-th">หน้าหลัก</font></a>
                         </li>
@@ -168,9 +176,10 @@
                                     <font id="font-th">ประวัติสั่งซื้อสินค้า</font> <b class="caret"></b>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<?= Yii::app()->createUrl('web_system/menager_order/from_show_order_product') ?>" id="font-th"> - สินค้าค้างชำระ</a></li>
-                                    <li><a href="<?= Yii::app()->createUrl('web_system/menager_order/from_show_order_confrim') ?>" id="font-th"> - สินค้ารอการจัดส่ง</a></li>
-                                    <li><a href="<?= Yii::app()->createUrl('web_system/menager_order/from_show_order_success') ?>" id="font-th"> - สินค้าที่จัดส่งเรียบร้อยแล้ว</a></li>
+                                    <li><a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>" id="font-th"> - รอชำระเงิน</a></li>
+                                    <li><a href="<?= Yii::app()->createUrl('web_system/menager_order/from_show_order_product') ?>" id="font-th"> - รอตรวจสอบยอดเงิน</a></li>
+                                    <li><a href="<?= Yii::app()->createUrl('web_system/menager_order/from_show_order_confrim') ?>" id="font-th"> - รอการจัดส่งสินค้า</a></li>
+                                    <li><a href="<?= Yii::app()->createUrl('web_system/menager_order/from_show_order_success') ?>" id="font-th"> - ส่งสินค้าเรียบร้อยแล้ว</a></li>
                                 </ul>
                             <?php } ?>
                         </li>
@@ -289,7 +298,7 @@
                             <a href="<?php echo Yii::app()->createUrl('frontend/product/show_product_all&type_id=' . $product_types['type_id']) ?>" 
                                class="list-group-item"><span class="glyphicon glyphicon-paperclip"></span> 
                                 <font id="font-th"><?= $product_types['type_name'] ?></font>
-                                <span class="badge" style=" margin-top: 10px;">
+                                <span class="badge" style=" margin-top: 5px;">
                                     <?php echo $product_model->get_count_product_type($product_types['type_id']); ?>
                                 </span>
                             </a>
@@ -368,10 +377,11 @@
                         <?php } ?>
 
 
-                        <ol class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px;">
+                        <ol class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px;" id="font-22">
                             <?php if (isset($this->breadcrumbs)): ?>
                                 <?php
                                 $this->widget('zii.widgets.CBreadcrumbs', array(
+                                    'homeLink' => CHtml::link('หน้าแรก', Yii::app()->createUrl('frontend/main')),
                                     'links' => $this->breadcrumbs,
                                 ));
                                 ?><!-- breadcrumbs -->
