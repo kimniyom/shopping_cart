@@ -52,7 +52,32 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<div class=" panel panel-danger">
+<br/>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-success btn-sm ">เลือกสินค้า <i class="fa fa-check"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-warning btn-sm ">ตรวจสอบที่อยู่ <i class="fa fa-warning"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-danger btn-sm ">ยืนยันการสั่งซื้อ <i class="fa fa-remove"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-danger btn-sm ">แจ้งชำระเงิน <i class="fa fa-remove"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-danger btn-sm ">ตรวจสอบ <i class="fa fa-remove"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-danger btn-sm ">ส่งของ <i class="fa fa-remove"></i></button>
+    </div>
+</div><br/>
+<div style="color: #ff3300;" id="font-rsu-18">
+    *โปรดตรวจสอบรายการสินค้าและที่อยู่ของคุณให้ชัดเจน จากนั้นกดปุ่ม "ยืนยันการสั่งซื้อสินค้า"
+</div>
+<br/>
+<div class=" panel panel-default">
     <div class=" panel-heading">
         <i class="fa fa-cart-plus"></i> รายการสินค้าของคุณ
     </div>
@@ -62,7 +87,7 @@ $this->breadcrumbs = array(
 </div>
 
 
-<div class="panel panel-danger">
+<div class="panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-train"></i>
         ข้อมูลที่อยู่จัดส่ง (กรุณาตรวจสอบความถูกต้อง) 
@@ -77,7 +102,7 @@ $this->breadcrumbs = array(
         if (!empty($confirm)) {
             ?>
             <center>
-                <a href="<?= Yii::app()->createUrl('frontend/orders/payments&order_id='.$order_id) ?>">
+                <a href="<?= Yii::app()->createUrl('frontend/orders/payments&order_id=' . $order_id) ?>">
                     <div class="btn btn-success">ยืนยันการสั่งซื้อสินค้า 
                         <i class="glyphicon glyphicon-share-alt"></i>    
                     </div>

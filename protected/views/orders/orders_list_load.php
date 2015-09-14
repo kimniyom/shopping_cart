@@ -1,4 +1,5 @@
-<table width="100%" class="table table-bordered" id="font-18">
+
+<table width="100%" class="table table-bordered" id="font-20">
     <thead>
         <tr>
             <td>#</td>

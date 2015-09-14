@@ -1,10 +1,40 @@
-<div class="well" id="font-20">
-    ระบบจะทำการล๊อคสินค้าไว้ให้ท่านเป็นเวลา 3 วัน<br/>
+<?php
+$this->breadcrumbs = array(
+    'สรุปรายการสั่งซื้อ',
+);
+?>
+<br/>
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-success btn-sm ">เลือกสินค้า <i class="fa fa-check"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-success btn-sm ">ตรวจสอบที่อยู่ <i class="fa fa-check"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-warning btn-sm ">ยืนยันการสั่งซื้อ <i class="fa fa-warning"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-danger btn-sm ">แจ้งชำระเงิน <i class="fa fa-remove"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-danger btn-sm ">ตรวจสอบ <i class="fa fa-remove"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-danger btn-sm ">ส่งของ <i class="fa fa-remove"></i></button>
+    </div>
+</div><br/>
+
+
+<div class="well" id="font-rsu-18" style=" font-weight: bold; background: #FFF; color: #ff3300;">
+    <img src="<?php echo Yii::app()->baseUrl; ?>/images/notification-icon.png"/><br/>
+    ระบบจะทำการล็อคสินค้าไว้ให้ท่านเป็นเวลา 3 วัน<br/>
     หากท่านไม่ชำระเงินภายในระยะเวลาที่กำหนดระบบจะทำการลบรายการสั่งซื้อของท่าน<br/><br/>
     ท่านสามารถแจ้งการชำระเงินได้ที่เมนู "แจ้งชำระเงิน" หรือคลิกที่นี้
-    <div class="btn btn-success btn-sm">แจ้งการชำระเงินที่นี้</div>
+    <div class="btn btn-success btn-sm"><i class="fa fa-hand-o-up"></i> แจ้งการชำระเงิน</div>
 </div>
 <div class="well" style=" background: #FFF;" id="font-18">
+    <label id="font-rsu-20"><i class="fa fa-home"></i> ที่อยู่จัดส่ง</label><br/>
     <label>
         คุณ <?php echo $address['name'] . ' ' . $address['lname'] ?>
     </label>
@@ -20,49 +50,90 @@
     <br/><br/>
     <label>Tel </label> <?php echo $address['tel'] ?><br/>
     <label>Email </label> <?php echo $address['email'] ?>
+
+    <br/><br/>
+    <label id="font-rsu-20"><i class="fa fa-table"></i> สรุปรายการสั่งซื้อ</label><br/>
+    <table width="100%" class="table table-bordered" id="font-18">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>รูป</td>
+                <td>ชื่อสินค้า</td>
+                <td style="text-align: center;">ราคา</td>
+                <td style="text-align: center;">จำนวน</td>
+                <td style="text-align: center;">ราคารวม</td>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            $totalall = 0;
+            $i = 1;
+            $product_model = new Product();
+            foreach ($product as $products):
+                $img = $product_model->get_last_img($products['product_id']);
+                ?>
+                <tr>
+                    <td><?= $i++ ?></td>
+                    <td style=" width: 10%;">
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>" class="img-resize img-thumbnail" width="100%"/>
+                    </td>
+                    <td><?= $products['product_name']; ?></td>
+                    <td style=" text-align: right;"><?= number_format($products['product_price']); ?></td>
+                    <td style="text-align: center;"><?= $products['product_num']; ?></td>
+                    <td style="text-align: right;"><?= number_format(($products['product_price'] * $products['product_num']), 2); ?></td>
+                    <?php
+                    $total = (($products['product_price'] * $products['product_num']));
+                    $totalall = $totalall + $total;
+                    ?>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+        <tfoot>
+            <tr style="color:#ff3300;">
+                <td colspan="5" align="center"><font style="text-decoration:underline;">รวมค่าสินค้า </font></td>
+                <td style=" text-align: right;"><font style="text-decoration:underline;"><?= number_format($totalall, 2) ?></font> </td>
+            </tr>
+        </tfoot>
+    </table>
+    <center>
+        <a href="<?php echo Yii::app()->createUrl('frontend/orders/Informpayment') ?>">
+            <div class="btn btn-success btn-sm"><i class="fa fa-hand-o-up"></i> แจ้งการชำระเงิน</div>
+        </a>
+    </center>
 </div>
 
-<table width="100%" class="table table-bordered" id="font-18">
-    <thead>
-        <tr>
-            <td>#</td>
-            <td>รูป</td>
-            <td>ชื่อสินค้า</td>
-            <td style="text-align: center;">ราคา</td>
-            <td style="text-align: center;">จำนวน</td>
-            <td style="text-align: center;">ราคารวม</td>
-        </tr>
-    </thead>
-    <tbody>
-        <?php
-        $totalall = 0;
-        $i = 1;
-        $product_model = new Product();
-        foreach ($product as $products):
-            $img = $product_model->get_last_img($products['product_id']);
-            ?>
+<div class="well" style=" background: none;">
+    <label id="font-rsu-20"><i class="fa fa-bank"></i>ชำระเงินผ่านธนาคาร</label>
+    <table class="table table-bordered" id="font-20">
+        <thead>
             <tr>
-                <td><?= $i++ ?></td>
-                <td style=" width: 10%;">
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>" class="img-resize img-thumbnail" width="100%"/>
-                </td>
-                <td><?= $products['product_name']; ?></td>
-                <td style=" text-align: right;"><?= number_format($products['product_price']); ?></td>
-                <td style="text-align: center;"><?= $products['product_num']; ?></td>
-                <td style="text-align: right;"><?= number_format(($products['product_price'] * $products['product_num']), 2); ?></td>
-                <?php
-                $total = (($products['product_price'] * $products['product_num']));
-                $totalall = $totalall + $total;
-                ?>
+                <td colspan="2" style="text-align: center;">ธนาคาร</td>
+                <td style="text-align: center;">เลขที่บัญชี</td>
+                <td>สาขา</td>
+                <td>ชื่อบัญชี</td>
             </tr>
-        <?php endforeach; ?>
-    </tbody>
-    <tfoot>
-        <tr style="color:#ff3300;">
-            <td colspan="5" align="center"><font style="text-decoration:underline;">รวมค่าสินค้า </font></td>
-            <td style=" text-align: right;"><font style="text-decoration:underline;"><?= number_format($totalall, 2) ?></font> </td>
-        </tr>
-    </tfoot>
-</table>
+        </thead>
+        <tbody>
+            <?php
+            $i = 1;
+            foreach ($payment as $rs): $i++;
+                ?>
+                <tr>
+                    <td style="text-align:center;">
+                        <img src="<?php echo Yii::app()->baseUrl . '/images/' . $rs['bank_img']; ?>" width="30"/>
+                    </td>
+                    <td>
+                        <?php echo $rs['bank_name']; ?>
+                    </td>
+                    <td style="text-align: center;"><?php echo $rs['bookbank_number']; ?></td>
+                    <td><?php echo $rs['bank_branch']; ?></td>
+                    <td><?php echo $rs['bookbank_name']; ?></td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
+
+
 
 
