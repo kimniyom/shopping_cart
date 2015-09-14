@@ -39,11 +39,11 @@
 
 <center>
 
-    <div style="padding:10px;">
+    <div style="padding:10px;" id="font-20">
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                <input type="text" id="login_email" name="login_email" class="form-control" placeholder="ENTER..."/>
+                <input type="text" id="login_email" name="login_email" class="form-control" placeholder="EMAIL..."/>
             </div>
         </div>
 

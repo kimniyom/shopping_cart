@@ -23,10 +23,10 @@ $this->breadcrumbs = array(
         <div class="panel panel-default">
 
             <form id="register" name="register" action="<?php echo Yii::app()->createUrl('frontend/main/save_register'); ?>" method="post" role="form" onSubmit="return check_from();">
-                <div class="panel-body">
+                <div class="panel-body" id="font-20">
                     <legend>
                         สมัคสมาชิก<br/>
-                        <p id="fontgreen14">*ข้อมูลของท่านเราจะเก็บเป็นความลับ</p>
+                        <p id="font-20" style=" color: #33cc00;">*ข้อมูลของท่านเราจะเก็บเป็นความลับ</p>
                     </legend>
 
                     <div class="row">
