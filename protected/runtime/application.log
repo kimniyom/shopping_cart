@@ -8489,3 +8489,74 @@ Stack trace:
 REQUEST_URI=/shopping_cart/index.php?r=frontend/user/from_edit_register
 HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/images&product_id=P20150407094310
 ---
+2015/09/15 01:14:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "main_system".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('main_system')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('main_system')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/main/m...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main/main_system
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/order_list&order_id=0000001
+---
+2015/09/15 02:01:36 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: 'undefined-09-15' for column 'date_payment' at row 1. The SQL statement executed was: UPDATE `orders` SET `payment_id`=:payment_id, `money`=:money, `date_payment`=:date_payment, `time_payment`=:time_payment WHERE order_id = '0000001' .
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (151)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/15 02:01:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: 'undefined-09-15' for column 'date_payment' at row 1. The SQL statement executed was: UPDATE `orders` SET `payment_id`=:payment_id, `money`=:money, `date_payment`=:date_payment, `time_payment`=:time_payment WHERE order_id = '0000001' ' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(1285): CDbCommand->execute(Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(151): CDbCommand->update('orders', Array, 'order_id = '000...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionSave_payment()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('save_payment')
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders...')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/save_payment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/confieminformpayment&order_id=0000001
+---
+2015/09/15 02:01:53 [error] [php] Undefined index: order_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php:142)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/save_payment
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (142)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/15 02:02:37 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: 'undefined-09-15' for column 'date_payment' at row 1. The SQL statement executed was: UPDATE `orders` SET `payment_id`=:payment_id, `money`=:money, `date_payment`=:date_payment, `time_payment`=:time_payment WHERE order_id = '0000001' .
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (151)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/15 02:02:37 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: 'undefined-09-15' for column 'date_payment' at row 1. The SQL statement executed was: UPDATE `orders` SET `payment_id`=:payment_id, `money`=:money, `date_payment`=:date_payment, `time_payment`=:time_payment WHERE order_id = '0000001' ' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(1285): CDbCommand->execute(Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(151): CDbCommand->update('orders', Array, 'order_id = '000...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionSave_payment()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('save_payment')
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders...')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/save_payment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/confieminformpayment&order_id=0000001
+---
+2015/09/15 02:05:53 [error] [php] Undefined index: order_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php:155)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/uploadslip&order_id=0000001
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (155)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
