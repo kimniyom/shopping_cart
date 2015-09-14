@@ -137,4 +137,48 @@ class OrdersController extends Controller {
         $this->render("//orders/confieminformpayment", $data);
     }
 
+    //ยืนยันการชำระเงิน
+    public function actionSave_payment() {
+        $order_id = $_POST['order_id'];
+        $columns = array(
+            "payment_id" => $_POST['payment_id'],
+            "money" => $_POST['money'],
+            "date_payment" => $_POST['date_payment'],
+            "time_payment" => $_POST['time_payment']
+        );
+
+        Yii::app()->db->createCommand()
+                ->update("orders", $columns, "order_id = '$order_id' ");
+    }
+
+    public function actionUploadslip() {
+        $order_id = $_GET['order_id'];
+        $targetFolder = Yii::app()->baseUrl. '/uploads/slip'; // Relative to the root
+
+        if (!empty($_FILES)) {
+            $tempFile = $_FILES['Filedata']['tmp_name'];
+            $targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
+            $FileName = time() . $_FILES['Filedata']['name'];
+            $targetFile = rtrim($targetPath, '/') . '/' . $FileName;
+
+            $fileTypes = array('jpg', 'jpeg', 'png'); // File extensions
+            $fileParts = pathinfo($_FILES['Filedata']['name']);
+
+            if (in_array($fileParts['extension'], $fileTypes)) {
+                move_uploaded_file($tempFile, $targetFile);
+
+            //สั่งอัพเดท
+                $columns = array(
+                    "slip" => $FileName
+                );
+
+                Yii::app()->db->createCommand()
+                        ->update("orders", $columns, "order_id = '$order_id' ");
+                echo '1';
+            } else {
+                echo 'Invalid file type.';
+            }
+        }
+    }
+
 }
