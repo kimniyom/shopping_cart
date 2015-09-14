@@ -35,12 +35,42 @@
     }
 </script>
 
-<table class="table table-striped">
+<?php
+$this->breadcrumbs = array(
+    "รอชำระเงิน" => Yii::app()->createUrl('frontend/orders/informpayment'),
+    "แจ้งชำระเงิน"
+);
+?>
+
+<br/>
+
+<div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-success btn-sm ">เลือกสินค้า <i class="fa fa-check"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-success btn-sm ">ตรวจสอบที่อยู่ <i class="fa fa-check"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-success btn-sm ">ยืนยันการสั่งซื้อ <i class="fa fa-check"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-warning btn-sm ">แจ้งชำระเงิน <i class="fa fa-warning"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-danger btn-sm ">ตรวจสอบ <i class="fa fa-remove"></i></button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" class="btn btn-danger btn-sm ">ส่งของ <i class="fa fa-remove"></i></button>
+    </div>
+</div><br/>
+
+<table class="table table-striped" id="font-rsu-18">
     <tr>
-        <td style=" width: 30%;">บัญชีที่โอน</td>
+        <td style=" width: 30%; padding-top: 10%;">บัญชีที่โอน*</td>
         <td>
             <input type="hidden" id="bank_id" name="bank_id"/>
-            <table class="table table-bordered" id="font-18" style=" background: none; margin-bottom: 0px;">
+            <table class="table table-bordered" id="font-rsu-14" style=" background: none; margin-bottom: 0px;">
                 <tbody>
                     <?php
                     foreach ($bank as $banks):
@@ -65,7 +95,7 @@
         </td>
     </tr>
     <tr>
-        <td>วันที่ชำระเงิน</td>
+        <td>วันที่ชำระเงิน*</td>
         <td>
             <div class="col-lg-4" style=" margin-left: 0px; padding-left: 0px;">
                 <select id="day" name="day" class="form-control input-sm">
@@ -130,7 +160,7 @@
         </td>
     </tr>
     <tr>
-        <td>เวลา(โดยประมาณ)</td>
+        <td>เวลา(โดยประมาณ)*</td>
         <td>
 
             <div class="col-lg-4" style=" margin-left: 0px; padding-left: 0px;">
@@ -174,7 +204,7 @@
         </td>
     </tr>
     <tr>
-        <td>จำนวนเงิน</td>
+        <td>จำนวนเงิน*</td>
         <td>
             <div class="col-lg-6" style=" margin-left: 0px; padding-left: 0px;">
                 <input type="text" id="money" name="money" class="form-control input-sm" onkeypress="return chkNumber();"/>
@@ -182,7 +212,7 @@
         </td>
     </tr>
     <tr>
-        <td>หลักฐานการโอน</td>
+        <td>หลักฐานการโอน*</td>
         <td>
             <input type="hidden" id="slip" name="slip" />
             <div class="col-lg-6" style=" margin-left: 0px; padding-left: 0px;">
