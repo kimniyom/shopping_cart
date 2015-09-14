@@ -12,7 +12,7 @@ class Orders {
         $id = $this->Get_last_order($user_id);
         $sql = "SELECT order_id,active FROM orders WHERE id = '$id' ";
         $result = Yii::app()->db->createCommand($sql)->queryRow();
-        if ($result['active'] == '1' || empty($result)) {
+        if ($result['active'] != '0' || empty($result)) {
             $order_id = $this->autoId("orders", 'order_id', '7');
             $columns = array(
                 "order_id" => $order_id,
@@ -90,9 +90,9 @@ class Orders {
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
     }
-    
-     //หาจำนวนการสั่งซื้อในแต่ละเดือน
-    function get_order_month_visit($pid = null){
+
+    //หาจำนวนการสั่งซื้อในแต่ละเดือน
+    function get_order_month_visit($pid = null) {
         $query = "SELECT m.id,m.month_th,
                         IFNULL(Q1.TOTAL,0) AS TOTAL
                         FROM `month` m 
@@ -106,13 +106,13 @@ class Orders {
                         ) Q1 ON m.id = Q1.id
 
                         ORDER BY m.id ";
-        
+
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
     }
-    
+
     //หาจำนวนการสั่งซื้อในแต่ประเภท
-    function get_order_type($pid = null){
+    function get_order_type($pid = null) {
         $query = "SELECT t.type_name,IFNULL(Q1.price_total,0) AS TOTAL
                         FROM product_type t
 
@@ -127,7 +127,17 @@ class Orders {
 
                         ON t.type_id = Q1.type_id 
                         ORDER BY t.type_id";
-        
+
+        $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+
+    //หารายการสั่งซื้อที่ยังไม่โอนเงิน
+    function get_order_payable($pid = null) {
+        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL 
+                        FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                        WHERE pid = '$pid' AND active = '1'
+                        GROUP BY o.order_id  ";
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
     }
