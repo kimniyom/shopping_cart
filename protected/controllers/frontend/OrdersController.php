@@ -103,10 +103,38 @@ class OrdersController extends Controller {
         $pid = Yii::app()->session['pid'];
         $order = new Orders();
         $user = new User();
+
+        //CheckOut Order 
+        $columns = array("active" => '1');
+        Yii::app()->db->createCommand()
+                ->update("orders", $columns, "order_id = '$order_id' ");
+
+        //News Order
+        $max_order_id = $order->Get_status_last_order($pid);
+        Yii::app()->session['order_id'] = $max_order_id;
+
+        $payment = new Payment();
         $data['product'] = $order->_get_list_order($order_id);
         $data['address'] = $user->Get_address($pid);
-        
+        $data['payment'] = $payment->Get_patment();
         $this->render("//orders/payments", $data);
+    }
+
+    //รายการสั่งซื้อรอการชำระเงิน
+    public function actionInformpayment() {
+        $pid = Yii::app()->session['pid'];
+        $order = new Orders();
+        $data['order'] = $order->get_order_payable($pid);
+
+        $this->render("//orders/informpayment", $data);
+    }
+
+    public function actionConfieminformpayment() {
+        $data['order_id'] = $_GET['order_id'];
+        $payment = new Payment();
+        $data['bank'] = $payment->Get_patment();
+
+        $this->render("//orders/confieminformpayment", $data);
     }
 
 }

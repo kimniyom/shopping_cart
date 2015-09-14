@@ -64,7 +64,7 @@ class MainController extends Controller {
         $data['mas_pername'] = $web->pername();
         $data['id'] = $web->autoId('masuser', 'pid', '10');
 
-        $this->render('//frontend/main/register', $data);
+        $this->render('//main/register', $data);
     }
 
     public function actionSave_register() {
