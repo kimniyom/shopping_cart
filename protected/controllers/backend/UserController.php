@@ -75,7 +75,7 @@ class UserController extends Controller {
             $column_type[] = $rs_type['TOTAL'];
         endforeach;
         $column_type_value = implode(",", $column_type);
-        
+
         $chart_type->set_id("chart-type");
         //$chart_type->set_type("bar");
         $chart_type->set_color("#ffff00");
