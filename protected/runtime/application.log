@@ -8469,3 +8469,23 @@ Stack trace:
 REQUEST_URI=/shopping_cart/index.php?r=backend/backend/index
 HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main
 ---
+2015/09/14 18:05:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_admin/check_order".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_admin/check_order
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/user/userall
+---
+2015/09/14 18:06:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "from_edit_register".' in C:\xampp\htdocs\shopping_cart\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(270): CController->missingAction('from_edit_regis...')
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('from_edit_regis...')
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/user/f...')
+#3 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/user/from_edit_register
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/images&product_id=P20150407094310
+---
