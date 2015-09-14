@@ -6,6 +6,16 @@
     src: url('font-th/TH K2D July8 Bold.ttf') format('truetype');
 }
 
+@font-face {
+    font-family:RSU-Th;
+    src: url('rsufont/RSU_BOLD.ttf') format('truetype');
+}
+
+@font-face {
+    font-family:SPMK-Th;
+    src: url('supermarket/supermarket.ttf') format('truetype');
+}
+
 body {
     margin: 0;
     //font-family:Th;
@@ -153,5 +163,12 @@ div.img-resize {
 #font-16{font-size: 16px; font-family: Th;}
 #font-18{font-size: 18px; font-family: Th;}
 #font-20{font-size: 20px; font-family: Th;}
+#font-22{font-size: 22px; font-family: Th;}
+
+#font-rsu-14{font-size: 14px; font-family: RSU-Th;}
+#font-rsu-16{font-size: 16px; font-family: RSU-Th;}
+#font-rsu-18{font-size: 18px; font-family: RSU-Th;}
+#font-rsu-20{font-size: 20px; font-family: RSU-Th;}
+#font-rsu-22{font-size: 22px; font-family: RSU-Th;}
 
 
