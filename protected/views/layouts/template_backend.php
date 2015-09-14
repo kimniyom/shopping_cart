@@ -151,7 +151,7 @@
                            class="list-group-item">
                             <i class="fa fa-check-circle"></i>  ตรวจสอบการสั่งซื้อสินค้า
                             <span class="label label-default" style=" float: right; font-size: 16px;">
-                                <?php echo $product_model->_get_count_order(); ?>
+                                <?php //echo $product_model->_get_count_order(); ?>
                             </span>
                         </a>
                         <a href="<?= Yii::app()->createUrl('web_system/menager_admin/from_confrim_notify') ?>"
