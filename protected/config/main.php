@@ -8,6 +8,7 @@ return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'Kimniyom Shopping',
     // preloading 'log' component
+    'timeZone' => 'Asia/Bangkok',
     'preload' => array('log'),
     // autoloading model and component classes
     'import' => array(
