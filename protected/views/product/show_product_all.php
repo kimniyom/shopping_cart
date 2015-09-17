@@ -70,25 +70,18 @@ $this->breadcrumbs = array(
     $type_name,
 );
 ?>
-
-
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <span class="badge" style=" padding-top: 5px;">
-            <?php echo $type_name ?> จำนวนทั้งหมด 
-            <?php echo $count_product_type; ?>
-        </span>
+    <br/>  
+    <div id="font-rsu-20" style="margin-left:15px; color:red;">
+        สินค้าประเภท <?php echo $type_name ?> จำนวนทั้งหมด 
+        <?php echo $count_product_type; ?>
     </div>
-    <div class="panel-body" style=" padding: 5px;">
-        <div id="results"></div>
-        <div align="center">
-            <button class="load_more btn btn-success" id="load_more_button">
-                <i class="glyphicon glyphicon-th"></i>
-                สินค้าทั้งหมด
-            </button>
-            <div class="animation_image" style="display:none;">
-                <img src="<?php echo Yii::app()->baseUrl; ?>/images/ajax-loader.gif"> Loading...
-            </div>
+    <br/>
+    <div id="results"></div><br/>
+    <div align="center">
+        <button class="load_more btn btn-success" id="load_more_button">
+            <i class="glyphicon glyphicon-th"></i>สินค้าทั้งหมด
+        </button>
+        <div class="animation_image" style="display:none;">
+            <img src="<?php echo Yii::app()->baseUrl; ?>/images/ajax-loader.gif"> Loading...
         </div>
     </div>
-</div>

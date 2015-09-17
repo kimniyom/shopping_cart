@@ -1,7 +1,7 @@
 
 <style type="text/css">
     table tr td{ height:30px;}
-    #im-resize{ width: 80px; height: 75px; padding: 5px; margin-bottom: 5px;}
+    #im-resize{ width: auto; max-height: 75px; padding: 5px; margin-bottom: 5px;}
 </style>
 
 <script type="text/javascript">
@@ -94,7 +94,7 @@
 
 <?php
 $this->breadcrumbs = array(
-    $product['type_name'] => array('frontend/product/show_product_all&type_id=' . $product['type_id']),
+    $product['type_name'] => array('frontend/product/show_product_all/type_id/' . $product['type_id']),
     $product['product_name'],
 );
 ?>
@@ -106,13 +106,16 @@ $config = new Configweb_model();
 
 <div class="well" style=" width:100%; margin-top:20px; background:#FFF; text-align: left;">
     <div class="row">
-
-        <div class="col-lg-4 col-md-12 col-xs-12">
-
-            <font style=" color: #F00; font-size: 24px; font-weight: normal;">
+        <div class="col-lg-12">
+            <font style=" color: #F00; font-size: 24px; font-weight: normal;" id="font-rsu-18">
             <img src="<?php echo Yii::app()->baseUrl; ?>/images/yellow-tag-icon.png"/>
             <?= $product['product_name'] ?>
-            </font><br/>
+            </font>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-lg-4 col-md-12 col-xs-12" id="font-20">
             <b>รหัสสินค้า</b> <?= $product['product_id'] ?><br/>
             <b>ประเภทสินค้า</b> <?= $product['type_name'] ?><br/>
             <b>อัพเดทล่าสุด</b> <?= $config->thaidate($product['d_update']); ?><br/><br/>
@@ -152,7 +155,7 @@ $config = new Configweb_model();
             </center>
         </div>
 
-        <div class="col-lg-8 col-md-12 col-xs-12" style=" padding-top: 20px;">
+        <div class="col-lg-8 col-md-12 col-xs-12" style=" padding-top: 10px;">
             <?php
             $product_model = new Product();
             $img = $product_model->get_last_img($product['product_id']);
@@ -199,29 +202,36 @@ $config = new Configweb_model();
         </div>
 
         <div class="row">
-            <div class=" col-lg-12" style=" text-align: center;">
+            <div class="col-lg-12" style=" text-align: center;">
                 <img src="<?php echo Yii::app()->baseUrl; ?>/images/box-shadow-t.png" class="img-responsive"/>
             </div>
         </div>
     <?php } ?>
 
     <div class="row" style="text-align: center; margin-top: 20px;">
-        <div class="btn-group btn-group-sm" role="group" aria-label="...">
-            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-hand-down"></span> รายละอียด</button>
-            <button type="button" class="btn btn-default"
-                    onclick="get_comment('<?php echo $product['product_id'] ?>');"><span class="glyphicon glyphicon-comment"></span> คำถาม</button>
-            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-usd"></span> วิธีการสั่งซื้อ</button>
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-hand-down"></span> รายละอียด
+                </button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default"
+                    onclick="get_comment('<?php echo $product['product_id'] ?>');">
+                        <span class="glyphicon glyphicon-comment"></span> คำถาม
+                    </button>
+            </div>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-usd"></span> วิธีการสั่งซื้อ</button>
+            </div>
         </div>
     </div>
-    <center>
-        <h4>รายละเอียด</h4>
-    </center>
-    <div class="well" 
-         style="padding: 2px; background: none; border: #bfefff solid 1px; border-radius:5px;   
-         text-align: center;
-         margin-top: 10px; font-size: 16px; padding-left: 15px;" id="etc_product">
+
+    <br/>
+    <div class="row">
+        <p id="font-rsu-20">รายละเอียด</p>
          <?= $product['product_detail'] ?>
-    </div>
+     </div>
 
     <!-- สินค้าที่เกียวข้อง -->
     <div class="panel panel-primary">
@@ -232,7 +242,7 @@ $config = new Configweb_model();
             <div class="row">
                 <?php
                 foreach ($near as $ne):
-                    $link = Yii::app()->createUrl('frontend/product/detail_product&product_id=' . $ne['product_id']);
+                    $link = Yii::app()->createUrl('frontend/product/detail_product', array('product_id' => $ne['product_id']));
                     ?>
                     <div class="col-xs-12 col-md-4 col-lg-4">
                         <a href="<?php echo $link; ?>" class="image-link">
