@@ -18,31 +18,40 @@
 <a href="javascript:void(0);" id="font-head">สินค้ามาใหม่</a>
 <div style=" width: 100%; height: 10px; border-bottom: solid #0063dc 2px; margin-bottom: 5px;"></div>
 <div class="row" style=" margin: 0px;">
+    <ol class="dribbbles group" style="padding-left: 0px;">
     <?php
-    $product = new Product();
-    foreach ($last_product as $last):
-        $img = $product->get_last_img($last['product_id']);
-        $link = Yii::app()->createUrl('frontend/product/detail_product&product_id=' . $last['product_id']);
-        ?>
-        <a href="<?php echo $link; ?>">
-            <div class="col-xs-12 col-md-4 col-lg-4">
+        $product_model = new Product();
+        $i=0;
+        foreach ($last_product as $last):
+            $i++;
+            $img = $product_model->get_last_img($last['product_id']);
+            $link = Yii::app()->createUrl('frontend/product/detail_product',array('product_id' => $last['product_id']));
+            ?>
+            <li id="screenshot-<?php echo $i; ?>" class="col-lg-4 col-md-4 col-sm-6" style="text-align:center; margin-bottom:15px;">
+                    <div class="dribbble" id="box_list_product">
+                        <div class="dribbble-shot">
+                            <div class="dribbble-img">
+                                <a class="dribbble-link" href="/shots/2166663-Retinabbble-Chrome-extension-for-dribbble">
+                                    <div data-picture data-alt="Retinabbble - Chrome extension for dribbble">
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
+                                    </div>
+                                </a>
+                                <a class="dribbble-over" href="<?php echo $link ?>" id="font-rsu-20">    
+                                    <?php echo $last['product_name']; ?>
+                                </a>
+                            </div>
 
-                <div class="thumbnail btn box_product" style="text-align: center;" id="box_product">
-                    <?php if ($img == "") { ?>
-                        <div style="width:120px; height:125px;font-size:36px; text-align:center;">
-                            NO <br />Images</div>
-                    <?php } else { ?>
-                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>" class="img-responsive" id="img"/>
-                    <?php } ?>
+                            <ul class="tools group">
+                                <li style="color:red;text-align:center;">
+                                    <span id="font-22">ราคา <?php echo $last['product_price']; ?> บาท</span>
+                                </li>
+                            </ul>
 
-                    <div class="caption">
-                        <p id="font-product"><?php echo $last['product_name']; ?><br/>
-                            ราคา <?php echo $last['product_price']; ?> บาท</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </a>
-    <?php endforeach; ?>
+                </li>
+        <?php endforeach; ?>
+    </ol>
 </div>
 
 
@@ -52,30 +61,39 @@
 <a href="javascript:void(0);" id="font-head">สินค้าแนะนำ</a>
 <div style=" width: 100%; height: 10px; border-bottom: solid #0063dc 2px; margin-bottom: 5px;"></div>
 <div class="row" style=" margin: 0px;">
+    <ol class="dribbbles group" style="padding-left: 0px;">
     <?php
-    foreach ($sale_product as $sale):
-        $imghost = $product->get_last_img($sale['product_id']);
-        $link = Yii::app()->createUrl('frontend/product/detail_product&product_id=' . $sale['product_id']);
-        ?>
-        <div class="col-xs-12 col-md-4 col-lg-4">
-            <div class="thumbnail btn box_product" style=" text-align: center;" id="box_product">
+        $i=0;
+        foreach ($sale_product as $sale):
+            $i++;
+            $img = $product_model->get_last_img($sale['product_id']);
+            $link = Yii::app()->createUrl('frontend/product/detail_product',array('product_id' => $sale['product_id']));
+            ?>
+            <li id="screenshot-<?php echo $i; ?>" class="col-lg-4 col-md-4 col-sm-6" style="text-align:center; margin-bottom:15px;">
+                    <div class="dribbble" id="box_list_product">
+                        <div class="dribbble-shot">
+                            <div class="dribbble-img">
+                                <a class="dribbble-link" href="/shots/2166663-Retinabbble-Chrome-extension-for-dribbble">
+                                    <div data-picture data-alt="Retinabbble - Chrome extension for dribbble">
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
+                                    </div>
+                                </a>
+                                <a class="dribbble-over" href="<?php echo $link ?>" id="font-rsu-20">    
+                                    <?php echo $sale['product_name']; ?>
+                                </a>
+                            </div>
 
-                <?php if ($img == "") { ?>
-                    <div style="width:120px; height:125px;font-size:36px; text-align:center;">
-                        NO <br />Images</div>
-                <?php } else { ?>
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?= $imghost; ?>" id="img"/>
-                <?php } ?>
+                            <ul class="tools group">
+                                <li style="color:red;text-align:center;">
+                                    <span id="font-22">ราคา <?php echo $sale['product_price']; ?> บาท</span>
+                                </li>
+                            </ul>
 
-                <div class="caption">
-                    <p><?php echo $last['product_name'] ?></p>
-                    <p>
-                        <a href="<?php echo $link; ?>" class="btn btn-warning" role="button">รายละเอียด</a> 
-                    </p>
-                </div>
-            </div>
-        </div>
-    <?php endforeach; ?>
+                        </div>
+                    </div>
+                </li>
+        <?php endforeach; ?>
+</ol>
 </div>
 
 
