@@ -18,7 +18,7 @@
 
 body {
     margin: 0;
-    //font-family:Th;
+    background:url('../images/line-bg-advice.png')repeat-x fixed #fdfbfc;"
 }
 
 body.modal-open #wrap_blur{
@@ -27,6 +27,7 @@ body.modal-open #wrap_blur{
     -o-filter: blur(15px);
     -ms-filter: blur(15px);
     filter: blur(15px);
+    z-index: -5;
 }
 
 
@@ -162,9 +163,14 @@ div.img-resize {
 
 #fontgreen14{ font-size: 14px; color:#33cc00;}
 
-#cart_box{
+.cart_box{
     float: right; margin-top: 0px; padding-top: 15px;
-    position:fixed; top:10px; right:20px;z-index:3;
+    position:fixed; top:10px; right:20px;z-index:1050;
+}
+
+.cart_box_left{
+    float: left; margin-top: 0px; padding-top: 15px;
+    position:fixed; top:10px; left:20px;z-index:1050;
 }
 
 #fontgreen14{ font-size: 14px; color:#33cc00; font-family: Th;}
@@ -179,5 +185,9 @@ div.img-resize {
 #font-rsu-18{font-size: 18px; font-family: RSU-Th;}
 #font-rsu-20{font-size: 20px; font-family: RSU-Th;}
 #font-rsu-22{font-size: 22px; font-family: RSU-Th;}
+
+#content{
+    background:url('images/glass.png'); padding-top:10px; padding-bottom:5px; margin-bottom:25px;
+}
 
 
