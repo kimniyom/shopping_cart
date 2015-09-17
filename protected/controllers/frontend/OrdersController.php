@@ -41,7 +41,10 @@ class OrdersController extends Controller {
     }
 
     public function actionOrder_list() {
-        $data['order_id'] = $_GET['order_id'];
+        $product = new Product();
+        $order_id = $_GET['order_id'];
+        $data['order_id'] = $order_id;
+        $data['count'] = $product->_get_cart_count($order_id);
         $this->render("//orders/orders_list", $data);
     }
 
@@ -54,7 +57,9 @@ class OrdersController extends Controller {
 
     public function actionShow_order_short_list() {
         $order = new Orders();
+        $product = new product();
         $order_id = $_POST['order_id'];
+        $data['count'] = $product->_get_cart_count($order_id);
         $data['product'] = $order->_get_list_order($order_id);
 
         $this->renderPartial("//orders/orders_shout_list", $data);
@@ -100,24 +105,31 @@ class OrdersController extends Controller {
 
     public function actionPayments() {
         $order_id = $_GET['order_id'];
-        $pid = Yii::app()->session['pid'];
-        $order = new Orders();
-        $user = new User();
+        $product = new Product();
+        $count = $product->_get_cart_count($order_id);
 
-        //CheckOut Order 
-        $columns = array("active" => '1');
-        Yii::app()->db->createCommand()
-                ->update("orders", $columns, "order_id = '$order_id' ");
+        if($count  > 0){
+            $pid = Yii::app()->session['pid'];
+            $order = new Orders();
+            $user = new User();
 
-        //News Order
-        $max_order_id = $order->Get_status_last_order($pid);
-        Yii::app()->session['order_id'] = $max_order_id;
+            //CheckOut Order 
+            $columns = array("active" => '1');
+            Yii::app()->db->createCommand()
+                    ->update("orders", $columns, "order_id = '$order_id' ");
 
-        $payment = new Payment();
-        $data['product'] = $order->_get_list_order($order_id);
-        $data['address'] = $user->Get_address($pid);
-        $data['payment'] = $payment->Get_patment();
-        $this->render("//orders/payments", $data);
+            //News Order
+            $max_order_id = $order->Get_status_last_order($pid);
+            Yii::app()->session['order_id'] = $max_order_id;
+
+            $payment = new Payment();
+            $data['product'] = $order->_get_list_order($order_id);
+            $data['address'] = $user->Get_address($pid);
+            $data['payment'] = $payment->Get_patment();
+            $this->render("//orders/payments", $data);
+        } else {
+            $this->render("//orders/basket_null");
+        }
     }
 
     //รายการสั่งซื้อรอการชำระเงิน
@@ -144,7 +156,8 @@ class OrdersController extends Controller {
             "payment_id" => $_POST['payment_id'],
             "money" => $_POST['money'],
             "date_payment" => $_POST['date_payment'],
-            "time_payment" => $_POST['time_payment']
+            "time_payment" => $_POST['time_payment'],
+            "active" => '2'//อัพเดทสถานะเป็นรอตรวจสอบ
         );
 
         Yii::app()->db->createCommand()
@@ -153,7 +166,15 @@ class OrdersController extends Controller {
 
     public function actionUploadslip() {
         $order_id = $_GET['order_id'];
-        $targetFolder = Yii::app()->baseUrl. '/uploads/slip'; // Relative to the root
+        $targetFolder = Yii::app()->baseUrl . '/uploads/slip'; // Relative to the root
+
+        $sqlCkeck = "SELECT slip FROM orders WHERE order_id = '$order_id' ";
+        $rs = Yii::app()->db->createCommand($sqlCkeck)->queryRow();
+        $filename = $targetFolder . '/' . $rs['slip'];
+
+        if (file_exists($filename)) {
+            unlink($filename);
+        }
 
         if (!empty($_FILES)) {
             $tempFile = $_FILES['Filedata']['tmp_name'];
@@ -167,7 +188,7 @@ class OrdersController extends Controller {
             if (in_array($fileParts['extension'], $fileTypes)) {
                 move_uploaded_file($tempFile, $targetFile);
 
-            //สั่งอัพเดท
+                //สั่งอัพเดท
                 $columns = array(
                     "slip" => $FileName
                 );
@@ -180,5 +201,15 @@ class OrdersController extends Controller {
             }
         }
     }
+    
+    //รายการรอการตรวจสอบ
+    public function actionVerify(){
+        $pid = Yii::app()->session['pid'];
+        $order = new Orders();
+        
+        $data['order'] = $order->get_order_verify($pid);
+        $this->render('//orders/verify',$data);
+    }
+
 
 }
