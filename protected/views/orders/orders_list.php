@@ -102,11 +102,17 @@ $this->breadcrumbs = array(
         if (!empty($confirm)) {
             ?>
             <center>
-                <a href="<?= Yii::app()->createUrl('frontend/orders/payments&order_id=' . $order_id) ?>">
+                <?php if($count > 0){ ?>
+                <a href="<?= Yii::app()->createUrl('frontend/orders/payments',array('order_id' => $order_id)) ?>">
                     <div class="btn btn-success">ยืนยันการสั่งซื้อสินค้า 
                         <i class="glyphicon glyphicon-share-alt"></i>    
                     </div>
                 </a>
+                <?php } else { ?>
+                    <center>
+                        <i class="fa fa-warning"></i> ไม่มีสินค้าในรายการสั่งซื้อนี้
+                    </center>
+                <?php } ?>
             </center>
         <?php } else { ?>
             <center>

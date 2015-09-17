@@ -1,9 +1,11 @@
+
 <script type="text/javascript">
 
     $(document).ready(function () {
         $('#file_upload').uploadify({
-            'swf ': '<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.swf',
-            'uploader': '<?php echo Yii::app()->createUrl('frontend/orders/uploadslip&order_id=' . $order_id) ?>',
+            'buttonText' : 'เลือกไฟล์ ...',
+            'swf ': '<?php echo Yii::app()->basePath; ?>/assets/uploadify/uploadify.swf',
+            'uploader': '<?php echo Yii::app()->createUrl('frontend/orders/uploadslip',array('order_id' => $order_id)) ?>',
             'auto': false,
             'fileSizeLimit': '1024KB',
             'fileTypeExts': ' *.jpg; *.png',
@@ -238,7 +240,7 @@ $this->breadcrumbs = array(
             <td>หลักฐานการโอน*</td>
             <td>
                 <input type="hidden" id="slip" name="slip" />
-                <div class="col-lg-6" style=" margin-left: 0px; padding-left: 0px;">
+                <div class="col-lg-12" style=" margin-left: 0px; padding-left: 0px;">
                     <input type="file" name="file_upload" id="file_upload" />
                     (ไฟล์นามสกุล jpg,png ไม่เกิน 1MB)
                 </div>

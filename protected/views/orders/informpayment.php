@@ -61,7 +61,7 @@ $this->breadcrumbs = array(
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title" id="font-20" style=" color: #ff3300;">
-                        <a href="<?php echo Yii::app()->createUrl('frontend/orders/confieminformpayment&order_id=' . $rs['order_id']) ?>">
+                        <a href="<?php echo Yii::app()->createUrl('frontend/orders/confieminformpayment',array('order_id' => $rs['order_id'])) ?>">
                             <div class="btn btn-default btn-xs">
                                 <img src="<?php echo Yii::app()->baseUrl; ?>/images/atm-icon.png"/>
                                 แจ้งชำระรายการนี้
