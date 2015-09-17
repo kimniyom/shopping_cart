@@ -60,7 +60,7 @@ class Product {
     function _get_last_product() {
         $sql = "SELECT *
                 FROM product 
-                ORDER BY id DESC LIMIT 8";
+                ORDER BY id DESC LIMIT 9";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
 
@@ -168,7 +168,7 @@ class Product {
     }
 
     function _get_sale_product() {
-        $sql = "SELECT p.product_id,p.product_name,p.product_detail,COUNT(o.product_id) AS total
+        $sql = "SELECT p.product_id,p.product_name,p.product_price,p.product_detail,COUNT(o.product_id) AS total
                 FROM basket o INNER JOIN product p ON o.product_id = p.product_id
                 GROUP BY o.product_id
                 ORDER BY total DESC 
@@ -178,8 +178,8 @@ class Product {
     }
 
     function _get_search_product($w1 = '', $w3 = '') {
-        $sql = "SELECT p.product_id,product_name,product_detail,product_price,d_update,t.type_id,type_name
-                FROM product p INNER JOIN product_type t ON p.type_id = t.type_id
+        $sql = "SELECT *
+                FROM product
                 WHERE $w1 $w3 ";
 
         return Yii::app()->db->createCommand($sql)->queryAll();

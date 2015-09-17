@@ -142,6 +142,16 @@ class Orders {
         return $result;
     }
 
+    //หารายการรอตรวจสอบยอดเงิน
+    function get_order_verify($pid = null) {
+        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL 
+                        FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                        WHERE pid = '$pid' AND active = '2'
+                        GROUP BY o.order_id  ";
+        $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+
     function autoId($table, $value, $number) {
         $rs = Yii::app()->db->createCommand("Select Max($value)+1 as MaxID from  $table")->queryRow(); //เลือกเอาค่า id ที่มากที่สุดในฐานข้อมูลและบวก 1 เข้าไปด้วยเลย
         $new_id = $rs['MaxID'];
