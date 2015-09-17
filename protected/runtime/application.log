@@ -8560,3 +8560,996 @@ Stack trace:
 REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/uploadslip&order_id=0000001
 in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (155)
 in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/15 09:41:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail_product&product_id=P20150914230331".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('detail_product&...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('detail_product&...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php/frontend/product/detail_product&product_id=P20150914230331
+HTTP_REFERER=http://localhost/shopping_cart/index.php/frontend/main
+---
+2015/09/15 09:41:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "show_product_all&type_id=003".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('show_product_al...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('show_product_al...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php/frontend/product/show_product_all&type_id=003
+HTTP_REFERER=http://localhost/shopping_cart/index.php/frontend/product/detail_product/product_id/P20150914230331
+---
+2015/09/15 09:41:54 [error] [php] Undefined index: type_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php:113)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php/frontend/product/show_product_all/type_id=003
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (113)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/15 09:46:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail_product&product_id=P20150914230331".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('detail_product&...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('detail_product&...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php/frontend/product/detail_product&product_id=P20150914230331
+HTTP_REFERER=http://localhost/shopping_cart/index.php/frontend/main
+---
+2015/09/15 09:46:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "show_product_all&type_id=003".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('show_product_al...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('show_product_al...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php/frontend/product/show_product_all&type_id=003
+HTTP_REFERER=http://localhost/shopping_cart/index.php/frontend/main
+---
+2015/09/15 09:50:36 [error] [php] Undefined index: type_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php:113)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/product/show_product_all/type_id=003
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (113)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/15 09:53:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail_product&product_id=P20150914230331".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('detail_product&...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('detail_product&...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php/frontend/product/detail_product&product_id=P20150914230331
+HTTP_REFERER=http://localhost/shopping_cart/frontend/main
+---
+2015/09/15 09:56:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail_product&product_id=P20150901115748".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('detail_product&...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('detail_product&...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/product/detail_product&product_id=P20150901115748
+HTTP_REFERER=http://localhost/shopping_cart/frontend/product/show_product_all/type_id/005
+---
+2015/09/15 10:04:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "show_product_all&type_id=003".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('show_product_al...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('show_product_al...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/product/show_product_all&type_id=003
+HTTP_REFERER=http://localhost/shopping_cart/frontend/product/detail_product/product_id/P20150914230331
+---
+2015/09/15 10:05:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "show_product_all&type_id=003".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('show_product_al...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('show_product_al...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/product/show_product_all&type_id=003
+HTTP_REFERER=http://localhost/shopping_cart/frontend/product/detail_product/product_id/P20150914230331
+---
+2015/09/15 10:06:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/main_system/from_edit_register".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/main...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/web_system/main_system/from_edit_register
+HTTP_REFERER=http://localhost/shopping_cart/frontend/product/show_product_all/type_id/005
+---
+2015/09/15 10:21:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "confieminformpayment&order_id=0000001".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('confieminformpa...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('confieminformpa...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/orders/confieminformpayment&order_id=0000001
+---
+2015/09/15 10:21:44 [error] [php] Undefined index: order_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php:133)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/orders/confieminformpayment/order_id=0000001
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (133)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/15 10:41:30 [error] [php] Object of class CHttpRequest could not be converted to string (/Applications/MAMP/htdocs/shopping_cart/protected/views/orders/confieminformpayment.php:66)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): OrdersController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): OrdersController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(137): OrdersController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionConfieminformpayment()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/orders/confieminformpayment/order_id/0000001
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/orders/confieminformpayment.php (66)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (137)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/15 10:41:48 [error] [php] Object of class CUrlManager could not be converted to string (/Applications/MAMP/htdocs/shopping_cart/protected/views/orders/confieminformpayment.php:66)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): OrdersController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): OrdersController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(137): OrdersController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionConfieminformpayment()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/orders/confieminformpayment/order_id/0000001
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/orders/confieminformpayment.php (66)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (137)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/15 11:09:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "confieminformpayment&order_id=0000001".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('confieminformpa...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('confieminformpa...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php/frontend/orders/confieminformpayment&order_id=0000001
+---
+2015/09/15 11:11:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/orders?view=C\confieminformpayment
+---
+2015/09/15 11:11:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/orders?view=confieminformpayment
+---
+2015/09/15 11:12:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/orders?view=confieminformpayment
+---
+2015/09/15 11:12:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/orders?view=C\confieminformpayment
+---
+2015/09/15 11:21:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/orders?view=C\confieminformpayment
+---
+2015/09/15 11:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/orders?view=C\confieminformpayment
+---
+2015/09/15 11:47:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "confieminformpayment&order_id=0000001".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('confieminformpa...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('confieminformpa...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php/frontend/orders/confieminformpayment&order_id=0000001
+---
+2015/09/15 17:15:46 [error] [php] move_uploaded_file(/shopping_cart/uploads/slip11885101_1150977474917938_3216362702924249854_n.jpg): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php:204)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/uploadslip_new&order_id=0000001
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (204)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/15 17:16:34 [error] [php] move_uploaded_file(/shopping_cart/uploads/slip/11885101_1150977474917938_3216362702924249854_n.jpg): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php:204)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/uploadslip_new&order_id=0000001
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (204)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/16 00:37:55 [error] [exception.CException] exception 'CException' with message 'OrdersController cannot find the requested view "//order/verify".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:878
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): CController->renderPartial('//order/verify', Array, true)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(199): CController->render('//order/verify', Array)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionVerify()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('verify')
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders...')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/verify
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/confieminformpayment&order_id=0000001
+---
+2015/09/16 01:26:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (51)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Orders.php(141): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(127): Orders->get_order_payable('0000000017')
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionInformpayment()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('informpayment')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders...')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/informpayment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/verify
+---
+2015/09/16 01:28:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (4)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(User))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 /Applications/MAMP/htdocs/shopping_cart/protected/views/orders/orders_list.php(100): CActiveRecord->__construct()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(126): require('/Applications/M...')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', Array, true)
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): CController->renderPartial('//orders/orders...', Array, true)
+#13 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(45): CController->render('//orders/orders...', Array)
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionOrder_list()
+#15 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#16 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#17 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('order_list')
+#19 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders...')
+#20 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#21 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#22 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/order_list&order_id=0000007
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/informpayment
+---
+2015/09/16 01:32:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (4)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Orders.php(141): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(127): Orders->get_order_payable('0000000017')
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionInformpayment()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('informpayment')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/orders...')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/informpayment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/verify
+---
+2015/09/16 02:41:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150914230331
+---
+2015/09/16 02:41:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150914230331
+---
+2015/09/16 02:43:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/main_system/contact".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/main...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/main_system/contact
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main/register
+---
+2015/09/16 02:45:13 [error] [php] Undefined index: type_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php:113)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/show_product_all/type_id=005
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (113)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/16 02:51:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (4)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Product.php(225): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(12): Product->get_images_product('P20150408192149')
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ProductController->actionDetail_product()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('detail_product')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408192149
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/show_product_all/type_id/005
+---
+2015/09/16 02:51:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (4)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Product.php(225): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(12): Product->get_images_product('P20150408192149')
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ProductController->actionDetail_product()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('detail_product')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150408192149
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/show_product_all/type_id/005
+---
+2015/09/16 14:23:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_order/from_show_order_confrim".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_order/from_show_order_confrim
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/verify
+---
+2015/09/16 14:23:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_admin/check_order".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_admin/check_order
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/user/userall
+---
+2015/09/16 14:23:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_admin/from_confrim_notify".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_admin/from_confrim_notify
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/user/userall
+---
+2015/09/16 19:59:49 [error] [php] Undefined index: product_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php:8)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/detail_product/product_id=P20150408193309
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (8)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/16 20:43:11 [error] [php] Undefined variable: drder_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php:47)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/order_list&order_id=0000007
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (47)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/16 20:43:53 [error] [php] Undefined variable: นrder_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php:47)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/order_list&order_id=0000007
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (47)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/16 23:08:51 [error] [php] Undefined variable: count (/Applications/MAMP/htdocs/shopping_cart/protected/views/orders/orders_shout_list.php:40)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): OrdersController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(63): OrdersController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionShow_order_short_list()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/show_order_short_list
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/orders/orders_shout_list.php (40)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (63)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/16 23:09:01 [error] [php] Undefined index: order_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php:60)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/show_order_short_list
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (60)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/16 23:10:04 [error] [php] Undefined variable: count (/Applications/MAMP/htdocs/shopping_cart/protected/views/orders/orders_shout_list.php:40)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): OrdersController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(63): OrdersController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionShow_order_short_list()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/show_order_short_list
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/orders/orders_shout_list.php (40)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (63)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/16 23:47:11 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "creareUrl".' in /Applications/MAMP/htdocs/shopping_cart/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/webapp.php(650): CComponent->__call('creareUrl', Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/webapp.php(650): CWebApplication->creareUrl('frontend/produc...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(126): require('/Applications/M...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', Array, true)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(784): CBaseController->renderFile('/Applications/M...', Array, true)
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php(15): CController->render('//main/home', Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): MainController->actionIndex()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/main')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150607151036
+---
+2015/09/16 23:47:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('search')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('search')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/search&search=sfsd
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main
+---
+2015/09/16 23:48:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('search')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('search')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/search&search=4234
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main
+---
+2015/09/17 00:04:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150407094310
+---
+2015/09/17 00:05:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150407094310
+---
+2015/09/17 00:11:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150407094310
+---
+2015/09/17 00:11:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150407094310
+---
+2015/09/17 00:11:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150407094310
+---
+2015/09/17 00:11:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150407094310
+---
+2015/09/17 00:13:50 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (60)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Product.php(225): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(12): Product->get_images_product('P20150914230331')
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ProductController->actionDetail_product()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('detail_product')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150914230331
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/show_product_all&type_id=003
+---
+2015/09/17 00:24:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150914230331
+---
+2015/09/17 00:28:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/main_system/contact".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/main...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/main_system/contact
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/order_list&order_id=0000007
+---
+2015/09/17 00:29:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150607151036
+---
+2015/09/17 10:04:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('search')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('search')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/search&search=&type=004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/show_product_all&type_id=005
+---
+2015/09/17 10:04:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('search')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('search')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/search&search=&type=004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/show_product_all&type_id=005
+---
+2015/09/17 10:05:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('search')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('search')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/search&search=&type=004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/show_product_all&type_id=005
+---
+2015/09/17 10:05:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "search".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('search')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('search')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/search&search=&type=004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/show_product_all&type_id=005
+---
+2015/09/17 10:23:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "product".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('product')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('product')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/search...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=003
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/show_product_all&type_id=005
+---
+2015/09/17 10:23:27 [error] [php] Undefined index: type (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php:8)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SearchController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SearchController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=003
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (8)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 10:23:46 [error] [php] Undefined variable: type_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php:12)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SearchController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SearchController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=003
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (12)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 10:23:48 [error] [php] Undefined variable: type_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php:12)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SearchController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SearchController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=003
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (12)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 10:24:01 [error] [php] Undefined variable: roduce (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php:24)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SearchController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SearchController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=003
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (24)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 10:24:12 [error] [php] Undefined variable: produce (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php:24)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SearchController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SearchController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=003
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (24)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 10:24:24 [error] [php] Undefined variable: produce (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php:24)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SearchController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SearchController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=003
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (24)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 10:24:26 [error] [php] Undefined variable: produce (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php:24)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SearchController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SearchController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=003
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (24)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 10:25:17 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'produce_name' in 'where clause'. The SQL statement executed was: SELECT *
+                FROM product
+                WHERE  1=1   AND produce_name LIKE '%conves%'  .
+in /Applications/MAMP/htdocs/shopping_cart/protected/models/product.php (185)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (24)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 10:25:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'produce_name' in 'where clause'. The SQL statement executed was: SELECT *
+                FROM product
+                WHERE  1=1   AND produce_name LIKE '%conves%'  ' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/models/product.php(185): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php(24): Product->_get_search_product(' 1=1 ', ' AND produce_na...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SearchController->actionProduct()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('product')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/search...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=conves&type=
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/search/product&search=&type=005
+---
+2015/09/17 11:08:53 [error] [php] Undefined variable: i (/Applications/MAMP/htdocs/shopping_cart/protected/views/search/product.php:26)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SearchController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SearchController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php(26): SearchController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SearchController->actionProduct()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SearchController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SearchController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=005
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/search/product.php (26)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (26)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 11:09:21 [error] [php] include(Url.php): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/shopping_cart/framework/YiiBase.php:427)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/protected/views/search/product.php(34): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(126): require()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(95): SearchController->renderInternal()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SearchController->renderFile()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SearchController->renderPartial()
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php(26): SearchController->render()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SearchController->actionProduct()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SearchController->runAction()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SearchController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=005
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/search/product.php (34)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (26)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 11:40:33 [error] [php] Undefined index: ค้นหาสินค้า (/Applications/MAMP/htdocs/shopping_cart/protected/views/search/product.php:3)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SearchController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SearchController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php(26): SearchController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SearchController->actionProduct()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SearchController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SearchController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SearchController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/search/product&search=&type=005
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/search/product.php (3)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php (26)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 13:05:43 [error] [php] Undefined variable: product (/Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php:66)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): MainController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): MainController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php(15): MainController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): MainController->actionIndex()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): MainController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): MainController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): MainController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php (66)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php (15)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 13:06:44 [error] [php] Undefined index: product_price (/Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php:88)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): MainController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): MainController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php(15): MainController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): MainController->actionIndex()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): MainController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): MainController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): MainController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php (88)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php (15)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 13:07:20 [error] [php] Undefined index: product_price (/Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php:88)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): MainController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): MainController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php(15): MainController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): MainController->actionIndex()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): MainController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): MainController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): MainController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php (88)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php (15)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/09/17 13:16:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150607151036
+---
+2015/09/17 13:16:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "comment/get_comment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('comment/get_com...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=comment/get_comment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail_product&product_id=P20150607151036
+---
+2015/09/17 13:16:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_product/from_search_product".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_product/from_search_product
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main/register
+---
+2015/09/17 13:30:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_order/from_show_order_confrim".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_order/from_show_order_confrim
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/confieminformpayment&order_id=0000003
+---
+2015/09/17 14:31:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/main_system/from_edit_register".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/main...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/main_system/from_edit_register
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/verify
+---
