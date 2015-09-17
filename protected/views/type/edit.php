@@ -67,7 +67,7 @@ $this->breadcrumbs = array(
                 <td><?php echo $rs['type_id'] ?></td>
                 <td><?php echo $rs['type_name'] ?></td>
                 <td style=" text-align: center;">
-                    <a href="<?php echo Yii::app()->createUrl('backend/typeproduct/edit&id=' . $rs['id']) ?>">
+                    <a href="<?php echo Yii::app()->createUrl('backend/typeproduct/edit',array('id' => $rs['id'])) ?>">
                         <div class="btn btn-default btn-xs"><i class="glyphicon glyphicon-edit"></i> แก้ไข</div></a>
                     <div class="btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i> ลบ</div>
                 </td>
