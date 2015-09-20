@@ -4,13 +4,6 @@
 // Time : 14.23.00
 
 /******************************************* เช็คตัวเลข *************************************************/
-function chkNumber(ele) {
-    var vchar = String.fromCharCode(event.keyCode);
-    if ((vchar < '0' || vchar > '9') && (vchar != '.'))
-        return false;
-    ele.onKeyPress = vchar;
-}
-
 
 /********************************************* Function เช็คค่าว่างหน้า From register *****************************/
 function check_from() {
@@ -33,7 +26,7 @@ function check_from() {
         } else if (sex.value == '') {
             alert("ยังไม่ได้เลือกเพศ");
             return false;
-        } else if (tel.value == '' || tel.length != '10') {
+        } else if (tel.value == '') {
             tel.focus();
             return false;
         }
