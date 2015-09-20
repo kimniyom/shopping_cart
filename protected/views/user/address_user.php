@@ -8,6 +8,7 @@
     }
 
     function edit_address() {
+        $("#show_address").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
         var url = "<?php echo Yii::app()->createUrl('frontend/user/get_address') ?>";
         var pid = "<?php echo Yii::app()->session['pid'] ?>";
         var data = {pid: pid};

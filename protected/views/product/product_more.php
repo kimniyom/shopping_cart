@@ -11,7 +11,7 @@
                     <div class="dribbble" id="box_list_product">
                         <div class="dribbble-shot">
                             <div class="dribbble-img">
-                                <a class="dribbble-link" href="/shots/2166663-Retinabbble-Chrome-extension-for-dribbble">
+                                <a class="dribbble-link" href="<?php echo $link; ?>">
                                     <div data-picture data-alt="Retinabbble - Chrome extension for dribbble">
                                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
                                     </div>

@@ -1,4 +1,3 @@
-
 <style type="text/css">
     table tr td{ height:30px;}
     #im-resize{ width: auto; max-height: 75px; padding: 5px; margin-bottom: 5px;}
@@ -25,6 +24,7 @@
         $.post(url, data,
                 function (success) {
                     //alert('เพิ่มสินค้าในตะกร้าแล้ว');
+                    $("#num").val(1);
                     Add_cart_success();
                     //window.location.reload();
                 }
@@ -74,6 +74,7 @@
         }
         //});
     }
+
 </script>
 
 <script type="text/javascript">
@@ -122,12 +123,15 @@ $config = new Configweb_model();
             <div class="row">
                 <div class="well">
                     <?php if (Yii::app()->session['status'] != '') { ?>
-
                         <table style=" width: 100%;">
                             <tr>
                                 <td><b style=" font-size: 16px;">จำนวน</b></td>
                                 <td>
-                                    <input type="text" class="form-control" id="num" value="1" style="text-align: center; border: #F00 solid 2px; height: 43px; font-size: 16px;"/>
+                                    <select id="num" name="num" class="form-control">
+                                        <?php for($i = 1; $i <= 100;$i++){ ?>
+                                            <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                        <?php } ?>
+                                    </select>
                                 </td>
                                 <td style=" text-align: center;">
                                     <button class="btn btn-danger add-to-cart" type="button"
@@ -208,59 +212,70 @@ $config = new Configweb_model();
         </div>
     <?php } ?>
 
-    <div class="row" style="text-align: center; margin-top: 20px;">
-        <div class="btn-group btn-group-justified" role="group" aria-label="...">
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default">
-                    <span class="glyphicon glyphicon-hand-down"></span> รายละอียด
-                </button>
+    <div class="row">
+
+        <ul class="nav nav-tabs" role="tablist" id="font-rsu-18">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">รายละเอียด</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ความคิดเห็น</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">วิธีการสั่งซื้อ</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content" style=" border:solid 1px #dddddd; border-top:none; padding: 10px;">
+            <div role="tabpanel" class="tab-pane active" id="home"> 
+                <p id="font-rsu-20">รายละเอียด</p>
+                <?= $product['product_detail'] ?>
             </div>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default"
-                    onclick="get_comment('<?php echo $product['product_id'] ?>');">
-                        <span class="glyphicon glyphicon-comment"></span> คำถาม
-                    </button>
-            </div>
-            <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-usd"></span> วิธีการสั่งซื้อ</button>
-            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">...</div>
+            <div role="tabpanel" class="tab-pane" id="messages">...</div>
         </div>
     </div>
+
 
     <br/>
-    <div class="row">
-        <p id="font-rsu-20">รายละเอียด</p>
-         <?= $product['product_detail'] ?>
-     </div>
+
 
     <!-- สินค้าที่เกียวข้อง -->
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            สินค้าใกล้เคียง
-        </div>
-        <div class="panel-body">
-            <div class="row">
-                <?php
-                foreach ($near as $ne):
-                    $link = Yii::app()->createUrl('frontend/product/detail_product', array('product_id' => $ne['product_id']));
-                    ?>
-                    <div class="col-xs-12 col-md-4 col-lg-4">
-                        <a href="<?php echo $link; ?>" class="image-link">
-                            <div class="thumbnail btn" style=" text-align: center;" id="box_product">
-                                <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $ne['images']; ?>" id="img"/>
-                                <div class="caption">
-                                    <p style="color: #ff0000; font-size: 16px;">
-                                        <?php echo $ne['product_name']; ?><br/>
-                                        ราคา <b><?php echo $ne['product_price']; ?></b> บาท
-                                    </p>
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                สินค้าใกล้เคียง
+            </div>
+            <div class="panel-body">
+                <ol class="dribbbles group" style="padding-left: 0px;">
+                    <?php
+                    $i = 0;
+                    foreach ($near as $ne):
+                        $i++;
+                        $link = Yii::app()->createUrl('frontend/product/detail_product', array('product_id' => $ne['product_id']));
+                        $img_n = $product_model->get_last_img($ne['product_id']);
+                        ?>
+                        <li id="screenshot-<?php echo $i; ?>" class="col-lg-4 col-md-4 col-sm-6" style="text-align:center; margin-bottom:15px;">
+                            <div class="dribbble" id="box_list_product">
+                                <div class="dribbble-shot">
+                                    <div class="dribbble-img">
+                                        <a class="dribbble-link" href="<?php echo $link; ?>">
+                                            <div data-picture data-alt="kimniyom">
+                                                <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img_n; ?>"/>
+                                            </div>
+                                        </a>
+                                        <a class="dribbble-over" href="<?php echo $link ?>" id="font-rsu-20">    
+                                            <?php echo $ne['product_name']; ?>
+                                        </a>
+                                    </div>
+
+                                    <ul class="tools group">
+                                        <li style="color:red;text-align:center;">
+                                            <span id="font-22">ราคา <?php echo $ne['product_price']; ?> บาท</span>
+                                        </li>
+                                    </ul>
 
                                 </div>
-                            </div></a>
-
-                    </div>
-                <?php endforeach; ?>
+                            </div>
+                        </li>
+                    <?php endforeach; ?>
+                </ol>
             </div>
         </div>
     </div>
-
 </div>

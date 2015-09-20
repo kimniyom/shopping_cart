@@ -18,12 +18,11 @@ $config = new Configweb_model();
     <div class="panel-heading">
         <i class="fa fa-user"></i> ID <?php echo $user['pid'] ?>
     </div>
-    <div class="row" id="font-th" style="margin:0px;">
+    <div class="row" style="margin:0px;">
         <div class="col-md-3 col-lg-3" style="text-align: center;">
-
             <?php
-            if (isset($rs['images'])) {
-                $img_profile = "profile/" . $rs['images'];
+            if (!empty($user['images'])) {
+                $img_profile = "uploads/profile/" . $user['images'];
             } else {
                 if ($user['sex'] == 'ชาย') {
                     $img_profile = "images/Big-user-icon.png";
@@ -34,13 +33,22 @@ $config = new Configweb_model();
                 }
             }
             ?>
-            <br/>
-            <img src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img_profile; ?>" class="img-responsive"/><br/>
-            <?php echo $user['alias']; ?><br/>
-            เป็นสมาชิกเมื่อ <br/><?php echo $user['create_date']; ?>
+            <center>
+                <img src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img_profile; ?>" class="img-responsive img-thumbnail" id="img_profile" style=" margin-top: 5px; max-height: 200px;"/>
+                <br/><br/>
+                <div class="well" style="border-radius:0px; text-align: left; padding-left: 30px; padding-bottom: 0px;">
+                    <input type="file" name="file_upload" id="file_upload" />
+                    <p id="font-16" style=" color: #ff0000; text-align: center; margin-bottom: 0px;">(ไม่เกิน 2MB)</p>
+                </div>
+            </center>
+            <div id="font-18" style="color: #ff6600;">
+                <?php echo $user['alias']; ?><br/>
+                เป็นสมาชิกเมื่อ <br/><?php echo $config->thaidate($user['create_date']); ?>
+            </div>
         </div>
-        <div class="col-md-9 col-lg-9">
-            <div class="well" style=" margin: 5px;">
+        <div class="col-md-9 col-lg-9" style="padding-right: 0px;">
+            <div class="well" style="margin: 5px; background: none;" id="font-20">
+                <div class="btn btn-default btn-sm pull-right" id="font-rsu-14" onclick="edit_profile();">แก้ไขข้อมูล</div>
                 ชื่อ - สกุล <p class="label" id="font-18"><?php echo $user['name'] . ' ' . $user['lname'] ?></p><br/>
                 นามแฝง <p class="label" id="font-18"><?php
                     if (isset($user['alias'])) {
@@ -80,6 +88,7 @@ $config = new Configweb_model();
                     ?></p><br/><br/>
 
                 ที่อยู่ <br/>
+                <div class="btn btn-default btn-sm pull-right" id="font-rsu-14" onclick="edit_address();">แก้ไขที่อยู่</div>
                 <ul style=" padding-top: 5px;">
                     <?php
                     echo "<li>เลขที่ ";
@@ -142,7 +151,7 @@ $config = new Configweb_model();
             <i class="fa fa-list-alt"></i> ประวัติการซื้อสินค้า
         </div>
         <?php if (!empty($order)) { ?>
-            <table class="table">
+            <table class="table" id="font-20">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -169,14 +178,14 @@ $config = new Configweb_model();
                             <td><?php echo $orders['order_id']; ?></td>
                             <td style="text-align: center;"><?php echo $config->thaidate($orders['order_date']); ?></td>
                             <td style="text-align: center;"><?php echo $orders['product_total']; ?></td>
-                            <td style="text-align: right; background: #22282e; color: #ff0000;"><?php echo number_format($orders['price_total'], 2); ?></td>
+                            <td style="text-align: right; background: #eaeaea; color: #ff0000;"><?php echo number_format($orders['price_total'], 2); ?></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="5" style="text-align:center; background: #22282e;"><label>รวม</label></td>
-                        <td style="text-align:right; background: #1c1e22; color: #ff0000;"><label><?php echo number_format($sumprice, 2); ?></label></td>
+                        <td colspan="5" style="text-align:center; background: #eaeaea;"><label>รวม</label></td>
+                        <td style="text-align:right; background: #999999; color: #ffff00;"><label><?php echo number_format($sumprice, 2); ?></label></td>
                     </tr>
                 </tfoot>
             </table>
@@ -204,31 +213,50 @@ $config = new Configweb_model();
 
 </div>
 
-<!-- Dialog Basket -->
-<div class="modal fade" id="popup_basket">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title"><i class="fa fa-cart-arrow-down"></i> รายการสินค้า <font id="h_order"></font></h4>
-            </div>
-
-            <div id="basket"></div>
-
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
 <script type="text/javascript">
+    $(document).ready(function () {
+        $('#file_upload').uploadify({
+            'buttonText': 'เลือกรูปภาพ ...',
+            //'swf ': '<?//php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.swf',
+            'sef': '<?php echo Yii::app()->getRequest()->serverName . "/shopping_cart/assets/uploadify/uploadify.swf?preventswfcaching=1442560451655"; ?>',
+            'uploader': '<?php echo Yii::app()->createUrl('frontend/user/save_upload', array('pid' => $user['pid'])) ?>',
+            'auto': true,
+            'fileSizeLimit': '2MB',
+            'fileTypeExts': ' *.jpg; *.png',
+            'uploadLimit': 1,
+            'onUploadSuccess': function (data) {
+                window.location.reload();
+            }
+        });
+    });
 
     function Get_list_basket(order_id) {
         $("#h_order").text(order_id);
-        var url = "<?php echo Yii::app()->createUrl('backend/orders/get_list_basket') ?>";
+        var url = "<?php echo Yii::app()->createUrl('frontend/orders/get_list_basket') ?>";
         var data = {order_id: order_id};
         $.post(url, data, function (result) {
             $("#basket").html(result);
             $("#popup_basket").modal();
+        });
+    }
+
+    function upload_profile(pid) {
+        var url = "<?php echo Yii::app()->createUrl('frontend/user/upload_profile') ?>";
+        var data = {pid: pid};
+        $.post(url, data, function (result) {
+            $("#upload_profile").html(result);
+            $("#popup_upload").modal();
+        });
+    }
+
+    function edit_address() {
+        $("#show_address").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
+        var url = "<?php echo Yii::app()->createUrl('frontend/user/get_address') ?>";
+        var pid = "<?php echo Yii::app()->session['pid'] ?>";
+        var data = {pid: pid};
+        $.post(url, data, function (result) {
+            $("#edit_address").modal();
+            $("#show_address").html(result);
         });
     }
 </script>

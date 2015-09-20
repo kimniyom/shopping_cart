@@ -78,8 +78,8 @@ $this->breadcrumbs = array(
     <br/>
     <div id="results"></div><br/>
     <div align="center">
-        <button class="load_more btn btn-success" id="load_more_button">
-            <i class="glyphicon glyphicon-th"></i>สินค้าทั้งหมด
+        <button class="load_more btn btn-default" id="load_more_button">
+            สินค้าทั้งหมด <i class="fa fa-angle-down"></i>
         </button>
         <div class="animation_image" style="display:none;">
             <img src="<?php echo Yii::app()->baseUrl; ?>/images/ajax-loader.gif"> Loading...

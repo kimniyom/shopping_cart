@@ -128,8 +128,6 @@ $this->breadcrumbs = array(
                 </div>
             </div>
 
-
-
         <?php endforeach; ?>
 
     </div>

@@ -4,7 +4,7 @@
     $(document).ready(function () {
         $('#file_upload').uploadify({
             'buttonText' : 'เลือกไฟล์ ...',
-            'swf ': '<?php echo Yii::app()->basePath; ?>/assets/uploadify/uploadify.swf',
+            'swf ': '<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.swf',
             'uploader': '<?php echo Yii::app()->createUrl('frontend/orders/uploadslip',array('order_id' => $order_id)) ?>',
             'auto': false,
             'fileSizeLimit': '1024KB',
