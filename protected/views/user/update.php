@@ -4,25 +4,16 @@
         $("#sex").val(sex);
     }
 </script>
-<?php $web = new Configweb_model(); ?>
-
-<center>
-    <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>"/><br/>
-    <h4><?php echo $web->get_webname(); ?></h4>
-</center>
+<?php
+    $web = new Configweb_model();
+?>
 
 <div class="row" style=" margin: 0px;">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-8">
+    <div class="col-sm-12">
         <div class="panel panel-default">
 
             <form id="register" name="register" action="<?php echo Yii::app()->createUrl('frontend/main/save_register'); ?>" method="post" role="form" onSubmit="return check_from();">
-                <div class="panel-body" id="font-20">
-                    <legend>
-                        สมัคสมาชิก<br/>
-                        <p id="font-20" style=" color: #33cc00;">*ข้อมูลของท่านเราจะเก็บเป็นความลับ</p>
-                    </legend>
-
+                <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-12">
                             <label>รหัสสมาชิก</label>
@@ -30,7 +21,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="text" id="pid" name="pid" class="form-control input-sm" value="<?php echo $id; ?>" readonly/>
+                            <input type="text" id="pid" name="pid" class="form-control input-sm" value="<?php echo $pid; ?>" readonly/>
                         </div>
                     </div>
 
@@ -41,7 +32,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="text" id="alias" name="alias" class="form-control input-sm" placeholder="ชื่อที่ใช้แสดง"/>
+                            <input type="text" id="alias" name="alias" value="<?php echo $user['alias'] ?>" class="form-control input-sm" placeholder="ชื่อที่ใช้แสดง"/>
                         </div>
                     </div>
 
@@ -52,34 +43,22 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="email" id="email" name="email" class="form-control input-sm" placeholder="ex. xxxxxxxx_122@gmail.com"/>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="col-sm-3">
-                            <label>รหัสผ่าน</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <input type="password" id="password" name="password" class="form-control input-sm" maxlength="8" placeholder="อักขระ A-Z,a-z,0-9 ความยาว 6-8 ตัว"/>
+                            <input type="email" id="email" name="email" value="<?php echo $user['email'] ?>" class="form-control input-sm" placeholder="ex. xxxxxxxx_122@gmail.com"/>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <label>ชื่อของคุณ</label>
+                            <label>ชื่อ - นามสกุล</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <input type="text" id="name" name="name" class="form-control input-sm" placeholder="ชื่อจริง"/>
+                            <input type="text" id="name" name="name" value="<?php echo $user['name'] ?>" class="form-control input-sm" placeholder="ชื่อจริง"/>
                         </div>
 
                         <div class="col-sm-6">
-                            <input type="text" id="lname" name="lname" class="form-control input-sm" placeholder="นามสกุล"/>
+                            <input type="text" id="lname" name="lname" value="<?php echo $user['lname'] ?>" class="form-control input-sm" placeholder="นามสกุล"/>
                         </div>
                     </div>
 
@@ -131,13 +110,17 @@
                         </div>
                     </div>
 
-                    <input type="hidden" id="sex" name="sex"/>
+                    <input type="hidden" id="sex" name="sex" value="<?php echo $user['set_status'] ?>"/>
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                 <div class="btn-group" role="group">
                                     <div type="button" class="well well-sm" style=" width: 100%; text-align: center;">
-                                        <input type="radio" name="s_sex" onclick="set_sex('1');"/>
+                                        <input type="radio" name="s_sex"  onclick="set_sex('M');" <?php
+                                        if ($user['set_status'] == 'M') {
+                                            echo "checked='checked'";
+                                        }
+                                        ?>/>
                                         ผู้ชาย
                                         <i class="fa fa-mars" style=" color: #33cc00;"></i>
                                     </div>
@@ -145,7 +128,11 @@
 
                                 <div class="btn-group" role="group">
                                     <div type="button" class="well well-sm" style=" width: 100%; text-align: center;">
-                                        <input type="radio" name="s_sex" onclick="set_sex('2');"/>
+                                        <input type="radio" name="s_sex" onclick="set_sex('F');" <?php
+                                        if ($user['set_status'] == 'F') {
+                                            echo "checked='checked'";
+                                        }
+                                        ?>/>
                                         ผู้หญิง
                                         <i class="fa fa-venus" style=" color: #ff66ff;"></i>
                                     </div>
@@ -164,7 +151,7 @@
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                    <input type="text" id="tel" name="tel" class="form-control" maxlength="10" placeholder="กรอกตัวเลข 10 หลักเท่านั้น" onkeypress="return chkNumber();"/>
+                                    <input type="text" id="tel" name="tel" value="<?php echo $user['tel'] ?>" class="form-control" maxlength="10" placeholder="กรอกตัวเลข 10 หลักเท่านั้น" onkeypress="return chkNumber();"/>
                                 </div>
                             </div>
                         </div>
@@ -177,7 +164,6 @@
             </form>
         </div>
     </div>
-    <div class="col-sm-2"></div>
 </div>
 
 

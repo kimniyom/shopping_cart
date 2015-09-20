@@ -48,7 +48,7 @@ $config = new Configweb_model();
         </div>
         <div class="col-md-9 col-lg-9" style="padding-right: 0px;">
             <div class="well" style="margin: 5px; background: none;" id="font-20">
-                <div class="btn btn-default btn-sm pull-right" id="font-rsu-14" onclick="edit_profile();">แก้ไขข้อมูล</div>
+                <div class="btn btn-default btn-sm pull-right" id="font-rsu-14" onclick="popup_edit_profile();">แก้ไขข้อมูล</div>
                 ชื่อ - สกุล <p class="label" id="font-18"><?php echo $user['name'] . ' ' . $user['lname'] ?></p><br/>
                 นามแฝง <p class="label" id="font-18"><?php
                     if (isset($user['alias'])) {
@@ -257,6 +257,17 @@ $config = new Configweb_model();
         $.post(url, data, function (result) {
             $("#edit_address").modal();
             $("#show_address").html(result);
+        });
+    }
+
+    function popup_edit_profile() {
+        $("#update_profile").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
+        var url = "<?php echo Yii::app()->createUrl('frontend/user/update') ?>";
+        var pid = "<?php echo Yii::app()->session['pid'] ?>";
+        var data = {pid: pid};
+        $.post(url, data, function (result) {
+            $("#popup_update_profile").modal();
+            $("#update_profile").html(result);
         });
     }
 </script>
