@@ -62,6 +62,7 @@ class User extends CActiveRecord {
                     m.pid,
                     m.alias,
                     IF(sex = 'M','ชาย','หญิง') AS sex,
+                    sex AS set_status,
                     a.number,
                     a.building,
                     a.class,
