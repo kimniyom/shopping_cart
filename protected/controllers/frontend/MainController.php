@@ -90,7 +90,7 @@ class MainController extends Controller {
         Yii::app()->db->createCommand()
                 ->insert("masuser", $columns);
 
-        $this->redirect(array('main/register_success'));
+        $this->redirect(array('frontend/main/register_success'));
     }
 
     public function actionRegister_success() {

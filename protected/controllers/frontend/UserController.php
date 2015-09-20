@@ -208,4 +208,18 @@ class UserController extends Controller {
         }
     }
 
+    public function actionUpdate() {
+        $use = new User();
+
+        $pid = $_POST['pid'];
+        $data['user'] = $use->Get_detail($pid);
+        $datas = $data['user'];
+        $date = $datas['birth'];
+        $data['day'] = substr($date, 0, 4);
+        $data['month'] = substr($date, 5, 2);
+        $data['year'] = substr($date, 8, 2);
+        $data['pid'] = $pid;
+        $this->renderPartial('//user/update', $data);
+    }
+
 }
