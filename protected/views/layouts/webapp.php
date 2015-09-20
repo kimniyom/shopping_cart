@@ -15,8 +15,8 @@
 
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/css/system.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/bootstrap/css/bootstrap.css" type="text/css" media="all" />
-        
-        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/bootstrap/css/bootstrap-readable.css" type="text/css" media="all" />
+
+        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/bootstrap/css/bootstrap-theme.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/css/cart.css" type="text/css" media="all" />
 
         <script src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/js/jquery-1.9.1.js" type="text/javascript"></script>
@@ -41,8 +41,8 @@
         <!-- highcharts -->
         <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/highcharts.js"></script>
         <!--
-        <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/themes/dark-unica.js"></script>
-    -->
+        <script src="<//?= Yii::app()->baseUrl; ?>/assets/highcharts/themes/dark-unica.js"></script>
+        -->
 
         <!-- JQuery UI -->
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/css/Aristo/Aristo.css" />
@@ -70,63 +70,7 @@
             }
         </script>
 
-        <script type="text/javascript">
-            function login() {
-                var url = "<?php echo Yii::app()->createUrl('frontend/main/from_login') ?>";
-                $("#from_Login").load(url);
-                $("#Login").modal();
-            }
-        </script>
 
-        <script type="text/javascript">
-            $(document).ready(function() {
-
-                if($(window).width() > 786){
-                    $('#cart_box').removeClass('cart_box_left');
-                    $('#cart_box').addClass('cart_box');
-                  } else {
-                    $('#cart_box').hide();
-                    $('#cart_box').removeClass('cart_box');
-                    $('#cart_box').addClass('cart_box_left');
-                  }
-
-              $(window).scroll(function () {
-                  //if you hard code, then use console
-                  //.log to determine when you want the 
-                  //nav bar to stick.  
-                //if($(window).width() > 786){
-                    console.log($(window).scrollTop())
-                    if ($(window).scrollTop() > 100) {
-                        $('#cart_box').show();
-                        $('#nav_bar').addClass('navbar-fixed-top');
-                    }
-                    if ($(window).scrollTop() < 100) {
-                        if($(window).width() > 786){
-                            $('#cart_box').show();
-                        } else {
-                            $('#cart_box').hide();
-                        }
-                        $('#nav_bar').removeClass('navbar-fixed-top');
-                    }
-                //} else {
-                    //$('#cart_box').removeClass('cart_box');
-                    //$('#cart_box').addClass('cart_box_left');
-                //}
-              });
-
-              $(window).resize(function(){
-                if($(window).width() > 786){
-                $('#cart_box').removeClass('cart_box_left');
-                $('#cart_box').addClass('cart_box');
-              } else {
-                $('#cart_box').hide();
-                $('#cart_box').removeClass('cart_box');
-                $('#cart_box').addClass('cart_box_left');
-              }
-              });
-              
-            });
-        </script>
 
     </head>
     <?php
@@ -139,34 +83,6 @@
         $user = Yii::app()->session['member'];
     }
     ?>
-
-    <!-- Modal LogIN-->
-    <div class="modal fade" id="Login" tabindex="2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
-        <div class="modal-dialog modal-sm" style=" margin-top: 3%;">
-            <div class="modal-content" style="border-radius: 0px;">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <center>
-                        <h4 class="modal-title" id="myModalLabel">
-                            <i class="fa fa-key"></i>
-                            เข้าสู่ระบบ
-                        </h4>
-                    </center>
-                </div>
-                <div class="modal-body">
-                    <div id="from_Login"></div>
-                </div>
-                <div class="modal-footer">
-                    <div id="error"style="display:none; font-size: 14px; text-align: center;">
-                        <img src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/images/error.png"/> กรอกรข้อมูลให้ครบทุกช่อง ... ?
-                    </div>
-                    <div id="errorlog" style="display:none; font-size: 14px; text-align: center;">
-                        <img src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/images/error.png"/> ไม่มีรายชื่อในบัญชี ... !
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
     <body>
@@ -185,26 +101,28 @@
                 </span>
             <?php } ?>
             <!--<div class="container" style="margin-bottom:5%;"> navbar-fixed-top-->
-            <nav class="navbar navbar-default" role="navigation" style="z-index:1; border-radius:0px; border: none; margin-bottom:0px; background: none;">
+            <nav class="navbar navbar-default" id="webname" role="navigation" style="border-radius:0px; border: none; margin-bottom:0px; background: none;">
                 <div class="container" style="background:url('<?php echo Yii::app()->baseUrl; ?>/themes/webapp/images/glass.png');">
                     <a class="navbar-brand" style=" margin-top: 0px; padding-top: 5px;">
-                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $config->get_logoweb(); ?>" height="48px"/>
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $config->get_logoweb(); ?>" style="max-height: 48px;" class="img-responsive img-resize"/>
                     </a>
-                    <a class="navbar-brand" href="#" style=" font-family: Th;font-size:28px;"> 
+                    <a class="navbar-brand" href="#" style="font-size:48px; padding-top: 25px; font-family:RSU-Th"> 
                         <?php echo $config->get_webname(); ?>
                     </a>
                 </div>
+                <br/>
             </nav>
 
-            <nav class="navbar navbar-inverse" id="nav_bar" role="navigation" style="border-radius:0px; border: none; margin-bottom:0px; box-shadow: none;">
+            <nav class="navbar navbar-inverse" id="nav_bar" role="navigation" style="border-radius:0px; border: none; margin-bottom:0px;">
                 <div class="container">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style=" float: left;">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
+                        <a class="navbar-brand" href="#" id="web_brand_name" style=" display: none;"><?php echo $config->get_webname(); ?></a>
                     </div>
 
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -272,43 +190,34 @@
                 </div>
             </nav>
 
-
             <!-- 
             MenuLeft 
             -->
             <div class="container" id="content">
-                
+
                 <!-- Box Search -->
                 <div class="row">
                     <div class="col-lg-12">
-                        
-                          <div class="form-group">
-                            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+
+                        <div class="form-group">
                             <div class="input-group">
-                              <div class="input-group-addon">ค้นหาสินค้า <i class="fa fa-search"></i></div>
-                              <input type="text" class="form-control" id="search" placeholder="คำค้น,ชื่อสินค้า">
-  
-                                <div class="input-group-addon dropdown" style="padding:0px; border:0px;">
-                                      <button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-                                      style="margin:0px; border-radius:0px; padding:8px; padding-bottom:9px;">
-                                        ประเภท
-                                        <span class="caret"></span>
-                                      </button>
-                                      <input type="hidden" id="type_id"> 
-                                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                        <?php 
-                                            foreach($product_type as $searchtype): 
-                                                $type_id = $searchtype['type_id'];
-                                        ?>
-                                        <li><a href="javascript:set_type('<?php echo $type_id ?>');"><?php echo $searchtype['type_name'] ?></a></li>
+                                <div class="input-group-btn">
+                                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ทุกประเภท <span class="caret"></span></button>
+                                    <input type="hidden" id="type_id"> 
+                                    <ul class="dropdown-menu">
+                                        <?php
+                                        foreach ($product_type as $searchtype):
+                                            $type_id = $searchtype['type_id'];
+                                            ?>
+                                            <li><a href="javascript:set_type('<?php echo $type_id ?>');"><?php echo $searchtype['type_name'] ?></a></li>
                                         <?php endforeach; ?>
-                                      </ul>
-                                </div>
-                         
-                              <div class="input-group-addon btn btn-default" onclick="search()">ค้นหา</div>
+                                    </ul>
+                                </div><!-- /btn-group -->
+                                <input type="text" class="form-control" id="search" placeholder="คำค้น,ชื่อสินค้า">
+                                <div class="input-group-addon btn btn-default" onclick="search()"><i class="fa fa-search"></i> ค้นหา</div>
                             </div>
-                          </div>
-                        
+                        </div>
+
                     </div>
                 </div>
 
@@ -316,32 +225,9 @@
 
                     <div class="col-sm-12 col-md-3 col-lg-3">
 
-                        <!--###################### USER #################-->
-                        <?php if (Yii::app()->session['status'] != '') { ?>
-                            <div class="panel panel-primary" id="font-18">
-                                <div class=" panel-heading">
-                                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/use-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> ผู้ใช้งาน
-                                </div>
-                                <div class=" panel-body">
-                                    ชื่อ : <?= Yii::app()->session['username'] ?><br>
-                                    สถานะ : <?php
-                                    if (Yii::app()->session['status'] == 'U') {
-                                        echo "สมาชิก";
-                                    } else {
-                                        echo "ผู้ใช้งานทั่วไป";
-                                    }
-                                    ?>
-                                </div>
-                                <div class=" panel-footer">
-                                    <a href="<?= Yii::app()->createUrl('frontend/user/detail/'); ?>">ข้อมูลส่วนตัว</a>
-                                </div>
-                            </div>
-                        <?php } ?>
-
                         <!-- #################### รถเข็น #############-->
                         <?php if (Yii::app()->session['status'] == 'U') { ?>
-
-                            <div class="panel panel-primary" id="font-18">
+                            <div class="panel panel-default" id="font-20">
                                 <div class=" panel-heading">
                                     <img src="<?php echo Yii::app()->baseUrl; ?>/images/Cart-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"/> ตะกร้าสินค้า
                                 </div>
@@ -349,7 +235,7 @@
 
                                 </div>
                                 <div class=" panel-footer">
-                                    <a href="<?= Yii::app()->createUrl('frontend/orders/order_list',array('order_id' => Yii::app()->session['order_id'])) ?>">ดูรายการสินค้า</a>
+                                    <a href="<?= Yii::app()->createUrl('frontend/orders/order_list', array('order_id' => Yii::app()->session['order_id'])) ?>">ดูรายการสินค้า</a>
                                     <div class="pull-right">
                                         <a href="javascript:load_box_cart()" style=" float: right;"><span class="glyphicon glyphicon-refresh"></span></a>
                                     </div>
@@ -357,6 +243,84 @@
                             </div>
 
                         <?php } ?>
+
+                        <div class="sidebar-nav" style="border-radius: 5px;">
+                            <div class="navbar navbar-default" role="navigation">
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <span class="visible-xs navbar-brand">เมนู</span>
+                                </div>
+                                <div class="navbar-collapse collapse sidebar-navbar-collapse" style="padding:0px; padding-right:0px;">
+
+                                    <!--###################### USER #################-->
+                                    <?php if (Yii::app()->session['status'] != '') { ?>
+                                        <div class="panel panel-default" id="font-20" style="margin: 0px; border: none; border-radius:0px; ">
+                                            <div class=" panel-heading">
+                                                <img src="<?php echo Yii::app()->baseUrl; ?>/images/use-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> ผู้ใช้งาน
+                                            </div>
+                                            <div class=" panel-body">
+                                                ชื่อ : <?= Yii::app()->session['username'] ?><br>
+                                                สถานะ : <?php
+                                                if (Yii::app()->session['status'] == 'U') {
+                                                    echo "สมาชิก";
+                                                } else {
+                                                    echo "ผู้ใช้งานทั่วไป";
+                                                }
+                                                ?>
+                                            </div>
+                                            <div class=" panel-footer">
+                                                <a href="<?= Yii::app()->createUrl('frontend/user/detail/'); ?>">ข้อมูลส่วนตัว</a>
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+
+
+                                    <!-- List รายชื่อ สินค้า -->
+                                    <div class="panel panel-default" id="font-20" style="border: none; border-radius:0px; border-top: solid  #dddddd 1px; ">
+                                        <div class=" panel-heading">
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/images/shipping-box-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> ประเภทสินค้า
+                                        </div>
+                                        <div class="list-group">
+                                            <?php
+                                            foreach ($product_type as $product_types):
+                                                ?>
+                                                <a href="<?php echo Yii::app()->createUrl('frontend/product/show_product_all/type_id/' . $product_types['type_id']) ?>" 
+                                                   class="list-group-item" style="margin: 0px; border: none; border-radius:0px; "><span class="glyphicon glyphicon-paperclip"></span> 
+                                                    <font id="font-20"><?= $product_types['type_name'] ?></font>
+                                                    <span class="badge" style=" margin-top: 5px;">
+                                                        <?php echo $product_model->get_count_product_type($product_types['type_id']); ?>
+                                                    </span>
+                                                </a>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+
+                                    <!-- รายการจัดส่งสินค้า -->
+                                    <div class="panel panel-default" id="font-20" style="border: none; border-radius:0px; border-top: solid  #dddddd 1px; ">
+                                        <div class=" panel-heading">
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/images/post-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> รหัสส่งสินค้า
+                                        </div>
+                                        <div class="list-group">
+                                            <?php
+                                            $notify = $product_model->get_notify_postcode();
+                                            foreach ($notify as $datas):
+                                                ?>
+                                                <a class="list-group-item">
+                                                    <span class="glyphicon glyphicon-user"></span> คุณ <?php echo $datas['name'] . ' ' . $datas['lname']; ?><br/>
+                                                    <span class="glyphicon glyphicon-send"></span>  <?php echo $datas['postcode'] ?>
+                                                </a>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    </div>
+                                </div><!--/.nav-collapse -->
+                            </div>
+                        </div>
+
                         <?php if (Yii::app()->session['status'] == "") { ?>
                             <a href="#" style="text-decoration:none; color:#666; text-shadow:#FFF 1px 1px;" onclick="login();">
                                 <div id="member" style="width:100%; height:50px; border:#999 solid 1px; padding:5px; font-size:20px; background:url(<?php echo Yii::app()->baseUrl; ?>/images/bg_head.png)">
@@ -372,77 +336,22 @@
                             <br>
                         <?php } ?>
 
-                        <a href="<?= Yii::app()->createUrl('web_system/menager_product/from_search_product') ?>">
-                            <div class="btn btn-info" style="width:100%; height:auto; font-size:20px; text-align:center;">
-                                ค้นหาสินค้า<img src="<?php echo Yii::app()->baseUrl; ?>/images/search-icon.png" width="30"/></div>
-                        </a>
+                    </div><!-- End Menu Left -->
 
-                        <br><br>
-
-                        <!-- List รายชื่อ สินค้า -->
-                        <div class="list-group" style="z-index: 0;">
-                            <a class="list-group-item active" style="z-index: 0;">
-                                <font style=" font-size: 18px; color: #FFF;" id=" font-th">ประเภทสินค้า</font>
-                            </a>
-                            <?php
-                            foreach ($product_type as $product_types):
-                                ?>
-                                <a href="<?php echo Yii::app()->createUrl('frontend/product/show_product_all',array('type_id' => $product_types['type_id'])) ?>" 
-                                   class="list-group-item"><span class="glyphicon glyphicon-paperclip"></span> 
-                                    <font id="font-th"><?= $product_types['type_name'] ?></font>
-                                    <span class="badge" style=" margin-top: 5px;">
-                                        <?php echo $product_model->get_count_product_type($product_types['type_id']); ?>
-                                    </span>
-                                </a>
-                            <?php endforeach; ?>
-                        </div>
-
-                        <!-- รายการจัดส่งสินค้า -->
-                        <!-- List รายชื่อ สินค้า -->
-                        <div class="list-group">
-                            <a class="list-group-item  list-group-item-warning active" style=" z-index: 0;">รหัสส่งสินค้า</a>
-                            <?php
-                            $notify = $product_model->get_notify_postcode();
-                            foreach ($notify as $datas):
-                                ?>
-                                <a class="list-group-item">
-                                    <span class="glyphicon glyphicon-user"></span> คุณ <?php echo $datas['name'] . ' ' . $datas['lname']; ?><br/>
-                                    <span class="glyphicon glyphicon-send"></span>  <?php echo $datas['postcode'] ?>
-                                </a>
-                            <?php endforeach; ?>
-                        </div>
-
-                    </div>
-
+                    <!-- Start Content -->
                     <div class="col-sm-12 col-md-9 col-lg-9">
                         <div class="panel panel-default" style="overflow:auto; margin-bottom:0%; background:#FFF; border:none;">
-                            <!-- Banner -->
-                            <div style="margin-left:10px; margin-top: 5px; padding-bottom: 0px; margin-bottom: 0px;" id="banner_home">
-                                <ul class="bxslider" style="z-index: 0;">
-                                    <?php
-                                    $images = $config->_get_banner_show();
-                                    foreach ($images as $img):
-                                        ?>
-                                        <li><img src="<?php echo Yii::app()->baseUrl; ?>/uploads/banner/<?= $img['banner_images'] ?>" /></li>
-                                    <?php endforeach; ?>
-                                </ul>
-                            </div>
 
-                            <!--
-                            # End Banner
-                            -->
-
-
-                            <ol class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px;" id="font-22">
-                                <?php if (isset($this->breadcrumbs)): ?>
+                            <?php if (isset($this->breadcrumbs)): ?>
+                                <div class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px; border-radius: 0px;" id="font-22">
                                     <?php
                                     $this->widget('zii.widgets.CBreadcrumbs', array(
-                                        'homeLink' => '<i class="fa fa-home"></i> '.CHtml::link('หน้าแรก', Yii::app()->createUrl('frontend/main')),
+                                        'homeLink' => '<i class="fa fa-home"></i> ' . CHtml::link('หน้าแรก', Yii::app()->createUrl('frontend/main')),
                                         'links' => $this->breadcrumbs,
                                     ));
                                     ?><!-- breadcrumbs -->
-                                <?php endif ?>
-                            </ol>
+                                </div>
+                            <?php endif ?>
 
                             <div class="panel-body" style="padding:3px 3px 50px 3px; margin-top:0px;">
 
@@ -537,141 +446,14 @@
 
                 </div>
             </nav>
-            </div>
+        </div>
     </body>
-
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.bxslider').bxSlider({
-                auto: true,
-                speed: 500
-            });
-        });
-    </script>
 
 </html>
 
-<!-- Basket -->
-<!--
-       cart list
--->
-<div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="cartlist">
-    <div class="modal-dialog">
-        <div class="modal-content" style="border-radius:0px;">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h5 class="modal-title">
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/full-shopping-cart-icon.png"/>
-                    <font style="padding-top: 10px;" id="font-rsu-20">ตะกร้าสินค้า</font>
-                </h5>
-            </div>
-            <div id="load_cart"></div>
-        </div>
-    </div>
-</div>
-<!--
-    End cart list
--->
+<?php
+require_once(Yii::app()->basePath . '/views/main/dialogbox.php');
+?>
 
-<!-- Modal Edit Address -->
-<div class="modal fade" id="edit_address">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                <h4 class="modal-title">
-                    <i class="fa fa-home"></i> แก้ไขที่อยู่
-                </h4>
-            </div>
-            <div class="modal-body">
-                <div id="show_address"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-remove"></i> ปิดหน้านี้</button>
-                <button type="button" class="btn btn-primary" onclick="save_address()"><i class="fa fa-save"></i> แก้ไขที่อยู่</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
-<script type="text/javascript">
-    function show_list_cart() {
-        $("#load_cart").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
-        $("#cartlist").modal();
-        var url = "<?php echo Yii::app()->createUrl('frontend/orders/show_order_short_list'); ?>";
-        var order_id = "<?php echo Yii::app()->session['order_id'] ?>";
-        var data = {order_id: order_id};
-        $.post(url, data, function (result) {
-            $("#load_cart").html(result);
-        });
-    }
-
-    function load_cart_list() {
-        load_inbox_cart();
-        var url = "<?php echo Yii::app()->createUrl('frontend/orders/show_order_short_list'); ?>";
-        var order_id = "<?php echo Yii::app()->session['order_id'] ?>";
-        var data = {order_id: order_id};
-        $.post(url, data, function (result) {
-            $("#load_cart").html(result);
-        });
-    }
-
-    function load_inbox_cart() {
-        var url = "<?php echo Yii::app()->createUrl('frontend/orders/load_inbox_cart'); ?>";
-        var order_id = "<?php echo Yii::app()->session['order_id'] ?>";
-        var data = {order_id: order_id};
-        $.post(url, data, function (result) {
-            $("#load_inbox_cart").html(result);
-        });
-    }
-
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        load_inbox_cart();
-        load_box_cart();//load box cart Menu left
-        $('[data-toggle="popover"]').popover();
-
-        $('.img_zoom').magnificPopup({
-            delegate: 'a', // child items selector, by clicking on it popup will open
-            type: 'image',
-            gallery: {
-                enabled: true
-            }
-            // other options
-        });
-
-    });
-
-    function load_box_cart() {
-        $("#box_cart").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
-        var url = "<?php echo Yii::app()->createUrl('frontend/orders/load_box_cart') ?>";
-        var order_id = "<?php echo Yii::app()->session['order_id']; ?>";
-        var data = {order_id: order_id};
-
-        $.post(url, data, function (result) {
-            $("#box_cart").html(result);
-        });
-    }
-
-    function set_type(type_id){
-        $("#type_id").val(type_id);
-    }
-
-    function search(){
-        var search = $("#search").val();
-        var type_id = $("#type_id").val();
-
-        if(search != '' || type_id != ''){
-            var url = "<?php echo Yii::app()->createUrl('frontend/search/product&search=')?>" + search + "&type=" + type_id;
-            window.location=url;
-        } else {
-            alert("ยังไม่ได้เลือกเงื่อนไขการค้นหา");
-            return false;
-        }
-    }
-</script>
 
