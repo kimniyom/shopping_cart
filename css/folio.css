@@ -158,6 +158,14 @@ ol.dribbbles,ol.collections{max-width:1500px;margin:0 auto}@media screen and (ma
 .group:after{content:".";display:block;height:0;clear:both;visibility:hidden}
 
 #box_list_product{
-        background:#f7f7f7;
-        border: solid #eeeeee 1px;
-    }
+    border: solid #eeeeee 1px;
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+69,ededed+100;White+3D+%231 */
+background: #ffffff; /* Old browsers */
+background: -moz-linear-gradient(top, #ededed 0%, #f6f6f6 69%, #ffffff 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(69%,#f6f6f6), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #ededed 0%,#f6f6f6 69%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #ededed 0%,#f6f6f6 69%,#ffffff 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #ededed 0%,#f6f6f6 69%,#ffffff 100%); /* IE10+ */
+background: linear-gradient(to bottom, #ededed 0%,#f6f6f6 69%,#ffffff 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+}
