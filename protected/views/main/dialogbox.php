@@ -15,7 +15,7 @@
             $(window).scroll(function () {
                 console.log($(window).scrollTop())
                 if ($(window).scrollTop() > 100) {
-                    $('#nav_bar').addClass('navbar-fixed-top')();
+                    $('#nav_bar').addClass('navbar-fixed-top');
                     $('#web_brand_name').show();
                     return false;
                 } else {
@@ -150,6 +150,25 @@
 
             <div id="basket"></div>
 
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Popup_update_profile ฟอร์มแก้ไขข้อมูลส่วนตัว-->
+<div class="modal fade" id="popup_update_profile">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">
+                    <i class="fa fa-home"></i> แก้ไขข้อมูล
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div id="update_profile"></div>
+            </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

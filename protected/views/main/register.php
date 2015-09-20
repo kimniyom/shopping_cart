@@ -22,8 +22,8 @@ $this->breadcrumbs = array(
     <div class="col-sm-8">
         <div class="panel panel-default">
 
-            <form id="register" name="register" action="<?php echo Yii::app()->createUrl('frontend/main/save_register'); ?>" method="post" role="form" onSubmit="return check_from();">
-                <div class="panel-body" id="font-20">
+            <form id="form_register" name="register" action="<?php echo Yii::app()->createUrl('frontend/main/save_register'); ?>" method="post" role="form" onSubmit="return check_from();">
+                <div class="panel-body" id="font-rsu-20">
                     <legend>
                         สมัคสมาชิก<br/>
                         <p id="font-20" style=" color: #33cc00;">*ข้อมูลของท่านเราจะเก็บเป็นความลับ</p>
@@ -62,7 +62,6 @@ $this->breadcrumbs = array(
                         </div>
                     </div>
 
-
                     <div class="row">
                         <div class="col-sm-3">
                             <label>รหัสผ่าน</label>
@@ -89,7 +88,6 @@ $this->breadcrumbs = array(
                         </div>
                     </div>
 
-
                     <div class="row">
                         <div class="col-sm-12">
                             <label>วันเกิด</label>
@@ -110,7 +108,6 @@ $this->breadcrumbs = array(
                             </select>
                         </div>
 
-
                         <div class="col-sm-4">
                             <select id="month" name="month" class="form-control">
                                 <option value="">เดือน</option>
@@ -119,7 +116,6 @@ $this->breadcrumbs = array(
                                 <?php } ?>
                             </select>
                         </div>
-
 
                         <div class="col-sm-4">
                             <select id="year" name="year" class="form-control">
@@ -131,7 +127,6 @@ $this->breadcrumbs = array(
                                     <option value="<?php echo $i; ?>"><?php echo $i + 543; ?></option>
                                 <?php } ?>
                             </select>
-
                         </div>
                     </div>
 
@@ -146,7 +141,7 @@ $this->breadcrumbs = array(
                             <div class="btn-group btn-group-justified" role="group" aria-label="...">
                                 <div class="btn-group" role="group">
                                     <div type="button" class="well well-sm" style=" width: 100%; text-align: center;">
-                                        <input type="radio" name="s_sex" onclick="set_sex('1');"/>
+                                        <input type="radio" name="s_sex" onclick="set_sex('M');"/>
                                         ผู้ชาย
                                         <i class="fa fa-mars" style=" color: #33cc00;"></i>
                                     </div>
@@ -155,7 +150,7 @@ $this->breadcrumbs = array(
 
                                 <div class="btn-group" role="group">
                                     <div type="button" class="well well-sm" style=" width: 100%; text-align: center;">
-                                        <input type="radio" name="s_sex" onclick="set_sex('2');"/>
+                                        <input type="radio" name="s_sex" onclick="set_sex('F');"/>
                                         ผู้หญิง
                                         <i class="fa fa-venus" style=" color: #ff66ff;"></i>
                                     </div>
@@ -174,7 +169,7 @@ $this->breadcrumbs = array(
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                    <input type="text" id="tel" name="tel" class="form-control" maxlength="10" placeholder="กรอกตัวเลข 10 หลักเท่านั้น" onkeypress="return chkNumber();"/>
+                                    <input type="text" id="tel" name="tel" class="form-control" placeholder="กรอกตัวเลข 10 หลักเท่านั้น" onkeypress="return chkNumber()"/>
                                 </div>
                             </div>
                         </div>
