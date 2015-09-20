@@ -12713,3 +12713,87 @@ Stack trace:
 REQUEST_URI=/shopping_cart/index.php/frontend/user/uploadify.swf?preventswfcaching=1442561491749
 HTTP_REFERER=http://localhost/shopping_cart/index.php/frontend/user/detail
 ---
+2015/09/20 23:43:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "main/register_success".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('main/register_s...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=main/register_success
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main/register
+---
+2015/09/20 23:44:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "main/register_success".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('main/register_s...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=main/register_success
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main/register
+---
+2015/09/20 23:48:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "main/register_success".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('main/register_s...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=main/register_success
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main/register
+---
+2015/09/20 23:54:23 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'tel' at row 1. The SQL statement executed was: INSERT INTO `masuser` (`pid`, `alias`, `email`, `password`, `name`, `lname`, `birth`, `sex`, `tel`, `create_date`, `d_update`) VALUES (:pid, :alias, :email, :password, :name, :lname, :birth, :sex, :tel, :create_date, :d_update).
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php (91)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/09/20 23:54:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22001]: String data, right truncated: 1406 Data too long for column 'tel' at row 1. The SQL statement executed was: INSERT INTO `masuser` (`pid`, `alias`, `email`, `password`, `name`, `lname`, `birth`, `sex`, `tel`, `create_date`, `d_update`) VALUES (:pid, :alias, :email, :password, :name, :lname, :birth, :sex, :tel, :create_date, :d_update)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php(1250): CDbCommand->execute(Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(91): CDbCommand->insert('masuser', Array)
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionSave_register()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('save_register')
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/main/s...')
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main/save_register
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main/register
+---
+2015/09/21 00:05:52 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'birth' at row 1. The SQL statement executed was: INSERT INTO `masuser` (`pid`, `alias`, `email`, `password`, `name`, `lname`, `birth`, `sex`, `tel`, `create_date`, `d_update`) VALUES (:pid, :alias, :email, :password, :name, :lname, :birth, :sex, :tel, :create_date, :d_update).
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php (91)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/09/21 00:05:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'birth' at row 1. The SQL statement executed was: INSERT INTO `masuser` (`pid`, `alias`, `email`, `password`, `name`, `lname`, `birth`, `sex`, `tel`, `create_date`, `d_update`) VALUES (:pid, :alias, :email, :password, :name, :lname, :birth, :sex, :tel, :create_date, :d_update)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php(1250): CDbCommand->execute(Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(91): CDbCommand->insert('masuser', Array)
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionSave_register()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('save_register')
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/main/s...')
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main/save_register
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main/register
+---
+2015/09/21 00:05:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'birth' at row 1. The SQL statement executed was: INSERT INTO `masuser` (`pid`, `alias`, `email`, `password`, `name`, `lname`, `birth`, `sex`, `tel`, `create_date`, `d_update`) VALUES (:pid, :alias, :email, :password, :name, :lname, :birth, :sex, :tel, :create_date, :d_update).
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php (91)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/09/21 00:05:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '' for column 'birth' at row 1. The SQL statement executed was: INSERT INTO `masuser` (`pid`, `alias`, `email`, `password`, `name`, `lname`, `birth`, `sex`, `tel`, `create_date`, `d_update`) VALUES (:pid, :alias, :email, :password, :name, :lname, :birth, :sex, :tel, :create_date, :d_update)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php(1250): CDbCommand->execute(Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(91): CDbCommand->insert('masuser', Array)
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionSave_register()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('save_register')
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/main/s...')
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main/save_register
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main/register
+---
