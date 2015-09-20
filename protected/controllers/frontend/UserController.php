@@ -164,4 +164,48 @@ class UserController extends Controller {
         $this->render("//user/detail", $data);
     }
 
+    public function actionUpload_profile() {
+        $pid = $_POST['pid'];
+        $data['pid'] = $pid;
+        $this->renderPartial('//user/upload_profile', $data);
+    }
+
+    public function actionSave_upload() {
+        $pid = $_GET['pid'];
+        $targetFolder = Yii::app()->baseUrl . '/uploads/profile'; // Relative to the root
+
+        $sqlCkeck = "SELECT images FROM masuser WHERE pid = '$pid' ";
+        $rs = Yii::app()->db->createCommand($sqlCkeck)->queryRow();
+        $filename = './uploads/profile/' . $rs['images'];
+
+        if (file_exists($filename)) {
+            unlink('./uploads/profile/' . $rs['images']);
+        }
+
+        if (!empty($_FILES)) {
+            $tempFile = $_FILES['Filedata']['tmp_name'];
+            $targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
+            $FileName = time() . $_FILES['Filedata']['name'];
+            $targetFile = rtrim($targetPath, '/') . '/' . $FileName;
+
+            $fileTypes = array('jpg', 'jpeg', 'png'); // File extensions
+            $fileParts = pathinfo($_FILES['Filedata']['name']);
+
+            if (in_array($fileParts['extension'], $fileTypes)) {
+                move_uploaded_file($tempFile, $targetFile);
+
+                //สั่งอัพเดท
+                $columns = array(
+                    "images" => $FileName
+                );
+
+                Yii::app()->db->createCommand()
+                        ->update("masuser", $columns, "pid = '$pid' ");
+                echo '1';
+            } else {
+                echo 'Invalid file type.';
+            }
+        }
+    }
+
 }

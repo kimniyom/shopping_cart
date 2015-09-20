@@ -108,7 +108,7 @@ class OrdersController extends Controller {
         $product = new Product();
         $count = $product->_get_cart_count($order_id);
 
-        if($count  > 0){
+        if ($count > 0) {
             $pid = Yii::app()->session['pid'];
             $order = new Orders();
             $user = new User();
@@ -201,15 +201,22 @@ class OrdersController extends Controller {
             }
         }
     }
-    
+
     //รายการรอการตรวจสอบ
-    public function actionVerify(){
+    public function actionVerify() {
         $pid = Yii::app()->session['pid'];
         $order = new Orders();
-        
+
         $data['order'] = $order->get_order_verify($pid);
-        $this->render('//orders/verify',$data);
+        $this->render('//orders/verify', $data);
     }
 
+    public function actionGet_list_basket() {
+        $order_id = $_POST['order_id'];
+        $order = new Orders();
+        $data['basket'] = $order->_get_list_order($order_id);
+
+        $this->renderPartial('//orders/basket', $data);
+    }
 
 }

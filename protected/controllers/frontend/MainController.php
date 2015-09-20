@@ -11,7 +11,7 @@ class MainController extends Controller {
             //$this->output_system($data, 'web_system/home_system', $head);
             $data['last_product'] = $product->_get_last_product();
             $data['sale_product'] = $product->_get_sale_product();
-
+            $data['banner'] = true;
             $this->render('//main/home', $data);
         } else {
             $this->actionBackend();
