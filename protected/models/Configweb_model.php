@@ -88,15 +88,23 @@ class Configweb_model {
         $thai = array("ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค.");
         return $thai;
     }
-    
+
     function MonthFullArray() {
-        $thai_month = array("","มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฏาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม");
+        $thai_month = array("", "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฏาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม");
         return $thai_month;
     }
 
     function get_age($birthday = '') {
         $then = strtotime($birthday);
         return(floor((time() - $then) / 31556926));
+    }
+
+    function url_encode($url = null) {
+        return base64_encode(base64_encode(base64_encode($url)));
+    }
+
+    function url_decode($url = null) {
+        return base64_decode(base64_decode(base64_decode($url)));
     }
 
 }

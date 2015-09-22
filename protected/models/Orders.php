@@ -81,7 +81,7 @@ class Orders {
                                 SUM(b.product_price_sum) AS PRICE_TOTAL
                         FROM orders o
                         INNER JOIN basket b ON o.order_id = b.order_id
-                        WHERE o.pid = '$pid' AND LEFT(o.order_date,4) = YEAR(NOW())
+                        WHERE o.pid = '$pid' AND LEFT(o.order_date,4) = YEAR(NOW()) AND active = '3'
                         GROUP BY SUBSTR(o.order_date,6,2)
                         ) Q1 ON m.id = Q1.id
 
@@ -101,7 +101,7 @@ class Orders {
                         SELECT SUBSTR(o.order_date,6,2) AS id,
                         COUNT(*) AS TOTAL
                         FROM orders o
-                        WHERE o.pid = '$pid' AND LEFT(o.order_date,4) = YEAR(NOW())
+                        WHERE o.pid = '$pid' AND LEFT(o.order_date,4) = YEAR(NOW()) AND active = '3'
                         GROUP BY SUBSTR(o.order_date,6,2)
                         ) Q1 ON m.id = Q1.id
 
@@ -121,7 +121,7 @@ class Orders {
                         SELECT p.type_id,SUM(b.product_price_sum) AS price_total
                         FROM basket b INNER JOIN product p ON b.product_id = p.product_id
                         INNER JOIN orders o ON b.order_id = o.order_id
-                        WHERE o.pid = '$pid' AND  LEFT(o.order_date,4) = YEAR(NOW())
+                        WHERE o.pid = '$pid' AND  LEFT(o.order_date,4) = YEAR(NOW()) AND o.active = '3'
                         GROUP BY p.type_id
                         ) Q1 
 
@@ -150,6 +150,50 @@ class Orders {
                         GROUP BY o.order_id  ";
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
+    }
+
+    //นับจำนวนออเดอร์ที่ยังไม่ได้ชำระเงินของสมาชิกคนนั้น
+    function count_informpayment($pid = null) {
+        $rs = Yii::app()->db->createCommand()
+                ->select('COUNT(*) AS TOTAL')
+                ->from('orders')
+                ->where('pid=:pid AND active = 1', array(':pid' => $pid))
+                ->queryRow();
+
+        return $rs['TOTAL'];
+    }
+
+    //นับจำนวนออเดอร์ที่ชำระเงินรอการตรวจสอบ
+    function count_verify($pid = null) {
+        $rs = Yii::app()->db->createCommand()
+                ->select('COUNT(*) AS TOTAL')
+                ->from('orders')
+                ->where('pid=:pid AND active = 2', array(':pid' => $pid))
+                ->queryRow();
+
+        return $rs['TOTAL'];
+    }
+
+    //นับจำนวนออเดอร์ที่ชำระเงินตรวจสอบและรอการจัดส่ง
+    function count_wait_send($pid = null) {
+        $rs = Yii::app()->db->createCommand()
+                ->select('COUNT(*) AS TOTAL')
+                ->from('orders')
+                ->where('pid=:pid AND active = 3', array(':pid' => $pid))
+                ->queryRow();
+
+        return $rs['TOTAL'];
+    }
+
+    //นับจำนวนออเดอร์ที่จัดส่งแล้ว
+    function count_send($pid = null) {
+        $rs = Yii::app()->db->createCommand()
+                ->select('COUNT(*) AS TOTAL')
+                ->from('orders')
+                ->where('pid=:pid AND active = 4', array(':pid' => $pid))
+                ->queryRow();
+
+        return $rs['TOTAL'];
     }
 
     function autoId($table, $value, $number) {

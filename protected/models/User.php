@@ -23,9 +23,9 @@ class User extends CActiveRecord {
                     m.email,
                     a.zipcode
                 FROM address a RIGHT JOIN masuser m ON m.pid = a.pid 
-                INNER JOIN changwat c ON a.changwat = c.changwat_id
-                INNER JOIN ampur ap ON a.ampur = ap.ampur_id 
-                INNER JOIN tambon t ON a.tambon = t.tambon_id
+                LEFT JOIN changwat c ON a.changwat = c.changwat_id
+                LEFT JOIN ampur ap ON a.ampur = ap.ampur_id 
+                LEFT JOIN tambon t ON a.tambon = t.tambon_id
                 WHERE m.pid = '$pid' ";
         $result = Yii::app()->db->createCommand($sql)->queryRow();
 
@@ -82,11 +82,11 @@ class User extends CActiveRecord {
                     m.create_date,
                     a.zipcode
                 FROM  masuser m 
-                LEFT JOIN address a  ON m.pid = m.pid 
-                INNER JOIN changwat c ON a.changwat = c.changwat_id
-                INNER JOIN ampur ap ON a.ampur = ap.ampur_id 
-                INNER JOIN tambon t ON a.tambon = t.tambon_id
-                WHERE m.pid = '$pid' ";
+                LEFT JOIN address a ON m.pid = a.pid 
+                LEFT JOIN changwat c ON a.changwat = c.changwat_id
+                LEFT JOIN ampur ap ON a.ampur = ap.ampur_id 
+                LEFT JOIN tambon t ON a.tambon = t.tambon_id
+                WHERE m.pid = '$pid'  ";
         $result = Yii::app()->db->createCommand($sql)->queryRow();
 
         return $result;
