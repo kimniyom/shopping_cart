@@ -94,16 +94,12 @@
 </script>
 
 <?php
+$config = new Configweb_model();
 $this->breadcrumbs = array(
-    $product['type_name'] => array('frontend/product/show_product_all/type_id/' . $product['type_id']),
+    $product['type_name'] => array('frontend/product/view/type/' . $config->url_encode($product['type_id'])),
     $product['product_name'],
 );
 ?>
-
-<?php
-$config = new Configweb_model();
-?>
-
 
 <div class="well" style=" width:100%; margin-top:20px; background:#FFF; text-align: left;">
     <div class="row">

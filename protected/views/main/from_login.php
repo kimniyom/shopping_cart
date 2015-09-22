@@ -45,8 +45,8 @@
         // Cencel 
 
         $("#reset").click(function () {
-            $("#email").val("");
-            $("#password").val("");
+            $("#login_email").val("");
+            $("#login_password").val("");
         });
 
     });// end jquery

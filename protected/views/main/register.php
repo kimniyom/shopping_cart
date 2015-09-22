@@ -5,11 +5,6 @@ $this->breadcrumbs = array(
 ?>
 
 <script src="<?php echo Yii::app()->baseUrl; ?>/js/_function_masuser.js" type="text/javascript"></script>
-<script type="text/javascript">
-    function set_sex(sex) {
-        $("#sex").val(sex);
-    }
-</script>
 <?php $web = new Configweb_model(); ?>
 
 <center>
@@ -21,8 +16,12 @@ $this->breadcrumbs = array(
     <div class="col-sm-2"></div>
     <div class="col-sm-8">
         <div class="panel panel-default">
-
-            <form id="form_register" name="register" action="<?php echo Yii::app()->createUrl('frontend/main/save_register'); ?>" method="post" role="form" onSubmit="return check_from();">
+            <?php if (isset($error)) { ?>
+                <div class="alert alert-danger"><?php echo $error; ?></div>
+            <?php } ?>
+            <form id="register" name="register" 
+                  action="<?php echo Yii::app()->createUrl('frontend/main/save_register'); ?>" 
+                  method="post" role="form" onSubmit="return check_from();">
                 <div class="panel-body" id="font-rsu-20">
                     <legend>
                         สมัคสมาชิก<br/>
@@ -42,23 +41,23 @@ $this->breadcrumbs = array(
 
                     <div class="row">
                         <div class="col-sm-12">
-                            <label>ชื่อที่ใช้แสดง</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <input type="text" id="alias" name="alias" class="form-control input-sm" placeholder="ชื่อที่ใช้แสดง"/>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-sm-12">
                             <label>อีเมล์</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
                             <input type="email" id="email" name="email" class="form-control input-sm" placeholder="ex. xxxxxxxx_122@gmail.com"/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label>ชื่อที่ใช้แสดง</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <input type="text" id="alias" name="alias" class="form-control input-sm" placeholder="ชื่อที่ใช้แสดง"/>
                         </div>
                     </div>
 
@@ -102,8 +101,15 @@ $this->breadcrumbs = array(
                         <div class="col-sm-4">
                             <select id="day" name="day" class="form-control">
                                 <option value="">วัน</option>
-                                <?php for ($i = 1; $i <= 31; $i++) { ?>
-                                    <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
+                                <?php
+                                for ($i = 1; $i <= 31; $i++) {
+                                    if (strlen($i) <= 1) {
+                                        $day = "0" . $i;
+                                    } else {
+                                        $day = $i;
+                                    }
+                                    ?>
+                                    <option value="<?php echo $day; ?>"><?php echo $day; ?></option>
                                 <?php } ?>
                             </select>
                         </div>
@@ -169,7 +175,7 @@ $this->breadcrumbs = array(
                             <div class="form-group">
                                 <div class="input-group">
                                     <div class="input-group-addon"><i class="fa fa-phone"></i></div>
-                                    <input type="text" id="tel" name="tel" class="form-control" placeholder="กรอกตัวเลข 10 หลักเท่านั้น" onkeypress="return chkNumber()"/>
+                                    <input type="text" id="tel" name="tel" class="form-control" maxlength="10" placeholder="กรอกตัวเลข 10 หลักเท่านั้น" onkeypress="return chkNumber()"/>
                                 </div>
                             </div>
                         </div>
@@ -184,6 +190,12 @@ $this->breadcrumbs = array(
     </div>
     <div class="col-sm-2"></div>
 </div>
+
+<script type="text/javascript">
+    function set_sex(sex) {
+        $("#sex").val(sex);
+    }
+</script>
 
 
 

@@ -163,11 +163,30 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h4 class="modal-title">
-                    <i class="fa fa-home"></i> แก้ไขข้อมูล
+                    <i class="fa fa-edit"></i> แก้ไขข้อมูล
                 </h4>
             </div>
             <div class="modal-body">
                 <div id="update_profile"></div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- Modal Edit Address Profile เรียกFormแก้ไขที่อยู่มาแสดงจากหน้าข้อมูลส่วนตัว-->
+<div class="modal fade" id="edit_address_profile">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">
+                    <i class="fa fa-home"></i> แก้ไขที่อยู่
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div id="show_address_profile"></div>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->

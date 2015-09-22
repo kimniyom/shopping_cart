@@ -44,13 +44,13 @@ if (isset($banner)) {
         foreach ($last_product as $last):
             $i++;
             $img = $product_model->get_last_img($last['product_id']);
-            $link = Yii::app()->createUrl('frontend/product/detail_product', array('product_id' => $last['product_id']));
+            $link = Yii::app()->createUrl('frontend/product/detail/id/' . $config->url_encode($last['product_id']));
             ?>
             <li id="screenshot-<?php echo $i; ?>" class="col-lg-4 col-md-4 col-sm-6" style="text-align:center; margin-bottom:15px;">
                 <div class="dribbble" id="box_list_product">
                     <div class="dribbble-shot">
                         <div class="dribbble-img">
-                            <a class="dribbble-link" href="/shots/2166663-Retinabbble-Chrome-extension-for-dribbble">
+                            <a class="dribbble-link" href="#">
                                 <div data-picture data-alt="Retinabbble - Chrome extension for dribbble">
                                     <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
                                 </div>
@@ -82,13 +82,13 @@ if (isset($banner)) {
         foreach ($sale_product as $sale):
             $i++;
             $img = $product_model->get_last_img($sale['product_id']);
-            $link = Yii::app()->createUrl('frontend/product/detail_product', array('product_id' => $sale['product_id']));
+            $link = Yii::app()->createUrl('frontend/product/detail/id/' . $config->url_encode($sale['product_id']));
             ?>
             <li id="screenshot-<?php echo $i; ?>" class="col-lg-4 col-md-4 col-sm-6" style="text-align:center; margin-bottom:15px;">
                 <div class="dribbble" id="box_list_product">
                     <div class="dribbble-shot">
                         <div class="dribbble-img">
-                            <a class="dribbble-link" href="/shots/2166663-Retinabbble-Chrome-extension-for-dribbble">
+                            <a class="dribbble-link" href="#">
                                 <div data-picture data-alt="Retinabbble - Chrome extension for dribbble">
                                     <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
                                 </div>

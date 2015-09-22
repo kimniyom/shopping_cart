@@ -42,7 +42,7 @@ $config = new Configweb_model();
                 </div>
             </center>
             <div id="font-18" style="color: #ff6600;">
-                <?php echo $user['alias']; ?><br/>
+                <font id="font-rsu-20" style=" color: #000020;"><?php echo $user['alias']; ?></font><br/>
                 เป็นสมาชิกเมื่อ <br/><?php echo $config->thaidate($user['create_date']); ?>
             </div>
         </div>
@@ -88,7 +88,7 @@ $config = new Configweb_model();
                     ?></p><br/><br/>
 
                 ที่อยู่ <br/>
-                <div class="btn btn-default btn-sm pull-right" id="font-rsu-14" onclick="edit_address();">แก้ไขที่อยู่</div>
+                <div class="btn btn-default btn-sm pull-right" id="font-rsu-14" onclick="edit_address_profile();">แก้ไขที่อยู่</div>
                 <ul style=" padding-top: 5px;">
                     <?php
                     echo "<li>เลขที่ ";
@@ -249,14 +249,14 @@ $config = new Configweb_model();
         });
     }
 
-    function edit_address() {
+    function edit_address_profile() {
         $("#show_address").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
-        var url = "<?php echo Yii::app()->createUrl('frontend/user/get_address') ?>";
+        var url = "<?php echo Yii::app()->createUrl('frontend/user/get_address_profile') ?>";
         var pid = "<?php echo Yii::app()->session['pid'] ?>";
         var data = {pid: pid};
         $.post(url, data, function (result) {
-            $("#edit_address").modal();
-            $("#show_address").html(result);
+            $("#edit_address_profile").modal();
+            $("#show_address_profile").html(result);
         });
     }
 
