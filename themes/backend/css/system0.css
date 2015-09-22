@@ -1,34 +1,13 @@
 @charset "utf-8";
 /* CSS Document */
-
 @font-face {
     font-family:Th;
     src: url('font-th/TH K2D July8 Bold.ttf') format('truetype');
 }
 
-@font-face {
-    font-family:RSU-Th;
-    src: url('rsufont/RSU_BOLD.ttf') format('truetype');
-}
-
-@font-face {
-    font-family:SPMK-Th;
-    src: url('supermarket/supermarket.ttf') format('truetype');
-}
-
 body {
     margin: 0;
-    /*background:url('../images/line-bg-advice.png')repeat-x fixed #fdfbfc;*/
-    /*background:url('../images/bg.jpg');*/
-}
-
-body.modal-open #wrap_blur{
-    -webkit-filter: blur(7px);
-    -moz-filter: blur(15px);
-    -o-filter: blur(15px);
-    -ms-filter: blur(15px);
-    filter: blur(15px);
-    z-index: -5;
+    //font-family:Th;
 }
 
 /* For the "inset" look only */
@@ -37,7 +16,15 @@ html {
     overflow: auto;
 }
 
-#link_product:hover{text-decoration: none;}
+body.modal-open #wrap_blur{
+    -webkit-filter: blur(7px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+
+#font-th{font-family: Th; font-size: 22px;}
 #font-product{color: #ff3300; font-size: 22px; font-family: Th;}
 #font-head{color: #ff3300; font-size: 28px; font-family: Th;}
 #box_product:hover{ box-shadow: 0px 10px 20px 0px #666666; opacity: 0.8;}
@@ -163,50 +150,11 @@ div.img-resize {
 }
 
 #fontgreen14{ font-size: 14px; color:#33cc00;}
+#font-16{font-size: 16px;}
+#font-18{font-size: 18px;}
+#font-20{font-size: 20px;}
 
-#cart_box{
-    float: right; margin-top: 0px; padding-top: 15px;
-    position:fixed; top:10px; right:20px;z-index:1050;
-}
 
-#fontgreen14{ font-size: 14px; color:#33cc00; font-family: Th;}
-#font-14{font-size: 14px; font-family: Th;}
-#font-16{font-size: 16px; font-family: Th;}
-#font-18{font-size: 18px; font-family: Th;}
-#font-20{font-size: 20px; font-family: Th;}
-#font-22{font-size: 22px; font-family: Th;}
 
-#font-rsu-14{font-size: 14px; font-family: RSU-Th;}
-#font-rsu-16{font-size: 16px; font-family: RSU-Th;}
-#font-rsu-18{font-size: 18px; font-family: RSU-Th;}
-#font-rsu-20{font-size: 20px; font-family: RSU-Th;}
-#font-rsu-22{font-size: 22px; font-family: RSU-Th;}
 
-#content{
-    background:url('images/glass.png'); padding-top:10px; padding-bottom:5px; margin-bottom:25px;
-}
 
-#panel{
-    border: none; border-radius: 0px; margin: 0px;
-    border-right: none;
-}
-
-#panel-head{
-    border-radius: 0px; margin: 0px;
-    border-right: none;
-    border-left: none;
-    border-bottom: none;
-    border-top:none;
-}
-
-#panel > .list-group-item{
-    border-radius: 0px; margin: 0px;
-    border-right: none;
-    border-top:none;
-}
-
-#panel-head > .list-group-item{
-    border-radius: 0px; margin: 0px;
-    border-right: none;
-    border-top:none;
-}
