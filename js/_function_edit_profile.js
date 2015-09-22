@@ -15,15 +15,6 @@ function check_from() {
         } else if (alias.value == '') {
             alias.focus();
             return false;
-        } else if (password.value == '') {
-            password.focus();
-            return false;
-        } else if (name.value == '') {
-            name.focus();
-            return false;
-        } else if (lname.value == '') {
-            lname.focus();
-            return false;
         } else if (sex.value == '') {
             alert("ยังไม่ได้เลือกเพศ");
             return false;
