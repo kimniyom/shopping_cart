@@ -78,6 +78,7 @@
     $config = new configweb_model();
     $product_model = new Product();
     $product_type = $product_model->_get_product_type();
+    $order_model = new Orders();
     $img = Yii::app()->baseUrl . "/images/";
     if (Yii::app()->session['member'] != "") {
         $user = Yii::app()->session['member'];
@@ -113,7 +114,7 @@
                 <br/>
             </nav>
 
-            <nav class="navbar navbar-inverse" id="nav_bar" role="navigation" style="border-radius:0px; border: none; margin-bottom:0px;">
+            <nav class="navbar navbar-default" id="nav_bar" role="navigation" style="border-radius:0px; border: none; margin-bottom:0px;">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style=" float: left;">
@@ -235,7 +236,9 @@
 
                                 </div>
                                 <div class=" panel-footer">
-                                    <a href="<?= Yii::app()->createUrl('frontend/orders/order_list', array('order_id' => Yii::app()->session['order_id'])) ?>">ดูรายการสินค้า</a>
+                                    <a href="<?= Yii::app()->createUrl('frontend/orders/order_list', array('order_id' => Yii::app()->session['order_id'])) ?>">
+                                        <i class="fa fa-shopping-cart"></i>
+                                        ดูรายการสินค้า</a>
                                     <div class="pull-right">
                                         <a href="javascript:load_box_cart()" style=" float: right;"><span class="glyphicon glyphicon-refresh"></span></a>
                                     </div>
@@ -274,7 +277,7 @@
                                                 ?>
                                             </div>
                                             <div class=" panel-footer">
-                                                <a href="<?= Yii::app()->createUrl('frontend/user/detail/'); ?>">ข้อมูลส่วนตัว</a>
+                                                <a href="<?= Yii::app()->createUrl('frontend/user/detail/'); ?>"><i class="fa fa-user"></i> ข้อมูลส่วนตัว</a>
                                             </div>
                                         </div>
                                     <?php } ?>
@@ -289,7 +292,7 @@
                                             <?php
                                             foreach ($product_type as $product_types):
                                                 ?>
-                                                <a href="<?php echo Yii::app()->createUrl('frontend/product/show_product_all/type_id/' . $product_types['type_id']) ?>" 
+                                                <a href="<?php echo Yii::app()->createUrl('frontend/product/view/type/' . $config->url_encode($product_types['type_id'])) ?>" 
                                                    class="list-group-item" style="margin: 0px; border: none; border-radius:0px; "><span class="glyphicon glyphicon-paperclip"></span> 
                                                     <font id="font-20"><?= $product_types['type_name'] ?></font>
                                                     <span class="badge" style=" margin-top: 5px;">
@@ -317,6 +320,11 @@
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
+
+                                    <div class="btn btn-default" style=" border-radius: 0px; border: none;">
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/images/post.jpg" class="img-responsive"/>
+                                    </div>
+
                                 </div><!--/.nav-collapse -->
                             </div>
                         </div>
@@ -332,7 +340,6 @@
                                     <div class="btn btn-danger" style="border-radius:50px; padding:7px;"><img src="<?php echo Yii::app()->baseUrl; ?>/images/Register-icon.png"/></div>สมัครสมาชิก
                                 </div>
                             </a>
-
                             <br>
                         <?php } ?>
 
@@ -340,8 +347,36 @@
 
                     <!-- Start Content -->
                     <div class="col-sm-12 col-md-9 col-lg-9">
-                        <div class="panel panel-default" style="overflow:auto; margin-bottom:0%; background:#FFF; border:none;">
 
+                        <div class="btn-group btn-group-justified" role="group" aria-label="..." style=" margin-bottom: 10px;">
+                            <div class="btn-group" role="group">
+                                <a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>">
+                                    <button type="button" class="btn btn-default btn-sm ">
+                                        รอชำระเงิน 
+                                        <label class="label label-danger"><?php echo $order_model->count_informpayment(Yii::app()->session['pid']) ?></label>
+                                    </button></a>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <a href="<?= Yii::app()->createUrl('frontend/orders/verify') ?>">
+                                    <button type="button" class="btn btn-default btn-sm ">
+                                        รอตรวจสอบยอดเงิน 
+                                        <label class="label label-danger"><?php echo $order_model->count_verify(Yii::app()->session['pid']) ?></label>
+                                    </button></a>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default btn-sm ">รอการจัดส่ง 
+                                    <label class="label label-danger"><?php echo $order_model->count_wait_send(Yii::app()->session['pid']) ?></label>
+                                </button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default btn-sm ">
+                                    ส่งสินค้าเรียบร้อย 
+                                    <label class="label label-danger"><?php echo $order_model->count_send(Yii::app()->session['pid']) ?></label>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="panel panel-default" style="overflow:auto; margin-bottom:0%; background:#FFF;">     
                             <?php if (isset($this->breadcrumbs)): ?>
                                 <div class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px; border-radius: 0px;" id="font-22">
                                     <?php

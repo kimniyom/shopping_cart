@@ -6,7 +6,6 @@
             "iDisplayLength": 10, // กำหนดค่า default ของจำนวน record 
             "bFilter": true // แสดง search box
                     //"sScrollY": "400px", // กำหนดความสูงของ ตาราง
-
         });
     });
 </script>
@@ -30,7 +29,7 @@ $this->breadcrumbs = array(
         </div>
     </div>
 
-    <table class="table table-striped table-bordered" id="p_product">
+    <table class="table table-striped" id="p_product">
         <thead>
             <tr>
                 <th>รูป</th>
