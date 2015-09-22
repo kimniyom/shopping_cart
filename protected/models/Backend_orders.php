@@ -168,6 +168,24 @@ class Backend_orders {
 
         return $rs['TOTAL'];
     }
+    
+    //ดึงข้อมูลการสั่งซื้อมาแสดงเพื่อเช็คจำนวนเงิน
+    function get_detail_order($order_id = null) {
+        $query = "SELECT o.pid,
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        SUM(b.product_num) AS PRODUCT_TOTAL,
+                        SUM(b.product_price_sum) AS PRICE_TOTAL,
+                        o.slip,
+                        m.tel
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                WHERE active = '2' AND o.order_id = '$order_id' ";
+        $result = Yii::app()->db->createCommand($query)->queryRow();
+        return $result;
+    }
 
     function autoId($table, $value, $number) {
         $rs = Yii::app()->db->createCommand("Select Max($value)+1 as MaxID from  $table")->queryRow(); //เลือกเอาค่า id ที่มากที่สุดในฐานข้อมูลและบวก 1 เข้าไปด้วยเลย
