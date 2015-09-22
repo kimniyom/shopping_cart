@@ -52,6 +52,14 @@ class UserController extends Controller {
         $this->renderPartial("//user/edit_address", $data);
     }
 
+    public function actionGet_address_profile() {
+        $pid = $_POST['pid'];
+        $user = new User();
+        $data['changwat'] = $user->Get_changwat();
+        $data['address'] = $user->Get_address($pid);
+        $this->renderPartial("//user/edit_address_profile", $data);
+    }
+
     public function actionSave_address() {
         $pid = $_POST['pid'];
         $user = new User();
@@ -83,6 +91,31 @@ class UserController extends Controller {
 
         Yii::app()->db->createCommand()
                 ->update("masuser", $columns_user, "pid = '$pid' ");
+    }
+
+    public function actionSave_address_profile() {
+        $pid = $_POST['pid'];
+        $user = new User();
+
+        $columns = array(
+            "pid" => $_POST['pid'],
+            "number" => $_POST['number'],
+            "building" => $_POST['building'],
+            "class" => $_POST['_class'],
+            "room" => $_POST['room'],
+            "changwat" => $_POST['changwat'],
+            "ampur" => $_POST['ampur'],
+            "tambon" => $_POST['tambon'],
+            "zipcode" => $_POST['zipcode']
+        );
+        $check = $user->Check_address($pid);
+        if ($check > 0) {
+            Yii::app()->db->createCommand()
+                    ->update("address", $columns, "pid = '$pid' ");
+        } else {
+            Yii::app()->db->createCommand()
+                    ->insert("address", $columns);
+        }
     }
 
     public function actionDetail() {
@@ -178,7 +211,7 @@ class UserController extends Controller {
         $rs = Yii::app()->db->createCommand($sqlCkeck)->queryRow();
         $filename = './uploads/profile/' . $rs['images'];
 
-        if (file_exists($filename)) {
+        if (!file_exists($filename)) {
             unlink('./uploads/profile/' . $rs['images']);
         }
 
@@ -215,9 +248,9 @@ class UserController extends Controller {
         $data['user'] = $use->Get_detail($pid);
         $datas = $data['user'];
         $date = $datas['birth'];
-        $data['day'] = substr($date, 0, 4);
+        $data['year'] = substr($date, 0, 4);
         $data['month'] = substr($date, 5, 2);
-        $data['year'] = substr($date, 8, 2);
+        $data['day'] = substr($date, 8, 2);
         $data['pid'] = $pid;
         $this->renderPartial('//user/update', $data);
     }

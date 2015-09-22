@@ -67,30 +67,44 @@ class MainController extends Controller {
         $this->render('//main/register', $data);
     }
 
+    public function actionCheck_email($email = null) {
+        $sql = "SELECT COUNT(*) AS TOTAL FROM masuser WHERE email = '$email' ";
+        $rs = Yii::app()->db->createCommand($sql)->queryRow();
+        return $rs['TOTAL'];
+    }
+
     public function actionSave_register() {
-        if ($_POST['year'] != '' && $_POST['month'] != '' && $_POST['day']) {
-            $birth = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
+
+        $check_email = $this->actionCheck_email($_POST['email']);
+        if ($check_email == '1') {
+            $data['id'] = $_POST['pid'];
+            $data['error'] = "<i class='fa fa-warning'></i> อีเมล์นี้เคยลงทะเบียนแล้ว ";
+            $this->render('//main/register', $data);
         } else {
-            $birth = '';
+            if ($_POST['year'] != '' && $_POST['month'] != '' && $_POST['day']) {
+                $birth = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
+            } else {
+                $birth = '';
+            }
+            $columns = array(
+                "pid" => $_POST['pid'],
+                "alias" => $_POST['alias'],
+                "email" => $_POST['email'],
+                "password" => $_POST['password'],
+                "name" => $_POST['name'],
+                "lname" => $_POST['lname'],
+                "birth" => $birth,
+                "sex" => $_POST['sex'],
+                "tel" => $_POST['tel'],
+                "create_date" => date("Y-m-d H:i:s"),
+                "d_update" => date("Y-m-d H:i:s")
+            );
+
+            Yii::app()->db->createCommand()
+                    ->insert("masuser", $columns);
+
+            $this->redirect(array('frontend/main/register_success'));
         }
-        $columns = array(
-            "pid" => $_POST['pid'],
-            "alias" => $_POST['alias'],
-            "email" => $_POST['email'],
-            "password" => $_POST['password'],
-            "name" => $_POST['name'],
-            "lname" => $_POST['lname'],
-            "birth" => $birth,
-            "sex" => $_POST['sex'],
-            "tel" => $_POST['tel'],
-            "create_date" => date("Y-m-d H:i:s"),
-            "d_update" => date("Y-m-d H:i:s")
-        );
-
-        Yii::app()->db->createCommand()
-                ->insert("masuser", $columns);
-
-        $this->redirect(array('frontend/main/register_success'));
     }
 
     public function actionRegister_success() {
@@ -103,6 +117,31 @@ class MainController extends Controller {
         $head = "แก้ไขบัญชีผู้ใช้";
         $deta['error'] = '';
         $this->output_system($deta, $page, $head);
+    }
+
+    public function actionSave_edit_profile() {
+        $pid = $_POST['pid'];
+        if ($_POST['year'] != '' && $_POST['month'] != '' && $_POST['day']) {
+            $birth = $_POST['year'] . '-' . $_POST['month'] . '-' . $_POST['day'];
+        } else {
+            $birth = '';
+        }
+
+        $columns = array(
+            "alias" => $_POST['alias'],
+            "email" => $_POST['email'],
+            "name" => $_POST['name'],
+            "lname" => $_POST['lname'],
+            "birth" => $birth,
+            "sex" => $_POST['sex'],
+            "tel" => $_POST['tel'],
+            "d_update" => date("Y-m-d H:i:s")
+        );
+
+        Yii::app()->db->createCommand()
+                ->update("masuser", $columns, "pid = '$pid' ");
+
+        $this->redirect(array('frontend/user/detail'));
     }
 
     /*     * ********************************************* คู่มือ ************************************ */

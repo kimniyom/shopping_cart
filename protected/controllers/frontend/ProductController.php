@@ -3,9 +3,11 @@
 class ProductController extends Controller {
 
     public $layout = "webapp";
+
     //################# ดึงข้อมูลรานละเอียดสินค้ามาแสดง อ้างจาก product_id ##################//
-    public function actionDetail_product() {
-        $product_id = $_GET['product_id'];
+    public function actionDetail() {
+        $config = new Configweb_model();
+        $product_id = $config->url_decode($_GET['id']);
 
         $product = new Product();
 
@@ -109,11 +111,11 @@ class ProductController extends Controller {
         $this->load->view('web_system/print_bill', $data);
     }
 
-    public function actionShow_product_all() {
-        $type_id = $_GET['type_id'];
-
+    public function actionView() {
+        $config = new Configweb_model();
         $prodult = new Product();
-        
+
+        $type_id = $config->url_decode($_GET['type']);
         $data['type_id'] = $type_id;
         $data['type_name'] = $prodult->get_type_name($type_id);
         $data['product'] = $prodult->get_product_all($type_id);
@@ -125,7 +127,7 @@ class ProductController extends Controller {
     public function actionPages() {
         $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
         $type_id = $_POST["type_id"];
-        $item_per_page = 6;//ให้แสดงที่ละ
+        $item_per_page = 6; //ให้แสดงที่ละ
         //throw HTTP error if page number is not valid
         if (!is_numeric($page_number)) {
             header('HTTP/1.1 500 Invalid page number!');
@@ -141,18 +143,16 @@ class ProductController extends Controller {
         $rs = Yii::app()->db->createCommand($query)->queryAll();
         //output results from database
         /*
-        echo '<ul class="page_result">';
-        foreach ($rs as $row) {
-            echo '<li id="item_' . $row["id"] . '"><span class="page_name">' . $row["id"] . ') ' . $row["product_name"] . '</span><span class="page_message">' . $row["product_name"] . '</span></li>';
-        }
-        echo '</ul>';
+          echo '<ul class="page_result">';
+          foreach ($rs as $row) {
+          echo '<li id="item_' . $row["id"] . '"><span class="page_name">' . $row["id"] . ') ' . $row["product_name"] . '</span><span class="page_message">' . $row["product_name"] . '</span></li>';
+          }
+          echo '</ul>';
          * 
          */
-        
+
         $data['product'] = $rs;
-        $this->renderPartial("//product/product_more",$data);
+        $this->renderPartial("//product/product_more", $data);
     }
-    
-    
 
 }
