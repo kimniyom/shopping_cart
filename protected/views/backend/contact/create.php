@@ -1,10 +1,9 @@
 <script type="text/javascript">
-
     function save_about() {
         var url = "<?php echo Yii::app()->createUrl('backend/contact/save') ?>";
         var email = $("#c_email").val();
         var tel = $("#c_tel").val();
-        
+
         if (email == '' || tel == '') {
             $("#f_error").show().delay(5000).fadeOut(500);
             return false;
@@ -13,7 +12,7 @@
             email: email,
             tel: tel
         };
-        
+
         $.post(url, data, function (success) {
             window.location = "<?php echo Yii::app()->createUrl('backend/contact/view')?>";
             $("#f_success").show().delay(5000).fadeOut(500);
@@ -52,7 +51,7 @@
                     <label>อีเมล์</label>
                     <input type="text" id="c_email" class="form-control"/>
                     <label>เบอร์โทรศัพท์</label>
-                    <input type="text" id="c_tel" class="form-control">  
+                    <input type="text" id="c_tel" class="form-control">
                 </div>
             </div>
                 <div class="panel-footer">
@@ -145,7 +144,3 @@
         $("#icon").html(img);
     }
 </script>
-
-            
-
-
