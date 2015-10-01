@@ -145,6 +145,7 @@
                             style="border-radius:20px; padding:2px; border:#FFF solid 2px;"/>
                             ข้อมูลร้านค้า
                     </div>
+                    <div class="list-group">
                         <a href="<?= Yii::app()->createUrl('backend/contact')?>" class="list-group-item">
                             <i class="fa fa-phone-square"></i> ข้อมูลติดต่อ
                         </a>
@@ -161,48 +162,52 @@
                             <i class="fa fa-text-height"></i>  จัดการ ชื่อเว็บ
                         </a>
                     </div>
+                </div>
                 <!-- List Menu Admin-->
                 <div class="panel panel-primary" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/system-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
                         ตั้งค่าระบบ
                     </div>
-                    <a href="<?= Yii::app()->createUrl('backend/typeproduct/from_add_type') ?>"
-                       class="list-group-item"><i class="fa fa-folder-open"></i> ประเภทสินค้า</a>
-                    <a href="<?= Yii::app()->createUrl('backend/user/userall') ?>"
-                       class="list-group-item"><i class="fa fa-group"></i>  ข้อมูลสมาชิก</a>
-                    <a href="<?= Yii::app()->createUrl('backend/payment/view') ?>"
-                       class="list-group-item"><span class="fa fa-money"></span>  ช่องทางการชำระเงิน</a>
-                    <a href="<?= Yii::app()->createUrl('backend/period') ?>"
-                       class="list-group-item"><span class="fa fa-calendar"></span>  ระยะเวลาจองสินค้า</a>
-                    <a href="<?= Yii::app()->createUrl('backend/transport') ?>"
-                          class="list-group-item"><span class="fa fa-truck"></span>  ช่องทางการจัดส่ง</a>
+                    <div class="list-group">
+                        <a href="<?= Yii::app()->createUrl('backend/typeproduct/from_add_type') ?>"
+                           class="list-group-item"><i class="fa fa-folder-open"></i> ประเภทสินค้า</a>
+                        <a href="<?= Yii::app()->createUrl('backend/user/userall') ?>"
+                           class="list-group-item"><i class="fa fa-group"></i>  ข้อมูลสมาชิก</a>
+                        <a href="<?= Yii::app()->createUrl('backend/payment/view') ?>"
+                           class="list-group-item"><span class="fa fa-money"></span>  ช่องทางการชำระเงิน</a>
+                        <a href="<?= Yii::app()->createUrl('backend/period') ?>"
+                           class="list-group-item"><span class="fa fa-calendar"></span>  ระยะเวลาจองสินค้า</a>
+                        <a href="<?= Yii::app()->createUrl('backend/transport') ?>"
+                              class="list-group-item"><span class="fa fa-truck"></span>  ช่องทางการจัดส่ง</a>
+                    </div>
                 </div>
 
                 <!-- List รายชื่อ สินค้า -->
                 <div class="panel panel-primary" id="panel-head">
-                    <div class="panel-heading" id="panel-head">
+                    <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/shipping-box-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
                         จัดการสินค้าในร้าน
                     </div>
+                    <div class="list-group">
                     <?php
                     $produce_type = $product_model->_get_product_type();
                     foreach ($produce_type as $produce_types):
                         ?>
                         <a href="<?php echo Yii::app()->createUrl('backend/product/Getproduct/type_id/' . $produce_types['type_id']) ?>"
-                           class="list-group-item"><i class="fa fa-cart-plus"></i>
+                           class="list-group-item">
+                           <span class="label label-danger"><?php echo $product_model->get_count_product_type($produce_types['type_id']); ?></span>
                                <?php echo $produce_types['type_name']; ?>
-                            <span class="label label-default" style=" float: right; font-size: 16px;">
-                                <?php echo $product_model->get_count_product_type($produce_types['type_id']); ?>
-                            </span>
-                        </a>
+                            </a>
                     <?php endforeach; ?>
+                    </div>
                 </div>
 
                 <!-- รายการจัดส่งสินค้า -->
                 <!-- List รายชื่อ สินค้า -->
                 <div class="panel panel-primary" id="panel-head">
-                    <div class="panel-heading" id="panel-head">รหัสส่งสินค้า</div>
+                    <div class="panel-heading" id="panel">รหัสส่งสินค้า</div>
+                    <div class="list-group">
                     <?php
                     $notify = $product_model->get_notify_postcode();
                     foreach ($notify as $datas):
@@ -212,6 +217,7 @@
                             <span class="glyphicon glyphicon-send"></span>  <?php echo $datas['postcode'] ?>
                         </a>
                     <?php endforeach; ?>
+                    </div>
                 </div>
                 <br/><br/>
             </div>
