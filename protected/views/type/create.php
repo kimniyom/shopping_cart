@@ -9,6 +9,8 @@
             type_name: type_name
         };
         if (type_name == "") {
+            $("#loading").removeClass("fa fa-spinner fa-spin");
+            $("#loading").addClass("fa fa-plus");
             $("#type_name").focus();
             return false;
         }
