@@ -20,4 +20,10 @@
       Yii::app()->db->createCommand()
         ->insert("transport",$columns);
     }
+
+    public function actionDelete_transport(){
+      $id = $_POST['id'];
+      Yii::app()->db->createCommand()
+        ->delete("transport","id = '$id'");
+    }
   }
