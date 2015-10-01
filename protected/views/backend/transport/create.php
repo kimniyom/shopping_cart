@@ -8,7 +8,6 @@ $this->breadcrumbs = array(
   <div class="panel-heading">
       <img src="<?php echo Yii::app()->baseUrl; ?>/images/transport-icon.png" style="height:36px;"/>
       ช่องทางการขนส่ง
-
       <div class="pull-right">
           <font style=" color: #ff0033; display: none;" id="f_error">กรอกข้อมูลไม่ครบ ..?</font>
           <font style=" color: green; display: none;" id="f_success">บันทึกข้อมูลแล้ว</font>
@@ -32,15 +31,13 @@ $this->breadcrumbs = array(
         </div>
     </div>
     <hr/>
-
-    <div id="load_data_transport"></div>
-
   </div>
 </div>
 
+<div id="load_data_transport"></div>
+
 <script type="text/javascript">
   load_data_transport();
-
   function load_data_transport(){
     var load = "<center><i class=\"fa fa-spinner fa-spin\"></i></center>";
     $("#load_data_transport").html(load);
@@ -67,5 +64,16 @@ $this->breadcrumbs = array(
       $("#detail").val('');
       load_data_transport();
     });
+  }
+
+  function delete_transport(id){
+    var r = confirm("คุณแน่ใจหรือไม่ ...?");
+    var url = "<?php echo Yii::app()->createUrl('backend/transport/delete_transport') ?>";
+    var data = {id: id};
+    if(r == true){
+      $.post(url,data,function(success){
+        load_data_transport();
+      });
+    }
   }
 </script>
