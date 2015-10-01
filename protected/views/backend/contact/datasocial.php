@@ -10,7 +10,10 @@
       </td>
       <td><?php echo $datas['social_app'] ?></td>
       <td><?php echo $datas['account'] ?></td>
-      <td><i class="btn btn-danger btn-sm fa fa-trash" title="ลบ" onclick="delete_social('<?php echo $datas['id']?>')"></i></td>
+      <td>
+      <i class="btn btn-danger btn-sm fa fa-trash" title="ลบ" 
+        onclick="delete_social('<?php echo $datas['id']?>')"></i>
+      </td>
   </tr>
   <?php endforeach; ?>
 </table>
