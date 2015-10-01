@@ -3879,3 +3879,313 @@ Stack trace:
 REQUEST_URI=/shopping_cart/index.php?r=web_system/main_system/contact
 HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main
 ---
+2015/10/01 10:58:38 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\shopping_cart\protected\models\Product.php(64): CModule->__get('db')
+#5 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(12): Product->_get_last_product()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/
+---
+2015/10/01 10:58:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\shopping_cart\protected\models\Product.php(64): CModule->__get('db')
+#5 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(12): Product->_get_last_product()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/
+---
+2015/10/01 10:58:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\shopping_cart\protected\models\Product.php(64): CModule->__get('db')
+#5 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(12): Product->_get_last_product()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/
+---
+2015/10/01 10:58:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\shopping_cart\protected\models\Product.php(64): CModule->__get('db')
+#5 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(12): Product->_get_last_product()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/
+---
+2015/10/01 10:59:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\shopping_cart\protected\models\Product.php(64): CModule->__get('db')
+#5 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(12): Product->_get_last_product()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/
+---
+2015/10/01 10:59:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\shopping_cart\protected\models\Product.php(64): CModule->__get('db')
+#5 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(12): Product->_get_last_product()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/
+---
+2015/10/01 10:59:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php:382
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 C:\xampp\htdocs\shopping_cart\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(387): CDbConnection->init()
+#3 C:\xampp\htdocs\shopping_cart\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 C:\xampp\htdocs\shopping_cart\protected\models\Product.php(64): CModule->__get('db')
+#5 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(12): Product->_get_last_product()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('')
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#12 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/
+---
+2015/10/01 11:38:39 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 11:40:16 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 11:40:16 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 11:40:17 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 11:40:17 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 11:40:17 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 11:40:17 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 11:40:17 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 11:40:17 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 11:40:18 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 11:40:47 [error] [php] Undefined index: socail_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/save_social
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (33)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 14:20:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in C:\xampp\htdocs\shopping_cart\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(270): CController->missingAction('view')
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('view')
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/contact...')
+#3 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact/view
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/contact/create
+---
+2015/10/01 14:24:09 [error] [php] Undefined variable: social (C:\xampp\htdocs\shopping_cart\protected\views\backend\contact\view.php:25)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): ContactController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): ContactController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php(12): ContactController->render()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): ContactController->actionIndex()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ContactController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ContactController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ContactController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/contact
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\contact\view.php (25)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ContactController.php (12)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 15:56:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_product/payments_g".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_product/payments_g
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail/id/VlVSSmQwMVVWWGRQVkVVd1RXcE5kMDE2VFhnPQ==
+---
+2015/10/01 16:55:56 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shopping_cart_db.ะพืหยนพะ' doesn't exist. The SQL statement executed was: INSERT INTO `ะพืหยนพะ` (`price`, `detail`) VALUES (:price, :detail).
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\TransportController.php (21)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/01 16:55:56 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shopping_cart_db.ะพืหยนพะ' doesn't exist. The SQL statement executed was: INSERT INTO `ะพืหยนพะ` (`price`, `detail`) VALUES (:price, :detail)' in C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php(1250): CDbCommand->execute(Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\TransportController.php(21): CDbCommand->insert('\xE0\xB8\xB0\xE0\xB8\x9E\xE0\xB8\xB7\xE0\xB8\xAB\xE0\xB8\xA2...', Array)
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): TransportController->actionSave_transport()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('save_transport')
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/transpo...')
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/transport/save_transport
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/transport
+---

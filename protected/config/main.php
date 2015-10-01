@@ -49,12 +49,12 @@ return array(
             'connectionString' => 'sqlite:' . dirname(__FILE__) . '/../data/testdrive.db',
         ),
         // uncomment the following to use a MySQL database
-        
+
           'db' => array(
           'connectionString' => 'mysql:host=localhost;dbname=shopping_cart_db',
           'emulatePrepare' => true,
           'username' => 'root',
-          'password' => '1234',
+          'password' => '123456',
           'charset' => 'utf8',
           ),
          /*
