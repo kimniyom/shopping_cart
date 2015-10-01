@@ -1,3 +1,10 @@
+<style type="text/css">
+    #title-bar-tab{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+</style>
 <script type="text/javascript">
     $(document).ready(function () {
         $(".breadcrumb").hide();
@@ -34,7 +41,9 @@ if (isset($banner)) {
 <?php } ?>
 <!-- End Banner -->
 
-<a href="javascript:void(0);" id="font-head">สินค้ามาใหม่</a>
+<div class="label label-primary" style="padding:10px; position: relative;">
+    <font id="font-22">สินค้ามาใหม่</font>
+</div>
 <div style=" width: 100%; height: 10px; border-bottom: solid #0063dc 2px; margin-bottom: 5px;"></div>
 <div class="row" style=" margin: 0px;">
     <ol class="dribbbles group" style="padding-left: 0px;">
@@ -52,6 +61,7 @@ if (isset($banner)) {
                         <div class="dribbble-img">
                             <a class="dribbble-link" href="#">
                                 <div data-picture data-alt="Retinabbble - Chrome extension for dribbble">
+                                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/new-full.png" id="title-bar-tab">
                                     <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
                                 </div>
                             </a>
@@ -69,11 +79,14 @@ if (isset($banner)) {
             </li>
         <?php endforeach; ?>
     </ol>
+
 </div>
 
 <br />
 
-<a href="javascript:void(0);" id="font-head">สินค้าแนะนำ</a>
+<div class="label label-danger" style="padding:10px; position: relative;">
+    <font id="font-22">สินค้าแนะนำ</font>
+</div>
 <div style=" width: 100%; height: 10px; border-bottom: solid #0063dc 2px; margin-bottom: 5px;"></div>
 <div class="row" style=" margin: 0px;">
     <ol class="dribbbles group" style="padding-left: 0px;">
@@ -90,6 +103,7 @@ if (isset($banner)) {
                         <div class="dribbble-img">
                             <a class="dribbble-link" href="#">
                                 <div data-picture data-alt="Retinabbble - Chrome extension for dribbble">
+                                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/hot-full.png" id="title-bar-tab">
                                     <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
                                 </div>
                             </a>

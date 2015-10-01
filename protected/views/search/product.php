@@ -7,11 +7,12 @@ $this->breadcrumbs = array(
 <ol class="dribbbles group" style="padding-left: 0px;">
     <?php
         $product_model = new Product();
+        $web = new Configweb_model();
         $i=0;
         foreach ($product as $last):
             $i++;
             $img = $product_model->get_last_img($last['product_id']);
-            $link = Yii::app()->createUrl('frontend/product/detail_product',array('product_id' => $last['product_id']));
+            $link = Yii::app()->createUrl('frontend/product/detail/id/'.$web->url_encode($last['product_id']));
             ?>
             <li id="screenshot-<?php echo $i; ?>" class="col-lg-4 col-md-4 col-sm-6" style="text-align:center; margin-bottom:15px;">
                     <div class="dribbble" id="box_list_product">

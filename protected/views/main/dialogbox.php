@@ -69,19 +69,35 @@
 </script>
 <!-- Modal LogIN-->
 <div class="modal fade" id="Login" tabindex="2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
-    <div class="modal-dialog modal-sm" style=" margin-top: 3%;">
+    <div class="modal-dialog" style=" margin-top: 3%;">
         <div class="modal-content" style="border-radius: 0px;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <center>
-                    <h4 class="modal-title" id="myModalLabel">
+                    <h2 class="modal-title" id="myModalLabel">
                         <i class="fa fa-key"></i>
                         เข้าสู่ระบบ
-                    </h4>
-                </center>
+                    </h2>
             </div>
             <div class="modal-body">
-                <div id="from_Login"></div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <center>
+                            <p id="font-rsu-22">ระบบสมาชิก</p>
+                            <?php 
+                                $web = new Configweb_model();
+                            ?>
+                            <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $config->get_logoweb(); ?>" 
+                            style="max-height: 48px;" class="img-responsive img-resize"/><br/>
+                            <?php echo $config->get_webname(); ?><br/><br/>
+                            สมาชิกใหม่ ?
+                            <a href="<?php echo Yii::app()->createUrl('frontend/main/register/'); ?>"><br/><br/>
+                                <button type="button" class="btn btn-warning">? ลงทะเบียนสมาชิก</button></a><br />
+                        </center>
+                    </div>
+                    <div class="col-lg-6 col-md-6" style="border-left:solid 1px #eeeeee;">
+                        <div id="from_Login"></div>
+                    </div>
+                </div>
             </div>
             <div class="modal-footer">
                 <div id="error"style="display:none; font-size: 14px; text-align: center;">
@@ -140,8 +156,8 @@
 </div><!-- /.modal -->
 
 <!-- Dialog Basket เรียกดูรายการสินค้าจากหน้าข้อมูลส่วนตัว-->
-<div class="modal fade" id="popup_basket">
-    <div class="modal-dialog">
+<div class="modal fade bs-example-modal-lg" id="popup_basket">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content" style=" border-radius:0px; ">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -187,6 +203,25 @@
             </div>
             <div class="modal-body">
                 <div id="show_address_profile"></div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!-- แก้ไข comment-->
+<div class="modal fade" id="popup_update_comment">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">
+                    <i class="fa fa-comment"></i> แก้ไขความคิดเห็น
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div id="show_comment"></div>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -268,5 +303,16 @@
             alert("ยังไม่ได้เลือกเงื่อนไขการค้นหา");
             return false;
         }
+    }
+
+    function view_order(order_id){
+        $("#basket").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
+        var url = "<?php echo Yii::app()->createUrl('frontend/orders/get_list_basket') ?>";
+        var data = {order_id: order_id};
+
+        $.post(url, data, function (result) {
+            $("#popup_basket").modal();
+            $("#basket").html(result);
+        });
     }
 </script>

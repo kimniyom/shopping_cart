@@ -211,6 +211,7 @@ class OrdersController extends Controller {
         $this->render('//orders/verify', $data);
     }
 
+    //ดึงสินค้าในการสั่งซื้อในรายการนั้น ๆ 
     public function actionGet_list_basket() {
         $order_id = $_POST['order_id'];
         $order = new Orders();
@@ -218,5 +219,24 @@ class OrdersController extends Controller {
 
         $this->renderPartial('//orders/basket', $data);
     }
+
+    //รายการสั่งซื้อที่รอการจัดส่ง
+    public function actionWaitsend(){
+        $pid = Yii::app()->session['pid'];
+        $order = new Orders();
+        $data['order'] = $order->get_order_wait_send($pid);
+
+        $this->render('//orders/wait_send', $data);
+    }
+
+    //รายการสั่งซื้อที่จัดส่งแล้ว
+    public function actionSend(){
+        $pid = Yii::app()->session['pid'];
+        $order = new Orders();
+        $data['order'] = $order->get_send($pid);
+
+        $this->render('//orders/send', $data);
+    }
+
 
 }

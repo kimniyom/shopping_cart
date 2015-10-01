@@ -70,8 +70,6 @@
             }
         </script>
 
-
-
     </head>
     <?php
     //config
@@ -116,8 +114,8 @@
 
             <nav class="navbar navbar-default" id="nav_bar" role="navigation" style="border-radius:0px; border: none; margin-bottom:0px;">
                 <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style=" float: left;">
+                    <div class="navbar-header" style="padding-left:10px;">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="float:left;">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -155,8 +153,8 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>" id="font-th"> - รอชำระเงิน</a></li>
                                         <li><a href="<?= Yii::app()->createUrl('frontend/orders/verify') ?>" id="font-th"> - รอตรวจสอบยอดเงิน</a></li>
-                                        <li><a href="<?= Yii::app()->createUrl('web_system/menager_order/from_show_order_confrim') ?>" id="font-th"> - รอการจัดส่งสินค้า</a></li>
-                                        <li><a href="<?= Yii::app()->createUrl('web_system/menager_order/from_show_order_success') ?>" id="font-th"> - ส่งสินค้าเรียบร้อยแล้ว</a></li>
+                                        <li><a href="<?= Yii::app()->createUrl('frontend/orders/waitsend') ?>" id="font-th"> - รอการจัดส่งสินค้า</a></li>
+                                        <li><a href="<?= Yii::app()->createUrl('frontend/orders/send') ?>" id="font-th"> - ส่งสินค้าเรียบร้อยแล้ว</a></li>
                                     </ul>
                                 <?php } ?>
                             </li>
@@ -236,7 +234,7 @@
 
                                 </div>
                                 <div class=" panel-footer">
-                                    <a href="<?= Yii::app()->createUrl('frontend/orders/order_list', array('order_id' => Yii::app()->session['order_id'])) ?>">
+                                    <a href="<?= Yii::app()->createUrl('frontend/orders/order_list/order_id/'.Yii::app()->session['order_id']) ?>">
                                         <i class="fa fa-shopping-cart"></i>
                                         ดูรายการสินค้า</a>
                                     <div class="pull-right">
@@ -321,9 +319,12 @@
                                         </div>
                                     </div>
 
-                                    <div class="btn btn-default" style=" border-radius: 0px; border: none;">
-                                        <img src="<?php echo Yii::app()->baseUrl; ?>/images/post.jpg" class="img-responsive"/>
-                                    </div>
+                                    <!-- POSTS CODE-->
+                                    <center>
+                                        <div class="btn btn-default" style="border-radius: 0px; border: none; width:100%;">
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/images/post.jpg" class="img-responsive img-resize"/>
+                                        </div>
+                                    </center>
 
                                 </div><!--/.nav-collapse -->
                             </div>
@@ -347,7 +348,7 @@
 
                     <!-- Start Content -->
                     <div class="col-sm-12 col-md-9 col-lg-9">
-
+                        <?php if(!empty(Yii::app()->session['status'])): ?>
                         <div class="btn-group btn-group-justified" role="group" aria-label="..." style=" margin-bottom: 10px;">
                             <div class="btn-group" role="group">
                                 <a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>">
@@ -364,18 +365,20 @@
                                     </button></a>
                             </div>
                             <div class="btn-group" role="group">
+                                <a href="<?= Yii::app()->createUrl('frontend/orders/waitsend') ?>">
                                 <button type="button" class="btn btn-default btn-sm ">รอการจัดส่ง 
                                     <label class="label label-danger"><?php echo $order_model->count_wait_send(Yii::app()->session['pid']) ?></label>
-                                </button>
+                                </button></a>
                             </div>
                             <div class="btn-group" role="group">
-                                <button type="button" class="btn btn-default btn-sm ">
+                                <a href="<?= Yii::app()->createUrl('frontend/orders/send') ?>">
+                                <button type="button" class="btn btn-default btn-sm">
                                     ส่งสินค้าเรียบร้อย 
-                                    <label class="label label-danger"><?php echo $order_model->count_send(Yii::app()->session['pid']) ?></label>
-                                </button>
+                                    <label class="label label-success"><?php echo $order_model->count_send(Yii::app()->session['pid']) ?></label>
+                                </button></a>
                             </div>
                         </div>
-
+                        <?php endif; ?>
                         <div class="panel panel-default" style="overflow:auto; margin-bottom:0%; background:#FFF;">     
                             <?php if (isset($this->breadcrumbs)): ?>
                                 <div class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px; border-radius: 0px;" id="font-22">

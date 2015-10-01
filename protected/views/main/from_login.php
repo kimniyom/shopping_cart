@@ -1,19 +1,4 @@
-<style type="text/css">
-    body.modal-open #wrap{
-        -webkit-filter: blur(7px);
-        -moz-filter: blur(15px);
-        -o-filter: blur(15px);
-        -ms-filter: blur(15px);
-        filter: blur(15px);
-    }
 
-    .modal-backdrop {background: #f7f7f7;}
-
-    .close {
-        font-size: 50px;
-        display:block;
-    }
-</style>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -32,6 +17,7 @@
                     function (success) {
                         if (success == 'nosuccess') {
                             $("#load").removeClass("fa fa-spinner fa-pulse");
+                            $("#load").addClass("fa fa-check");
                             $("#error").hide();
                             $("#errorlog").fadeIn();
                         } else {
@@ -45,17 +31,20 @@
         // Cencel 
 
         $("#reset").click(function () {
+            $("#load").removeClass("fa fa-spinner fa-pulse");
+            $("#load").addClass("fa fa-check");
+            $("#error").fadeOut();
+            $("#errorlog").fadeOut();
             $("#login_email").val("");
             $("#login_password").val("");
         });
 
     });// end jquery
 </script>
-
-
-<center>
-
-    <div style="padding:10px;" id="font-20">
+        <center>
+            <p id="font-rsu-22">กรอกข้อมูลสมาชิก</p>
+        </center>
+        <label>อีเมล์ *</label>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
@@ -63,6 +52,7 @@
             </div>
         </div>
 
+        <label>รหัสผ่าน *</label>
         <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-key"></i></div>
@@ -70,15 +60,18 @@
             </div>
         </div>
 
-    </div>
 
-    <div type="button"id="login_btn"  class="btn btn-success" style="width:100%;">
-        <i class="fa fa-check" id="load"></i>
-        เข้าสู่ระบบ
-    </div>
-    <br/><br/>
-    <a href="<?php echo Yii::app()->createUrl('frontend/main/register/'); ?>" style="padding-top:20px;">? สมัคสมาชิก</a><br />
+        <center>
+            <div type="button"id="login_btn"  class="btn btn-primary">
+                <i class="fa fa-check" id="load"></i>
+                เข้าสู่ระบบ
+            </div>
 
-</center>  
+            <div type="button" id="reset"  class="btn btn-danger">
+                <i class="fa fa-remove"></i>
+                ยกเลิก
+            </div>
+        </center>
+ 
 
 

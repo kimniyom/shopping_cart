@@ -83,16 +83,6 @@
     }
 </script>
 
-<script type="text/javascript">
-    function get_comment(product_id) {
-        var url = "<?php echo Yii::app()->createUrl('comment/get_comment'); ?>";
-        var data = {product_id: product_id};
-        $.post(url, data, function (datas) {
-            $("#etc_product").html(datas);
-        });
-    }
-</script>
-
 <?php
 $config = new Configweb_model();
 $this->breadcrumbs = array(
@@ -101,7 +91,7 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<div class="well" style=" width:100%; margin-top:20px; background:#FFF; text-align: left;">
+<div class="well" style=" width:100%; margin-top:20px; background:#FFF; text-align: left; border:none;">
     <div class="row">
         <div class="col-lg-12">
             <font style=" color: #F00; font-size: 24px; font-weight: normal;" id="font-rsu-18">
@@ -212,7 +202,7 @@ $this->breadcrumbs = array(
 
         <ul class="nav nav-tabs" role="tablist" id="font-rsu-18">
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">รายละเอียด</a></li>
-            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ความคิดเห็น</a></li>
+            <li role="presentation"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab" onclick="load_comment()">ความคิดเห็น</a></li>
             <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">วิธีการสั่งซื้อ</a></li>
         </ul>
 
@@ -222,20 +212,17 @@ $this->breadcrumbs = array(
                 <p id="font-rsu-20">รายละเอียด</p>
                 <?= $product['product_detail'] ?>
             </div>
-            <div role="tabpanel" class="tab-pane" id="profile">...</div>
+            <div role="tabpanel" class="tab-pane" id="comment"></div>
             <div role="tabpanel" class="tab-pane" id="messages">...</div>
         </div>
     </div>
-
-
-    <br/>
-
+</div>
 
     <!-- สินค้าที่เกียวข้อง -->
-    <div class="row">
-        <div class="panel panel-default">
+  
+        <div class="panel panel-default" style="margin:0px;">
             <div class="panel-heading">
-                สินค้าใกล้เคียง
+                <img src="<?php echo Yii::app()->baseUrl;?>/images/full-shopping-cart-icon.png" width="28"/> สินค้าอื่น ๆ
             </div>
             <div class="panel-body">
                 <ol class="dribbbles group" style="padding-left: 0px;">
@@ -243,7 +230,7 @@ $this->breadcrumbs = array(
                     $i = 0;
                     foreach ($near as $ne):
                         $i++;
-                        $link = Yii::app()->createUrl('frontend/product/detail_product', array('product_id' => $ne['product_id']));
+                        $link = Yii::app()->createUrl('frontend/product/detail/id/'.$config->url_encode($ne['product_id']));
                         $img_n = $product_model->get_last_img($ne['product_id']);
                         ?>
                         <li id="screenshot-<?php echo $i; ?>" class="col-lg-4 col-md-4 col-sm-6" style="text-align:center; margin-bottom:15px;">
@@ -273,5 +260,34 @@ $this->breadcrumbs = array(
                 </ol>
             </div>
         </div>
-    </div>
-</div>
+
+
+<script type="text/javascript">
+    //load_comment();
+    function load_comment(){
+        $("#comment").html("<center><i class='fa fa-spinner fa-spin fa-2x'></i></center>");
+        var product_id = "<?php echo $product['product_id']?>";
+        var url = "<?php echo Yii::app()->createUrl('frontend/comment')?>";
+        var data = {product_id: product_id};
+
+        $.post(url,data,function(result){
+            $("#comment").html(result);
+        });
+    }
+
+    function send_comment(){
+        var product_id = "<?php echo $product['product_id']?>";
+        var pid = "<?php echo Yii::app()->session['pid']?>";
+        var box_comment = $("#box_comment").val();
+        var url = "<?php echo Yii::app()->createUrl('frontend/comment/send_comment')?>";
+        var data = {product_id: product_id,pid: pid,box_comment: box_comment};
+        if(box_comment == ''){
+            $("#box_comment").focus();
+            return false;
+        }
+        $.post(url,data,function(result){
+            load_comment();
+        });
+    }
+</script>
+

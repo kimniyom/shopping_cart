@@ -60,12 +60,13 @@ $this->breadcrumbs = array(
 
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title" id="font-20" style=" color: #ff3300;">
+                    <h4 class="panel-title" style=" color: #ff3300;">
                         <a href="<?php echo Yii::app()->createUrl('frontend/orders/confieminformpayment',array('order_id' => $rs['order_id'])) ?>">
                             <div class="btn btn-default btn-xs">
                                 <img src="<?php echo Yii::app()->baseUrl; ?>/images/atm-icon.png"/>
                                 แจ้งชำระรายการนี้
                             </div></a>
+                            <font id="font-rsu-18">
                         รหัสสั่งซื้อ <span class="badge"><?php echo $rs['order_id'] ?></span>
                         วันที่ <?php echo $web->thaidate($rs['order_date']) ?>
                         รวมสินค้า <span class="badge"><?php echo $rs['PRODUCT_TOTAL'] ?></span>
@@ -76,6 +77,7 @@ $this->breadcrumbs = array(
                                 รายการสินค้า
                             </a>
                         </div>
+                    </font>
                     </h4>
                 </div>
                 <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse <?php echo $active; ?>">

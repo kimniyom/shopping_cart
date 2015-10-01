@@ -28,6 +28,9 @@
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.css"/>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/simple-sidebar.css"/>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/css/perfect-scrollbar.css"/>
+        <!-- Bootstrap CheckBox -->
+        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
+
 
         <script src="<?= Yii::app()->baseUrl; ?>/themes/backend/js/jquery-1.9.1.js" type="text/javascript"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/backend/js/bootstrap.js" type="text/javascript"></script>
@@ -55,10 +58,9 @@
                 var vchar = String.fromCharCode(event.keyCode);
                 if ((vchar < '0' || vchar > '9') && (vchar != '.'))
                     return false;
-                ele.onKeyPress = vchar;
+                //ele.onKeyPress = vchar;
             }
         </script>
-
 
     </head>
 
@@ -66,7 +68,7 @@
 
         <!--<div class="container" style="margin-bottom:5%;">-->
         <nav class="navbar navbar-default" role="navigation" style="z-index:1; border-radius:0px; margin-bottom:0px;"></nav>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="z-index:1; border-radius:0px; margin-bottom:0px;">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="border-radius:0px; margin-bottom:0px;">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -76,7 +78,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a href="#menu-toggle" class="navbar-brand" id="menu-toggle"><i class="fa fa-bars"></i></a>
-                    <a class="navbar-brand" style=" margin-top: 0px; padding-top: 5px;">
+                    <a class="navbar-brand" style=" margin-top: 0px; padding-top: 10px;">
                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>" height="32px"/>
                     </a>
                     <a class="navbar-brand" href="#" style=" font-family: Th;font-size:28px;">
@@ -86,7 +88,7 @@
 
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active">
+                        <li <?php if(Yii::app()->session['navmenu'] == '1'){ echo "class='active'";}?> onclick="set_navbar('1')">
                             <a href="<?php echo Yii::app()->createUrl('frontend/main') ?>">
                                 <span class="glyphicon glyphicon-home"></span>
                                 <font id="font-th">หน้าหลัก</font></a>
@@ -105,6 +107,11 @@
                                 <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_user') ?>" id="font-th"> - รายงานการเข้าเป็นสมาชิก</a></li>
                             </ul>
                         </li>
+                        <li <?php if(Yii::app()->session['navmenu'] == '2'){ echo "class='active'";}?> onclick="set_navbar('2')">
+                            <a href="<?php echo Yii::app()->createUrl('frontend/main') ?>">
+                                <span class="glyphicon glyphicon-book"></span>
+                                <font id="font-th">คู่มือการใช้งาน</font></a>
+                        </li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
@@ -122,18 +129,16 @@
 
 
         <div id="wrapper">
-
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <!-- ###################### USER #################-->
-                <div class="panel panel-default" id="panel">
+                <div class="panel panel-primary" id="panel">
                     <div class=" panel-heading">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/use-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> ผู้ใช้งาน
                     </div>
                     <div class=" panel-body">
                         ชื่อ : <?= Yii::app()->session['username']; ?><br>
                         สถานะ : <?php echo "ผู้ดูแลระบบ"; ?><br/>
-
                     </div>
                     <div class="panel-footer">
                         <a href="<?= Yii::app()->createUrl('frontend/user/from_edit_register/'); ?>">ข้อมูลส่วนตัว</a>
@@ -141,7 +146,30 @@
                 </div>
 
                 <!-- ส่วนของ ผู้ดูแลระบบ -->
-
+                <!-- ตั้งค่าร้านค้า -->
+                <div class="panel panel-primary" id="panel-head">
+                    <div class="panel-heading" id="panel">
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>" 
+                            height="32px" 
+                            style="border-radius:20px; padding:2px; border:#FFF solid 2px;"/>
+                            ข้อมูลร้านค้า
+                    </div>
+                        <a href="<?= Yii::app()->createUrl('backend/contact')?>" class="list-group-item">
+                            <i class="fa fa-phone-square"></i> ข้อมูลติดต่อ
+                        </a>
+                        <a href="<?= Yii::app()->createUrl('backend/about') ?>" class="list-group-item">
+                            <i class="fa fa-user-secret"></i> เกี่ยวกับเรา
+                        </a>
+                        <a href="<?= Yii::app()->createUrl('backend/banner') ?>" class="list-group-item">
+                            <i class="fa fa-image"></i>  จัดการภาพ Banner
+                        </a>
+                        <a href="<?= Yii::app()->createUrl('backend/logo') ?>" class="list-group-item">
+                            <i class="fa fa-smile-o"></i>  จัดการ โลโก้ เว็บ
+                        </a>
+                        <a href="<?= Yii::app()->createUrl('backend/web') ?>" class="list-group-item">
+                            <i class="fa fa-text-height"></i>  จัดการ ชื่อเว็บ
+                        </a>
+                    </div>
                 <!-- List Menu Admin-->
                 <div class="panel panel-primary" id="panel-head">
                     <div class="panel-heading" id="panel">
@@ -152,29 +180,34 @@
                        class="list-group-item"><i class="fa fa-folder-open"></i> ประเภทสินค้า</a>
                     <a href="<?= Yii::app()->createUrl('backend/user/userall') ?>"
                        class="list-group-item"><i class="fa fa-group"></i>  ข้อมูลสมาชิก</a>
-
                     <a href="<?php echo Yii::app()->createUrl('backend/orders/verify') ?>"
                        class="list-group-item">
-                        <i class="fa fa-check-circle"></i>  ตรวจสอบการสั่งซื้อสินค้า
+                        <i class="fa fa-check-circle"></i>  ตรวจสอบการชำระเงิน
                         <span class="label label-danger pull-right" style="font-size: 16px;">
                             <?php echo $order_model->count_verify(); ?> 
                         </span>
                     </a>
-                    <a href="<?= Yii::app()->createUrl('web_system/menager_admin/from_confrim_notify') ?>"
-                       class="list-group-item"><span class="fa fa-send-o"></span>  แจ้งการส่งสินค้า</a>
-                    <a href="<?= Yii::app()->createUrl('web_system/upload_images/from_show_banner') ?>"
-                       class="list-group-item"><span class="fa fa-image"></span>  จัดการภาพ Slide</a>
-                    <a href="<?= Yii::app()->createUrl('web_system/upload_images/from_show_logo') ?>"
-                       class="list-group-item"><span class="fa fa-smile-o"></span>  จัดการ โลโก้ เว็บ</a>
-                    <a href="<?= Yii::app()->createUrl('web_system/menager_admin/from_show_webname') ?>"
-                       class="list-group-item"><span class="fa fa-text-height"></span>  จัดการ ชื่อเว็บ</a>
+                    <a href="<?php echo Yii::app()->createUrl('backend/orders/pendingshipment') ?>"
+                       class="list-group-item">
+                        <i class="fa fa-paper-plane-o"></i>  รอจัดส่ง(แพ็กลงกล่อง)
+                        <span class="label label-danger pull-right" style="font-size: 16px;">
+                            <?php echo $order_model->count_wait_send(); ?> 
+                        </span>
+                    </a>
+                    <a href="<?= Yii::app()->createUrl('backend/orders/notification') ?>"
+                       class="list-group-item"><span class="fa fa-send"></span>  แจ้งการส่งสินค้า
+                        <span class="label label-danger pull-right" style="font-size: 16px;">
+                            <?php echo $order_model->count_wait_inform(); ?> 
+                        </span>
+                   </a>
                     <a href="<?= Yii::app()->createUrl('backend/payment/view') ?>"
                        class="list-group-item"><span class="fa fa-money"></span>  ช่องทางการชำระเงิน</a>
+                    <a href="<?= Yii::app()->createUrl('backend/period') ?>"
+                       class="list-group-item"><span class="fa fa-calendar"></span>  ระยะเวลาจองสินค้า</a>
                 </div>
 
-
                 <!-- List รายชื่อ สินค้า -->
-                <div class="panel panel-default" id="panel-head">
+                <div class="panel panel-primary" id="panel-head">
                     <div class="panel-heading" id="panel-head">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/shipping-box-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> 
                         จัดการสินค้าในร้าน
@@ -195,9 +228,8 @@
 
                 <!-- รายการจัดส่งสินค้า -->
                 <!-- List รายชื่อ สินค้า -->
-                <div class="list-group" id="panel">
-                    <a class="list-group-item  list-group-item-warning active" id="panel">รหัสส่งสินค้า</a>
-
+                <div class="panel panel-primary" id="panel-head">
+                    <div class="panel-heading">รหัสส่งสินค้า</div>
                     <?php
                     $notify = $product_model->get_notify_postcode();
                     foreach ($notify as $datas):
@@ -207,8 +239,8 @@
                             <span class="glyphicon glyphicon-send"></span>  <?php echo $datas['postcode'] ?>
                         </a>
                     <?php endforeach; ?>
-
                 </div>
+                <br/><br/>
             </div>
             <!-- /#sidebar-wrapper -->
 
@@ -217,8 +249,12 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
+                            <ul class="nav nav-pills" style="margin-bottom:10px;">
+                              <li><a href="<?php echo Yii::app()->createUrl('backend/orders/verify') ?>"><i class="fa fa-check-circle"></i> ตรวจสอบการชำระเงิน <span class="badge"><?php echo $order_model->count_verify(); ?> </span></a></li>
+                              <li><a href="<?php echo Yii::app()->createUrl('backend/orders/pendingshipment') ?>"><i class="fa fa-paper-plane-o"></i> รอจัดส่ง(แพ็กลงกล่อง) <span class="badge"><?php echo $order_model->count_wait_send(); ?> </span></a></li>
+                              <li><a href="<?php echo Yii::app()->createUrl('backend/orders/notification') ?>"><i class="fa fa-send"></i> แจ้งการส่งสินค้า <span class="badge"><?php echo $order_model->count_wait_inform(); ?> </span></a></li>
+                            </ul>
                             <ol class="breadcrumb well well-sm" style=" margin-bottom: 10px; margin-top: 0px;">
-
                                 <?php if (isset($this->breadcrumbs)): ?>
                                     <?php
                                     $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -228,8 +264,6 @@
                                     ?><!-- breadcrumbs -->
                                 <?php endif ?>
                             </ol>
-
-
                             <?php
                             echo $content;
                             ?>
@@ -243,12 +277,27 @@
         </div>
         <!-- /#wrapper -->
 
+        <!-- popup -->
+        <div id="overlay_popup">
+            <center>
+                <div id="show_slip"></div><br/>
+            </center>
+        </div>
+
         <!-- Menu Toggle Script -->
         <script>
             $("#menu-toggle").click(function (e) {
                 e.preventDefault();
                 $("#wrapper").toggleClass("toggled");
             });
+
+            function set_navbar(id){
+                var url = "<?php echo Yii::app()->createUrl('backend/backend/set_navbar')?>"
+                var data = {id:id};
+                $.post(url,data,function(success){
+                    //window.location.reload();
+                });
+            }
         </script>
 
     </body>

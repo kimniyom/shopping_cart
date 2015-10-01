@@ -12,5 +12,10 @@ class BackendController extends Controller{
     public function actionIndex(){
         $this->render("//backend/index");
     }
+
+    public function actionSet_navbar(){
+    	$navmenu = $_POST['id'];
+    	Yii::app()->session['navmenu'] = $navmenu;
+    }
 }
 

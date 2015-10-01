@@ -1,7 +1,7 @@
 
 <style type="text/css">
     table tr td{ height:30px;}
-    #im-resize{ width: 80px; height: 75px; padding: 5px; margin-bottom: 5px;}
+    #im-resize{height: 75px; padding: 5px; margin-bottom: 5px;}
     #cart_box{
         float: right; margin-top: 0px; padding-top: 15px;
         position:fixed; top:10px; right:20px;z-index:3;
@@ -53,7 +53,7 @@ $this->breadcrumbs = array(
     </div>
 </span>
 
-<div class="well" style=" width:100%; margin-top:20px; background:#FFF; text-align: left; color: #666666;;">
+<div class="well" style=" width:100%; margin-top:20px;text-align: left;">
     <div class="row">
 
         <div class="col-lg-4 col-md-12 col-xs-12">
@@ -66,16 +66,16 @@ $this->breadcrumbs = array(
             <b>ประเภทสินค้า</b> <?= $product['type_name'] ?><br/>
             <b>อัพเดทล่าสุด</b> <?= $config->thaidate($product['d_update']); ?><br/><br/>
             <div class="row">
-                <div class="well" style=" text-align: center;">
+                <div class="alert" style="text-align: center;">
                     <b style=" font-size: 16px;">จำนวนคงเหลือ</b>
                     <input type="text" class="form-control" id="num" value="<?php echo $product['product_num'] ?>" style="text-align: center; border: #F00 solid 2px; height: 43px; font-size: 16px;" readonly="readonly"/>
                 </div>
             </div>
 
             <center>
-                <font style="color:#000; font-size: 24px;">
+                <font style=" font-size: 24px;">
                 ราคา
-                <span class="badge btn-danger" style="font-size: 24px;"><?= number_format($product['product_price']) ?>.-</span>  บาท
+                <span class="alert alert-danger" style="font-size: 24px;"><?= number_format($product['product_price']) ?>.-</span>  บาท
                 </font>
             </center>
         </div>
@@ -125,7 +125,7 @@ $this->breadcrumbs = array(
     <h4 style="font-weight:bold; font-size: 24px; color: #F00;">
         <i class="fa fa-tag"></i> รายละเอียด
     </h4>
-    <div class="well" style=" background: #FFF;">
+    <div class="well" style="background:#999999;">
         <div class="row" id="etc_product">
             <div class="col-lg-12 col-md-12">
                 <?= $product['product_detail'] ?>

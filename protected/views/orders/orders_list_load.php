@@ -16,9 +16,10 @@
         $totalall = 0;
         $i = 1;
         $product_model = new Product();
+        $web = new Configweb_model();
         foreach ($product as $products):
             $img = $product_model->get_last_img($products['product_id']);
-            $link = Yii::app()->createUrl('frontend/product/detail_product',array('product_id' => $products['product_id']));
+            $link = Yii::app()->createUrl('frontend/product/detail/id/'.$web->url_encode($products['product_id']));
             ?>
             <tr>
                 <td><?= $i++ ?></td>

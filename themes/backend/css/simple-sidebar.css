@@ -31,9 +31,11 @@
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
-    border-right: solid 1px #0b0b0b;
-    margin-top: 2px;
-    padding-bottom: 4%;
+    /*
+    border-right: solid 1px #eeeeee;
+    */
+    margin-top: 3px;
+    padding-bottom: 30px;
 }
 
 #wrapper.toggled #sidebar-wrapper {

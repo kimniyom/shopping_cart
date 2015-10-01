@@ -1,3 +1,7 @@
+<style type="text/css">
+    .register label{font-size: 16px;}
+</style>
+
 <?php
 $this->breadcrumbs = array(
     'ลงทะเบียนสมาชิก',
@@ -19,7 +23,7 @@ $this->breadcrumbs = array(
             <?php if (isset($error)) { ?>
                 <div class="alert alert-danger"><?php echo $error; ?></div>
             <?php } ?>
-            <form id="register" name="register" 
+            <form id="register" name="register" class="register"
                   action="<?php echo Yii::app()->createUrl('frontend/main/save_register'); ?>" 
                   method="post" role="form" onSubmit="return check_from();">
                 <div class="panel-body" id="font-rsu-20">
@@ -35,7 +39,7 @@ $this->breadcrumbs = array(
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="text" id="pid" name="pid" class="form-control input-sm" value="<?php echo $id; ?>" readonly/>
+                            <input type="text" id="pid" name="pid" class="form-control" value="<?php echo $id; ?>" readonly/>
                         </div>
                     </div>
 
@@ -46,7 +50,7 @@ $this->breadcrumbs = array(
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="email" id="email" name="email" class="form-control input-sm" placeholder="ex. xxxxxxxx_122@gmail.com"/>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="ex. xxxxxxxx_122@gmail.com"/>
                         </div>
                     </div>
 
@@ -57,7 +61,7 @@ $this->breadcrumbs = array(
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="text" id="alias" name="alias" class="form-control input-sm" placeholder="ชื่อที่ใช้แสดง"/>
+                            <input type="text" id="alias" name="alias" class="form-control " placeholder="ชื่อที่ใช้แสดง"/>
                         </div>
                     </div>
 
@@ -68,7 +72,7 @@ $this->breadcrumbs = array(
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <input type="password" id="password" name="password" class="form-control input-sm" maxlength="8" placeholder="อักขระ A-Z,a-z,0-9 ความยาว 6-8 ตัว"/>
+                            <input type="password" id="password" name="password" class="form-control " maxlength="8" placeholder="อักขระ A-Z,a-z,0-9 ความยาว 6-8 ตัว"/>
                         </div>
                     </div>
 
@@ -79,11 +83,11 @@ $this->breadcrumbs = array(
                     </div>
                     <div class="row">
                         <div class="col-sm-6">
-                            <input type="text" id="name" name="name" class="form-control input-sm" placeholder="ชื่อจริง"/>
+                            <input type="text" id="name" name="name" class="form-control " placeholder="ชื่อจริง"/>
                         </div>
 
                         <div class="col-sm-6">
-                            <input type="text" id="lname" name="lname" class="form-control input-sm" placeholder="นามสกุล"/>
+                            <input type="text" id="lname" name="lname" class="form-control " placeholder="นามสกุล"/>
                         </div>
                     </div>
 

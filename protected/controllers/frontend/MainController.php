@@ -30,10 +30,8 @@ class MainController extends Controller {
         $email = $_POST['login_email'];
         $password = $_POST['login_password'];
 
-        $sql = "SELECT pid,name,lname,password,status,email,tel
-                FROM masuser
-                WHERE email = '$email' AND password = '$password' ";
-        $result = Yii::app()->db->createCommand($sql)->queryRow();
+        $use = new User();
+        $result = $use->Check_user($email,$password);
 
         if (!empty($result)) {
             $row = $result;

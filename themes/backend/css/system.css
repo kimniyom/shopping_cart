@@ -210,3 +210,22 @@ div.img-resize {
     border-right: none;
     border-top:none;
 }
+
+#overlay_popup{
+        background: url(images/body.png);
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        display: none;
+        z-index: 5060;
+        top: 0px;
+        text-align: center;
+        overflow: auto;
+    }
+
+#show_slip{
+    text-align: center;
+    max-width: 500px;
+    height: 350px;
+    position: relative;
+}

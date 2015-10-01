@@ -62,7 +62,7 @@ class Orders {
     function get_order_user($pid = null) {
         $query = "SELECT o.order_id,SUM(b.product_num) AS product_total,SUM(b.product_price_sum) AS price_total,o.order_date
                         FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
-                        WHERE pid = '$pid'
+                        WHERE pid = '$pid' AND (o.active = '4' OR o.active = '5')
                         GROUP BY o.order_id";
 
         $result = Yii::app()->db->createCommand($query)->queryAll();
@@ -81,7 +81,7 @@ class Orders {
                                 SUM(b.product_price_sum) AS PRICE_TOTAL
                         FROM orders o
                         INNER JOIN basket b ON o.order_id = b.order_id
-                        WHERE o.pid = '$pid' AND LEFT(o.order_date,4) = YEAR(NOW()) AND active = '3'
+                        WHERE o.pid = '$pid' AND LEFT(o.order_date,4) = YEAR(NOW()) AND (active = '4' OR active = '5')
                         GROUP BY SUBSTR(o.order_date,6,2)
                         ) Q1 ON m.id = Q1.id
 
@@ -101,7 +101,7 @@ class Orders {
                         SELECT SUBSTR(o.order_date,6,2) AS id,
                         COUNT(*) AS TOTAL
                         FROM orders o
-                        WHERE o.pid = '$pid' AND LEFT(o.order_date,4) = YEAR(NOW()) AND active = '3'
+                        WHERE o.pid = '$pid' AND LEFT(o.order_date,4) = YEAR(NOW()) AND (active = '4' OR active = '5')
                         GROUP BY SUBSTR(o.order_date,6,2)
                         ) Q1 ON m.id = Q1.id
 
@@ -121,7 +121,7 @@ class Orders {
                         SELECT p.type_id,SUM(b.product_price_sum) AS price_total
                         FROM basket b INNER JOIN product p ON b.product_id = p.product_id
                         INNER JOIN orders o ON b.order_id = o.order_id
-                        WHERE o.pid = '$pid' AND  LEFT(o.order_date,4) = YEAR(NOW()) AND o.active = '3'
+                        WHERE o.pid = '$pid' AND  LEFT(o.order_date,4) = YEAR(NOW()) AND (active = '4' OR active = '5')
                         GROUP BY p.type_id
                         ) Q1 
 
@@ -137,7 +137,7 @@ class Orders {
         $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL 
                         FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
                         WHERE pid = '$pid' AND active = '1'
-                        GROUP BY o.order_id  ";
+                        GROUP BY o.order_id ORDER BY o.order_id DESC";
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
     }
@@ -147,7 +147,28 @@ class Orders {
         $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL 
                         FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
                         WHERE pid = '$pid' AND active = '2'
-                        GROUP BY o.order_id  ";
+                        GROUP BY o.order_id ORDER BY o.order_id DESC";
+        $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+
+    //หารายการรอจัดส่ง
+    function get_order_wait_send($pid = null) {
+        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL 
+                        FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                        WHERE pid = '$pid' AND (active = '3' OR active = '4')
+                        GROUP BY o.order_id ORDER BY o.order_id DESC";
+        $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+
+    //รายการจัดส่งแล้ว
+    function get_send($pid = null) {
+        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL,
+                        date_send,postcode
+                        FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                        WHERE pid = '$pid' AND active = '5'
+                        GROUP BY o.order_id ORDER BY o.order_id DESC";
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
     }
@@ -179,7 +200,7 @@ class Orders {
         $rs = Yii::app()->db->createCommand()
                 ->select('COUNT(*) AS TOTAL')
                 ->from('orders')
-                ->where('pid=:pid AND active = 3', array(':pid' => $pid))
+                ->where('pid=:pid AND (active = 3 OR active = 4)', array(':pid' => $pid))
                 ->queryRow();
 
         return $rs['TOTAL'];
@@ -190,7 +211,7 @@ class Orders {
         $rs = Yii::app()->db->createCommand()
                 ->select('COUNT(*) AS TOTAL')
                 ->from('orders')
-                ->where('pid=:pid AND active = 4', array(':pid' => $pid))
+                ->where('pid=:pid AND active = 5', array(':pid' => $pid))
                 ->queryRow();
 
         return $rs['TOTAL'];

@@ -1,4 +1,6 @@
 <?php
+$period = new Backend_period();
+$period_active = $period->get_period_active();
 $this->breadcrumbs = array(
     'สรุปรายการสั่งซื้อ',
 );
@@ -28,7 +30,7 @@ $this->breadcrumbs = array(
 
 <div class="well" id="font-rsu-18" style=" font-weight: bold; background: #FFF; color: #ff3300;">
     <img src="<?php echo Yii::app()->baseUrl; ?>/images/notification-icon.png"/><br/>
-    ระบบจะทำการล็อคสินค้าไว้ให้ท่านเป็นเวลา 3 วัน<br/>
+    ระบบจะทำการล็อคสินค้าไว้ให้ท่านเป็นเวลา <?php if(!empty($period_active)){echo $period_active;} else { echo "3";}?> วัน<br/>
     หากท่านไม่ชำระเงินภายในระยะเวลาที่กำหนดระบบจะทำการลบรายการสั่งซื้อของท่าน<br/><br/>
     ท่านสามารถแจ้งการชำระเงินได้ที่เมนู "แจ้งชำระเงิน" หรือคลิกที่นี้
     <div class="btn btn-success btn-sm"><i class="fa fa-hand-o-up"></i> แจ้งการชำระเงิน</div>

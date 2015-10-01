@@ -61,27 +61,29 @@ $this->breadcrumbs = array(
     </div>
 </div>
 
-
-<table class="table table-striped table-bordered" id="product_type">
-    <thead>
-        <tr>
-            <th>รหัส</th>
-            <th>ประเภท</th>
-            <th style=" text-align: center;">เมนูจัดการ</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($type as $rs): ?>
+<div class="panel panel-default">
+    <div class="panel-heading">ประเภทสินค้า</div>
+    <table class="table table-striped table-hover" id="product_type">
+        <thead>
             <tr>
-                <td><?php echo $rs['type_id'] ?></td>
-                <td><?php echo $rs['type_name'] ?></td>
-                <td style=" text-align: center;">
-                    <a href="<?php echo Yii::app()->createUrl('backend/typeproduct/edit',array('id' => $rs['id'])) ?>">
-                        <div class="btn btn-default btn-xs"><i class="glyphicon glyphicon-edit"></i> แก้ไข</div></a>
-                    <div class="btn btn-default btn-xs"><i class="glyphicon glyphicon-edit"></i> ลบ</div>
-                </td>
+                <th>รหัส</th>
+                <th>ประเภท</th>
+                <th style=" text-align: center;">เมนูจัดการ</th>
             </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <?php foreach ($type as $rs): ?>
+                <tr>
+                    <td><?php echo $rs['type_id'] ?></td>
+                    <td><?php echo $rs['type_name'] ?></td>
+                    <td style=" text-align: center;">
+                        <a href="<?php echo Yii::app()->createUrl('backend/typeproduct/edit',array('id' => $rs['id'])) ?>">
+                            <div class="btn btn-default btn-xs"><i class="glyphicon glyphicon-edit"></i> แก้ไข</div></a>
+                        <div class="btn btn-default btn-xs"><i class="glyphicon glyphicon-edit"></i> ลบ</div>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>
 

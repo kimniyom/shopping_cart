@@ -29,7 +29,7 @@ $this->breadcrumbs = array(
         </div>
     </div>
 
-    <table class="table table-striped" id="p_product">
+    <table class="table table-striped table-hover" id="p_product">
         <thead>
             <tr>
                 <th>รูป</th>

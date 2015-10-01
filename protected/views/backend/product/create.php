@@ -26,7 +26,6 @@ $this->breadcrumbs = array(
             return false;
         }
 
-        
         var data = {
             product_id: product_id,
             product_name: product_name,
@@ -40,7 +39,6 @@ $this->breadcrumbs = array(
         $.post(url, data, function (success) {
             window.location = "<?php echo Yii::app()->createUrl('backend/product/detail_product&product_id=') ?>" + product_id;
         });
-
     }
 </script>
 <div class="well" style="width:100%;">

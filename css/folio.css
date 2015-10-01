@@ -169,3 +169,7 @@ background: -ms-linear-gradient(top, #ededed 0%,#f6f6f6 69%,#ffffff 100%); /* IE
 background: linear-gradient(to bottom, #ededed 0%,#f6f6f6 69%,#ffffff 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
+
+ol{
+    list-style-type: none;
+}

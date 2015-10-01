@@ -116,11 +116,45 @@ class Backend_orders {
                         SUM(b.product_num) AS PRODUCT_TOTAL,
                         SUM(b.product_price_sum) AS PRICE_TOTAL,
                         o.slip,
-                        m.tel
+                        m.tel,
+                        o.date_payment,
+                        o.time_payment,
+                        o.money
                 FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
                 INNER JOIN masuser m ON o.pid = m.pid
                 WHERE active = '2'
                 GROUP BY o.order_id  ";
+        $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+
+    //หารายการรอจัดส่งสินค้าเพื่อจัดของส่งให้ลูกค้า
+    function get_pending_shipment() {
+        $query = "SELECT 
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        SUM(b.product_num) AS PRODUCT_TOTAL,
+                        SUM(b.product_price_sum) AS PRICE_TOTAL,
+                        o.slip,
+                        m.tel,
+                        o.date_payment,
+                        o.time_payment,
+                        o.money,
+                        IFNULL(o.message,'-') AS msg,
+                        a.*,
+                        c.changwat_name,
+                        ap.ampur_name,
+                        t.tambon_name
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN address a ON m.pid = a.pid
+                INNER JOIN changwat c ON a.changwat = c.changwat_id
+                INNER JOIN ampur ap ON a.ampur = ap.ampur_id
+                INNER JOIN tambon t ON a.tambon = t.tambon_id
+                WHERE active = '3'
+                GROUP BY o.order_id ";
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
     }
@@ -148,11 +182,11 @@ class Backend_orders {
     }
 
     //นับจำนวนออเดอร์ที่ชำระเงินตรวจสอบและรอการจัดส่ง
-    function count_wait_send($pid = null) {
+    function count_wait_send() {
         $rs = Yii::app()->db->createCommand()
                 ->select('COUNT(*) AS TOTAL')
                 ->from('orders')
-                ->where('pid=:pid AND active = 3', array(':pid' => $pid))
+                ->where('active = :active', array(':active' => '3'))
                 ->queryRow();
 
         return $rs['TOTAL'];
@@ -163,7 +197,18 @@ class Backend_orders {
         $rs = Yii::app()->db->createCommand()
                 ->select('COUNT(*) AS TOTAL')
                 ->from('orders')
-                ->where('pid=:pid AND active = 4', array(':pid' => $pid))
+                ->where('pid=:pid AND active = 5', array(':pid' => $pid))
+                ->queryRow();
+
+        return $rs['TOTAL'];
+    }
+
+    //นับจำนวนออเดอร์ที่รอแจ้ง รหัสการส่ง
+    function count_wait_inform() {
+        $rs = Yii::app()->db->createCommand()
+                ->select('COUNT(*) AS TOTAL')
+                ->from('orders')
+                ->where('active = :active', array(':active' => '4'))
                 ->queryRow();
 
         return $rs['TOTAL'];
@@ -178,12 +223,38 @@ class Backend_orders {
                         o.order_date,
                         SUM(b.product_num) AS PRODUCT_TOTAL,
                         SUM(b.product_price_sum) AS PRICE_TOTAL,
+                        o.money,
+                        o.date_payment,
+                        o.time_payment,
                         o.slip,
-                        m.tel
+                        m.tel,
+                        k.bank_name,
+                        k.bank_img,
+                        p.bank_branch,
+                        IFNULL(o.message,'-') AS msg
                 FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
                 INNER JOIN masuser m ON o.pid = m.pid
-                WHERE active = '2' AND o.order_id = '$order_id' ";
+                INNER JOIN payment p ON o.payment_id = p.id
+                INNER JOIN bank k ON p.bank_id = k.id
+                WHERE o.order_id = '$order_id' ";
         $result = Yii::app()->db->createCommand($query)->queryRow();
+        return $result;
+    }
+
+    //ดึงข้อมูลรายการที่ส่งแล้วมาแสดงเพื่อแจ้งเลขพัสดุ
+    function list_order_inform() {
+        $query = "SELECT o.pid,
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        o.money,
+                        o.date_payment,
+                        o.time_payment
+                FROM orders o 
+                INNER JOIN masuser m ON o.pid = m.pid
+                WHERE active = '4' ";
+        $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
     }
 

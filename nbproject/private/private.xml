@@ -8,5 +8,6 @@
             <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/orders/orders_list_load.php</file>
             <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/OrdersController.php</file>
         </group>
+        <group name="yii"/>
     </open-files>
 </project-private>

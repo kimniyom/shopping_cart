@@ -23,11 +23,11 @@ body {
 }
 
 body.modal-open #wrap_blur{
-    -webkit-filter: blur(7px);
-    -moz-filter: blur(15px);
-    -o-filter: blur(15px);
-    -ms-filter: blur(15px);
-    filter: blur(15px);
+    -webkit-filter: blur(15px);
+    -moz-filter: blur(24px);
+    -o-filter: blur(24px);
+    -ms-filter: blur(24px);
+    filter: blur(24px);
     z-index: -5;
 }
 
@@ -166,7 +166,7 @@ div.img-resize {
 
 #cart_box{
     float: right; margin-top: 0px; padding-top: 15px;
-    position:fixed; top:10px; right:20px;z-index:1050;
+    position:fixed; top:10px; right:20px;z-index:1040;
 }
 
 #fontgreen14{ font-size: 14px; color:#33cc00; font-family: Th;}

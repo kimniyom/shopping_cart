@@ -15,7 +15,7 @@ $this->breadcrumbs = array(
         สมาชิก
     </div>
     <div class="panel-body table-responsive">
-        <table class="table table-bordered" id="user">
+        <table class="table table-striped table-hover" id="user">
             <thead>
                 <tr>
                     <th>#</th>

@@ -6,6 +6,16 @@ class User extends CActiveRecord {
         return "masuser";
     }
 
+    public function Check_user($email = null,$password = null){
+        $result = Yii::app()->db->createCommand()
+            ->select('pid,name,lname,password,status,email,tel')
+            ->from('masuser')
+            ->where('email = :email AND password = :password',array(':email' => $email,':password' => $password))
+            ->queryRow();
+
+        return $result;
+    }
+
     public function Get_address($pid = null) {
         $sql = "SELECT a.number,
                     a.building,

@@ -13,7 +13,7 @@ class ProductController extends Controller {
 
         $data['images'] = $product->get_images_product($product_id);
         $data['product'] = $product->_get_detail_product($product_id);
-
+        
         $data['near'] = $product->get_product_near($product_id);
 
         $this->render("//product/detail_product", $data);
