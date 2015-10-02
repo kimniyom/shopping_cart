@@ -4211,3 +4211,48 @@ Stack trace:
 REQUEST_URI=/shopping_cart/index.php?r=frontend/user/from_edit_register
 HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/Getproduct/type_id/005
 ---
+2015/10/02 16:43:54 [error] [exception.CException] exception 'CException' with message 'CDbConnection and its behaviors do not have a method or closure named "createComment".' in /Applications/MAMP/htdocs/shopping_cart/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/protected/models/Backend_orders.php(265): CComponent->__call('createComment', Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/models/Backend_orders.php(265): CDbConnection->createComment('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/OrdersController.php(98): Backend_orders->check_product_in_order('P20150914230331')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionProduct_in_order()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('product_in_orde...')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/product_in_order
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/Getproduct/type_id/003
+---
+2015/10/02 16:44:05 [error] [php] Undefined index: product_id (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/OrdersController.php:97)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/product_in_order
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/OrdersController.php (97)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/02 16:45:00 [error] [exception.CException] exception 'CException' with message 'CDbConnection and its behaviors do not have a method or closure named "createComment".' in /Applications/MAMP/htdocs/shopping_cart/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/protected/models/Backend_orders.php(265): CComponent->__call('createComment', Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/models/Backend_orders.php(265): CDbConnection->createComment('SELECT COUNT(*)...')
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/OrdersController.php(98): Backend_orders->check_product_in_order('P20150914230331')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionProduct_in_order()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('product_in_orde...')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/product_in_order
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/Getproduct/type_id/003
+---
