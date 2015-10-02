@@ -90,5 +90,19 @@ class OrdersController extends Controller {
         Yii::app()->db->createCommand()
                 ->update("orders", $columns, "order_id = '$order_id' ");
     }
+
+    //ตรวจสอบข้อมูลก่อนลบถ้ามีสินค้านี้ในการสั่งซื้อจะไม่สามารถลบได้
+    public function actionProduct_in_order(){
+        $order = new Backend_orders();
+        $product_id = $_POST['product_id'];
+        $status = $order->check_product_in_order($product_id);
+        if($status  != 0){
+            echo "1";//NoDelete
+        } else {
+            $columns = array("delete_flag" => '1');
+            Yii::app()->db->createCommand()
+                ->update("product",$columns,"product_id = '$product_id' ");
+        }
+    }
     
 }
