@@ -258,6 +258,14 @@ class Backend_orders {
         return $result;
     }
 
+    function check_product_in_order($product_id = null){
+        $query = "SELECT COUNT(*) AS TOTAL
+                    FROM basket b INNER JOIN orders o ON b.order_id = o.id
+                    WHERE b.product_id = '$product_id' ";
+        $rs = Yii::app()->db->createCommand($query)->queryRow();
+        return $rs['TOTAL'];
+    }
+
     function autoId($table, $value, $number) {
         $rs = Yii::app()->db->createCommand("Select Max($value)+1 as MaxID from  $table")->queryRow(); //เลือกเอาค่า id ที่มากที่สุดในฐานข้อมูลและบวก 1 เข้าไปด้วยเลย
         $new_id = $rs['MaxID'];
