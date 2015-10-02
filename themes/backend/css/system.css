@@ -229,3 +229,7 @@ div.img-resize {
     height: 350px;
     position: relative;
 }
+
+table thead tr th{
+    background: url(images/bg_menuleft.png);
+}
