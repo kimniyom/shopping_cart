@@ -79,14 +79,13 @@ $this->breadcrumbs = array(
                     <img src="<?php echo Yii::app()->baseUrl;?>/uploads/banner/<?php echo $rs['banner_images']; ?>" class="img-resize" style="max-width:200px;"/>
                 </td>
                 <td style="text-align:center;">
-                     <div class="checkbox checkbox-success" style=" margin: 0px;">
+                  <center>
                         <?php if($rs['status'] == '1'){ ?>
                             <input id="status" name="status" class="styled" type="checkbox" checked="checked"  onclick="set_active('<?php echo $rs['banner_id'] ?>','0');">
                         <?php } else {?>
                             <input id="status" name="status" class="styled" type="checkbox" onclick="set_active('<?php echo $rs['banner_id'] ?>','1');">
                         <?php } ?>
-                        <label for="checkbox"></label>
-                    </div>  
+                  </center>
                 </td>
                 <td style="text-align:center;">
                     <button type="button" class="btn btn-danger btn-sm" onclick="delete_banner('<?php echo $rs['banner_id']?>')"><i class="fa fa-trash"></i> delete</button>
