@@ -41,8 +41,16 @@
 
         $.post(url, data, function (result) {
             $("#order_list_load").html(result);
-        }
-        );// endpost
+        });// endpost
+    }
+    function set_active_transport(id,order_id){
+      $("#order_list_load").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
+      var url = "<?php echo Yii::app()->createUrl('frontend/orders/set_active_transport') ?>";
+      var data = {id: id,order_id: order_id};
+
+      $.post(url, data, function (result) {
+          load_order();
+      });// endpost
     }
 </script>
 
@@ -90,7 +98,7 @@ $this->breadcrumbs = array(
 <div class="panel panel-default">
     <div class="panel-heading">
         <i class="fa fa-train"></i>
-        ข้อมูลที่อยู่จัดส่ง (กรุณาตรวจสอบความถูกต้อง) 
+        ข้อมูลที่อยู่จัดส่ง (กรุณาตรวจสอบความถูกต้อง)
     </div>
     <div class="panel-body">
         <div id="address_user"></div>
@@ -104,8 +112,8 @@ $this->breadcrumbs = array(
             <center>
                 <?php if($count > 0){ ?>
                 <a href="<?= Yii::app()->createUrl('frontend/orders/payments',array('order_id' => $order_id)) ?>">
-                    <div class="btn btn-success">ยืนยันการสั่งซื้อสินค้า 
-                        <i class="glyphicon glyphicon-share-alt"></i>    
+                    <div class="btn btn-success">ยืนยันการสั่งซื้อสินค้า
+                        <i class="glyphicon glyphicon-share-alt"></i>
                     </div>
                 </a>
                 <?php } else { ?>

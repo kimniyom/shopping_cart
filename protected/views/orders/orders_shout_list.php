@@ -51,13 +51,13 @@
                 ?>
                 <tr id="tr_b" style=" color: #000;">
                     <td id="td_b">
-                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>" style=" max-width: 100px;"/>
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>" style=" max-width: 80px;"/>
                     </td>
                     <td>
                         <b>สินค้า</b> <?= $products['product_name']; ?><br/>
                         <b>ราคา</b> <?= number_format($products['product_price']); ?> <b>บาท/หน่วย</b><br/>
-                        <b>จำนวน</b> <select id="num" onchange="edit_num('<?= $products['id'] ?>', this.value, '<?= $product_price ?>');" 
-                                             style=" width:50px; padding-left:5%;">
+                        <b>จำนวน</b> <select id="num" onchange="edit_num('<?= $products['id'] ?>', this.value, '<?= $product_price ?>');"
+                                             style=" width:100px; padding-left:5%;">
                                                  <?php for ($i = 1; $i <= 20; $i++) { ?>
                                 <option value="<?php echo $i; ?>"<?php
                                 if ($i == $products['product_num']) {
@@ -82,7 +82,7 @@
             <tr>
                 <td colspan="3" id="td_b2" align="center">
                     <font style="text-decoration:none;font-size: 24px; color: #000;">ราคารวม </font>
-                    <font style="text-decoration:none; font-size: 24px; margin: 0px 10px;"><?= number_format($totalall, 2) ?></font> 
+                    <font style="text-decoration:none; font-size: 24px; margin: 0px 10px;"><?= number_format($totalall, 2) ?></font>
                     <font style="text-decoration:none;font-size: 24px; color: #000;">บาท</font>
                 </td>
             </tr>
@@ -91,7 +91,7 @@
                     <a href="<?php echo Yii::app()->createUrl('frontend/orders/order_list',array('order_id' => Yii::app()->session['order_id'])); ?>">
                         <button class="btn btn-default" style=" font-size: 14px;">
                             <i class="fa fa-shopping-cart"></i>
-                            ยืนยันการสั่งซื้อสินค้า 
+                            ยืนยันการสั่งซื้อสินค้า
                         </button></a>
                 </td>
             </tr>
@@ -108,6 +108,3 @@
         </p>
     </div>
 <?php } ?>
-
-
-

@@ -62,21 +62,19 @@ $this->breadcrumbs = array(
                 <div class="panel-heading">
                     <h4 class="panel-title" style=" color: #ff3300;">
                         <a href="<?php echo Yii::app()->createUrl('frontend/orders/confieminformpayment',array('order_id' => $rs['order_id'])) ?>">
-                            <div class="btn btn-default btn-xs">
+                            <div class="btn btn-default btn-sm" title="แจ้งชำระเงิน">
                                 <img src="<?php echo Yii::app()->baseUrl; ?>/images/atm-icon.png"/>
-                                แจ้งชำระรายการนี้
+                                <font style="font-size:18px;">แจ้งชำระรายการนี้</font>
                             </div></a>
-                            <font id="font-rsu-18">
+                            <div class="pull-right">
+                                <a class="accordion-toggle btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>" title="รายการสินค้า"></a>
+                            </div>
+                            <br/><br/>
+                            <font id="font-rsu-16">
                         รหัสสั่งซื้อ <span class="badge"><?php echo $rs['order_id'] ?></span>
                         วันที่ <?php echo $web->thaidate($rs['order_date']) ?>
-                        รวมสินค้า <span class="badge"><?php echo $rs['PRODUCT_TOTAL'] ?></span>
-                        รวมราคา <span class="badge"><?php echo number_format($rs['PRICE_TOTAL'], 2) ?></span>
-
-                        <div class="pull-right">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>">
-                                รายการสินค้า
-                            </a>
-                        </div>
+                        จำนวน <span class="badge"><?php echo $rs['PRODUCT_TOTAL'] ?></span>
+                        ราคา <span class="badge"><?php echo number_format($rs['PRICE_TOTAL'], 2) ?></span>
                     </font>
                     </h4>
                 </div>
@@ -99,6 +97,7 @@ $this->breadcrumbs = array(
                             $i = 1;
                             $product_model = new Product();
                             $order = new Orders();
+                            $transport = $order->get_price_transport($rs['order_id']);
                             $product = $order->_get_list_order($rs['order_id']);
                             foreach ($product as $products):
                                 $img = $product_model->get_last_img($products['product_id']);
@@ -118,11 +117,15 @@ $this->breadcrumbs = array(
                                     ?>
                                 </tr>
                             <?php endforeach; ?>
+                            <tr>
+                              <td colspan="5" style="text-align:center;">ค่าจัดส่ง</td>
+                              <td style="text-align:right;"><?php echo number_format($transport,2); ?></td>
+                            </tr>
                         </tbody>
                         <tfoot>
                             <tr style="color:#ff3300;">
                                 <td colspan="5" align="center"><font style="text-decoration:underline;">ราคาสุทธิ </font></td>
-                                <td style=" text-align: right;"><font style="text-decoration:underline;"><?= number_format($totalall, 2) ?></font> </td>
+                                <td style=" text-align: right;"><font style="text-decoration:underline;"><?= number_format($totalall+$transport, 2) ?></font> </td>
                             </tr>
                         </tfoot>
                     </table>
@@ -134,5 +137,3 @@ $this->breadcrumbs = array(
 
     </div>
 </div>
-
-

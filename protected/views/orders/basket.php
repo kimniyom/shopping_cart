@@ -22,8 +22,8 @@
             ?>
             <tr>
                 <td><?php echo $i; ?></td>
-                <td style=" width: 10%;">
-                    <img src="<?php echo Yii::app()->baseUrl;?>/uploads/<?php echo $img?>" class="img-thumbnail img-responsive"/>
+                <td style="width: 10%;">
+                    <img src="<?php echo Yii::app()->baseUrl;?>/uploads/<?php echo $img?>" class="img-thumbnail img-responsive" style="max-width:80px;"/>
                 </td>
                 <td><?php echo $rs['product_name']; ?></td>
                 <td style="text-align: center;"><?php echo $rs['product_num']; ?></td>
