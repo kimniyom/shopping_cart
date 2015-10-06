@@ -15,8 +15,9 @@
 
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/css/system.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/bootstrap/css/bootstrap.css" type="text/css" media="all" />
-
+        <!--
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/bootstrap/css/bootstrap-theme.css" type="text/css" media="all" />
+        -->
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/css/cart.css" type="text/css" media="all" />
 
         <script src="<?php echo Yii::app()->baseUrl; ?>/themes/webapp/js/jquery-1.9.1.js" type="text/javascript"></script>
@@ -88,13 +89,13 @@
         <div id="wrap_blur">
             <!-- Basket-->
             <?php if (!empty(Yii::app()->session['status'])) { ?>
-                <span class="navbar-brand" id="cart_box" data-toggle="popover" 
+                <span class="navbar-brand" id="cart_box" data-toggle="popover"
                       data-trigger="hover" data-placement="bottom" data-trigger="focus"
                       data-content="ตะกร้า">
                     <a href="Javascript:void(0);" onclick="show_list_cart();">
                         <i class="shopping-cart"></i>
                     </a>
-                    <div class="label label-success" id="load_inbox_cart" 
+                    <div class="label label-success" id="load_inbox_cart"
                          style="text-align: center; font-size: 12px; position: absolute; top: 10px; right: 10px;">
                     </div>
                 </span>
@@ -105,14 +106,14 @@
                     <a class="navbar-brand" style=" margin-top: 0px; padding-top: 5px;">
                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $config->get_logoweb(); ?>" style="max-height: 48px;" class="img-responsive img-resize"/>
                     </a>
-                    <a class="navbar-brand" href="#" style="font-size:48px; padding-top: 25px; font-family:RSU-Th"> 
+                    <a class="navbar-brand" href="#" style="font-size:48px; padding-top: 25px; font-family:RSU-Th">
                         <?php echo $config->get_webname(); ?>
                     </a>
                 </div>
                 <br/>
             </nav>
 
-            <nav class="navbar navbar-default" id="nav_bar" role="navigation" style="border-radius:0px; border: none; margin-bottom:0px;">
+            <nav class="navbar navbar-inverse" id="nav_bar" role="navigation" style="border-radius:0px; border: none; margin-bottom:0px;">
                 <div class="container">
                     <div class="navbar-header" style="padding-left:10px;">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="float:left;">
@@ -128,18 +129,18 @@
                         <ul class="nav navbar-nav">
                             <li>
                                 <a href="<?= Yii::app()->createUrl('frontend/main') ?>">
-                                    <span class="glyphicon glyphicon-home"></span> 
+                                    <span class="glyphicon glyphicon-home"></span>
                                     <font id="font-th">หน้าหลัก</font></a>
                             </li>
                             <li>
                                 <a href="<?= Yii::app()->createUrl('web_system/menager_product/payments_g') ?>">
-                                    <span class="glyphicon glyphicon-usd"></span> 
+                                    <span class="glyphicon glyphicon-usd"></span>
                                     <font id="font-th">วิธีการชำระเงิน</font></a>
                             </li>
                             <?php if (Yii::app()->session['username'] == "U") { ?>
                                 <li>
                                     <a href="<?= Yii::app()->createUrl('web_system/menager_product/notify') ?>">
-                                        <span class="glyphicon glyphicon-tasks"></span> 
+                                        <span class="glyphicon glyphicon-tasks"></span>
                                         <font id="font-th">แจ้งการโอนเงิน</font></a>
                                 </li>
                             <?php } ?>
@@ -147,7 +148,7 @@
                             <li class="dropdown">
                                 <?php if (Yii::app()->session['status'] == "U") { ?>
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                        <span class="glyphicon glyphicon-list-alt"></span> 
+                                        <span class="glyphicon glyphicon-list-alt"></span>
                                         <font id="font-th">ประวัติสั่งซื้อสินค้า</font> <b class="caret"></b>
                                     </a>
                                     <ul class="dropdown-menu">
@@ -161,7 +162,7 @@
 
                             <li>
                                 <a href="<?= Yii::app()->createUrl('web_system/main_system/contact') ?>">
-                                    <span class="glyphicon glyphicon-phone-alt"></span> 
+                                    <span class="glyphicon glyphicon-phone-alt"></span>
                                     <font id="font-th">ติดต่อเรา</font>
                                 </a>
                             </li>
@@ -171,7 +172,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <a href="<?= Yii::app()->createUrl('site/logout/') ?>">
-                                        <span class="glyphicon glyphicon-off"></span> 
+                                        <span class="glyphicon glyphicon-off"></span>
                                         <font id="font-th">ออกจากระบบ</font>
                                     </a>
                                 </li>
@@ -180,7 +181,7 @@
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
                                     <a href="javascript:login();">
-                                        <span class="glyphicon glyphicon-user"></span> 
+                                        <span class="glyphicon glyphicon-user"></span>
                                         <font id="font-th">เข้าสู่ระบบ</font></a>
                                 </li>
                             </ul>
@@ -189,8 +190,8 @@
                 </div>
             </nav>
 
-            <!-- 
-            MenuLeft 
+            <!--
+            MenuLeft
             -->
             <div class="container" id="content">
 
@@ -202,7 +203,7 @@
                             <div class="input-group">
                                 <div class="input-group-btn">
                                     <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ทุกประเภท <span class="caret"></span></button>
-                                    <input type="hidden" id="type_id"> 
+                                    <input type="hidden" id="type_id">
                                     <ul class="dropdown-menu">
                                         <?php
                                         foreach ($product_type as $searchtype):
@@ -290,8 +291,8 @@
                                             <?php
                                             foreach ($product_type as $product_types):
                                                 ?>
-                                                <a href="<?php echo Yii::app()->createUrl('frontend/product/view/type/' . $config->url_encode($product_types['type_id'])) ?>" 
-                                                   class="list-group-item" style="margin: 0px; border: none; border-radius:0px; "><span class="glyphicon glyphicon-paperclip"></span> 
+                                                <a href="<?php echo Yii::app()->createUrl('frontend/product/view/type/' . $config->url_encode($product_types['type_id'])) ?>"
+                                                   class="list-group-item" style="margin: 0px; border: none; border-radius:0px; "><span class="glyphicon glyphicon-paperclip"></span>
                                                     <font id="font-20"><?= $product_types['type_name'] ?></font>
                                                     <span class="badge" style=" margin-top: 5px;">
                                                         <?php echo $product_model->get_count_product_type($product_types['type_id']); ?>
@@ -353,33 +354,33 @@
                             <div class="btn-group" role="group">
                                 <a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>">
                                     <button type="button" class="btn btn-default btn-sm ">
-                                        รอชำระเงิน 
+                                        รอชำระเงิน
                                         <label class="label label-danger"><?php echo $order_model->count_informpayment(Yii::app()->session['pid']) ?></label>
                                     </button></a>
                             </div>
                             <div class="btn-group" role="group">
                                 <a href="<?= Yii::app()->createUrl('frontend/orders/verify') ?>">
                                     <button type="button" class="btn btn-default btn-sm ">
-                                        รอตรวจสอบยอดเงิน 
+                                        รอตรวจสอบยอดเงิน
                                         <label class="label label-danger"><?php echo $order_model->count_verify(Yii::app()->session['pid']) ?></label>
                                     </button></a>
                             </div>
                             <div class="btn-group" role="group">
                                 <a href="<?= Yii::app()->createUrl('frontend/orders/waitsend') ?>">
-                                <button type="button" class="btn btn-default btn-sm ">รอการจัดส่ง 
+                                <button type="button" class="btn btn-default btn-sm ">รอการจัดส่ง
                                     <label class="label label-danger"><?php echo $order_model->count_wait_send(Yii::app()->session['pid']) ?></label>
                                 </button></a>
                             </div>
                             <div class="btn-group" role="group">
                                 <a href="<?= Yii::app()->createUrl('frontend/orders/send') ?>">
                                 <button type="button" class="btn btn-default btn-sm">
-                                    ส่งสินค้าเรียบร้อย 
+                                    ส่งสินค้าเรียบร้อย
                                     <label class="label label-success"><?php echo $order_model->count_send(Yii::app()->session['pid']) ?></label>
                                 </button></a>
                             </div>
                         </div>
                         <?php endif; ?>
-                        <div class="panel panel-default" style="overflow:auto; margin-bottom:0%; background:#FFF;">     
+                        <div class="panel panel-default" style="overflow:auto; margin-bottom:0%; background:#FFF;">
                             <?php if (isset($this->breadcrumbs)): ?>
                                 <div class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px; border-radius: 0px;" id="font-22">
                                     <?php
@@ -404,20 +405,20 @@
                 </div>
 
                 <!--
-                <div id="co_left" 
-                     style="width:20%;height:100%; 
-                     margin-bottom:5%; 
-                     float:left; 
+                <div id="co_left"
+                     style="width:20%;height:100%;
+                     margin-bottom:5%;
+                     float:left;
                      background:#FFF;
-                     border:#FFF solid 1px; 
-                     border-radius:0px; 
+                     border:#FFF solid 1px;
+                     border-radius:0px;
                      padding:5px; z-index:2;">
                 </div>
                 -->
 
-                <!-- START CONTENER 
+                <!-- START CONTENER
                 <div class="right_box" style="width:79%;float:right; border:#FFF solid 7px; background:#f4f4f4; margin-bottom:5%; border-radius:0px; padding:0px;">
-                    
+
                 </div>
                 END CONTENER -->
 
@@ -476,7 +477,7 @@
 
                             <br/>
                             <div class="row">
-                                <p style="float:left;">&COPY; Shopping Cart เวอร์ชั่น 1.0</p> 
+                                <p style="float:left;">&COPY; Shopping Cart เวอร์ชั่น 1.0</p>
                             </div>
 
                         </div>
@@ -492,6 +493,3 @@
 <?php
 require_once(Yii::app()->basePath . '/views/main/dialogbox.php');
 ?>
-
-
-

@@ -7,7 +7,7 @@
         <meta name="author" content="">
         <title>
             <?php
-            $product_model = new Product();
+            $product_model = new Backend_product();
             $order_model = new Backend_orders();
             $web = new Configweb_model();
             echo $web->get_webname();
@@ -17,19 +17,24 @@
             body{
                 overflow-x: hidden;
             }
-
+            #panel-head .list-group a{
+              border: 0px;
+            }
         </style>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/system.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/bootstrap-slate.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/simplex.css" type="text/css" media="all" />
+        <!--
+        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/bootstrap-theme.css" type="text/css" media="all" />
+      -->
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/gallery_img/dist/magnific-popup.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/css/dataTables.bootstrap.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/extensions/TableTools/css/dataTables.tableTools.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/font-awesome-4.3.0/css/font-awesome.css"/>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/simple-sidebar.css"/>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/css/perfect-scrollbar.css"/>
-        <!-- Bootstrap CheckBox -->
+        <!-- Bootstrap CheckBox
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
-
+        -->
         <script src="<?= Yii::app()->baseUrl; ?>/themes/backend/js/jquery-1.9.1.js" type="text/javascript"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/backend/js/bootstrap.js" type="text/javascript"></script>
         <!-- Magnific Popup core CSS file -->
@@ -40,8 +45,9 @@
         <script type="text/javascript" charset="utf-8"src="<?= Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/extensions/TableTools/js/dataTables.tableTools.js"></script>
         <!-- highcharts -->
         <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/highcharts.js"></script>
+        <!--
         <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/themes/dark-unica.js"></script>
-
+      -->
         <script src="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 
         <script type="text/javascript">
@@ -65,7 +71,7 @@
     <body style="/*background:url('<?//php echo Yii::app()->baseUrl; ?>images/line-bg-advice.png')repeat-x fixed #fdfbfc;*/">
         <!--<div class="container" style="margin-bottom:5%;">-->
         <nav class="navbar navbar-default" role="navigation" style="z-index:1; border-radius:0px; margin-bottom:0px;"></nav>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="border-radius:0px; margin-bottom:0px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="border-radius:0px; margin-bottom:0px;">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -76,7 +82,7 @@
                     </button>
                     <a href="#menu-toggle" class="navbar-brand" id="menu-toggle"><i class="fa fa-bars"></i></a>
                     <a class="navbar-brand" style=" margin-top: 0px; padding-top: 10px;">
-                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>" height="32px"/>
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>" height="24px"/>
                     </a>
                     <a class="navbar-brand" href="#" style=" font-family: Th;font-size:28px;">
                         <?php echo $web->get_webname(); ?>(Admin)
@@ -124,7 +130,7 @@
             <!-- Sidebar -->
             <div id="sidebar-wrapper">
                 <!-- ###################### USER #################-->
-                <div class="panel panel-primary" id="panel">
+                <div class="panel panel-default" id="panel-head">
                     <div class=" panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/use-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> ผู้ใช้งาน
                     </div>
@@ -132,13 +138,13 @@
                         ชื่อ : <?= Yii::app()->session['username']; ?><br>
                         สถานะ : <?php echo "ผู้ดูแลระบบ"; ?><br/>
                     </div>
-                    <div class="panel-footer">
+                    <div class="panel-footer" style="border-bottom:solid 1px #eeeeee; border-radius:0px;">
                         <a href="<?= Yii::app()->createUrl('frontend/user/from_edit_register/'); ?>">ข้อมูลส่วนตัว</a>
                     </div>
                 </div>
                 <!-- ส่วนของ ผู้ดูแลระบบ -->
                 <!-- ตั้งค่าร้านค้า -->
-                <div class="panel panel-primary" id="panel-head">
+                <div class="panel panel-default" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>"
                             height="32px"
@@ -164,7 +170,7 @@
                     </div>
                 </div>
                 <!-- List Menu Admin-->
-                <div class="panel panel-primary" id="panel-head">
+                <div class="panel panel-default" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/system-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
                         ตั้งค่าระบบ
@@ -184,7 +190,7 @@
                 </div>
 
                 <!-- List รายชื่อ สินค้า -->
-                <div class="panel panel-primary" id="panel-head">
+                <div class="panel panel-default" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/shipping-box-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
                         จัดการสินค้าในร้าน
@@ -205,7 +211,7 @@
 
                 <!-- รายการจัดส่งสินค้า -->
                 <!-- List รายชื่อ สินค้า -->
-                <div class="panel panel-primary" id="panel-head">
+                <div class="panel panel-default" id="panel-head">
                     <div class="panel-heading" id="panel">รหัสส่งสินค้า</div>
                     <div class="list-group">
                     <?php
@@ -224,7 +230,7 @@
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
-            <div id="page-content-wrapper">
+            <div id="page-content-wrapper" style="padding:5px;">
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
