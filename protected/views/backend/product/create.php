@@ -19,7 +19,7 @@ $this->breadcrumbs = array(
         var product_price = $("#product_price").val();
         var product_id = $("#product_id").val();
         var product_detail = CKEDITOR.instances.product_detail.getData();
-        
+
         if (product_name == '' || product_price == '' || product_detail == '' || product_num == '') {
             $("#f_error").show().delay(5000).fadeOut(500);
 
@@ -34,8 +34,8 @@ $this->breadcrumbs = array(
             product_price: product_price,
             product_detail: product_detail
         };
-        
-        
+
+
         $.post(url, data, function (success) {
             window.location = "<?php echo Yii::app()->createUrl('backend/product/detail_product&product_id=') ?>" + product_id;
         });
@@ -123,4 +123,3 @@ $this->breadcrumbs = array(
         filebrowserImageUploadUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images",
         filebrowserFlashUploadUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash"
     });</script>
-
