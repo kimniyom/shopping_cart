@@ -148,7 +148,7 @@ $config = new Configweb_model();
 
     <div class="panel panel-default" style=" margin: 5px;">
         <div class="panel-heading">
-            <i class="fa fa-list-alt"></i> ประวัติการซื้อสินค้า
+            <i class="fa fa-list-alt"></i> ประวัติการซื้อสินค้า(ไม่รวมค่าจัดส่ง)
         </div>
         <?php if (!empty($order)) { ?>
             <table class="table" id="font-20">

@@ -91,7 +91,7 @@
 </script>
 
 <div class="well" style=" background: #FFF;" id="font-20">
-    <div class="btn btn-default btn-xs" onclick="edit_address()" style=" float: right;">
+    <div class="btn btn-default btn-sm" onclick="edit_address()" style=" float: right;">
         <i class=" glyphicon glyphicon-edit"></i>
         แก้ไขที่อยู่
     </div><br/>
@@ -111,6 +111,3 @@
     <label>Tel </label> <?php echo $address['tel'] ?><br/>
     <label>Email </label> <?php echo $address['email'] ?>
 </div>
-
-
-
