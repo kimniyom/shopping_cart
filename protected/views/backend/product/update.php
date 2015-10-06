@@ -10,7 +10,6 @@ $this->breadcrumbs = array(
 ?>
 
 <script type="text/javascript">
-
     function save_product() {
         var url = "<?php echo Yii::app()->createUrl('backend/product/save_update') ?>";
         var product_name = $("#product_name").val();
@@ -21,7 +20,6 @@ $this->breadcrumbs = array(
 
         if (product_name == '' || product_price == '' || product_detail == '' || product_num == '') {
             $("#f_error").show().delay(5000).fadeOut(500);
-
             return false;
         }
 
@@ -33,15 +31,12 @@ $this->breadcrumbs = array(
             product_detail: product_detail
         };
 
-
         $.post(url, data, function (success) {
             window.location = "<?php echo Yii::app()->createUrl('backend/product/detail_product&product_id=') ?>" + product_id;
         });
-
     }
 </script>
 <div class="well" style="width:100%;">
-
     <form class="form-horizontal">
         <fieldset>
             <legend>
@@ -79,6 +74,32 @@ $this->breadcrumbs = array(
                            class="form-control" onkeypress="return chkNumber()" style="width:30%;"/>
                 </div>
             </div>
+
+            <div class="form-group">
+                <label for="" class="col-lg-2 control-label">สถานะ</label>
+                <div class="col-lg-2">
+                    <div class="radio radio-success" style=" margin: 0px;">
+                        <input id="status" name="status" class="styled" type="radio"
+                        <?php if($product['status']== '0'){
+                          echo "checked='checked'";
+                         }
+                       ?>  onclick="set_active(0,'<?php echo $product['product_id']?>');">
+                        <label for="radio">พร้อมขาย</label>
+                   </div>
+                 </div>
+                 <div class="col-lg-2">
+                   <div class="radio radio-danger" style=" margin: 0px;">
+                     <input id="status" name="status" class="styled" type="radio"
+                     <?php if($product['status']== '1'){
+                       echo "checked='checked'";
+                      }
+                    ?>  onclick="set_active(1,'<?php echo $product['product_id']?>');">
+                     <label for="radio">ไม่พร้อมขาย</label>
+                   </div>
+                   <div class="col-lg-6"></div>
+                </div>
+            </div>
+
             <div class="form-group">
                 <label for="textArea" class="col-lg-2 control-label">รายละเอียด</label>
                 <div class="col-lg-10">
@@ -123,5 +144,13 @@ $this->breadcrumbs = array(
         filebrowserUploadUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files",
         filebrowserImageUploadUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images",
         filebrowserFlashUploadUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Flash"
-    });</script>
+    });
 
+    function set_active(status,product_id){
+      var url = "<?php echo Yii::app()->createUrl('backend/product/set_active')?>";
+      var data = {status: status,product_id: product_id};
+      $.post(url,data,function(success){
+
+      });
+    }
+</script>
