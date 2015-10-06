@@ -80,14 +80,11 @@ $this->breadcrumbs = array(
                     <img src="<?php echo Yii::app()->baseUrl;?>/uploads/logo/<?php echo $rs['logo']; ?>" class="img-resize" style="max-width:50px;"/>
                 </td>
                 <td style="text-align:center;">
-                     <div class="radio radio-success" style=" margin: 0px;">
                         <?php if($rs['active'] == '1'){ ?>
                             <input id="status" name="status" class="styled" type="radio" checked="checked"  onclick="set_active('<?php echo $rs['id'] ?>');">
                         <?php } else {?>
                             <input id="status" name="status" class="styled" type="radio" onclick="set_active('<?php echo $rs['id'] ?>');">
                         <?php } ?>
-                        <label for="radio"></label>
-                    </div>  
                 </td>
                 <td style="text-align:center;">
                     <button type="button" class="btn btn-danger btn-sm" onclick="delete_logo('<?php echo $rs['id']?>')"><i class="fa fa-trash"></i> delete</button>
@@ -96,7 +93,7 @@ $this->breadcrumbs = array(
         <?php endforeach; ?>
         </tbody>
     </table>
-    <?php 
+    <?php
         if(empty($logo)){
             echo "<div class='well'><center>ไม่มีข้อมูล</center></div>";
         }
