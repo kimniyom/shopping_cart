@@ -1,3 +1,6 @@
+<style type="text/css">
+  #font-18{color:#666666;}
+</style>
 <?php
 echo $chartmonth;
 echo $chartvisit;
@@ -16,7 +19,7 @@ $config = new Configweb_model();
     <div class="panel-heading">
         <i class="fa fa-user"></i> ID <?php echo $user['pid'] ?>
     </div>
-    <div class="row" id="font-th">
+    <div class="row" id="font-rsu-16">
         <div class="col-md-3 col-lg-3" style="text-align: center;">
 
             <?php
@@ -78,7 +81,7 @@ $config = new Configweb_model();
                     ?></p><br/><br/>
 
                 ที่อยู่ <br/>
-                <ul style=" color: #FFF; padding-top: 5px;">
+                <ul style="padding-top: 5px;">
                     <?php
                     echo "<li>เลขที่ ";
                     if (isset($user['number'])) {
