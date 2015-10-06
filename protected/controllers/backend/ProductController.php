@@ -7,20 +7,20 @@ class ProductController extends Controller {
     public function actionGetproduct() {
         $type_id = $_GET['type_id'];
 
-        $prodult = new Product();
-
+        $product = new Backend_product();
+        $data['model'] = $product;
         $data['type_id'] = $type_id;
-        $data['type_name'] = $prodult->get_type_name($type_id);
-        $data['product'] = $prodult->get_product_all($type_id);
+        $data['type_name'] = $product->get_type_name($type_id);
+        $data['product'] = $product->get_product_all($type_id);
 
-        $data['count_product_type'] = $prodult->get_count_product_type($type_id);
+        $data['count_product_type'] = $product->get_count_product_type($type_id);
 
         $this->render("//backend/product/show_product_all", $data);
     }
 
     public function actionCreate() {
         $type_id = $_GET['type_id'];
-        $prodult = new Product();
+        $prodult = new Backend_product();
 
         $data['product_id'] = "P" . date("YmdHis");
         $data['type_id'] = $type_id;
@@ -49,7 +49,7 @@ class ProductController extends Controller {
     public function actionUpdate() {
         $type_id = $_GET['type_id'];
         $product_id = $_GET['product_id'];
-        $product = new Product();
+        $product = new Backend_product();
 
         $data['product'] = $product->_get_detail_product($product_id);
         $data['type_id'] = $type_id;
@@ -75,7 +75,7 @@ class ProductController extends Controller {
     public function actionDetail_product() {
         $product_id = $_GET['product_id'];
 
-        $product = new Product();
+        $product = new Backend_product();
 
         $data['images'] = $product->get_images_product($product_id);
         $data['product'] = $product->_get_detail_product($product_id);
@@ -88,7 +88,7 @@ class ProductController extends Controller {
     public function actionImages() {
         $product_id = $_GET['product_id'];
 
-        $product = new Product();
+        $product = new Backend_product();
         $data['product'] = $product->_get_detail_product($product_id);
 
         $this->render("//backend/product/images", $data);
@@ -96,7 +96,7 @@ class ProductController extends Controller {
 
     public function actionGet_images() {
         $product_id = $_POST['product_id'];
-        $product = new Product();
+        $product = new Backend_product();
         $data['images'] = $product->get_images_product($product_id);
         $this->renderPartial("//backend/product/getimages", $data);
     }
@@ -147,6 +147,13 @@ class ProductController extends Controller {
 
         Yii::app()->db->createCommand()
                 ->delete('product_images', "id = '$id' ");
+    }
+
+    public function actionSet_active(){
+      $product_id = $_POST['product_id'];
+      $columns = array("status" => $_POST['status']);
+      Yii::app()->db->createCommand()
+        ->update("product",$columns,"product_id = '$product_id' ");
     }
 
 }
