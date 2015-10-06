@@ -50,8 +50,12 @@ class OrdersController extends Controller {
 
     public function actionOrder_list_load() {
         $order = new Orders();
+        $transport = new Transport();
         $order_id = $_POST['order_id'];
+        $data['transport'] = $transport->get_transport();
         $data['product'] = $order->_get_list_order($order_id);
+        $data['model'] = $order;
+        $data['order_id'] = $order_id;
         $this->renderPartial("//orders/orders_list_load", $data);
     }
 
@@ -113,7 +117,7 @@ class OrdersController extends Controller {
             $order = new Orders();
             $user = new User();
 
-            //CheckOut Order 
+            //CheckOut Order
             $columns = array("active" => '1');
             Yii::app()->db->createCommand()
                     ->update("orders", $columns, "order_id = '$order_id' ");
@@ -126,6 +130,7 @@ class OrdersController extends Controller {
             $data['product'] = $order->_get_list_order($order_id);
             $data['address'] = $user->Get_address($pid);
             $data['payment'] = $payment->Get_patment();
+            $data['transport'] = $order->get_price_transport($order_id);
             $this->render("//orders/payments", $data);
         } else {
             $this->render("//orders/basket_null");
@@ -211,7 +216,7 @@ class OrdersController extends Controller {
         $this->render('//orders/verify', $data);
     }
 
-    //ดึงสินค้าในการสั่งซื้อในรายการนั้น ๆ 
+    //ดึงสินค้าในการสั่งซื้อในรายการนั้น ๆ
     public function actionGet_list_basket() {
         $order_id = $_POST['order_id'];
         $order = new Orders();
@@ -236,6 +241,14 @@ class OrdersController extends Controller {
         $data['order'] = $order->get_send($pid);
 
         $this->render('//orders/send', $data);
+    }
+
+    public function actionSet_active_transport(){
+      $order_id = $_POST['order_id'];
+      $transport = $_POST['id'];
+      $columns = array("transport" => $transport);
+      Yii::app()->db->createCommand()
+        ->update("orders",$columns,"order_id = '$order_id' ");
     }
 
 

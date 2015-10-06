@@ -13,7 +13,7 @@ class ProductController extends Controller {
 
         $data['images'] = $product->get_images_product($product_id);
         $data['product'] = $product->_get_detail_product($product_id);
-        
+
         $data['near'] = $product->get_product_near($product_id);
 
         $this->render("//product/detail_product", $data);
@@ -137,9 +137,12 @@ class ProductController extends Controller {
         //get current starting point of records
         $position = ($page_number * $item_per_page);
 
-        //Limit our results within a specified range. 
+        //Limit our results within a specified range.
         //$results = mysqli_query($connecDB, "SELECT id,name,message FROM paginate ORDER BY id DESC LIMIT $position, $item_per_page");
-        $query = "SELECT * FROM product WHERE type_id = '$type_id' ORDER BY id DESC LIMIT $position, $item_per_page";
+        $query = "SELECT *
+                  FROM product
+                  WHERE type_id = '$type_id' AND status != '1' AND delete_flag != '1'
+                  ORDER BY id DESC LIMIT $position, $item_per_page";
         $rs = Yii::app()->db->createCommand($query)->queryAll();
         //output results from database
         /*
@@ -148,7 +151,7 @@ class ProductController extends Controller {
           echo '<li id="item_' . $row["id"] . '"><span class="page_name">' . $row["id"] . ') ' . $row["product_name"] . '</span><span class="page_message">' . $row["product_name"] . '</span></li>';
           }
           echo '</ul>';
-         * 
+         *
          */
 
         $data['product'] = $rs;
