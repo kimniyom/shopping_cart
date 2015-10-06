@@ -1,6 +1,6 @@
 <?php
 
-class Product {
+class Backend_Product {
 
     function _get_product_type_where($type_id = '') {
         $sql = "SELECT id,type_id,type_name
@@ -17,9 +17,9 @@ class Product {
 
     function _get_product($type_id = '') {
         if ($type_id != '') {
-            $w = "type_id = '$type_id' AND status != '1' AND delete_flag != '1'";
+            $w = "type_id = '$type_id' AND delete_flag != '1'";
         } else {
-            $w = "1 = 1 AND status != '1' AND delete_flag != '1'";
+            $w = "1 = 1 AND delete_flag != '1'";
         }
         $sql = "SELECT *
                 FROM product
@@ -60,7 +60,7 @@ class Product {
     function _get_last_product() {
         $sql = "SELECT *
                 FROM product
-                WHERE status != '1' AND status != '1' AND delete_flag != '1'
+                WHERE delete_flag != '1'
                 ORDER BY id DESC LIMIT 9";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
@@ -171,7 +171,7 @@ class Product {
     function _get_sale_product() {
         $sql = "SELECT p.product_id,p.product_name,p.product_price,p.product_detail,COUNT(o.product_id) AS total
                 FROM basket o INNER JOIN product p ON o.product_id = p.product_id
-                WHERE p.status != '1' AND p.delete_flag != '1'
+                WHERE p.delete_flag != '1'
                 GROUP BY o.product_id
                 ORDER BY total DESC
                 LIMIT 5";
@@ -182,7 +182,7 @@ class Product {
     function _get_search_product($w1 = '', $w3 = '') {
         $sql = "SELECT *
                 FROM product
-                WHERE $w1 $w3 AND status != '1' AND delete_flag != '1'";
+                WHERE $w1 $w3 AND delete_flag != '1'";
 
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
@@ -206,7 +206,7 @@ class Product {
     }
 
     function get_product_all($type_id = '') {
-        $sql = "SELECT * FROM product WHERE type_id = '$type_id' AND status != '1' AND delete_flag != '1'";
+        $sql = "SELECT * FROM product WHERE type_id = '$type_id' AND delete_flag != '1'";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
 
@@ -217,7 +217,7 @@ class Product {
     }
 
     function get_count_product_type($type_id = '') {
-        $sql = "SELECT COUNT(*) AS TOTAL FROM product WHERE type_id = '$type_id' AND status != '1' AND delete_flag != '1'";
+        $sql = "SELECT COUNT(*) AS TOTAL FROM product WHERE type_id = '$type_id' AND delete_flag != '1'";
         $rs = Yii::app()->db->createCommand($sql)->queryRow();
         return $rs['TOTAL'];
     }
@@ -236,7 +236,7 @@ class Product {
     }
 
     function get_product_near($productId = '') {
-        $query = "SELECT id FROM product WHERE product_id = '$productId' AND status != '1' AND delete_flag != '1'";
+        $query = "SELECT id FROM product WHERE product_id = '$productId' AND delete_flag != '1'";
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         $ID = $rs['id'];
         $sql = "SELECT p.*,Q1.images
@@ -256,7 +256,7 @@ class Product {
     function count_product_all() {
         $query = "SELECT COUNT(*) AS product_total
                     FROM product
-                    WHERE status != '1' AND delete_flag != '1'";
+                    WHERE delete_flag != '1'";
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         if ($rs) {
             return $rs['product_total'];

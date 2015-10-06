@@ -29,7 +29,7 @@ class Orders {
     }
 
     function duplicate_product($order_id = null, $product_id = null) {
-        $query = "SELECT COUNT(*) AS TOTAL 
+        $query = "SELECT COUNT(*) AS TOTAL
                         FROM basket
                         WHERE order_id = '$order_id' AND product_id = '$product_id' ";
         $rs = Yii::app()->db->createCommand($query)->queryRow();
@@ -45,7 +45,7 @@ class Orders {
 
     function get_duplicate_product($order_id = null, $product_id = null) {
         $query = "SELECT id,product_num,product_price,product_price_sum
-                  FROM basket 
+                  FROM basket
                   WHERE order_id = '$order_id' AND product_id = '$product_id' ";
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         return $rs;
@@ -57,6 +57,14 @@ class Orders {
                 WHERE order_id = '$order_id' ";
 
         return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
+    //ดึงวิธีการขนส่งมาแสดง
+    function get_transport_in_order($order_id = null){
+      $query = "SELECT o.transport,t.price
+                FROM orders o INNER JOIN transport t ON o.transport = t.id
+                WHERE o.order_id = '$order_id' ";
+      return Yii::app()->db->createCommand($query)->queryRow();
     }
 
     function get_order_user($pid = null) {
@@ -73,8 +81,8 @@ class Orders {
     function get_order_month($pid = null) {
         $query = "SELECT m.id,m.month_th,
                         IFNULL(Q1.PRICE_TOTAL,0) AS PRICE_TOTAL
-                        FROM `month` m 
-                        LEFT JOIN 
+                        FROM `month` m
+                        LEFT JOIN
                         (
                         SELECT SUBSTR(o.order_date,6,2) AS id,
                                 SUM(b.product_num) AS PRODUCT_TOTAL,
@@ -95,8 +103,8 @@ class Orders {
     function get_order_month_visit($pid = null) {
         $query = "SELECT m.id,m.month_th,
                         IFNULL(Q1.TOTAL,0) AS TOTAL
-                        FROM `month` m 
-                        LEFT JOIN 
+                        FROM `month` m
+                        LEFT JOIN
                         (
                         SELECT SUBSTR(o.order_date,6,2) AS id,
                         COUNT(*) AS TOTAL
@@ -116,16 +124,16 @@ class Orders {
         $query = "SELECT t.type_name,IFNULL(Q1.price_total,0) AS TOTAL
                         FROM product_type t
 
-                        LEFT JOIN 
+                        LEFT JOIN
                         (
                         SELECT p.type_id,SUM(b.product_price_sum) AS price_total
                         FROM basket b INNER JOIN product p ON b.product_id = p.product_id
                         INNER JOIN orders o ON b.order_id = o.order_id
                         WHERE o.pid = '$pid' AND  LEFT(o.order_date,4) = YEAR(NOW()) AND (active = '4' OR active = '5')
                         GROUP BY p.type_id
-                        ) Q1 
+                        ) Q1
 
-                        ON t.type_id = Q1.type_id 
+                        ON t.type_id = Q1.type_id
                         ORDER BY t.type_id";
 
         $result = Yii::app()->db->createCommand($query)->queryAll();
@@ -134,9 +142,12 @@ class Orders {
 
     //หารายการสั่งซื้อที่ยังไม่โอนเงิน
     function get_order_payable($pid = null) {
-        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL 
+        $query = "SELECT o.order_id,o.order_date,
+                  SUM(b.product_num) AS PRODUCT_TOTAL,
+                  (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL
                         FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
-                        WHERE pid = '$pid' AND active = '1'
+                        INNER JOIN transport t ON o.transport = t.id
+                        WHERE pid = '$pid' AND o.active = '1'
                         GROUP BY o.order_id ORDER BY o.order_id DESC";
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
@@ -144,7 +155,7 @@ class Orders {
 
     //หารายการรอตรวจสอบยอดเงิน
     function get_order_verify($pid = null) {
-        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL 
+        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL
                         FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
                         WHERE pid = '$pid' AND active = '2'
                         GROUP BY o.order_id ORDER BY o.order_id DESC";
@@ -154,7 +165,7 @@ class Orders {
 
     //หารายการรอจัดส่ง
     function get_order_wait_send($pid = null) {
-        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL 
+        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL
                         FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
                         WHERE pid = '$pid' AND (active = '3' OR active = '4')
                         GROUP BY o.order_id ORDER BY o.order_id DESC";
@@ -215,6 +226,14 @@ class Orders {
                 ->queryRow();
 
         return $rs['TOTAL'];
+    }
+
+    function get_price_transport($order_id = null){
+      $rs = "SELECT t.price
+            FROM orders o INNER JOIN transport t ON o.transport = t.id
+            WHERE o.order_id = '$order_id' ";
+      $r = Yii::app()->db->createCommand($rs)->queryRow();
+      return $r['price'];
     }
 
     function autoId($table, $value, $number) {
