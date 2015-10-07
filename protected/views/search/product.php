@@ -23,7 +23,7 @@ $this->breadcrumbs = array(
                                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
                                     </div>
                                 </a>
-                                <a class="dribbble-over" href="<?php echo $link ?>" id="font-rsu-20">    
+                                <a class="dribbble-over hvr-pop" href="<?php echo $link ?>" id="font-rsu-20">    
                                     <?php echo $last['product_name']; ?>
                                 </a>
                             </div>
