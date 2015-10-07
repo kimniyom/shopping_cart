@@ -168,7 +168,7 @@ div.img-resize {
 #fontgreen14{ font-size: 14px; color:#33cc00;}
 
 #cart_box{
-    float: right; margin-top: 0px; padding-top: 15px;
+    float: right; margin-top: 0px; padding-top: 5px;
     position:fixed; top:10px; right:20px;z-index:1040;
 }
 
@@ -193,5 +193,23 @@ div.img-resize {
 }
 
 #nav_bar{
-  background:url('images/showdow-black.png');
+  /*background:url('images/showdow-black.png');*/
+  /*border-radius:0px;*/
+  border: none; margin-bottom:0px;
+}
+
+#webname{
+    border-radius:0px; border: none; margin-bottom:0px; background: none;
+    box-shadow: none;
+}
+
+#page-footer{
+    /*background:#1fbbff; color: #FFF;*/ 
+    margin-bottom:0px; 
+    border-radius:0px; 
+    background: url('images/bg_ap.png');
+}
+
+#head-bar{
+    background: url('images/blue-shadow.png') top left no-repeat;
 }
