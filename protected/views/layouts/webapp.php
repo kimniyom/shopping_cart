@@ -78,6 +78,7 @@
     $product_model = new Product();
     $product_type = $product_model->_get_product_type();
     $order_model = new Orders();
+    $contact = new Contact();
     $img = Yii::app()->baseUrl . "/images/";
     if (Yii::app()->session['member'] != "") {
         $user = Yii::app()->session['member'];
@@ -423,7 +424,7 @@
                 END CONTENER -->
 
             </div>
-
+            <?php $con = $contact->gat_contact();?>
             <nav class="navbar navbar-default" role="navigation" style=" background:#1fbbff; color: #FFF; margin-bottom:0px;">
                 <div class="container" style="padding-top:20px;">
                     <div class="row" style=" margin: 0px;">
@@ -437,8 +438,7 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <p style=" color: #FFF; font-size: 24px; font-weight: bold;">
-                                        080-xxxxxxx<br/>
-                                        055-xxxxxx
+                                        <?php echo $con['tel']?><br/>
                                     </p>
                                 </div>
                             </div>
@@ -449,43 +449,41 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <p style=" color: #FFF; font-size: 24px; font-weight: bold; padding-top: 10px;">
-                                        xxxx_ccc@gmail.com
+                                        <?php echo $con['email']?>
                                     </p>
                                 </div>
                             </div>
 
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-3">
 
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-sm-5">
                             <p style=" color: #FFF; font-size: 20px; font-weight: bold;">
                                 เป็นเพื่อนกับเรา<br/>
                             </p>
 
                             <div class="row">
-                                <div class="col-sm-3">
-                                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/facebook-icon.png"/>
+                                <?php $social = $contact->get_social_media(); ?>
+                                <?php foreach($social as $datas):?>
+                                <div style="margin:5px;">
+                                    <img src="<?php echo Yii::app()->baseUrl;?>/images/<?php echo $datas['icon']?>" width="24"/>
+                                    <?php echo $datas['account'] ?><br/>
                                 </div>
-                                <div class="col-sm-3">
-                                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/line-icon.png"/>
-                                </div>
-                                <div class="col-sm-3">
-                                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/twitter-icon.png"/>
-                                </div>
+                                <?php endforeach; ?>
                             </div>
-
-                            <br/>
-                            <div class="row">
-                                <p style="float:left;">&COPY; Shopping Cart เวอร์ชั่น 1.0</p>
-                            </div>
-
                         </div>
                     </div>
-
+                    <hr/>
+                    <div class="row" style="margin:0px;">
+                        <div class="pull-right">
+                            Shopping Cart เวอร์ชั่น 1.0
+                        </div>
+                    </div>
                 </div>
             </nav>
         </div>
+                    
     </body>
 
 </html>
