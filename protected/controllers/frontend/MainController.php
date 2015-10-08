@@ -34,6 +34,11 @@ class MainController extends Controller {
         $result = $use->Check_user($email,$password);
 
         if (!empty($result)) {
+
+            $Order = new Orders();
+            $period_model = new Backend_period();
+            $Config = new Configweb_model();
+
             $row = $result;
             $user = $row['name'] . ' ' . $row['lname'];
             $status = $row['status'];
@@ -46,8 +51,25 @@ class MainController extends Controller {
             //เก็บค่าประวัติทั้งหมดไว้ใน session
             Yii::app()->session['member'] = $row;
 
+            //เช็คออเดอร์ที่ไม่ชำระเงินตามระยะเวลาที่กำหนด
+            $period = $period_model->get_period_active();
+            $overtime = $Order->check_order_overtime($pid);
+            if(!empty($overtime)){
+                //เช็ควันที่เกิน
+                $datenow = date("Y-m-d");
+                foreach($overtime as $over):
+                    $date_order = $over['order_date'];
+                    $dayover = $Config->Datediff($date_order,$datenow);
+                    $count_basket = $Order->check_product_inorder($over['order_id']);
+                    if($dayover > $period && $count_basket > 0){
+                        $orderId = $over['order_id'];
+                        Yii::app()->db->createCommand()
+                        ->delete("orders","order_id = '$orderId '");
+                    }
+                endforeach;
+            }
+
             //ดึงรหัสการสั่งซื้อมาแสดง
-            $Order = new Orders();
             $max_order_id = $Order->Get_status_last_order($pid);
             Yii::app()->session['order_id'] = $max_order_id;
 
