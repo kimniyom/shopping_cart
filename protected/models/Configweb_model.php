@@ -107,5 +107,8 @@ class Configweb_model {
         return base64_decode(base64_decode(base64_decode($url)));
     }
 
+    function Datediff($strDate1 = null, $strDate2 = null) {
+        return (strtotime($strDate2) - strtotime($strDate1)) / ( 60 * 60 * 24 );  // 1 day = 60*60*24
+    }
 
 }
