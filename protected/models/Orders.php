@@ -236,6 +236,21 @@ class Orders {
       return $r['price'];
     }
 
+    //เช็คร่ยการสั่งซื้อที่เลยเวลาชำระเงิน
+    function check_order_overtime($pid = null){
+        $query = "SELECT * FROM orders WHERE active IN('0','1') AND pid = '$pid' ";
+        $rs = Yii::app()->db->createCommand($query)->queryAll();
+        return $rs;
+    }
+
+    //เช็คว่ามีสินค้าในการสั่งหรือไม่
+    function check_product_inorder($order_id = null){
+        $query = "SELECT COUNT(*) AS total FROM basket WHERE order_id = '$order_id' ";
+        $rs = Yii::app()->db->createCommand($query)->queryRow();
+        return $rs['total'];
+    }
+    
+
     function autoId($table, $value, $number) {
         $rs = Yii::app()->db->createCommand("Select Max($value)+1 as MaxID from  $table")->queryRow(); //เลือกเอาค่า id ที่มากที่สุดในฐานข้อมูลและบวก 1 เข้าไปด้วยเลย
         $new_id = $rs['MaxID'];
