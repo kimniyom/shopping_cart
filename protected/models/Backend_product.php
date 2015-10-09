@@ -223,9 +223,15 @@ class Backend_Product {
     }
 
     function get_images_product($product_id = '') {
-        $sql = "SELECT product_images.id,images FROM product_images WHERE product_id = '$product_id' ";
+        $sql = "SELECT product_images.id,images FROM product_images WHERE product_id = '$product_id' AND active != '1'";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
+    
+        function get_images_product_title($product_id = '') {
+        $sql = "SELECT product_images.id,images FROM product_images WHERE product_id = '$product_id' AND active = '1' ";
+        return Yii::app()->db->createCommand($sql)->queryRow();
+    }
+
 
     function get_notify_postcode() {
         $sql = "SELECT o.order_id,o.postcode,m.`name`,m.lname

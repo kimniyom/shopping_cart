@@ -155,9 +155,10 @@ class Orders {
 
     //หารายการรอตรวจสอบยอดเงิน
     function get_order_verify($pid = null) {
-        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,SUM(b.product_price_sum) AS PRICE_TOTAL
+        $query = "SELECT o.order_id,o.order_date,SUM(b.product_num) AS PRODUCT_TOTAL,(SUM(b.product_price_sum)+ t.price) AS PRICE_TOTAL
                         FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
-                        WHERE pid = '$pid' AND active = '2'
+                        INNER JOIN transport t ON o.transport = t.id
+                        WHERE pid = '$pid ' AND o.active = '2'
                         GROUP BY o.order_id ORDER BY o.order_id DESC";
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;

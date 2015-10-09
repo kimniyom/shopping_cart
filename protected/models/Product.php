@@ -45,8 +45,6 @@ class Product {
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
 
-
-
     /*
       function _get_list_order_product($order_id = '') {
       $sql = "SELECT p.product_id,l.price,l.id,p.product_price,l.product_number,p.product_name,p.product_detail
@@ -223,8 +221,13 @@ class Product {
     }
 
     function get_images_product($product_id = '') {
-        $sql = "SELECT product_images.id,images FROM product_images WHERE product_id = '$product_id' ";
+        $sql = "SELECT product_images.id,images FROM product_images WHERE product_id = '$product_id' AND active != '1' ";
         return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
+    function get_images_product_title($product_id = '') {
+        $sql = "SELECT product_images.id,images FROM product_images WHERE product_id = '$product_id' AND active = '1' ";
+        return Yii::app()->db->createCommand($sql)->queryRow();
     }
 
     function get_notify_postcode() {

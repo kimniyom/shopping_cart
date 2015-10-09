@@ -114,7 +114,8 @@ class Backend_orders {
                         o.order_id,
                         o.order_date,
                         SUM(b.product_num) AS PRODUCT_TOTAL,
-                        SUM(b.product_price_sum) AS PRICE_TOTAL,
+                        (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
+                        t.detail,
                         o.slip,
                         m.tel,
                         o.date_payment,
@@ -122,7 +123,8 @@ class Backend_orders {
                         o.money
                 FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
                 INNER JOIN masuser m ON o.pid = m.pid
-                WHERE active = '2'
+                INNER JOIN transport t ON o.transport = t.id
+                WHERE o.active = '2'
                 GROUP BY o.order_id  ";
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
@@ -136,9 +138,11 @@ class Backend_orders {
                         o.order_id,
                         o.order_date,
                         SUM(b.product_num) AS PRODUCT_TOTAL,
-                        SUM(b.product_price_sum) AS PRICE_TOTAL,
+                        (SUM(b.product_price_sum) + s.price) AS PRICE_TOTAL,
+                        s.detail,
                         o.slip,
                         m.tel,
+                        m.email,
                         o.date_payment,
                         o.time_payment,
                         o.money,
@@ -153,7 +157,59 @@ class Backend_orders {
                 INNER JOIN changwat c ON a.changwat = c.changwat_id
                 INNER JOIN ampur ap ON a.ampur = ap.ampur_id
                 INNER JOIN tambon t ON a.tambon = t.tambon_id
-                WHERE active = '3'
+                INNER JOIN transport s ON o.transport = s.id
+                WHERE o.active = '3'
+                GROUP BY o.order_id ";
+        $result = Yii::app()->db->createCommand($query)->queryAll();
+        return $result;
+    }
+
+    //พิมพ์ที่อยู่
+    function print_address($order_id = null) {
+        $query = "SELECT 
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        m.tel,
+                        m.email,
+                        IFNULL(o.message,'-') AS msg,
+                        a.*,
+                        c.changwat_name,
+                        ap.ampur_name,
+                        t.tambon_name
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN address a ON m.pid = a.pid
+                INNER JOIN changwat c ON a.changwat = c.changwat_id
+                INNER JOIN ampur ap ON a.ampur = ap.ampur_id
+                INNER JOIN tambon t ON a.tambon = t.tambon_id
+                WHERE o.order_id = '$order_id'";
+        $result = Yii::app()->db->createCommand($query)->queryRow();
+        return $result;
+    }
+
+    //พิมพ์ที่อยู่ทั้งหมด
+    function print_address_all() {
+        $query = "SELECT 
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        m.tel,
+                        m.email,
+                        IFNULL(o.message,'-') AS msg,
+                        a.*,
+                        c.changwat_name,
+                        ap.ampur_name,
+                        t.tambon_name
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN address a ON m.pid = a.pid
+                INNER JOIN changwat c ON a.changwat = c.changwat_id
+                INNER JOIN ampur ap ON a.ampur = ap.ampur_id
+                INNER JOIN tambon t ON a.tambon = t.tambon_id
+                WHERE o.active = '3'
                 GROUP BY o.order_id ";
         $result = Yii::app()->db->createCommand($query)->queryAll();
         return $result;
@@ -213,7 +269,7 @@ class Backend_orders {
 
         return $rs['TOTAL'];
     }
-    
+
     //ดึงข้อมูลการสั่งซื้อมาแสดงเพื่อเช็คจำนวนเงิน
     function get_detail_order($order_id = null) {
         $query = "SELECT o.pid,
@@ -222,7 +278,8 @@ class Backend_orders {
                         o.order_id,
                         o.order_date,
                         SUM(b.product_num) AS PRODUCT_TOTAL,
-                        SUM(b.product_price_sum) AS PRICE_TOTAL,
+                        (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
+                         t.detail,
                         o.money,
                         o.date_payment,
                         o.time_payment,
@@ -236,6 +293,7 @@ class Backend_orders {
                 INNER JOIN masuser m ON o.pid = m.pid
                 INNER JOIN payment p ON o.payment_id = p.id
                 INNER JOIN bank k ON p.bank_id = k.id
+                INNER JOIN transport t ON o.transport = t.id
                 WHERE o.order_id = '$order_id' ";
         $result = Yii::app()->db->createCommand($query)->queryRow();
         return $result;
@@ -258,7 +316,7 @@ class Backend_orders {
         return $result;
     }
 
-    function check_product_in_order($product_id = null){
+    function check_product_in_order($product_id = null) {
         $query = "SELECT COUNT(*) AS TOTAL
                     FROM basket b INNER JOIN orders o ON b.order_id = o.id
                     WHERE b.product_id = '$product_id' ";
