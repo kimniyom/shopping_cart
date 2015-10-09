@@ -40,6 +40,20 @@ html {
     overflow: auto;
 }
 
+#hover-box-product{
+  font-family:RSU-Th;
+  background:url(images/black-glass.png);
+  font-size: 14px;
+  color:#FFF;
+  border-radius: 3px;
+  height: 100%;
+  padding: 5px;
+}
+
+.tools{
+    width:100%; padding: 0px; margin: 0px; text-align:center;
+}
+
 #link_product:hover{text-decoration: none;}
 #font-product{color: #ff3300; font-size: 22px; font-family: Th;}
 #font-head{color: #ff3300; font-size: 28px; font-family: Th;}
@@ -204,9 +218,9 @@ div.img-resize {
 }
 
 #page-footer{
-    /*background:#1fbbff; color: #FFF;*/ 
-    margin-bottom:0px; 
-    border-radius:0px; 
+    /*background:#1fbbff; color: #FFF;*/
+    margin-bottom:0px;
+    border-radius:0px;
     background: url('images/bg_ap.png');
 }
 
