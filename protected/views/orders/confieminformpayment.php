@@ -3,9 +3,9 @@
 
     $(document).ready(function () {
         $('#file_upload').uploadify({
-            'buttonText' : 'เลือกไฟล์ ...',
+            'buttonText': 'เลือกไฟล์ ...',
             'swf ': '<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.swf',
-            'uploader': '<?php echo Yii::app()->createUrl('frontend/orders/uploadslip',array('order_id' => $order_id)) ?>',
+            'uploader': '<?php echo Yii::app()->createUrl('frontend/orders/uploadslip', array('order_id' => $order_id)) ?>',
             'auto': false,
             'fileSizeLimit': '1024KB',
             'fileTypeExts': ' *.jpg; *.png',
@@ -51,7 +51,9 @@
         }
 
         $.post(url, data, function (success) {
-            $('#file_upload').uploadify('upload','*');
+            $('#file_upload').uploadify('upload', '*');
+            alert("ระบบได้รับแจ้งการชำระเงินของท่านแล้ว ขอบคุณที่ใช้บริการของเราค่ะ");
+            window.location = "<?php echo Yii::app()->createUrl('frontend/orders/verify') ?>";
         });
     }
 </script>
