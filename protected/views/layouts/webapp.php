@@ -8,7 +8,7 @@
 
         <title>
             <?php
-            $web = new configweb_model();
+            $web = new Configweb_model();
             echo $web->get_webname();
             ?>
         </title>
@@ -383,28 +383,25 @@
                                 </div>
                             </div>
                         <?php endif; ?>
-                        <div class="panel panel-default" style="overflow:auto; margin-bottom:0%; background:#FFF;">
+
                             <?php if (isset($this->breadcrumbs)): ?>
-                                <div class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px; border-radius: 0px;" id="font-22">
+
+                                <div class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px; box-shadow:0px 0px 2px 0px #999999; background:#FFF;" id="font-22">
+
                                     <?php
                                     $this->widget('zii.widgets.CBreadcrumbs', array(
                                         'homeLink' => '<i class="fa fa-home"></i> ' . CHtml::link('หน้าแรก', Yii::app()->createUrl('frontend/main')),
                                         'links' => $this->breadcrumbs,
                                     ));
                                     ?><!-- breadcrumbs -->
-                                </div>
+                              </div>
                             <?php endif ?>
 
-                            <div class="panel-body" style="padding:3px 3px 50px 3px; margin-top:0px;">
 
-                                <?PHP
+                                <?php
                                 echo $content;
                                 ?>
-
-                            </div><!-- END BODY -->
-                        </div><!-- END PANAL -->
-
-                    </div>
+                    </div> <!-- End Contant -->
                 </div>
 
                 <!--
@@ -493,7 +490,7 @@
                     </div>
                 </div>
             </nav>
-        </div>    
+        </div>
     </body>
 
 </html>
