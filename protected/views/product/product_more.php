@@ -8,7 +8,7 @@
         $img = $product_model->get_last_img($last['product_id']);
         $link = Yii::app()->createUrl('frontend/product/detail/id/' . $config->url_encode($last['product_id']));
         ?>
-        <li id="screenshot-<?php echo $i; ?>" class="col-lg-4 col-md-4 col-sm-6" style="text-align:center; margin-bottom:15px;">
+        <li id="screenshot-<?php echo $i; ?>" class="col-xs-6 col-sm-4  col-md-4 col-lg-4" style="text-align:center; margin-bottom:15px;">
             <div class="dribbble" id="box_list_product">
                 <div class="dribbble-shot">
                     <div class="dribbble-img">
@@ -17,8 +17,9 @@
                                 <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
                             </div>
                         </a>
-                        <a class="dribbble-over hvr-pop" href="<?php echo $link ?>" id="font-rsu-20">    
-                            <?php echo $last['product_name']; ?>
+                        <a class="dribbble-over hvr-pop" href="<?php echo $link ?>" id="hover-box-product">    
+                            <?php echo $last['product_name']; ?><br/>
+                            <span id="font-18">ราคา <?php echo $last['product_price']; ?> บาท</span>
                         </a>
                     </div>
 

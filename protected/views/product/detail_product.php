@@ -114,7 +114,7 @@ $this->breadcrumbs = array(
                                 <td><b style=" font-size: 16px;">จำนวน</b></td>
                                 <td>
                                     <select id="num" name="num" class="form-control">
-                                        <?php for($i = 1; $i <= 100;$i++){ ?>
+                                        <?php for ($i = 1; $i <= 100; $i++) { ?>
                                             <option value="<?php echo $i; ?>"><?php echo $i; ?></option>
                                         <?php } ?>
                                     </select>
@@ -148,55 +148,39 @@ $this->breadcrumbs = array(
         <div class="col-lg-8 col-md-12 col-xs-12" style=" padding-top: 10px;">
             <?php
             $product_model = new Product();
-            $img = $product_model->get_last_img($product['product_id']);
-            if ($img != "") {
-                ?>
-                <center>
-                    <img src="<?= Yii::app()->baseUrl ?>/uploads/<?= $img; ?>" class="img-responsive thumbnail" alt="Responsive image" id="img-cart"/>
-                </center>     
-            <?php } else { ?>
-                <div id="img" style="width:400px; height:350px; background:#CCC; font-size:36px; text-align:center; padding-top:30px; margin-right:20px;">
-                    NO<br />Images 
-                </div>
-            <?php } ?>
-
+            $img_title = $product_model->get_images_product_title($product['product_id']);
+            if (!empty($img_title)) {
+                $img = "uploads/product_thumb/" . $img_title['images'];
+            } else {
+                $img = "images/No_image_available.jpg";
+            }
+            ?>
+            <center>
+                <img src="<?= Yii::app()->baseUrl ?>/<?= $img; ?>" class="img-responsive thumbnail" alt="Responsive image" id="img-cart"/>
+            </center>     
         </div>
-
     </div>
 
-
-    <?php if ($img != "No-Camera-icon.png") { ?>
-        <div class="row">
-            <div class=" col-lg-12" style=" text-align: center;">
-                <img src="<?php echo Yii::app()->baseUrl; ?>/images/box-shadow-t.png" class="img-responsive"/>
-            </div>
+    <div class=" row">
+        <div class=" col-lg-12">
+            <!-- Img -->
+            <?php if ($img != "") { ?>
+                <div class="img_zoom">
+                    <center>
+                        <?php foreach ($images as $rs): ?>
+                            <!--
+                                <a href="javascript:void(0);" onclick="set_group_img('<?//php echo $rs->images ?>');" style=" text-decoration: none;">
+                            -->
+                            <a class="image-link" href="<?php echo Yii::app()->baseUrl; ?>/uploads/<?= $rs['images'] ?>">
+                                <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?= $rs['images'] ?>" class="btn btn-default" id="im-resize"/></a>
+                        <?php endforeach; ?>
+                    </center>
+                </div>
+            <?php } ?>
         </div>
+    </div>
 
-        <div class=" row">
-            <div class=" col-lg-12">
-                <!-- Img -->
-                <?php if ($img != "") { ?>
-                    <div class="img_zoom">
-                        <center>
-                            <?php foreach ($images as $rs): ?>
-                                <!--
-                                    <a href="javascript:void(0);" onclick="set_group_img('<?//php echo $rs->images ?>');" style=" text-decoration: none;">
-                                -->
-                                <a class="image-link" href="<?php echo Yii::app()->baseUrl; ?>/uploads/<?= $rs['images'] ?>">
-                                    <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?= $rs['images'] ?>" class="btn btn-default" id="im-resize"/></a>
-                            <?php endforeach; ?>
-                        </center>
-                    </div>
-                <?php } ?>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-12" style=" text-align: center;">
-                <img src="<?php echo Yii::app()->baseUrl; ?>/images/box-shadow-t.png" class="img-responsive"/>
-            </div>
-        </div>
-    <?php } ?>
+<hr/>
 
     <div class="row">
 
@@ -218,74 +202,74 @@ $this->breadcrumbs = array(
     </div>
 </div>
 
-    <!-- สินค้าที่เกียวข้อง -->
-  
-        <div class="panel panel-default" style="margin:0px;">
-            <div class="panel-heading">
-                <img src="<?php echo Yii::app()->baseUrl;?>/images/full-shopping-cart-icon.png" width="28"/> สินค้าอื่น ๆ
-            </div>
-            <div class="panel-body">
-                <ol class="dribbbles group" style="padding-left: 0px;">
-                    <?php
-                    $i = 0;
-                    foreach ($near as $ne):
-                        $i++;
-                        $link = Yii::app()->createUrl('frontend/product/detail/id/'.$config->url_encode($ne['product_id']));
-                        $img_n = $product_model->get_last_img($ne['product_id']);
-                        ?>
-                        <li id="screenshot-<?php echo $i; ?>" class="col-lg-4 col-md-4 col-sm-6" style="text-align:center; margin-bottom:15px;">
-                            <div class="dribbble" id="box_list_product">
-                                <div class="dribbble-shot">
-                                    <div class="dribbble-img">
-                                        <a class="dribbble-link" href="<?php echo $link; ?>">
-                                            <div data-picture data-alt="kimniyom">
-                                                <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img_n; ?>"/>
-                                            </div>
-                                        </a>
-                                        <a class="dribbble-over" href="<?php echo $link ?>" id="font-rsu-20">    
-                                            <?php echo $ne['product_name']; ?>
-                                        </a>
+<!-- สินค้าที่เกียวข้อง -->
+<div class="panel panel-default" style="margin:0px;">
+    <div class="panel-heading">
+        <img src="<?php echo Yii::app()->baseUrl; ?>/images/full-shopping-cart-icon.png" width="28"/> สินค้าอื่น ๆ
+    </div>
+    <div class="panel-body">
+        <ol class="dribbbles group" style="padding-left: 0px;">
+            <?php
+            $i = 0;
+            foreach ($near as $ne):
+                $i++;
+                $link = Yii::app()->createUrl('frontend/product/detail/id/' . $config->url_encode($ne['product_id']));
+                $img_n = $product_model->get_last_img($ne['product_id']);
+                ?>
+                <li id="screenshot-<?php echo $i; ?>" class="col-lg-3 col-md-3 col-sm-4 col-xs-6" style="text-align:center; margin-bottom:15px;">
+                    <div class="dribbble" id="box_list_product">
+                        <div class="dribbble-shot">
+                            <div class="dribbble-img">
+                                <a class="dribbble-link" href="<?php echo $link; ?>">
+                                    <div data-picture data-alt="kimniyom">
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img_n; ?>"/>
                                     </div>
-
-                                    <ul class="tools group">
-                                        <li style="color:red;text-align:center;">
-                                            <span id="font-22">ราคา <?php echo $ne['product_price']; ?> บาท</span>
-                                        </li>
-                                    </ul>
-
-                                </div>
+                                </a>
+                                <a class="dribbble-over" href="<?php echo $link ?>" id="hover-box-product">    
+                                    <?php echo $ne['product_name']; ?><br/>
+                                    <font style="color:#ffff00;">ราคา <?php echo $ne['product_price']; ?> บาท</font>
+                                </a>
                             </div>
-                        </li>
-                    <?php endforeach; ?>
-                </ol>
-            </div>
-        </div>
+
+                            <ul class="tools group">
+                                <li style="color:red;">
+                                    <span id="font-22">ราคา <?php echo $ne['product_price']; ?> บาท</span>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+            <?php endforeach; ?>
+        </ol>
+    </div>
+</div>
 
 
 <script type="text/javascript">
     //load_comment();
-    function load_comment(){
+    function load_comment() {
         $("#comment").html("<center><i class='fa fa-spinner fa-spin fa-2x'></i></center>");
-        var product_id = "<?php echo $product['product_id']?>";
-        var url = "<?php echo Yii::app()->createUrl('frontend/comment')?>";
+        var product_id = "<?php echo $product['product_id'] ?>";
+        var url = "<?php echo Yii::app()->createUrl('frontend/comment') ?>";
         var data = {product_id: product_id};
 
-        $.post(url,data,function(result){
+        $.post(url, data, function (result) {
             $("#comment").html(result);
         });
     }
 
-    function send_comment(){
-        var product_id = "<?php echo $product['product_id']?>";
-        var pid = "<?php echo Yii::app()->session['pid']?>";
+    function send_comment() {
+        var product_id = "<?php echo $product['product_id'] ?>";
+        var pid = "<?php echo Yii::app()->session['pid'] ?>";
         var box_comment = $("#box_comment").val();
-        var url = "<?php echo Yii::app()->createUrl('frontend/comment/send_comment')?>";
-        var data = {product_id: product_id,pid: pid,box_comment: box_comment};
-        if(box_comment == ''){
+        var url = "<?php echo Yii::app()->createUrl('frontend/comment/send_comment') ?>";
+        var data = {product_id: product_id, pid: pid, box_comment: box_comment};
+        if (box_comment == '') {
             $("#box_comment").focus();
             return false;
         }
-        $.post(url,data,function(result){
+        $.post(url, data, function (result) {
             load_comment();
         });
     }

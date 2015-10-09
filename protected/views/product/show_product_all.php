@@ -70,13 +70,15 @@ $this->breadcrumbs = array(
     $type_name,
 );
 ?>
-    <br/>  
-    <div id="font-rsu-20" style="margin-left:15px; color:red;">
-        สินค้าประเภท <?php echo $type_name ?> จำนวนทั้งหมด 
+    <br/>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+    <div id="font-rsu-20" style="color:red;">
+        สินค้าประเภท <?php echo $type_name ?> จำนวนทั้งหมด
         <?php echo $count_product_type; ?>
     </div>
-    <br/>
-    <div id="results"></div><br/>
+</div>
+    <div id="results" style="margin-top:20px;"></div><br/>
     <div align="center">
         <button class="load_more btn btn-default" id="load_more_button">
             สินค้าทั้งหมด <i class="fa fa-angle-down"></i>
@@ -84,4 +86,5 @@ $this->breadcrumbs = array(
         <div class="animation_image" style="display:none;">
             <img src="<?php echo Yii::app()->baseUrl; ?>/images/ajax-loader.gif"> Loading...
         </div>
-    </div>
+    </div><br/>
+</div>
