@@ -1,14 +1,16 @@
 <?php
-class LogoController extends Controller{
-	public $layout = "template_backend";
 
-	public function actionIndex(){
-		$model = new Backend_logo();
+class LogoController extends Controller {
+
+    public $layout = "template_backend";
+
+    public function actionIndex() {
+        $model = new Backend_logo();
         $data['logo'] = $model->get_logo();
-        $this->render('//backend/logo/index',$data);
-	}
+        $this->render('//backend/logo/index', $data);
+    }
 
-	public function actionSaveupload(){
+    public function actionSaveupload() {
         // Define a destination
         $targetFolder = Yii::app()->baseUrl . '/uploads/logo'; // Relative to the root
 
@@ -40,25 +42,25 @@ class LogoController extends Controller{
         }
     }
 
-    public function actionSet_active(){
+    public function actionSet_active() {
         $id = $_POST['id'];
         //Clean 
         $columns_clean = array(
-                "active" => '0',
-                "d_update" => date('Y-m-d H:i:s')
-            );
+            "active" => '0',
+            "d_update" => date('Y-m-d H:i:s')
+        );
         Yii::app()->db->createCommand()
-            ->update("logo",$columns_clean,"1 = 1");
+                ->update("logo", $columns_clean, "1 = 1");
 
         $columns = array(
             "active" => '1',
             "d_update" => date('Y-m-d H:i:s')
-            );
+        );
         Yii::app()->db->createCommand()
-            ->update("logo",$columns,"id = '$id' ");
+                ->update("logo", $columns, "id = '$id' ");
     }
 
-    public function actionDelete(){
+    public function actionDelete() {
         $id = $_POST['id'];
         $model = new Backend_logo();
         $rs = $model->get_logo_by_id($id);
@@ -74,4 +76,5 @@ class LogoController extends Controller{
         Yii::app()->db->createCommand()
                 ->delete('logo', "id = '$id' ");
     }
+
 }

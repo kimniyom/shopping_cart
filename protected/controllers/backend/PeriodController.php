@@ -1,37 +1,39 @@
 <?php
 
-class PeriodController extends Controller{
-	public $layout = "template_backend";
+class PeriodController extends Controller {
 
-	public function actionIndex(){
-		$period = new Backend_period();
-		$data['model'] = $period;
-		$data['result'] = $period->get_period();
+    public $layout = "template_backend";
 
-		$this->render('//backend/period/index',$data);
-	}
+    public function actionIndex() {
+        $period = new Backend_period();
+        $data['model'] = $period;
+        $data['result'] = $period->get_period();
 
-	public function actionSave_period(){
-		$columns = array("period" => $_POST['period']);
-		Yii::app()->db->createCommand()
-			->insert("period",$columns);
-	}
+        $this->render('//backend/period/index', $data);
+    }
 
-	public function actionSet_active(){
-		$id = $_POST['id'];
-		$culumnsOld = array("active" => '0');
-		Yii::app()->db->createCommand()
-			->update("period",$culumnsOld,"1=1" );
+    public function actionSave_period() {
+        $columns = array("period" => $_POST['period']);
+        Yii::app()->db->createCommand()
+                ->insert("period", $columns);
+    }
 
-		$columns = array("active" => '1');
-		Yii::app()->db->createCommand()
-			->update("period",$columns,"id = '$id'");
-	}
+    public function actionSet_active() {
+        $id = $_POST['id'];
+        $culumnsOld = array("active" => '0');
+        Yii::app()->db->createCommand()
+                ->update("period", $culumnsOld, "1=1");
 
-	public function actionDelete(){
-		$id = $_POST['id'];
+        $columns = array("active" => '1');
+        Yii::app()->db->createCommand()
+                ->update("period", $columns, "id = '$id'");
+    }
 
-		Yii::app()->db->createCommand()
-			->delete("period","id = '$id'");
-	}
+    public function actionDelete() {
+        $id = $_POST['id'];
+
+        Yii::app()->db->createCommand()
+                ->delete("period", "id = '$id'");
+    }
+
 }
