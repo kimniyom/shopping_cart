@@ -3,6 +3,7 @@
 
 
 $url = "http://localhost/shopping_cart/uploads/ck_images";
+//$url = "http://www.theassembler.net/shopping_cart/uploads/ck_images";
 /*
  * ### CKFinder : Configuration File - Basic Instructions
  *
