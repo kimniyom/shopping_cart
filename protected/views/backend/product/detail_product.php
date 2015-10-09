@@ -1,4 +1,3 @@
-
 <style type="text/css">
     table tr td{ height:30px;}
     #im-resize{height: 75px; padding: 5px; margin-bottom: 5px;}
@@ -13,7 +12,6 @@
         $("#img_group").html("<img src='<?php echo Yii::app()->baseUrl ?>/uploads" + "/" + img + " ' width='80%' style='margin-right:20px;' />");
     }
 </script>
-
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -40,7 +38,6 @@ $this->breadcrumbs = array(
 ?>
 
 <?php $config = new Configweb_model(); ?>
-
 
 <span class="navbar-brand" id="cart_box" data-toggle="popover" 
       data-trigger="hover" data-placement="left" data-trigger="focus"
@@ -115,9 +112,7 @@ $this->breadcrumbs = array(
                     </div>
                 </div>
             <?php } ?>
-
         </div>
-
     </div>
 
 
