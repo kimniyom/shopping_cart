@@ -61,7 +61,7 @@ class OrdersController extends Controller {
 
     public function actionShow_order_short_list() {
         $order = new Orders();
-        $product = new product();
+        $product = new Product();
         $order_id = $_POST['order_id'];
         $data['count'] = $product->_get_cart_count($order_id);
         $data['product'] = $order->_get_list_order($order_id);

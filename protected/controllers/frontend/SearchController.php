@@ -7,7 +7,7 @@ class SearchController extends Controller{
         $search = $_GET['search'];
         $type_id = $_GET['type'];
 
-        $product = new product();
+        $product = new Product();
 
         if ($type_id != "") {
             $w1 = " type_id = '$type_id' ";
