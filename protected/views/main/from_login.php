@@ -41,37 +41,37 @@
 
     });// end jquery
 </script>
-        <center>
-            <p id="font-rsu-22">กรอกข้อมูลสมาชิก</p>
-        </center>
-        <label>อีเมล์ *</label>
-        <div class="form-group">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                <input type="text" id="login_email" name="login_email" class="form-control" placeholder="EMAIL..."/>
-            </div>
-        </div>
+<center>
+    <p id="font-rsu-22">กรอกข้อมูลสมาชิก</p>
+</center>
+<label>อีเมล์ *</label>
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-user"></i></div>
+        <input type="text" id="login_email" name="login_email" class="form-control" placeholder="EMAIL..."/>
+    </div>
+</div>
 
-        <label>รหัสผ่าน *</label>
-        <div class="form-group">
-            <div class="input-group">
-                <div class="input-group-addon"><i class="fa fa-key"></i></div>
-                <input type="password" id="login_password" name="login_password" class="form-control" placeholder="PASSWORD..."/>
-            </div>
-        </div>
+<label>รหัสผ่าน *</label>
+<div class="form-group">
+    <div class="input-group">
+        <div class="input-group-addon"><i class="fa fa-key"></i></div>
+        <input type="password" id="login_password" name="login_password" class="form-control" placeholder="PASSWORD..."/>
+    </div>
+</div>
 
 
-        <center>
-            <div type="button"id="login_btn"  class="btn btn-primary">
-                <i class="fa fa-check" id="load"></i>
-                เข้าสู่ระบบ
-            </div>
+<center>
+    <div type="button"id="login_btn"  class="btn btn-primary">
+        <i class="fa fa-check" id="load"></i>
+        เข้าสู่ระบบ
+    </div>
 
-            <div type="button" id="reset"  class="btn btn-danger">
-                <i class="fa fa-remove"></i>
-                ยกเลิก
-            </div>
-        </center>
- 
+    <div type="button" id="reset"  class="btn btn-danger">
+        <i class="fa fa-remove"></i>
+        ยกเลิก
+    </div>
+</center>
+
 
 
