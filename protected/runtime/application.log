@@ -5421,3 +5421,1106 @@ Stack trace:
 REQUEST_URI=/shopping_cart/index.php?r=web_system/main_system/contact
 HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main
 ---
+2015/10/08 10:25:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_product/payments_g".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_product/payments_g
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main/register
+---
+2015/10/08 10:28:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/report/mas_report_list".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/report/...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/report/mas_report_list
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/web
+---
+2015/10/08 11:42:43 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.transport' in 'field list'. The SQL statement executed was: SELECT o.pid,
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        SUM(b.product_num) AS PRODUCT_TOTAL,
+                        (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
+                        t.transport,
+                        o.slip,
+                        m.tel,
+                        o.date_payment,
+                        o.time_payment,
+                        o.money
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN transport t ON o.transport = t.id
+                WHERE active = '2'
+                GROUP BY o.order_id  .
+in C:\xampp\htdocs\shopping_cart\protected\models\Backend_orders.php (129)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (19)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 11:42:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 't.transport' in 'field list'. The SQL statement executed was: SELECT o.pid,
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        SUM(b.product_num) AS PRODUCT_TOTAL,
+                        (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
+                        t.transport,
+                        o.slip,
+                        m.tel,
+                        o.date_payment,
+                        o.time_payment,
+                        o.money
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN transport t ON o.transport = t.id
+                WHERE active = '2'
+                GROUP BY o.order_id  ' in C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\models\Backend_orders.php(129): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(19): Backend_orders->get_order_verify()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionVerify()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('verify')
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/verify
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/payment/view
+---
+2015/10/08 11:43:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'active' in where clause is ambiguous. The SQL statement executed was: SELECT o.pid,
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        SUM(b.product_num) AS PRODUCT_TOTAL,
+                        (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
+                        t.detail,
+                        o.slip,
+                        m.tel,
+                        o.date_payment,
+                        o.time_payment,
+                        o.money
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN transport t ON o.transport = t.id
+                WHERE active = '2'
+                GROUP BY o.order_id  .
+in C:\xampp\htdocs\shopping_cart\protected\models\Backend_orders.php (129)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (19)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 11:43:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1052 Column 'active' in where clause is ambiguous. The SQL statement executed was: SELECT o.pid,
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        SUM(b.product_num) AS PRODUCT_TOTAL,
+                        (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
+                        t.detail,
+                        o.slip,
+                        m.tel,
+                        o.date_payment,
+                        o.time_payment,
+                        o.money
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN transport t ON o.transport = t.id
+                WHERE active = '2'
+                GROUP BY o.order_id  ' in C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\models\Backend_orders.php(129): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(19): Backend_orders->get_order_verify()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionVerify()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('verify')
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/verify
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/payment/view
+---
+2015/10/08 11:48:42 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 't'. The SQL statement executed was: SELECT 
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        SUM(b.product_num) AS PRODUCT_TOTAL,
+                        (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
+                        t.detail,
+                        o.slip,
+                        m.tel,
+                        o.date_payment,
+                        o.time_payment,
+                        o.money,
+                        IFNULL(o.message,'-') AS msg,
+                        a.*,
+                        c.changwat_name,
+                        ap.ampur_name,
+                        t.tambon_name
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN address a ON m.pid = a.pid
+                INNER JOIN changwat c ON a.changwat = c.changwat_id
+                INNER JOIN ampur ap ON a.ampur = ap.ampur_id
+                INNER JOIN tambon t ON a.tambon = t.tambon_id
+                INNER JOIN transport t ON o.transport = t.id
+                WHERE o.active = '3'
+                GROUP BY o.order_id .
+in C:\xampp\htdocs\shopping_cart\protected\models\Backend_orders.php (162)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (38)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 11:48:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 't'. The SQL statement executed was: SELECT 
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        SUM(b.product_num) AS PRODUCT_TOTAL,
+                        (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
+                        t.detail,
+                        o.slip,
+                        m.tel,
+                        o.date_payment,
+                        o.time_payment,
+                        o.money,
+                        IFNULL(o.message,'-') AS msg,
+                        a.*,
+                        c.changwat_name,
+                        ap.ampur_name,
+                        t.tambon_name
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN address a ON m.pid = a.pid
+                INNER JOIN changwat c ON a.changwat = c.changwat_id
+                INNER JOIN ampur ap ON a.ampur = ap.ampur_id
+                INNER JOIN tambon t ON a.tambon = t.tambon_id
+                INNER JOIN transport t ON o.transport = t.id
+                WHERE o.active = '3'
+                GROUP BY o.order_id ' in C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\models\Backend_orders.php(162): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(38): Backend_orders->get_pending_shipment()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPendingshipment()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('pendingshipment')
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/pendingshipment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/orders/verify
+---
+2015/10/08 11:48:53 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 't'. The SQL statement executed was: SELECT 
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        SUM(b.product_num) AS PRODUCT_TOTAL,
+                        (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
+                        t.detail,
+                        o.slip,
+                        m.tel,
+                        o.date_payment,
+                        o.time_payment,
+                        o.money,
+                        IFNULL(o.message,'-') AS msg,
+                        a.*,
+                        c.changwat_name,
+                        ap.ampur_name,
+                        t.tambon_name
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN address a ON m.pid = a.pid
+                INNER JOIN changwat c ON a.changwat = c.changwat_id
+                INNER JOIN ampur ap ON a.ampur = ap.ampur_id
+                INNER JOIN tambon t ON a.tambon = t.tambon_id
+                INNER JOIN transport t ON o.transport = t.id
+                WHERE o.active = '3'
+                GROUP BY o.order_id .
+in C:\xampp\htdocs\shopping_cart\protected\models\Backend_orders.php (162)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (38)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 11:48:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1066 Not unique table/alias: 't'. The SQL statement executed was: SELECT 
+                        m.name,
+                        m.lname,
+                        o.order_id,
+                        o.order_date,
+                        SUM(b.product_num) AS PRODUCT_TOTAL,
+                        (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
+                        t.detail,
+                        o.slip,
+                        m.tel,
+                        o.date_payment,
+                        o.time_payment,
+                        o.money,
+                        IFNULL(o.message,'-') AS msg,
+                        a.*,
+                        c.changwat_name,
+                        ap.ampur_name,
+                        t.tambon_name
+                FROM orders o INNER JOIN basket b ON o.order_id = b.order_id
+                INNER JOIN masuser m ON o.pid = m.pid
+                INNER JOIN address a ON m.pid = a.pid
+                INNER JOIN changwat c ON a.changwat = c.changwat_id
+                INNER JOIN ampur ap ON a.ampur = ap.ampur_id
+                INNER JOIN tambon t ON a.tambon = t.tambon_id
+                INNER JOIN transport t ON o.transport = t.id
+                WHERE o.active = '3'
+                GROUP BY o.order_id ' in C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\models\Backend_orders.php(162): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(38): Backend_orders->get_pending_shipment()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPendingshipment()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('pendingshipment')
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/pendingshipment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/orders/verify
+---
+2015/10/08 13:21:03 [error] [php] Undefined index: order_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php:43)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id0000004
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (43)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 13:21:27 [error] [php] Undefined index: order_id (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php:43)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id0000004
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (43)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 13:21:59 [error] [exception.CException] exception 'CException' with message 'OrdersController cannot find the requested view "//backend/order/print_address".' in C:\xampp\htdocs\shopping_cart\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): CController->renderPartial('//backend/order...', Array)
+#1 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('print_address')
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#7 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/orders/pendingshipment
+---
+2015/10/08 13:22:22 [error] [php] Array to string conversion (C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php:2)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): OrdersController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (2)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (46)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 13:22:42 [error] [php] Undefined variable: web (C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php:4)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): OrdersController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (4)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (46)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 13:43:09 [error] [exception.CException] exception 'CException' with message 'Alias "ext.mPrint.mPrint" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\shopping_cart\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.mPrint.mPri...', true)
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(OrdersController), 'ext.mPrint.mPri...', Array)
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.mPrint.mPri...', Array)
+#3 C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php(86): CBaseController->widget('ext.mPrint.mPri...', Array)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): CController->renderPartial('//backend/order...', Array)
+#8 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('print_address')
+#13 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#14 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/orders/pendingshipment
+---
+2015/10/08 13:51:07 [error] [php] require_once(/shopping_cart/assets/mPrint/mPrint.php): failed to open stream: No such file or directory (C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php:6)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): OrdersController->renderInternal()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): OrdersController->renderPartial()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (46)
+2015/10/08 13:51:48 [error] [php] require_once(../assets/mPrint/mPrint.php): failed to open stream: No such file or directory (C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php:6)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): OrdersController->renderInternal()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): OrdersController->renderPartial()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (46)
+2015/10/08 13:52:09 [error] [php] Object of class CHttpRequest could not be converted to string (C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php:6)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): OrdersController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (46)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 13:54:02 [error] [php] require_once(C:\xampp\htdocs\shopping_cart\protected/assets/mPrint/mPrint.php): failed to open stream: No such file or directory (C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php:6)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): OrdersController->renderInternal()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): OrdersController->renderPartial()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (46)
+2015/10/08 13:54:26 [error] [exception.CException] exception 'CException' with message 'Alias "ext.mPrint.mPrint" is invalid. Make sure it points to an existing PHP file and the file is readable.' in C:\xampp\htdocs\shopping_cart\framework\YiiBase.php:322
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWidgetFactory.php(146): YiiBase::import('ext.mPrint.mPri...', true)
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(OrdersController), 'ext.mPrint.mPri...', Array)
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.mPrint.mPri...', Array)
+#3 C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php(90): CBaseController->widget('ext.mPrint.mPri...', Array)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): CController->renderPartial('//backend/order...', Array)
+#8 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('print_address')
+#13 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#14 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/orders/pendingshipment
+---
+2015/10/08 13:56:09 [error] [php] require_once(/shopping_cart/assets/mPrint/mPrint.php): failed to open stream: No such file or directory (C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php:6)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): OrdersController->renderInternal()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): OrdersController->renderPartial()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (46)
+2015/10/08 13:57:45 [error] [php] require_once(C:\xampp\htdocs\shopping_cart\protected/assets/mPrint/mPrint.php): failed to open stream: No such file or directory (C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php:6)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): OrdersController->renderInternal()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): OrdersController->renderPartial()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (46)
+2015/10/08 13:58:32 [error] [php] require(/shopping_cart/assets/mPrint/mPrint.php): failed to open stream: No such file or directory (C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php:6)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): OrdersController->renderInternal()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): OrdersController->renderPartial()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (46)
+2015/10/08 13:59:17 [error] [php] require(/shopping_cart/assets/mPrint/mPrint.php): failed to open stream: No such file or directory (C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php:6)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): OrdersController->renderInternal()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(46): OrdersController->renderPartial()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php (6)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (46)
+2015/10/08 14:01:16 [error] [php] require_once(/shopping_cart/assets/mPrint/mPrint.php): failed to open stream: No such file or directory (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php:47)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (47)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (47)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 14:02:02 [error] [php] require_once(127.0.0.1/shopping_cart/assets/mPrint/mPrint.php): failed to open stream: No such file or directory (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php:47)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (47)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (47)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 14:02:19 [error] [php] require_once(): http:// wrapper is disabled in the server configuration by allow_url_include=0 (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php:47)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (47)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (47)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 14:09:06 [error] [php] require_once(): http:// wrapper is disabled in the server configuration by allow_url_include=0 (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php:47)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (47)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (47)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 14:09:27 [error] [exception.CException] exception 'CException' with message 'Property "mPrint.style" is not defined.' in C:\xampp\htdocs\shopping_cart\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWidgetFactory.php(161): CComponent->__set('style', 'float: right; p...')
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(146): CWidgetFactory->createWidget(Object(OrdersController), 'ext.mPrint.mPri...', Array)
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(172): CBaseController->createWidget('ext.mPrint.mPri...', Array)
+#3 C:\xampp\htdocs\shopping_cart\protected\views\backend\order\printaddress.php(90): CBaseController->widget('ext.mPrint.mPri...', Array)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(47): CController->renderPartial('//backend/order...', Array)
+#8 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('print_address')
+#13 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#14 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/orders/pendingshipment
+---
+2015/10/08 14:31:13 [error] [exception.CException] exception 'CException' with message 'OrdersController cannot find the requested view "index".' in C:\xampp\htdocs\shopping_cart\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(61): CController->renderPartial('index', Array, true)
+#1 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('print_address')
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#7 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/orders/pendingshipment
+---
+2015/10/08 14:32:45 [error] [php] Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\shopping_cart\framework\web\CController.php:793) (C:\xampp\htdocs\shopping_cart\protected\vendors\mpdf\mpdf.php:8297)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\vendors\mpdf\mpdf.php (8297)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (67)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 14:34:21 [error] [exception.CException] exception 'CException' with message 'OrdersController cannot find the requested view "index".' in C:\xampp\htdocs\shopping_cart\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): CController->renderPartial('index', Array, true)
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(54): CController->render('index', Array, true)
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('print_address')
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/orders/pendingshipment
+---
+2015/10/08 14:35:18 [error] [exception.CException] exception 'CException' with message 'OrdersController cannot find the requested view "backend/index".' in C:\xampp\htdocs\shopping_cart\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): CController->renderPartial('backend/index', Array, true)
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(54): CController->render('backend/index', Array, true)
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('print_address')
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/orders/pendingshipment
+---
+2015/10/08 14:41:41 [error] [php] Missing argument 1 for mPDF::SetAutoFont(), called in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php on line 53 and defined (C:\xampp\htdocs\shopping_cart\protected\vendors\mpdf\mpdf.php:1732)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\vendors\mpdf\mpdf.php (1732)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (53)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 14:48:18 [error] [php] Missing argument 1 for mPDF::SetAutoFont(), called in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php on line 51 and defined (C:\xampp\htdocs\shopping_cart\protected\vendors\mpdf\mpdf.php:1732)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000004
+in C:\xampp\htdocs\shopping_cart\protected\vendors\mpdf\mpdf.php (1732)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (51)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 16:09:02 [error] [php] Object of class Backend_orders could not be converted to int (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php:45)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0000003
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php (45)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/08 16:09:27 [error] [exception.CException] exception 'CException' with message 'OrdersController cannot find the requested view "//backend/order/printaddress_all".' in C:\xampp\htdocs\shopping_cart\framework\web\CController.php:878
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\OrdersController.php(62): CController->renderPartial('//backend/order...', Array, true)
+#1 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionPrint_address()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('print_address')
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/orders/...')
+#7 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/print_address/order_id/0
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/orders/pendingshipment
+---
+2015/10/08 16:19:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/main_system/contact".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('web_system/main...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/main_system/contact
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/send
+---
+2015/10/09 00:00:29 [error] [php] Undefined variable: sale (C:\xampp\htdocs\shopping_cart\protected\views\main\home.php:70)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): MainController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): MainController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(15): MainController->render()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): MainController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): MainController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): MainController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main
+in C:\xampp\htdocs\shopping_cart\protected\views\main\home.php (70)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php (15)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 14:20:15 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "createUtl".' in C:\xampp\htdocs\shopping_cart\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images.php(64): CComponent->__call('createUtl', Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images.php(64): CWebApplication->createUtl('images/Big-user...')
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): CController->renderPartial('//backend/produ...', Array, true)
+#6 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php(94): CController->render('//backend/produ...', Array)
+#7 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): ProductController->actionImages()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('images')
+#12 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#13 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/images&product_id=P20151009012730
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/getproduct&type_id=005
+---
+2015/10/09 14:20:29 [error] [exception.CException] exception 'CException' with message 'CWebApplication and its behaviors do not have a method or closure named "baseUrl".' in C:\xampp\htdocs\shopping_cart\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images.php(64): CComponent->__call('baseUrl', Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images.php(64): CWebApplication->baseUrl('images/Big-user...')
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): CController->renderPartial('//backend/produ...', Array, true)
+#6 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php(94): CController->render('//backend/produ...', Array)
+#7 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): ProductController->actionImages()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('images')
+#12 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#13 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/images&product_id=P20151009012730
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/getproduct&type_id=005
+---
+2015/10/09 15:04:16 [error] [php] unlink() expects parameter 1 to be a valid path, array given (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:291)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (291)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 15:06:04 [error] [php] Array to string conversion (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:288)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (288)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 15:18:22 [error] [php] unlink() expects parameter 1 to be a valid path, array given (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:293)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (293)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 15:18:53 [error] [php] Undefined index: imgUrl (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:208)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (208)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 15:20:01 [error] [php] unlink() expects parameter 1 to be a valid path, array given (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:293)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (293)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 15:21:11 [error] [php] unlink(uploads/product/uploads/product/0-1290158152.jpg): No such file or directory (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:294)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (294)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 15:21:36 [error] [php] unlink(./uploads/product/uploads/product/0-1290158152.jpg): No such file or directory (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:294)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (294)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 15:22:13 [error] [php] unlink(./uploads/product/thumb): Permission denied (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:294)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (294)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 15:22:41 [error] [php] Array to string conversion (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:294)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (294)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 15:24:04 [error] [php] unlink(./uploads/product/thumb): Permission denied (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:294)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (294)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 17:23:13 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shopping_cart_db.product_imags' doesn't exist. The SQL statement executed was: SELECT * FROM product_imags WHERE product_id = 'P20151009012730' AND active = '1'.
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (210)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 17:23:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shopping_cart_db.product_imags' doesn't exist. The SQL statement executed was: SELECT * FROM product_imags WHERE product_id = 'P20151009012730' AND active = '1'' in C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php(210): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): ProductController->actionImg_crop_to_file()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): CController->run('img_crop_to_fil...')
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#8 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file/product_id/P20151009012730
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/images&product_id=P20151009012730
+---
+2015/10/09 21:16:53 [error] [php] unlink(./uploads/product_thumb/croppedImg_2008155316.jpeg): No such file or directory (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:304)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file/product_id/P20151009012730
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (304)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 21:18:42 [error] [php] unlink(./uploads/product_thumb/croppedImg_2008155316.jpeg): No such file or directory (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:304)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file/product_id/P20151009012730
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (304)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 21:19:10 [error] [php] Undefined index: imgUrl (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:212)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file/product_id/P20151009012730
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (212)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 21:19:33 [error] [php] unlink(./uploads/product_thumb/croppedImg_2008155316.jpeg): No such file or directory (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:304)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file/product_id/P20151009012730
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (304)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 21:30:55 [error] [php] Undefined variable: product (C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images_title.php:17)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): ProductController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): ProductController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php(163): ProductController->render()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): ProductController->actionImages_title()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/images_title/type_id/005/product_id/P20151009012730
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images_title.php (17)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (163)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 21:31:55 [error] [php] Undefined variable: product (C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images_title.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): ProductController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): ProductController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php(163): ProductController->render()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): ProductController->actionImages_title()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/images_title/type_id/005/product_id/P20151009012730
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images_title.php (16)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (163)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 21:32:31 [error] [php] Undefined variable: type_id (C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images_title.php:16)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): ProductController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): ProductController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php(163): ProductController->render()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): ProductController->actionImages_title()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/images_title/type_id/005/product_id/P20151009012730
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images_title.php (16)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (163)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 21:36:29 [error] [php] unlink(./uploads/product_thumb/croppedImg_2008155316.jpeg): No such file or directory (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:316)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file/product_id/P20151009012730
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (316)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 21:37:12 [error] [php] unlink(./uploads/product_thumb/croppedImg_2008155316.jpeg): No such file or directory (C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php:316)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#2 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/img_crop_to_file/product_id/P20151009012730
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (316)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 21:54:09 [error] [php] Undefined variable: images_title (C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images.php:67)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): ProductController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): ProductController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php(94): ProductController->render()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): ProductController->actionImages()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/product/images/product_id/P20151009012730
+in C:\xampp\htdocs\shopping_cart\protected\views\backend\product\images.php (67)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\backend\ProductController.php (94)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 22:01:33 [error] [php] Array to string conversion (C:\xampp\htdocs\shopping_cart\protected\views\main\home.php:88)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): MainController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): MainController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(15): MainController->render()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): MainController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): MainController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): MainController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main
+in C:\xampp\htdocs\shopping_cart\protected\views\main\home.php (88)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php (15)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 22:03:00 [error] [php] Array to string conversion (C:\xampp\htdocs\shopping_cart\protected\views\main\home.php:88)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): MainController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): MainController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php(15): MainController->render()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): MainController->actionIndex()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): MainController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): MainController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): MainController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main
+in C:\xampp\htdocs\shopping_cart\protected\views\main\home.php (88)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MainController.php (15)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/09 23:02:29 [error] [php] Undefined variable: last (C:\xampp\htdocs\shopping_cart\protected\views\product\detail_product.php:151)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): ProductController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): ProductController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\ProductController.php(19): ProductController->render()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): ProductController->actionDetail()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): ProductController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): ProductController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/detail/id/VlVSSmQwMVVWWGRPYWtFelRWUlZlRTFFVFRJPQ==
+in C:\xampp\htdocs\shopping_cart\protected\views\product\detail_product.php (151)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\ProductController.php (19)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
