@@ -3,7 +3,7 @@ $this->breadcrumbs = array(
     'ค้นหาสินค้า',
 );
 ?>
-
+<br/>
 <ol class="dribbbles group" style="padding-left: 0px;">
     <?php
         $product_model = new Product();
@@ -23,7 +23,7 @@ $this->breadcrumbs = array(
                                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
                                     </div>
                                 </a>
-                                <a class="dribbble-over hvr-pop" href="<?php echo $link ?>" id="font-rsu-20">    
+                                <a class="dribbble-over hvr-pop" href="<?php echo $link ?>" id="hover-box-product">    
                                     <?php echo $last['product_name']; ?>
                                 </a>
                             </div>

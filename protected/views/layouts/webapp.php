@@ -164,7 +164,7 @@
                                 </li>
 
                                 <li class="hvr-underline-from-center">
-                                    <a href="<?= Yii::app()->createUrl('web_system/main_system/contact') ?>">
+                                    <a href="<?= Yii::app()->createUrl('frontend/contact') ?>">
                                         <span class="glyphicon glyphicon-phone-alt"></span>
                                         <font id="font-th">ติดต่อเรา</font>
                                     </a>
@@ -384,23 +384,23 @@
                             </div>
                         <?php endif; ?>
 
-                            <?php if (isset($this->breadcrumbs)): ?>
+                        <?php if (isset($this->breadcrumbs)): ?>
 
-                                <div class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px; box-shadow:0px 0px 2px 0px #999999; background:#FFF;" id="font-22">
-
-                                    <?php
-                                    $this->widget('zii.widgets.CBreadcrumbs', array(
-                                        'homeLink' => '<i class="fa fa-home"></i> ' . CHtml::link('หน้าแรก', Yii::app()->createUrl('frontend/main')),
-                                        'links' => $this->breadcrumbs,
-                                    ));
-                                    ?><!-- breadcrumbs -->
-                              </div>
-                            <?php endif ?>
-
+                            <div class="breadcrumb" style=" margin-bottom: 0px; margin-top: 0px; box-shadow:0px 0px 2px 0px #999999; background:#FFF;" id="font-22">
 
                                 <?php
-                                echo $content;
-                                ?>
+                                $this->widget('zii.widgets.CBreadcrumbs', array(
+                                    'homeLink' => '<i class="fa fa-home"></i> ' . CHtml::link('หน้าแรก', Yii::app()->createUrl('frontend/main')),
+                                    'links' => $this->breadcrumbs,
+                                ));
+                                ?><!-- breadcrumbs -->
+                            </div>
+                        <?php endif ?>
+
+
+                        <?php
+                        echo $content;
+                        ?>
                     </div> <!-- End Contant -->
                 </div>
 
@@ -453,20 +453,27 @@
                             </div>
 
                         </div>
-                        <div class="col-sm-3">
-
+                        <div class="col-sm-4">
+                            <p></p>
                         </div>
-                        <div class="col-sm-5">
+                        <div class="col-sm-4">
                             <p style=" color: #FFF; font-size: 20px; font-weight: bold;">
                                 เป็นเพื่อนกับเรา<br/>
                             </p>
 
                             <div class="row">
                                 <?php $social = $contact->get_social_media(); ?>
-                                <?php foreach ($social as $datas): ?>
-                                    <div style="margin:5px;">
-                                        <img src="<?php echo Yii::app()->baseUrl; ?>/images/<?php echo $datas['icon'] ?>" width="24"/>
-                                        <?php echo $datas['account'] ?><br/>
+                                <?php
+                                foreach ($social as $datas):
+                                    if (substr($datas['account'], 0, 4) != "http") {
+                                        $account = $datas['account'];
+                                    } else {
+                                        $account = "<a href='".$datas['account']."'>".$datas['social_app']."</a>";
+                                    }
+                                    ?>
+                                <div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/<?php echo $datas['icon'] ?>" width="52" class="hvr-buzz-out"/>
+                                        <?php echo $account ?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>

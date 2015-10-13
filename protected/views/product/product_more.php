@@ -5,7 +5,12 @@
     $i = 0;
     foreach ($product as $last):
         $i++;
-        $img = $product_model->get_last_img($last['product_id']);
+        $img_title = $product_model->get_images_product_title($last['product_id']);
+        if(!empty($img_title)){
+            $img = "uploads/product_thumb/".$img_title['images'];
+        } else {
+            $img = "images/No_image_available.jpg";
+        }
         $link = Yii::app()->createUrl('frontend/product/detail/id/' . $config->url_encode($last['product_id']));
         ?>
         <li id="screenshot-<?php echo $i; ?>" class="col-xs-6 col-sm-4  col-md-4 col-lg-4" style="text-align:center; margin-bottom:15px;">
@@ -14,7 +19,7 @@
                     <div class="dribbble-img">
                         <a class="dribbble-link" href="<?php echo $link; ?>">
                             <div data-picture data-alt="Retinabbble - Chrome extension for dribbble">
-                                <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>"/>
+                                <img src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img; ?>" class="img-responsive"/>
                             </div>
                         </a>
                         <a class="dribbble-over hvr-pop" href="<?php echo $link ?>" id="hover-box-product">    

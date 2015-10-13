@@ -55,7 +55,12 @@ $this->breadcrumbs = array(
                 $product_model = new Product();
                 $i = 0;
                 foreach ($product as $last):
-                    $img = $product_model->get_last_img($last['product_id']);
+                    $img_title = $product_model->get_images_product_title($last['product_id']);
+                    if (!empty($img_title)) {
+                        $img = "uploads/product_thumb/" . $img_title['images'];
+                    } else {
+                        $img = "images/No_image_available.jpg";
+                    }
                     $link = Yii::app()->createUrl('backend/product/detail_product&product_id=' . $last['product_id']);
                     $i++;
                     $trid = "td" . $i;
@@ -77,7 +82,7 @@ $this->breadcrumbs = array(
                         </td>
                         <td>
                             <div class="center-cropped"
-                                 style="background: url('<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>')no-repeat top center;
+                                 style="background: url('<?php echo Yii::app()->baseUrl; ?>/<?php echo $img; ?>')no-repeat top center;
                                  -webkit-background-size: cover;
                                  -moz-background-size: cover;
                                  -o-background-size: cover;
@@ -107,7 +112,7 @@ $this->breadcrumbs = array(
                             ?>
                         </td>
                     </tr>
-<?php endforeach; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>

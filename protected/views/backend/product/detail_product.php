@@ -115,7 +115,6 @@ $this->breadcrumbs = array(
         </div>
     </div>
 
-
     <hr/>
     <h4 style="font-weight:bold; font-size: 24px; color: #F00;">
         <i class="fa fa-tag"></i> รายละเอียด
@@ -127,6 +126,4 @@ $this->breadcrumbs = array(
             </div>
         </div>
     </div>
-
-
 </div>

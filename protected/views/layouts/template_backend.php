@@ -17,15 +17,12 @@
             body{
                 overflow-x: hidden;
             }
-            #panel-head .list-group a{
-              border: 0px;
-            }
         </style>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/system.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/simplex.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/bootstrap.css" type="text/css" media="all" />
         <!--
-        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/bootstrap-theme.css" type="text/css" media="all" />
-      -->
+                <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/bootstrap-theme.css" type="text/css" media="all" />
+        -->
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/gallery_img/dist/magnific-popup.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/css/dataTables.bootstrap.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/extensions/TableTools/css/dataTables.tableTools.css" type="text/css" media="all" />
@@ -47,7 +44,7 @@
         <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/highcharts.js"></script>
         <!--
         <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/themes/dark-unica.js"></script>
-      -->
+        -->
         <script src="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 
         <script type="text/javascript">
@@ -90,7 +87,11 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
-                        <li <?php if(Yii::app()->session['navmenu'] == '1'){ echo "class='active'";}?> onclick="set_navbar('1')">
+                        <li <?php
+                        if (Yii::app()->session['navmenu'] == '1') {
+                            echo "class='active'";
+                        }
+                        ?> onclick="set_navbar('1')">
                             <a href="<?php echo Yii::app()->createUrl('frontend/main') ?>">
                                 <span class="glyphicon glyphicon-home"></span>
                                 <font id="font-th">หน้าหลัก</font></a>
@@ -101,17 +102,54 @@
                                 <font id="font-th">รายงาน </font><b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_list') ?>" id="font-th"> - รายงานยอดขาย</a></li>
-                                <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_order') ?>" id="font-th"> - รายงานการสั่งซื้อสินค้า</a></li>
-                                <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_type') ?>" id="font-th"> - รายงานการสั่งซื้อสินค้า(แยกประเภท)</a></li>
-                                <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_sale') ?>" id="font-th"> - รายงานรายได้</a></li>
-                                <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_user') ?>" id="font-th"> - รายงานการเข้าเป็นสมาชิก</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_list') ?>"> - รายงานยอดขาย</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_order') ?>"> - รายงานการสั่งซื้อสินค้า</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_type') ?>"> - รายงานการสั่งซื้อสินค้า(แยกประเภท)</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_sale') ?>"> - รายงานรายได้</a></li>
+                                <li><a href="<?php echo Yii::app()->createUrl('backend/report/mas_report_user') ?>"> - รายงานการเข้าเป็นสมาชิก</a></li>
                             </ul>
                         </li>
-                        <li <?php if(Yii::app()->session['navmenu'] == '2'){ echo "class='active'";}?> onclick="set_navbar('2')">
+                        <li <?php
+                        if (Yii::app()->session['navmenu'] == '2') {
+                            echo "class='active'";
+                        }
+                        ?> onclick="set_navbar('2')">
                             <a href="<?php echo Yii::app()->createUrl('frontend/main') ?>">
                                 <span class="glyphicon glyphicon-book"></span>
                                 <font id="font-th">คู่มือการใช้งาน</font></a>
+                        </li>
+                        <?php
+                        $msg = new Backend_message();
+                        $msg_short = $msg->Get_message_short();
+                        ?>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="ข้อความ">
+                                <span class="label label-danger" style="top: 5px; position: absolute; left: 5px;">
+                                    <?php echo $msg->Count_message(); ?>
+                                </span>
+                                <font id="font-th"> &nbsp;ข้อความ</font>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu" style=" padding-top: 0px; padding-bottom: 0px;">
+                                <?php foreach ($msg_short as $s_msg): ?>
+                                    <li>
+                                        <a href="<?php echo Yii::app()->createUrl('backend/message/detail/id/'.$s_msg['id']) ?>">
+                                            <div id="msg_limit">
+                                                <i class="fa fa-comment-o"></i>
+                                                <?php echo $s_msg['message'] ?>
+                                            </div>
+                                            <font style="font-size:10px;">
+                                            <i class="fa fa-user"></i> <?php echo $s_msg['name'].' '.$s_msg['lname']?>
+                                            <i class="fa fa-calendar"></i> <?php echo $web->thaidate($s_msg['date_send']) ?>
+                                            </font>
+                                        </a>
+                                    </li>
+                                    <li class="divider" style=" padding: 0px; margin: 0px;"></li>
+                                <?php endforeach; ?>
+                                <li style=" text-align: center; font-size: 16px;">
+                                    <a href="<?php echo Yii::app()->createUrl('backend/message') ?>"><i class="fa fa-list-ul" style=" margin:10px auto;"></i> ดูทั้งหมด</a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
@@ -147,12 +185,12 @@
                 <div class="panel panel-default" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>"
-                            height="32px"
-                            style="border-radius:20px; padding:2px; border:#FFF solid 2px;"/>
-                            ข้อมูลร้านค้า
+                             height="32px"
+                             style="border-radius:20px; padding:2px; border:#FFF solid 2px;"/>
+                        ข้อมูลร้านค้า
                     </div>
                     <div class="list-group">
-                        <a href="<?= Yii::app()->createUrl('backend/contact')?>" class="list-group-item">
+                        <a href="<?= Yii::app()->createUrl('backend/contact') ?>" class="list-group-item">
                             <i class="fa fa-phone-square"></i> ข้อมูลติดต่อ
                         </a>
                         <a href="<?= Yii::app()->createUrl('backend/about') ?>" class="list-group-item">
@@ -185,7 +223,7 @@
                         <a href="<?= Yii::app()->createUrl('backend/period') ?>"
                            class="list-group-item"><span class="fa fa-calendar"></span>  ระยะเวลาจองสินค้า</a>
                         <a href="<?= Yii::app()->createUrl('backend/transport') ?>"
-                              class="list-group-item"><span class="fa fa-truck"></span>  ช่องทางการจัดส่ง</a>
+                           class="list-group-item"><span class="fa fa-truck"></span>  ช่องทางการจัดส่ง</a>
                     </div>
                 </div>
 
@@ -196,16 +234,16 @@
                         จัดการสินค้าในร้าน
                     </div>
                     <div class="list-group">
-                    <?php
-                    $produce_type = $product_model->_get_product_type();
-                    foreach ($produce_type as $produce_types):
-                        ?>
-                        <a href="<?php echo Yii::app()->createUrl('backend/product/Getproduct/type_id/' . $produce_types['type_id']) ?>"
-                           class="list-group-item">
-                           <span class="label label-danger"><?php echo $product_model->get_count_product_type($produce_types['type_id']); ?></span>
-                               <?php echo $produce_types['type_name']; ?>
+                        <?php
+                        $produce_type = $product_model->_get_product_type();
+                        foreach ($produce_type as $produce_types):
+                            ?>
+                            <a href="<?php echo Yii::app()->createUrl('backend/product/Getproduct/type_id/' . $produce_types['type_id']) ?>"
+                               class="list-group-item">
+                                <span class="label label-danger"><?php echo $product_model->get_count_product_type($produce_types['type_id']); ?></span>
+                                <?php echo $produce_types['type_name']; ?>
                             </a>
-                    <?php endforeach; ?>
+                        <?php endforeach; ?>
                     </div>
                 </div>
 
@@ -214,15 +252,15 @@
                 <div class="panel panel-default" id="panel-head">
                     <div class="panel-heading" id="panel">รหัสส่งสินค้า</div>
                     <div class="list-group">
-                    <?php
-                    $notify = $product_model->get_notify_postcode();
-                    foreach ($notify as $datas):
-                        ?>
-                        <a class="list-group-item">
-                            <span class="glyphicon glyphicon-user"></span> คุณ <?php echo $datas['name'] . ' ' . $datas['lname']; ?><br/>
-                            <span class="glyphicon glyphicon-send"></span>  <?php echo $datas['postcode'] ?>
-                        </a>
-                    <?php endforeach; ?>
+                        <?php
+                        $notify = $product_model->get_notify_postcode();
+                        foreach ($notify as $datas):
+                            ?>
+                            <a class="list-group-item">
+                                <span class="glyphicon glyphicon-user"></span> คุณ <?php echo $datas['name'] . ' ' . $datas['lname']; ?><br/>
+                                <span class="glyphicon glyphicon-send"></span>  <?php echo $datas['postcode'] ?>
+                            </a>
+                        <?php endforeach; ?>
                     </div>
                 </div>
                 <br/><br/>
@@ -234,12 +272,12 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                          <nav class="navbar navbar-default" role="navigation" style="margin-bottom:10px;">
-                            <ul class="nav nav-pills pull-right" style="margin:5px;">
-                              <li><a href="<?php echo Yii::app()->createUrl('backend/orders/verify') ?>"><i class="fa fa-check-circle"></i> ตรวจสอบการชำระเงิน <span class="badge"><?php echo $order_model->count_verify(); ?> </span></a></li>
-                              <li><a href="<?php echo Yii::app()->createUrl('backend/orders/pendingshipment') ?>"><i class="fa fa-paper-plane-o"></i> รอจัดส่ง(แพ็กลงกล่อง) <span class="badge"><?php echo $order_model->count_wait_send(); ?> </span></a></li>
-                              <li><a href="<?php echo Yii::app()->createUrl('backend/orders/notification') ?>"><i class="fa fa-send"></i> แจ้งการส่งสินค้า <span class="badge"><?php echo $order_model->count_wait_inform(); ?> </span></a></li>
-                            </ul>
+                            <nav class="navbar navbar-default" role="navigation" style="margin-bottom:10px;">
+                                <ul class="nav nav-pills pull-right" style="margin:5px;">
+                                    <li><a href="<?php echo Yii::app()->createUrl('backend/orders/verify') ?>"><i class="fa fa-check-circle"></i> ตรวจสอบการชำระเงิน <span class="badge"><?php echo $order_model->count_verify(); ?> </span></a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('backend/orders/pendingshipment') ?>"><i class="fa fa-paper-plane-o"></i> รอจัดส่ง(แพ็กลงกล่อง) <span class="badge"><?php echo $order_model->count_wait_send(); ?> </span></a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('backend/orders/notification') ?>"><i class="fa fa-send"></i> แจ้งการส่งสินค้า <span class="badge"><?php echo $order_model->count_wait_inform(); ?> </span></a></li>
+                                </ul>
                             </nav>
                             <ol class="breadcrumb well well-sm" style=" margin-bottom: 10px; margin-top: 0px;">
                                 <?php if (isset($this->breadcrumbs)): ?>
@@ -252,7 +290,7 @@
                                 <?php endif ?>
                             </ol>
                             <?php
-                              echo $content;
+                            echo $content;
                             ?>
                         </div>
                     </div>
@@ -276,14 +314,27 @@
                 $("#wrapper").toggleClass("toggled");
             });
 
-            function set_navbar(id){
-                var url = "<?php echo Yii::app()->createUrl('backend/backend/set_navbar')?>"
-                var data = {id:id};
-                $.post(url,data,function(success){
+            function set_navbar(id) {
+                var url = "<?php echo Yii::app()->createUrl('backend/backend/set_navbar') ?>"
+                var data = {id: id};
+                $.post(url, data, function (success) {
                     //window.location.reload();
                 });
             }
-        </script>
 
+            $(function () {
+                $(".dropdown").hover(
+                        function () {
+                            $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
+                            $(this).toggleClass('open');
+                            $('b', this).toggleClass("caret caret-up");
+                        },
+                        function () {
+                            $('.dropdown-menu', this).stop(true, true).fadeOut("fast");
+                            $(this).toggleClass('open');
+                            $('b', this).toggleClass("caret caret-up");
+                        });
+            });
+        </script>
     </body>
 </html>

@@ -214,7 +214,12 @@ $this->breadcrumbs = array(
             foreach ($near as $ne):
                 $i++;
                 $link = Yii::app()->createUrl('frontend/product/detail/id/' . $config->url_encode($ne['product_id']));
-                $img_n = $product_model->get_last_img($ne['product_id']);
+                $img_n = $product_model->get_images_product_title($ne['product_id']);
+                if (!empty($img_n)) {
+                        $img_product_n = "uploads/product_thumb/" . $img_n['images'];
+                    } else {
+                        $img_product_n = "images/No_image_available.jpg";
+                    }
                 ?>
                 <li id="screenshot-<?php echo $i; ?>" class="col-lg-3 col-md-3 col-sm-4 col-xs-6" style="text-align:center; margin-bottom:15px;">
                     <div class="dribbble" id="box_list_product">
@@ -222,7 +227,7 @@ $this->breadcrumbs = array(
                             <div class="dribbble-img">
                                 <a class="dribbble-link" href="<?php echo $link; ?>">
                                     <div data-picture data-alt="kimniyom">
-                                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img_n; ?>"/>
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img_product_n; ?>"/>
                                     </div>
                                 </a>
                                 <a class="dribbble-over" href="<?php echo $link ?>" id="hover-box-product">    
