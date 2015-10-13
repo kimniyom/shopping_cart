@@ -227,3 +227,7 @@ div.img-resize {
 #head-bar{
     background: url('images/blue-shadow.png') top left no-repeat;
 }
+
+body a:link{
+    text-decoration: none;
+}
