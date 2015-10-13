@@ -82,6 +82,7 @@
     $product_type = $product_model->_get_product_type();
     $order_model = new Orders();
     $contact = new Contact();
+    $message = new Message();
     $img = Yii::app()->baseUrl . "/images/";
     if (Yii::app()->session['member'] != "") {
         $user = Yii::app()->session['member'];
@@ -264,7 +265,7 @@
 
                                     <!--###################### USER #################-->
                                     <?php if (Yii::app()->session['status'] != '') { ?>
-                                        <div class="panel panel-default" id="font-20" style="margin: 0px; border: none; border-radius:0px; ">
+                                        <div class="panel panel-default" style="margin: 0px; border: none; border-radius:0px; ">
                                             <div class=" panel-heading">
                                                 <img src="<?php echo Yii::app()->baseUrl; ?>/images/use-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> ผู้ใช้งาน
                                             </div>
@@ -276,14 +277,27 @@
                                                 } else {
                                                     echo "ผู้ใช้งานทั่วไป";
                                                 }
-                                                ?>
+                                                ?><br/>
+
                                             </div>
                                             <div class=" panel-footer">
-                                                <a href="<?= Yii::app()->createUrl('frontend/user/detail/'); ?>"><i class="fa fa-user"></i> ข้อมูลส่วนตัว</a>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <a href="<?= Yii::app()->createUrl('frontend/user/detail/'); ?>">
+                                                            <div class="btn btn-default" style=" width: 100%;"><i class="fa fa-user"></i> ข้อมูลส่วนตัว</div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-sm-12">
+                                                        <!-- Single button  notification-->
+                                                        <button type="button" class="btn btn-default" style="width: 100%;" onclick="notification()">
+                                                            <i class="fa fa-envelope"></i>
+                                                            ข้อความ <span class="badge"><?php echo $message->Count_message(Yii::app()->session['pid']); ?></span> 
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     <?php } ?>
-
 
                                     <!-- List รายชื่อ สินค้า -->
                                     <div class="panel panel-default" id="font-20" style="border: none; border-radius:0px; border-top: solid  #dddddd 1px; ">
@@ -428,6 +442,18 @@
                     <div class="row" style=" margin: 0px;">
                         <div class="col-sm-4">
                             <p style=" color: #FFF; font-size: 20px; font-weight: bold;">
+                                เมนู<br/>
+                            </p>
+                            <ul>
+                                <li>หน้าแรก</li>
+                                <li>วิธีชำระเงิน</li>
+                                <li>ติดต่อเรา</li>
+                                <li>ประวัติการสั่งซื้อ</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <p style=" color: #FFF; font-size: 20px; font-weight: bold;">
                                 สอบถามข้อมูลได้ที่<br/>
                             </p>
                             <div class="row">
@@ -453,9 +479,7 @@
                             </div>
 
                         </div>
-                        <div class="col-sm-4">
-                            <p></p>
-                        </div>
+
                         <div class="col-sm-4">
                             <p style=" color: #FFF; font-size: 20px; font-weight: bold;">
                                 เป็นเพื่อนกับเรา<br/>
@@ -468,16 +492,17 @@
                                     if (substr($datas['account'], 0, 4) != "http") {
                                         $account = $datas['account'];
                                     } else {
-                                        $account = "<a href='".$datas['account']."'>".$datas['social_app']."</a>";
+                                        $account = "<a href='" . $datas['account'] . "'>" . $datas['social_app'] . "</a>";
                                     }
                                     ?>
-                                <div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
-                                    <img src="<?php echo Yii::app()->baseUrl; ?>/images/<?php echo $datas['icon'] ?>" width="52" class="hvr-buzz-out"/>
+                                    <div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/images/<?php echo $datas['icon'] ?>" width="52" class="hvr-buzz-out"/>
                                         <?php echo $account ?>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
                         </div>
+
                     </div>
                     <hr/>
                     <div class="row" style="margin:0px; text-align: center;">
@@ -498,6 +523,41 @@
                 </div>
             </nav>
         </div>
+
+        <!--- ################ Noify ###############-->
+        <div id="notification">
+            <a href="javascript:close_notification()">
+                <i class="fa fa-remove pull-right btn btn-danger" style=" border-radius: 0px; border: none;"></i>
+            </a>
+            <br/>
+            <h4><i class="fa fa-envelope-o"></i> ข้อความ</h4>
+            <?php
+            $msg_short = $message->Get_message_short(Yii::app()->session['pid']);
+            foreach ($msg_short as $m_short):
+                ?>
+                <a href="<?php echo Yii::app()->createUrl('frontend/message') ?>">
+                    <div class="nt-list">
+                        <div class="row" style=" margin: 0px;">
+                            <div class="col-xs-1 col-sm-1 col-md-1">
+                                <i class="fa fa-info-circle"></i>
+                            </div>
+                            <div class="col-xs-10 col-sm-10 col-md-10">
+                                <?php
+                                if (strlen($m_short['message']) <= 40) {
+                                    echo $m_short['message'];
+                                } else {
+                                    echo iconv_substr($m_short['message'], 0, 40, "UTF-8");
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </div></a>
+            <?php endforeach; ?>
+
+            <div id="notify-footer">
+                <a href="<?php echo Yii::app()->createUrl('frontend/message') ?>"><i class="fa fa-folder-o fa-2x"></i> ข้อความทั้งหมด</a>
+            </div>
+        </div>
     </body>
 
 </html>
@@ -505,3 +565,19 @@
 <?php
 require_once(Yii::app()->basePath . '/views/main/dialogbox.php');
 ?>
+
+<script type="text/javascript">
+    function notification() {
+        //$("#notification").fadeIn();
+        //$( "#notification" ).toggle( "slide" );
+        $("#notification").show("slide", {direction: "left"}, 250);
+    }
+    
+    function close_notification() {
+        $("#notification").hide("slide", {direction: "left"}, 250);
+    }
+    
+    $("#notification").click(function () {
+        close_notification();
+    });
+</script>
