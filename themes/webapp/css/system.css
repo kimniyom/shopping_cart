@@ -41,13 +41,13 @@ html {
 }
 
 #hover-box-product{
-  font-family:RSU-Th;
-  background:url(images/black-glass.png);
-  font-size: 14px;
-  color:#FFF;
-  border-radius: 3px;
-  height: 100%;
-  padding: 5px;
+    font-family:RSU-Th;
+    background:url(images/black-glass.png);
+    font-size: 14px;
+    color:#FFF;
+    border-radius: 3px;
+    height: 100%;
+    padding: 5px;
 }
 
 .tools{
@@ -200,16 +200,16 @@ div.img-resize {
 #font-rsu-22{font-size: 22px; font-family: RSU-Th;}
 
 #content{
-  /*
-  background:url('images/top-room.png')top repeat-x;
-  */
-  background:url('images/glass.png'); padding-top:10px; padding-bottom:5px; margin-bottom:25px;
+    /*
+    background:url('images/top-room.png')top repeat-x;
+    */
+    background:url('images/glass.png'); padding-top:10px; padding-bottom:5px; margin-bottom:25px;
 }
 
 #nav_bar{
-  /*background:url('images/showdow-black.png');*/
-  /*border-radius:0px;*/
-  border: none; margin-bottom:0px;
+    /*background:url('images/showdow-black.png');*/
+    /*border-radius:0px;*/
+    border: none; margin-bottom:0px;
 }
 
 #webname{
@@ -221,7 +221,17 @@ div.img-resize {
     /*background:#1fbbff; color: #FFF;*/
     margin-bottom:0px;
     border-radius:0px;
-    background: url('images/bg_ap.png');
+    //background: url('images/bg_ap.png');
+    background: #666666;
+    color: #FFF;
+}
+
+#page-footer a{
+    color: #FFF;
+}
+
+#page-footer a:hover{
+    color:#ffff00;
 }
 
 #head-bar{
@@ -230,4 +240,59 @@ div.img-resize {
 
 body a:link{
     text-decoration: none;
+}
+
+#msg_limit{
+    max-width: 270px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#notification{;
+              max-width: 300px;
+              min-width: 300px;
+              overflow: auto;
+              height: 100%;
+              position: fixed;
+              top: 0px;
+              left: 0px;
+              background: #333333;
+              z-index: 5051;
+              display: none;
+              color: #FFF;
+}
+
+#notification a{
+    color: #FFF;
+}
+
+#notification a:hover{
+    color: #FFF;
+}
+
+
+.nt-list{
+    color: #cccccc;
+    padding: 5px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.nt-list:hover{
+    background: #666666;
+    color: #FFF;
+}
+
+#notify-footer{
+    width: 100%; position: absolute; bottom: 0px; border-top: solid #666666 1px; padding: 10px; text-align: center;
+}
+
+#notify-footer:hover{
+    background: #666666;
+    color: #FFF;
+}
+
+#font-blue{
+    color: #06F;
 }
