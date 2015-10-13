@@ -7,7 +7,7 @@ class ContactController extends Controller{
       $contact = new Contact();
       $data['contact'] = $contact->gat_contact();
       $data['social'] = $contact->get_social_media();
-
+      
       $this->render("//backend/contact/view",$data);
     }
 
