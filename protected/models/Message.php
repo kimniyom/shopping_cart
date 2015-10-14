@@ -11,7 +11,7 @@ class Message {
     }
 
     function Get_message_short($pid = null) {
-        $query = "SELECT ms.id,m.message
+        $query = "SELECT ms.id,ms.message
                         FROM message_answer m INNER JOIN message ms ON m.msg_id = ms.id
                         WHERE m.status_user = 'A' AND ms.pid = '$pid' AND m.`status` = '0'
                         GROUP BY m.msg_id ";
