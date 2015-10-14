@@ -9,9 +9,13 @@
 <script type="text/javascript">
     $(document).ready(function () {
         if ($(window).width() > 786) {
+            var styles = {
+                "margin-top": "0px"
+            };
+            $(".breadcrumb").css(styles);
             $('#web_brand_name').hide();
             $('#webname').show();
-
+            $("#c-box-search").show();
             $(window).scroll(function () {
                 console.log($(window).scrollTop())
                 if ($(window).scrollTop() > 100) {
@@ -26,15 +30,25 @@
             });
 
         } else {
+            var styles = {
+                "margin-top": "35px"
+            };
+            $(".breadcrumb").css(styles);
             $('#webname').hide();
             $('#web_brand_name').show();
             $('#nav_bar').addClass('navbar-fixed-top');
+            $("#c-box-search").hide();
         }
 
         $(window).resize(function () {
 
             if ($(window).width() > 786) {
+                var styles = {
+                    "margin-top": "0px"
+                };
+                $(".breadcrumb").css(styles);
                 $('#web_brand_name').hide();
+                $("#c-box-search").show();
                 $('#webname').show();
                 $(window).scroll(function () {
                     console.log($(window).scrollTop())
@@ -48,6 +62,11 @@
                     }
                 });
             } else {
+                var styles = {
+                    "margin-top": "35px"
+                };
+                $(".breadcrumb").css(styles);
+                $("#c-box-search").hide();
                 $(window).scroll(function () {
                     console.log($(window).scrollTop())
                     if ($(window).scrollTop() > 100) {
@@ -73,21 +92,21 @@
         <div class="modal-content" style="border-radius: 0px;">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h2 class="modal-title" id="myModalLabel">
-                        <i class="fa fa-key"></i>
-                        เข้าสู่ระบบ
-                    </h2>
+                <h2 class="modal-title" id="myModalLabel">
+                    <i class="fa fa-key"></i>
+                    เข้าสู่ระบบ
+                </h2>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-lg-6 col-md-6">
                         <center>
                             <p id="font-rsu-22">ระบบสมาชิก</p>
-                            <?php 
-                                $web = new Configweb_model();
+                            <?php
+                            $web = new Configweb_model();
                             ?>
                             <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $config->get_logoweb(); ?>" 
-                            style="max-height: 48px;" class="img-responsive img-resize"/><br/>
+                                 style="max-height: 48px;" class="img-responsive img-resize"/><br/>
                             <?php echo $config->get_webname(); ?><br/><br/>
                             สมาชิกใหม่ ?
                             <a href="<?php echo Yii::app()->createUrl('frontend/main/register/'); ?>"><br/><br/>
@@ -305,7 +324,7 @@
         }
     }
 
-    function view_order(order_id){
+    function view_order(order_id) {
         $("#basket").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
         var url = "<?php echo Yii::app()->createUrl('frontend/orders/get_list_basket') ?>";
         var data = {order_id: order_id};
