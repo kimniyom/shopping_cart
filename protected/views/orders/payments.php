@@ -5,28 +5,6 @@ $this->breadcrumbs = array(
     'สรุปรายการสั่งซื้อ',
 );
 ?>
-<br/>
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-success btn-sm ">เลือกสินค้า <i class="fa fa-check"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-success btn-sm ">ตรวจสอบที่อยู่ <i class="fa fa-check"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-warning btn-sm ">ยืนยันการสั่งซื้อ <i class="fa fa-warning"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-danger btn-sm ">แจ้งชำระเงิน <i class="fa fa-remove"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-danger btn-sm ">ตรวจสอบ <i class="fa fa-remove"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-danger btn-sm ">ส่งของ <i class="fa fa-remove"></i></button>
-    </div>
-</div><br/>
-
 
 <div class="well" id="font-rsu-16" style=" font-weight: bold; background: #FFF; color: #ff3300;">
     <img src="<?php echo Yii::app()->baseUrl; ?>/images/notification-icon.png"/><br/>

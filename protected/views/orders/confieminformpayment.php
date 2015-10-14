@@ -1,6 +1,4 @@
-
 <script type="text/javascript">
-
     $(document).ready(function () {
         $('#file_upload').uploadify({
             'buttonText': 'เลือกไฟล์ ...',
@@ -37,13 +35,15 @@
         var date_payment = year + "-" + month + "-" + day;
         var time_payment = hour + ":" + minute;
         var slip = $("#slip").val();
+        var message_order = $("#message_order").val();
         var data = {
             order_id: order_id,
             payment_id: payment_id,
             money: money,
             date_payment: date_payment,
             time_payment: time_payment,
-            slip: slip
+            slip: slip,
+            message_order: message_order
         };
         if (payment_id == '' || date_payment == '' || hour == '' || minute == '' || money == '' || slip == '') {
             alert("กรอกข้อมูลไม่ครบ");
@@ -65,39 +65,16 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<br/>
-
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-success btn-sm ">เลือกสินค้า <i class="fa fa-check"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-success btn-sm ">ตรวจสอบที่อยู่ <i class="fa fa-check"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-success btn-sm ">ยืนยันการสั่งซื้อ <i class="fa fa-check"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-warning btn-sm ">แจ้งชำระเงิน <i class="fa fa-warning"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-danger btn-sm ">ตรวจสอบ <i class="fa fa-remove"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-danger btn-sm ">ส่งของ <i class="fa fa-remove"></i></button>
-    </div>
-</div><br/>
-
 <div class="panel panel-default">
     <div class="panel-heading">
         แจ้งชำระเงินรหัสสั่งซื้อ (<?php echo $order_id; ?>)
     </div>
-    <table class="table table-striped" id="font-rsu-18">
+    <table class="table table-striped" id="font-20">
         <tr>
             <td style=" width: 30%; padding-top: 10%;">บัญชีที่โอน*</td>
             <td>
                 <input type="hidden" id="bank_id" name="bank_id"/>
-                <table class="table table-bordered" id="font-rsu-14" style=" background: none; margin-bottom: 0px;">
+                <table class="table table-bordered" id="font-18" style=" background: none; margin-bottom: 0px;">
                     <tbody>
                         <?php
                         foreach ($bank as $banks):
@@ -245,6 +222,14 @@ $this->breadcrumbs = array(
                 <div class="col-lg-12" style=" margin-left: 0px; padding-left: 0px;">
                     <input type="file" name="file_upload" id="file_upload" />
                     (ไฟล์นามสกุล jpg,png ไม่เกิน 1MB)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>ข้อความ</td>
+            <td>
+                <div class="col-lg-12" style=" margin-left: 0px; padding-left: 0px;">
+                    <textarea id="message_order" name="message_order" class="form-control" rows="5"></textarea>
                 </div>
             </td>
         </tr>

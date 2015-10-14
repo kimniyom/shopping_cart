@@ -17,33 +17,15 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<div class="well" style="background: none;">
-
-    <div class="btn-group btn-group-justified" role="group" aria-label="...">
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-success btn-sm ">เลือกสินค้า <i class="fa fa-check"></i></button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-success btn-sm ">ตรวจสอบที่อยู่ <i class="fa fa-check"></i></button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-success btn-sm ">ยืนยันการสั่งซื้อ <i class="fa fa-check"></i></button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-warning btn-sm ">แจ้งชำระเงิน <i class="fa fa-warning"></i></button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-danger btn-sm ">ตรวจสอบ <i class="fa fa-remove"></i></button>
-        </div>
-        <div class="btn-group" role="group">
-            <button type="button" class="btn btn-danger btn-sm ">ส่งของ <i class="fa fa-remove"></i></button>
-        </div>
-    </div><br/>
-
+<br/>
+<div class="well">
     <div style=" color: #ff3300;" id="font-rsu-18">
         <img src="<?php echo Yii::app()->baseUrl; ?>/images/payment-icon.png"/>
         * เลือกรายการที่จะชำระเงิน
     </div><br/>
+    <?php if (empty($order)) { ?>
+        <div class="alert alert-warning">ไม่มีรายการ</div>
+    <?php } ?>
     <div class="panel-group" id="accordion">
 
         <?php
@@ -61,21 +43,21 @@ $this->breadcrumbs = array(
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h4 class="panel-title" style=" color: #ff3300;">
-                        <a href="<?php echo Yii::app()->createUrl('frontend/orders/confieminformpayment',array('order_id' => $rs['order_id'])) ?>">
+                        <a href="<?php echo Yii::app()->createUrl('frontend/orders/confieminformpayment', array('order_id' => $rs['order_id'])) ?>">
                             <div class="btn btn-default btn-sm" title="แจ้งชำระเงิน">
                                 <img src="<?php echo Yii::app()->baseUrl; ?>/images/atm-icon.png"/>
                                 <font style="font-size:18px;">แจ้งชำระรายการนี้</font>
                             </div></a>
-                            <div class="pull-right">
-                                <a class="accordion-toggle btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>" title="รายการสินค้า"></a>
-                            </div>
-                            <br/><br/>
-                            <font id="font-rsu-16">
+                        <div class="pull-right">
+                            <a class="accordion-toggle btn btn-default" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i; ?>" title="รายการสินค้า"></a>
+                        </div>
+                        <br/><br/>
+                        <font id="font-rsu-16">
                         รหัสสั่งซื้อ <span class="badge"><?php echo $rs['order_id'] ?></span>
                         วันที่ <?php echo $web->thaidate($rs['order_date']) ?>
                         จำนวน <span class="badge"><?php echo $rs['PRODUCT_TOTAL'] ?></span>
                         ราคา <span class="badge"><?php echo number_format($rs['PRICE_TOTAL'], 2) ?></span>
-                    </font>
+                        </font>
                     </h4>
                 </div>
                 <div id="collapse<?php echo $i; ?>" class="panel-collapse collapse <?php echo $active; ?>">
@@ -118,14 +100,14 @@ $this->breadcrumbs = array(
                                 </tr>
                             <?php endforeach; ?>
                             <tr>
-                              <td colspan="5" style="text-align:center;">ค่าจัดส่ง</td>
-                              <td style="text-align:right;"><?php echo number_format($transport,2); ?></td>
+                                <td colspan="5" style="text-align:center;">ค่าจัดส่ง</td>
+                                <td style="text-align:right;"><?php echo number_format($transport, 2); ?></td>
                             </tr>
                         </tbody>
                         <tfoot>
                             <tr style="color:#ff3300;">
                                 <td colspan="5" align="center"><font style="text-decoration:underline;">ราคาสุทธิ </font></td>
-                                <td style=" text-align: right;"><font style="text-decoration:underline;"><?= number_format($totalall+$transport, 2) ?></font> </td>
+                                <td style=" text-align: right;"><font style="text-decoration:underline;"><?= number_format($totalall + $transport, 2) ?></font> </td>
                             </tr>
                         </tfoot>
                     </table>
