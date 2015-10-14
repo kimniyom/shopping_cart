@@ -162,6 +162,7 @@ class OrdersController extends Controller {
             "money" => $_POST['money'],
             "date_payment" => $_POST['date_payment'],
             "time_payment" => $_POST['time_payment'],
+            "message" => $_POST['message_order'],
             "active" => '2'//อัพเดทสถานะเป็นรอตรวจสอบ
         );
 
@@ -211,7 +212,6 @@ class OrdersController extends Controller {
     public function actionVerify() {
         $pid = Yii::app()->session['pid'];
         $order = new Orders();
-
         $data['order'] = $order->get_order_verify($pid);
         $this->render('//orders/verify', $data);
     }
@@ -220,22 +220,23 @@ class OrdersController extends Controller {
     public function actionGet_list_basket() {
         $order_id = $_POST['order_id'];
         $order = new Orders();
+        $data['transport'] = $order->get_transport_in_order($order_id);
         $data['basket'] = $order->_get_list_order($order_id);
 
         $this->renderPartial('//orders/basket', $data);
     }
 
     //รายการสั่งซื้อที่รอการจัดส่ง
-    public function actionWaitsend(){
+    public function actionWaitsend() {
         $pid = Yii::app()->session['pid'];
         $order = new Orders();
         $data['order'] = $order->get_order_wait_send($pid);
-
+        $data['model'] = $order;
         $this->render('//orders/wait_send', $data);
     }
 
     //รายการสั่งซื้อที่จัดส่งแล้ว
-    public function actionSend(){
+    public function actionSend() {
         $pid = Yii::app()->session['pid'];
         $order = new Orders();
         $data['order'] = $order->get_send($pid);
@@ -243,13 +244,12 @@ class OrdersController extends Controller {
         $this->render('//orders/send', $data);
     }
 
-    public function actionSet_active_transport(){
-      $order_id = $_POST['order_id'];
-      $transport = $_POST['id'];
-      $columns = array("transport" => $transport);
-      Yii::app()->db->createCommand()
-        ->update("orders",$columns,"order_id = '$order_id' ");
+    public function actionSet_active_transport() {
+        $order_id = $_POST['order_id'];
+        $transport = $_POST['id'];
+        $columns = array("transport" => $transport);
+        Yii::app()->db->createCommand()
+                ->update("orders", $columns, "order_id = '$order_id' ");
     }
-
 
 }

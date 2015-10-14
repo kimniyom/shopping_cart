@@ -2,8 +2,8 @@
 
 class ProductController extends Controller {
 
-    public $layout = "webapp";
-
+    //public $layout = "webapp";
+    public $layout = "template_product";
     //################# ดึงข้อมูลรานละเอียดสินค้ามาแสดง อ้างจาก product_id ##################//
     public function actionDetail() {
         $config = new Configweb_model();
