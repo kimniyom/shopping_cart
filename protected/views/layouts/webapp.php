@@ -535,7 +535,7 @@
             $msg_short = $message->Get_message_short(Yii::app()->session['pid']);
             foreach ($msg_short as $m_short):
                 ?>
-                <a href="<?php echo Yii::app()->createUrl('frontend/message') ?>">
+                <a href="<?php echo Yii::app()->createUrl('frontend/message/detail/id/'.$m_short['id']) ?>">
                     <div class="nt-list">
                         <div class="row" style=" margin: 0px;">
                             <div class="col-xs-1 col-sm-1 col-md-1">
