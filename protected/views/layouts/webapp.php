@@ -141,9 +141,10 @@
                                         <span class="glyphicon glyphicon-usd"></span>
                                         <font id="font-th">วิธีการชำระเงิน</font></a>
                                 </li>
-                                <?php if (Yii::app()->session['username'] == "U") { ?>
+                                
+                                <?php if (Yii::app()->session['status'] == "U") { ?>
                                     <li class="hvr-underline-from-center">
-                                        <a href="<?= Yii::app()->createUrl('web_system/menager_product/notify') ?>">
+                                        <a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>">
                                             <span class="glyphicon glyphicon-tasks"></span>
                                             <font id="font-th">แจ้งการโอนเงิน</font></a>
                                     </li>
@@ -172,7 +173,7 @@
                                 </li>
 
                             </ul>
-                            <?php if (Yii::app()->session['username'] != "") { ?>
+                            <?php if (Yii::app()->session['status'] != "") { ?>
                                 <ul class="nav navbar-nav navbar-right" style=" padding-right: 10px;">
                                     <li class="hvr-underline-from-center">
                                         <a href="<?= Yii::app()->createUrl('site/logout/') ?>">
@@ -535,7 +536,7 @@
             $msg_short = $message->Get_message_short(Yii::app()->session['pid']);
             foreach ($msg_short as $m_short):
                 ?>
-                <a href="<?php echo Yii::app()->createUrl('frontend/message/detail/id/'.$m_short['id']) ?>">
+                <a href="<?php echo Yii::app()->createUrl('frontend/message/detail/id/' . $m_short['id']) ?>">
                     <div class="nt-list">
                         <div class="row" style=" margin: 0px;">
                             <div class="col-xs-1 col-sm-1 col-md-1">
@@ -572,11 +573,11 @@ require_once(Yii::app()->basePath . '/views/main/dialogbox.php');
         //$( "#notification" ).toggle( "slide" );
         $("#notification").show("slide", {direction: "left"}, 250);
     }
-    
+
     function close_notification() {
         $("#notification").hide("slide", {direction: "left"}, 250);
     }
-    
+
     $("#notification").click(function () {
         close_notification();
     });
