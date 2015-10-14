@@ -21,7 +21,6 @@
 
 body {
     margin: 0;
-    /*background:url('../images/line-bg-advice.png')repeat-x  #fdfbfc;*/
     /*background:url('../images/line-bg-advice.png')repeat-x fixed #fdfbfc;*/
     /*background:url('../images/bg.jpg');*/
 }
@@ -211,6 +210,12 @@ div.img-resize {
     /*background:url('images/showdow-black.png');*/
     /*border-radius:0px;*/
     border: none; margin-bottom:0px;
+    border-radius: 0px; background: #FFF;
+    box-shadow: 0px 0px 3px 0px #999999;
+}
+
+#nav_bar ul li a{
+    color: #06F;
 }
 
 #webname{
@@ -236,7 +241,7 @@ div.img-resize {
 }
 
 #head-bar{
-    /*background: url('images/blue-shadow.png') top left no-repeat;*/
+    *background: url('images/blue-shadow.png') top left no-repeat;
 }
 
 body a:link{
