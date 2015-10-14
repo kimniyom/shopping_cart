@@ -7544,3 +7544,29 @@ REQUEST_URI=/shopping_cart/index.php?r=frontend/message
 in C:\xampp\htdocs\shopping_cart\protected\views\message\view.php (32)
 in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\MessageController.php (13)
 in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/14 10:31:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_product/notify".' in C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\shopping_cart\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_product/notify
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/informpayment
+---
+2015/10/14 16:36:13 [error] [php] Undefined variable: transport (C:\xampp\htdocs\shopping_cart\protected\views\orders\verify.php:38)
+Stack trace:
+#0 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(869): OrdersController->renderFile()
+#1 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(782): OrdersController->renderPartial()
+#2 C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\OrdersController.php(217): OrdersController->render()
+#3 C:\xampp\htdocs\shopping_cart\framework\web\actions\CInlineAction.php(49): OrdersController->actionVerify()
+#4 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(286): OrdersController->runAction()
+#6 C:\xampp\htdocs\shopping_cart\framework\web\CController.php(265): OrdersController->runActionWithFilters()
+#7 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(282): OrdersController->run()
+#8 C:\xampp\htdocs\shopping_cart\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 C:\xampp\htdocs\shopping_cart\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\shopping_cart\index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/verify
+in C:\xampp\htdocs\shopping_cart\protected\views\orders\verify.php (38)
+in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\OrdersController.php (217)
+in C:\xampp\htdocs\shopping_cart\index.php (13)
