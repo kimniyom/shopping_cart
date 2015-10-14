@@ -16,7 +16,6 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-
         var track_click = 0; //track user click on "load more" button, righ now it is 0 click
         //fetch_pages.php
         var total_pages = <?php echo $count_product_type; ?>;
@@ -70,21 +69,14 @@ $this->breadcrumbs = array(
     $type_name,
 );
 ?>
-    <br/>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-    <div id="font-rsu-20" style="color:red;">
-        สินค้าประเภท <?php echo $type_name ?> จำนวนทั้งหมด
-        <?php echo $count_product_type; ?>
+
+<div id="results" style="margin-top:20px;"></div><br/>
+<div align="center">
+    <button class="load_more btn btn-default" id="load_more_button">
+        สินค้าทั้งหมด <i class="fa fa-angle-down"></i>
+    </button>
+    <div class="animation_image" style="display:none;">
+        <img src="<?php echo Yii::app()->baseUrl; ?>/images/ajax-loader.gif"> Loading...
     </div>
-</div>
-    <div id="results" style="margin-top:20px;"></div><br/>
-    <div align="center">
-        <button class="load_more btn btn-default" id="load_more_button">
-            สินค้าทั้งหมด <i class="fa fa-angle-down"></i>
-        </button>
-        <div class="animation_image" style="display:none;">
-            <img src="<?php echo Yii::app()->baseUrl; ?>/images/ajax-loader.gif"> Loading...
-        </div>
-    </div><br/>
-</div>
+</div><br/>
+

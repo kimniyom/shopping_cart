@@ -91,7 +91,7 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<div class="well" style=" width:100%; margin-top:20px; background:#FFF; text-align: left; border:none;">
+<div class="well" style=" width:100%; margin-top:0px; background:#FFF; text-align: left; border:none; box-shadow: none;">
     <div class="row">
         <div class="col-lg-12">
             <font style=" color: #F00; font-size: 24px; font-weight: normal;" id="font-rsu-18">
@@ -107,9 +107,9 @@ $this->breadcrumbs = array(
             <b>ประเภทสินค้า</b> <?= $product['type_name'] ?><br/>
             <b>อัพเดทล่าสุด</b> <?= $config->thaidate($product['d_update']); ?><br/><br/>
             <div class="row">
-                <div class="well">
+                <div class="well" style=" background: none;">
                     <?php if (Yii::app()->session['status'] != '') { ?>
-                        <table style=" width: 100%;">
+                        <table style="width: 100%;">
                             <tr>
                                 <td><b style=" font-size: 16px;">จำนวน</b></td>
                                 <td>

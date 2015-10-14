@@ -12,14 +12,15 @@ foreach ($answer as $rs) {
             <img class="media-object img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img ?>">
         </div>
         <div class="col-xs-10 col-sm-10 col-md-11 col-lg-11">
-            <h4 class="media-heading" id="font-blue"><?php echo $rs['message'] ?></h4>
-            <font id="font-glay">
-            <i class="fa fa-user"></i> <?php echo $rs['name'] . ' ' . $rs['lname'] ?><br/>
-            <i class="fa fa-calendar"></i> <?php echo $web->thaidate($rs['date_send'])?>
+            <?php echo $rs['message'] ?>
+            <hr/>
+            <font id="font-glay" style="font-size: 12px;">
+            <i class="fa fa-user"></i> <?php echo $rs['name'] . ' ' . $rs['lname'] ?>
+            <i class="fa fa-calendar"></i> <?php echo $web->thaidate($rs['date_send']) ?>
             <i class="fa fa-clock-o"></i> <?php echo $rs['ip'] ?>
         </div>
     </div>
-<hr/>
+    <hr/>
 <?php } ?>
 
 

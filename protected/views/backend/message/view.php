@@ -40,9 +40,7 @@ $this->breadcrumbs = array(
                     <i class="fa fa-calendar"></i> <?php echo $web->thaidate($rs['date_send']) ?>
                     <i class="fa fa-clock-o"></i> <?php echo $rs['ip'] ?>
                     </font>
-
                 </td>
-            </tr>
             </tr>
         <?php } ?>
     </tbody>
