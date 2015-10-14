@@ -27,6 +27,10 @@ class MessageController extends Controller {
 
     public function actionGet_answer() {
         $msg_id = $_POST['msg_id'];
+        //อัพเดทตารางหลัก
+        $columns = array("status" => '0');
+        Yii::app()->db->createCommand()
+                ->update("message", $columns,"id = '$msg_id' ");
         $msgModel = new Message();
         $web = new Configweb_model();
         $data['web'] = $web;
