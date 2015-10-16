@@ -1,8 +1,8 @@
 <?php
 
 class SearchController extends Controller{
-    //public $layout = "webapp";
-    public $layout = "template_product";
+    public $layout = "webapp";
+    //public $layout = "template_product";
     public function actionProduct() {
         $search = $_GET['search'];
         $type_id = $_GET['type'];

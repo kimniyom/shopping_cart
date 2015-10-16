@@ -15,7 +15,7 @@ class OrdersController extends Controller {
     //รายการรอการตรวจสอบ
     public function actionVerify() {
         $order = new Backend_orders();
-
+        $transport = new Transport();
         $data['order'] = $order->get_order_verify();
         $this->render('//backend/order/verify', $data);
     }

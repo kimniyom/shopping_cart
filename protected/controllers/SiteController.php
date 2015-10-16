@@ -5,6 +5,8 @@ class SiteController extends Controller {
     /**
      * Declares class-based actions.
      */
+    public $layout = "webapp";
+
     public function actions() {
         return array(
             // captcha action renders the CAPTCHA image displayed on the contact page
@@ -94,6 +96,26 @@ class SiteController extends Controller {
     public function actionLogout() {
         Yii::app()->user->logout();
         $this->redirect(array('frontend/main'));
+    }
+
+    public function actionAbout() {
+        $rs = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('about')
+                ->queryRow();
+
+        $data['about'] = $rs;
+        $this->render("//main/about", $data);
+    }
+    
+    public function actionHowtoorder() {
+        $rs = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('howtoorder')
+                ->queryRow();
+
+        $data['howtoorder'] = $rs;
+        $this->render("//main/howtoorder", $data);
     }
 
 }
