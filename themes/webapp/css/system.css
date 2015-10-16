@@ -297,3 +297,7 @@ body a:link{
 #font-blue{
     color: #06F;
 }
+
+#menu-footer li a{
+    clear: both;
+}
