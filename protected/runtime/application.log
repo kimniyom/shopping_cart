@@ -7570,3 +7570,786 @@ REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/verify
 in C:\xampp\htdocs\shopping_cart\protected\views\orders\verify.php (38)
 in C:\xampp\htdocs\shopping_cart\protected\controllers\frontend\OrdersController.php (217)
 in C:\xampp\htdocs\shopping_cart\index.php (13)
+2015/10/15 00:34:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "from_edit_register".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('from_edit_regis...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('from_edit_regis...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/user/f...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/user/from_edit_register
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/message/detail/id/7
+---
+2015/10/15 01:03:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (60)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Type_product))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/TypeproductController.php(9): CActiveRecord->__construct()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): TypeproductController->actionFrom_add_type()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('from_add_type')
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/typepro...')
+#15 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/typeproduct/from_add_type
+---
+2015/10/15 01:03:25 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (60)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Type_product))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/TypeproductController.php(9): CActiveRecord->__construct()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): TypeproductController->actionFrom_add_type()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('from_add_type')
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/typepro...')
+#15 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/typeproduct/from_add_type
+---
+2015/10/15 01:19:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_product/payments_g".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_product/payments_g
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail/id/VlVSSmQwMVVWWGhOUkVFMVRVUkZlVTU2VFhjPQ==
+---
+2015/10/15 01:54:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/article/create".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/create
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/create&type_id=003
+---
+2015/10/15 01:59:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/article/create".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/create
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/create&type_id=003
+---
+2015/10/15 02:00:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/article/create".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/create
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/product/create&type_id=003
+---
+2015/10/15 02:01:23 [error] [php] Undefined variable: msg (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php:8)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(12): ArticleController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionCreate()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/create
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php (8)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (12)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 02:04:50 [error] [php] Undefined variable: msg (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php:28)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(12): ArticleController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionCreate()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/create
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php (28)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (12)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 02:08:19 [error] [php] Undefined variable: msg (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php:39)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(12): ArticleController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionCreate()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/create
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php (39)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (12)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 08:55:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (4)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Product.php(225): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(14): Product->get_images_product('P20151009012730')
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ProductController->actionDetail()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('detail')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/product/detail/id/VlVSSmQwMVVWWGhOUkVFMVRVUkZlVTU2VFhjPQ==
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail/id/VlVSSmQwMVVWWGhOUkVFMVRVUkZlazU2VVhvPQ==
+---
+2015/10/15 09:19:46 [error] [php] Undefined variable: id (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php:56)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(12): ArticleController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionCreate()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/create
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php (56)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (12)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 09:20:08 [error] [php] Undefined variable: id (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php:77)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(12): ArticleController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionCreate()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/create
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php (77)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (12)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 09:20:14 [error] [php] Undefined variable: id (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php:77)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(12): ArticleController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionCreate()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/create
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php (77)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (12)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 10:40:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (51)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(13): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionCreate()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('create')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/create
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/backend/index
+---
+2015/10/15 10:48:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "frontend/article/save".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/articl...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/article/save
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/article/create
+---
+2015/10/15 10:50:22 [error] [php] Undefined index: title (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:20)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/save
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (20)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 10:51:33 [error] [php] Undefined index: detail (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:21)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/save
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (21)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 10:52:22 [error] [php] move_uploaded_file(/Applications/MAMP/htdocs/shopping_cart/uploads/article/1444881142Vdo_Facebook_2-600x435.jpg): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:46)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/upload&id=1
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (46)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 10:52:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('view')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('view')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/view
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/article/create
+---
+2015/10/15 11:02:17 [error] [php] include(Article.php): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/shopping_cart/framework/YiiBase.php:427)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(64): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionView()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#8 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/view/id/1
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (64)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 11:03:08 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shopping_cart_db.mas_user' doesn't exist. The SQL statement executed was: SELECT *
+FROM `article` `a`
+JOIN `mas_user` `m` ON a.owner = m.pid
+WHERE a.id = '1' .
+in /Applications/MAMP/htdocs/shopping_cart/protected/models/Backend_article.php (14)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (65)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 11:03:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'shopping_cart_db.mas_user' doesn't exist. The SQL statement executed was: SELECT *
+FROM `article` `a`
+JOIN `mas_user` `m` ON a.owner = m.pid
+WHERE a.id = '1' ' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/models/Backend_article.php(14): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(65): Backend_article->Get_article_by_id('1')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionView()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('view')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/view/id/1
+---
+2015/10/15 11:03:44 [error] [exception.CException] exception 'CException' with message 'ArticleController cannot find the requested view "//backend/aricle/view".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:878
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): CController->renderPartial('//backend/aricl...', Array, true)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(66): CController->render('//backend/aricl...', Array)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionView()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('view')
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/view/id/1
+---
+2015/10/15 11:19:34 [error] [php] Undefined variable: rs (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/view.php:17)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(66): ArticleController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionView()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/article/view/id/1
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/view.php (17)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (66)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 11:53:55 [error] [exception.CException] exception 'CException' with message 'ArticleController cannot find the requested view "//backend/article".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:878
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): CController->renderPartial('//backend/artic...', Array, true)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(10): CController->render('//backend/artic...', Array)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionIndex()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/article
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/article/create
+---
+2015/10/15 12:10:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bcakend/article/view/id/2".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('bcakend/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=bcakend/article/view/id/2
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/article/view/id/2
+---
+2015/10/15 12:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "bcakend/article/update/id/2".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('bcakend/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=bcakend/article/update/id/2
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/article/view/id/2
+---
+2015/10/15 13:51:09 [error] [php] Illegal string offset 'title' (/Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php:217)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): MainController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): MainController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php(15): MainController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): MainController->actionIndex()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): MainController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): MainController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): MainController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php (217)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php (15)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 16:16:16 [error] [php] Undefined variable: type_name (/Applications/MAMP/htdocs/shopping_cart/protected/views/article/article_all.php:68)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ArticleController.php(12): ArticleController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionIndex()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/article
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/article/article_all.php (68)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ArticleController.php (12)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 16:18:44 [error] [php] Undefined variable: config (/Applications/MAMP/htdocs/shopping_cart/protected/views/article/article_more.php:11)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ArticleController.php(44): ArticleController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionPages()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ArticleController->runAction()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/article/pages
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/article/article_more.php (11)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ArticleController.php (44)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/15 16:55:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (60)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php(26): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ArticleController.php(49): Article->Get_article_by_id('5')
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionView()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/articl...')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/article/view/id/VGxFOVBRPT0=
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/article
+---
+2015/10/15 16:55:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (60)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php(26): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ArticleController.php(49): Article->Get_article_by_id('5')
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ArticleController->actionView()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('view')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/articl...')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/article/view/id/VGxFOVBRPT0=
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/article
+---
+2015/10/15 19:11:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "web_system/menager_product/payments_g".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('web_system/mena...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=web_system/menager_product/payments_g
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/product/detail/id/VlVSSmQwMVVWWGRQVkVGNFRWUkZNVTVxVVhrPQ==
+---
+2015/10/15 20:15:53 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (60)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Payment.php(13): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/PaymentController.php(9): Payment->Get_bank()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): PaymentController->actionIndex()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/paymen...')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/payment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main
+---
+2015/10/15 20:16:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (60)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Payment.php(13): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/PaymentController.php(9): Payment->Get_bank()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): PaymentController->actionIndex()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/paymen...')
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/payment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/main
+---
+2015/10/16 08:53:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (4)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(User))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ContactController.php(9): CActiveRecord->__construct()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactController->actionIndex()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/contac...')
+#15 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/contact
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/article/view/id/VFZFOVBRPT0=
+---
+2015/10/16 08:53:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (4)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(2361): CActiveRecord->getDbConnection()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(User))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(79): CActiveRecord->getMetaData()
+#8 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ContactController.php(9): CActiveRecord->__construct()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactController->actionIndex()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/contac...')
+#15 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/shopping_cart/index.php?r=frontend/contact
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/article/view/id/VFZFOVBRPT0=
+---
+2015/10/16 09:28:06 [error] [php] Undefined variable: order_model (/Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php:77)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): MainController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): MainController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php(15): MainController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): MainController->actionIndex()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): MainController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): MainController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): MainController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/main
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php (77)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/MainController.php (15)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/16 11:07:54 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [2003] Can't connect to MySQL server on '203.157.144.140' (4)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/AboutController.php(8): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): AboutController->actionIndex()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/about')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/about
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/about
+---
+2015/10/16 11:35:01 [error] [php] Undefined variable: howto (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/howtoorder/view.php:10)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): HowtoorderController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): HowtoorderController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/HowtoorderController.php(14): HowtoorderController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): HowtoorderController->actionIndex()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): HowtoorderController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): HowtoorderController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): HowtoorderController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/howtoorder
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/howtoorder/view.php (10)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/HowtoorderController.php (14)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/16 14:15:57 [error] [php] Undefined variable: about (/Applications/MAMP/htdocs/shopping_cart/protected/views/main/howtoorder.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(118): SiteController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionHowtoorder()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=site/howtoorder
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/main/howtoorder.php (22)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (118)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/16 14:16:28 [error] [php] Undefined variable: about (/Applications/MAMP/htdocs/shopping_cart/protected/views/main/howtoorder.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(118): SiteController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionHowtoorder()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=site/howtoorder
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/main/howtoorder.php (22)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (118)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/16 14:16:35 [error] [php] Undefined variable: about (/Applications/MAMP/htdocs/shopping_cart/protected/views/main/howtoorder.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(118): SiteController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionHowtoorder()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=site/howtoorder
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/main/howtoorder.php (22)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (118)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/16 14:17:01 [error] [php] Undefined index: howtoorder (/Applications/MAMP/htdocs/shopping_cart/protected/views/main/howtoorder.php:22)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(118): SiteController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionHowtoorder()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=site/howtoorder
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/main/howtoorder.php (22)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (118)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/16 14:36:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "payment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('payment')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('payment')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/payment')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=site/payment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=frontend/orders/order_list/order_id/0000012
+---
+2015/10/16 14:37:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "payment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('payment')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('payment')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/payment')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=site/payment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=site/payment
+---
+2015/10/16 14:37:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "payment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('payment')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('payment')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/payment')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=site/payment
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=site/howtoorder
+---
+2015/10/16 14:37:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "payment".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('payment')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('payment')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/payment')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php?r=site/payment
+---
+2015/10/16 15:16:40 [error] [php] Array to string conversion (/Applications/MAMP/htdocs/shopping_cart/protected/views/orders/informpayment.php:87)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): OrdersController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): OrdersController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php(146): OrdersController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionInformpayment()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=frontend/orders/informpayment
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/orders/informpayment.php (87)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php (146)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
+2015/10/16 15:26:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/report/mas_report_list".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/report/...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index.php?r=backend/report/mas_report_list
+HTTP_REFERER=http://localhost/shopping_cart/index.php?r=backend/backend/index
+---
+2015/10/16 16:12:04 [error] [php] Undefined index: transport (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/order/detail.php:32)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): OrdersController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/OrdersController.php(30): OrdersController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): OrdersController->actionGet_detail_order()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): OrdersController->runAction()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): OrdersController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): OrdersController->run()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/shopping_cart/index.php?r=backend/orders/get_detail_order
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/order/detail.php (32)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/OrdersController.php (30)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (13)
