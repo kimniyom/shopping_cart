@@ -280,6 +280,7 @@ class Backend_orders {
                         SUM(b.product_num) AS PRODUCT_TOTAL,
                         (SUM(b.product_price_sum) + t.price) AS PRICE_TOTAL,
                          t.detail,
+                         t.price,
                         o.money,
                         o.date_payment,
                         o.time_payment,
