@@ -43,14 +43,14 @@
             $("#order_list_load").html(result);
         });// endpost
     }
-    function set_active_transport(id,order_id){
-      $("#order_list_load").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
-      var url = "<?php echo Yii::app()->createUrl('frontend/orders/set_active_transport') ?>";
-      var data = {id: id,order_id: order_id};
+    function set_active_transport(id, order_id) {
+        $("#order_list_load").html("<center><i class=\"fa fa-spinner fa-spin\"></i></center>");
+        var url = "<?php echo Yii::app()->createUrl('frontend/orders/set_active_transport') ?>";
+        var data = {id: id, order_id: order_id};
 
-      $.post(url, data, function (result) {
-          load_order();
-      });// endpost
+        $.post(url, data, function (result) {
+            load_order();
+        });// endpost
     }
 </script>
 
@@ -61,26 +61,6 @@ $this->breadcrumbs = array(
 ?>
 
 <br/>
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-success btn-sm ">เลือกสินค้า <i class="fa fa-check"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-warning btn-sm ">ตรวจสอบที่อยู่ <i class="fa fa-warning"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-danger btn-sm ">ยืนยันการสั่งซื้อ <i class="fa fa-remove"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-danger btn-sm ">แจ้งชำระเงิน <i class="fa fa-remove"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-danger btn-sm ">ตรวจสอบ <i class="fa fa-remove"></i></button>
-    </div>
-    <div class="btn-group" role="group">
-        <button type="button" class="btn btn-danger btn-sm ">ส่งของ <i class="fa fa-remove"></i></button>
-    </div>
-</div><br/>
 <div style="color: #ff3300;" id="font-rsu-18">
     *โปรดตรวจสอบรายการสินค้าและที่อยู่ของคุณให้ชัดเจน จากนั้นกดปุ่ม "ยืนยันการสั่งซื้อสินค้า"
 </div>
@@ -93,7 +73,6 @@ $this->breadcrumbs = array(
 
     </div>
 </div>
-
 
 <div class="panel panel-default">
     <div class="panel-heading">
@@ -110,12 +89,12 @@ $this->breadcrumbs = array(
         if (!empty($confirm)) {
             ?>
             <center>
-                <?php if($count > 0){ ?>
-                <a href="<?= Yii::app()->createUrl('frontend/orders/payments',array('order_id' => $order_id)) ?>">
-                    <div class="btn btn-success">ยืนยันการสั่งซื้อสินค้า
-                        <i class="glyphicon glyphicon-share-alt"></i>
-                    </div>
-                </a>
+                <?php if ($count > 0) { ?>
+                    <a href="<?= Yii::app()->createUrl('frontend/orders/payments', array('order_id' => $order_id)) ?>">
+                        <div class="btn btn-success">ยืนยันการสั่งซื้อสินค้า
+                            <i class="glyphicon glyphicon-share-alt"></i>
+                        </div>
+                    </a>
                 <?php } else { ?>
                     <center>
                         <i class="fa fa-warning"></i> ไม่มีสินค้าในรายการสั่งซื้อนี้

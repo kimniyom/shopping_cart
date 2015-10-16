@@ -117,7 +117,8 @@
                 <br/>
             </nav>
             <div class="container">
-                <nav class="navbar navbar-default" id="nav_bar" role="navigation">
+
+                <nav class="navbar navbar-inverse" id="nav_bar" role="navigation">
                     <div class="container">
                         <div class="navbar-header" style="padding-left:10px;">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="float:left;">
@@ -137,11 +138,17 @@
                                         <font id="font-th">หน้าหลัก</font></a>
                                 </li>
                                 <li class="hvr-underline-from-center">
-                                    <a href="<?= Yii::app()->createUrl('web_system/menager_product/payments_g') ?>">
+                                    <a href="<?= Yii::app()->createUrl('frontend/payment') ?>">
                                         <span class="glyphicon glyphicon-usd"></span>
                                         <font id="font-th">วิธีการชำระเงิน</font></a>
                                 </li>
-                                
+
+                                <li class="hvr-underline-from-center">
+                                    <a href="<?= Yii::app()->createUrl('site/howtoorder') ?>">
+                                        <i class="fa fa-info-circle"></i>
+                                        <font id="font-th">วิธีการสั่งซื้อ</font></a>
+                                </li>
+
                                 <?php if (Yii::app()->session['status'] == "U") { ?>
                                     <li class="hvr-underline-from-center">
                                         <a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>">
@@ -150,26 +157,16 @@
                                     </li>
                                 <?php } ?>
 
-                                <li class="dropdown">
-                                    <?php if (Yii::app()->session['status'] == "U") { ?>
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                            <span class="glyphicon glyphicon-list-alt"></span>
-                                            <font id="font-th">ประวัติสั่งซื้อสินค้า</font> <b class="caret"></b>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>" id="font-th"> - รอชำระเงิน</a></li>
-                                            <li><a href="<?= Yii::app()->createUrl('frontend/orders/verify') ?>" id="font-th"> - รอตรวจสอบยอดเงิน</a></li>
-                                            <li><a href="<?= Yii::app()->createUrl('frontend/orders/waitsend') ?>" id="font-th"> - รอการจัดส่งสินค้า</a></li>
-                                            <li><a href="<?= Yii::app()->createUrl('frontend/orders/send') ?>" id="font-th"> - ส่งสินค้าเรียบร้อยแล้ว</a></li>
-                                        </ul>
-                                    <?php } ?>
+                                <li class="hvr-underline-from-center">
+                                    <a href="<?= Yii::app()->createUrl('site/about') ?>">
+                                        <span class="glyphicon glyphicon-book"></span>
+                                        <font id="font-th">เกี่ยวกับเรา</font></a>
                                 </li>
 
                                 <li class="hvr-underline-from-center">
                                     <a href="<?= Yii::app()->createUrl('frontend/contact') ?>">
                                         <span class="glyphicon glyphicon-phone-alt"></span>
-                                        <font id="font-th">ติดต่อเรา</font>
-                                    </a>
+                                        <font id="font-th">ติดต่อเรา</font></a>
                                 </li>
 
                             </ul>
@@ -195,8 +192,10 @@
                     </div>
                 </nav>
             </div>
+            <br/>
+
             <!--
-            MenuLeft
+            #################################### MenuLeft ####################################
             -->
             <div class="container" id="content">
 
@@ -279,7 +278,6 @@
                                                     echo "ผู้ใช้งานทั่วไป";
                                                 }
                                                 ?><br/>
-
                                             </div>
                                             <div class=" panel-footer">
                                                 <div class="row">
@@ -314,8 +312,7 @@
                                                     <font id="font-20"><?= $product_types['type_name'] ?></font>
                                                     <span class="badge" style=" margin-top: 5px;">
                                                         <?php echo $product_model->get_count_product_type($product_types['type_id']); ?>
-                                                    </span>
-                                                </a>
+                                                    </span></a>
                                             <?php endforeach; ?>
                                         </div>
                                     </div>
@@ -367,37 +364,6 @@
 
                     <!-- Start Content -->
                     <div class="col-sm-12 col-md-9 col-lg-9">
-                        <?php if (!empty(Yii::app()->session['status'])): ?>
-                            <div class="btn-group btn-group-justified" role="group" aria-label="..." style=" margin-bottom: 10px;">
-                                <div class="btn-group" role="group">
-                                    <a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>">
-                                        <button type="button" class="btn btn-default btn-sm ">
-                                            รอชำระเงิน
-                                            <label class="label label-danger"><?php echo $order_model->count_informpayment(Yii::app()->session['pid']) ?></label>
-                                        </button></a>
-                                </div>
-                                <div class="btn-group" role="group">
-                                    <a href="<?= Yii::app()->createUrl('frontend/orders/verify') ?>">
-                                        <button type="button" class="btn btn-default btn-sm ">
-                                            รอตรวจสอบยอดเงิน
-                                            <label class="label label-danger"><?php echo $order_model->count_verify(Yii::app()->session['pid']) ?></label>
-                                        </button></a>
-                                </div>
-                                <div class="btn-group" role="group">
-                                    <a href="<?= Yii::app()->createUrl('frontend/orders/waitsend') ?>">
-                                        <button type="button" class="btn btn-default btn-sm ">รอการจัดส่ง
-                                            <label class="label label-danger"><?php echo $order_model->count_wait_send(Yii::app()->session['pid']) ?></label>
-                                        </button></a>
-                                </div>
-                                <div class="btn-group" role="group">
-                                    <a href="<?= Yii::app()->createUrl('frontend/orders/send') ?>">
-                                        <button type="button" class="btn btn-default btn-sm">
-                                            ส่งสินค้าเรียบร้อย
-                                            <label class="label label-success"><?php echo $order_model->count_send(Yii::app()->session['pid']) ?></label>
-                                        </button></a>
-                                </div>
-                            </div>
-                        <?php endif; ?>
 
                         <?php if (isset($this->breadcrumbs)): ?>
 
@@ -441,20 +407,21 @@
             <nav class="navbar navbar-default" role="navigation" id="page-footer">
                 <div class="container" style="padding-top:20px;">
                     <div class="row" style=" margin: 0px;">
-                        <div class="col-sm-4">
-                            <p style=" color: #FFF; font-size: 20px; font-weight: bold;">
+                        <div class="col-sm-6 col-md-6 col-lg-3">
+                            <p style=" color: #cccccc; font-size: 20px; font-weight: bold;">
                                 เมนู<br/>
                             </p>
-                            <ul>
-                                <li>หน้าแรก</li>
-                                <li>วิธีชำระเงิน</li>
-                                <li>ติดต่อเรา</li>
-                                <li>ประวัติการสั่งซื้อ</li>
+                            <ul id="menu-footer">
+                                <li class="hvr-buzz-out"><a href="<?= Yii::app()->createUrl('frontend/main') ?>">หน้าแรก</a></li><br/>
+                                <li class="hvr-buzz-out"><a href="<?= Yii::app()->createUrl('frontend/payment') ?>">วิธีชำระเงิน</a></li><br/>
+                                <li class="hvr-buzz-out"><a href="<?= Yii::app()->createUrl('site/howtoorder') ?>">วิธีสั่งซื้อ</a></li><br/>
+                                <li class="hvr-buzz-out"><a href="<?= Yii::app()->createUrl('site/about') ?>">เกี่ยวกับเรา</a></li><br/>
+                                <li class="hvr-buzz-out"><a href="<?= Yii::app()->createUrl('frontend/contact') ?>">ติดต่อเรา</a></li>
                             </ul>
                         </div>
 
-                        <div class="col-sm-4">
-                            <p style=" color: #FFF; font-size: 20px; font-weight: bold;">
+                        <div class="col-sm-6 col-md-6 col-lg-5">
+                            <p style=" color: #cccccc; font-size: 20px; font-weight: bold;">
                                 สอบถามข้อมูลได้ที่<br/>
                             </p>
                             <div class="row">
@@ -481,8 +448,8 @@
 
                         </div>
 
-                        <div class="col-sm-4">
-                            <p style=" color: #FFF; font-size: 20px; font-weight: bold;">
+                        <div class="col-sm-12 col-md-12 col-lg-4">
+                            <p style=" color: #cccccc; font-size: 20px; font-weight: bold;">
                                 เป็นเพื่อนกับเรา<br/>
                             </p>
 
@@ -496,7 +463,7 @@
                                         $account = "<a href='" . $datas['account'] . "'>" . $datas['social_app'] . "</a>";
                                     }
                                     ?>
-                                    <div class="col-xs-12 col-sm-6 col-md-3 col-md-3">
+                                    <div class="col-xs-12 col-sm-3 col-md-3 col-md-3">
                                         <img src="<?php echo Yii::app()->baseUrl; ?>/images/<?php echo $datas['icon'] ?>" width="52" class="hvr-buzz-out"/>
                                         <?php echo $account ?>
                                     </div>

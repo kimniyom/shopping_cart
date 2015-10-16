@@ -90,7 +90,7 @@ $this->breadcrumbs = array(
     $product['product_name'],
 );
 ?>
-
+<br/>
 <div class="well" style=" width:100%; margin-top:0px; background:#FFF; text-align: left; border:none; box-shadow: none;">
     <div class="row">
         <div class="col-lg-12">
@@ -156,10 +156,11 @@ $this->breadcrumbs = array(
             }
             ?>
             <center>
-                <img src="<?= Yii::app()->baseUrl ?>/<?= $img; ?>" class="img-responsive thumbnail" alt="Responsive image" id="img-cart"/>
+                <img src="<?= Yii::app()->baseUrl ?>/<?= $img; ?>" class="img-responsive" alt="Responsive image" id="img-cart"/>
             </center>     
         </div>
     </div>
+    <br/>
 
     <div class=" row">
         <div class=" col-lg-12">
@@ -180,24 +181,28 @@ $this->breadcrumbs = array(
         </div>
     </div>
 
-<hr/>
+    <hr/>
 
     <div class="row">
 
         <ul class="nav nav-tabs" role="tablist" id="font-rsu-18">
             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">รายละเอียด</a></li>
             <li role="presentation"><a href="#comment" aria-controls="comment" role="tab" data-toggle="tab" onclick="load_comment()">ความคิดเห็น</a></li>
-            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">วิธีการสั่งซื้อ</a></li>
+            <li role="presentation"><a href="#payment" aria-controls="payment" role="tab" data-toggle="tab" onclick="loadpayment()">วิธีการสั่งซื้อ</a></li>
         </ul>
 
         <!-- Tab panes -->
         <div class="tab-content" style=" border:solid 1px #dddddd; border-top:none; padding: 10px;">
             <div role="tabpanel" class="tab-pane active" id="home"> 
                 <p id="font-rsu-20">รายละเอียด</p>
-                <?= $product['product_detail'] ?>
+                <div id="box-article">
+                    <?= $product['product_detail'] ?>
+                </div>
             </div>
             <div role="tabpanel" class="tab-pane" id="comment"></div>
-            <div role="tabpanel" class="tab-pane" id="messages">...</div>
+            <div role="tabpanel" class="tab-pane" id="payment">
+                
+            </div>
         </div>
     </div>
 </div>
@@ -216,12 +221,12 @@ $this->breadcrumbs = array(
                 $link = Yii::app()->createUrl('frontend/product/detail/id/' . $config->url_encode($ne['product_id']));
                 $img_n = $product_model->get_images_product_title($ne['product_id']);
                 if (!empty($img_n)) {
-                        $img_product_n = "uploads/product_thumb/" . $img_n['images'];
-                    } else {
-                        $img_product_n = "images/No_image_available.jpg";
-                    }
+                    $img_product_n = "uploads/product_thumb/" . $img_n['images'];
+                } else {
+                    $img_product_n = "images/No_image_available.jpg";
+                }
                 ?>
-                <li id="screenshot-<?php echo $i; ?>" class="col-lg-3 col-md-3 col-sm-4 col-xs-6" style="text-align:center; margin-bottom:15px;">
+                <li id="screenshot-<?php echo $i; ?>" class="col-lg-3 col-md-3 col-sm-6 col-xs-6" style="text-align:center; margin-bottom:15px;">
                     <div class="dribbble" id="box_list_product">
                         <div class="dribbble-shot">
                             <div class="dribbble-img">
@@ -276,6 +281,16 @@ $this->breadcrumbs = array(
         }
         $.post(url, data, function (result) {
             load_comment();
+        });
+    }
+    
+    function loadpayment(){
+        $("#payment").html("<center><i class='fa fa-spinner fa-spin fa-2x'></i></center>");
+        var url = "<?php echo Yii::app()->createUrl('frontend/payment/loadpayment') ?>";
+        var data = {a: 1};
+
+        $.post(url, data, function (result) {
+            $("#payment").html(result);
         });
     }
 </script>

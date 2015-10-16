@@ -43,9 +43,13 @@
         <!-- highcharts -->
         <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/highcharts.js"></script>
         <!--
-        <script src="<?= Yii::app()->baseUrl; ?>/assets/highcharts/themes/dark-unica.js"></script>
+        <script src="<?//= Yii::app()->baseUrl; ?>/assets/highcharts/themes/dark-unica.js"></script>
         -->
         <script src="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+        
+        <!-- Uploadify -->
+        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.css" type="text/css" media="all" />
+        <script src="<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/jquery.uploadify.js" type="text/javascript"></script>
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -133,13 +137,13 @@
                             <ul class="dropdown-menu" style=" padding-top: 0px; padding-bottom: 0px;">
                                 <?php foreach ($msg_short as $s_msg): ?>
                                     <li>
-                                        <a href="<?php echo Yii::app()->createUrl('backend/message/detail/id/'.$s_msg['id']) ?>">
+                                        <a href="<?php echo Yii::app()->createUrl('backend/message/detail/id/' . $s_msg['id']) ?>">
                                             <div id="msg_limit">
                                                 <i class="fa fa-comment-o"></i>
                                                 <?php echo $s_msg['message'] ?>
                                             </div>
                                             <font style="font-size:10px;">
-                                            <i class="fa fa-user"></i> <?php echo $s_msg['name'].' '.$s_msg['lname']?>
+                                            <i class="fa fa-user"></i> <?php echo $s_msg['name'] . ' ' . $s_msg['lname'] ?>
                                             <i class="fa fa-calendar"></i> <?php echo $web->thaidate($s_msg['date_send']) ?>
                                             </font>
                                         </a>
@@ -205,6 +209,9 @@
                         <a href="<?= Yii::app()->createUrl('backend/web') ?>" class="list-group-item">
                             <i class="fa fa-text-height"></i>  จัดการ ชื่อเว็บ
                         </a>
+                        <a href="<?= Yii::app()->createUrl('backend/howtoorder') ?>" class="list-group-item">
+                            <i class="fa fa-book"></i>  วิธีการสั่งซื้อ
+                        </a>
                     </div>
                 </div>
                 <!-- List Menu Admin-->
@@ -231,7 +238,7 @@
                 <div class="panel panel-default" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/shipping-box-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
-                        จัดการสินค้าในร้าน
+                        คลังสินค้า
                     </div>
                     <div class="list-group">
                         <?php
@@ -244,6 +251,24 @@
                                 <?php echo $produce_types['type_name']; ?>
                             </a>
                         <?php endforeach; ?>
+                    </div>
+                </div>
+
+                <!-- List รายชื่อ สินค้า -->
+                <div class="panel panel-default" id="panel-head">
+                    <div class="panel-heading" id="panel">
+                        <img src="<?= Yii::app()->baseUrl; ?>/images/blog-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px; width: 32px;">
+                        บทความ
+                    </div>
+                    <div class="list-group">
+                        <a href="<?php echo Yii::app()->createUrl('backend/article/create') ?>" class="list-group-item">
+                            <i class="fa fa-plus"></i> สร้างบทความ
+                        </a>
+                    </div>
+                    <div class="list-group">
+                        <a href="<?php echo Yii::app()->createUrl('backend/article') ?>" class="list-group-item">
+                            <i class="fa fa-newspaper-o"></i> บทความทั้งหมด
+                        </a>
                     </div>
                 </div>
 

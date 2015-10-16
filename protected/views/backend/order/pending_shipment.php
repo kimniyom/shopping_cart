@@ -118,12 +118,18 @@ $this->breadcrumbs = array(
                             $i = 1;
                             $basket = $order_model->_get_list_order($rs['order_id']);
                             foreach ($basket as $products):
-                                $img = $product_model->get_last_img($products['product_id']);
+                                //$img = $product_model->get_last_img($products['product_id']);
+                                $img_short = $product_model->get_images_product_title($products['product_id']);
+                                if (!empty($img_short['images'])) {
+                                    $img = "uploads/product_thumb/" . $img_short['images'];
+                                } else {
+                                    $img = "images/No_image_available.jpg";
+                                }
                                 ?>
                                 <tr>
                                     <td><?= $i++ ?></td>
                                     <td style=" width: 10%;">
-                                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>" class="img-resize img-thumbnail" width="100%"/>
+                                        <img src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img; ?>" class="img-resize img-thumbnail" width="100%"/>
                                     </td>
                                     <td><?= $products['product_id']; ?></td>
                                     <td><?= $products['product_name']; ?></td>

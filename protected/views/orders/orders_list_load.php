@@ -18,13 +18,18 @@
         $product_model = new Product();
         $web = new Configweb_model();
         foreach ($product as $products):
-            $img = $product_model->get_last_img($products['product_id']);
+            $img_title = $product_model->get_images_product_title($products['product_id']);
+            if (!empty($img_title)) {
+                $img = "uploads/product_thumb/" . $img_title['images'];
+            } else {
+                $img = "images/No_image_available.jpg";
+            }
             $link = Yii::app()->createUrl('frontend/product/detail/id/'.$web->url_encode($products['product_id']));
             ?>
             <tr>
                 <td><?= $i++ ?></td>
                 <td style=" width: 10%;">
-                    <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>" class="img-resize img-thumbnail" width="100%"/>
+                    <img src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img; ?>" class="img-resize img-thumbnail" width="100%"/>
                 </td>
                 <td>
                     <a href="<?php echo $link ?>" target="_blank"><?= $products['product_name']; ?></a>

@@ -3,7 +3,7 @@ $this->breadcrumbs = array(
     'ค้นหาสินค้า',
 );
 ?>
-
+<br/>
 <ol class="dribbbles group" style="padding-left: 0px;">
     <?php
     $product_model = new Product();
@@ -19,7 +19,7 @@ $this->breadcrumbs = array(
         }
         $link = Yii::app()->createUrl('frontend/product/detail/id/' . $web->url_encode($last['product_id']));
         ?>
-        <li id="screenshot-<?php echo $i; ?>" class="col-lg-3 col-md-4 col-sm-6 col-xs-6" style="text-align:center; margin-bottom:15px;">
+        <li id="screenshot-<?php echo $i; ?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-6" style="text-align:center; margin-bottom:15px;">
             <div class="dribbble" id="box_list_product">
                 <div class="dribbble-shot">
                     <div class="dribbble-img">

@@ -20,7 +20,7 @@
                 console.log($(window).scrollTop())
                 if ($(window).scrollTop() > 100) {
                     $('#nav_bar').addClass('navbar-fixed-top');
-                    $('#web_brand_name').show();
+                    //$('#web_brand_name').show();
                     return false;
                 } else {
                     $('#nav_bar').removeClass('navbar-fixed-top');
@@ -86,6 +86,16 @@
 
     });
 </script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var style = {"height": "auto"};
+        $("#box-article img").addClass("img-responsive");
+        $("#box-article img").css(style);
+    });
+</script>
+
+
 <!-- Modal LogIN-->
 <div class="modal fade" id="Login" tabindex="2" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog" style=" margin-top: 3%;">

@@ -15,9 +15,9 @@
 
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/product/css/system.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/product/bootstrap/css/bootstrap.css" type="text/css" media="all" />
-<!--
-        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/product/bootstrap/css/bootstrap-theme.css" type="text/css" media="all" />
--->
+        <!--
+                <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/product/bootstrap/css/bootstrap-theme.css" type="text/css" media="all" />
+        -->
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/themes/product/css/cart.css" type="text/css" media="all" />
 
         <script src="<?php echo Yii::app()->baseUrl; ?>/themes/product/js/jquery-1.9.1.js" type="text/javascript"></script>
@@ -116,78 +116,84 @@
                 </div>
                 <br/>
             </nav>
-            
+
             <nav class="navbar navbar-default" id="nav_bar" role="navigation">
-                    <div class="container">
-                        <div class="navbar-header" style="padding-left:10px;">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="float:left;">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="<?= Yii::app()->createUrl('frontend/main') ?>" id="web_brand_name" style=" display: none;"><?php echo $config->get_webname(); ?></a>
-                        </div>
-
-                        <div class="collapse navbar-collapse navbar-ex1-collapse">
-                            <ul class="nav navbar-nav">
-                                <li class="hvr-underline-from-center">
-                                    <a href="<?= Yii::app()->createUrl('web_system/menager_product/payments_g') ?>">
-                                        <span class="glyphicon glyphicon-usd"></span>
-                                        <font id="font-th">วิธีการชำระเงิน</font></a>
-                                </li>
-                                
-                                <?php if (Yii::app()->session['status'] == "U") { ?>
-                                    <li class="hvr-underline-from-center">
-                                        <a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>">
-                                            <span class="glyphicon glyphicon-tasks"></span>
-                                            <font id="font-th">แจ้งการโอนเงิน</font></a>
-                                    </li>
-                                <?php } ?>
-
-                                <li class="dropdown">
-                                    <?php if (Yii::app()->session['status'] == "U") { ?>
-                                        <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">
-                                            <span class="glyphicon glyphicon-list-alt"></span>
-                                            <font id="font-th">ประวัติสั่งซื้อสินค้า</font> <b class="caret"></b>
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>" id="font-th"> - รอชำระเงิน</a></li>
-                                            <li><a href="<?= Yii::app()->createUrl('frontend/orders/verify') ?>" id="font-th"> - รอตรวจสอบยอดเงิน</a></li>
-                                            <li><a href="<?= Yii::app()->createUrl('frontend/orders/waitsend') ?>" id="font-th"> - รอการจัดส่งสินค้า</a></li>
-                                            <li><a href="<?= Yii::app()->createUrl('frontend/orders/send') ?>" id="font-th"> - ส่งสินค้าเรียบร้อยแล้ว</a></li>
-                                        </ul>
-                                    <?php } ?>
-                                </li>
-
-                                <li class="hvr-underline-from-center">
-                                    <a href="<?= Yii::app()->createUrl('frontend/contact') ?>">
-                                        <span class="glyphicon glyphicon-phone-alt"></span>
-                                        <font id="font-th">ติดต่อเรา</font></a>
-                                </li>
-
-                            </ul>
-                            <?php if (Yii::app()->session['status'] != "") { ?>
-                                <ul class="nav navbar-nav navbar-right" style=" padding-right: 10px;">
-                                    <li class="hvr-underline-from-center">
-                                        <a href="<?= Yii::app()->createUrl('site/logout/') ?>">
-                                            <span class="glyphicon glyphicon-off"></span>
-                                            <font id="font-th">ออกจากระบบ</font></a>
-                                    </li>
-                                </ul>
-                            <?php } else { ?>
-                                <ul class="nav navbar-nav navbar-right" style=" padding-right: 10px;">
-                                    <li class="hvr-underline-from-center">
-                                        <a href="javascript:login();">
-                                            <span class="glyphicon glyphicon-user"></span>
-                                            <font id="font-th">เข้าสู่ระบบ</font></a>
-                                    </li>
-                                </ul>
-                            <?php } ?>
-                        </div><!-- /.navbar-collapse -->
+                <div class="container">
+                    <div class="navbar-header" style="padding-left:10px;">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse" style="float:left;">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="<?= Yii::app()->createUrl('frontend/main') ?>" id="web_brand_name" style=" display: none;"><?php echo $config->get_webname(); ?></a>
                     </div>
-                </nav>
- 
+
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="hvr-underline-from-center">
+                                <a href="<?= Yii::app()->createUrl('web_system/menager_product/payments_g') ?>">
+                                    <span class="glyphicon glyphicon-usd"></span>
+                                    <font id="font-th">วิธีการชำระเงิน</font></a>
+                            </li>
+
+                            <?php if (Yii::app()->session['status'] == "U") { ?>
+                                <li class="hvr-underline-from-center">
+                                    <a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>">
+                                        <span class="glyphicon glyphicon-tasks"></span>
+                                        <font id="font-th">แจ้งการโอนเงิน</font></a>
+                                </li>
+                            <?php } ?>
+
+                            <li class="dropdown">
+                                <?php if (Yii::app()->session['status'] == "U") { ?>
+                                    <a href="#" class="dropdown-toggle hvr-underline-from-center" data-toggle="dropdown">
+                                        <span class="glyphicon glyphicon-list-alt"></span>
+                                        <font id="font-th">ประวัติสั่งซื้อสินค้า</font> <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="<?= Yii::app()->createUrl('frontend/orders/informpayment') ?>" id="font-th"> - รอชำระเงิน</a></li>
+                                        <li><a href="<?= Yii::app()->createUrl('frontend/orders/verify') ?>" id="font-th"> - รอตรวจสอบยอดเงิน</a></li>
+                                        <li><a href="<?= Yii::app()->createUrl('frontend/orders/waitsend') ?>" id="font-th"> - รอการจัดส่งสินค้า</a></li>
+                                        <li><a href="<?= Yii::app()->createUrl('frontend/orders/send') ?>" id="font-th"> - ส่งสินค้าเรียบร้อยแล้ว</a></li>
+                                    </ul>
+                                <?php } ?>
+                            </li>
+                            
+                            <li class="hvr-underline-from-center">
+                                <a href="<?= Yii::app()->createUrl('frontend/contact') ?>">
+                                    <span class="fa fa-newspaper-o"></span>
+                                    <font id="font-th">วิธีการสั่งซื้อ</font></a>
+                            </li>
+                            
+                            <li class="hvr-underline-from-center">
+                                <a href="<?= Yii::app()->createUrl('frontend/contact') ?>">
+                                    <span class="glyphicon glyphicon-phone-alt"></span>
+                                    <font id="font-th">ติดต่อเรา</font></a>
+                            </li>
+
+                        </ul>
+                        <?php if (Yii::app()->session['status'] != "") { ?>
+                            <ul class="nav navbar-nav navbar-right" style=" padding-right: 10px;">
+                                <li class="hvr-underline-from-center">
+                                    <a href="<?= Yii::app()->createUrl('site/logout/') ?>">
+                                        <span class="glyphicon glyphicon-off"></span>
+                                        <font id="font-th">ออกจากระบบ</font></a>
+                                </li>
+                            </ul>
+                        <?php } else { ?>
+                            <ul class="nav navbar-nav navbar-right" style=" padding-right: 10px;">
+                                <li class="hvr-underline-from-center">
+                                    <a href="javascript:login();">
+                                        <span class="glyphicon glyphicon-user"></span>
+                                        <font id="font-th">เข้าสู่ระบบ</font></a>
+                                </li>
+                            </ul>
+                        <?php } ?>
+                    </div><!-- /.navbar-collapse -->
+                </div>
+            </nav>
+
             <!--
             MenuLeft
             -->
