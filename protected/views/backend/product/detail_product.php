@@ -50,7 +50,7 @@ $this->breadcrumbs = array(
     </div>
 </span>
 
-<div class="well" style=" width:100%; margin-top:20px;text-align: left;">
+<div class="well" style=" width:100%; margin-top:20px;text-align: left; background: #FFF;">
     <div class="row">
 
         <div class="col-lg-4 col-md-12 col-xs-12">
@@ -76,22 +76,27 @@ $this->breadcrumbs = array(
                 </font>
             </center>
         </div>
-
+        
         <div class="col-lg-8 col-md-12 col-xs-12" style=" padding-top: 20px;">
             <?php
             $product_model = new Product();
-            $img = $product_model->get_last_img($product['product_id']);
+            $img_title = $product_model->get_images_product_title($product['product_id']);
+            if (!empty($img_title)) {
+                $img = "uploads/product_thumb/" . $img_title['images'];
+            } else {
+                $img = "images/No_image_available.jpg";
+            }
             if ($img != "") {
                 ?>
                 <center>
-                    <img src="<?= Yii::app()->baseUrl ?>/uploads/<?= $img; ?>" class="img-responsive thumbnail" alt="Responsive image" id="img-cart"/>
+                    <img src="<?= Yii::app()->baseUrl ?>/<?= $img; ?>" class="img-responsive thumbnail" alt="Responsive image" id="img-cart"/>
                 </center>     
             <?php } else { ?>
                 <div id="img" style="width:400px; height:350px; background:#CCC; font-size:36px; text-align:center; padding-top:30px; margin-right:20px;">
                     NO<br />Images 
                 </div>
             <?php } ?>
-
+            <br/>
             <?php if ($img != "No-Camera-icon.png") { ?>
                 <div class=" row">
                     <div class=" col-lg-12">
@@ -119,7 +124,7 @@ $this->breadcrumbs = array(
     <h4 style="font-weight:bold; font-size: 24px; color: #F00;">
         <i class="fa fa-tag"></i> รายละเอียด
     </h4>
-    <div class="well" style="background:#999999;">
+    <div class="well">
         <div class="row" id="etc_product">
             <div class="col-lg-12 col-md-12">
                 <?= $product['product_detail'] ?>

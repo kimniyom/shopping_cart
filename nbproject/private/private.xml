@@ -2,25 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/orders/payments.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/themes/product/css/system.css</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/search/product.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/orders/confieminformpayment.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/controllers/frontend/OrdersController.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/product/detail_product.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/orders/verify.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/controllers/frontend/SearchController.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/product/show_product_all.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/layouts/template_product.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/product/product_more.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/models/Transport.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/orders/wait_send.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/models/Orders.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/orders/basket.php</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/themes/webapp/css/system.css</file>
-            <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/main/dialogbox.php</file>
-        </group>
         <group name="yii">
             <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/PaymentController.php</file>
             <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/main/home.php</file>
@@ -36,5 +17,6 @@
             <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php</file>
             <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/product/detail_product.php</file>
         </group>
+        <group/>
     </open-files>
 </project-private>
