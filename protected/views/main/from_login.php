@@ -60,7 +60,6 @@
     </div>
 </div>
 
-
 <center>
     <div type="button"id="login_btn"  class="btn btn-primary">
         <i class="fa fa-check" id="load"></i>

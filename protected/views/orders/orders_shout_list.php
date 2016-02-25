@@ -37,7 +37,7 @@
     }
 </script>
 
-<?php if($count > 0){ ?>
+<?php if ($count > 0) { ?>
 
     <table width="100%" class="table table-hover" id="font-18">
         <tbody>
@@ -46,12 +46,17 @@
             $totalall = 0;
             $i = 1;
             foreach ($product as $products):
-                $img = $product_model->get_last_img($products['product_id']);
+                $img_title = $product_model->get_images_product_title($products['product_id']);
+                if (!empty($img_title)) {
+                    $img = "uploads/product_thumb/" . $img_title['images'];
+                } else {
+                    $img = "images/No_image_available.jpg";
+                }
                 $product_price = $products['product_price'];
                 ?>
                 <tr id="tr_b" style=" color: #000;">
                     <td id="td_b">
-                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?php echo $img; ?>" style=" max-width: 80px;"/>
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img; ?>" style=" max-width: 80px;"/>
                     </td>
                     <td>
                         <b>สินค้า</b> <?= $products['product_name']; ?><br/>
@@ -88,7 +93,7 @@
             </tr>
             <tr>
                 <td colspan="3" align="center">
-                    <a href="<?php echo Yii::app()->createUrl('frontend/orders/order_list',array('order_id' => Yii::app()->session['order_id'])); ?>">
+                    <a href="<?php echo Yii::app()->createUrl('frontend/orders/order_list', array('order_id' => Yii::app()->session['order_id'])); ?>">
                         <button class="btn btn-default" style=" font-size: 14px;">
                             <i class="fa fa-shopping-cart"></i>
                             ยืนยันการสั่งซื้อสินค้า
@@ -100,8 +105,8 @@
 <?php } else { ?>
     <div class="well" style="text-align:center; border-radius:0px;">
         <span class="fa-stack fa-lg">
-          <i class="fa fa-shopping-cart fa-stack-4x"></i>
-          <i class="fa fa-ban fa-stack-2x text-danger"></i>
+            <i class="fa fa-shopping-cart fa-stack-4x"></i>
+            <i class="fa fa-ban fa-stack-2x text-danger"></i>
         </span><br/><br/>
         <p id="font-rsu-20">
             ไม่มีสินค้าในตระกร้า
