@@ -111,4 +111,14 @@ class Configweb_model {
         return (strtotime($strDate2) - strtotime($strDate1)) / ( 60 * 60 * 24 );  // 1 day = 60*60*24
     }
 
+    function GetBgWeb($color = null) {
+        if (empty($color)) {
+            $colors = "#eeeeee";
+        } else {
+            $colors = $color;
+        }
+        $str = "style='background:$colors' ";
+        return $str;
+    }
+
 }

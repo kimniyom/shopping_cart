@@ -21,6 +21,7 @@
 
 body {
     margin: 0;
+
     /*background:url('../images/line-bg-advice.png')repeat-x  #fdfbfc;*/
     /*background:url('../images/line-bg-advice.png')repeat-x fixed #fdfbfc;*/
     /*background:url('../images/bg.jpg');*/
@@ -37,7 +38,7 @@ body.modal-open #wrap_blur{
 
 /* For the "inset" look only */
 html {
-    //font-family:Th;
+    /*font-family:Th;*/
     overflow: auto;
 }
 
@@ -162,9 +163,10 @@ div.img-resize {
 
 @media screen and (orientation: portrait) {
     #img {
-        //display: block;
-        //max-width:230px;
-        //max-height:100px;
+        /*display: block;
+        max-width:230px;
+        max-height:100px;
+        */
         width: auto;
         height: auto;
     }
@@ -222,9 +224,11 @@ div.img-resize {
     /*background:#1fbbff; color: #FFF;*/
     margin-bottom:0px;
     border-radius:0px;
-    //background: url('images/bg_ap.png');
+    /*background: url('images/bg_ap.png');*/
     background: #666666;
     color: #FFF;
+    border: none;
+    margin-top: 20px;
 }
 
 #page-footer a{

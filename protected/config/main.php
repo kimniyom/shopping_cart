@@ -82,7 +82,7 @@ return array(
           'connectionString' => 'mysql:host=localhost;dbname=shopping_cart_db',
           'emulatePrepare' => true,
           'username' => 'root',
-          'password' => '1234',
+          'password' => 'root',
           'charset' => 'utf8',
           ),
           

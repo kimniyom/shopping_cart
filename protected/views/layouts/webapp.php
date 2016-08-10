@@ -89,7 +89,7 @@
     }
     ?>
 
-    <body>
+    <body <?php echo $config->GetBgWeb() ?>>
         <div id="wrap_blur">
             <!-- Basket-->
             <?php if (!empty(Yii::app()->session['status'])) { ?>
