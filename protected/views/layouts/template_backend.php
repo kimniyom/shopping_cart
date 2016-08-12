@@ -46,7 +46,7 @@
         <script src="<?//= Yii::app()->baseUrl; ?>/assets/highcharts/themes/dark-unica.js"></script>
         -->
         <script src="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-        
+
         <!-- Uploadify -->
         <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.css" type="text/css" media="all" />
         <script src="<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/jquery.uploadify.js" type="text/javascript"></script>
@@ -72,7 +72,7 @@
     <body style="/*background:url('<?//php echo Yii::app()->baseUrl; ?>images/line-bg-advice.png')repeat-x fixed #fdfbfc;*/">
         <!--<div class="container" style="margin-bottom:5%;">-->
         <nav class="navbar navbar-default" role="navigation" style="z-index:1; border-radius:0px; margin-bottom:0px;"></nav>
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="border-radius:0px; margin-bottom:0px;">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="border-radius:0px; margin-bottom:0px; background: #2a323b;;">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -176,7 +176,7 @@
                     <div class=" panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/use-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> ผู้ใช้งาน
                     </div>
-                    <div class=" panel-body">
+                    <div class="panel-body">
                         ชื่อ : <?= Yii::app()->session['username']; ?><br>
                         สถานะ : <?php echo "ผู้ดูแลระบบ"; ?><br/>
                     </div>
@@ -192,6 +192,7 @@
                              height="32px"
                              style="border-radius:20px; padding:2px; border:#FFF solid 2px;"/>
                         ข้อมูลร้านค้า
+                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group">
                         <a href="<?= Yii::app()->createUrl('backend/contact') ?>" class="list-group-item">
@@ -219,6 +220,7 @@
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/system-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
                         ตั้งค่าระบบ
+                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group">
                         <a href="<?= Yii::app()->createUrl('backend/typeproduct/from_add_type') ?>"
@@ -239,6 +241,7 @@
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/shipping-box-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
                         คลังสินค้า
+                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group">
                         <?php
@@ -247,7 +250,7 @@
                             ?>
                             <a href="<?php echo Yii::app()->createUrl('backend/product/Getproduct/type_id/' . $produce_types['type_id']) ?>"
                                class="list-group-item">
-                                <span class="label label-danger"><?php echo $product_model->get_count_product_type($produce_types['type_id']); ?></span>
+                                <span class="label" style=" background: #24282d;"><?php echo $product_model->get_count_product_type($produce_types['type_id']); ?></span>
                                 <?php echo $produce_types['type_name']; ?>
                             </a>
                         <?php endforeach; ?>
@@ -259,6 +262,7 @@
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/blog-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px; width: 32px;">
                         บทความ
+                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group">
                         <a href="<?php echo Yii::app()->createUrl('backend/article/create') ?>" class="list-group-item">
@@ -359,6 +363,19 @@
                             $(this).toggleClass('open');
                             $('b', this).toggleClass("caret caret-up");
                         });
+            });
+
+            $(document).on('click', '.panel-heading span.clickable', function (e) {
+                var $this = $(this);
+                if (!$this.hasClass('panel-collapsed')) {
+                    $this.parents('.panel').find('.list-group').slideDown();
+                    $this.addClass('panel-collapsed');
+                    $this.find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+                } else {
+                    $this.parents('.panel').find('.list-group').slideUp();
+                    $this.removeClass('panel-collapsed');
+                    $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
+                }
             });
         </script>
     </body>

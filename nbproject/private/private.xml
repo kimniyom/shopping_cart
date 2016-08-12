@@ -21,6 +21,11 @@
             <file>file:/C:/xampp/htdocs/shopping_cart/themes/webapp/css/system.css</file>
             <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/main/dialogbox.php</file>
         </group>
-        <group name="yii"/>
+        <group name="yii">
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/webapp.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/models/Configweb_model.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/themes/webapp/css/jquery.bxslider.css</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/themes/webapp/css/system.css</file>
+        </group>
     </open-files>
 </project-private>

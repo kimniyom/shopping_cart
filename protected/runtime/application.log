@@ -8994,3 +8994,43 @@ Stack trace:
 REQUEST_URI=/Shopping_cart/index.php?r=frontend/user/from_edit_register
 HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/orders/verify
 ---
+2016/08/12 13:57:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/report/mas_report_list".' in /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/report/...')
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=backend/report/mas_report_list
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/backend/index
+---
+2016/08/12 14:22:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "from_edit_register".' in /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(270): CController->missingAction('from_edit_regis...')
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): CController->run('from_edit_regis...')
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/user/f...')
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=frontend/user/from_edit_register
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/product/Getproduct/type_id/003
+---
+2016/08/12 14:22:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "from_edit_register".' in /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(270): CController->missingAction('from_edit_regis...')
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): CController->run('from_edit_regis...')
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/user/f...')
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=frontend/user/from_edit_register
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/product/Getproduct/type_id/003
+---
+2016/08/12 20:53:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/report/mas_report_user".' in /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/report/...')
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=backend/report/mas_report_user
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/message/detail/id/7
+---
