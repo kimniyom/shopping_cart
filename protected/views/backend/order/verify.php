@@ -17,15 +17,17 @@ $this->breadcrumbs = array(
         $web = new Configweb_model();
         foreach ($order as $rs): $i++;
             ?>
-            <div class="list-group" id="font-rsu-20">
-                <a href="#" class="list-group-item active">
-                    <h4 class="list-group-item-heading" id="font-rsu-20">
+            <div class="list-group" id="font-22">
+                <a class="list-group-item">
+                    <h4 class="list-group-item-heading" id="font-20">
                         #<?php echo $rs['order_id']; ?>
                         สั่งซื้อวันที่ <?php echo $web->thaidate($rs['order_date']); ?>
                     </h4>
                     <p class="list-group-item-text">
-                        <button type="button" class="btn btn-warning pull-right" id="font-rsu-20" 
-                        onclick="get_detail_order('<?php echo $rs['order_id']?>')">
+                        <button type="button" class="btn pull-right" id="font-22"
+                                style=" margin-top: 10px; color: #FFFFFF;"
+                                onclick="get_detail_order('<?php echo $rs['order_id'] ?>')">
+                            <i class="fa fa-check-circle-o"></i>
                             ตรวจสอบรายการนี้
                         </button>
                         ผู้สั่งซื้อ <?php echo $rs['name'] . ' ' . $rs['lname']; ?><br/>
@@ -36,7 +38,7 @@ $this->breadcrumbs = array(
                         <?php } else { ?>
                             <i class="fa fa-remove" style="color:red;"></i>
                         <?php } ?>
-                        วันที่แจ้งชำระ <?php echo $web->thaidate($rs['date_payment']).' '.$rs['time_payment'] ?> 
+                        วันที่แจ้งชำระ <?php echo $web->thaidate($rs['date_payment']) . ' ' . $rs['time_payment'] ?> 
                         <label class="badge" id="font-rsu-18">ยอด <?php echo number_format($rs['money'], 2); ?> บาท </label>
                     </p>
                 </a>
@@ -47,24 +49,24 @@ $this->breadcrumbs = array(
 
 <!-- POPUP -->
 <div class="modal fade" id="popup_detail_order">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">ตรวจสอบรายการแจ้งชำระ</h4>
-      </div>
-      <div class="modal-body" id="show_detail_order"></div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">ตรวจสอบรายการแจ้งชำระ</h4>
+            </div>
+            <div class="modal-body" id="show_detail_order"></div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
 <script type="text/javascript">
-    function get_detail_order(order_id){
+    function get_detail_order(order_id) {
         $("#show_detail_order").html("<br/><center><i class=\"fa fa-refresh fa-spin fa-2x\"></i></center>");
-        var url = "<?php echo Yii::app()->createUrl('backend/orders/get_detail_order')?>";
+        var url = "<?php echo Yii::app()->createUrl('backend/orders/get_detail_order') ?>";
         var data = {order_id: order_id};
 
-        $.post(url,data,function(result){
+        $.post(url, data, function (result) {
             $("#popup_detail_order").modal();
             $("#show_detail_order").html(result);
         });

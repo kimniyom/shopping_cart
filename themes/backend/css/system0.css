@@ -7,12 +7,12 @@
 
 body {
     margin: 0;
-    //font-family:Th;
+    /*font-family:Th;*/
 }
 
 /* For the "inset" look only */
 html {
-    //font-family:Th;
+    /*font-family:Th;*/
     overflow: auto;
 }
 
@@ -131,9 +131,9 @@ div.img-resize {
 
 @media screen and (orientation: portrait) {
     #img {
-        //display: block;
-        //max-width:230px;
-        //max-height:100px;
+        /*display: block;
+        max-width:230px;
+        max-height:100px;*/
         width: auto;
         height: auto;
     }

@@ -101,6 +101,19 @@ class ProductController extends Controller {
         $this->renderPartial("//backend/product/getimages", $data);
     }
 
+    public function actionInsertimages() {
+        $product = Yii::app()->request->getPost('product_id');
+        $img = Yii::app()->request->getPost('img');
+
+        //$text = 'movies ,  top movies ,watchlist  ,    top song';
+        $cut = explode(',', $img);
+        foreach ($cut as $single) {
+            $columns = array("product_id" => $product, "images" => trim($single));
+            Yii::app()->db->createCommand()
+                    ->insert("product_images", $columns);
+        }
+    }
+
     public function actionUpload() {
         // Define a destination
         $product_id = $_GET['product_id'];
@@ -136,17 +149,10 @@ class ProductController extends Controller {
 
     public function actionDelete_images() {
         $id = $_POST['id'];
-        $images = $_POST['images'];
-        if (isset($images)) {
-            $filename = './uploads/' . $images;
-
-            if (file_exists($filename)) {
-                unlink($filename);
-            }
-        }
-
+        $product_id = $_POST['product_id'];
+        
         Yii::app()->db->createCommand()
-                ->delete('product_images', "id = '$id' ");
+                ->delete('product_images', "id = '$id' AND product_id = '$product_id' ");
     }
 
     public function actionSet_active() {
@@ -164,7 +170,7 @@ class ProductController extends Controller {
         $data['product'] = $product->_get_detail_product($product_id);
         $data['type_id'] = $type_id;
         $data['type_name'] = $product->get_type_name($type_id);
-        
+
         $this->render('//backend/product/images_title', $data);
     }
 

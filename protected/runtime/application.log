@@ -9034,3 +9034,137 @@ Stack trace:
 REQUEST_URI=/Shopping_cart/index.php?r=backend/report/mas_report_user
 HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/message/detail/id/7
 ---
+2016/08/12 23:14:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/report/mas_report_type".' in /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/report/...')
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=backend/report/mas_report_type
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/orders/verify
+---
+2016/08/13 14:25:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "from_edit_register".' in /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(270): CController->missingAction('from_edit_regis...')
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): CController->run('from_edit_regis...')
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/user/f...')
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=frontend/user/from_edit_register
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/message
+---
+2016/08/13 14:25:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "from_edit_register".' in /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(270): CController->missingAction('from_edit_regis...')
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): CController->run('from_edit_regis...')
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/user/f...')
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=frontend/user/from_edit_register
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/message
+---
+2016/08/13 14:26:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/report/mas_report_list".' in /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/report/...')
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=backend/report/mas_report_list
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/message
+---
+2016/08/13 16:05:20 [error] [exception.CException] exception 'CException' with message 'ImagesController and its behaviors do not have a method or closure named "Randstrgen".' in /Applications/MAMP/htdocs/Shopping_cart/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/protected/controllers/backend/ImagesController.php(29): CComponent->__call('Randstrgen', Array)
+#1 /Applications/MAMP/htdocs/Shopping_cart/protected/controllers/backend/ImagesController.php(29): ImagesController->Randstrgen()
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/actions/CInlineAction.php(49): ImagesController->actionUploadify()
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#4 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#5 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): CController->run('uploadify')
+#7 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/images/...')
+#8 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=backend/images/uploadify
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/product/create&type_id=003
+---
+2016/08/13 16:11:06 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (/Applications/MAMP/htdocs/Shopping_cart/protected/controllers/backend/ImagesController.php:74)
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(286): ImagesController->runAction()
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(265): ImagesController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): ImagesController->run()
+#4 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/Shopping_cart/index.php?r=backend/images/uploadify
+in /Applications/MAMP/htdocs/Shopping_cart/protected/controllers/backend/ImagesController.php (74)
+in /Applications/MAMP/htdocs/Shopping_cart/index.php (13)
+2016/08/13 17:33:42 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (/Applications/MAMP/htdocs/Shopping_cart/protected/controllers/backend/ImagesController.php:74)
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(286): ImagesController->runAction()
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(265): ImagesController->runActionWithFilters()
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): ImagesController->run()
+#4 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/Shopping_cart/index.php?r=backend/images/uploadify
+in /Applications/MAMP/htdocs/Shopping_cart/protected/controllers/backend/ImagesController.php (74)
+in /Applications/MAMP/htdocs/Shopping_cart/index.php (13)
+2016/08/13 20:08:10 [error] [php] Array to string conversion (/Applications/MAMP/htdocs/Shopping_cart/protected/views/backend/images/loadimages.php:85)
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(869): ImagesController->renderFile()
+#1 /Applications/MAMP/htdocs/Shopping_cart/protected/controllers/backend/ImagesController.php(96): ImagesController->renderPartial()
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/actions/CInlineAction.php(49): ImagesController->actionLoadimages()
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(286): ImagesController->runAction()
+#5 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(265): ImagesController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): ImagesController->run()
+#7 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/Shopping_cart/index.php?r=backend/images/loadimages
+in /Applications/MAMP/htdocs/Shopping_cart/protected/views/backend/images/loadimages.php (85)
+in /Applications/MAMP/htdocs/Shopping_cart/protected/controllers/backend/ImagesController.php (96)
+in /Applications/MAMP/htdocs/Shopping_cart/index.php (13)
+2016/08/13 20:23:50 [error] [php] Undefined index: name (/Applications/MAMP/htdocs/Shopping_cart/protected/views/backend/images/loadimages.php:85)
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(869): ImagesController->renderFile()
+#1 /Applications/MAMP/htdocs/Shopping_cart/protected/controllers/backend/ImagesController.php(96): ImagesController->renderPartial()
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/actions/CInlineAction.php(49): ImagesController->actionLoadimages()
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(286): ImagesController->runAction()
+#5 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(265): ImagesController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): ImagesController->run()
+#7 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CWebApplication->run()
+REQUEST_URI=/Shopping_cart/index.php?r=backend/images/loadimages
+in /Applications/MAMP/htdocs/Shopping_cart/protected/views/backend/images/loadimages.php (85)
+in /Applications/MAMP/htdocs/Shopping_cart/protected/controllers/backend/ImagesController.php (96)
+in /Applications/MAMP/htdocs/Shopping_cart/index.php (13)
+2016/08/13 20:34:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "loadimagesproduct".' in /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(270): CController->missingAction('loadimagesprodu...')
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): CController->run('loadimagesprodu...')
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=backend/product/loadimagesproduct
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/product/create&type_id=003
+---
+2016/08/13 20:46:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "insertimages".' in /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CController.php(270): CController->missingAction('insertimages')
+#1 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(282): CController->run('insertimages')
+#2 /Applications/MAMP/htdocs/Shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 /Applications/MAMP/htdocs/Shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/Shopping_cart/index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/Shopping_cart/index.php?r=backend/product/insertimages
+HTTP_REFERER=http://localhost/Shopping_cart/index.php?r=backend/product/create&type_id=003
+---
