@@ -2,7 +2,7 @@
 
 class MainController extends Controller {
 
-    public $layout = "webapp";
+    public $layout = "kstudio";
 
     public function actionIndex() {
 

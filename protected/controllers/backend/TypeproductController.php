@@ -10,13 +10,15 @@ class TypeproductController extends Controller {
         $config = new Configweb_model();
         $data['type_id'] = $config->autoId("product_type", "type_id", "3");
         $data['type'] = $type->Get_all();
+        $data['category'] = Category::model()->findAll();
         $this->render("//type/create", $data);
     }
 
     public function actionSave_type() {
         $columns = array(
             'type_id' => $_POST['type_id'],
-            'type_name' => $_POST['type_name']
+            'type_name' => $_POST['type_name'],
+            'category' => $_POST['category']
         );
 
         Yii::app()->db->createCommand()
@@ -30,6 +32,7 @@ class TypeproductController extends Controller {
 
         $result = $type->find("id = '$id' ");
         $data['typeall'] = $type->findAll();
+        $data['category'] = Category::model()->findAll();
         $data['type'] = $result;
 
         $this->render('//type/edit', $data);
@@ -37,7 +40,8 @@ class TypeproductController extends Controller {
 
     public function actionSave_edit_type() {
         $data = array(
-            'type_name' => $_POST['type_name']
+            'type_name' => $_POST['type_name'],
+            'category' => $_POST['category']
         );
         
         Yii::app()->db->createCommand()
@@ -94,6 +98,21 @@ class TypeproductController extends Controller {
         }
 
         $this->output_system($deta, $page, $head);
+    }
+
+    public function actionCombotype(){
+        $category = Yii::app()->request->getpost('category');
+        $type = Yii::app()->request->getpost('type');
+        $Types = ProductType::model()->findAll("category=:category",array(":category" => $category));
+        $str = "";
+        $str .= "<select id='type' class='form-control'>";
+        $str .= "<option value=''>== Select ==</option>";
+        foreach($Types as $rs):
+            $str .= "<option value='".$rs['type_id']."'>".$rs['type_name']."</option>";
+        endforeach;
+        $str .= "</select>";
+
+        echo $str;
     }
 
 }

@@ -4,11 +4,13 @@
         var url = "<?php echo Yii::app()->createUrl('backend/typeproduct/save_edit_type') ?>";
         var id = "<?php echo $type['id'] ?>";
         var type_name = $("#type_name").val();
+        var category = $("#category").val();
         var data = {
             id: id,
-            type_name: type_name
+            type_name: type_name,
+            category: category
         };
-        if (type_name == "") {
+        if (type_name == "" || category == "") {
             $("#type_name").focus();
             return false;
         }
@@ -35,6 +37,16 @@ $this->breadcrumbs = array(
             <div class="col-lg-8 col-md-8 col-sm-12">
                 <label>รหัส</label>
                 <input class="form-control input-sm" id="type_id" name="type_id" type="text" value="<?php echo $type['type_id']; ?>" readonly="readonly"/>
+            </div>
+        </div>
+        <div class="row" style="margin: 0px;">
+            <div class="col-sm-6 col-lg-6">
+                <label>Category</label>
+                <select id="category" class="form-control input-sm">
+                <?php foreach($category as $cat): ?>
+                    <option value="<?php echo $cat['id'] ?>" <?php echo ($cat['id'] == $type['category']) ? "selected" : "";?>><?php echo $cat['categoryname'] ?></option>
+                <?php endforeach; ?>
+                </select>
             </div>
         </div>
         <div class="row" style="margin: 0px;">

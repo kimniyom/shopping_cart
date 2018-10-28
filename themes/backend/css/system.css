@@ -273,3 +273,11 @@ table thead tr th{
 body a:link{
     text-decoration: none;
 }
+
+.p-right{
+    border-left:#cccccc solid 1px;
+}
+
+.p-left{
+    border-right:#cccccc solid 1px;
+}

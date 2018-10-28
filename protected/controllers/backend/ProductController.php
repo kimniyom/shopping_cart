@@ -4,18 +4,39 @@ class ProductController extends Controller {
 
     public $layout = "template_backend";
 
-    public function actionGetproduct() {
-        $type_id = $_GET['type_id'];
+    public function actionIndex(){
+        $data['category'] = Category::model()->findAll("active=:active",array(":active" => '1'));
+        $data['brand'] = Brand::model()->findAll();
+        $this->render('index',$data);
+    }
 
+    public function actionGetproduct($category,$type) {
         $product = new Backend_product();
         $data['model'] = $product;
-        $data['type_id'] = $type_id;
-        $data['type_name'] = $product->get_type_name($type_id);
-        $data['product'] = $product->get_product_all($type_id);
+        $data['type_id'] = $type;
+        $data['category'] = Category::model()->find("id=:id",array(":id" => $category));
+        $data['type_name'] = $product->get_type_name($type);
+        $data['product'] = $product->get_product_intype($category,$type);
 
-        $data['count_product_type'] = $product->get_count_product_type($type_id);
+        $data['count_product_type'] = $product->get_count_product_type($type);
 
         $this->render("//backend/product/show_product_all", $data);
+    }
+
+    public function actionCategory($categoryID) {
+        $product = new Backend_product();
+        $data['model'] = $product;
+        $data['category'] = Category::model()->find("id=:id",array(":id" => $categoryID));
+        $data['product'] = $product->get_product_incategory($categoryID);
+        $this->render("//backend/product/category", $data);
+    }
+
+    public function actionBrand($brandID) {
+        $product = new Backend_product();
+        $data['model'] = $product;
+        $data['brand'] = Brand::model()->find("id=:id",array(":id" => $brandID));
+        $data['product'] = $product->get_product_inbrand($brandID);
+        $this->render("//backend/product/brand", $data);
     }
 
     public function actionCreate() {
@@ -27,6 +48,17 @@ class ProductController extends Controller {
         $data['type_name'] = $prodult->get_type_name($type_id);
 
         $this->render("//backend/product/create", $data);
+    }
+
+    public function actionCreateproduct() {
+        $prodult = new Backend_product();
+
+        $data['product_id'] = "P" . date("YmdHis");
+        $data['categorys'] = Category::model()->findAll();
+        $data['types'] = ProductType::model()->findAll();
+        $data['brands'] = Brand::model()->findAll();
+
+        $this->render("createproduct", $data);
     }
 
     public function actionSave_product() {
@@ -46,15 +78,34 @@ class ProductController extends Controller {
         //echo $this->redirect(array('backend/product/detail_product&product_id=' . $_POST['product_id']));
     }
 
-    public function actionUpdate() {
-        $type_id = $_GET['type_id'];
-        $product_id = $_GET['product_id'];
+    public function actionSave() {
+        $data = array(
+            'product_id' => Yii::app()->request->getpost('product_id'),
+            'product_name' => Yii::app()->request->getpost('product_name'),
+            'product_detail' => Yii::app()->request->getpost('product_detail'),
+            'product_price' => Yii::app()->request->getpost('product_price'),
+            'category' => Yii::app()->request->getpost('category'),
+            'brand' => Yii::app()->request->getpost('brand'),
+            'status' => Yii::app()->request->getpost('status'),
+            'type_id' => Yii::app()->request->getpost('type'),
+            'recommend' => Yii::app()->request->getpost('recommend'),
+            'd_update' => date('Y-m-d H:i:s')
+        );
+
+        Yii::app()->db->createCommand()
+                ->insert('product', $data);
+
+        //echo $this->redirect(array('backend/product/detail_product&product_id=' . $_POST['product_id']));
+    }
+
+    public function actionUpdate($product_id) {
         $product = new Backend_product();
-
-        $data['product'] = $product->_get_detail_product($product_id);
-        $data['type_id'] = $type_id;
-        $data['type_name'] = $product->get_type_name($type_id);
-
+        $products = $product->_get_detail_product($product_id);
+        $data['product'] = $products;
+        $data['categorys'] = Category::model()->findAll();
+        $data['brands'] = Brand::model()->findAll();
+        $data['type'] = ProductType::model()->find("type_id=:type",array(":type" => $products['type_id']));
+        $data['types'] = ProductType::model()->findAll("category=:category",array(":category" => $products['category']));
         $this->render("//backend/product/update", $data);
     }
 
@@ -64,7 +115,12 @@ class ProductController extends Controller {
             'product_name' => $_POST['product_name'],
             'product_detail' => $_POST['product_detail'],
             'product_price' => $_POST['product_price'],
-            'product_num' => $_POST['product_num'],
+            //'product_num' => $_POST['product_num'],
+            'category' => Yii::app()->request->getpost('category'),
+            'brand' => Yii::app()->request->getpost('brand'),
+            'status' => Yii::app()->request->getpost('status'),
+            'type_id' => Yii::app()->request->getpost('type'),
+            'recommend' => Yii::app()->request->getpost('recommend'),
             'd_update' => date('Y-m-d H:i:s')
         );
 
@@ -111,6 +167,43 @@ class ProductController extends Controller {
             $columns = array("product_id" => $product, "images" => trim($single));
             Yii::app()->db->createCommand()
                     ->insert("product_images", $columns);
+        }
+    }
+
+    public function actionDeleteimages() {
+        $img = Yii::app()->request->getPost('img');
+
+        //$text = 'movies ,  top movies ,watchlist  ,    top song';
+        $cut = explode(',', $img);
+        foreach ($cut as $single) {
+            $images = trim($single);
+           
+
+            if(file_exists('uploads/product/'.trim($single))){
+                unlink('uploads/product/'.trim($single));
+
+            if(file_exists('uploads/product/thumbnail/'.trim($single))){
+                    unlink('uploads/product/thumbnail/'.trim($single));
+                }
+            }
+            if(file_exists('uploads/product/thumbnail/'.'480-'.trim($single))){
+                unlink('uploads/product/thumbnail/'.'480-'.trim($single));
+            }
+
+            if(file_exists('uploads/product/thumbnail/'.'600-'.trim($single))){
+                unlink('uploads/product/thumbnail/'.'600-'.trim($single));
+            }
+            if(file_exists('uploads/product/thumbnail/'.'100-'.trim($single))){
+                unlink('uploads/product/thumbnail/'.'100-'.trim($single));
+            }
+
+            if(file_exists('uploads/product/thumbnail/'.'200-'.trim($single))){
+                unlink('uploads/product/thumbnail/'.'200-'.trim($single));
+            }
+            
+            Yii::app()->db->createCommand()
+                    ->delete("images","images='$images'");
+                    
         }
     }
 

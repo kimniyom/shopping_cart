@@ -155,6 +155,7 @@ class ProductController extends Controller {
          */
 
         $data['product'] = $rs;
+        
         $this->renderPartial("//product/product_more", $data);
     }
 

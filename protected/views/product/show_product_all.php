@@ -53,7 +53,8 @@
                 });
 
                 //total_pages - 1
-                if (track_click >= total_pages - 1)
+ 
+                if ((track_click*6) >= total_pages - 1)
                 {
                     //reached end of the page yet? disable load button
                     $(".load_more").attr("disabled", "disabled");

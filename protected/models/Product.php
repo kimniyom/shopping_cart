@@ -64,9 +64,11 @@ class Product {
     }
 
     function _get_detail_product($product_id = '') {
-        $sql = "SELECT p.product_id,product_name,product_num,product_detail,product_price,d_update,p.status,t.type_id,type_name
-                FROM product p INNER JOIN product_type t ON p.type_id = t.type_id
-                WHERE p.product_id = '$product_id' ";
+        $sql = "SELECT p.product_id,product_name,product_num,product_detail,product_price,d_update,p.status,t.type_id,type_name,c.categoryname,c.brandname
+        FROM product p INNER JOIN product_type t ON p.type_id = t.type_id
+        INNER JOIN category c ON p.category = c.id
+        INNER JOIN brand b ON p.brand = b.id
+        WHERE p.product_id = '$product_id' ";
         $result = Yii::app()->db->createCommand($sql)->queryRow();
 
         return $result;
@@ -204,9 +206,10 @@ class Product {
     }
 
     function get_product_all($type_id = '') {
-        $sql = "SELECT * FROM product WHERE type_id = '$type_id' AND status != '1' AND delete_flag != '1'";
+        $sql = "SELECT * FROM product WHERE type_id = '$type_id' AND status != '1' AND delete_flag != '1' ORDER BY id DESC";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
+    
 
     function get_type_name($type_id = '') {
         $sql = "SELECT type_name FROM product_type WHERE type_id = '$type_id' ";
@@ -266,6 +269,30 @@ class Product {
         } else {
             return "0";
         }
+    }
+    
+    function firstpictures($id = null){
+        $sql = "SELECT * FROM product_images WHERE product_id = '$id' ORDER BY id ASC LIMIT 1";
+        $re = Yii::app()->db->createCommand($sql)->queryRow();
+        return $re['images'];
+    }
+
+    function countProductCategory($id){
+        $sqlCountCat = "select COUNT(*) AS total from product where category = '$id' ";
+        $rsContCat = Yii::app()->db->createCommand($sqlCountCat)->queryRow();
+        return $rsContCat['total'];
+    }
+
+    function countProductType($id){
+        $sqlCountCat = "select COUNT(*) AS total from product where type_id = '$id' ";
+        $rsContCat = Yii::app()->db->createCommand($sqlCountCat)->queryRow();
+        return $rsContCat['total'];
+    }
+
+    function countProductBrand($id){
+        $sqlCountCat = "select COUNT(*) AS total from product where brand = '$id' ";
+        $rsContCat = Yii::app()->db->createCommand($sqlCountCat)->queryRow();
+        return $rsContCat['total'];
     }
 
 }

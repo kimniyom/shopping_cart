@@ -19,7 +19,7 @@
             }
         </style>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/system.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/css/bootstrap.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/css/bootstrap-paper-3.3.4.css" type="text/css" media="all" />
         <!--
                 <link rel="stylesheet" href="<?//= Yii::app()->baseUrl; ?>/themes/backend/css/bootstrap-theme.css" type="text/css" media="all" />
         -->
@@ -159,10 +159,12 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
+                            <?php if(!Yii::app()->user->isGuest){  ?>
                             <a href="<?= Yii::app()->createUrl('site/logout/') ?>">
                                 <span class="glyphicon glyphicon-off"></span>
                                 <font id="font-th">ออกจากระบบ</font>
                             </a>
+                            <?php } ?>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -178,7 +180,7 @@
                         <img src="<?= Yii::app()->baseUrl; ?>/images/use-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;"> ผู้ใช้งาน
                     </div>
                     <div class="panel-body">
-                        ชื่อ : <?= Yii::app()->session['username']; ?><br>
+                        ชื่อ : <?php echo Yii::app()->user->name ?><br>
                         สถานะ : <?php echo "ผู้ดูแลระบบ"; ?><br/>
                     </div>
                     <div class="panel-footer" style="border-bottom:solid 1px #eeeeee; border-radius:0px;">
@@ -187,7 +189,7 @@
                 </div>
                 <!-- ส่วนของ ผู้ดูแลระบบ -->
                 <!-- ตั้งค่าร้านค้า -->
-                <div class="panel panel-default" id="panel-head">
+                <div class="panel panel-default side1" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>"
                              height="32px"
@@ -195,8 +197,8 @@
                         ข้อมูลร้านค้า
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
-                    <div class="list-group">
-                        <a href="<?= Yii::app()->createUrl('backend/contact') ?>" class="list-group-item">
+                    <div class="list-group" id="side1">
+                        <a href="<?= Yii::app()->createUrl('backend/contact') ?>" class="list-group-item" onclick="setSideMenu('side1','side1')">
                             <i class="fa fa-phone-square"></i> ข้อมูลติดต่อ
                         </a>
                         <a href="<?= Yii::app()->createUrl('backend/about') ?>" class="list-group-item">
@@ -217,15 +219,21 @@
                     </div>
                 </div>
                 <!-- List Menu Admin-->
-                <div class="panel panel-default" id="panel-head">
+                <div class="panel panel-default side2" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/system-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
                         ตั้งค่าระบบ
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
-                    <div class="list-group">
+                    <div class="list-group" id="side2">
+                    <a href="<?= Yii::app()->createUrl('backend/category/admin') ?>"
+                           class="list-group-item" onclick="setSideMenu('side2','side2')"><i class="fa fa-folder-open"></i> Category</a>
                         <a href="<?= Yii::app()->createUrl('backend/typeproduct/from_add_type') ?>"
-                           class="list-group-item"><i class="fa fa-folder-open"></i> ประเภทสินค้า</a>
+                           class="list-group-item" onclick="setSideMenu('side2','side2')"><i class="fa fa-folder-open"></i> Types</a>
+                        <a href="<?= Yii::app()->createUrl('backend/brand/admin') ?>"
+                           class="list-group-item" onclick="setSideMenu('side2','side2')"><i class="fa fa-folder-open"></i> Brands</a>
+                        <a href="<?= Yii::app()->createUrl('backend/product/index') ?>"
+                           class="list-group-item" onclick="setSideMenu('side2','side2')"><i class="fa fa-folder-open"></i> Product</a>
                         <a href="<?= Yii::app()->createUrl('backend/user/userall') ?>"
                            class="list-group-item"><i class="fa fa-group"></i>  ข้อมูลสมาชิก</a>
                         <a href="<?= Yii::app()->createUrl('backend/payment/view') ?>"
@@ -238,19 +246,19 @@
                 </div>
 
                 <!-- List รายชื่อ สินค้า -->
-                <div class="panel panel-default" id="panel-head">
+                <div class="panel panel-default side3" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/shipping-box-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
                         คลังสินค้า
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
-                    <div class="list-group">
+                    <div class="list-group" id="side3">
                         <?php
                         $produce_type = $product_model->_get_product_type();
                         foreach ($produce_type as $produce_types):
                             ?>
                             <a href="<?php echo Yii::app()->createUrl('backend/product/Getproduct/type_id/' . $produce_types['type_id']) ?>"
-                               class="list-group-item">
+                               class="list-group-item" onclick="setSideMenu('side3','side3')">
                                 <span class="label" style=" background: #24282d;"><?php echo $product_model->get_count_product_type($produce_types['type_id']); ?></span>
                                 <?php echo $produce_types['type_name']; ?>
                             </a>
@@ -259,18 +267,16 @@
                 </div>
 
                 <!-- List รายชื่อ สินค้า -->
-                <div class="panel panel-default" id="panel-head">
+                <div class="panel panel-default side4" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/blog-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px; width: 32px;">
                         บทความ
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
-                    <div class="list-group">
+                    <div class="list-group" id="side4">
                         <a href="<?php echo Yii::app()->createUrl('backend/article/create') ?>" class="list-group-item">
                             <i class="fa fa-plus"></i> สร้างบทความ
                         </a>
-                    </div>
-                    <div class="list-group">
                         <a href="<?php echo Yii::app()->createUrl('backend/article') ?>" class="list-group-item">
                             <i class="fa fa-newspaper-o"></i> บทความทั้งหมด
                         </a>
@@ -279,13 +285,13 @@
 
                 <!-- รายการจัดส่งสินค้า -->
                 <!-- List รายชื่อ สินค้า -->
-                <div class="panel panel-default" id="panel-head">
+                <div class="panel panel-default side5" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/front-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px; width: 32px;">
                         รหัสส่งสินค้า
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
-                    <div class="list-group">
+                    <div class="list-group" id="side5">
                         <?php
                         $notify = $product_model->get_notify_postcode();
                         foreach ($notify as $datas):
@@ -302,19 +308,19 @@
             <!-- /#sidebar-wrapper -->
 
             <!-- Page Content -->
-            <div id="page-content-wrapper" style="padding:5px;">
+            <div id="page-content-wrapper" style="padding:0px;">
+                <nav class="navbar navbar-default" role="navigation" style="margin-bottom:10px; border-radius: 0px; padding-top: 3px;">
+                    <ul class="nav nav-pills pull-right" style="margin:5px;">
+                        <li><a href="<?php echo Yii::app()->createUrl('backend/orders/verify') ?>"><i class="fa fa-check-circle"></i> ตรวจสอบการชำระเงิน <span class="badge"><?php echo $order_model->count_verify(); ?> </span></a></li>
+                        <li><a href="<?php echo Yii::app()->createUrl('backend/orders/pendingshipment') ?>"><i class="fa fa-paper-plane-o"></i> รอจัดส่ง(แพ็กลงกล่อง) <span class="badge"><?php echo $order_model->count_wait_send(); ?> </span></a></li>
+                        <li><a href="<?php echo Yii::app()->createUrl('backend/orders/notification') ?>"><i class="fa fa-send"></i> แจ้งการส่งสินค้า <span class="badge"><?php echo $order_model->count_wait_inform(); ?> </span></a></li>
+                    </ul>
+                </nav>
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-lg-12">
-                            <nav class="navbar navbar-default" role="navigation" style="margin-bottom:10px;">
-                                <ul class="nav nav-pills pull-right" style="margin:5px;">
-                                    <li><a href="<?php echo Yii::app()->createUrl('backend/orders/verify') ?>"><i class="fa fa-check-circle"></i> ตรวจสอบการชำระเงิน <span class="badge"><?php echo $order_model->count_verify(); ?> </span></a></li>
-                                    <li><a href="<?php echo Yii::app()->createUrl('backend/orders/pendingshipment') ?>"><i class="fa fa-paper-plane-o"></i> รอจัดส่ง(แพ็กลงกล่อง) <span class="badge"><?php echo $order_model->count_wait_send(); ?> </span></a></li>
-                                    <li><a href="<?php echo Yii::app()->createUrl('backend/orders/notification') ?>"><i class="fa fa-send"></i> แจ้งการส่งสินค้า <span class="badge"><?php echo $order_model->count_wait_inform(); ?> </span></a></li>
-                                </ul>
-                            </nav>
-                            <ol class="breadcrumb well well-sm" style=" margin-bottom: 10px; margin-top: 0px;">
-                                
+                            <ol class="breadcrumb well well-sm" style=" margin-bottom: 10px; margin-top: 0px; border-radius: 0px;">
+                        
                                 <?php if (isset($this->breadcrumbs)): ?>
                                     <?php
                                     $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -357,7 +363,21 @@
                 });
             }
 
+            function setSideMenu(group,menu){
+                var url = "<?php echo Yii::app()->createUrl('backend/menubackend/setactive') ?>"
+                var data = {group: group,menu: menu};
+                $.post(url, data, function (success) {
+                    //window.location.reload();
+                });
+            }
+
             $(function () {
+                var sideMenu = "<?php echo Yii::app()->session['groupmenu'] ?>";
+                var menuId = "#" + sideMenu;
+                var menuClass = "." + sideMenu;
+                $('.panel').find(menuId).show();
+                $(menuClass+' span.clickable').find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+
                 $(".dropdown").hover(
                         function () {
                             $('.dropdown-menu', this).stop(true, true).fadeIn("fast");
@@ -383,6 +403,8 @@
                     $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
                 }
             });
+
+            
         </script>
     </body>
 </html>

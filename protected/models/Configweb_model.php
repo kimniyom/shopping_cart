@@ -121,4 +121,12 @@ class Configweb_model {
         return $str;
     }
 
+    function SizeFileUpload(){
+        return "2MB";
+    }
+
+    function LimitFileUpload(){
+        return "5";
+    }
+
 }

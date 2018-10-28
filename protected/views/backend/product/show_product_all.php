@@ -21,6 +21,7 @@
 
 <?php
 $this->breadcrumbs = array(
+    $category['categoryname'] => array('backend/product/category&categoryID=' . $category['id']),
     $type_name,
 );
 ?>
@@ -30,7 +31,7 @@ $this->breadcrumbs = array(
         <?php echo $type_name ?> จำนวนทั้งหมด
         <?php echo $count_product_type; ?>
         <div class="pull-right">
-            <a href="<?php echo Yii::app()->createUrl('backend/product/create&type_id=' . $type_id) ?>">
+            <a href="<?php echo Yii::app()->createUrl('backend/product/createproduct') ?>">
                 <div class="btn btn-success btn-sm">
                     <i class="fa fa-plus"></i>
                     <i class="fa fa-cart-plus"></i>
@@ -41,12 +42,12 @@ $this->breadcrumbs = array(
         <table class="table" id="p_product">
             <thead>
                 <tr>
+                    <th style="width:20px;">#</th>
                     <th style="text-align:center;"><i class="fa fa-cog"></i></th>
                     <th>รูป</th>
                     <th>รหัส</th>
                     <th>ชื่อสินค้า</th>
                     <th style="text-align: center;">ราคา</th>
-                    <th style="text-align: center;">จำนวน</th>
                     <th style="text-align: center;">สถานะ</th>
                 </tr>
             </thead>
@@ -55,17 +56,20 @@ $this->breadcrumbs = array(
                 $product_model = new Product();
                 $i = 0;
                 foreach ($product as $last):
-                    $img_title = $product_model->get_images_product_title($last['product_id']);
-                    if (!empty($img_title)) {
-                        $img = "uploads/product_thumb/" . $img_title['images'];
+                    //$img_title = $product_model->get_images_product_title($last['product_id']);
+                    $firstImg = $product_model->firstpictures($last['product_id']);
+                    if (!empty($firstImg)) {
+                        $img = "uploads/product/" . $firstImg;
                     } else {
                         $img = "images/No_image_available.jpg";
                     }
                     $link = Yii::app()->createUrl('backend/product/detail_product&product_id=' . $last['product_id']);
                     $i++;
                     $trid = "td" . $i;
+                    
                     ?>
                     <tr id="<?php echo $trid; ?>">
+                        <td><?php echo $i ?></td>
                         <td style=" text-align: center;">
                             <div class="dropdown">
                                 <button class="btn btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -74,8 +78,7 @@ $this->breadcrumbs = array(
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="text-align:left;">
                                     <li><a href="<?php echo $link; ?>"><i class="fa fa-eye"></i> รายละเอียด</a></li>
-                                    <li><a href="<?php echo Yii::app()->createUrl('backend/product/update', array('type_id' => $last['type_id'], 'product_id' => $last['product_id'])); ?>"><i class="fa fa-edit"></i> แก้ไข</a></li>
-                                    <li><a href="<?php echo Yii::app()->createUrl('backend/product/images', array('product_id' => $last['product_id'])); ?>"><i class="fa fa-picture-o"></i> จัดการรูปภาพ</a></li>
+                                    <li><a href="<?php echo Yii::app()->createUrl('backend/product/update', array('product_id' => $last['product_id'])); ?>"><i class="fa fa-edit"></i> แก้ไข</a></li>
                                     <li><a href="javascript:delete_product('<?php echo $last['product_id'] ?>','<?php echo $trid ?>')"><i class="fa fa-trash"></i> ลบ</a></li>
                                 </ul>
                             </div>
@@ -97,17 +100,15 @@ $this->breadcrumbs = array(
                         <td style=" text-align: center; font-weight: bold;">
                             <?php echo number_format($last['product_price'], 2); ?>
                         </td>
-                        <td style=" text-align: center; font-weight: bold;"><?php echo $last['product_num']; ?></td>
+                        
                         <td style=" text-align: center;">
                             <?php
-                            if ($last['status'] == '1') {
+                            if ($last['status'] == '0') {
+                                echo "<font style='color:green;'><i class='fa fa-check'></i>พร้อมขาย</font>";
+                            } else if($last['status'] == '1'){
                                 echo "<font style='color:red;'><i class='fa fa-ban'></i>ไม่พร้อมขาย</font>";
                             } else {
-                                if ($last['product_num'] <= '1') {
-                                    echo "<font style='color:orange;'><i class='fa fa-warning'></i>เหลือน้อย</font>";
-                                } else {
-                                    echo "<i class='fa fa-check'></i>";
-                                }
+                                echo "<font style='color:red;'><i class='fa fa-ban'></i>Sold Out</font>";
                             }
                             ?>
                         </td>

@@ -60,14 +60,10 @@ $this->breadcrumbs = array(
             <?= $product['product_name'] ?>
             </font><br/>
             <b>รหัสสินค้า</b> <?= $product['product_id'] ?><br/>
-            <b>ประเภทสินค้า</b> <?= $product['type_name'] ?><br/>
+            <b>Category</b> <?= $product['categoryname'] ?><br/>
+            <b>Type</b> <?= $product['type_name'] ?><br/>
+            <b>Brand</b> <?= $product['brandname'] ?><br/>
             <b>อัพเดทล่าสุด</b> <?= $config->thaidate($product['d_update']); ?><br/><br/>
-            <div class="row">
-                <div class="alert" style="text-align: center;">
-                    <b style=" font-size: 16px;">จำนวนคงเหลือ</b>
-                    <input type="text" class="form-control" id="num" value="<?php echo $product['product_num'] ?>" style="text-align: center; border: #F00 solid 2px; height: 43px; font-size: 16px;" readonly="readonly"/>
-                </div>
-            </div>
 
             <center>
                 <font style=" font-size: 24px;">
@@ -80,9 +76,9 @@ $this->breadcrumbs = array(
         <div class="col-lg-8 col-md-12 col-xs-12" style=" padding-top: 20px;">
             <?php
             $product_model = new Product();
-            $img_title = $product_model->get_images_product_title($product['product_id']);
+            $img_title = $product_model->firstpictures($product['product_id']);
             if (!empty($img_title)) {
-                $img = "uploads/product_thumb/" . $img_title['images'];
+                $img = "uploads/product/" . $img_title;
             } else {
                 $img = "images/No_image_available.jpg";
             }
@@ -108,8 +104,8 @@ $this->breadcrumbs = array(
                                         <!--
                                             <a href="javascript:void(0);" onclick="set_group_img('<?//php echo $rs->images ?>');" style=" text-decoration: none;">
                                         -->
-                                        <a class="image-link" href="<?php echo Yii::app()->baseUrl; ?>/uploads/<?= $rs['images'] ?>">
-                                            <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/<?= $rs['images'] ?>" class="btn btn-default" id="im-resize" style=" background: #FFF;"/></a>
+                                        <a class="image-link" href="<?php echo Yii::app()->baseUrl; ?>/uploads/product/<?= $rs['images'] ?>">
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/product/<?= $rs['images'] ?>" class="btn btn-default" id="im-resize" style=" background: #FFF;"/></a>
                                     <?php endforeach; ?>
                                 </center>
                             </div>

@@ -28,8 +28,7 @@ class ImagesController extends Controller {
           Copyright (c) 2012 Reactive Apps, Ronnie Garcia
           Released under the MIT License <http://www.opensource.org/licenses/mit-license.php>
          */
-
-// Define a destination
+        //Define a destination
 
         $targetFolder = Yii::app()->baseUrl . '/uploads/product'; // Relative to the root
         if (!empty($_FILES)) {
@@ -41,12 +40,12 @@ class ImagesController extends Controller {
             $Name = "img_" . $this->Randstrgen() . "." . $type;
             $targetFile = $targetPath . '/' . $Name;
 
-//$targetFile = $targetFolder . '/' . $_FILES['Filedata']['name'];
-//$targetFile = $targetFolder . '/' . $Name;
-// Validate the file type
+            //$targetFile = $targetFolder . '/' . $_FILES['Filedata']['name'];
+            //$targetFile = $targetFolder . '/' . $Name;
+            //Validate the file type
             $fileTypes = array('jpg', 'jpeg', 'JPEG', 'png'); // File extensions
             $fileParts = pathinfo($_FILES['Filedata']['name']);
-//$GalleryShot = $_FILES['Filedata']['name'];
+            //$GalleryShot = $_FILES['Filedata']['name'];
 
             /*
               $tempFile = $_FILES['Filedata']['tmp_name'];
@@ -56,7 +55,7 @@ class ImagesController extends Controller {
               // Validate the file type
               $fileTypes = array('rar', 'pdf', 'zip'); // File extensions
               $fileParts = pathinfo($_FILES['Filedata']['name']);
-             */
+            */
 
             if (in_array($fileParts['extension'], $fileTypes)) {
 
@@ -80,6 +79,10 @@ class ImagesController extends Controller {
                 imagedestroy($images_orig);
                 imagedestroy($images_fin);
 
+                $this->ThumbnailDefault($Name,$size,$tempFile,200);
+                $this->Thumbnail($Name,$size,$tempFile,480);
+                $this->Thumbnail($Name,$size,$tempFile,600);
+                $this->Thumbnail($Name,$size,$tempFile,100);
                 //move_uploaded_file($tempFile, $targetFile); เก่า
                 echo '1';
             } else {
@@ -88,8 +91,50 @@ class ImagesController extends Controller {
         }
     }
 
+    public function ThumbnailDefault($Name,$size,$tempFile,$width){
+        //$new_images = "Thumbnails_".$_FILES["Filedata"]["name"];
+        $height = round($width * $size[1] / $size[0]);
+        $images_orig = imagecreatefromjpeg($tempFile);
+        $photoX = imagesx($images_orig);
+        $photoY = imagesy($images_orig);
+        $images_fin = imagecreatetruecolor($width, $height);
+        imagecopyresampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+        imagejpeg($images_fin, "uploads/product/thumbnail/".$Name);
+        imagedestroy($images_orig);
+        imagedestroy($images_fin);
+
+        $image = new ImageResize("uploads/product/".$Name);
+        $image->quality_jpg = 100;
+        $image->crop($width, $width, true, ImageResize::CROPCENTER);
+        $image->save("uploads/product/thumbnail/".$Name);
+}
+
+    public function Thumbnail($Name,$size,$tempFile,$width){
+
+                //$new_images = "Thumbnails_".$_FILES["Filedata"]["name"];
+                //$image = new ImageResize();
+                
+                $height = round($width * $size[1] / $size[0]);
+                $images_orig = imagecreatefromjpeg($tempFile);
+                $photoX = imagesx($images_orig);
+                $photoY = imagesy($images_orig);
+                $images_fin = imagecreatetruecolor($width, $height);
+                if($photoX == $photoY){
+                    imagecopyresampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                    imagejpeg($images_fin, "uploads/product/thumbnail/" . $width .'-'.$Name);
+                    imagedestroy($images_orig);
+                    imagedestroy($images_fin);
+                } else {
+                    $image = new ImageResize("uploads/product/".$Name);
+                    $image->quality_jpg = 100;
+                    $image->crop($width, $width, true, ImageResize::CROPCENTER);
+                    $image->save("uploads/product/thumbnail/".$width.'-'.$Name);
+                }
+                          
+    }
+
     public function actionLoadimages() {
-        $sql = "SELECT * FROM images";
+        $sql = "SELECT * FROM images ORDER BY id DESC";
         $rs = Yii::app()->db->createCommand($sql)->queryAll();
         $data['images'] = $rs;
 

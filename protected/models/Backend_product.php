@@ -66,9 +66,11 @@ class Backend_Product {
     }
 
     function _get_detail_product($product_id = '') {
-        $sql = "SELECT p.product_id,product_name,product_num,product_detail,product_price,d_update,p.status,t.type_id,type_name
+        $sql = "SELECT p.product_id,product_name,product_num,product_detail,product_price,d_update,p.status,t.type_id,type_name,p.category,p.brand,c.categoryname,b.brandname,recommend
                 FROM product p INNER JOIN product_type t ON p.type_id = t.type_id
-                WHERE p.product_id = '$product_id' ";
+                INNER JOIN category c ON p.category = c.id
+                INNER JOIN brand b ON p.brand = b.id
+                WHERE p.product_id = '$product_id'";
         $result = Yii::app()->db->createCommand($sql)->queryRow();
 
         return $result;
@@ -207,6 +209,21 @@ class Backend_Product {
 
     function get_product_all($type_id = '') {
         $sql = "SELECT * FROM product WHERE type_id = '$type_id' AND delete_flag != '1'";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
+    function get_product_intype($category,$type_id = '') {
+        $sql = "SELECT * FROM product WHERE category = '$category' and type_id = '$type_id' AND status != '1' AND delete_flag != '1' ORDER BY id DESC";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
+    function get_product_incategory($category) {
+        $sql = "SELECT * FROM product WHERE category = '$category' AND status != '1' AND delete_flag != '1' ORDER BY id DESC";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
+    function get_product_inbrand($brand) {
+        $sql = "SELECT * FROM product WHERE brand = '$brand' AND status != '1' AND delete_flag != '1' ORDER BY id DESC";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
 

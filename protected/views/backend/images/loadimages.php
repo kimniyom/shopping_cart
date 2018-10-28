@@ -1,4 +1,3 @@
-
 <style type="text/css">
     .img-store{
         border: #339900 solid 2px;
@@ -83,10 +82,9 @@
                 ?>
                 <li class="col-sm-6 col-md-2 col-lg-2">
                     <input type="checkbox" id="cb<?php echo $rs['id'] ?>" value="<?php echo $rs['images'] ?>"/>
-
                     <label for="cb<?php echo $rs['id'] ?>">
                         <div class="img-wrapper">
-                            <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/product/<?php echo $rs['images'] ?>" class="img-responsive article-img" style=" height: 100px;"/>
+                            <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/product/thumbnail/<?php echo $rs['images'] ?>" class="img-responsive article-img" style=" height: 100px;"/>
                         </div>
                     </label>
                 </li>
@@ -105,7 +103,7 @@
         });
         //$('#debugOutput').html(checkboxValues.join(','));
         var imgVal = checkboxValues.join(',');
-        alert(imgVal);
+        //alert(imgVal);
         var url = "<?php echo Yii::app()->createUrl('backend/product/insertimages') ?>";
         var productID = $("#product_id").val();
         var data = {img: imgVal, product_id: productID};
@@ -113,6 +111,24 @@
             loadimagesProduct();
             $("#popupImages").modal("hide");
         });
+    }
+
+    function DeleteImgProduct(){
+        var checkboxValues = [];
+        $('input[type="checkbox"]:checked').each(function (index, elem) {
+            checkboxValues.push($(elem).val());
+        });
+        var imgVal = checkboxValues.join(',');
+        var url = "<?php echo Yii::app()->createUrl('backend/product/deleteimages') ?>";
+        var data = {img: imgVal};
+        $.post(url, data, function (datas) {
+            load_data();
+            /*
+            loadimagesProduct();
+            $("#popupImages").modal("hide");
+            */
+        });
+        
     }
 </script>
 

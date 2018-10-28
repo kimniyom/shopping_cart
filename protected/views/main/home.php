@@ -29,8 +29,6 @@
         }
     });
 
-
-
     $(window).resize(function () {
         var widths = $(window).width();
         if (widths > 768) {
@@ -113,9 +111,9 @@ if (!empty(Yii::app()->session['status'])):
         $i = 0;
         foreach ($last_product as $last):
             $i++;
-            $img_title = $product_model->get_images_product_title($last['product_id']);
+            $img_title = $product_model->firstpictures($last['product_id']);
             if (!empty($img_title)) {
-                $img = "uploads/product_thumb/" . $img_title['images'];
+                $img = "uploads/product/" . $img_title;
             } else {
                 $img = "images/No_image_available.jpg";
             }
@@ -185,9 +183,9 @@ if (!empty(Yii::app()->session['status'])):
         $b = 0;
         foreach ($sale_product as $sale):
             $b++;
-            $img_title = $product_model->get_images_product_title($sale['product_id']);
+            $img_title = $product_model->firstpictures($sale['product_id']);
             if (!empty($img_title)) {
-                $img = "uploads/product_thumb/" . $img_title['images'];
+                $img = "uploads/product/" . $img_title;
             } else {
                 $img = "images/No_image_available.jpg";
             }

@@ -5,9 +5,9 @@
     $i = 0;
     foreach ($product as $last):
         $i++;
-        $img_title = $product_model->get_images_product_title($last['product_id']);
+        $img_title = $product_model->firstpictures($last['product_id']);
         if(!empty($img_title)){
-            $img = "uploads/product_thumb/".$img_title['images'];
+            $img = "uploads/product/".$img_title;
         } else {
             $img = "images/No_image_available.jpg";
         }

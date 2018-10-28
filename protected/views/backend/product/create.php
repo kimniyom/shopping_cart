@@ -47,7 +47,7 @@ $this->breadcrumbs = array(
             </legend>
 
             <div class="row">
-                <div class="col-md-3 col-lg-3">
+                <div class="col-md-3 col-lg-3" id="p-left">
                     <div class="well" style=" border:#666666 dashed 2px; text-align: center; cursor: pointer;"
                          onclick="GetImages();">
                         <i class="fa fa-image fa-5x" style=" color: #cccccc;"></i><br/>
@@ -55,7 +55,7 @@ $this->breadcrumbs = array(
                     </div>
                     <div id="load_images_product"></div>
                 </div>
-                <div class="col-md-9 col-lg-9" style=" border-left:#cccccc solid 1px;">
+                <div class="col-md-9 col-lg-9" id="p-right">
                     <label for="">รหัสสินค้า</label>
                     <input type="text" id="product_id" name="product_id" class="form-control" value="<?php echo $product_id; ?>" readonly style="width:40%;"/>
 
@@ -108,8 +108,8 @@ $this->breadcrumbs = array(
                 <div id="load_images"></div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" onclick="GetvalImg()">Save changes</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                <button type="button" class="btn btn-primary" onclick="GetvalImg()">เลือกรูปภาพ</button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -134,6 +134,7 @@ $this->breadcrumbs = array(
     });</script>
 
 <script type="text/javascript">
+    checkheight();
     //loadimagesProduct();
     function GetImages() {
         load_data();
@@ -185,6 +186,7 @@ $this->breadcrumbs = array(
         var data = {product_id: productID};
         $.post(url, data, function (datas) {
             $("#load_images_product").html(datas);
+            checkheight();
         });
     }
 
@@ -199,6 +201,19 @@ $this->breadcrumbs = array(
                 load_data();
                 loadimagesProduct();
             });
+        }
+    }
+    
+    function checkheight() {
+        var p_left = $("#p-left").height();
+        var p_right = $("#p-right").height();
+        //alert(p_left + " - " + p_right);
+        if(p_left > p_right){
+            $("#p-right").removeClass("p-right");
+            $("#p-left").addClass("p-left");
+        } else {
+            $("#p-left").removeClass("p-left");
+            $("#p-right").addClass("p-right");
         }
     }
 </script>
