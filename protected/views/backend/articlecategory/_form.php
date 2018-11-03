@@ -20,19 +20,25 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<div class="col-md-8 col-lg-8">
 		<?php echo $form->labelEx($model,'category'); ?>
-		<?php echo $form->textField($model,'category',array('size'=>60,'maxlength'=>100)); ?>
+		<?php echo $form->textField($model,'category',array('size'=>60,'maxlength'=>100,'class' => 'form-control')); ?>
 		<?php echo $form->error($model,'category'); ?>
+		</div>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'active'); ?>
-		<?php echo $form->textField($model,'active'); ?>
+		<div class="col-md-4 col-lg-4">
+		<?php echo $form->labelEx($model,'active'); ?><br/>
+		<?php echo $form->radioButtonList($model,'active',array("1" => "Yes","0" => "No")); ?>
 		<?php echo $form->error($model,'active'); ?>
+		</div>
 	</div>
-
-	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+	<hr/>
+	<div class="row" style="margin-bottom:10px;">
+		<div class="col-md-4 col-lg-4">
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save',array('class' => 'btn btn-default')); ?>
+		</div>
 	</div>
 
 <?php $this->endWidget(); ?>

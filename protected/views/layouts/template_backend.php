@@ -270,15 +270,18 @@
                 <div class="panel panel-default side4" id="panel-head">
                     <div class="panel-heading" id="panel">
                         <img src="<?= Yii::app()->baseUrl; ?>/images/blog-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px; width: 32px;">
-                        บทความ
+                        บทความ / event
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group" id="side4">
+                        <a href="<?php echo Yii::app()->createUrl('backend/articlecategory/admin') ?>" class="list-group-item">
+                            <i class="fa fa-folder"></i> Category
+                        </a>
                         <a href="<?php echo Yii::app()->createUrl('backend/article/create') ?>" class="list-group-item">
-                            <i class="fa fa-plus"></i> สร้างบทความ
+                            <i class="fa fa-plus"></i> สร้างบทความ / event
                         </a>
                         <a href="<?php echo Yii::app()->createUrl('backend/article') ?>" class="list-group-item">
-                            <i class="fa fa-newspaper-o"></i> บทความทั้งหมด
+                            <i class="fa fa-newspaper-o"></i> บทความ / event ทั้งหมด
                         </a>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ class SiteController extends Controller {
     /**
      * Declares class-based actions.
      */
-    public $layout = "webapp";
+    public $layout = "kstudio";
 
     public function actions() {
         return array(
@@ -85,13 +85,12 @@ class SiteController extends Controller {
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login())
-                //$this->redirect(Yii::app()->user->returnUrl);
+            //$this->redirect(Yii::app()->user->returnUrl);
                 $this->redirect(array('backend/backend'));
         } else {
             $this->renderPartial('login', array('model' => $model));
         }
         // display the login form
-        
     }
 
     /**
@@ -111,7 +110,7 @@ class SiteController extends Controller {
         $data['about'] = $rs;
         $this->render("//main/about", $data);
     }
-    
+
     public function actionHowtoorder() {
         $rs = Yii::app()->db->createCommand()
                 ->select('*')
@@ -120,6 +119,10 @@ class SiteController extends Controller {
 
         $data['howtoorder'] = $rs;
         $this->render("//main/howtoorder", $data);
+    }
+
+    public function actionGetmenu() {
+        $this->renderPartial('//menu/menu');
     }
 
 }

@@ -9,7 +9,7 @@ $(function() {
         itemSelector: '.item'
     });
 
-    $grid.isotope({ filter: '.Fruit' });//SetDefault Active
+    $grid.isotope({ filter: '.Newproduct' });//SetDefault Active
     var iso = $grid.data('isotope');
 
     $('.js-product-filter-home-2').on('click', '.filter-title', function() {

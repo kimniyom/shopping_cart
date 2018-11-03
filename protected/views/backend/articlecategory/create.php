@@ -3,7 +3,7 @@
 /* @var $model Articlecategory */
 
 $this->breadcrumbs=array(
-	'Articlecategories'=>array('index'),
+	'บทความ / event'=>array('admin'),
 	'Create',
 );
 
@@ -13,6 +13,6 @@ $this->menu=array(
 );
 ?>
 
-<h1>Create Articlecategory</h1>
+<h4>Create Category</h4>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -9,7 +9,7 @@
         </title>
         <meta charset="utf-8" />
         <meta name="description" content="" />
-        <meta name="keywords" content="" />
+        <meta name="keywords" content="kstudio,KSTUDIO,kstudiothai,เครื่องเสียง,หูฟัง,ลำโพง" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
@@ -26,138 +26,39 @@
         <?php
         $productModel = new Product();
         $lastProduct = $productModel->_get_last_product();
+        $bestProduct = $productModel->_get_best_product();
+        $saleProduct = $productModel->_get_sale_products();
+
+        $articleModel = new Article();
+        $NewsBlog = $articleModel->Get_article_limit(3);
+        $articleCategory = Articlecategory::model()->findAll("active=:active", array(":active" => "1"));
+
+
+        $ContactModel = new Contact();
+        $Contact = $ContactModel->gat_contact();
+        $logoMini = "<img src='" . Yii::app()->baseUrl . "/images/logo.png' class='img-responsive' alt='Image'>";
+        $iconsloader = "<img src='" . Yii::app()->baseUrl . "/images/icons/spin.svg' />";
         ?>
     </head>
     <body class="animsition animsition">
+        <input value="<?php echo $logoMini ?>" id="logomini" type="hidden" />
         <?php
         $Categorys = Category::model()->findAll();
         ?>
         <div class="home-1" id="page">
-            <nav id="menu">
-                <ul>
-                    <li>
-                        <a href="index.html">Home</a>
-                        <ul>
-                            <li>
-                                <a href="index.html">Home Version 1</a>
-                            </li>
-                            <li>
-                                <a href="index-02.html">Home Version 2</a>
-                            </li>
-                            <li>
-                                <a href="index-03.html">Home Version 3</a>
-                            </li>
-                            <li>
-                                <a href="index-04.html">Home Version 4</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a class="active" href="shop.html">Shop</a>
-                        <ul>
-                            <li>
-                                <a href="shop.html">Shop List</a>
-                            </li>
-
-                            <li>
-                                <a href="shop-detail.html">Shop Detail</a>
-                                <ul>
-                                    <li>
-                                        <a href="shop-detail.html">Shop Detail</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-detail-02.html">Shop Detail Version 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="shop-detail-03.html">Shop Detail Version 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="blog.html">Blog</a>
-                        <ul>
-                            <li>
-                                <a href="blog.html">Blog List Version 1</a>
-                            </li>
-                            <li>
-                                <a href="blog-02.html">Blog List Version 2</a>
-                            </li>
-                            <li>
-                                <a href="blog-03.html">Blog List Version 3</a>
-                            </li>
-                            <li>
-                                <a href="blog-04.html">Blog List Version 4</a>
-                            </li>
-                            <li>
-                                <a href="blog-detail.html">Blog Detail</a>
-                                <ul>
-                                    <li>
-                                        <a href="blog-detail.html">Blog Detail</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-detail-02.html">Blog Detail Version 2</a>
-                                    </li>
-                                    <li>
-                                        <a href="blog-detail-03.html">Blog Detail Version 3</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                    <li>
-                        <a href="faq.html">Feature</a>
-                        <ul>
-                            <li>
-                                <a href="404.html">404 Page</a>
-                            </li>
-                            <li>
-                                <a href="faq.html">Faq</a>
-                            </li>
-                            <li>
-                                <a href="login.html">Login</a>
-                            </li>
-                            <li>
-                                <a href="register.html">Register</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <header class="header-style-1" style="background:#000000;"><!-- /images/bgheader.png-->
+            <!-- Menu Nav -->
+            <div id="kkmenusidebar"></div>
+            <header class="header-style-1" style="background:#ffffff;"><!-- /images/bgheader.png-->
                 <div class="container" id="menuBar">
                     <div class="row">
                         <div class="header-1-inner">
                             <a class="brand-logo animsition-link" href="index.html">
-
-                                <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/themes/kstudio/images/logoC.png" alt="" />
-
+                                <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>" alt="" style="max-height: 52px;"/>
                             </a>
                             <nav>
                                 <ul class="menu hidden-xs">
                                     <li>
                                         <a href="index.html">Home</a>
-                                    </li>
-                                    <li>
-                                        <a href="faq.html">Feature</a>
-                                        <ul style="width:500px; padding:10px; left:0px; position: absolute !important;">
-                                            <li>
-                                            <center>
-                                                <div class="row">
-                                                    <div class="col-md-4 col-lg-4">category1</div>
-                                                    <div class="col-md-4 col-lg-4">category2</div>
-                                                    <div class="col-md-4 col-lg-4">category3</div>
-                                                </div>
-                                                </li>
-                                        </ul>
                                     </li>
                                     <li>
                                         <a class="active" href="shop.html" >Shop <i class="fa fa-angle-down"></i></a>
@@ -177,7 +78,8 @@
                                                         <ul id="ulmenu">
                                                             <?php
                                                             foreach ($Types as $rsTypes):
-                                                                $Brands = Brand::model()->findAll("id=:id", array(":id" => $rsTypes['id']));
+                                                                $sqlGetBrand = "select b.id,b.brandname from product p inner join brand b ON p.brand = b.id where p.type_id = '" . $rsTypes['type_id'] . "' group by brand";
+                                                                $Brands = Yii::app()->db->createCommand($sqlGetBrand)->queryAll();
                                                                 if (count($Brands) <= 0) {
                                                                     ?>
                                                                     <li id="lisubmenu">
@@ -203,50 +105,36 @@
                                     </li>
 
                                     <li>
-                                        <a href="contact.html">BRAND <i class="fa fa-angle-down"></i></a>
-                                        <?php $BrandsMenu = Brand::model()->findAll() ?>
+                                        <a href="">BRAND <i class="fa fa-angle-down"></i></a>
+
                                         <ul id="ulmenu">
+                                            <?php $BrandsMenu = Brand::model()->findAll() ?>
                                             <?php foreach ($BrandsMenu as $rsBrandMenu): ?>
                                                 <li id="lisubmenu"><a href=""><?php echo $rsBrandMenu['brandname'] ?></a></li>
                                             <?php endforeach; ?>
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="blog.html">Blog <i class="fa fa-angle-down"></i></a>
-                                        <ul>
-                                            <li>
-                                                <a href="blog.html">Blog List Version 1</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-02.html">Blog List Version 2</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-03.html">Blog List Version 3</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-04.html">Blog List Version 4</a>
-                                            </li>
-                                            <li>
-                                                <a href="blog-detail.html">Blog Detail </a>
-                                                <ul>
-                                                    <li>
-                                                        <a href="blog-detail.html">Blog Detail</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-detail-02.html">Blog Detail Version 2</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="blog-detail-03.html">Blog Detail Version 3</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
+                                        <a href="">BLOG <i class="fa fa-angle-down"></i></a>
+                                        <ul id="ulmenu">
+                                            <?php foreach ($articleCategory as $articleCategorys): ?>
+                                                <li id="lisubmenu">
+                                                    <a href="blog.html"><?php echo $articleCategorys['category'] ?></a>
+                                                </li>
+                                            <?php endforeach; ?>
                                         </ul>
                                     </li>
-
+                                    <li>
+                                        <a href="">Contact</a>
+                                    </li>
+                                    <li>
+                                        <a href="">About</a>
+                                    </li>
 
                                 </ul>
                             </nav>
                             <aside class="right">
+                                <!--
                                 <div class="widget widget-control-header">
                                     <div class="select-custom-wrapper">
                                         <select class="no-border">
@@ -257,6 +145,7 @@
                                         </select>
                                     </div>
                                 </div>
+                                -->
                                 <div class="widget widget-control-header widget-search-header">
                                     <a class="control btn-open-search-form js-open-search-form-header" href="#">
                                         <span class="lnr lnr-magnifier"></span>
@@ -273,12 +162,14 @@
                                         </form>
                                     </div>
                                 </div>
+                                <!--
                                 <div class="widget widget-control-header widget-shop-cart js-widget-shop-cart">
                                     <a class="control" href="shop-cart.html">
                                         <p class="counter">0</p>
                                         <span class="lnr lnr-cart"></span>
                                     </a>
                                 </div>
+                                -->
                                 <div class="widget widget-control-header hidden-lg hidden-md hidden-sm">
                                     <a class="navbar-toggle js-offcanvas-has-events" type="button" href="#menu">
                                         <span class="icon-bar"></span>
@@ -291,348 +182,45 @@
                     </div>
                 </div>
             </header>
-            <div class="banner banner-image-fit-screen">
-                <div class="rev_slider slider-home-1" id="slider_1" style="display:none">
-                    <ul>
-                        <li>
-                            <img class="rev-slidebg" src="<?php echo Yii::app()->baseUrl; ?>/themes/kstudio/images/slider/kbanner3.jpg" alt="demo" data-bgposition="center center">
-                            <div class="tp-caption" data-x="center" data-y="center" data-voffset="['-100','-100','-140','-140']" data-transform_in="y:-80px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:-80px;opacity:0;s:300;" data-start="1000">
-                                <h2 style="color:#ffffff;">Fresh Orchid Food</h2>
-                            </div>
-                            <div class="tp-caption" data-x="center" data-y="center" data-voffset="['20','20','40','40']" data-width="['650','550','480','320']" data-whitespace="normal" data-transform_in="y:80px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:80px;opacity:0;s:300;"
-                                 data-start="1400">
-                                <h4 style="color:#ffffff;">Nunc suscipit elit ligula, ut porttitor justo rutrum eget. Proin et diam fringilla, elementum nisi volutpat, eleifend eros. Nullam venenatis nunc nisl, elementum euismod dui imperdiet id.</h4>
-                            </div>
-                            <div class="tp-caption" data-x="center" data-y="center" data-voffset="['120','120','200','200']" data-transform_in="y:100px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:200px;opacity:0;s:300;" data-start="1600">
-                                <a class="btn btn-brand pill" href="product-list.html" style="color:#ffffff;">SHOP NOW</a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <section class="boxed-sm">
-                <div class="container">
-                    <div class="row">
-                        <div class="product-category-grid-style-1">
-                            <div class="row">
-                                <?php foreach ($Categorys as $Category): ?>
-                                    <div class="col-sm-4">
-                                        <a href="#">
-                                            <figure class="product-category-item">
-                                                <div class="thumbnail">
-                                                    <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/category/<?php echo $Category['icons'] ?>" alt="" style="width:400px;" class="img img-responsive"/>
-                                                </div>
-                                                <figcaption>
-                                                    <h3><?php echo $Category['categoryname'] ?></h3>
-                                                </figcaption>
-                                            </figure>
-                                        </a>
-                                    </div>
-                                <?php endforeach; ?>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="boxed-sm">
-                <div class="container">
-
-                    <div class="heading-wrapper text-center">
-                        <h3 class="heading-style-2">Our Products</h3>
-                    </div>
-                    <div class="product-filter-home-2-wraper">
-                        <div class="js-product-filter-home-2 product-filter-home-2 text-center">
-                                <div class="product-filter-home-2-inner">
-                                    <h4 class="filter-title is-checked" data-filter=".Fruit">New Products</h4>
-                                    <h4 class="filter-title" data-filter=".Vegetable">Best Sellers</h4>
-                                    <h4 class="filter-title" data-filter=".Fruit">Sales Products</h4>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="row js-product-masonry-filter-layout-2 product-masonry-filter-layout-2">
-                        <div class="grid-sizer"></div>
-                        <figure class="item Vegetable">
-                            <div class="product product-style-3">
-                                <div class="img-wrapper">
-                                    <a href="product-detail.html">
-                                        <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/themes/kstudio/images/product/010.jpg" alt="product thumbnail">
-                                    </a>
-                                    <div class="product-control-wrapper bottom-right">
-                                        <div class="wrapper-control-item">
-                                            <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                                <span class="lnr lnr-eye"></span>
-                                            </a>
-                                        </div>
-                                        <div class="wrapper-control-item item-wish-list">
-                                            <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                                <span class="lnr lnr-heart"></span>
-                                            </a>
-                                        </div>
-                                        <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                            <a class="animate-icon-cart" href="#">
-                                                <span class="lnr lnr-cart"></span>
-                                            </a>
-                                            <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                            <path stroke-dasharray="19.79 19.79" fill="none" , stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption class="desc">
-                                    <h3>
-                                        <a class="product-name" href="product-detail.html">Tomato</a>
-                                    </h3>
-                                    <span class="price">$ 2.75</span>
-                                </figcaption>
-                            </div>
-                        </figure>
-                        <figure class="item Fruit">
-                            <div class="product product-style-3">
-                                <div class="img-wrapper">
-                                    <a href="product-detail.html">
-                                        <img class="img-responsive" src="images/product/06.jpg" alt="product thumbnail">
-                                    </a>
-                                    <div class="product-control-wrapper bottom-right">
-                                        <div class="wrapper-control-item">
-                                            <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                                <span class="lnr lnr-eye"></span>
-                                            </a>
-                                        </div>
-                                        <div class="wrapper-control-item item-wish-list">
-                                            <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                                <span class="lnr lnr-heart"></span>
-                                            </a>
-                                        </div>
-                                        <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                            <a class="animate-icon-cart" href="#">
-                                                <span class="lnr lnr-cart"></span>
-                                            </a>
-                                            <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                            <path stroke-dasharray="19.79 19.79" fill="none" , stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                                <figcaption class="desc">
-                                    <h3>
-                                        <a class="product-name" href="product-detail.html">Apple</a>
-                                    </h3>
-                                    <span class="price">$ 4.75</span>
-                                </figcaption>
-                            </div>
-                        </figure>
-                    </div>
-
-                    <div class="heading-wrapper text-center">
-                        <h3 class="heading">Our Products</h3>
-                    </div>
-                    <div class="row">
-                        <div class="row js-product-masonry-layout-1 product-masonry-layout-1">
-                            <div class="grid-sizer"></div>
-                            <?php
-                            foreach ($lastProduct as $rsProduct):
-                                $img_title = $productModel->firstpictures($rsProduct['product_id']);
-                                if (!empty($img_title)) {
-                                    $img = "uploads/product/thumbnail/480-" . $img_title;
-                                } else {
-                                    $img = "images/No_image_available.jpg";
-                                }
-                                ?>
-                                <figure class="item">
-                                    <div class="product product-style-2">
-                                        <div class="img-wrapper">
-                                            <a href="product-detail.html">
-                                                <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img ?>" alt="product thumbnail" />
-                                            </a>
-                                            <div class="product-control-wrapper bottom-right">
-                                                <div class="wrapper-control-item">
-                                                    <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                                        <span class="lnr lnr-eye"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="wrapper-control-item item-wish-list">
-                                                    <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                                        <span class="lnr lnr-heart"></span>
-                                                    </a>
-                                                </div>
-                                                <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                                    <a class="animate-icon-cart" href="#">
-                                                        <span class="lnr lnr-cart"></span>
-                                                    </a>
-                                                    <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                                    <path stroke-dasharray="19.79 19.79" fill="none" ,="," stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                                    </svg>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                    <figcaption class="desc">
-                                        <h3>
-                                            <a class="product-name" href="product-detail.html"><?php echo $rsProduct['product_name'] ?></a>
-                                        </h3>
-                                        <span class="price"><?php echo $rsProduct['product_price'] ?></span>
-                                    </figcaption>
-                                </figure>
-                            <?php endforeach; ?>
-                            <!--
-                                          <figure class="item item-size-2">
-                                            <div class="product product-style-2">
-                                              <div class="img-wrapper">
-                                                <a href="product-detail.html">
-                                                  <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl;    ?>/themes/kstudio/images/product/isotope-03.jpg" alt="product thumbnail" />
-                                                </a>
-                                                <div class="product-control-wrapper bottom-right">
-                                                  <div class="wrapper-control-item">
-                                                    <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                                      <span class="lnr lnr-eye"></span>
-                                                    </a>
-                                                  </div>
-                                                  <div class="wrapper-control-item item-wish-list">
-                                                    <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                                      <span class="lnr lnr-heart"></span>
-                                                    </a>
-                                                  </div>
-                                                  <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                                    <a class="animate-icon-cart" href="#">
-                                                      <span class="lnr lnr-cart"></span>
-                                                    </a>
-                                                    <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                                      <path stroke-dasharray="19.79 19.79" fill="none" ,="," stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                                    </svg>
-                                                  </div>
-                                                </div>
-                                                <figcaption class="desc">
-                                                  <h3>
-                                                    <a class="product-name" href="product-detail.html">Bean</a>
-                                                  </h3>
-                                                  <span class="price">$3.20</span>
-                                                </figcaption>
-                                              </div>
-                                            </div>
-                                          </figure>
-                            -->
 
 
 
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <div class="call-to-action-style-1">
-                <img class="rellax bg-overlay" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/call-to-action/1.jpg" alt="" />
-                <div class="overlay-call-to-action"></div>
-                <div class="container">
-                    <div class="row">
-                        <p class="h3">Orchid Food</p>
-                        <h2>Healthy - Fresh - Delicious.</h2>
-                        <a class="btn btn-brand pill" href="#">VIEW MORE </a>
-                    </div>
-                </div>
-            </div>
-            <section class="boxed-sm">
-                <div class="container">
-                    <div class="heading-wrapper text-center">
-                        <h3 class="heading">The Blog</h3>
-                    </div>
-                    <div class="row">
-                        <div class="row blog-h reverse flex one-row multi-row-sm">
-                            <div class="col-md-4">
-                                <div class="post">
-                                    <div class="img-wrapper js-set-bg-blog-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/blog/01.jpg" alt="Image" />
-                                        </a>
-                                    </div>
-                                    <div class="desc">
-                                        <h4>
-                                            <a href="blog-detail.html">Beauty With Orchid Products</a>
-                                        </h4>
-                                        <p class="meta">
-                                            <span class="time">Feberuary 05, 2017</span>
-                                            <span class="comment">2</span>
-                                        </p>
-                                        <p>Etiam at varius diam, id blandit erat. Suspendisse eget volutpat risus, id venenatis justo. Fusce elementum ligula elit. Duis ultricies ultrices nibh, a tincidunt risus pretium eleifend. </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="post">
-                                    <div class="img-wrapper js-set-bg-blog-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/blog/02.jpg" alt="Image" />
-                                        </a>
-                                    </div>
-                                    <div class="desc">
-                                        <h4>
-                                            <a href="blog-detail.html">Green Vegetables Are Good For Healthy</a>
-                                        </h4>
-                                        <p class="meta">
-                                            <span class="time">January 30, 2017</span>
-                                            <span class="comment">0</span>
-                                        </p>
-                                        <p>Vivamus consectetur nulla mattis lorem ultricies, ac congue tellus consectetur. Vivamus sed purus volutpat, varius mauris id, tempus augue. Nuefd ans congue liquam.</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="post">
-                                    <div class="img-wrapper js-set-bg-blog-thumb">
-                                        <a href="blog-detail.html">
-                                            <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/blog/03.jpg" alt="Image" />
-                                        </a>
-                                    </div>
-                                    <div class="desc">
-                                        <h4>
-                                            <a href="blog-detail.html">Refreshing Green Smoothie Recipe</a>
-                                        </h4>
-                                        <p class="meta">
-                                            <span class="time">January 20, 2017</span>
-                                            <span class="comment">4</span>
-                                        </p>
-                                        <p>Praesent efficitur felis eu luctus vestibulum. In hac habitasse platea dictumst. Nam egestas eu nisl ac pellentesque. Duis congue suscipit lorem vel congue. </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <?php
+            $this->widget('zii.widgets.CBreadcrumbs', array(
+                'homeLink' => '<i class="fa fa-home"></i> ' . CHtml::link('หน้าแรก', Yii::app()->createUrl('frontend/main')),
+                'links' => $this->breadcrumbs,
+            ));
+            ?><!-- breadcrumbs -->
+
+
+
+            <?php
+            echo $content;
+            ?>
+
         </div>
-        <div class="call-to-action-style-2">
-            <div class="wrapper-carousel-background">
-                <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/call-to-action/1-1.jpg" alt="" />
-                <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/call-to-action/1-2.jpg" alt="" />
-                <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/call-to-action/1-3.jpg" alt="" />
-                <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/call-to-action/1-4.jpg" alt="" />
-            </div>
-            <div class="overlay-call-to-action"></div>
-            <a class="btn btn-brand pill icon-left" href="#">
-                <i class="fa fa-instagram"></i>FOWLLOW US</a>
-        </div>
+
         <footer class="footer-style-1">
             <div class="container">
                 <div class="row">
                     <div class="footer-style-1-inner">
                         <div class="widget-footer widget-text col-first col-small">
                             <a href="#">
-                                <img class="logo-footer" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/logo.png" alt="Logo Orchid" />
+                                <img class="logo-footer" src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>" alt="kstudio" />
                             </a>
                             <div class="widget-link">
                                 <ul>
                                     <li>
                                         <span class="lnr lnr-map-marker icon"></span>
-                                        <span>379 5th Ave New York, NYC 10018</span>
+                                        <span><?php echo $Contact['address'] ?></span>
                                     </li>
                                     <li>
                                         <span class="lnr lnr-phone-handset icon"></span>
-                                        <a href="tel:0123456789">(+1) 96 716 6879</a>
+                                        <?php echo $Contact['tel'] ?>
                                     </li>
                                     <li>
                                         <span class="lnr lnr-envelope icon"></span>
-                                        <a href="mailto: contact@site.com">contact@site.com </a>
+                                        <?php echo $Contact['email'] ?>
                                     </li>
                                 </ul>
                             </div>
@@ -641,56 +229,48 @@
                             <div class="list-link">
                                 <h4 class="h4 heading">SHOP</h4>
                                 <ul>
-                                    <li>
-                                        <a href="#">Food</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Farm</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Health</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Orchid</a>
-                                    </li>
+                                    <?php foreach ($Categorys as $Category): ?>
+                                        <li>
+                                            <a href=""><?php echo $Category['categoryname'] ?></a>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                             <div class="list-link">
-                                <h4 class="h4 heading">SUPPORT</h4>
+                                <h4 class="h4 heading">BRAND</h4>
                                 <ul>
-                                    <li>
-                                        <a href="#">Contact Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">FAQ</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Privacy Policy</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Blog</a>
-                                    </li>
+                                    <?php foreach ($BrandsMenu as $rsBrandMenu): ?>
+                                        <li>
+                                            <a href="#"><?php echo $rsBrandMenu['brandname'] ?></a>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
+
                             <div class="list-link">
-                                <h4 class="h4 heading">MY ACCOUNT</h4>
+                                <h4 class="h4 heading">BLOG</h4>
+                                <div id="fb-root"></div>
                                 <ul>
-                                    <li>
-                                        <a href="#">Sign In</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">My Cart</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">My Wishlist</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Check Out</a>
-                                    </li>
+                                    <?php foreach ($articleCategory as $articleCategorys): ?>
+                                        <li id="lisubmenu">
+                                            <a href=""><?php echo $articleCategorys['category'] ?></a>
+                                        </li>
+                                    <?php endforeach; ?>
                                 </ul>
                             </div>
                         </div>
                         <div class="widget-footer widget-newsletter-footer col-last col-small">
+                            <script>(function (d, s, id) {
+                                    var js, fjs = d.getElementsByTagName(s)[0];
+                                    if (d.getElementById(id))
+                                        return;
+                                    js = d.createElement(s);
+                                    js.id = id;
+                                    js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v3.2&appId=1637139006560611&autoLogAppEvents=1';
+                                    fjs.parentNode.insertBefore(js, fjs);
+                                }(document, 'script', 'facebook-jssdk'));</script>
+                            <div class="fb-page" data-href="https://www.facebook.com/kstudiothai/" data-tabs="timeline" data-height="100" data-small-header="false" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/kstudiothai/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/kstudiothai/">Kstudio</a></blockquote></div>
+                            <!--
                             <h4 class="h4 heading">NEWSLETTER</h4>
                             <p>Subscribe now to get daily updates</p>
                             <form class="Orchid-form form-inline btn-add-on circle border">
@@ -701,6 +281,7 @@
                                     </button>
                                 </div>
                             </form>
+                            -->
                         </div>
                     </div>
                 </div>
@@ -709,36 +290,39 @@
                 <div class="container">
                     <div class="row">
                         <div class="copy-right-inner">
-                            <p>Copyright © 2017 Designed by Upperthemes. All rights reserved.</p>
+                            <p>Copyright © 2018 Designed by Kimniyom.</p>
+                            <!--
                             <div class="widget widget-footer widget-footer-creadit-card">
                                 <ul class="list-unstyle">
                                     <li>
                                         <a href="#">
-                                            <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;               ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;               ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;               ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;               ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
                                         </a>
                                     </li>
                                 </ul>
                             </div>
+                            -->
                         </div>
                     </div>
                 </div>
             </div>
         </footer>
+        <!--
         <div class="modal fade" id="quick-view-product" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-lg modal-quickview woocommerce" role="document">
                 <div class="modal-content">
@@ -753,36 +337,36 @@
                                 <div class="woocommerce-product-gallery">
                                     <div class="main-carousel-product-quick-view">
                                         <div class="item">
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/01.jpg" alt="product thumbnail" />
+                                            <img class="img-responsive" src="<?//= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/01.jpg" alt="product thumbnail" />
                                         </div>
                                         <div class="item">
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/02.jpg" alt="product thumbnail" />
+                                            <img class="img-responsive" src="<?//= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/02.jpg" alt="product thumbnail" />
                                         </div>
                                         <div class="item">
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/03.jpg" alt="product thumbnail" />
+                                            <img class="img-responsive" src="<?//= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/03.jpg" alt="product thumbnail" />
                                         </div>
                                         <div class="item">
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/04.jpg" alt="product thumbnail" />
+                                            <img class="img-responsive" src="<?//= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/04.jpg" alt="product thumbnail" />
                                         </div>
                                         <div class="item">
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/05.jpg" alt="product thumbnail" />
+                                            <img class="img-responsive" src="<?//= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/05.jpg" alt="product thumbnail" />
                                         </div>
                                     </div>
                                     <div class="thumbnail-carousel-product-quickview">
                                         <div class="item">
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/01.jpg" alt="product thumbnail" />
+                                            <img class="img-responsive" src="<?//= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/01.jpg" alt="product thumbnail" />
                                         </div>
                                         <div class="item">
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/02.jpg" alt="product thumbnail" />
+                                            <img class="img-responsive" src="<?//= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/02.jpg" alt="product thumbnail" />
                                         </div>
                                         <div class="item">
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/03.jpg" alt="product thumbnail" />
+                                            <img class="img-responsive" src="<?//= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/03.jpg" alt="product thumbnail" />
                                         </div>
                                         <div class="item">
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/04.jpg" alt="product thumbnail" />
+                                            <img class="img-responsive" src="<?//= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/04.jpg" alt="product thumbnail" />
                                         </div>
                                         <div class="item">
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/05.jpg" alt="product thumbnail" />
+                                            <img class="img-responsive" src="<?//= Yii::app()->baseUrl; ?>/themes/kstudio/images/product/05.jpg" alt="product thumbnail" />
                                         </div>
                                     </div>
                                 </div>
@@ -867,6 +451,7 @@
                 </div>
             </div>
         </div>
+        -->
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/library/jquery.min.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/library/bootstrap.min.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/function-check-viewport.js"></script>
@@ -905,6 +490,8 @@
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-isotope-product-home-1.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-isotope-product-home-2.js"></script>
 
+        <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-carousel.js"></script>
+
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-carousel-thumbnail.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-carousel-product-quickview.js"></script>
         <!-- Demo Only-->
@@ -914,6 +501,7 @@
         </script>
         <script tyle="text/javascript">
             setScreen();
+            getMenu();
             function setScreen() {
                 var w = window.innerWidth;
                 if (w >= 768) {
@@ -922,6 +510,13 @@
                     $("#slider_1").hide();
                     $("#slider_1").css({"height": "20px"});
                 }
+            }
+
+            function getMenu() {
+                var url = "<?php echo Yii::app()->createUrl('site/getmenu') ?>";
+                $.get(url, function (data) {
+                    $("#kkmenusidebar").html(data);
+                });
             }
         </script>
     </body>

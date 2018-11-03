@@ -59,12 +59,39 @@ class Product {
         $sql = "SELECT *
                 FROM product
                 WHERE status != '1' AND status != '1' AND delete_flag != '1'
-                ORDER BY id DESC LIMIT 9";
+                ORDER BY id DESC LIMIT 8";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
+    function _get_best_product() {
+        $sql = "SELECT *
+                FROM product
+                WHERE status != '1' AND status != '1' AND delete_flag != '1'
+                ORDER BY id ASC LIMIT 8";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
+    function _get_sale_products() {
+        $sql = "SELECT *
+                FROM product
+                WHERE status != '1' AND status != '1' AND delete_flag != '1'
+                ORDER BY RAND() LIMIT 8";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
 
     function _get_detail_product($product_id = '') {
-        $sql = "SELECT p.product_id,product_name,product_num,product_detail,product_price,d_update,p.status,t.type_id,type_name,c.categoryname,c.brandname
+        $sql = "SELECT p.product_id,
+        product_name,
+        product_num,
+        product_detail,
+        product_price,
+        d_update,
+        p.status,
+        t.type_id,
+        type_name,
+        c.categoryname,
+        b.brandname,
+        p.category
         FROM product p INNER JOIN product_type t ON p.type_id = t.type_id
         INNER JOIN category c ON p.category = c.id
         INNER JOIN brand b ON p.brand = b.id
@@ -293,6 +320,13 @@ class Product {
         $sqlCountCat = "select COUNT(*) AS total from product where brand = '$id' ";
         $rsContCat = Yii::app()->db->createCommand($sqlCountCat)->queryRow();
         return $rsContCat['total'];
+    }
+
+    function getProductNear($category){
+        $sql = "SELECT * FROM product p 
+                WHERE category = '$category' 
+                ORDER BY RAND() LIMIT 8";
+        return Yii::app()->db->createCommand($sql)->queryAll();
     }
 
 }

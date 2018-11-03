@@ -21,6 +21,30 @@
             <file>file:/C:/xampp/htdocs/shopping_cart/themes/webapp/css/system.css</file>
             <file>file:/C:/xampp/htdocs/shopping_cart/protected/views/main/dialogbox.php</file>
         </group>
-        <group name="yii"/>
+        <group name="yii">
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/banner/banner.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/template_backend.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/product/views.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/themes/kstudio/js/config-carousel.js</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/themes/kstudio/js/config-mm-menu.js</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/webapp.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/themes/kstudio/js/global.js</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/product/detail_product.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/banner/index.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/models/Banner.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/themes/kstudio/shop-detail-03.html</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/product/detail_product.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/themes/kstudio/js/config-pageload.js</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ImagesController.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactController.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/menu/menu.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/contact/create.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/config/main.php</file>
+        </group>
     </open-files>
 </project-private>

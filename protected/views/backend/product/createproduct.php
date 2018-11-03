@@ -23,7 +23,7 @@
             'fileSizeLimit': '1MB', //อัพโหลดได้ครั้งละไม่เกิน 1024kb
             //'width': '128',
             //'height': '132',
-            'fileTypeExts': '*.jpg;', //กำหนดชนิดของไฟล์ที่สามารถอัพโหลดได้
+            'fileTypeExts': '*.jpg; *.JPG; *.JPEG; *.jpeg;', //กำหนดชนิดของไฟล์ที่สามารถอัพโหลดได้
             'multi': true, //เปิดใช้งานการอัพโหลดแบบหลายไฟล์ในครั้งเดียว
             'queueSizeLimit': 5, //อัพโหลดได้ครั้งละ 5 ไฟล์
             'onUploadSuccess': function (file, data, response) {

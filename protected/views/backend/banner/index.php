@@ -1,23 +1,35 @@
+<?php
+$Config = new Configweb_model();
+?>
 <script src="<?= Yii::app()->baseUrl ?>/assets/uploadify/jquery.uploadify.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="<?= Yii::app()->baseUrl ?>/assets/uploadify/uploadify.css">
 <script type="text/javascript">
     $(document).ready(function () {
         $('#Filedata').uploadify({
             'buttonText': 'กรุณาเลือกรูปภาพ ...',
-            'auto': true, //เปิดใช้การอัพโหลดแบบอัติโนมัติ
+            'auto': false, //เปิดใช้การอัพโหลดแบบอัติโนมัติ
             'swf': '<?= Yii::app()->baseUrl ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
-            'uploader': "<?= Yii::app()->createUrl('backend/banner/saveupload') ?>",
-            'fileSizeLimit': '2MB', //อัพโหลดได้ครั้งละไม่เกิน 1024kb
-            'width': '350',
-            'height': '40',
-            'fileTypeExts': '*.jpg; *.png', //กำหนดชนิดของไฟล์ที่สามารถอัพโหลดได้
-            'multi': true, //เปิดใช้งานการอัพโหลดแบบหลายไฟล์ในครั้งเดียว
+            'uploader': "<?= Yii::app()->createUrl('backend/banner/uploadify', array("id" => $id)) ?>",
+            'fileSizeLimit': '<?php echo $Config->SizeFileUpload() ?>', //อัพโหลดได้ครั้งละไม่เกิน 2MB
+            //'width': '350',
+            //'height': '40',
+            'fileTypeExts': '*.jpg; *.png; *.JPG; *JPEG;', //กำหนดชนิดของไฟล์ที่สามารถอัพโหลดได้
+            'multi': false, //เปิดใช้งานการอัพโหลดแบบหลายไฟล์ในครั้งเดียว
             'queueSizeLimit': 1, //อัพโหลดได้ครั้งละ 5 ไฟล์
+            'onSelect': function (file) {
+                $("#images").val(file.name);
+                //alert('The file ' + file.name + ' was added to the queue.');
+            },
+            'onCancel': function (file) {
+                $("#images").val("");
+            },
             'onUploadSuccess': function (file, data, response) {
                 window.location.reload();
             }
         });
     });
+
+
 </script>
 
 <?php
@@ -33,19 +45,28 @@ $this->breadcrumbs = array(
 </div>
 
 <div class="panel panel-default">
-    <div class="panel-heading">อัพโหลดรูปภาพ</div>
+    <div class="panel-heading"><b>อัพโหลดรูปภาพ</b></div>
     <div class="panel-body">
+        <label>Title</label>
+        <input type="text" class="form-control" id="title"/>
+        <label>Link</label>
+        <input type="text" class="form-control" id="link"/>
+        <label>Detail</label>
+        <textarea id="detail" class="form-control" rows="5"></textarea>
+        <label>Text-Color</label>
+        <input type="color" value="#000000" id="color">
+
         <div class="upload">
-            <ul style=" font-size: 16px; color: #ff3300;">
+            <input type="hidden" id="images"/>
+            <ul style=" font-size: 14px; color: #ff3300;">
                 <li>อัพโหลดได้เฉพาะ .jpg , .png</li>
                 <li>อัพโหลดได้ไม่เกินครั้งละ 2MB</li>
-                <li>อัพโหลดได้ไม่เกินครั้งละ 1 ไฟล์</li>
-                <li>รูปภาพจะแสดงผลได้ดีที่ขนาด 1000 x 300 พิกเซล</li>
+                <li>รูปภาพจะแสดงผลได้ดีที่ขนาด 1900 x 900 พิกเซล</li>
             </ul>
             <form>
                 <div id="queue"></div>
                 <div style="width:350px; float:left;">
-                    <input id="Filedata" name="Filedata" type="file" multiple="true">
+                    <input  name="Filedata" id="Filedata" type="file">
                 </div>
                 <div style="width:300px; float:left;">
                     <!--
@@ -58,6 +79,9 @@ $this->breadcrumbs = array(
             </form>
         </div>
     </div>
+    <div class="panel-footer">
+        <button type="button" class="btn btn-default" onclick="Save()"><i class="fa fa-save"></i> บันทึก</button>
+    </div>
 </div>
 
 <div class="panel panel-default">
@@ -67,29 +91,37 @@ $this->breadcrumbs = array(
             <tr>
                 <th>#</th>
                 <th>BANNER</th>
+                <th></th>
                 <th style="text-align:center;">STATUS</th>
                 <th style="text-align:center;">DELETE</th>
             </tr>
         </thead>
         <tbody>
-            <?php $i=0;foreach($banner as $rs): $i++;?>
-            <tr>
-                <td><?php echo $i; ?></td>
-                <td>
-                    <img src="<?php echo Yii::app()->baseUrl;?>/uploads/banner/<?php echo $rs['banner_images']; ?>" class="img-resize" style="max-width:200px;"/>
-                </td>
-                <td style="text-align:center;">
-                  <center>
-                        <?php if($rs['status'] == '1'){ ?>
-                            <input id="status" name="status" class="styled" type="checkbox" checked="checked"  onclick="set_active('<?php echo $rs['banner_id'] ?>','0');">
-                        <?php } else {?>
-                            <input id="status" name="status" class="styled" type="checkbox" onclick="set_active('<?php echo $rs['banner_id'] ?>','1');">
-                        <?php } ?>
-                  </center>
-                </td>
-                <td style="text-align:center;">
-                    <button type="button" class="btn btn-danger btn-sm" onclick="delete_banner('<?php echo $rs['banner_id']?>')"><i class="fa fa-trash"></i> delete</button>
-                </td>
+            <?php
+            $i = 0;
+            foreach ($banner as $rs): $i++;
+                ?>
+                <tr>
+                    <td><?php echo $i; ?></td>
+                    <td>
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/banner/thumbnail/<?php echo $rs['banner_images']; ?>" class="img-resize" style="max-width:200px;"/>
+                    </td>
+                    <td>
+                        <?php echo $rs['title'] ?><br/>
+                        <?php echo $rs['detail'] ?>
+                    </td>
+                    <td style="text-align:center;">
+            <center>
+                <?php if ($rs['status'] == '1') { ?>
+                    <input id="status" name="status" class="styled" type="checkbox" checked="checked"  onclick="set_active('<?php echo $rs['banner_id'] ?>', '0');">
+                <?php } else { ?>
+                    <input id="status" name="status" class="styled" type="checkbox" onclick="set_active('<?php echo $rs['banner_id'] ?>', '1');">
+                <?php } ?>
+            </center>
+            </td>
+            <td style="text-align:center;">
+                <button type="button" class="btn btn-danger btn-sm" onclick="delete_banner('<?php echo $rs['banner_id'] ?>')"><i class="fa fa-trash"></i> delete</button>
+            </td>
             </tr>
         <?php endforeach; ?>
         </tbody>
@@ -97,20 +129,41 @@ $this->breadcrumbs = array(
 </div>
 
 <script type="text/javascript">
-    function set_active(id,status){
-        var url = "<?php echo Yii::app()->createUrl('backend/banner/set_active')?>";
-        var data = {banner_id: id,status: status};
-        $.post(url,data,function(success){
+
+    function set_active(id, status) {
+        var url = "<?php echo Yii::app()->createUrl('backend/banner/set_active') ?>";
+        var data = {banner_id: id, status: status};
+        $.post(url, data, function (success) {
 
         });
     }
 
-    function delete_banner(id){
+    function Save() {
+        var url = "<?php echo Yii::app()->createUrl('backend/banner/save') ?>";
+        var title = $("#title").val();
+        var color = $("#color").val();
+        var link = $("#link").val();
+        var detail = $("#detail").val();
+        var img = $("#images").val();
+        if (img == "") {
+            alert('ยังไม่ได้เลือกรูปภาพ...');
+            return false;
+        }
+        var data = {title: title, link: link, detail: detail, color: color};
+
+        $.post(url, data, function (success) {
+            $('#Filedata').uploadify('upload', '*');
+
+        });
+    }
+
+
+    function delete_banner(id) {
         var r = confirm("คุณแน่ใจหรือไม่ ...");
-        var url = "<?php echo Yii::app()->createUrl('backend/banner/delete')?>";
+        var url = "<?php echo Yii::app()->createUrl('backend/banner/delete') ?>";
         var data = {banner_id: id};
-        if(r == true){
-            $.post(url,data,function(success){
+        if (r == true) {
+            $.post(url, data, function (success) {
                 window.location.reload();
             });
         }

@@ -34,7 +34,9 @@
                   <label>อีเมล์</label>
                   <input type="text" id="c_email" class="form-control" value="<?php echo $contact['email']?>"/>
                   <label>เบอร์โทรศัพท์</label>
-                  <input type="text" id="c_tel" class="form-control" value="<?php echo $contact['tel']?>">
+                  <input type="text" id="c_tel" class="form-control" value="<?php echo $contact['tel']?>"/>
+                  <label>ที่อยู่</label>
+                  <textarea class="form-control" id="address" rows="3"><?php echo $contact['address'] ?></textarea>
               </div>
           </div>
         </div>
@@ -115,6 +117,7 @@
         var checkemail = $("#c_email").val();
         var email;
         var tel = $("#c_tel").val();
+        var address = $("#address").val();
 
         if(IsEmail(checkemail) == false || checkemail == ''){
           $("#f_email_error").show().delay(5000).fadeOut(500);
@@ -123,13 +126,14 @@
           email = checkemail;
         }
 
-        if (tel == '') {
+        if (tel == '' || address == "") {
             $("#f_error").show().delay(5000).fadeOut(500);
             return false;
         }
         var data = {
             email: email,
-            tel: tel
+            tel: tel,
+            address: address
         };
 
         $.post(url, data, function (success) {

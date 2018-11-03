@@ -1,40 +1,41 @@
-jQuery(document).ready(function( $ ) {
-  $("nav#menu").mmenu({
-     "extensions": [
-        "pagedim-black",
-        "shadow-page"
-     ],
-     "offCanvas": {
-        zposition   : "front"
-     },
-     "searchfield" : {
-     "placeholder" : 'Need some fresh vegatables?'
-    },
-    "navbar" : {
-            title : 'Organic Shop'
-          },
-     "navbars": [
-        {
-           "position": "top",
-           "content": [
-             '<a href="index.html"><img src="images/logo.png" class="img-responsive" alt="Image"></a>'
-           ]
+jQuery(document).ready(function ($) {
+    var logo = $("#logomini").val();
+    $("nav#menu").mmenu({
+        "extensions": [
+            "pagedim-black",
+            "shadow-page"
+        ],
+        "offCanvas": {
+            zposition: "front"
         },
-        {
-          "position"  : 'top',
-          "content"   : [ 'searchfield' ]
-        }, {
-          "position"  : 'top',
-          "content"   : [ 'breadcrumbs' ]
+        "searchfield": {
+            "placeholder": 'Search...'
         },
-        {
-           "position": "bottom",
-           "content": [
-              "<a class='fa fa-envelope' href='#/'></a>",
-              "<a class='fa fa-twitter' href='#/'></a>",
-              "<a class='fa fa-facebook' href='#/'></a>"
-           ]
-        }
-     ]
-  });
+        "navbar": {
+            title: 'Menu'
+        },
+        "navbars": [
+            {
+                "position": "top",
+                "content": [
+                    '<a href="">' + logo + '</a>'
+                ]
+            },
+            {
+                "position": 'top',
+                "content": ['searchfield']
+            }, {
+                "position": 'top',
+                "content": ['breadcrumbs']
+            },
+            {
+                "position": "bottom",
+                "content": [
+                    "<a class='fa fa-envelope' href='#/'></a>",
+                    "<a class='fa fa-twitter' href='#/'></a>",
+                    "<a class='fa fa-facebook' href='#/'></a>"
+                ]
+            }
+        ]
+    });
 });

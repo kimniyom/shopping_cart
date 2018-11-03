@@ -2,10 +2,12 @@
 
 class ProductController extends Controller {
 
-    public $layout = "webapp";
+    public $layout = "kstudio";
+
     //public $layout = "template_product";
     //################# ดึงข้อมูลรานละเอียดสินค้ามาแสดง อ้างจาก product_id ##################//
     public function actionDetail() {
+        $this->layout = "webapp";
         $config = new Configweb_model();
         $product_id = $config->url_decode($_GET['id']);
 
@@ -17,6 +19,14 @@ class ProductController extends Controller {
         $data['near'] = $product->get_product_near($product_id);
 
         $this->render("//product/detail_product", $data);
+    }
+    
+    public function actionViews($id){
+        $product = new Product();
+        $data['product'] = $product->_get_detail_product($id);
+        $data['images'] = $product->get_images_product($id);
+        $data['near'] = $product->getProductNear($data['product']['category']);
+        $this->render("//product/views", $data);
     }
 
     public function actionNotify($order_id = '') {
@@ -155,7 +165,7 @@ class ProductController extends Controller {
          */
 
         $data['product'] = $rs;
-        
+
         $this->renderPartial("//product/product_more", $data);
     }
 

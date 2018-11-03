@@ -5,7 +5,7 @@ class Article{
         $result = Yii::app()->db->createCommand()
                 ->select("a.*,m.name,m.lname")
                 ->from("article a")
-                ->join("masuser m","a.owner = m.pid")
+                ->join("masuser m","a.owner = m.id")
                 ->order("a.id DESC")
                 ->queryAll();
         return $result;  
@@ -15,7 +15,7 @@ class Article{
         $result = Yii::app()->db->createCommand()
                 ->select("a.*,m.name,m.lname")
                 ->from("article a")
-                ->join("masuser m","a.owner = m.pid")
+                ->join("masuser m","a.owner = m.id")
                 ->order("a.id DESC")
                 ->limit("$limit")
                 ->queryAll();
@@ -26,7 +26,7 @@ class Article{
         $result = Yii::app()->db->createCommand()
                 ->select("a.*,m.name,m.lname")
                 ->from("article a")
-                ->join("masuser m","a.owner = m.pid")
+                ->join("masuser m","a.owner = m.id")
                 ->where("a.id = '$id' ")
                 ->queryRow();
         return $result;    

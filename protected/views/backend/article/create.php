@@ -7,8 +7,8 @@
             'swf ': '<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.swf',
             'uploader': '<?php echo Yii::app()->createUrl('backend/article/upload', array('id' => $id)) ?>',
             'auto': false,
-            'fileSizeLimit': '1024KB',
-            'fileTypeExts': ' *.jpg; *.png',
+            'fileSizeLimit': '2KB',
+            'fileTypeExts': ' *.jpg; *.png; *.JPG; *.JPEG; *.jpeg',
             'uploadLimit': 1,
             'onSelect': function (file) {
                 $("#images").val(file.name);
@@ -25,13 +25,16 @@
         var url = "<?php echo Yii::app()->createUrl('backend/article/save') ?>";
         var id = "<?php echo $id ?>";
         var title = $("#title").val();
+        var category = $("#category").val();
         var msg = CKEDITOR.instances.msg.getData();
+        var images = $("#images").val();
         var data = {
             id: id,
             title: title,
-            msg: msg
+            msg: msg,
+            category: category
         };
-        if (title == '' || msg == '') {
+        if (title == '' || msg == '' || category == '' || images == '') {
             $("#f_error").show().delay(5000).fadeOut(500);
             return false();
         }
@@ -44,14 +47,21 @@
 </script>
 <?php
 $this->breadcrumbs = array(
-    "บทความ" => array('backend/article'),
-    "สร้างบทความ"
+    "บทความ / event" => array('backend/article'),
+    "สร้างบทความ / event"
         )
 ?>
 
 <div class="panel panel-default">
     <div class="panel-body">
-        <label>เรื่อง</label>
+        <label>Category</label>
+        <select id="category" class="form-control">
+            <option value="">== Select ==</option>
+        <?php foreach($category as $rs): ?>
+            <option value="<?php echo $rs['id'] ?>"><?php echo $rs['category'] ?></option>
+        <?php endforeach; ?>
+        </select>
+        <label>Title</label>
         <input type="text" id="title" name="title" class="form-control" maxlength="255"/>
         <label>รายละเอียด</label>
         <textarea id="msg" name="msg" rows="5" class="form-control input-sm" required="required"></textarea>

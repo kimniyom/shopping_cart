@@ -7,8 +7,8 @@
             'swf ': '<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.swf',
             'uploader': '<?php echo Yii::app()->createUrl('backend/article/upload', array('id' => $rs['id'])) ?>',
             'auto': false,
-            'fileSizeLimit': '1024KB',
-            'fileTypeExts': ' *.jpg; *.png',
+            'fileSizeLimit': '2MB',
+            'fileTypeExts': ' *.jpg; *.png; *.JPG; *.JPEG;',
             'uploadLimit': 1,
             'onSelect': function (file) {
                 $("#images").val(file.name);
@@ -25,11 +25,13 @@
         var url = "<?php echo Yii::app()->createUrl('backend/article/save_update') ?>";
         var id = "<?php echo $rs['id'] ?>";
         var title = $("#title").val();
+        var category = $("#category").val();
         var msg = CKEDITOR.instances.msg.getData();
         var data = {
             id: id,
             title: title,
-            msg: msg
+            msg: msg,
+            category: category
         };
         if (title == '' || msg == '') {
             $("#f_error").show().delay(5000).fadeOut(500);
@@ -51,7 +53,14 @@ $this->breadcrumbs = array(
 
 <div class="panel panel-default">
     <div class="panel-body">
-        <label>เรื่อง</label>
+        <label>Category</label>
+        <select id="category" class="form-control">
+            <option value="">== Select ==</option>
+        <?php foreach($category as $rss): ?>
+            <option value="<?php echo $rss['id'] ?>" <?php echo ($rss['id'] == $rs['category']) ? "selected" : ""; ?>><?php echo $rss['category'] ?></option>
+        <?php endforeach; ?>
+        </select>
+        <label>Title</label>
         <input type="text" id="title" name="title" class="form-control" value="<?php echo $rs['title']?>"/>
         <label>รายละเอียด</label>
         <textarea id="msg" name="msg" rows="5" class="form-control input-sm" required="required"><?php echo $rs['detail']?></textarea>
@@ -59,7 +68,7 @@ $this->breadcrumbs = array(
         <img src="<?php echo Yii::app()->baseUrl;?>/uploads/article/<?php echo $rs['images']?>" style=" max-width: 80px;"/><br/><br/>
         <input type="hidden" id="images" name="images" />
         <input type="file" name="file_upload" id="file_upload" />
-        (ไฟล์นามสกุล jpg,png ไม่เกิน 1MB)
+        (ไฟล์นามสกุล jpg,png ไม่เกิน 2MB)
     </div>
     <div class="panel-footer">
         <button type="button" class="btn btn-default" style="border-radius:0px;"

@@ -1,5 +1,6 @@
 'use strict';
 $(document).ready(function() {
+    var icons = $("#iconsloader").val();
   $(".animsition").animsition({
   inClass: 'fade-in',
   outClass: 'fade-out',
@@ -9,7 +10,7 @@ $(document).ready(function() {
   loading: true,
   loadingParentElement: 'body',
   loadingClass: 'animsition-loading',
-  loadingInner: '<img src="images/icons/spin.svg" />',
+  loadingInner: icons,
   timeout: false,
   timeoutCountdown: 5000,
   onLoadEvent: true,

@@ -26,6 +26,7 @@ class Articlecategory extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('category,active','required'),
 			array('active', 'numerical', 'integerOnly'=>true),
 			array('category', 'length', 'max'=>100),
 			// The following rule is used by search().
@@ -53,7 +54,7 @@ class Articlecategory extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'category' => 'Category',
-			'active' => '0 = Yes 1 = No',
+			'active' => 'Active',
 		);
 	}
 

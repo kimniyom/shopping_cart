@@ -1,5 +1,6 @@
 'use strict';
 $(function() {
+    var icons = $("#iconsloader").val();
   // search form
   $('.js-open-search-form-header').on('click', function() {
     $(this).siblings('.form-outer').addClass('open');
@@ -24,7 +25,7 @@ $(function() {
     loading: true,
     loadingParentElement: 'html',
     loadingClass: 'animsition-loading',
-    loadingInner: '<img src="images/icons/spin.svg" />',
+    loadingInner: icons,
     timeout: false,
     timeoutCountdown: 5000,
     onLoadEvent: true,

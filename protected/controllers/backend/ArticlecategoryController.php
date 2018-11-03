@@ -6,7 +6,7 @@ class ArticlecategoryController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='template_backend';
 
 	/**
 	 * @return array action filters
@@ -71,7 +71,7 @@ class ArticlecategoryController extends Controller
 		{
 			$model->attributes=$_POST['Articlecategory'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('create',array(
@@ -95,7 +95,7 @@ class ArticlecategoryController extends Controller
 		{
 			$model->attributes=$_POST['Articlecategory'];
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+				$this->redirect(array('admin'));
 		}
 
 		$this->render('update',array(
@@ -122,10 +122,13 @@ class ArticlecategoryController extends Controller
 	 */
 	public function actionIndex()
 	{
+		$this->redirect(array('admin'));
+		/*
 		$dataProvider=new CActiveDataProvider('Articlecategory');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+		*/
 	}
 
 	/**
