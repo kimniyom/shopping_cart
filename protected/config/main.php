@@ -20,7 +20,6 @@ return array(
     ),
     'modules' => array(
         // uncomment the following to enable the Gii tool
-
         'gii' => array(
             'class' => 'system.gii.GiiModule',
             'password' => '1234',
@@ -87,29 +86,12 @@ return array(
         ),
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=shopping_cart_db',
+            'connectionString' => 'mysql:host=localhost;dbname=kstudio_db',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => 'root',
+            'password' => '',
             'charset' => 'utf8',
         ),
-        /*
-          'db' => array(
-          'connectionString' => 'mysql:host=203.157.144.140;dbname=shopping_cart_db',
-          'emulatePrepare' => true,
-          'username' => 'assembler',
-          'password' => 'assembler',
-          'charset' => 'utf8',
-          ),
-
-          'db' => array(
-          'connectionString' => 'mysql:host=192.0.1.18;dbname=shopping_cart_db',
-          'emulatePrepare' => true,
-          'username' => 'assembler',
-          'password' => 'assembler',
-          'charset' => 'utf8',
-          ),
-         */
         'errorHandler' => array(
             // use 'site/error' action to display errors
             'errorAction' => 'site/error',

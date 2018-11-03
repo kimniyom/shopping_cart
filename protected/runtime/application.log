@@ -1705,3 +1705,1472 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/shopping_cart/frontend/product/detail_product/id/P20181025092135
 ---
+2018/11/03 16:57:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 16:58:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 16:59:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:00:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:02:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:02:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:03:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:05:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:09:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/index.html
+---
+2018/11/03 17:09:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:16:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:16:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:24:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:24:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:25:25 [error] [php] Object of class CBreadcrumbs could not be converted to string (D:\xampp\htdocs\kstudio\protected\views\layouts\kstudio.php:189)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(784): SiteController->renderFile()
+#1 D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php(32): SiteController->render()
+#2 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/
+in D:\xampp\htdocs\kstudio\protected\views\layouts\kstudio.php (189)
+in D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php (32)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/03 17:25:54 [error] [php] Object of class CBreadcrumbs could not be converted to string (D:\xampp\htdocs\kstudio\protected\views\layouts\kstudio.php:189)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(784): SiteController->renderFile()
+#1 D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php(32): SiteController->render()
+#2 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/
+in D:\xampp\htdocs\kstudio\protected\views\layouts\kstudio.php (189)
+in D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php (32)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/03 17:27:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:27:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:27:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:28:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:28:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:29:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:29:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/index.html
+---
+2018/11/03 17:29:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:29:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:30:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:30:31 [error] [php] Object of class CBreadcrumbs could not be converted to string (D:\xampp\htdocs\kstudio\protected\views\layouts\kstudio.php:191)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(784): SiteController->renderFile()
+#1 D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php(32): SiteController->render()
+#2 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/
+in D:\xampp\htdocs\kstudio\protected\views\layouts\kstudio.php (191)
+in D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php (32)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/03 17:30:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:31:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:32:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:32:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:32:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:33:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:33:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:34:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:34:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:35:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:35:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 17:35:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:36:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:36:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:37:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:37:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:37:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:38:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:38:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:39:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:39:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:39:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:40:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:40:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:41:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:41:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:41:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:41:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:42:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:42:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:43:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:43:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:43:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:44:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:44:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:45:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:45:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:46:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:46:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:46:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:47:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:47:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:49:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:50:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:51:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:52:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:52:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:53:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:53:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 17:53:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:16:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:17:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:18:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:18:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:19:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:19:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:19:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:19:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:20:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:20:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:21:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:21:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:21:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:22:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:22:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:22:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181025092135
+---
+2018/11/03 18:23:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181025092135
+---
+2018/11/03 18:23:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181025092135
+---
+2018/11/03 18:23:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:24:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:24:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:24:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:24:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/03 18:24:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:25:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:25:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:25:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:26:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:27:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:27:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:27:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:27:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:28:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:28:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:28:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:29:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:29:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:29:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:29:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:29:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:30:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:30:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:30:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:30:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:31:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:31:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:31:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:31:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:32:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:33:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:33:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:33:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:34:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:34:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:35:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:35:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:36:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:36:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:37:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:38:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:38:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:39:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:39:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:41:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:42:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:42:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:43:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:43:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:44:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:44:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:44:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/03 18:45:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/04 00:29:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/04 00:29:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/04 00:29:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/04 00:29:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/04 00:30:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/04 00:30:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/04 00:30:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/04 00:30:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/a4f8ea42/bootstrap/css/bootstrap.min.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/a4f8ea42...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/a4f8ea42/bootstrap/css/bootstrap.min.css
+HTTP_REFERER=http://localhost/kstudio/frontend/product/views/id/P20181029151035
+---
+2018/11/04 00:53:46 [error] [php] Undefined variable: Category (D:\xampp\htdocs\kstudio\protected\views\layouts\kstudio.php:118)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(784): SiteController->renderFile()
+#1 D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php(32): SiteController->render()
+#2 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#3 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): SiteController->runAction()
+#5 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#6 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): SiteController->run()
+#7 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/
+in D:\xampp\htdocs\kstudio\protected\views\layouts\kstudio.php (118)
+in D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php (32)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 01:51:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "company".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('company')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('company')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('site/company')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/frontend
+---

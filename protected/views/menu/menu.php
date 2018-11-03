@@ -1,10 +1,7 @@
-
 <link rel="stylesheet" type="text/css" href="<?= Yii::app()->baseUrl; ?>/themes/kstudio/css/main.css" />
 <?php
 $articleCategory = Articlecategory::model()->findAll("active=:active", array(":active" => "1"));
 $Categorys = Category::model()->findAll();
-
-
 ?>
 
 <nav id="menu">

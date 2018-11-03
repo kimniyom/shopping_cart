@@ -16,10 +16,41 @@
         <link rel="stylesheet" type="text/css" href="<?= Yii::app()->baseUrl; ?>/themes/kstudio/css/main.css" />
         <style>
             #lisubmenu{
-                border-bottom:solid 1px #eeeeee;
+                /*border-bottom:solid 1px #eeeeee;*/
+            }
+            #lisubmenu a{
+                padding: 10px;
             }
             #ulmenu{
-                box-shadow:none;border:1px solid #eeeeee;border-bottom:none;
+                padding-top: 5px; box-shadow: none;
+                z-index: 1000;
+            }
+
+            #ulmenufull a{
+                padding: 5px;
+            }
+
+            #ulmenufull a:hover{
+                padding-left: 10px;
+            }
+
+
+            @media (min-width: 768px) {
+                #ulmenufull{
+                    top: 30px;
+                }
+            }
+
+            @media (min-width: 992px) {
+                #ulmenufull{
+                    top: 35px;
+                }
+            }
+
+            @media (min-width: 1200px) {
+                #ulmenufull{
+                    top: 40px;
+                }
             }
 
         </style>
@@ -48,7 +79,7 @@
         <div class="home-1" id="page">
             <!-- Menu Nav -->
             <div id="kkmenusidebar"></div>
-            <header class="header-style-1" style="background:#ffffff;"><!-- /images/bgheader.png-->
+            <header class="header-style-2" style="background:#ffffff; border-bottom: #cccccc solid 1px;"><!-- /images/bgheader.png-->
                 <div class="container" id="menuBar">
                     <div class="row">
                         <div class="header-1-inner">
@@ -60,10 +91,10 @@
                                     <li>
                                         <a href="index.html">Home</a>
                                     </li>
+
                                     <li>
                                         <a class="active" href="shop.html" >Shop <i class="fa fa-angle-down"></i></a>
                                         <ul id="ulmenu">
-
                                             <?php
                                             foreach ($Categorys as $rsCategory):
                                                 $Types = ProductType::model()->findAll("category=:id", array(":id" => $rsCategory['id']));
@@ -103,7 +134,31 @@
 
                                         </ul>
                                     </li>
-
+                                    <li>
+                                        <a class="active" href="shop.html" >MENU <i class="fa fa-angle-down"></i></a>
+                                        <ul id="ulmenufull" style=" position: fixed; left: 0px;width: 100%; padding: 10px;z-index: 1000;  background: none; box-shadow: none;">
+                                            <li>
+                                                <div class="container" style=" background: #FFFFFF; padding-top: 20px; width: 700px;">
+                                                    <div class="row">
+                                                        <?php
+                                                        foreach ($Categorys as $rsCategory):
+                                                            $Types = ProductType::model()->findAll("category=:id", array(":id" => $rsCategory['id']));
+                                                            ?>
+                                                            <div class="col-md-4 col-lg-4 col-sm-4">
+                                                                <label><?php echo $rsCategory['categoryname'] ?></label>
+                                                                <hr style="border-bottom: #cccccc solid 1px; margin-top: 0px; margin-bottom: 5px;"/>
+                                                                <?php
+                                                                foreach ($Types as $type):
+                                                                    ?>
+                                                                    <a href=""><?php echo $type['type_name'] ?></a>
+                                                                <?php endforeach; ?>
+                                                            </div>
+                                                        <?php endforeach; ?>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
                                     <li>
                                         <a href="">BRAND <i class="fa fa-angle-down"></i></a>
 
@@ -181,23 +236,24 @@
                         </div>
                     </div>
                 </div>
+
             </header>
 
-
-
-            <?php
-            $this->widget('zii.widgets.CBreadcrumbs', array(
-                'homeLink' => '<i class="fa fa-home"></i> ' . CHtml::link('หน้าแรก', Yii::app()->createUrl('frontend/main')),
-                'links' => $this->breadcrumbs,
-            ));
-            ?><!-- breadcrumbs -->
-
-
-
+            <?php if ($this->breadcrumbs): ?>
+            <div style="padding: 10px; color: #9d1419; background: #eeeeee;">
+                    <div class="container">
+                        <?php
+                        $this->widget('zii.widgets.CBreadcrumbs', array(
+                            'homeLink' => '<i class="fa fa-home"></i> ' . CHtml::link('หน้าแรก', Yii::app()->createUrl('frontend/main')),
+                            'links' => $this->breadcrumbs,
+                        ));
+                        ?><!-- breadcrumbs -->
+                    </div>
+                </div>
+            <?php endif ?>
             <?php
             echo $content;
             ?>
-
         </div>
 
         <footer class="footer-style-1">
@@ -296,22 +352,22 @@
                                 <ul class="list-unstyle">
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;               ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                            ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;               ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                            ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;               ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                            ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;               ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                            ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
                                         </a>
                                     </li>
                                 </ul>
@@ -505,7 +561,7 @@
             function setScreen() {
                 var w = window.innerWidth;
                 if (w >= 768) {
-                    $("#menuBar").css({"padding-bottom": "20px"});
+                    $("#menuBar").css({"padding-bottom": "0px"});
                 } else {
                     $("#slider_1").hide();
                     $("#slider_1").css({"height": "20px"});

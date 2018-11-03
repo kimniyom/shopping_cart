@@ -18378,7 +18378,7 @@ body.modal-open .mm-slideout {
     /*transform: scale(1.2, 1.2) translateX(12px);*/
     filter: contrast(100%);
     transition: all 0.5s ease-in-out;
-    
+
 }
 
 .product-category-item figcaption h3 {
@@ -23276,6 +23276,8 @@ form.cart .btn-wishlist {
 .about .team-wrapper {
     margin-bottom: 80px;
 }
+
+
 
 
 /*# sourceMappingURL=main.css.map */

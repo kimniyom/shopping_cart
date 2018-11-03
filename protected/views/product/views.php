@@ -1,6 +1,6 @@
 <style type="text/css">
     #setColorNear{
-        background: #eeeeee;
+        background: #FFFFFF;
     }
     .product {
 
@@ -12,21 +12,35 @@
         padding:10px;
         transition: all 0.3s ease-in-out;
     }
-    
+
     .product img{
         transition: all 0.3s ease-in-out;
     }
+    
+    .view-products #text-color-product{
+        color:#9d1419;
+    }
+    
 </style>
+<?php
+$title = "sggdfgdgdgdgf";
+$this->breadcrumbs = array(
+    $title,
+);
+?>
 <?php $productModel = new Product(); ?>
-<div class="shop-detail-3 woocommerce" id="page">
+<div class="view-products">
+<div class="shop-detail-3 woocommerce" id="page" style=" background: #eeeeee;">
+    <!--
     <section class="sub-header shop-detail-1">
-        <img class="rellax bg-overlay" src="<?php echo Yii::app()->baseUrl ?>/themes/kstudio/images/sub-header/017.jpg" alt="">
+        <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl   ?>/themes/kstudio/images/sub-header/017.jpg" alt="">
         <div class="overlay-call-to-action"></div>
         <h3 class="heading-style-3">Shop Detail</h3>
     </section>
+    -->
     <section class="boxed-sm">
-        <div class="container">
-            <div class="row product-detail">
+        <div class="container" style=" background: #FFFFFF;">
+            <div class="row product-detail" style=" margin-top: 0px;padding: 5px;">
                 <div class="row product-detail-wrapper">
                     <div class="col-md-6">
                         <div class="woocommerce-product-gallery vertical">
@@ -40,7 +54,7 @@
                             <div class="thumbnail-carousel">
                                 <!--482x455
                                 <div class="item">
-                                    <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl       ?>/themes/kstudio/images/product/01.jpg" alt="product thumbnail">
+                                    <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl           ?>/themes/kstudio/images/product/01.jpg" alt="product thumbnail">
                                 </div>
                                 -->
                                 <?php foreach ($images as $al): ?>
@@ -55,7 +69,7 @@
                         <div class="summary">
                             <div class="desc">
                                 <div class="header-desc">
-                                    <h2 class="product-title"><?php echo $product['product_name'] ?></h2>
+                                    <h2 class="product-title" id="text-color-product"><?php echo $product['product_name'] ?></h2>
                                     <p class="price"><?php echo number_format($product['product_price']) ?></p>
                                 </div>
                                 <div class="body-desc">
@@ -221,7 +235,7 @@
         <div class="container">
             <div class="relate-product">
                 <div class="heading-wrapper text-center">
-                    <h3 class="heading">Related Products</h3>
+                    <h3 class="heading">สินค้าในหมวดเดียวกัน</h3>
                 </div>
                 <div class="row">
                     <div class="carousel-product">
@@ -236,7 +250,7 @@
                                             <img class="img-responsive" src="<?php echo Yii::app()->baseUrl ?>/uploads/product/thumbnail/482-<?php echo $fimg ?>" alt="product thumbnail">
                                         </div>
                                         <figcaption class="desc text-center" id="setColorNear">
-                                            <h3 style="height:20px; overflow: hidden;white-space: wrap;text-overflow: ellipsis;">
+                                            <h3 style="height:50px; overflow: hidden;white-space: wrap;text-overflow: ellipsis;">
                                                 <a class="product-name font-supermarket" href="product-detail.html"><?php echo $nears['product_name'] ?></a>
                                             </h3>
                                             <span class="price"><?php echo number_format($nears['product_price']) ?></span>
@@ -250,6 +264,7 @@
             </div>
         </div>
     </section>
+</div>
 </div>
 
 <script type="text/javascript">
