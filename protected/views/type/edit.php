@@ -42,10 +42,10 @@ $this->breadcrumbs = array(
         <div class="row" style="margin: 0px;">
             <div class="col-sm-6 col-lg-6">
                 <label>Category</label>
-                <select id="category" class="form-control input-sm">
-                <?php foreach($category as $cat): ?>
-                    <option value="<?php echo $cat['id'] ?>" <?php echo ($cat['id'] == $type['category']) ? "selected" : "";?>><?php echo $cat['categoryname'] ?></option>
-                <?php endforeach; ?>
+                <select id="category" class="form-control input-sm" onchange="getType(this.value)">
+                    <?php foreach ($category as $cat): ?>
+                        <option value="<?php echo $cat['id'] ?>" <?php echo ($cat['id'] == $type['category']) ? "selected" : ""; ?>><?php echo $cat['categoryname'] ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
         </div>
@@ -65,28 +65,19 @@ $this->breadcrumbs = array(
     </div>
 </div>
 
-<table class="table table-striped table-bordered" id="product_type">
-    <thead>
-        <tr>
-            <th>รหัส</th>
-            <th>ประเภท</th>
-            <th style=" text-align: center;">เมนูจัดการ</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php foreach ($typeall as $rs): ?>
-            <tr>
-                <td><?php echo $rs['type_id'] ?></td>
-                <td><?php echo $rs['type_name'] ?></td>
-                <td style=" text-align: center;">
-                    <a href="<?php echo Yii::app()->createUrl('backend/typeproduct/edit',array('id' => $rs['id'])) ?>">
-                        <div class="btn btn-default btn-xs"><i class="glyphicon glyphicon-edit"></i> แก้ไข</div></a>
-                    <div class="btn btn-default btn-xs"><i class="glyphicon glyphicon-trash"></i> ลบ</div>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
-</table>
+<div id="resultType"></div>
+
+<script type="text/javascript">
+    getType('<?php echo $type['category'] ?>');
+    function getType(id) {
+        var url = "<?php echo Yii::app()->createUrl("backend/typeproduct/gettype") ?>";
+        var data = {category: id};
+
+        $.post(url, data, function (datas) {
+            $("#resultType").html(datas);
+        });
+    }
+</script>
 
 
 

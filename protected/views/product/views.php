@@ -74,7 +74,7 @@ $this->breadcrumbs = array(
                                 </div>
                                 <div class="body-desc">
                                     <div class="woocommerce-product-details-short-description">
-                                        <p><?php echo $product['product_detail'] ?></p>
+                                        <p><?php echo $product['description'] ?></p>
                                     </div>
                                 </div>
                                 <div class="footer-desc">
@@ -163,9 +163,7 @@ $this->breadcrumbs = array(
                     <div class="col-md-8 col-md-offset-2">
                         <div class="tab-content tab-content-style-2">
                             <div class="tab-pane fade in active" id="Description" role="tabpanel">
-                                <p>Phasellus consectetur elit massa, tristique tincidunt mi aliquam at. Duis dolor magna, viverra vel ullamcorper ac, semper non ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In est enim,
-                                    lacinia nec sem eget, aliquam vulputate nisi. Nam gravida eu ex sed fermentum. Sed non sapien vitae diam lobortis consequat. Morbi augue eros, ultrices vitae quam ut, pharetra ornare felis. Proin ligula sapien, suscipit et justo
-                                    id, malesuada fermentum elit. Donec fermentum pretium orci. Nulla commodo accumsan tortor, id pretium tortor. Cras ultricies nisl non nibh ultricies, viverra dapibus ante euismod. Suspendisse a elementum lorem. </p>
+                               <?php echo $product['product_detail'] ?>
                             </div>
                             <div class="tab-pane fade" id="Additional-Information" role="tabpanel">
                                 <table class="shop_attributes table table-striped table-bordered">

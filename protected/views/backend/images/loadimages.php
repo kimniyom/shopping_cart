@@ -80,7 +80,7 @@
             <?php
             foreach ($images as $rs):
                 ?>
-                <li class="col-sm-6 col-md-2 col-lg-2">
+                <li class="col-xs-6 col-sm-3 col-md-2 col-lg-2">
                     <input type="checkbox" id="cb<?php echo $rs['id'] ?>" value="<?php echo $rs['images'] ?>"/>
                     <label for="cb<?php echo $rs['id'] ?>">
                         <div class="img-wrapper">
@@ -113,7 +113,7 @@
         });
     }
 
-    function DeleteImgProduct(){
+    function DeleteImgProduct() {
         var checkboxValues = [];
         $('input[type="checkbox"]:checked').each(function (index, elem) {
             checkboxValues.push($(elem).val());
@@ -124,11 +124,11 @@
         $.post(url, data, function (datas) {
             load_data();
             /*
-            loadimagesProduct();
-            $("#popupImages").modal("hide");
-            */
+             loadimagesProduct();
+             $("#popupImages").modal("hide");
+             */
         });
-        
+
     }
 </script>
 

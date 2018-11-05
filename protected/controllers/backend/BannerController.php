@@ -72,12 +72,16 @@ class BannerController extends Controller {
             "detail" => $detail,
             "color" => $color
         );
+
         Yii::app()->db->createCommand()
                 ->insert("banner", $columns);
+
+        echo "1";
     }
 
     public function actionUploadify() {
         $id = $_GET['id'];
+
         $targetFolder = Yii::app()->baseUrl . '/uploads/banner'; // Relative to the root
         if (!empty($_FILES)) {
             $tempFile = $_FILES['Filedata']['tmp_name'];
@@ -88,52 +92,50 @@ class BannerController extends Controller {
             $targetFile = $targetPath . '/banner-' . $Name;
 
             $fileTypes = array('jpg', 'JPG', 'jpeg', 'JPEG', 'png'); // File extensions
+
             $fileParts = pathinfo($_FILES['Filedata']['name']);
 
+            
+            //if (in_array($fileParts['extension'], $fileTypes)) {
+            if (in_array(strtolower($fileParts['extension']), $fileTypes)) {
+                $width = 1900; //*** Fix Width & Heigh (Autu caculate) ***//
+                //$new_images = "Thumbnails_".$_FILES["Filedata"]["name"];
+                $size = getimagesize($_FILES['Filedata']['tmp_name']);
+                $height = round($width * $size[1] / $size[0]);
+                $images_orig = imagecreatefromjpeg($tempFile);
+                $photoX = imagesx($images_orig);
+                $photoY = imagesy($images_orig);
 
-            if (in_array($fileParts['extension'], $fileTypes)) {
-
+                if ($photoX == "1900" && $photoY == "900") {
+                    move_uploaded_file($tempFile, $targetFile);
+                    $this->Thumbnail($Name, 300);
+                } else {
+                    $images_fin = imagecreatetruecolor($width, $height);
+                    imagecopyresampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+                    imagejpeg($images_fin, "uploads/banner/" . $Name);
+                    imagedestroy($images_orig);
+                    imagedestroy($images_fin);
+                    $image = new ImageResize("uploads/banner/" . $Name);
+                    $image->quality_jpg = 100;
+                    $image->crop("1900", "900", true, ImageResize::CROPCENTER);
+                    $image->save("uploads/banner/" . 'banner-' . $Name);
+                    $this->Thumbnail($Name, 300);
+                    if (file_exists("uploads/banner/" . $Name)) {
+                        unlink("uploads/banner/" . $Name);
+                    }
+                }
                 //สั่งอัพเดท
                 $columns = array(
                     "banner_images" => "banner-" . $Name
                 );
+                $rs = Yii::app()->db->createCommand("select max(banner_id) as id from banner")->queryRow();
+                $maxID = $rs['id'];
+                Yii::app()->db->createCommand()->update("banner", $columns, "banner_id = '$maxID' ");
 
-                $result = Yii::app()->db->createCommand()
-                        ->update("banner", $columns, "banner_id='$id'");
-
-                if ($result) {
-
-                    $width = 1900; //*** Fix Width & Heigh (Autu caculate) ***//
-                    //$new_images = "Thumbnails_".$_FILES["Filedata"]["name"];
-                    $size = getimagesize($_FILES['Filedata']['tmp_name']);
-                    $height = round($width * $size[1] / $size[0]);
-                    $images_orig = imagecreatefromjpeg($tempFile);
-                    $photoX = imagesx($images_orig);
-                    $photoY = imagesy($images_orig);
-
-                    if ($photoX == "1900" && $photoY == "900") {
-                        move_uploaded_file($tempFile, $targetFile);
-                        $this->Thumbnail($Name, 300);
-                    } else {
-                        $images_fin = imagecreatetruecolor($width, $height);
-                        imagecopyresampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
-                        imagejpeg($images_fin, "uploads/banner/" . $Name);
-                        imagedestroy($images_orig);
-                        imagedestroy($images_fin);
-                        $image = new ImageResize("uploads/banner/" . $Name);
-                        $image->quality_jpg = 100;
-                        $image->crop("1900", "900", true, ImageResize::CROPCENTER);
-                        $image->save("uploads/banner/" . 'banner-' . $Name);
-                        $this->Thumbnail($Name, 300);
-                        if (file_exists("uploads/banner/" . $Name)) {
-                            unlink("uploads/banner/" . $Name);
-                        }
-                    }
-                    echo '1';
-                }
-            } else {
-                echo 'Invalid file type.';
+                echo '1';
             }
+        } else {
+            echo 'Invalid file type.';
         }
     }
 

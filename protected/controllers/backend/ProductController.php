@@ -4,19 +4,19 @@ class ProductController extends Controller {
 
     public $layout = "template_backend";
 
-    public function actionIndex(){
-        $data['category'] = Category::model()->findAll("active=:active",array(":active" => '1'));
+    public function actionIndex() {
+        $data['category'] = Category::model()->findAll("active=:active", array(":active" => '1'));
         $data['brand'] = Brand::model()->findAll();
-        $this->render('index',$data);
+        $this->render('index', $data);
     }
 
-    public function actionGetproduct($category,$type) {
+    public function actionGetproduct($category, $type) {
         $product = new Backend_product();
         $data['model'] = $product;
         $data['type_id'] = $type;
-        $data['category'] = Category::model()->find("id=:id",array(":id" => $category));
+        $data['category'] = Category::model()->find("id=:id", array(":id" => $category));
         $data['type_name'] = $product->get_type_name($type);
-        $data['product'] = $product->get_product_intype($category,$type);
+        $data['product'] = $product->get_product_intype($category, $type);
 
         $data['count_product_type'] = $product->get_count_product_type($type);
 
@@ -26,7 +26,7 @@ class ProductController extends Controller {
     public function actionCategory($categoryID) {
         $product = new Backend_product();
         $data['model'] = $product;
-        $data['category'] = Category::model()->find("id=:id",array(":id" => $categoryID));
+        $data['category'] = Category::model()->find("id=:id", array(":id" => $categoryID));
         $data['product'] = $product->get_product_incategory($categoryID);
         $this->render("//backend/product/category", $data);
     }
@@ -34,7 +34,7 @@ class ProductController extends Controller {
     public function actionBrand($brandID) {
         $product = new Backend_product();
         $data['model'] = $product;
-        $data['brand'] = Brand::model()->find("id=:id",array(":id" => $brandID));
+        $data['brand'] = Brand::model()->find("id=:id", array(":id" => $brandID));
         $data['product'] = $product->get_product_inbrand($brandID);
         $this->render("//backend/product/brand", $data);
     }
@@ -51,8 +51,6 @@ class ProductController extends Controller {
     }
 
     public function actionCreateproduct() {
-        $prodult = new Backend_product();
-
         $data['product_id'] = "P" . date("YmdHis");
         $data['categorys'] = Category::model()->findAll();
         $data['types'] = ProductType::model()->findAll();
@@ -89,6 +87,9 @@ class ProductController extends Controller {
             'status' => Yii::app()->request->getpost('status'),
             'type_id' => Yii::app()->request->getpost('type'),
             'recommend' => Yii::app()->request->getpost('recommend'),
+            'description' => Yii::app()->request->getpost('description'),
+            'product_price_pro' => Yii::app()->request->getpost('product_price_pro'),
+            'bastseller' => Yii::app()->request->getpost('bastseller'),
             'd_update' => date('Y-m-d H:i:s')
         );
 
@@ -104,8 +105,8 @@ class ProductController extends Controller {
         $data['product'] = $products;
         $data['categorys'] = Category::model()->findAll();
         $data['brands'] = Brand::model()->findAll();
-        $data['type'] = ProductType::model()->find("type_id=:type",array(":type" => $products['type_id']));
-        $data['types'] = ProductType::model()->findAll("category=:category",array(":category" => $products['category']));
+        $data['type'] = ProductType::model()->find("type_id=:type", array(":type" => $products['type_id']));
+        $data['types'] = ProductType::model()->findAll("category=:category", array(":category" => $products['category']));
         $this->render("//backend/product/update", $data);
     }
 
@@ -121,6 +122,9 @@ class ProductController extends Controller {
             'status' => Yii::app()->request->getpost('status'),
             'type_id' => Yii::app()->request->getpost('type'),
             'recommend' => Yii::app()->request->getpost('recommend'),
+            'description' => Yii::app()->request->getpost('description'),
+            'product_price_pro' => Yii::app()->request->getpost('product_price_pro'),
+            'bastseller' => Yii::app()->request->getpost('bastseller'),
             'd_update' => date('Y-m-d H:i:s')
         );
 
@@ -177,33 +181,36 @@ class ProductController extends Controller {
         $cut = explode(',', $img);
         foreach ($cut as $single) {
             $images = trim($single);
-           
 
-            if(file_exists('uploads/product/'.trim($single))){
-                unlink('uploads/product/'.trim($single));
 
-            if(file_exists('uploads/product/thumbnail/'.trim($single))){
-                    unlink('uploads/product/thumbnail/'.trim($single));
+            if (file_exists('uploads/product/' . trim($single))) {
+                unlink('uploads/product/' . trim($single));
+
+                if (file_exists('uploads/product/thumbnail/' . trim($single))) {
+                    unlink('uploads/product/thumbnail/' . trim($single));
                 }
             }
-            if(file_exists('uploads/product/thumbnail/'.'480-'.trim($single))){
-                unlink('uploads/product/thumbnail/'.'480-'.trim($single));
+            if (file_exists('uploads/product/thumbnail/' . '480-' . trim($single))) {
+                unlink('uploads/product/thumbnail/' . '480-' . trim($single));
             }
 
-            if(file_exists('uploads/product/thumbnail/'.'600-'.trim($single))){
-                unlink('uploads/product/thumbnail/'.'600-'.trim($single));
-            }
-            if(file_exists('uploads/product/thumbnail/'.'100-'.trim($single))){
-                unlink('uploads/product/thumbnail/'.'100-'.trim($single));
+            if (file_exists('uploads/product/thumbnail/' . '482-' . trim($single))) {
+                unlink('uploads/product/thumbnail/' . '482-' . trim($single));
             }
 
-            if(file_exists('uploads/product/thumbnail/'.'200-'.trim($single))){
-                unlink('uploads/product/thumbnail/'.'200-'.trim($single));
+            if (file_exists('uploads/product/thumbnail/' . '600-' . trim($single))) {
+                unlink('uploads/product/thumbnail/' . '600-' . trim($single));
             }
-            
+            if (file_exists('uploads/product/thumbnail/' . '100-' . trim($single))) {
+                unlink('uploads/product/thumbnail/' . '100-' . trim($single));
+            }
+
+            if (file_exists('uploads/product/thumbnail/' . '200-' . trim($single))) {
+                unlink('uploads/product/thumbnail/' . '200-' . trim($single));
+            }
+
             Yii::app()->db->createCommand()
-                    ->delete("images","images='$images'");
-                    
+                    ->delete("images", "images='$images'");
         }
     }
 
@@ -243,7 +250,7 @@ class ProductController extends Controller {
     public function actionDelete_images() {
         $id = $_POST['id'];
         $product_id = $_POST['product_id'];
-        
+
         Yii::app()->db->createCommand()
                 ->delete('product_images', "id = '$id' AND product_id = '$product_id' ");
     }
@@ -423,6 +430,15 @@ class ProductController extends Controller {
         }
 
         print json_encode($response);
+    }
+
+    public function actionDeleteproduct() {
+        $product_id = Yii::app()->request->getPost('product_id');
+        Yii::app()->db->createCommand()
+                ->delete("product_images", "product_id='$product_id'");
+
+        Yii::app()->db->createCommand()
+                ->delete("product", "product_id='$product_id'");
     }
 
 }

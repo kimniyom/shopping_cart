@@ -19,10 +19,8 @@
             }
         </style>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/system.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/css/bootstrap-paper-3.3.4.css" type="text/css" media="all" />
-        <!--
-                <link rel="stylesheet" href="<?//= Yii::app()->baseUrl; ?>/themes/backend/css/bootstrap-theme.css" type="text/css" media="all" />
-        -->
+        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/css/bootstrap.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/css/bootstrap-theme.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/gallery_img/dist/magnific-popup.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/css/dataTables.bootstrap.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/extensions/TableTools/css/dataTables.tableTools.css" type="text/css" media="all" />
@@ -31,10 +29,10 @@
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/css/perfect-scrollbar.css"/>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/css/card-css/card-css.css"/>
         <!-- Bootstrap CheckBox
-        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="<?php //echo Yii::app()->baseUrl;  ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
         -->
-        <script src="<?= Yii::app()->baseUrl; ?>/themes/backend/js/jquery-1.9.1.js" type="text/javascript"></script>
-        <script src="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <script src="<?= Yii::app()->baseUrl; ?>/js/jquery.js" type="text/javascript"></script>
+        <script src="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
         <!-- Magnific Popup core CSS file -->
         <script type="text/javascript" charset="utf-8"src="<?= Yii::app()->baseUrl; ?>/assets/gallery_img/dist/jquery.magnific-popup.js"></script>
         <!-- Data table  -->
@@ -49,8 +47,8 @@
         <script src="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/js/perfect-scrollbar.js"></script>
 
         <!-- Uploadify -->
-        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.css" type="text/css" media="all" />
-        <script src="<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/jquery.uploadify.js" type="text/javascript"></script>
+        <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/assets/uploadifynews/uploadifive.css" type="text/css" media="all" />
+        <script src="<?php echo Yii::app()->baseUrl; ?>/assets/uploadifynews/jquery.uploadifive.min.js" type="text/javascript"></script>
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -159,11 +157,11 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <?php if(!Yii::app()->user->isGuest){  ?>
-                            <a href="<?= Yii::app()->createUrl('site/logout/') ?>">
-                                <span class="glyphicon glyphicon-off"></span>
-                                <font id="font-th">ออกจากระบบ</font>
-                            </a>
+                            <?php if (!Yii::app()->user->isGuest) { ?>
+                                <a href="<?= Yii::app()->createUrl('site/logout/') ?>">
+                                    <span class="glyphicon glyphicon-off"></span>
+                                    <font id="font-th">ออกจากระบบ</font>
+                                </a>
                             <?php } ?>
                         </li>
                     </ul>
@@ -198,7 +196,7 @@
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group" id="side1">
-                        <a href="<?= Yii::app()->createUrl('backend/contact') ?>" class="list-group-item" onclick="setSideMenu('side1','side1')">
+                        <a href="<?= Yii::app()->createUrl('backend/contact') ?>" class="list-group-item" onclick="setSideMenu('side1', 'side1')">
                             <i class="fa fa-phone-square"></i> ข้อมูลติดต่อ
                         </a>
                         <a href="<?= Yii::app()->createUrl('backend/about') ?>" class="list-group-item">
@@ -226,14 +224,14 @@
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group" id="side2">
-                    <a href="<?= Yii::app()->createUrl('backend/category/admin') ?>"
-                           class="list-group-item" onclick="setSideMenu('side2','side2')"><i class="fa fa-folder-open"></i> Category</a>
+                        <a href="<?= Yii::app()->createUrl('backend/category/admin') ?>"
+                           class="list-group-item" onclick="setSideMenu('side2', 'side2')"><i class="fa fa-folder-open"></i> Category</a>
                         <a href="<?= Yii::app()->createUrl('backend/typeproduct/from_add_type') ?>"
-                           class="list-group-item" onclick="setSideMenu('side2','side2')"><i class="fa fa-folder-open"></i> Types</a>
+                           class="list-group-item" onclick="setSideMenu('side2', 'side2')"><i class="fa fa-folder-open"></i> Types</a>
                         <a href="<?= Yii::app()->createUrl('backend/brand/admin') ?>"
-                           class="list-group-item" onclick="setSideMenu('side2','side2')"><i class="fa fa-folder-open"></i> Brands</a>
+                           class="list-group-item" onclick="setSideMenu('side2', 'side2')"><i class="fa fa-folder-open"></i> Brands</a>
                         <a href="<?= Yii::app()->createUrl('backend/product/index') ?>"
-                           class="list-group-item" onclick="setSideMenu('side2','side2')"><i class="fa fa-folder-open"></i> Product</a>
+                           class="list-group-item" onclick="setSideMenu('side2', 'side2')"><i class="fa fa-folder-open"></i> Product</a>
                         <a href="<?= Yii::app()->createUrl('backend/user/userall') ?>"
                            class="list-group-item"><i class="fa fa-group"></i>  ข้อมูลสมาชิก</a>
                         <a href="<?= Yii::app()->createUrl('backend/payment/view') ?>"
@@ -258,7 +256,7 @@
                         foreach ($produce_type as $produce_types):
                             ?>
                             <a href="<?php echo Yii::app()->createUrl('backend/product/Getproduct/type_id/' . $produce_types['type_id']) ?>"
-                               class="list-group-item" onclick="setSideMenu('side3','side3')">
+                               class="list-group-item" onclick="setSideMenu('side3', 'side3')">
                                 <span class="label" style=" background: #24282d;"><?php echo $product_model->get_count_product_type($produce_types['type_id']); ?></span>
                                 <?php echo $produce_types['type_name']; ?>
                             </a>
@@ -323,7 +321,7 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <ol class="breadcrumb well well-sm" style=" margin-bottom: 10px; margin-top: 0px; border-radius: 0px;">
-                        
+
                                 <?php if (isset($this->breadcrumbs)): ?>
                                     <?php
                                     $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -366,20 +364,26 @@
                 });
             }
 
-            function setSideMenu(group,menu){
+            function setSideMenu(group, menu) {
                 var url = "<?php echo Yii::app()->createUrl('backend/menubackend/setactive') ?>"
-                var data = {group: group,menu: menu};
+                var data = {group: group, menu: menu};
                 $.post(url, data, function (success) {
                     //window.location.reload();
                 });
             }
 
             $(function () {
-                var sideMenu = "<?php echo Yii::app()->session['groupmenu'] ?>";
+                var sideMenus = "<?php echo Yii::app()->session['groupmenu'] ?>";
+                var sideMenu;
+                if (sideMenus != "") {
+                    sideMenu = sideMenus;
+                } else {
+                    sideMenu = "side1";
+                }
                 var menuId = "#" + sideMenu;
                 var menuClass = "." + sideMenu;
                 $('.panel').find(menuId).show();
-                $(menuClass+' span.clickable').find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
+                $(menuClass + ' span.clickable').find('i').removeClass('glyphicon-chevron-down').addClass('glyphicon-chevron-up');
 
                 $(".dropdown").hover(
                         function () {
@@ -407,7 +411,7 @@
                 }
             });
 
-            
+
         </script>
     </body>
 </html>

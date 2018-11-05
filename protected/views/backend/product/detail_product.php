@@ -29,15 +29,18 @@
     });
 </script>
 
-
 <?php
 $this->breadcrumbs = array(
-    $product['type_name'] => array('backend/product/getproduct&type_id=' . $product['type_id']),
+    $product['categoryname'] => array('backend/product/category/categoryID/' . $product['category']),
+    $product['type_name'] => array('backend/product/getproduct/category/' . $product['category'] . '/type/' . $product['type_id']),
     $product['product_name'],
 );
 ?>
 
-<?php $config = new Configweb_model(); ?>
+<?php
+$config = new Configweb_model();
+$ProductModel = new Backend_Product();
+?>
 
 <span class="navbar-brand" id="cart_box" data-toggle="popover" 
       data-trigger="hover" data-placement="left" data-trigger="focus"
@@ -54,7 +57,9 @@ $this->breadcrumbs = array(
     <div class="row">
 
         <div class="col-lg-4 col-md-12 col-xs-12">
-
+            <a href="<?php echo Yii::app()->createUrl('backend/product/update', array("product_id" => $product['product_id'])) ?>">
+                <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Update</button></a>
+            <hr/>
             <font style=" color: #F00; font-size: 24px; font-weight: normal;">
             <img src="<?php echo Yii::app()->baseUrl; ?>/images/yellow-tag-icon.png"/>
             <?= $product['product_name'] ?>
@@ -64,15 +69,21 @@ $this->breadcrumbs = array(
             <b>Type</b> <?= $product['type_name'] ?><br/>
             <b>Brand</b> <?= $product['brandname'] ?><br/>
             <b>อัพเดทล่าสุด</b> <?= $config->thaidate($product['d_update']); ?><br/><br/>
-
-            <center>
-                <font style=" font-size: 24px;">
-                ราคา
-                <span class="alert alert-danger" style="font-size: 24px;"><?= number_format($product['product_price']) ?>.-</span>  บาท
-                </font>
-            </center>
+            <b>ราคา</b> <b style=" color: #F00;">
+                <?php if ($product['product_price_pro'] > 0) { ?>
+                    <del><?= number_format($product['product_price']) ?></del>
+                    <?= number_format($product['product_price_pro']) ?>
+                <?php } else { ?>    
+                    <?= number_format($product['product_price']) ?>
+                <?php } ?> .- บาท
+            </b><br/><br/>
+            <b>Description</b> <br/>
+            <?php echo $product['description'] ?>
+            <hr/> สินค้าแนะนำ:<?php echo ($product['recommend'] == "1") ? "<i class='fa fa-check text-success'></i>" : "<i class='fa fa-remove text-danger'></i>"; ?>
+            สินค้าขายดี:<?php echo ($product['recommend'] == "1") ? "<i class='fa fa-check text-success'></i>" : "<i class='fa fa-remove text-danger'></i>"; ?>
+            <br/>สถานะ:<?php echo $ProductModel->Status($product['status']) ?>
         </div>
-        
+
         <div class="col-lg-8 col-md-12 col-xs-12" style=" padding-top: 20px;">
             <?php
             $product_model = new Product();

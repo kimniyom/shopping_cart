@@ -43,7 +43,7 @@ class TypeproductController extends Controller {
             'type_name' => $_POST['type_name'],
             'category' => $_POST['category']
         );
-        
+
         Yii::app()->db->createCommand()
                 ->update("product_type", $data, "id = '" . $_POST['id'] . "' ");
     }
@@ -65,7 +65,7 @@ class TypeproductController extends Controller {
             $sql = "SELECT images FROM produce_images WHERE produce_id = '$pro->produce_id' ";
             $result = $this->db->query($sql);
 
-            /* ลบรูภาพที่อยู่ใน type นี้ออกทั้งหมด */
+            /* ลบรูปภาพที่อยู่ใน type นี้ออกทั้งหมด */
             if (!empty($result)) {
                 foreach ($result->result() as $datas):
                     unlink('uploads/' . $datas->images);
@@ -100,19 +100,42 @@ class TypeproductController extends Controller {
         $this->output_system($deta, $page, $head);
     }
 
-    public function actionCombotype(){
+    public function actionCombotype() {
         $category = Yii::app()->request->getpost('category');
         $type = Yii::app()->request->getpost('type');
-        $Types = ProductType::model()->findAll("category=:category",array(":category" => $category));
+        $Types = ProductType::model()->findAll("category=:category", array(":category" => $category));
         $str = "";
         $str .= "<select id='type' class='form-control'>";
         $str .= "<option value=''>== Select ==</option>";
-        foreach($Types as $rs):
-            $str .= "<option value='".$rs['type_id']."'>".$rs['type_name']."</option>";
+        foreach ($Types as $rs):
+            $str .= "<option value='" . $rs['type_id'] . "'>" . $rs['type_name'] . "</option>";
         endforeach;
         $str .= "</select>";
 
         echo $str;
+    }
+
+    public function actionGettype() {
+        $category = Yii::app()->request->getpost('category');
+        $data['type'] = ProductType::model()->findAll("category=:category", array(":category" => $category));
+        $this->renderPartial('//type/view', $data);
+    }
+
+    public function actionDelete() {
+        $type = Yii::app()->request->getpost('typeId');
+        $sql = "select * from product where type_id = '$type' ";
+        $result = Yii::app()->db->createCommand($sql)->queryAll();
+        foreach ($result as $rs):
+            $product_id = $rs['product_id'];
+            Yii::app()->db->createCommand()
+                    ->delete("product_images", "product_id='$product_id'");
+
+            Yii::app()->db->createCommand()
+                    ->delete("product", "product_id='$product_id'");
+        endforeach;
+
+        Yii::app()->db->createCommand()
+                ->delete("product_type", "type_id='$type'");
     }
 
 }

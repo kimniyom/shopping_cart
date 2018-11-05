@@ -1,14 +1,21 @@
+<style type="text/css">
+    .modal-dialog {
+        width: 100%;
+    }
+
+
+</style>
+<?php
+$Config = new Configweb_model();
+?>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.js"></script>
-
-<script src="<?php echo Yii::app()->baseUrl ?>/assets/uploadify/jquery.uploadify.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl ?>/assets/uploadify/uploadify.css">
 
 <?php
 $ConfigWeb = new Configweb_model();
 $title = "แก้ไขสินค้า " . $product['product_id'];
 $this->breadcrumbs = array(
-    //$type_name => array('backend/product/getproduct&type_id=' . $type_id),
+    $product['product_name'] => array('backend/product/detail_product/product_id/' . $product['product_id']),
     $title,
 );
 ?>
@@ -16,7 +23,7 @@ $this->breadcrumbs = array(
 <div class="well" style="width:100%;">
     <form class="form-horizontal">
         <fieldset>
-            <legend style="margin-bottom:0px;">
+            <legend style="margin-bottom:0px; border-bottom: #cccccc solid 1px;">
                 <span class="label label-warning">
                     <img src="<?php echo Yii::app()->baseUrl; ?>/images/add-product-icon.png"/>
                     แก้ไขข้อมูลสินค้า
@@ -33,40 +40,44 @@ $this->breadcrumbs = array(
                     <div id="load_images_product"></div>
                 </div>
                 <div class="col-md-9 col-lg-9" id="p-right" style="padding-top:10px;">
-                <label for="">Category</label>
+                    <label for="">*Category</label>
                     <select class="form-control" id="category" onchange="combotype(this.value)">
-                    <option value="">== Select ==</option>
-                    <?php foreach($categorys as $rscategory): ?>
-                        <option value="<?php echo $rscategory['id'] ?>" <?php echo ($rscategory['id'] == $product['category']) ? "selected" : ""; ?>><?php echo $rscategory['categoryname'] ?></option>
-                    <?php endforeach; ?>
+                        <option value="">== Select ==</option>
+                        <?php foreach ($categorys as $rscategory): ?>
+                            <option value="<?php echo $rscategory['id'] ?>" <?php echo ($rscategory['id'] == $product['category']) ? "selected" : ""; ?>><?php echo $rscategory['categoryname'] ?></option>
+                        <?php endforeach; ?>
                     </select>
-                    <label for="">Type</label>
+                    <label for="">*Type</label>
                     <div id="combotype">
-                    <select class="form-control" id="type">
-                    <?php foreach($types as $rstypes): ?>
-                        <option value="<?php echo $rstypes['type_id'] ?>" <?php echo ($rstypes['type_id'] == $product['type_id']) ? "selected" : ""; ?>><?php echo $rstypes['type_name'] ?></option>
-                    <?php endforeach; ?>
-                    </select>
+                        <select class="form-control" id="type">
+                            <?php foreach ($types as $rstypes): ?>
+                                <option value="<?php echo $rstypes['type_id'] ?>" <?php echo ($rstypes['type_id'] == $product['type_id']) ? "selected" : ""; ?>><?php echo $rstypes['type_name'] ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
-                    <label for="">Brand</label>
+                    <label for="">*Brand</label>
                     <select class="form-control" id="brand">
-                    <option value="">== Select ==</option>
-                    <?php foreach($brands as $rsbrans): ?>
-                        <option value="<?php echo $rsbrans['id'] ?>" <?php echo ($rsbrans['id'] == $product['brand']) ? "selected" : ""; ?>><?php echo $rsbrans['brandname'] ?></option>
-                    <?php endforeach; ?>
+                        <option value="">== Select ==</option>
+                        <?php foreach ($brands as $rsbrans): ?>
+                            <option value="<?php echo $rsbrans['id'] ?>" <?php echo ($rsbrans['id'] == $product['brand']) ? "selected" : ""; ?>><?php echo $rsbrans['brandname'] ?></option>
+                        <?php endforeach; ?>
                     </select>
 
                     <input type="hidden" id="product_id" name="product_id" class="form-control" value="<?php echo $product['product_id']; ?>" readonly style="width:40%;"/>
 
-                    <label for="" >ชื่อสินค้า</label>
+                    <label for="" >*ชื่อสินค้า</label>
                     <input type="text" id="product_name" name="product_name" class="form-control" value="<?php echo $product['product_name'] ?>"/>
-
-                    <label for="" >ราคา</label>
+                    <label>*Description</label>
+                    <textarea class="form-control" id="description" rows="5"><?php echo $product['description'] ?></textarea>
+                    <label for="" >*ราคา</label>
                     <input type="text" id="product_price" name="product_price" class="form-control" onKeyUp="if (this.value * 1 != this.value)
-                            this.value = '';" style="width:30%;" value="<?php echo $product['product_price'] ?>"/>
-
+                                this.value = '';" style="width:30%;" value="<?php echo $product['product_price'] ?>"/>
+                    <label for="">ราคาโปร / ราคาพิเศษ</label>
+                    <input type="text" id="product_price_pro" name="product_price_pro" class="form-control" onKeyUp="if (this.value * 1 != this.value)
+                                this.value = '';" style="width:30%;" required="required" value="<?php echo $product['product_price_pro'] ?>"/>
+                    <p style="color:#ff0033;">*ถ้าใส่ราคาโปรหน้าเว็บจะนำราคานี้ไปแสดง</p>
                     <br/>
-                    <label for="">สถานะ</label>
+                    <label for="">*สถานะ</label>
                     <input id="status" name="status" class="styled" type="radio" value="0" <?php echo ($product['status'] == "0") ? "checked" : ""; ?>/>
                     <label for="radio">พร้อมขาย</label>
                     <input id="status" name="status" class="styled" type="radio" value="1" <?php echo ($product['status'] == "1") ? "checked" : ""; ?>/>
@@ -74,11 +85,14 @@ $this->breadcrumbs = array(
                     <input id="status" name="status" class="styled" type="radio" value="2" <?php echo ($product['status'] == "2") ? "checked" : ""; ?>/>
                     <label for="radio">Sold Out</label>
                     <br/>
-                    <label for="">สินค้าแนะนำ</label>
+                    <label for="">*สินค้าแนะนำ</label>
                     <input id="recommend" name="recommend" class="styled" type="radio" value="1" <?php echo ($product['recommend'] == "1") ? "checked" : ""; ?>/> <label for="radio">Yes</label>
                     <input id="recommend" name="recommend" class="styled" type="radio" value="0" <?php echo ($product['recommend'] == "0") ? "checked" : ""; ?>/> <label for="radio">No</label>
-                    <br/>
-                    <label for="textArea">รายละเอียด</label>
+                    <br/><label for="">*สินค้าขายดี</label>
+                    <input id="bastseller" name="bastseller" class="styled" type="radio" value="1" <?php echo ($product['bastseller'] == "1") ? "checked" : ""; ?>/> <label for="radio">Yes</label>
+                    <input id="bastseller" name="bastseller" class="styled" type="radio" value="0" <?php echo ($product['bastseller'] == "0") ? "checked" : ""; ?>/> <label for="radio">No</label>
+                    <br/><br/>
+                    <label for="textArea">*รายละเอียด</label>
                     <textarea id="product_detail" name="product_detail" rows="3" class="form-control input-sm" required="required">
                         <?php echo $product['product_detail'] ?>
                     </textarea>
@@ -104,7 +118,7 @@ $this->breadcrumbs = array(
     ##### Model Images #####
 -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="popupImages" data-backdrop="static">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg" role="document" style=" margin: 0px;">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -128,34 +142,35 @@ $this->breadcrumbs = array(
 <script type="text/javascript">
     $(document).ready(function () {
         //load_data();
-        $('#Filedata').uploadify({
+        $('#Filedata').uploadifive({
             /*'buttonText': 'กรุณาเลือกรูปภาพ ...',*/
             'auto': true, //เปิดใช้การอัพโหลดแบบอัติโนมัติ
             buttonText: "อัพโหลดรูปภาพ",
             //'buttonImage': '<?//= Yii::app()->baseUrl ?>/images/image-up-icon.png',
-            'swf': '<?= Yii::app()->baseUrl ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
-            'uploader': "<?= Yii::app()->createUrl('backend/images/uploadify') ?>",
-            'fileSizeLimit': "<?php echo $ConfigWeb->SizeFileUpload() ?>", //อัพโหลดได้ครั้งละไม่เกิน 1024kb
+            //'swf': '<?php //echo Yii::app()->baseUrl          ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
+            'uploadScript': "<?= Yii::app()->createUrl('backend/images/uploadify') ?>",
+            'fileSizeLimit': '<?php echo $Config->SizeFileUpload() ?>', //อัพโหลดได้ครั้งละไม่เกิน 1024kb
             //'width': '128',
             //'height': '132',
-            'fileTypeExts': '*.jpg;', //กำหนดชนิดของไฟล์ที่สามารถอัพโหลดได้
+            'fileType': ["image/jpg", "image/jpeg", "image/JPG", "image/JPEG"], //กำหนดชนิดของไฟล์ที่สามารถอัพโหลดได้
             'multi': true, //เปิดใช้งานการอัพโหลดแบบหลายไฟล์ในครั้งเดียว
-            'queueSizeLimit': "<?php echo $ConfigWeb->LimitFileUpload() ?>", //อัพโหลดได้ครั้งละ 5 ไฟล์
-            'onUploadSuccess': function (file, data, response) {
+            'removeCompleted': true,
+            'queueSizeLimit': 5, //อัพโหลดได้ครั้งละ 5 ไฟล์
+            'onUploadComplete': function (file, data, response) {
                 load_data();
             }
         });
     });
 
     loadimagesProduct();
-    //Modify By Kimniyom
+//Modify By Kimniyom
     CKEDITOR.replace('product_detail', {
         image_removeLinkByEmptyURL: true,
-        //extraPlugins: 'image',
-        //removeDialogTabs: 'link:upload;image:Upload',
-        //filebrowserBrowseUrl: 'imgbrowse/imgbrowse.php',
-        //filebrowserUploadUrl: 'ckupload.php',
-        //uiColor: '#AADC6E',
+//extraPlugins: 'image',
+//removeDialogTabs: 'link:upload;image:Upload',
+//filebrowserBrowseUrl: 'imgbrowse/imgbrowse.php',
+//filebrowserUploadUrl: 'ckupload.php',
+//uiColor: '#AADC6E',
         filebrowserBrowseUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.html",
         filebrowserImageBrowseUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.html?Type=Images",
         filebrowserFlashBrowseUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.html?Type=Flash",
@@ -202,15 +217,17 @@ $this->breadcrumbs = array(
         var product_name = $("#product_name").val();
         var category = $("#category").val();
         var type = $("#type").val();
-        //var product_num = $("#product_num").val();
+//var product_num = $("#product_num").val();
         var product_price = $("#product_price").val();
+        var product_price_pro = $("#product_price_pro").val();
         var product_id = "<?php echo $product['product_id'] ?>";
         var brand = $("#brand").val();
         var status = $("input[name='status']:checked").val();
         var recommend = $("input[name='recommend']:checked").val();
         var product_detail = CKEDITOR.instances.product_detail.getData();
-
-        if (category == '' || product_name == '' || product_price == '' || product_detail == '' || type == '' || brand == '') {
+        var description = $("#description").val();
+        var bastseller = $("input[name='bastseller']:checked").val();
+        if (category == '' || product_name == '' || product_price == '' || product_detail == '' || type == '' || brand == '' || description == "" || bastseller == "") {
             $("#f_error").show().delay(5000).fadeOut(500);
             return false;
         }
@@ -224,11 +241,15 @@ $this->breadcrumbs = array(
             product_price: product_price,
             product_detail: product_detail,
             status: status,
-            recommend: recommend
+            recommend: recommend,
+            description: description,
+            bastseller: bastseller,
+            product_price_pro: product_price_pro,
+
         };
 
         $.post(url, data, function (success) {
-            window.location = "<?php echo Yii::app()->createUrl('backend/product/detail_product&product_id=') ?>" + product_id;
+            window.location = "<?php echo Yii::app()->createUrl('backend/product/detail_product/product_id') ?>" + "/" + product_id;
         });
     }
 
@@ -240,19 +261,22 @@ $this->breadcrumbs = array(
 
         if (r == true) {
             $.post(url, data, function (datas) {
-                //load_data();
+//load_data();
                 loadimagesProduct();
             });
         }
     }
-    
+
     function checkheight() {
         var w = window.innerWidth;
-        if(w >= 768){
+        var height = window.innerHeight;
+        var heights = height - 140;
+        $(".modal-dialog  .modal-body").css({'height': heights});
+        if (w >= 768) {
             var p_left = $("#p-left").height();
             var p_right = $("#p-right").height();
-            //alert(p_left + " - " + p_right);
-            if(p_left > p_right){
+//alert(p_left + " - " + p_right);
+            if (p_left > p_right) {
                 $("#p-right").removeClass("p-right");
                 $("#p-left").addClass("p-left");
             } else {
@@ -267,10 +291,10 @@ $this->breadcrumbs = array(
     }
 
 
-function combotype(category){
+    function combotype(category) {
         var url = "<?php echo Yii::app()->createUrl('backend/typeproduct/combotype') ?>";
-        var data = {category: category,type: ""};
-        $.post(url,data,function(datas){
+        var data = {category: category, type: ""};
+        $.post(url, data, function (datas) {
             $("#combotype").html(datas);
         });
     }

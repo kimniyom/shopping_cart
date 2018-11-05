@@ -3174,3 +3174,811 @@ Stack trace:
 #5 {main}
 REQUEST_URI=/kstudio/frontend
 ---
+2018/11/04 04:25:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "company".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('company')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('company')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('site/company')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend
+---
+2018/11/04 04:26:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "backend/main".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/main')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/backend/main
+---
+2018/11/04 04:27:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail_product&product_id=P20181029151035".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('detail_product&...')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('detail_product&...')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend/product/detail_product&product_id=P20181029151035
+HTTP_REFERER=http://localhost/kstudio/backend/product/update/product_id/P20181029151035
+---
+2018/11/04 04:27:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view&product_id=P20181029151035".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('view&product_id...')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('view&product_id...')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend/product/view&product_id=P20181029151035
+---
+2018/11/04 04:28:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('view')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('view')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend/product/view/product_id=P20181029151035
+---
+2018/11/04 04:28:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "view".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('view')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('view')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend/product/view/product_id/P20181029151035
+---
+2018/11/04 04:31:24 [error] [php] Undefined index: description (D:\xampp\htdocs\kstudio\protected\views\product\views.php:77)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ProductController->renderFile()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): ProductController->renderPartial()
+#2 D:\xampp\htdocs\kstudio\protected\controllers\frontend\ProductController.php(29): ProductController->render()
+#3 unknown(0): ProductController->actionViews()
+#4 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ProductController->runAction()
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#9 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ProductController->run()
+#10 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/frontend/product/views/id/P20181029151035
+in D:\xampp\htdocs\kstudio\protected\views\product\views.php (77)
+in D:\xampp\htdocs\kstudio\protected\controllers\frontend\ProductController.php (29)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 04:35:13 [error] [php] Undefined index: description (D:\xampp\htdocs\kstudio\protected\views\backend\product\update.php:64)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ProductController->renderFile()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): ProductController->renderPartial()
+#2 D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php(110): ProductController->render()
+#3 unknown(0): ProductController->actionUpdate()
+#4 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ProductController->runAction()
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#9 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ProductController->run()
+#10 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/product/update/product_id/P20181029151035
+in D:\xampp\htdocs\kstudio\protected\views\backend\product\update.php (64)
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php (110)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 04:35:15 [error] [php] Undefined index: description (D:\xampp\htdocs\kstudio\protected\views\backend\product\update.php:64)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ProductController->renderFile()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): ProductController->renderPartial()
+#2 D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php(110): ProductController->render()
+#3 unknown(0): ProductController->actionUpdate()
+#4 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ProductController->runAction()
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#9 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ProductController->run()
+#10 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/product/update/product_id/P20181029151035
+in D:\xampp\htdocs\kstudio\protected\views\backend\product\update.php (64)
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php (110)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 04:39:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Login Required' in D:\xampp\htdocs\kstudio\framework\web\auth\CWebUser.php:394
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\auth\CAccessControlFilter.php(180): CWebUser->loginRequired()
+#1 D:\xampp\htdocs\kstudio\framework\web\auth\CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#2 D:\xampp\htdocs\kstudio\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#3 D:\xampp\htdocs\kstudio\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 D:\xampp\htdocs\kstudio\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 D:\xampp\htdocs\kstudio\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(291): CFilterChain->run()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('set_navbar')
+#9 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/backend...')
+#10 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/kstudio/backend/backend/set_navbar
+HTTP_REFERER=http://localhost/kstudio/backend/product/detail_product/product_id/P20181029151035
+---
+2018/11/04 20:35:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "getproduct&type_id=006".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('getproduct&type...')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('getproduct&type...')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend/product/getproduct&type_id=006
+HTTP_REFERER=http://localhost/kstudio/backend/product/detail_product/product_id/P20181029151035
+---
+2018/11/04 20:36:21 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\xampp\htdocs\kstudio\framework\web\CController.php:336
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('getproduct')
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#7 {main}
+REQUEST_URI=/kstudio/backend/product/getproduct/type_id/006
+HTTP_REFERER=http://localhost/kstudio/backend/product/detail_product/product_id/P20181029151035
+---
+2018/11/04 20:36:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail_product&product_id=P20181029151035".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('detail_product&...')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('detail_product&...')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend/product/detail_product&product_id=P20181029151035
+HTTP_REFERER=http://localhost/kstudio/backend/product/getproduct/category/1/type/006
+---
+2018/11/04 20:38:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail_product&product_id=P20181029151035".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('detail_product&...')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('detail_product&...')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend/product/detail_product&product_id=P20181029151035
+HTTP_REFERER=http://localhost/kstudio/backend/product/getproduct/category/1/type/006
+---
+2018/11/04 20:39:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail_product&product_id=P20181029151035".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('detail_product&...')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('detail_product&...')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend/product/detail_product&product_id=P20181029151035
+HTTP_REFERER=http://localhost/kstudio/backend/product/getproduct/category/1/type/006
+---
+2018/11/04 20:39:22 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\xampp\htdocs\kstudio\framework\web\CController.php:336
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('getproduct')
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#7 {main}
+REQUEST_URI=/kstudio/backend/product/getproduct/category/1/type_id/006
+HTTP_REFERER=http://localhost/kstudio/backend/product/detail_product/product_id/P20181029151035
+---
+2018/11/04 20:39:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail_product&product_id=P20181029151035".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('detail_product&...')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('detail_product&...')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend/product/detail_product&product_id=P20181029151035
+HTTP_REFERER=http://localhost/kstudio/backend/product/category/categoryID/1
+---
+2018/11/04 20:40:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail_product&product_id=P20181029151035".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('detail_product&...')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('detail_product&...')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/backend/product/detail_product&product_id=P20181029151035
+HTTP_REFERER=http://localhost/kstudio/backend/product/category/categoryID/1
+---
+2018/11/04 20:43:23 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\xampp\htdocs\kstudio\framework\web\CController.php:336
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('getproduct')
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#7 {main}
+REQUEST_URI=/kstudio/backend/product/getproduct/category/1
+HTTP_REFERER=http://localhost/kstudio/backend/product/detail_product/product_id/P20181029151035
+---
+2018/11/04 20:43:52 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\xampp\htdocs\kstudio\framework\web\CController.php:336
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('getproduct')
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#7 {main}
+REQUEST_URI=/kstudio/backend/product/getproduct/category/categoryID/1
+HTTP_REFERER=http://localhost/kstudio/backend/product/detail_product/product_id/P20181029151035
+---
+2018/11/04 20:43:59 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\xampp\htdocs\kstudio\framework\web\CController.php:336
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('getproduct')
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#7 {main}
+REQUEST_URI=/kstudio/backend/product/getproduct/categoryID/1
+---
+2018/11/04 20:59:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('site')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('site')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/site/site
+HTTP_REFERER=http://localhost/kstudio/backend/category/admin
+---
+2018/11/04 20:59:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "site".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('site')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('site')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('site/site')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/site/site
+HTTP_REFERER=http://localhost/kstudio/backend/category/admin
+---
+2018/11/04 21:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/uploadifynews/uploadify.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/uploadif...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/uploadifynews/uploadify.css
+HTTP_REFERER=http://localhost/kstudio/backend/logo
+---
+2018/11/04 21:37:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/uploadifynews/uploadify.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/uploadif...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/uploadifynews/uploadify.css
+HTTP_REFERER=http://localhost/kstudio/backend/logo
+---
+2018/11/04 21:37:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/uploadifynews/uploadify.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/uploadif...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/assets/uploadifynews/uploadify.css
+HTTP_REFERER=http://localhost/kstudio/backend/logo
+---
+2018/11/04 21:59:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "themes/backend/css/bootstrap-theme.css".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('themes/backend/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/themes/backend/css/bootstrap-theme.css
+HTTP_REFERER=http://localhost/kstudio/backend/backend
+---
+2018/11/04 22:29:15 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php:32)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): LogoController->runAction()
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): LogoController->runActionWithFilters()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): LogoController->run()
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/logo/saveupload
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php (32)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 22:29:30 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php:32)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): LogoController->runAction()
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): LogoController->runActionWithFilters()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): LogoController->run()
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/logo/saveupload
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php (32)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 22:29:38 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php:32)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): LogoController->runAction()
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): LogoController->runActionWithFilters()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): LogoController->run()
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/logo/saveupload
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php (32)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 22:33:22 [error] [php] imagesx() expects parameter 1 to be resource, array given (D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php:29)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): LogoController->runAction()
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): LogoController->runActionWithFilters()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): LogoController->run()
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/logo/saveupload
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php (29)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 22:33:35 [error] [php] imagesx() expects parameter 1 to be resource, array given (D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php:29)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): LogoController->runAction()
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): LogoController->runActionWithFilters()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): LogoController->run()
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/logo/saveupload
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php (29)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 22:34:46 [error] [php] Undefined index: file_field_name (D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php:28)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): LogoController->runAction()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): LogoController->runActionWithFilters()
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): LogoController->run()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/logo/saveupload
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\LogoController.php (28)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 23:02:30 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (D:\xampp\htdocs\kstudio\protected\controllers\backend\BannerController.php:110)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): BannerController->runAction()
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): BannerController->runActionWithFilters()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): BannerController->run()
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/banner/uploadify/id/40
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\BannerController.php (110)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 23:02:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:02:39 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (D:\xampp\htdocs\kstudio\protected\controllers\backend\BannerController.php:110)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): BannerController->runAction()
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): BannerController->runActionWithFilters()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): BannerController->run()
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/banner/uploadify/id/41
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\BannerController.php (110)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 23:02:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:02:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-g1pxe3ly9t7cjxuu178pyjd6c9bz32.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-g1pxe3ly9t7cjxuu178pyjd6c9bz32.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:02:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:02:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-g1pxe3ly9t7cjxuu178pyjd6c9bz32.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-g1pxe3ly9t7cjxuu178pyjd6c9bz32.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:03:11 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (D:\xampp\htdocs\kstudio\protected\controllers\backend\BannerController.php:110)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): BannerController->runAction()
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): BannerController->runActionWithFilters()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): BannerController->run()
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/banner/uploadify/id/42
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\BannerController.php (110)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 23:03:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:03:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-g1pxe3ly9t7cjxuu178pyjd6c9bz32.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-g1pxe3ly9t7cjxuu178pyjd6c9bz32.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:03:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-9ib8ljkno3bthqn1nlfn0jjcvg7qsr.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-9ib8ljkno3bthqn1nlfn0jjcvg7qsr.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:03:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:03:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-g1pxe3ly9t7cjxuu178pyjd6c9bz32.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-g1pxe3ly9t7cjxuu178pyjd6c9bz32.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:03:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-etepfg37a1uxb6ljfnnpdav20emwvk.png
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:17:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/banner/thumbnail/banner-j447j2zuesf1f12rtfma0ffd4cm0xd.jpg".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/banner/...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/banner/thumbnail/banner-j447j2zuesf1f12rtfma0ffd4cm0xd.jpg
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/04 23:18:23 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'. The SQL statement executed was: select * from banner where id = '37'.
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\BannerController.php (107)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/04 23:18:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'id' in 'where clause'. The SQL statement executed was: select * from banner where id = '37'' in D:\xampp\htdocs\kstudio\framework\db\CDbCommand.php:543
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 D:\xampp\htdocs\kstudio\protected\controllers\backend\BannerController.php(107): CDbCommand->queryRow()
+#2 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): BannerController->actionUploadify()
+#3 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('uploadify')
+#7 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/banner/...')
+#8 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#10 {main}
+REQUEST_URI=/kstudio/backend/banner/uploadify/id/37
+HTTP_REFERER=http://localhost/kstudio/backend/banner
+---
+2018/11/05 10:27:15 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (D:\xampp\htdocs\kstudio\protected\controllers\backend\ImagesController.php:73)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ImagesController->runAction()
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ImagesController->runActionWithFilters()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ImagesController->run()
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/images/uploadify
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\ImagesController.php (73)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 10:29:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/product/thumbnail/img_tictnc0fj60ebon3llounq19xkrcfb.png".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/product...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/product/thumbnail/img_tictnc0fj60ebon3llounq19xkrcfb.png
+HTTP_REFERER=http://localhost/kstudio/backend/product/createproduct
+---
+2018/11/05 10:51:33 [error] [php] Undefined index: product_price_pro (D:\xampp\htdocs\kstudio\protected\views\backend\product\update.php:77)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ProductController->renderFile()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): ProductController->renderPartial()
+#2 D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php(112): ProductController->render()
+#3 unknown(0): ProductController->actionUpdate()
+#4 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ProductController->runAction()
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#9 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ProductController->run()
+#10 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/product/update/product_id/P20181029151035
+in D:\xampp\htdocs\kstudio\protected\views\backend\product\update.php (77)
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php (112)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 11:22:02 [error] [php] Undefined index: recomment (D:\xampp\htdocs\kstudio\protected\views\backend\product\detail_product.php:78)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ProductController->renderFile()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): ProductController->renderPartial()
+#2 D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php(147): ProductController->render()
+#3 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): ProductController->actionDetail_product()
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ProductController->runAction()
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#7 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ProductController->run()
+#8 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#9 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/product/detail_product/product_id/P20181029151035
+in D:\xampp\htdocs\kstudio\protected\views\backend\product\detail_product.php (78)
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php (147)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 11:31:50 [error] [php] Undefined variable: result (D:\xampp\htdocs\kstudio\protected\models\Backend_product.php:315)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CBaseController.php(95): ProductController->renderInternal()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ProductController->renderFile()
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): ProductController->renderPartial()
+#3 D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php(147): ProductController->render()
+#4 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): ProductController->actionDetail_product()
+#5 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ProductController->runAction()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#8 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ProductController->run()
+#9 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/product/detail_product/product_id/P20181029151035
+in D:\xampp\htdocs\kstudio\protected\models\Backend_product.php (315)
+in D:\xampp\htdocs\kstudio\protected\views\backend\product\detail_product.php (82)
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php (147)
+2018/11/05 11:39:08 [error] [php] Undefined index: product_id (D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php:138)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ProductController->runAction()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ProductController->run()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/product/detail_product/product_id=P20181029151035
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php (138)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 11:58:32 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (67)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 11:58:33 [error] [php] imagejpeg(uploads/category/thumbnail/8438-keyboard.jpg): failed to open stream: No such file or directory (D:\xampp\htdocs\kstudio\protected\components\ImageResize.php:293)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): CategoryController->actionCreate()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 D:\xampp\htdocs\kstudio\framework\web\filters\CFilterChain.php(133): CategoryController->runAction()
+#3 D:\xampp\htdocs\kstudio\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#5 D:\xampp\htdocs\kstudio\framework\web\filters\CInlineFilter.php(58): CategoryController->filterAccessControl()
+#6 D:\xampp\htdocs\kstudio\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(291): CFilterChain->run()
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CategoryController->runActionWithFilters()
+#9 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CategoryController->run()
+#10 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/category/create
+in D:\xampp\htdocs\kstudio\protected\components\ImageResize.php (293)
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (80)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 11:59:01 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (67)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 13:59:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/category/thumbnail/2333-Kstudio - DSCF7346-1.jpg".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/categor...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/category/thumbnail/2333-Kstudio%20-%20DSCF7346-1.jpg
+HTTP_REFERER=http://localhost/kstudio/backend/category/update/id/1
+---
+2018/11/05 13:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/category/thumbnail/2333-Kstudio - DSCF7346-1.jpg".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/categor...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/category/thumbnail/2333-Kstudio%20-%20DSCF7346-1.jpg
+HTTP_REFERER=http://localhost/kstudio/backend/category/update/id/1
+---
+2018/11/05 13:59:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/category/thumbnail/2333-Kstudio - DSCF7346-1.jpg".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/categor...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/category/thumbnail/2333-Kstudio%20-%20DSCF7346-1.jpg
+HTTP_REFERER=http://localhost/kstudio/backend/category/update/id/1
+---
+2018/11/05 13:59:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/category/thumbnail/2333-Kstudio - DSCF7346-1.jpg".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/categor...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/category/thumbnail/2333-Kstudio%20-%20DSCF7346-1.jpg
+HTTP_REFERER=http://localhost/kstudio/backend/category/update/id/1
+---
+2018/11/05 14:00:27 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (105)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 14:00:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/category/thumbnail/8407-Kstudio - DSCF7357.JPG".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/categor...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/category/thumbnail/8407-Kstudio%20-%20DSCF7357.JPG
+HTTP_REFERER=http://localhost/kstudio/backend/category/update/id/2
+---
+2018/11/05 14:00:39 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (105)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 14:00:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/category/thumbnail/1534-Kstudio - DSCF7190-1.jpg".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/categor...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/category/thumbnail/1534-Kstudio%20-%20DSCF7190-1.jpg
+HTTP_REFERER=http://localhost/kstudio/backend/category/update/id/3
+---
+2018/11/05 14:00:48 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (105)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 14:23:35 [error] [php] Undefined index: product_id (D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php:138)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ProductController->runAction()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ProductController->run()
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#4 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#5 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/product/detail_product/product_idP20181105142313
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php (138)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 14:27:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/product/thumbnail/480-file_wimk8we8pfwntkq4uqojgwrzoan2kf.jpg".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/product...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/product/thumbnail/480-file_wimk8we8pfwntkq4uqojgwrzoan2kf.jpg
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/05 14:27:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/product/thumbnail/480-file_wimk8we8pfwntkq4uqojgwrzoan2kf.jpg".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/product...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/product/thumbnail/480-file_wimk8we8pfwntkq4uqojgwrzoan2kf.jpg
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/05 14:27:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/product/thumbnail/480-file_wimk8we8pfwntkq4uqojgwrzoan2kf.jpg".' in D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php:286
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('uploads/product...')
+#1 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/kstudio/uploads/product/thumbnail/480-file_wimk8we8pfwntkq4uqojgwrzoan2kf.jpg
+HTTP_REFERER=http://localhost/kstudio/
+---
+2018/11/05 22:23:07 [error] [exception.CException] exception 'CException' with message 'CDbCommand and its behaviors do not have a method or closure named "querrAll".' in D:\xampp\htdocs\kstudio\framework\base\CComponent.php:266
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php(218): CComponent->__call('querrAll', Array)
+#1 D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php(218): CDbCommand->querrAll()
+#2 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): CategoryController->actionCheckproduct()
+#3 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 D:\xampp\htdocs\kstudio\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 D:\xampp\htdocs\kstudio\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 D:\xampp\htdocs\kstudio\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 D:\xampp\htdocs\kstudio\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 D:\xampp\htdocs\kstudio\framework\web\CController.php(291): CFilterChain->run()
+#10 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('checkproduct')
+#12 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/categor...')
+#13 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#15 {main}
+REQUEST_URI=/kstudio/backend/category/checkproduct
+HTTP_REFERER=http://localhost/kstudio/backend/category/admin
+---
+2018/11/05 22:25:19 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (67)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/05 22:42:15 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (105)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/06 00:45:36 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Your request is invalid.' in D:\xampp\htdocs\kstudio\framework\web\CController.php:336
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#2 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#3 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('Getproduct')
+#4 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/product...')
+#5 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#7 {main}
+REQUEST_URI=/kstudio/backend/product/Getproduct/type_id/001
+HTTP_REFERER=http://localhost/kstudio/backend/about/create
+---

@@ -21,13 +21,19 @@ class LogoController extends Controller {
             $targetFile = rtrim($targetPath, '/') . '/' . $FileName;
 
             // Validate the file type
-            $fileTypes = array('jpg', 'jpeg', 'png'); // File extensions
+            $fileTypes = array('jpg', 'JPG', 'jpeg', 'JPEG', 'png'); // File extensions
             $fileParts = pathinfo($_FILES['Filedata']['name']);
-
+            $image_info = getimagesize($_FILES["Filedata"]["tmp_name"]);
+            $image_width = $image_info[0];
+            $image_height = $image_info[1];
+            if ($image_width != "258" && $image_height != "59") {
+                echo 2;
+                exit();
+            }
             if (in_array($fileParts['extension'], $fileTypes)) {
                 move_uploaded_file($tempFile, $targetFile);
 
-                //สั่งอัพเดท
+                //insert
                 $columns = array(
                     "logo" => $FileName,
                     "d_update" => date('Y-m-d H:i:s')

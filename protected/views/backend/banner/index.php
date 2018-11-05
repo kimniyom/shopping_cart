@@ -1,29 +1,32 @@
 <?php
 $Config = new Configweb_model();
 ?>
-<script src="<?= Yii::app()->baseUrl ?>/assets/uploadify/jquery.uploadify.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="<?= Yii::app()->baseUrl ?>/assets/uploadify/uploadify.css">
+
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#Filedata').uploadify({
+        $('#Filedata').uploadifive({
             'buttonText': 'กรุณาเลือกรูปภาพ ...',
             'auto': false, //เปิดใช้การอัพโหลดแบบอัติโนมัติ
-            'swf': '<?= Yii::app()->baseUrl ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
-            'uploader': "<?= Yii::app()->createUrl('backend/banner/uploadify', array("id" => $id)) ?>",
+            //'swf': '<?php //echo  Yii::app()->baseUrl            ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
+            'uploadScript': "<?= Yii::app()->createUrl('backend/banner/uploadify', array("id" => $id)) ?>",
             'fileSizeLimit': '<?php echo $Config->SizeFileUpload() ?>', //อัพโหลดได้ครั้งละไม่เกิน 2MB
             //'width': '350',
             //'height': '40',
-            'fileTypeExts': '*.jpg; *.png; *.JPG; *JPEG;', //กำหนดชนิดของไฟล์ที่สามารถอัพโหลดได้
+            'fileType': ["image/gif", "image/jpeg", "image/png", "image/PNG", "image/JPG", "image/JPEG"], //กำหนดชนิดของไฟล์ที่สามารถอัพโหลดได้
             'multi': false, //เปิดใช้งานการอัพโหลดแบบหลายไฟล์ในครั้งเดียว
             'queueSizeLimit': 1, //อัพโหลดได้ครั้งละ 5 ไฟล์
-            'onSelect': function (file) {
+            'onAddQueueItem': function (file) {
                 $("#images").val(file.name);
-                //alert('The file ' + file.name + ' was added to the queue.');
             },
+            'onError': function (errorType) {
+                alert('The error was: ' + errorType);
+                $("#images").val("");
+            },
+
             'onCancel': function (file) {
                 $("#images").val("");
             },
-            'onUploadSuccess': function (file, data, response) {
+            'onUploadComplete': function (file, data, response) {
                 window.location.reload();
             }
         });
@@ -38,12 +41,6 @@ $this->breadcrumbs = array(
 );
 ?>
 
-<div class="well well-sm">
-    <h4 style=" font-size: 20px; color: #ff0000;">
-        <i class="fa fa-image"></i> จัดการรูปภาพ Banner
-    </h4>
-</div>
-
 <div class="panel panel-default">
     <div class="panel-heading"><b>อัพโหลดรูปภาพ</b></div>
     <div class="panel-body">
@@ -53,9 +50,10 @@ $this->breadcrumbs = array(
         <input type="text" class="form-control" id="link"/>
         <label>Detail</label>
         <textarea id="detail" class="form-control" rows="5"></textarea>
+        <br/>
         <label>Text-Color</label>
         <input type="color" value="#000000" id="color">
-
+        <hr/>
         <div class="upload">
             <input type="hidden" id="images"/>
             <ul style=" font-size: 14px; color: #ff3300;">
@@ -89,7 +87,6 @@ $this->breadcrumbs = array(
     <table class="table">
         <thead>
             <tr>
-                <th>#</th>
                 <th>BANNER</th>
                 <th></th>
                 <th style="text-align:center;">STATUS</th>
@@ -102,7 +99,6 @@ $this->breadcrumbs = array(
             foreach ($banner as $rs): $i++;
                 ?>
                 <tr>
-                    <td><?php echo $i; ?></td>
                     <td>
                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/banner/thumbnail/<?php echo $rs['banner_images']; ?>" class="img-resize" style="max-width:200px;"/>
                     </td>
@@ -149,14 +145,17 @@ $this->breadcrumbs = array(
             alert('ยังไม่ได้เลือกรูปภาพ...');
             return false;
         }
+
+        if (img == "") {
+        }
         var data = {title: title, link: link, detail: detail, color: color};
 
         $.post(url, data, function (success) {
-            $('#Filedata').uploadify('upload', '*');
-
+            if (success == 1) {
+                $('#Filedata').uploadifive('upload');
+            }
         });
     }
-
 
     function delete_banner(id) {
         var r = confirm("คุณแน่ใจหรือไม่ ...");

@@ -66,7 +66,22 @@ class Backend_Product {
     }
 
     function _get_detail_product($product_id = '') {
-        $sql = "SELECT p.product_id,product_name,product_num,product_detail,product_price,d_update,p.status,t.type_id,type_name,p.category,p.brand,c.categoryname,b.brandname,recommend
+        $sql = "SELECT p.product_id,
+                    p.product_price_pro,
+                    product_name,
+                    product_num,
+                    product_detail,
+                    description,
+                    product_price,d_update,
+                    p.status,
+                    t.type_id,
+                    type_name,
+                    p.category,
+                    p.brand,
+                    c.categoryname,
+                    b.brandname,
+                    recommend,
+                    bastseller
                 FROM product p INNER JOIN product_type t ON p.type_id = t.type_id
                 INNER JOIN category c ON p.category = c.id
                 INNER JOIN brand b ON p.brand = b.id
@@ -286,6 +301,20 @@ class Backend_Product {
         } else {
             return "0";
         }
+    }
+
+    function Status($status){
+        if($status == 0){
+            $result = "<span style='color:green;'>พร้อมขาย</span>";
+        } else if($status == 1){
+            $result = "<span style='color:red;'>ไม่พร้อมขาย</span>";
+        } else if($status == 2){
+            $result = "<span style='color:red;'>SOLD OUT</span>";
+        } else {
+            $result = "-";
+        }
+
+        return $result;
     }
 
 }

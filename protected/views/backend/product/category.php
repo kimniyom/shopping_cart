@@ -29,7 +29,7 @@ $this->breadcrumbs = array(
 <div class="panel panel-default">
     <div class="panel-heading" style=" padding-bottom: 15px; padding-right: 5px;">
         จำนวนทั้งหมด
-        <?php echo count($product); ?>
+        <?php echo count($product); ?> รายการ
         <div class="pull-right">
             <a href="<?php echo Yii::app()->createUrl('backend/product/createproduct') ?>">
                 <div class="btn btn-success btn-sm">
@@ -47,7 +47,7 @@ $this->breadcrumbs = array(
                     <th>รูป</th>
                     <th>รหัส</th>
                     <th>ชื่อสินค้า</th>
-                    <th style="text-align: center;">ราคา</th>
+                    <th style="text-align: right;">ราคา</th>
                     <th style="text-align: center;">สถานะ</th>
                 </tr>
             </thead>
@@ -59,14 +59,13 @@ $this->breadcrumbs = array(
                     //$img_title = $product_model->get_images_product_title($last['product_id']);
                     $firstImg = $product_model->firstpictures($last['product_id']);
                     if (!empty($firstImg)) {
-                        $img = "uploads/product/" . $firstImg;
+                        $img = "uploads/product/thumbnail/100-" . $firstImg;
                     } else {
                         $img = "images/No_image_available.jpg";
                     }
-                    $link = Yii::app()->createUrl('backend/product/detail_product&product_id=' . $last['product_id']);
+                    $link = Yii::app()->createUrl('backend/product/detail_product/product_id/' . $last['product_id']);
                     $i++;
                     $trid = "td" . $i;
-                    
                     ?>
                     <tr id="<?php echo $trid; ?>">
                         <td><?php echo $i ?></td>
@@ -79,7 +78,7 @@ $this->breadcrumbs = array(
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" style="text-align:left;">
                                     <li><a href="<?php echo $link; ?>"><i class="fa fa-eye"></i> รายละเอียด</a></li>
                                     <li><a href="<?php echo Yii::app()->createUrl('backend/product/update', array('product_id' => $last['product_id'])); ?>"><i class="fa fa-edit"></i> แก้ไข</a></li>
-                                    <li><a href="javascript:delete_product('<?php echo $last['product_id'] ?>','<?php echo $trid ?>')"><i class="fa fa-trash"></i> ลบ</a></li>
+                                    <li><a href="javascript:Deletes('<?php echo $last['product_id'] ?>')"><i class="fa fa-trash"></i> ลบ</a></li>
                                 </ul>
                             </div>
                         </td>
@@ -97,15 +96,22 @@ $this->breadcrumbs = array(
                         </td>
                         <td><?php echo $last['product_id']; ?></td>
                         <td><?php echo $last['product_name']; ?></td>
-                        <td style=" text-align: center; font-weight: bold;">
-                            <?php echo number_format($last['product_price'], 2); ?>
+                        <td style=" text-align: right; font-weight: bold;">
+                            <?php
+                            if ($last['product_price_pro'] > 0) {
+                                echo '<del>' . number_format($last['product_price'], 2) . '</del><br/>';
+                                echo $last['product_price_pro'];
+                            } else {
+                                echo number_format($last['product_price'], 2);
+                            }
+                            ?>
                         </td>
-                        
+
                         <td style=" text-align: center;">
                             <?php
                             if ($last['status'] == '0') {
                                 echo "<font style='color:green;'><i class='fa fa-check'></i>พร้อมขาย</font>";
-                            } else if($last['status'] == '1'){
+                            } else if ($last['status'] == '1') {
                                 echo "<font style='color:red;'><i class='fa fa-ban'></i>ไม่พร้อมขาย</font>";
                             } else {
                                 echo "<font style='color:red;'><i class='fa fa-ban'></i>Sold Out</font>";
@@ -131,5 +137,17 @@ $this->breadcrumbs = array(
                 $("#" + trid).fadeOut();
             }
         });
+    }
+
+    function Deletes(id) {
+        var r = confirm("คุณแน่ใจหรือไม่ ...? ข้อมูลจะถูกลบออกจากระบบทั้งหมด");
+        if (r == true) {
+            var url = "<?php echo Yii::app()->createUrl('backend/product/deleteproduct') ?>";
+            var data = {product_id: id};
+
+            $.post(url, data, function (result) {
+                window.location.reload();
+            });
+        }
     }
 </script>

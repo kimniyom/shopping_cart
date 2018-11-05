@@ -71,7 +71,9 @@ class SiteController extends Controller {
      * Displays the login page
      */
     public function actionLogin() {
-        //$this->layout = "main";
+        if (!defined('CRYPT_BLOWFISH') || !CRYPT_BLOWFISH)
+            throw new CHttpException(500, "This application requires that PHP was compiled with Blowfish support for crypt().");
+
         $model = new LoginForm;
 
         // if it is ajax validation request
@@ -85,12 +87,10 @@ class SiteController extends Controller {
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
             if ($model->validate() && $model->login())
-            //$this->redirect(Yii::app()->user->returnUrl);
-                $this->redirect(array('backend/backend'));
-        } else {
-            $this->renderPartial('login', array('model' => $model));
+                $this->redirect(Yii::app()->user->returnUrl);
         }
         // display the login form
+        $this->renderPartial('login', array('model' => $model));
     }
 
     /**
@@ -98,7 +98,7 @@ class SiteController extends Controller {
      */
     public function actionLogout() {
         Yii::app()->user->logout();
-        $this->redirect(array('frontend/main'));
+        $this->redirect(array('site/index'));
     }
 
     public function actionAbout() {

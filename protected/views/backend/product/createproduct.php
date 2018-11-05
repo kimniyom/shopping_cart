@@ -3,30 +3,37 @@
         color: #000000;
         font-weight: bold;
     }
+
+    .modal-dialog {
+        width: 100%;
+    }
+    
+
 </style>
+<?php
+$Config = new Configweb_model();
+?>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.js"></script>
-
-<script src="<?= Yii::app()->baseUrl ?>/assets/uploadify/jquery.uploadify.js" type="text/javascript"></script>
-<link rel="stylesheet" type="text/css" href="<?= Yii::app()->baseUrl ?>/assets/uploadify/uploadify.css">
 
 <script type="text/javascript">
     $(document).ready(function () {
         //load_data();
-        $('#Filedata').uploadify({
+        $('#Filedata').uploadifive({
             /*'buttonText': 'กรุณาเลือกรูปภาพ ...',*/
             'auto': true, //เปิดใช้การอัพโหลดแบบอัติโนมัติ
             buttonText: "อัพโหลดรูปภาพ",
             //'buttonImage': '<?//= Yii::app()->baseUrl ?>/images/image-up-icon.png',
-            'swf': '<?= Yii::app()->baseUrl ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
-            'uploader': "<?= Yii::app()->createUrl('backend/images/uploadify') ?>",
-            'fileSizeLimit': '1MB', //อัพโหลดได้ครั้งละไม่เกิน 1024kb
+            //'swf': '<?php //echo Yii::app()->baseUrl      ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
+            'uploadScript': "<?= Yii::app()->createUrl('backend/images/uploadify') ?>",
+            'fileSizeLimit': '<?php echo $Config->SizeFileUpload() ?>', //อัพโหลดได้ครั้งละไม่เกิน 1024kb
             //'width': '128',
             //'height': '132',
-            'fileTypeExts': '*.jpg; *.JPG; *.JPEG; *.jpeg;', //กำหนดชนิดของไฟล์ที่สามารถอัพโหลดได้
+            'fileType': ["image/jpg", "image/jpeg", "image/JPG", "image/JPEG"], //กำหนดชนิดของไฟล์ที่สามารถอัพโหลดได้
             'multi': true, //เปิดใช้งานการอัพโหลดแบบหลายไฟล์ในครั้งเดียว
+            'removeCompleted': true,
             'queueSizeLimit': 5, //อัพโหลดได้ครั้งละ 5 ไฟล์
-            'onUploadSuccess': function (file, data, response) {
+            'onUploadComplete': function (file, data, response) {
                 load_data();
             }
         });
@@ -46,7 +53,7 @@ $ConfigWeb = new Configweb_model();
 <div class="well" style="width:100%;" id="add-product">
     <form class="form-horizontal">
         <fieldset>
-            <legend style="margin:0px;">
+            <legend style="margin:0px; border-bottom: #cccccc solid 1px;">
                 <span class="label label-warning">
                     <img src="<?php echo Yii::app()->baseUrl; ?>/images/add-product-icon.png"/>
                     เพิ่มข้อมูลสินค้า
@@ -63,37 +70,42 @@ $ConfigWeb = new Configweb_model();
                     <div id="load_images_product"></div>
                 </div>
                 <div class="col-md-9 col-lg-9" id="p-right" style="padding-top:10px;">
-                    <label for="">Category</label>
+                    <label for="">*Category</label>
                     <select class="form-control" id="category" onchange="combotype(this.value)">
-                    <option value="">== Select ==</option>
-                    <?php foreach($categorys as $rscategory): ?>
-                        <option value="<?php echo $rscategory['id'] ?>"><?php echo $rscategory['categoryname'] ?></option>
-                    <?php endforeach; ?>
-                    </select>
-                    <label for="">Type</label>
-                    <div id="combotype">
-                    <select class="form-control" id="types">
                         <option value="">== Select ==</option>
+                        <?php foreach ($categorys as $rscategory): ?>
+                            <option value="<?php echo $rscategory['id'] ?>"><?php echo $rscategory['categoryname'] ?></option>
+                        <?php endforeach; ?>
                     </select>
+                    <label for="">*Type</label>
+                    <div id="combotype">
+                        <select class="form-control" id="types">
+                            <option value="">== Select ==</option>
+                        </select>
                     </div>
-                    <label for="">Brand</label>
+                    <label for="">*Brand</label>
                     <select class="form-control" id="brand">
-                    <option value="">== Select ==</option>
-                    <?php foreach($brands as $rsbrans): ?>
-                        <option value="<?php echo $rsbrans['id'] ?>"><?php echo $rsbrans['brandname'] ?></option>
-                    <?php endforeach; ?>
+                        <option value="">== Select ==</option>
+                        <?php foreach ($brands as $rsbrans): ?>
+                            <option value="<?php echo $rsbrans['id'] ?>"><?php echo $rsbrans['brandname'] ?></option>
+                        <?php endforeach; ?>
                     </select>
                     <label for="" style="display:none;">รหัสสินค้า</label>
                     <input type="hidden" id="product_id" name="product_id" class="form-control" value="<?php echo $product_id; ?>" readonly style="width:40%;"/>
 
-                    <label for="">Name</label>
+                    <label for="">*Name</label>
                     <input type="text" id="product_name" name="product_name" class="form-control" style="width:100%;" required="required"/>
-
-                    <label for="">Price</label>
+                    <label>*Description</label>
+                    <textarea class="form-control" id="description" rows="5"></textarea>
+                    <label for="">*Price</label>
                     <input type="text" id="product_price" name="product_price" class="form-control" onKeyUp="if (this.value * 1 != this.value)
-                            this.value = '';" style="width:30%;" required="required"/>
+                                this.value = '';" style="width:30%;" required="required"/>
+                    <label for="">ราคาโปร / ราคาพิเศษ</label>
+                    <input type="text" id="product_price_pro" name="product_price_pro" class="form-control" onKeyUp="if (this.value * 1 != this.value)
+                                this.value = '';" style="width:30%;" required="required"/>
+                    <p style="color:#ff0033;">*ถ้าใส่ราคาโปรหน้าเว็บจะนำราคานี้ไปแสดง</p>
                     <br/>
-                    <label for="">สถานะ</label>
+                    <label for="">*สถานะ</label>
                     <input id="status" name="status" class="styled" type="radio" value="0" checked="checked"/>
                     <label for="radio">พร้อมขาย</label>
                     <input id="status" name="status" class="styled" type="radio" value="1"/>
@@ -101,11 +113,15 @@ $ConfigWeb = new Configweb_model();
                     <input id="status" name="status" class="styled" type="radio" value="2"/>
                     <label for="radio">Sold Out</label>
                     <br/>
-                    <label for="">สินค้าแนะนำ</label>
+                    <label for="">*สินค้าแนะนำ</label>
                     <input id="recommend" name="recommend" class="styled" type="radio" value="1"/> <label for="radio">Yes</label>
                     <input id="recommend" name="recommend" class="styled" type="radio" value="0" checked="checked"/> <label for="radio">No</label>
                     <br/>
-                    <label for="textArea">รายละเอียด</label>
+                    <label for="">*สินค้าขายดี</label>
+                    <input id="bastseller" name="bastseller" class="styled" type="radio" value="1"/> <label for="radio">Yes</label>
+                    <input id="bastseller" name="bastseller" class="styled" type="radio" value="0" checked="checked"/> <label for="radio">No</label>
+                    <br/><br/>
+                    <label for="textArea">*รายละเอียด</label>
                     <textarea id="product_detail" name="product_detail" rows="3" class="form-control input-sm" required="required"></textarea>
 
                     <hr/>
@@ -114,7 +130,7 @@ $ConfigWeb = new Configweb_model();
                         บันทึกข้อมูล
                     </button>
 
-                    <font style=" color: #ff0033; display: none;" id="f_error">กรอกข้อมูลไม่ครบ ..?</font>
+                    <font style=" color: #ff0033; display: none;" id="f_error">กรอกข้อมูล * ไม่ครบ ..?</font>
                     <!--
                     <button id="save_regis" name="save_regis" class="btn btn-success"
                             onclick="save_product();">
@@ -130,13 +146,13 @@ $ConfigWeb = new Configweb_model();
     ##### Model Images #####
 -->
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" id="popupImages" data-backdrop="static">
-    <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-dialog modal-lg" role="document" style=" margin: 0px;">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="font-18">เลือกรูปภาพ</h4>
             </div>
-            <div class="modal-body" style="height: 400px; overflow: auto;">
+            <div class="modal-body" style="overflow: auto;">
                 <input id="Filedata" name="Filedata" type="file" multiple="true">
                 <font id="font-16">* อัพโหลดได้ครั้งละไม่เกิน <?php echo $ConfigWeb->LimitFileUpload() ?> ภาพ,นามสกุลไฟล์ .jpg,ขนาดไม่เกิน <?php echo $ConfigWeb->SizeFileUpload() ?> </font>
                 <hr/>
@@ -188,8 +204,10 @@ $ConfigWeb = new Configweb_model();
         var status = $("input[name='status']:checked").val();
         var product_detail = CKEDITOR.instances.product_detail.getData();
         var recomment = $("input[name='recomment']:checked").val();
-  
-        if (category == "" || product_name == '' || product_price == '' || product_detail == '' || type == '' || brand == '') {
+        var description = $("#description").val();
+        var bastseller = $("input[name='bastseller']:checked").val();
+        var product_price_pro = $("#product_price_pro").val();
+        if (category == "" || product_name == '' || product_price == '' || product_detail == '' || type == '' || brand == '' || description == "" || bastseller == "") {
             $("#f_error").show().delay(5000).fadeOut(500);
             return false;
         }
@@ -203,11 +221,14 @@ $ConfigWeb = new Configweb_model();
             product_price: product_price,
             status: status,
             product_detail: product_detail,
-            recomment: recomment
+            recomment: recomment,
+            description: description,
+            bastseller: bastseller,
+            product_price_pro: product_price_pro
         };
-        
+
         $.post(url, data, function (success) {
-            window.location = "<?php echo Yii::app()->createUrl('backend/product/detail_product&product_id=') ?>" + product_id;
+            window.location = "<?php echo Yii::app()->createUrl('backend/product/detail_product/product_id') ?>" + "/" + product_id;
         });
     }
 
@@ -235,7 +256,7 @@ $ConfigWeb = new Configweb_model();
         var r = confirm("คุณแน่ใจหรือไม่ ...?");
         var url = "<?php echo Yii::app()->createUrl('backend/product/delete_images') ?>";
         var productID = $("#product_id").val();
-        var data = {id: id,product_id: productID};
+        var data = {id: id, product_id: productID};
 
         if (r == true) {
             $.post(url, data, function (datas) {
@@ -244,14 +265,17 @@ $ConfigWeb = new Configweb_model();
             });
         }
     }
-    
+
     function checkheight() {
         var w = window.innerWidth;
-        if(w >= 768){
+        var height = window.innerHeight;
+        var heights = height - 140;
+        $(".modal-dialog  .modal-body").css({'height': heights});
+        if (w >= 768) {
             var p_left = $("#p-left").height();
             var p_right = $("#p-right").height();
             //alert(p_left + " - " + p_right);
-            if(p_left > p_right){
+            if (p_left > p_right) {
                 $("#p-right").removeClass("p-right");
                 $("#p-left").addClass("p-left");
             } else {
@@ -265,10 +289,10 @@ $ConfigWeb = new Configweb_model();
 
     }
 
-    function combotype(category){
+    function combotype(category) {
         var url = "<?php echo Yii::app()->createUrl('backend/typeproduct/combotype') ?>";
-        var data = {category: category,type: ""};
-        $.post(url,data,function(datas){
+        var data = {category: category, type: ""};
+        $.post(url, data, function (datas) {
             $("#combotype").html(datas);
         });
     }

@@ -85,6 +85,7 @@ class Product {
         product_num,
         product_detail,
         product_price,
+        description,
         d_update,
         p.status,
         t.type_id,
