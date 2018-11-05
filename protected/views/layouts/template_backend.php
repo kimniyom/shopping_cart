@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/css/perfect-scrollbar.css"/>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/css/card-css/card-css.css"/>
         <!-- Bootstrap CheckBox
-        <link rel="stylesheet" href="<?php //echo Yii::app()->baseUrl;  ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="<?php //echo Yii::app()->baseUrl;   ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
         -->
         <script src="<?= Yii::app()->baseUrl; ?>/js/jquery.js" type="text/javascript"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -410,8 +410,6 @@
                     $this.find('i').removeClass('glyphicon-chevron-up').addClass('glyphicon-chevron-down');
                 }
             });
-
-
         </script>
     </body>
 </html>
