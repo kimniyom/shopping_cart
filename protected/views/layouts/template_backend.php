@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/css/perfect-scrollbar.css"/>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/css/card-css/card-css.css"/>
         <!-- Bootstrap CheckBox
-        <link rel="stylesheet" href="<?php //echo Yii::app()->baseUrl;   ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="<?php //echo Yii::app()->baseUrl;        ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
         -->
         <script src="<?= Yii::app()->baseUrl; ?>/js/jquery.js" type="text/javascript"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -197,23 +197,25 @@
                     </div>
                     <div class="list-group" id="side1">
                         <a href="<?= Yii::app()->createUrl('backend/contact') ?>" class="list-group-item" onclick="setSideMenu('side1', 'side1')">
-                            <i class="fa fa-phone-square"></i> ข้อมูลติดต่อ
+                            <i class="fa fa-phone-square"></i> Contact
                         </a>
                         <a href="<?= Yii::app()->createUrl('backend/about') ?>" class="list-group-item">
-                            <i class="fa fa-user-secret"></i> เกี่ยวกับเรา
+                            <i class="fa fa-user-secret"></i> Abount
                         </a>
                         <a href="<?= Yii::app()->createUrl('backend/banner') ?>" class="list-group-item">
-                            <i class="fa fa-image"></i>  จัดการภาพ Banner
+                            <i class="fa fa-image"></i>  Banner
                         </a>
                         <a href="<?= Yii::app()->createUrl('backend/logo') ?>" class="list-group-item">
-                            <i class="fa fa-smile-o"></i>  จัดการ โลโก้ เว็บ
+                            <i class="fa fa-smile-o"></i>  โลโก้
                         </a>
                         <a href="<?= Yii::app()->createUrl('backend/web') ?>" class="list-group-item">
-                            <i class="fa fa-text-height"></i>  จัดการ ชื่อเว็บ
+                            <i class="fa fa-text-height"></i>  ชื่อเว็บ
                         </a>
-                        <a href="<?= Yii::app()->createUrl('backend/howtoorder') ?>" class="list-group-item">
+                        <!--
+                        <a href="<?php //Yii::app()->createUrl('backend/howtoorder')    ?>" class="list-group-item">
                             <i class="fa fa-book"></i>  วิธีการสั่งซื้อ
                         </a>
+                        -->
                     </div>
                 </div>
                 <!-- List Menu Admin-->
@@ -224,43 +226,40 @@
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group" id="side2">
-                        <a href="<?= Yii::app()->createUrl('backend/category/admin') ?>"
-                           class="list-group-item" onclick="setSideMenu('side2', 'side2')"><i class="fa fa-folder-open"></i> Category</a>
-                        <a href="<?= Yii::app()->createUrl('backend/typeproduct/from_add_type') ?>"
-                           class="list-group-item" onclick="setSideMenu('side2', 'side2')"><i class="fa fa-folder-open"></i> Types</a>
-                        <a href="<?= Yii::app()->createUrl('backend/brand/admin') ?>"
-                           class="list-group-item" onclick="setSideMenu('side2', 'side2')"><i class="fa fa-folder-open"></i> Brands</a>
-                        <a href="<?= Yii::app()->createUrl('backend/product/index') ?>"
-                           class="list-group-item" onclick="setSideMenu('side2', 'side2')"><i class="fa fa-folder-open"></i> Product</a>
-                        <a href="<?= Yii::app()->createUrl('backend/user/userall') ?>"
+                        <a href="<?php echo Yii::app()->createUrl('backend/user/userall')  ?>"
+                           class="list-group-item"><i class="fa fa-group"></i> ผู้ใช้งาน</a>
+                           <a href="<?php echo Yii::app()->createUrl('backend/user/userall')  ?>"
+                           class="list-group-item"><i class="fa fa-group"></i> สิทธิ์การใช้งาน</a>
+                        <!--
+                        <a href="<?php //echo Yii::app()->createUrl('backend/user/userall')  ?>"
                            class="list-group-item"><i class="fa fa-group"></i>  ข้อมูลสมาชิก</a>
-                        <a href="<?= Yii::app()->createUrl('backend/payment/view') ?>"
+                        <a href="<?php //echo Yii::app()->createUrl('backend/payment/view')  ?>"
                            class="list-group-item"><span class="fa fa-money"></span>  ช่องทางการชำระเงิน</a>
-                        <a href="<?= Yii::app()->createUrl('backend/period') ?>"
+                        <a href="<?php //echo Yii::app()->createUrl('backend/period')  ?>"
                            class="list-group-item"><span class="fa fa-calendar"></span>  ระยะเวลาจองสินค้า</a>
-                        <a href="<?= Yii::app()->createUrl('backend/transport') ?>"
+                        <a href="<?php //echo Yii::app()->createUrl('backend/transport')  ?>"
                            class="list-group-item"><span class="fa fa-truck"></span>  ช่องทางการจัดส่ง</a>
+                        -->
                     </div>
                 </div>
 
                 <!-- List รายชื่อ สินค้า -->
+
                 <div class="panel panel-default side3" id="panel-head">
                     <div class="panel-heading" id="panel">
-                        <img src="<?= Yii::app()->baseUrl; ?>/images/shipping-box-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
-                        คลังสินค้า
+                        <img src="<?php echo Yii::app()->baseUrl; ?>/images/shipping-box-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px;">
+                        สินค้า
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group" id="side3">
-                        <?php
-                        $produce_type = $product_model->_get_product_type();
-                        foreach ($produce_type as $produce_types):
-                            ?>
-                            <a href="<?php echo Yii::app()->createUrl('backend/product/Getproduct/type_id/' . $produce_types['type_id']) ?>"
-                               class="list-group-item" onclick="setSideMenu('side3', 'side3')">
-                                <span class="label" style=" background: #24282d;"><?php echo $product_model->get_count_product_type($produce_types['type_id']); ?></span>
-                                <?php echo $produce_types['type_name']; ?>
-                            </a>
-                        <?php endforeach; ?>
+                        <a href="<?= Yii::app()->createUrl('backend/category/admin') ?>"
+                           class="list-group-item" onclick="setSideMenu('side3', 'side3')"><i class="fa fa-folder-open"></i> Category</a>
+                        <a href="<?= Yii::app()->createUrl('backend/typeproduct/from_add_type') ?>"
+                           class="list-group-item" onclick="setSideMenu('side3', 'side3')"><i class="fa fa-folder-open"></i> Types</a>
+                        <a href="<?= Yii::app()->createUrl('backend/brand/admin') ?>"
+                           class="list-group-item" onclick="setSideMenu('side3', 'side3')"><i class="fa fa-folder-open"></i> Brands</a>
+                        <a href="<?= Yii::app()->createUrl('backend/product/index') ?>"
+                           class="list-group-item" onclick="setSideMenu('side3', 'side3')"><i class="fa fa-folder-open"></i> Products</a>
                     </div>
                 </div>
 
@@ -286,24 +285,26 @@
 
                 <!-- รายการจัดส่งสินค้า -->
                 <!-- List รายชื่อ สินค้า -->
+                <!--
                 <div class="panel panel-default side5" id="panel-head">
                     <div class="panel-heading" id="panel">
-                        <img src="<?= Yii::app()->baseUrl; ?>/images/front-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px; width: 32px;">
+                        <img src="<?php //echo Yii::app()->baseUrl;     ?>/images/front-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px; width: 32px;">
                         รหัสส่งสินค้า
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group" id="side5">
-                        <?php
-                        $notify = $product_model->get_notify_postcode();
-                        foreach ($notify as $datas):
-                            ?>
+                <?php
+                //$notify = $product_model->get_notify_postcode();
+                //foreach ($notify as $datas):
+                ?>
                             <a class="list-group-item">
-                                <span class="glyphicon glyphicon-user"></span> คุณ <?php echo $datas['name'] . ' ' . $datas['lname']; ?><br/>
-                                <span class="glyphicon glyphicon-send"></span>  <?php echo $datas['postcode'] ?>
+                                <span class="glyphicon glyphicon-user"></span> คุณ <?php //echo $datas['name'] . ' ' . $datas['lname'];     ?><br/>
+                                <span class="glyphicon glyphicon-send"></span>  <?php //echo $datas['postcode']     ?>
                             </a>
-                        <?php endforeach; ?>
+                <?php //endforeach; ?>
                     </div>
                 </div>
+                -->
                 <br/><br/>
             </div>
             <!-- /#sidebar-wrapper -->

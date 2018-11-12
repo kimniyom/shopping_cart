@@ -3982,3 +3982,1138 @@ Stack trace:
 REQUEST_URI=/kstudio/backend/product/Getproduct/type_id/001
 HTTP_REFERER=http://localhost/kstudio/backend/about/create
 ---
+2018/11/06 10:59:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Product.php(63): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php(3): Product->_get_last_product()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(126): require('/Applications/M...')
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#10 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(32): CController->render('index')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('index')
+#16 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#17 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/shopping_cart/
+---
+2018/11/06 10:59:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1049] Unknown database 'kstudio_db'' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CModule.php(103): CModule->getComponent('db')
+#4 /Applications/MAMP/htdocs/shopping_cart/protected/models/Product.php(63): CModule->__get('db')
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php(3): Product->_get_last_product()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(126): require('/Applications/M...')
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', NULL, true)
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#10 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(32): CController->render('index')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('index')
+#16 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#17 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#18 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/shopping_cart/
+---
+2018/11/06 12:02:51 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('set_navbar')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/backend...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/backend/set_navbar
+HTTP_REFERER=http://localhost/shopping_cart/backend/product/detail_product/product_id/P20181029151035
+---
+2018/11/06 13:47:57 [error] [php] Undefined variable: order_model (/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/template_backend.php:322)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(784): BackendController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php(44): BackendController->render()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): BackendController->actionIndex()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): BackendController->runAction()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): BackendController->filterAccessControl()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): BackendController->runActionWithFilters()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): BackendController->run()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#14 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/backend
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/template_backend.php (322)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php (44)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/06 14:11:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "company".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('company')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('company')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/company')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/gii
+---
+2018/11/06 14:11:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index/gii".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('index/gii')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index/gii
+---
+2018/11/06 14:11:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "company".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('company')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('company')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/company')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php/gii
+---
+2018/11/06 14:12:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "company".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('company')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('company')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/company')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/index.php/gii
+---
+2018/11/06 14:16:34 [error] [php] Declaration of Article::Count() should be compatible with CActiveRecord::count($condition = '', $params = Array) (/Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php:15)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php(7): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(126): require()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SiteController->renderFile()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SiteController->renderPartial()
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(32): SiteController->render()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/site/index
+in /Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php (15)
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php (7)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (32)
+2018/11/06 14:17:12 [error] [php] Declaration of Article::Count() should be compatible with CActiveRecord::count($condition = '', $params = Array) (/Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php:15)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php(7): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(126): require()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SiteController->renderFile()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SiteController->renderPartial()
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(32): SiteController->render()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/site/index
+in /Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php (15)
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php (7)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (32)
+2018/11/06 14:17:36 [error] [php] Declaration of Article::Count() should be compatible with CActiveRecord::count($condition = '', $params = Array) (/Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php:16)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php(7): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(126): require()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SiteController->renderFile()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SiteController->renderPartial()
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(32): SiteController->render()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/site/index
+in /Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php (16)
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php (7)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (32)
+2018/11/06 14:18:15 [error] [exception.CException] exception 'CException' with message 'Article and its behaviors do not have a method or closure named "Get_article_limit".' in /Applications/MAMP/htdocs/shopping_cart/framework/base/CComponent.php:266
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(227): CComponent->__call('Get_article_lim...', Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php(8): CActiveRecord->__call('Get_article_lim...', Array)
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php(8): Article->Get_article_limit(3)
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(126): require('/Applications/M...')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(95): CBaseController->renderInternal('/Applications/M...', NULL, true)
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): CBaseController->renderFile('/Applications/M...', NULL, true)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): CController->renderPartial('index', NULL, true)
+#7 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(32): CController->render('index')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('index')
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/index')
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/shopping_cart/site/index
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 14:18:31 [error] [php] Declaration of Article::Count() should be compatible with CActiveRecord::count($condition = '', $params = Array) (/Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php:16)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php(7): spl_autoload_call()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(126): require()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SiteController->renderFile()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SiteController->renderPartial()
+#5 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(32): SiteController->render()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/site/index
+in /Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php (16)
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php (7)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (32)
+2018/11/06 14:52:22 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('view')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/article/view/id/5
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 14:52:35 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('view')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/article/view/id/5
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 14:53:50 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('delete')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/article/delete
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/5
+---
+2018/11/06 15:21:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/No-image.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('images/No-image...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/images/No-image.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 15:21:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/No-image.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('images/No-image...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/images/No-image.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 15:21:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/No-image.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('images/No-image...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/images/No-image.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 15:23:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/No-image.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('images/No-image...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/images/No-image.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 15:23:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/No-image.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('images/No-image...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/images/No-image.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 15:27:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/No-image.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('images/No-image...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/images/No-image.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 15:28:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/No-image.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('images/No-image...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/images/No-image.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 15:32:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/No-image.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('images/No-image...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/images/No-image.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 15:34:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/No-image.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('images/No-image...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/images/No-image.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 15:37:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/No-image.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('images/No-image...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/images/No-image.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/06 15:40:06 [error] [php] Undefined variable: id (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/update.php:8)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ArticleController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ArticleController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(235): ArticleController->render()
+#3 unknown(0): ArticleController->actionUpdate()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): ArticleController->runAction()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): ArticleController->filterAccessControl()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#15 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#16 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/article/update/id/10
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/update.php (8)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (235)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/06 15:45:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-img_eomb38ggac7o2ffjkjyccxacc5bpqw.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-img_eomb38ggac7o2ffjkjyccxacc5bpqw.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/8
+---
+2018/11/06 15:46:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-img_eomb38ggac7o2ffjkjyccxacc5bpqw.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-img_eomb38ggac7o2ffjkjyccxacc5bpqw.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/8
+---
+2018/11/06 15:46:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-img_fz5bzi1ak7hk1zmw2f21zwpig7zhyy.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-img_fz5bzi1ak7hk1zmw2f21zwpig7zhyy.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/6
+---
+2018/11/06 15:50:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-1444888810backup-1.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-1444888810backup-1.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/3
+---
+2018/11/06 15:51:09 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:169)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): ArticleController->runAction()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): ArticleController->filterAccessControl()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/article/upload/id/3
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (169)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/06 15:51:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-img_lw83xzu82a2ucw53fo9oubtdz9boma.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-img_lw83xzu82a2ucw53fo9oubtdz9boma.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/3
+---
+2018/11/06 15:51:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_lw83xzu82a2ucw53fo9oubtdz9boma.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_lw83xzu82a2ucw53fo9oubtdz9boma.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/3
+---
+2018/11/06 15:51:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-img_lw83xzu82a2ucw53fo9oubtdz9boma.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-img_lw83xzu82a2ucw53fo9oubtdz9boma.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/3
+---
+2018/11/06 15:52:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-img_3g7gcpuxzug8k8d5g01lgb97xgkwqm.jpg".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-img_3g7gcpuxzug8k8d5g01lgb97xgkwqm.jpg
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/4
+---
+2018/11/07 00:15:54 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:169)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): ArticleController->runAction()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): ArticleController->filterAccessControl()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/article/upload/id/10
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (169)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/07 00:22:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_g6qfiq0agp2ix0oa5ip9vpykmh3j8d.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_g6qfiq0agp2ix0oa5ip9vpykmh3j8d.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article
+---
+2018/11/07 00:22:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-img_g6qfiq0agp2ix0oa5ip9vpykmh3j8d.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-img_g6qfiq0agp2ix0oa5ip9vpykmh3j8d.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/10
+---
+2018/11/07 00:22:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_g6qfiq0agp2ix0oa5ip9vpykmh3j8d.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_g6qfiq0agp2ix0oa5ip9vpykmh3j8d.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 00:22:55 [error] [php] imagecreatefrompng(./uploads/article/img_g6qfiq0agp2ix0oa5ip9vpykmh3j8d.png): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:175)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): ArticleController->runAction()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): ArticleController->filterAccessControl()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/article/upload/id/10
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (175)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/07 00:23:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-img_1c1czh63p74rjy5bhy3ofm97e3lrhf.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-img_1c1czh63p74rjy5bhy3ofm97e3lrhf.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/10
+---
+2018/11/07 00:23:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_1c1czh63p74rjy5bhy3ofm97e3lrhf.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_1c1czh63p74rjy5bhy3ofm97e3lrhf.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 00:26:04 [error] [php] imagecreatefrompng(./uploads/article/img_2qidv7amlohv06qkwscl6c8d3yjl3l.jpg): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:176)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): ArticleController->runAction()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): ArticleController->filterAccessControl()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/article/upload/id/10
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (176)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/07 00:26:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-img_ng6kdp82x7syzrxzg6ijkwhrk58yau.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-img_ng6kdp82x7syzrxzg6ijkwhrk58yau.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/10
+---
+2018/11/07 00:29:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/200-img_ng6kdp82x7syzrxzg6ijkwhrk58yau.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/200-img_ng6kdp82x7syzrxzg6ijkwhrk58yau.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/10
+---
+2018/11/07 00:29:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_ng6kdp82x7syzrxzg6ijkwhrk58yau.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_ng6kdp82x7syzrxzg6ijkwhrk58yau.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 00:29:50 [error] [php] imagecreatefrompng(./uploads/article/img_ng6kdp82x7syzrxzg6ijkwhrk58yau.png): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:176)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): ArticleController->runAction()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): ArticleController->filterAccessControl()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/article/upload/id/10
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (176)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/07 00:33:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_sso0j60z6pk7mr9qhbuo31rds8i7a6.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_sso0j60z6pk7mr9qhbuo31rds8i7a6.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 00:33:34 [error] [php] imagecreatefrompng(./uploads/article/img_sso0j60z6pk7mr9qhbuo31rds8i7a6.png): failed to open stream: No such file or directory (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:176)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): ArticleController->runAction()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): ArticleController->filterAccessControl()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/article/upload/id/10
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (176)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/07 00:34:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_i5ywsypbh5w3qsilsr2kew3a58sv7w.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_i5ywsypbh5w3qsilsr2kew3a58sv7w.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 00:55:42 [error] [exception.ImageResizeException] exception 'ImageResizeException' with message 'File does not exist' in /Applications/MAMP/htdocs/shopping_cart/protected/components/ImageResize.php:106
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(234): ImageResize->__construct('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php(206): ArticleController->Thumbnail('img_k1ivjfvc5ob...', 600)
+#2 [internal function]: ArticleController->actionUpload('10')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('upload')
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/article...')
+#15 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#16 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#17 {main}
+REQUEST_URI=/shopping_cart/backend/article/upload/id/10
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 00:58:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_k1ivjfvc5ob9rox0dssejtzf1z9x4e.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_k1ivjfvc5ob9rox0dssejtzf1z9x4e.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 01:39:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_jk3rkggvqzhg18931osmin8mbpvydv.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_jk3rkggvqzhg18931osmin8mbpvydv.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 01:39:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_jk3rkggvqzhg18931osmin8mbpvydv.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_jk3rkggvqzhg18931osmin8mbpvydv.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 01:41:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_jk3rkggvqzhg18931osmin8mbpvydv.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_jk3rkggvqzhg18931osmin8mbpvydv.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 01:42:28 [error] [php] imagecreatefromjpeg(): gd-jpeg: JPEG library reports unrecoverable error:  (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:170)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): ArticleController->runAction()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): ArticleController->filterAccessControl()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#13 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/article/upload/id/10
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (170)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/07 01:44:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_xv9q6gmj3p5s0q030561q7pz3jzl20.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_xv9q6gmj3p5s0q030561q7pz3jzl20.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 01:44:34 [error] [php] Undefined variable: PngType (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php:173)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): ArticleController->runAction()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): ArticleController->filterAccessControl()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ArticleController->runActionWithFilters()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ArticleController->run()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/article/upload/id/10
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php (173)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/07 01:45:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "uploads/article/img_ah5clxdxvunv8uvaw5a0tl19icfde9.png".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('uploads/article...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/uploads/article/img_ah5clxdxvunv8uvaw5a0tl19icfde9.png
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/update/id/10
+---
+2018/11/07 10:10:06 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('set_navbar')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/backend...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/backend/set_navbar
+HTTP_REFERER=http://localhost/shopping_cart/backend/article/view/id/10
+---
+2018/11/08 01:20:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail&pid=0000000003".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('detail&pid=0000...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('detail&pid=0000...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/user/de...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/backend/user/detail&pid=0000000003
+HTTP_REFERER=http://localhost/shopping_cart/backend/user/userall
+---
+2018/11/08 01:25:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "index/gii".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('index/gii')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/index/gii
+---
+2018/11/11 20:21:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "detail&pid=0000000014".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('detail&pid=0000...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('detail&pid=0000...')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/user/de...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/backend/user/detail&pid=0000000014
+HTTP_REFERER=http://localhost/shopping_cart/backend/user/userall
+---
+2018/11/11 20:21:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index.html".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('index.html')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('index.html')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/user/in...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/backend/user/index.html
+HTTP_REFERER=http://localhost/shopping_cart/backend/user/detail&pid=0000000014
+---
+2018/11/12 09:09:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "savereview".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('savereview')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('savereview')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/commen...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/comment/savereview
+HTTP_REFERER=http://localhost/shopping_cart/frontend/product/views/id/P20181026103638
+---
+2018/11/12 09:16:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "savereview".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('savereview')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('savereview')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/commen...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/comment/savereview
+HTTP_REFERER=http://localhost/shopping_cart/frontend/product/views/id/P20181026103638?
+---
+2018/11/12 09:17:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "savereview".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('savereview')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('savereview')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/commen...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/comment/savereview
+HTTP_REFERER=http://localhost/shopping_cart/frontend/product/views/id/P20181026103638?
+---
+2018/11/12 09:17:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "savereview".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('savereview')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('savereview')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/commen...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/comment/savereview
+HTTP_REFERER=http://localhost/shopping_cart/frontend/product/views/id/P20181026103638?
+---
+2018/11/12 09:17:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "savereview".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('savereview')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('savereview')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/commen...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/comment/savereview
+HTTP_REFERER=http://localhost/shopping_cart/frontend/product/views/id/P20181026103638?
+---
+2018/11/12 09:17:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "savereview".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('savereview')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('savereview')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/commen...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/frontend/comment/savereview
+---
+2018/11/12 10:41:28 [error] [php] Undefined property: Configweb_model::$get_webname (/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php:20)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(784): ProductController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(36): ProductController->render()
+#2 unknown(0): ProductController->actionViews()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/product/views/id/P20181029151035
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php (20)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (36)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 10:41:56 [error] [php] Undefined property: Configweb_model::$get_webname (/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php:20)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(784): ProductController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(36): ProductController->render()
+#2 unknown(0): ProductController->actionViews()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/product/views/id/P20181029151035
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php (20)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (36)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 10:42:38 [error] [php] Undefined property: Configweb_model::$get_webname (/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php:20)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(784): ProductController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(36): ProductController->render()
+#2 unknown(0): ProductController->actionViews()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/product/views/id/P20181029151035
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php (20)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (36)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 10:42:49 [error] [php] Undefined property: Configweb_model::$get_webname (/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php:20)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(784): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(32): SiteController->render()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php (20)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (32)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 10:42:52 [error] [php] Undefined property: Configweb_model::$get_webname (/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php:20)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(784): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(32): SiteController->render()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#9 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php (20)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (32)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 10:51:58 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read from peoduct where product_id = 'P20181029151035'' at line 1. The SQL statement executed was: select read from peoduct where product_id = 'P20181029151035' .
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (40)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (34)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 10:51:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read from peoduct where product_id = 'P20181029151035'' at line 1. The SQL statement executed was: select read from peoduct where product_id = 'P20181029151035' ' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(40): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(34): ProductController->Readproduct('P20181029151035')
+#3 [internal function]: ProductController->actionViews('P20181029151035')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('views')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/shopping_cart/frontend/product/views/id/P20181029151035
+HTTP_REFERER=http://localhost/shopping_cart/
+---
+2018/11/12 10:52:43 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read from peoduct where product_id = 'P20181029151035'' at line 1. The SQL statement executed was: select read from peoduct where product_id = 'P20181029151035' .
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (40)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (34)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 10:52:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'read from peoduct where product_id = 'P20181029151035'' at line 1. The SQL statement executed was: select read from peoduct where product_id = 'P20181029151035' ' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(40): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(34): ProductController->Readproduct('P20181029151035')
+#3 [internal function]: ProductController->actionViews('P20181029151035')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('views')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/shopping_cart/frontend/product/views/id/P20181029151035
+HTTP_REFERER=http://localhost/shopping_cart/
+---
+2018/11/12 10:53:51 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kstudio_db.peoduct' doesn't exist. The SQL statement executed was: select countread from peoduct where product_id = 'P20181029151035' .
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (40)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (34)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 10:53:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kstudio_db.peoduct' doesn't exist. The SQL statement executed was: select countread from peoduct where product_id = 'P20181029151035' ' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(40): CDbCommand->queryRow()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(34): ProductController->Readproduct('P20181029151035')
+#3 [internal function]: ProductController->actionViews('P20181029151035')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs(Object(ProductController), Array)
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CAction->runWithParamsInternal(Object(ProductController), Object(ReflectionMethod), Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('views')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/shopping_cart/frontend/product/views/id/P20181029151035
+HTTP_REFERER=http://localhost/shopping_cart/
+---
+2018/11/12 11:57:03 [error] [php] Undefined index: typename (/Applications/MAMP/htdocs/shopping_cart/protected/views/product/views.php:115)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ProductController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ProductController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(35): ProductController->render()
+#3 unknown(0): ProductController->actionViews()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/product/views/id/P20181029151035
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/product/views.php (115)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (35)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 13:43:37 [error] [php] Undefined variable: countreviews (/Applications/MAMP/htdocs/shopping_cart/protected/views/product/views.php:176)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ProductController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ProductController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(36): ProductController->render()
+#3 unknown(0): ProductController->actionViews()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/product/views/id/P20181029151035
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/product/views.php (176)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (36)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 14:01:44 [error] [php] Undefined index: product_price_pro (/Applications/MAMP/htdocs/shopping_cart/protected/views/product/views.php:87)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ProductController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ProductController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(36): ProductController->render()
+#3 unknown(0): ProductController->actionViews()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/product/views/id/P20181029151035?quantity=1
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/product/views.php (87)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (36)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/12 14:24:25 [error] [php] Undefined index: countread (/Applications/MAMP/htdocs/shopping_cart/protected/views/product/views.php:138)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): ProductController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): ProductController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php(36): ProductController->render()
+#3 unknown(0): ProductController->actionViews()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CAction.php(108): ReflectionMethod->invokeArgs()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): ProductController->runAction()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): ProductController->runActionWithFilters()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): ProductController->run()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#12 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/frontend/product/views/id/P20181029151035
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/product/views.php (138)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php (36)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)

@@ -141,6 +141,7 @@ $this->breadcrumbs = array(
         var link = $("#link").val();
         var detail = $("#detail").val();
         var img = $("#images").val();
+        var id = "<?php echo $id ?>";
         if (img == "") {
             alert('ยังไม่ได้เลือกรูปภาพ...');
             return false;
@@ -148,7 +149,7 @@ $this->breadcrumbs = array(
 
         if (img == "") {
         }
-        var data = {title: title, link: link, detail: detail, color: color};
+        var data = {id: id,title: title, link: link, detail: detail, color: color};
 
         $.post(url, data, function (success) {
             if (success == 1) {

@@ -66,6 +66,7 @@ class BannerController extends Controller {
         $detail = Yii::app()->request->getPost('detail');
         $color = Yii::app()->request->getPost('color');
         $title = Yii::app()->request->getPost('title');
+        $id = Yii::app()->request->getPost('id');
         $columns = array(
             "title" => $title,
             "link" => $link,
@@ -128,9 +129,8 @@ class BannerController extends Controller {
                 $columns = array(
                     "banner_images" => "banner-" . $Name
                 );
-                $rs = Yii::app()->db->createCommand("select max(banner_id) as id from banner")->queryRow();
-                $maxID = $rs['id'];
-                Yii::app()->db->createCommand()->update("banner", $columns, "banner_id = '$maxID' ");
+               
+                Yii::app()->db->createCommand()->update("banner", $columns, "banner_id = '$id' ");
 
                 echo '1';
             }

@@ -78,6 +78,9 @@ return array(
             'showScriptName' => false,
             'caseSensitive' => true,
             'rules' => array(
+                'gii' => 'gii',
+                'gii/<controller:\w+>' => 'gii/<controller>',
+                'gii/<controller:\w+>/<action:\w+>' => 'gii/<controller>/<action>',
 //site is your controller, comapny is your action and the name is get variable actionCompany is waiting for.
                 '<name>' => 'site/company'
             )),
@@ -89,7 +92,7 @@ return array(
             'connectionString' => 'mysql:host=localhost;dbname=kstudio_db',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => '',
+            'password' => 'root',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(

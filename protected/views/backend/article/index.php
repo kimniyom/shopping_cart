@@ -38,7 +38,7 @@ $this->breadcrumbs = array(
             ?>
             <tr>
                 <td>
-                    <img class="media-object img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img ?>" style=" max-width: 50px;">
+                    <img class="media-object img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img ?>" style=" max-width: 200px;">
                 </td>
                 <td>
                     <a href="<?php echo Yii::app()->createUrl('backend/article/view/id/' . $rs['id']) ?>">

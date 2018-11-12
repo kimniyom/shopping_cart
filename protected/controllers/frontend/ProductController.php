@@ -20,13 +20,36 @@ class ProductController extends Controller {
 
         $this->render("//product/detail_product", $data);
     }
-    
-    public function actionViews($id){
+
+    public function actionViews($id) {
         $product = new Product();
         $data['product'] = $product->_get_detail_product($id);
         $data['images'] = $product->get_images_product($id);
         $data['near'] = $product->getProductNear($data['product']['category']);
+        $fimg = $product->firstpictures($data['product']['product_id']);
+
+        Yii::app()->session['fbtitle'] = $data['product']['product_name'];
+        Yii::app()->session['fbimages'] = Yii::app()->baseUrl."/uploads/product/tumbnail/480-" . $fimg;
+        Yii::app()->session['fburl'] = Yii::app()->createUrl('rontend/product/views', array("id" => $data['product']));
+        $this->Readproduct($id);
+        $data['countreview'] = $this->Countreview($id);
         $this->render("//product/views", $data);
+    }
+    
+    private function Readproduct($productID){
+        $sql = "select countread from product where product_id = '$productID' ";
+        $rs = Yii::app()->db->createCommand($sql)->queryRow();
+        $newsRead = $rs['countread'] + 1;
+        $columns = array("countread" => $newsRead);
+        Yii::app()->db->createCommand()
+                ->update("product", $columns,"product_id = '$productID'");
+    }
+    
+    private function Countreview($productID){
+         $sql = "select count(*) as total from review where product_id = '$productID' ";
+        $rs = Yii::app()->db->createCommand($sql)->queryRow();
+        $review = $newsRead = $rs['total'];
+        return $review;
     }
 
     public function actionNotify($order_id = '') {
@@ -167,6 +190,25 @@ class ProductController extends Controller {
         $data['product'] = $rs;
 
         $this->renderPartial("//product/product_more", $data);
+    }
+
+    public function actionReview() {
+        $productID = Yii::app()->request->getPost('product_id');
+        $data['review'] = Review::model()->findAll('product_id=:product_id', array(':product_id' => $productID));
+        $this->renderPartial("//review/index", $data);
+    }
+
+    public function actionSavereview() {
+        $columns = array(
+            "name" => Yii::app()->request->getPost('name'),
+            "email" => Yii::app()->request->getPost('email'),
+            "product_id" => Yii::app()->request->getPost('product_id'),
+            "reviews" => Yii::app()->request->getPost('reviews'),
+            "ip" => Yii::app()->request->userHostAddress,
+            "d_update" => date("Y-m-d H:i:s")
+        );
+        Yii::app()->db->createCommand()
+                ->insert("review", $columns);
     }
 
 }

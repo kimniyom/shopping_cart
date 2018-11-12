@@ -4,6 +4,36 @@ class ArticleController extends Controller {
 
     public $layout = "template_backend";
 
+    /**
+     * @return array action filters
+     */
+    public function filters() {
+        return array(
+            'accessControl', // perform access control for CRUD operations
+            'postOnly + delete', // we only allow deletion via POST request
+        );
+    }
+
+    /**
+     * Specifies the access control rules.
+     * This method is used by the 'accessControl' filter.
+     * @return array access control rules
+     */
+    public function accessRules() {
+        return array(
+            array('allow', // allow authenticated user to perform 'create' and 'update' actions
+                'actions' => array(
+                    'index', 'create', 'update', 'checkproduct', 'delet', 'view', 'delete',
+                    'save', 'upload', 'save_update'
+                ),
+                'users' => array('@'),
+            ),
+            array('deny', // deny all users
+                'users' => array('*'),
+            ),
+        );
+    }
+
     public function actionIndex() {
         $art = new Backend_article();
         $data['article'] = $art->Get_article_all();
@@ -20,6 +50,7 @@ class ArticleController extends Controller {
 
     public function actionSave() {
         $columns = array(
+            "id" => $_POST['id'],
             "title" => $_POST['title'],
             "detail" => $_POST['msg'],
             "category" => $_POST['category'],
@@ -32,7 +63,7 @@ class ArticleController extends Controller {
 
     public function actionUploads($id = null) {
 
-        //Check File 
+//Check File 
         $art = new Backend_article();
         $rs = $art->Get_article_by_id($id);
         if (!empty($rs['images'])) {
@@ -50,14 +81,14 @@ class ArticleController extends Controller {
             $FileName = time() . $_FILES['Filedata']['name'];
             $targetFile = rtrim($targetPath, '/') . '/' . $FileName;
 
-            // Validate the file type
+// Validate the file type
             $fileTypes = array('jpg', 'jpeg', 'png', 'JPG', 'JPEG'); // File extensions
             $fileParts = pathinfo($_FILES['Filedata']['name']);
 
             if (in_array($fileParts['extension'], $fileTypes)) {
                 move_uploaded_file($tempFile, $targetFile);
 
-                //สั่งอัพเดท
+//สั่งอัพเดท
                 $columns = array(
                     "images" => $FileName
                 );
@@ -84,13 +115,25 @@ class ArticleController extends Controller {
     }
 
     public function actionUpload($id = null) {
-        //Check File 
+//Check File 
         $art = new Backend_article();
         $rs = $art->Get_article_by_id($id);
         if (!empty($rs['images'])) {
             $filename = './uploads/article/' . $rs['images'];
             if (file_exists($filename)) {
                 unlink($filename);
+            }
+
+            if (file_exists('./uploads/article/200-' . $rs['images'])) {
+                unlink('./uploads/article/200-' . $rs['images']);
+            }
+
+            if (file_exists('./uploads/article/600-' . $rs['images'])) {
+                unlink('./uploads/article/600-' . $rs['images']);
+            }
+
+            if (file_exists('./uploads/article/870-' . $rs['images'])) {
+                unlink('./uploads/article/870-' . $rs['images']);
             }
         }
 
@@ -105,12 +148,14 @@ class ArticleController extends Controller {
             $targetFile = $targetPath . '/' . $Name;
 
 
-            $fileTypes = array('jpg', 'jpeg', 'png', 'JPG', 'JPEG'); // File extensions
+            $fileTypes = array('jpg', 'jpeg', 'JPG', 'JPEG', 'png', 'PNG'); // File extensions
+            $JpegType = array('jpg', 'jpeg', 'JPG', 'JPEG');
+            $PngType = array('png', 'PNG');
             $fileParts = pathinfo($_FILES['Filedata']['name']);
 
             if (in_array($fileParts['extension'], $fileTypes)) {
 
-                //สั่งอัพเดท
+//สั่งอัพเดท
                 $columns = array(
                     "images" => $Name
                 );
@@ -119,44 +164,70 @@ class ArticleController extends Controller {
                         ->update("article", $columns, "id = '$id' ");
 
                 $width = 1280; //*** Fix Width & Heigh (Autu caculate) ***//
-                //$new_images = "Thumbnails_".$_FILES["Filedata"]["name"];
+//$new_images = "Thumbnails_".$_FILES["Filedata"]["name"];
                 $size = getimagesize($_FILES['Filedata']['tmp_name']);
                 $height = round($width * $size[1] / $size[0]);
-                $images_orig = imagecreatefromjpeg($tempFile);
+                if (in_array($fileParts['extension'], $JpegType)) {
+                    $images_orig = imagecreatefromjpeg($tempFile);
+                }
+
+                if (in_array($fileParts['extension'], $PngType)) {
+                    $images_orig = imagecreatefrompng($tempFile);
+                }
                 $photoX = imagesx($images_orig);
                 $photoY = imagesy($images_orig);
+
                 $images_fin = imagecreatetruecolor($width, $height);
                 imagecopyresampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
-                imagejpeg($images_fin, "uploads/article/" . $Name);
+                if (in_array($fileParts['extension'], $JpegType)) {
+                    imagejpeg($images_fin, "uploads/article/" . $Name);
+                }
+                if (in_array($fileParts['extension'], $PngType)) {
+// integer representation of the color black (rgb: 0,0,0)
+                    $background = imagecolorallocate($images_fin, 255, 255, 255);
+// removing the black from the placeholder
+                    imagecolortransparent($images_fin, $background);
+
+// turning off alpha blending (to ensure alpha channel information is preserved, rather than removed (blending with the rest of the image in the form of black))
+                    imagesavealpha($images_fin, true);
+                    imagealphablending($images_fin, false);
+                    $transparentColor = imagecolorallocatealpha($images_fin, 255, 255, 255, 127);
+                    imagefill($images_fin, 0, 0, $transparentColor);
+// turning on alpha channel information saving (to ensure the full range of transparency is preserved)
+
+                    header('Content-Type: image/png');
+                    imagepng($images_fin, "uploads/article/" . $Name, 0, NULL);
+                }
+
                 imagedestroy($images_orig);
                 imagedestroy($images_fin);
-
-                //$this->ThumbnailDefault($Name,$size,$tempFile,200);
-                //$this->Thumbnail($Name,$size,$tempFile,480);
-                $this->Thumbnail($Name, $size, $tempFile, 600);
-                //$this->Thumbnail($Name,$size,$tempFile,100);
-                //move_uploaded_file($tempFile, $targetFile); เก่า
-                echo '1';
+                /*
+                  $this->Thumbnail($Name, 600, 486);
+                  $this->Thumbnail($Name, 200, 200);
+                  $this->Thumbnail($Name, 870, 500);
+                 */
+                $this->Thumbnailpng($Name, 600, 486);
+                $this->Thumbnailpng($Name, 200, 200);
+                $this->Thumbnailpng($Name, 870, 500);
+                echo $id;
             } else {
                 echo 'Invalid file type.';
             }
         }
     }
 
-    public function Thumbnail($Name, $size, $tempFile, $width) {
+    public function Thumbnailpng($Name, $width, $height) {
+        $image = new ImageResize("uploads/article/" . $Name);
+        //$image->quality_jpg = 100;
+        //$image->crop($width, $height, $allow_enlarge, $position)
+        $image->crop($width, $height, false, ImageResize::CROPCENTER);
+        $image->save("uploads/article/" . $width . '-' . $Name, IMAGETYPE_PNG);
+    }
 
-        //$new_images = "Thumbnails_".$_FILES["Filedata"]["name"];
-        //$image = new ImageResize();
-
-        $height = round($width * $size[1] / $size[0]);
-        $images_orig = imagecreatefromjpeg($tempFile);
-        $photoX = imagesx($images_orig);
-        $photoY = imagesy($images_orig);
-        $images_fin = imagecreatetruecolor($width, $height);
-
+    public function Thumbnail($Name, $width, $height) {
         $image = new ImageResize("uploads/article/" . $Name);
         $image->quality_jpg = 100;
-        $image->crop($width, "486", true, ImageResize::CROPCENTER);
+        $image->crop($width, $height, true, ImageResize::CROPCENTER);
         $image->save("uploads/article/" . $width . '-' . $Name);
     }
 
@@ -164,6 +235,7 @@ class ArticleController extends Controller {
         $art = new Backend_article();
         $data['rs'] = $art->Get_article_by_id($id);
         $data['category'] = Articlecategory::model()->findAll("active=:active", array(":active" => '1'));
+        $data['id'] = $id;
         $this->render("//backend/article/update", $data);
     }
 
@@ -180,14 +252,14 @@ class ArticleController extends Controller {
     }
 
     public function actionView($id = null) {
-        //$id = $_GET['id'];
+//$id = $_GET['id'];
         $article = new Backend_article();
         $data['result'] = $article->Get_article_by_id($id);
         $this->render("//backend/article/view", $data);
     }
 
     public function actionDelete() {
-        //Check File 
+//Check File 
         $id = $_POST['id'];
         $art = new Backend_article();
         $rs = $art->Get_article_by_id($id);
@@ -196,6 +268,18 @@ class ArticleController extends Controller {
 
             if (file_exists($filename)) {
                 unlink($filename);
+            }
+
+            if (file_exists('./uploads/article/600-' . $rs['images'])) {
+                unlink('./uploads/article/600-' . $rs['images']);
+            }
+
+            if (file_exists('./uploads/article/870-' . $rs['images'])) {
+                unlink('./uploads/article/870-' . $rs['images']);
+            }
+
+            if (file_exists('./uploads/article/200-' . $rs['images'])) {
+                unlink('./uploads/article/200-' . $rs['images']);
             }
         }
 

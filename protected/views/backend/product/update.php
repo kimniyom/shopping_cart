@@ -147,7 +147,7 @@ $this->breadcrumbs = array(
             'auto': true, //เปิดใช้การอัพโหลดแบบอัติโนมัติ
             buttonText: "อัพโหลดรูปภาพ",
             //'buttonImage': '<?//= Yii::app()->baseUrl ?>/images/image-up-icon.png',
-            //'swf': '<?php //echo Yii::app()->baseUrl          ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
+            //'swf': '<?php //echo Yii::app()->baseUrl           ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
             'uploadScript': "<?= Yii::app()->createUrl('backend/images/uploadify') ?>",
             'fileSizeLimit': '<?php echo $Config->SizeFileUpload() ?>', //อัพโหลดได้ครั้งละไม่เกิน 1024kb
             //'width': '128',
@@ -170,7 +170,24 @@ $this->breadcrumbs = array(
 //removeDialogTabs: 'link:upload;image:Upload',
 //filebrowserBrowseUrl: 'imgbrowse/imgbrowse.php',
 //filebrowserUploadUrl: 'ckupload.php',
-//uiColor: '#AADC6E',
+
+        toolbarGroups: [
+            //{name: 'clipboard', groups: ['clipboard', 'undo']},
+            //{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ] },
+            {name: 'links'},
+            {name: 'insert'},
+            //{ name: 'forms' },
+            {name: 'tools'},
+            //{ name: 'document', groups: [ 'mode', 'document', 'doctools' ] },
+            //{ name: 'others' },
+            //'/',
+            {name: 'basicstyles', groups: ['basicstyles', 'cleanup']},
+            {name: 'paragraph', groups: ['list', 'indent', 'blocks', 'align', 'bidi']},
+            {name: 'styles'},
+            {name: 'colors'}
+            //{ name: 'about' }
+        ],
+        removeButtons: 'Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Language,Flash',
         filebrowserBrowseUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.html",
         filebrowserImageBrowseUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.html?Type=Images",
         filebrowserFlashBrowseUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.html?Type=Flash",

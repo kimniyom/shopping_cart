@@ -1,6 +1,20 @@
 <?php
 
-class Article{
+/**
+ * This is the model class for table "article".
+ *
+ * The followings are the available columns in table 'article':
+ * @property integer $id
+ * @property string $title
+ * @property string $detail
+ * @property string $images
+ * @property string $owner
+ * @property integer $category
+ * @property string $create_date
+ */
+class Article 
+{
+
     function Get_article_all(){
         $result = Yii::app()->db->createCommand()
                 ->select("a.*,m.name,m.lname")
@@ -37,5 +51,7 @@ class Article{
         $rs = Yii::app()->db->createCommand($query)->queryRow();
         return $rs['TOTAL'];
     }
-}
 
+
+
+}

@@ -1,9 +1,5 @@
 <?php
 
-
-
-$url = "http://localhost/shopping_cart/uploads/ck_images";
-//$url = "http://www.theassembler.net/shopping_cart/uploads/ck_images";
 /*
  * ### CKFinder : Configuration File - Basic Instructions
  *
@@ -62,10 +58,11 @@ $config['LicenseKey'] = '';
 
   ATTENTION: The trailing slash is required.
  */
-$baseUrl = $url;
-//$baseUrl = 'http://203.157.144.140:8088/assembler/upload/ckeditor';
-//$baseUrl = 'http://localhost/ck/upload/files/';
+//$baseUrl = 'http://'.$_SERVER['HTTP_HOST'].'/EDITOR_FILE/';
+$baseUrl = 'http://localhost/shopping_cart/EDITOR_FILE/';
+//$baseUrl = 'http://www.maeramad-hospital.go.th/EDITOR_FILE/';
 
+//$baseUrl = 'http://www.tako.moph.go.th/takmoph2015upgrad/EDITOR_FILE/';
 /*
   $baseDir : the path to the local directory (in the server) which points to the
   above $baseUrl URL. This is the path used by CKFinder to handle the files in
@@ -198,7 +195,7 @@ $config['ResourceType'][] = Array(
     'name' => 'Files', // Single quotes not allowed
     'url' => $baseUrl . 'files',
     'directory' => $baseDir . 'files',
-    'maxSize' => 0,
+    'maxSize' => '1M',//Default 0
     'allowedExtensions' => '7z,aiff,asf,avi,bmp,csv,doc,docx,fla,flv,gif,gz,gzip,jpeg,jpg,mid,mov,mp3,mp4,mpc,mpeg,mpg,ods,odt,pdf,png,ppt,pptx,pxd,qt,ram,rar,rm,rmi,rmvb,rtf,sdc,sitd,swf,sxc,sxw,tar,tgz,tif,tiff,txt,vsd,wav,wma,wmv,xls,xlsx,zip',
     'deniedExtensions' => '');
 
@@ -206,7 +203,7 @@ $config['ResourceType'][] = Array(
     'name' => 'Images',
     'url' => $baseUrl . 'images',
     'directory' => $baseDir . 'images',
-    'maxSize' => 0,
+    'maxSize' => '1M', //Default 0
     'allowedExtensions' => 'bmp,gif,jpeg,jpg,png',
     'deniedExtensions' => '');
 

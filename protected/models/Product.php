@@ -85,6 +85,7 @@ class Product {
         product_num,
         product_detail,
         product_price,
+        product_price_pro,
         description,
         d_update,
         p.status,
@@ -92,7 +93,8 @@ class Product {
         type_name,
         c.categoryname,
         b.brandname,
-        p.category
+        p.category,
+        p.countread
         FROM product p INNER JOIN product_type t ON p.type_id = t.type_id
         INNER JOIN category c ON p.category = c.id
         INNER JOIN brand b ON p.brand = b.id

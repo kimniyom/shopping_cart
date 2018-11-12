@@ -14,7 +14,7 @@ $this->breadcrumbs = array(
     <div class="row">
         <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
             <?php if (!empty($result['images'])) { ?>
-                <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/article/<?php echo $result['images'] ?>" style=" max-width: 100%;" class="img-responsive"/>
+                <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/article/200-<?php echo $result['images'] ?>" style=" max-width: 100%;" class="img-responsive"/>
             <?php } else { ?>
                 <img src="<?php echo Yii::app()->baseUrl; ?>/images/No_image.jpg" style=" max-width: 100%;" class="img-responsive"/>
             <?php } ?>

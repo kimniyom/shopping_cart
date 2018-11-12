@@ -8,9 +8,16 @@
             ?>
         </title>
         <meta charset="utf-8" />
-        <meta name="description" content="" />
+        <meta name="description" content="kstudio,KSTUDIO,kstudiothai,เครื่องเสียง,หูฟัง,ลำโพง" />
         <meta name="keywords" content="kstudio,KSTUDIO,kstudiothai,เครื่องเสียง,หูฟัง,ลำโพง" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:type" content="website" />
+        <meta property="fb:app_id" content="266256337158296" />
+        <meta property="og:title" content="<?php echo Yii::app()->session['fbtitle']; ?>" />
+
+        <meta property="og:image" content="<?php echo Yii::app()->session['fbimages']; ?>" />
+        <meta property="og:url" content="<?php echo Yii::app()->session['fburl'];  ?>" />
+        
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="<?= Yii::app()->baseUrl; ?>/themes/kstudio/css/main.css" />
@@ -83,13 +90,13 @@
                 <div class="container" id="menuBar">
                     <div class="row">
                         <div class="header-1-inner">
-                            <a class="brand-logo animsition-link" href="index.html">
+                            <a class="brand-logo animsition-link" href="<?php echo Yii::app()->createUrl('site/index') ?>">
                                 <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $web->get_logoweb(); ?>" alt="" style="max-height: 52px;"/>
                             </a>
                             <nav>
                                 <ul class="menu hidden-xs">
                                     <li>
-                                        <a href="index.html">Home</a>
+                                        <a href="<?php echo Yii::app()->createUrl('site/index') ?>">Home</a>
                                     </li>
 
                                     <li>
@@ -244,7 +251,7 @@
                     <div class="container">
                         <?php
                         $this->widget('zii.widgets.CBreadcrumbs', array(
-                            'homeLink' => '<i class="fa fa-home"></i> ' . CHtml::link('หน้าแรก', Yii::app()->createUrl('frontend/main')),
+                            'homeLink' => '<i class="fa fa-home"></i> ' . CHtml::link('หน้าแรก', Yii::app()->createUrl('site/index')),
                             'links' => $this->breadcrumbs,
                         ));
                         ?><!-- breadcrumbs -->

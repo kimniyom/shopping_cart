@@ -1,21 +1,29 @@
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckeditor.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.js"></script>
+<?php $Config = new Configweb_model(); ?>
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#file_upload').uploadify({
+        $('#file_upload').uploadifive({
             'buttonText': 'เลือกไฟล์ ...',
-            'swf ': '<?php echo Yii::app()->baseUrl; ?>/assets/uploadify/uploadify.swf',
-            'uploader': '<?php echo Yii::app()->createUrl('backend/article/upload', array('id' => $rs['id'])) ?>',
-            'auto': false,
-            'fileSizeLimit': '2MB',
-            'fileTypeExts': ' *.jpg; *.png; *.JPG; *.JPEG;',
-            'uploadLimit': 1,
-            'onSelect': function (file) {
+            'uploadScript': '<?php echo Yii::app()->createUrl('backend/article/upload', array('id' => $id)) ?>',
+            'auto': true,
+            'fileSizeLimit': '<?php echo $Config->SizeFileUpload() ?>',
+            'fileType': ["image/jpeg", "image/png", "image/PNG", "image/JPG", "image/JPEG"],
+            'queueSizeLimit': 1, //อัพโหลดได้ครั้งละ 5 ไฟล์
+            'onAddQueueItem': function (file) {
                 $("#images").val(file.name);
-                //alert('The file ' + file.name + ' was added to the queue.');
             },
+            'onError': function (errorType) {
+                alert('The error was: ' + errorType);
+                $("#images").val("");
+            },
+
             'onCancel': function (file) {
                 $("#images").val("");
+            },
+            'onUploadComplete': function (file, data, response) {
+                var id = data;
+                window.location = "<?php echo Yii::app()->createUrl('backend/article/view/id/') ?>" + "/" + id;
             }
         });
     });
@@ -39,7 +47,7 @@
         }
 
         $.post(url, data, function (success) {
-            $('#file_upload').uploadify('upload', '*');
+            $('#file_upload').uploadifive('upload');
             window.location = "<?php echo Yii::app()->createUrl('backend/article/view/id/') ?>" + "/" + id;
         });
     }
@@ -87,7 +95,7 @@ $this->breadcrumbs = array(
         toolbarGroups: [
             //{name: 'clipboard', groups: ['clipboard', 'undo']},
             //{ name: 'editing', groups: [ 'find', 'selection', 'spellchecker' ] },
-            //{name: 'links'},
+            {name: 'links'},
             {name: 'insert'},
             //{ name: 'forms' },
             {name: 'tools'},
@@ -100,7 +108,7 @@ $this->breadcrumbs = array(
             {name: 'colors'},
             //{ name: 'about' }
         ],
-        removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar',
+        removeButtons: 'Underline,Strike,Subscript,Superscript,Anchor,Styles,Specialchar,Language,Flash',
         image_removeLinkByEmptyURL: true,
         filebrowserBrowseUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.html",
         filebrowserImageBrowseUrl: "<?php echo Yii::app()->baseUrl; ?>/assets/ckeditor/ckfinder/ckfinder.html?Type=Images",
