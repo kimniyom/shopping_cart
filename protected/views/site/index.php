@@ -39,7 +39,6 @@ $Categorys = Category::model()->findAll();
                         <a class="btn btn-brand pill" href="http://<?php echo $baners['link'] ?>" target="_blank" style="color:#ffffff;">SHOP NOW</a>
 
                     </div>
-
                 </li>
             <?php endforeach; ?>
         </ul>
@@ -252,7 +251,7 @@ $Categorys = Category::model()->findAll();
             <div class="row">
                 <div class="carousel-product">
                     <?php
-                    $sqlBradProduct = "select t.brandname,p.product_id from product p inner join brand t on p.brand = t.id group by p.brand ";
+                    $sqlBradProduct = "select t.id,t.brandname,p.product_id from product p inner join brand t on p.brand = t.id group by p.brand ";
                     $resultBrand = Yii::app()->db->createCommand($sqlBradProduct)->queryAll();
                     foreach ($resultBrand as $rsBrands):
                         $img_brand = $productModel->firstpictures($rsBrands['product_id']);
@@ -267,7 +266,7 @@ $Categorys = Category::model()->findAll();
                                 <div class="product product-style-1">
                                     <div class="img-wrapper">
                                         <div style=" position: absolute;z-index:10; width:100%; bottom: 0px; right: 0px; text-align:center; font-size: 30px; background: url('<?php echo Yii::app()->baseUrl; ?>/images/bgheader.png');" class="font-supermarket"><?php echo $rsBrands['brandname'] ?></div>
-                                        <a href="">
+                                        <a href="<?php echo Yii::app()->createUrl('frontend/product/brand',array("id" => $rsBrands['id']))?>">
                                             <!-- themes/kstudio/images/product/01.jpg -->
                                             <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/<?php echo $imgBrans ?>" alt="product thumbnail">
                                         </a>

@@ -5899,3 +5899,29 @@ Stack trace:
 REQUEST_URI=/shopping_cart/frontend/product/pagesbrands
 HTTP_REFERER=http://localhost/shopping_cart/frontend/product/brand/id/2
 ---
+2018/11/18 17:22:35 [error] [php] Undefined index: id (/Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php:269)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): SiteController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): SiteController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php(32): SiteController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): SiteController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): SiteController->run()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/site/index
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php (269)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php (32)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/18 17:24:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "shopping_cart/frontend/product/brand/id/2".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('shopping_cart/f...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/shopping_cart/shopping_cart/frontend/product/brand/id/2
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
