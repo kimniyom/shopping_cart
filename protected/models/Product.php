@@ -312,6 +312,22 @@ class Product {
         return $rsContCat['total'];
     }
 
+    function GetProductAll() {
+        $sql = "SELECT p.*,t.type_name,c.categoryname
+                    FROM product p INNER JOIN product_type t ON p.type_id = t.type_id
+                    INNER JOIN category c ON p.category = c.id
+                    ORDER BY p.id DESC";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+    
+     function GetProductAllBetween($start,$end) {
+        $sql = "SELECT p.*,t.type_name,c.categoryname
+                    FROM product p INNER JOIN product_type t ON p.type_id = t.type_id
+                    INNER JOIN category c ON p.category = c.id
+                    ORDER BY p.id DESC LIMIT $start,$end";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
     function countProductType($id) {
         $sqlCountCat = "select COUNT(*) AS total from product where type_id = '$id' ";
         $rsContCat = Yii::app()->db->createCommand($sqlCountCat)->queryRow();

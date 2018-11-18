@@ -182,7 +182,7 @@
                                     </li>
 
                                     <li>
-                                        <a class="active" href="shop.html" >Shop <i class="fa fa-angle-down"></i></a>
+                                        <a class="active" href="<?php echo Yii::app()->createUrl('frontend/product') ?>" >Shop <i class="fa fa-angle-down"></i></a>
                                         <ul id="ulmenu">
                                             <?php
                                             foreach ($Categorys as $rsCategory):
@@ -210,7 +210,7 @@
                                                                         <a href="<?php echo Yii::app()->createUrl('frontend/product/view', array('type' => $rsTypes['type_id'])) ?>"><?php echo $rsTypes['type_name'] ?> <i class="fa fa-angle-right" style="right:10px; top:20px; position:absolute;"></i></a>
                                                                         <ul id="ulmenu">
                                                                             <?php foreach ($Brands as $rsBrand): ?>
-                                                                                <li id="lisubmenu"><a href=""><?php echo $rsBrand['brandname'] ?></a></li>
+                                                                                <li id="lisubmenu"><a href="<?php echo Yii::app()->createUrl('frontend/product/brand', array('id' => $rsBrand['id'])) ?>"><?php echo $rsBrand['brandname'] ?></a></li>
                                                                             <?php endforeach; ?>
                                                                         </ul>
                                                                     </li>
@@ -235,12 +235,12 @@
                                     //$Types = ProductType::model()->findAll("category=:id", array(":id" => $rsCategory['id']));
                                     ?>
                                                             <div class="col-md-4 col-lg-4 col-sm-4">
-                                                                <label><?php //echo $rsCategory['categoryname']  ?></label>
+                                                                <label><?php //echo $rsCategory['categoryname']    ?></label>
                                                                 <hr style="border-bottom: #cccccc solid 1px; margin-top: 0px; margin-bottom: 5px;"/>
                                     <?php
                                     //foreach ($Types as $type):
                                     ?>
-                                                                    <a href=""><?php //echo $type['type_name']  ?></a>
+                                                                    <a href=""><?php //echo $type['type_name']    ?></a>
                                     <?php //endforeach; ?>
                                                             </div>
                                     <?php //endforeach; ?>
@@ -378,7 +378,7 @@
                                 <ul>
                                     <?php foreach ($Categorys as $Category): ?>
                                         <li>
-                                            <a href=""><?php echo $Category['categoryname'] ?></a>
+                                            <a href="<?php echo Yii::app()->createUrl('frontend/product/category', array("id" => $Category['id']))?>"><?php echo $Category['categoryname'] ?></a>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
@@ -388,7 +388,7 @@
                                 <ul>
                                     <?php foreach ($BrandsMenu as $rsBrandMenu): ?>
                                         <li>
-                                            <a href="#"><?php echo $rsBrandMenu['brandname'] ?></a>
+                                            <a href="<?php echo Yii::app()->createUrl('frontend/product/brand', array("id" => $rsBrandMenu['id']))?>"><?php echo $rsBrandMenu['brandname'] ?></a>
                                         </li>
                                     <?php endforeach; ?>
                                 </ul>
@@ -443,22 +443,22 @@
                                 <ul class="list-unstyle">
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                             ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                               ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                             ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                               ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                             ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                               ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                             ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                               ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
                                         </a>
                                     </li>
                                 </ul>

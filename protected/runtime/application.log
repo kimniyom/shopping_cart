@@ -6403,3 +6403,24 @@ Stack trace:
 REQUEST_URI=/kstudio/site/blog.html
 HTTP_REFERER=http://localhost/kstudio/site/index
 ---
+2018/11/19 02:25:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "shop.html".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('shop.html')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('shop.html')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('site/shop.html')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/site/shop.html
+HTTP_REFERER=http://localhost/kstudio/site/index
+---
+2018/11/19 02:25:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction('')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/produc...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/frontend/product
+---

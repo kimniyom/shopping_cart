@@ -6,6 +6,36 @@ class ProductController extends Controller {
 
     //public $layout = "template_product";
     //################# ดึงข้อมูลรานละเอียดสินค้ามาแสดง อ้างจาก product_id ##################//
+    public function actionIndex() {
+        $prodult = new Product();
+        $data['product'] = $prodult->GetProductAll();
+        $data['count'] = count($data['product']);
+
+        $this->render("//product/index", $data);
+    }
+
+    public function actionPagesall() {
+        $productModel = new Product();
+        $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+        $item_per_page = 8; //ให้แสดงที่ละ
+        //throw HTTP error if page number is not valid
+        if (!is_numeric($page_number)) {
+            header('HTTP/1.1 500 Invalid page number!');
+            exit();
+        }
+
+        //get current starting point of records
+        $position = ($page_number * $item_per_page);
+        $rs = $productModel->GetProductAllBetween($position, $item_per_page);
+
+        $data['product'] = $rs;
+        if ($rs) {
+            $this->renderPartial("//product/product_more", $data);
+        } else {
+            echo 0;
+        }
+    }
+
     public function actionDetail() {
         $this->layout = "webapp";
         $config = new Configweb_model();
@@ -199,8 +229,6 @@ class ProductController extends Controller {
             echo 0;
         }
     }
-    
-    
 
     public function actionReview() {
         $productID = Yii::app()->request->getPost('product_id');
@@ -222,7 +250,7 @@ class ProductController extends Controller {
     }
 
     public function actionCategory($id) {
-        
+
         $prodult = new Product();
 
         $data['category'] = Category::model()->find("id=:id", array(":id" => $id));
@@ -231,7 +259,7 @@ class ProductController extends Controller {
 
         $this->render("//product/show_product_category", $data);
     }
-    
+
     public function actionPagescategory() {
         $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
         $category = $_POST["category"];
@@ -260,10 +288,9 @@ class ProductController extends Controller {
             echo 0;
         }
     }
-    
-    
+
     public function actionBrand($id) {
-        
+
         $prodult = new Product();
 
         $data['brands'] = Brand::model()->find("id=:id", array(":id" => $id));
@@ -272,11 +299,11 @@ class ProductController extends Controller {
 
         $this->render("//product/show_product_brand", $data);
     }
-    
+
     public function actionPagesbrands() {
         $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
         $brand = $_POST["brands"];
-        
+
         $item_per_page = 8; //ให้แสดงที่ละ
         //throw HTTP error if page number is not valid
         if (!is_numeric($page_number)) {
@@ -302,6 +329,5 @@ class ProductController extends Controller {
             echo 0;
         }
     }
-    
 
 }
