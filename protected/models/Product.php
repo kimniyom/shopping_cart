@@ -66,7 +66,7 @@ class Product {
     function _get_best_product() {
         $sql = "SELECT *
                 FROM product
-                WHERE status != '1' AND status != '1' AND delete_flag != '1'
+                WHERE status != '1' AND bastseller = '1'
                 ORDER BY id ASC LIMIT 8";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
@@ -74,7 +74,7 @@ class Product {
     function _get_sale_products() {
         $sql = "SELECT *
                 FROM product
-                WHERE status != '1' AND status != '1' AND delete_flag != '1'
+                WHERE status != '1' AND (product_price_pro != '' OR product_price_pro > 0)
                 ORDER BY RAND() LIMIT 8";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
@@ -239,7 +239,6 @@ class Product {
         $sql = "SELECT * FROM product WHERE type_id = '$type_id' AND status != '1' AND delete_flag != '1' ORDER BY id DESC";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
-    
 
     function get_type_name($type_id = '') {
         $sql = "SELECT type_name FROM product_type WHERE type_id = '$type_id' ";
@@ -300,48 +299,46 @@ class Product {
             return "0";
         }
     }
-    
-    function firstpictures($id = null){
+
+    function firstpictures($id = null) {
         $sql = "SELECT * FROM product_images WHERE product_id = '$id' ORDER BY id ASC LIMIT 1";
         $re = Yii::app()->db->createCommand($sql)->queryRow();
         return $re['images'];
     }
 
-    function countProductCategory($id){
+    function countProductCategory($id) {
         $sqlCountCat = "select COUNT(*) AS total from product where category = '$id' ";
         $rsContCat = Yii::app()->db->createCommand($sqlCountCat)->queryRow();
         return $rsContCat['total'];
     }
 
-    function countProductType($id){
+    function countProductType($id) {
         $sqlCountCat = "select COUNT(*) AS total from product where type_id = '$id' ";
         $rsContCat = Yii::app()->db->createCommand($sqlCountCat)->queryRow();
         return $rsContCat['total'];
     }
 
-    function countProductBrand($id){
+    function countProductBrand($id) {
         $sqlCountCat = "select COUNT(*) AS total from product where brand = '$id' ";
         $rsContCat = Yii::app()->db->createCommand($sqlCountCat)->queryRow();
         return $rsContCat['total'];
     }
 
-    function getProductNear($category){
+    function getProductNear($category) {
         $sql = "SELECT * FROM product p 
                 WHERE category = '$category' 
                 ORDER BY RAND() LIMIT 8";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
 
-    function getProductByCategory($id){
+    function getProductByCategory($id) {
         $sql = "select * from product where category = '$id' ";
         return Yii::app()->db->createCommand($sql)->queryAll();
-
     }
 
-    function getProductByBrand($id){
+    function getProductByBrand($id) {
         $sql = "select * from product where brand = '$id' ";
         return Yii::app()->db->createCommand($sql)->queryAll();
-
     }
 
 }

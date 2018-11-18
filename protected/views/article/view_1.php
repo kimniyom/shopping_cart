@@ -8,7 +8,6 @@
 </script>
 <?php
 $config = new Configweb_model();
-$articleModel = new Article();
 $this->breadcrumbs = array(
     "บทความ / event" => array('frontend/article'),
     $result['title'],
@@ -16,14 +15,12 @@ $this->breadcrumbs = array(
 ?>
 
 <br/>
-
 <section class="boxed-sm">
     <div class="container">
         <div class="row main">
             <div class="row">
                 <div class="col-md-3">
                     <div class="sidebar">
-                        <!--
                         <div class="widget widget-search">
                             <form class="organic-form form-inline btn-add-on border no-radius">
                                 <div class="form-group">
@@ -34,7 +31,6 @@ $this->breadcrumbs = array(
                                 </div>
                             </form>
                         </div>
-                        -->
                         <div class="widget widget-blog-post">
                             <h4 class="title text-center">ล่าสุด</h4>
                             <ul class="list-blog">
@@ -60,8 +56,8 @@ $this->breadcrumbs = array(
                             <ul>
                                 <?php foreach ($category as $categorys): ?>
                                     <li>
-                                        <a href="<?php echo Yii::app()->createUrl('frontend/article/index', array('category' => $categorys['id'])) ?>"><?php echo $categorys['category'] ?>
-                                            <span><?php echo $articleModel->CountArticleByCategory($categorys['id']) ?></span>
+                                        <a href="shop.html"><?php echo $categorys['category'] ?>
+                                            <span>(5)</span>
                                         </a>
                                     </li>
                                 <?php endforeach; ?>
@@ -107,7 +103,7 @@ $this->breadcrumbs = array(
                                 <i class="fa fa-calendar"></i> <?php echo $result['create_date'] ?>
                                 <i class="fa fa-user"></i> <?php echo $result['name'] . ' ' . $result['lname'] ?>
                             </span>
-                            <span class="comment"><?php echo $result['countread'] ?></span>
+                            <span class="comment">0</span>
                         </p>
                         <div class="content">
                             <img class="feature-image" src="<?= Yii::app()->baseUrl; ?>/uploads/article/870-<?php echo $result['images'] ?>" alt="feature-image">

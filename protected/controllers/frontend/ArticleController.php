@@ -5,15 +5,23 @@ class ArticleController extends Controller {
     public $layout = "kstudio";
 
     //public $layout = "template_product";
-    public function actionIndex() {
+    public function actionIndex($category = null) {
         $Art = new Article();
-        $data['count'] = $Art->Count();
-        $data['article'] = $Art->Get_article_all();
+        if ($category) {
+            $data['category'] = $category;
+            $data['count'] = $Art->CountArticleByCategory($category);
+            $data['article'] = $Art->getArticleByCategory($category);
+        } else {
+            $data['category'] = "";
+            $data['count'] = $Art->Count();
+            $data['article'] = $Art->Get_article_all();
+        }
         $this->render("//article/article_all", $data);
     }
 
     public function actionPages() {
         $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+        $category = $_POST['category'];
         $item_per_page = 12; //ให้แสดงที่ละ
         //throw HTTP error if page number is not valid
         if (!is_numeric($page_number)) {
@@ -26,9 +34,18 @@ class ArticleController extends Controller {
 
         //Limit our results within a specified range.
         //$results = mysqli_query($connecDB, "SELECT id,name,message FROM paginate ORDER BY id DESC LIMIT $position, $item_per_page");
-        $query = "SELECT *
-                  FROM article
-                  ORDER BY id DESC LIMIT $position, $item_per_page";
+        if ($category) {
+            $query = "select a.*,m.name,m.lname,c.category as category_name
+                from article a inner join masuser m on a.owner = m.id 
+                inner join articlecategory c on a.category = c.id
+                where a.category = '$category'
+                order by a.id desc LIMIT $position, $item_per_page";
+        } else {
+            $query = "select a.*,m.name,m.lname,c.category as category_name
+                from article a inner join masuser m on a.owner = m.id 
+                inner join articlecategory c on a.category = c.id
+                order by a.id desc LIMIT $position, $item_per_page";
+        }
         $rs = Yii::app()->db->createCommand($query)->queryAll();
         //output results from database
         /*
@@ -53,7 +70,10 @@ class ArticleController extends Controller {
 
     public function actionViews($id) {
         $Art = new Article();
+
         $data['result'] = $Art->Get_article_by_id($id);
+        $this->CountRead($id, $data['result']['countread']);
+
         $data['category_id'] = $data['result']['category'];
         $data['category'] = Articlecategory::model()->findAll();
 
@@ -77,6 +97,18 @@ class ArticleController extends Controller {
         $data['near'] = Yii::app()->db->createCommand($sqlnear)->queryAll();
 
         $this->render("//article/view", $data);
+    }
+
+    private function CountRead($id, $countread) {
+        /*
+          $sql = "select countread from article where id = '$id'";
+          $rs = Yii::app()->db->createCommand($sql)->queryRow();
+         * 
+         */
+        $newsCount = ($countread + 1);
+        $columns = array("countread" => $newsCount);
+        Yii::app()->db->createCommand()
+                ->update("article", $columns, "id='$id'");
     }
 
 }

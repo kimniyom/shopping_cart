@@ -18,8 +18,9 @@
     $(document).ready(function () {
         var track_click = 0; //track user click on "load more" button, righ now it is 0 click
         //fetch_pages.php
-        var total_pages = <?php echo $count; ?>;
-        $('#results').load("<?php echo Yii::app()->createUrl('frontend/article/pages') ?>", {'page': track_click}, function () {
+        var total_pages = "<?php echo $count; ?>";
+        var category = "<?php echo $category ?>"
+        $('#results').load("<?php echo Yii::app()->createUrl('frontend/article/pages') ?>", {page: track_click, 'category': category}, function () {
             track_click++;
         }); //initial data to load
 
@@ -31,14 +32,14 @@
             if (track_click <= total_pages) //make sure user clicks are still less than total pages
             {
                 //post page number and load returned data into result element
-                $.post('<?php echo Yii::app()->createUrl('frontend/article/pages') ?>', {'page': track_click}, function (data) {
+                $.post('<?php echo Yii::app()->createUrl('frontend/article/pages') ?>', {page: track_click, category: category}, function (data) {
 
                     $(".load_more").show(); //bring back load more button
 
                     $("#results").append(data); //append data received from server
 
                     //scroll page to button element
-                    $("html, body").animate({scrollTop: $("#load_more_button").offset().top}, 500);
+                    //$("html, body").animate({scrollTop: $("#load_more_button").offset().top}, 500);
 
                     //hide loading image
                     $('.animation_image').hide(); //hide loading image once data is received
@@ -58,24 +59,30 @@
                     $(".load_more").attr("disabled", "disabled");
                 }
             }
- 
+
         });
     });
 </script>
 
 <?php
 $this->breadcrumbs = array(
-    "บทความ",
+    "บทความ / event",
 );
 ?>
+<div class="container">
+    <br/>
+    <h4 class="font-THK" style=" font-size: 20px;">ทั้งหมด <?php echo $count ?> รายการ</h4>
+    <div class="row" id="results" style="margin-top:20px;"></div>
+    <br/>
 
-<div id="results" style="margin-top:20px;"></div><br/>
-<div align="center">
-    <button class="load_more btn btn-default" id="load_more_button">
-        เพิ่มเติม <i class="fa fa-angle-down"></i>
-    </button>
-    <div class="animation_image" style="display:none;">
-        <img src="<?php echo Yii::app()->baseUrl; ?>/images/ajax-loader.gif"> Loading...
+    <div align="center">
+        <button class="load_more btn btn-default" id="load_more_button">
+            เพิ่มเติม <i class="fa fa-angle-down"></i>
+        </button>
+        <div class="animation_image" style="display:none;">
+            <img src="<?php echo Yii::app()->baseUrl; ?>/images/ajax-loader.gif"> Loading...
+        </div>
     </div>
-</div><br/>
+    <br/>
+</div>
 

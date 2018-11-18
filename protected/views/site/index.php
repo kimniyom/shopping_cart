@@ -1,3 +1,15 @@
+<style type="text/css">
+    .products .img-wrappers img:hover {
+        opacity: 0.8;
+         transition:0.2s ease-in-out;
+         padding: 10px;
+    }
+    
+    .products .img-wrappers img {
+         transition:0.2s ease-out;
+         padding: 0px;
+    }
+</style>
 <?php
 $productModel = new Product();
 $lastProduct = $productModel->_get_last_product();
@@ -57,7 +69,7 @@ $Categorys = Category::model()->findAll();
                         $CountProductInCat = $productModel->countProductCategory($Category['id']);
                         ?>
                         <div class="col-sm-4 col-xs-4">
-                            <a href="<?php echo Yii::app()->createUrl('frontend/product/category',array('id' => $Category['id'])) ?>">
+                            <a href="<?php echo Yii::app()->createUrl('frontend/product/category', array('id' => $Category['id'])) ?>">
                                 <figure class="product-category-item">
                                     <div class="thumbnails">
                                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/category/<?php echo $Category['icons'] ?>" alt="" class="img img-responsive"/>
@@ -88,7 +100,7 @@ $Categorys = Category::model()->findAll();
             </div>
         </div>
         <div class="row js-product-masonry-filter-layout-2 product-masonry-filter-layout-2">
-            <div class="grid-sizer"></div>
+
             <?php
             foreach ($lastProduct as $rsProduct):
                 $img_title = $productModel->firstpictures($rsProduct['product_id']);
@@ -99,15 +111,13 @@ $Categorys = Category::model()->findAll();
                 }
                 ?>
                 <figure class="item Newproduct">
-                    <div class="product product-style-3" style=" background: #f1f2f4;">
-                        <div class="img-wrapper" style="border:none;">
+                    <div class="products product-style-3" style="background: #f1f2f4;">
+                        <div class="img-wrappers" style="border:none;">
                             <a href="<?php echo Yii::app()->createUrl('frontend/product/views', array("id" => $rsProduct['product_id'])) ?>">
                                 <span class="label label-success font-supermarket" style=" position: absolute;top: 20px;left: 0px; font-size: 14px; border-radius: 0px;">New</span>
-                                <!--
-                                <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl;                          ?>/themes/kstudio/images/product/010.jpg" alt="product thumbnail">
-                                -->
                                 <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img ?>" alt="product thumbnail" />
                             </a>
+                            <!--
                             <div class="product-control-wrapper bottom-right">
                                 <div class="wrapper-control-item">
                                     <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
@@ -128,12 +138,21 @@ $Categorys = Category::model()->findAll();
                                     </svg>
                                 </div>
                             </div>
+                            -->
                         </div>
                         <figcaption class="desc">
-                            <h4 class="font-supermarket">
+                            <h4 class="font-supermarket" style=" height: 50px; overflow: hidden;">
                                 <a class="product-name" style="color:#5c5c5c;" href=""><?php echo $rsProduct['product_name'] ?></a>
                             </h4>
-                            <span class="price" style="color:#000000;"><?php echo number_format($rsProduct['product_price']) ?>.-</span>
+                            <span class="price" style="color:#000000;">
+                                <?php if ($rsProduct['product_price_pro'] > 0) { ?> 
+                                    <del style=" color: #ff0000;"><?php echo number_format($rsProduct['product_price']) ?>  .-</del>
+                                    <?php echo number_format($rsProduct['product_price_pro']) ?>  .-
+                                <?php } else { ?>
+                                    <?php echo number_format($rsProduct['product_price']) ?>  .-
+                                <?php } ?>
+
+                            </span>
                         </figcaption>
                     </div>
                 </figure>
@@ -149,41 +168,26 @@ $Categorys = Category::model()->findAll();
                 }
                 ?>
                 <figure class="item Bsetproduct">
-                    <div class="product product-style-3" style=" background: #f1f2f4;">
-                        <div class="img-wrapper" style="border:none;">
-                            <a href="">
+                    <div class="products product-style-3" style=" background: #f1f2f4;">
+                        <div class="img-wrappers" style="border:none;">
+                            <a href="<?php echo Yii::app()->createUrl('frontend/product/views', array("id" => $rsBestProduct['product_id'])) ?>">
                                 <span class="label label-danger font-supermarket" style=" position: absolute;top: 20px;left: 0px; font-size: 14px; border-radius: 0px;">Hot</span>
-                                <!--
-                                <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl;                          ?>/themes/kstudio/images/product/010.jpg" alt="product thumbnail">
-                                -->
                                 <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $imgBest ?>" alt="product thumbnail" />
                             </a>
-                            <div class="product-control-wrapper bottom-right">
-                                <div class="wrapper-control-item">
-                                    <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                        <span class="lnr lnr-eye"></span>
-                                    </a>
-                                </div>
-                                <div class="wrapper-control-item item-wish-list">
-                                    <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                        <span class="lnr lnr-heart"></span>
-                                    </a>
-                                </div>
-                                <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                    <a class="animate-icon-cart" href="https://www.messenger.com/t/kstudiothai" target="_blank">
-                                        <span class="lnr lnr-cart"></span>
-                                    </a>
-                                    <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                    <path stroke-dasharray="19.79 19.79" fill="none" , stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                    </svg>
-                                </div>
-                            </div>
+                            
                         </div>
                         <figcaption class="desc">
-                            <h4 class="font-supermarket">
-                                <a class="product-name" style="color:#5c5c5c;" href=""><?php echo $rsBestProduct['product_name'] ?></a>
+                            <h4 class="font-supermarket" style=" height: 50px; overflow: hidden;">
+                                <a class="product-name" style="color:#5c5c5c;" href="<?php echo Yii::app()->createUrl('frontend/product/views', array("id" => $rsBestProduct['product_id'])) ?>"><?php echo $rsBestProduct['product_name'] ?></a>
                             </h4>
-                            <span class="price" style="color:#000000;"><?php echo number_format($rsBestProduct['product_price']) ?>.-</span>
+                            <span class="price" style="color:#000000;">
+                                <?php if ($rsBestProduct['product_price_pro'] > 0) { ?> 
+                                    <del style=" color: #ff0000;"><?php echo number_format($rsBestProduct['product_price']) ?>  .-</del>
+                                    <?php echo number_format($rsBestProduct['product_price_pro']) ?>  .-
+                                <?php } else { ?>
+                                    <?php echo number_format($rsBestProduct['product_price']) ?>  .-
+                                <?php } ?>
+                            </span>
                         </figcaption>
                     </div>
                 </figure>
@@ -198,41 +202,26 @@ $Categorys = Category::model()->findAll();
                 }
                 ?>
                 <figure class="item Saleproduct">
-                    <div class="product product-style-3" style=" background: #f1f2f4;">
-                        <div class="img-wrapper" style="border:none;">
-                            <a href="">
-                                <span class="label label-warning font-supermarket" style=" position: absolute;top: 20px;left: 0px; font-size: 14px; border-radius: 0px;">10 %</span>
-                                <!--
-                                <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl;                          ?>/themes/kstudio/images/product/010.jpg" alt="product thumbnail">
-                                -->
+                    <div class="products product-style-3" style=" background: #f1f2f4;">
+                        <div class="img-wrappers" style="border:none;">
+                            <a href="<?php echo Yii::app()->createUrl('frontend/product/views', array("id" => $rsSaleProduct['product_id'])) ?>">
+                                <span class="label label-warning font-supermarket" style=" position: absolute;top: 20px;left: 0px; font-size: 14px; border-radius: 0px;">Sale</span>
                                 <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $imgSale ?>" alt="product thumbnail" />
                             </a>
-                            <div class="product-control-wrapper bottom-right">
-                                <div class="wrapper-control-item">
-                                    <a class="js-quick-view" href="#" type="button" data-toggle="modal" data-target="#quick-view-product">
-                                        <span class="lnr lnr-eye"></span>
-                                    </a>
-                                </div>
-                                <div class="wrapper-control-item item-wish-list">
-                                    <a class="js-wish-list js-notify-add-wish-list" href="#">
-                                        <span class="lnr lnr-heart"></span>
-                                    </a>
-                                </div>
-                                <div class="wrapper-control-item item-add-cart js-action-add-cart">
-                                    <a class="animate-icon-cart" href="https://www.messenger.com/t/kstudiothai" target="_blank">
-                                        <span class="lnr lnr-cart"></span>
-                                    </a>
-                                    <svg x="0px" y="0px" width="36px" height="32px" viewbox="0 0 36 32">
-                                    <path stroke-dasharray="19.79 19.79" fill="none" , stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"></path>
-                                    </svg>
-                                </div>
-                            </div>
+                           
                         </div>
                         <figcaption class="desc">
-                            <h4 class="font-supermarket">
-                                <a class="product-name" style="color:#5c5c5c;" href=""><?php echo $rsSaleProduct['product_name'] ?></a>
+                            <h4 class="font-supermarket" style=" height: 50px; overflow: hidden;">
+                                <a class="product-name" style="color:#5c5c5c;" href="<?php echo Yii::app()->createUrl('frontend/product/views', array("id" => $rsSaleProduct['product_id'])) ?>"><?php echo $rsSaleProduct['product_name'] ?></a>
                             </h4>
-                            <span class="price" style="color:#000000;"><?php echo number_format($rsSaleProduct['product_price']) ?>.-</span>
+                            <span class="price" style="color:#000000;">
+                                <?php if ($rsSaleProduct['product_price_pro'] > 0) { ?> 
+                                    <del style=" color: #ff0000;"><?php echo number_format($rsSaleProduct['product_price']) ?>  .-</del>
+                                    <?php echo number_format($rsSaleProduct['product_price_pro']) ?>  .-
+                                <?php } else { ?>
+                                    <?php echo number_format($rsSaleProduct['product_price']) ?>  .-
+                                <?php } ?>
+                            </span>
                         </figcaption>
                     </div>
                 </figure>
@@ -266,7 +255,7 @@ $Categorys = Category::model()->findAll();
                                 <div class="product product-style-1">
                                     <div class="img-wrapper">
                                         <div style=" position: absolute;z-index:10; width:100%; bottom: 0px; right: 0px; text-align:center; font-size: 30px; background: url('<?php echo Yii::app()->baseUrl; ?>/images/bgheader.png');" class="font-supermarket"><?php echo $rsBrands['brandname'] ?></div>
-                                        <a href="<?php echo Yii::app()->createUrl('frontend/product/brand',array("id" => $rsBrands['id']))?>">
+                                        <a href="<?php echo Yii::app()->createUrl('frontend/product/brand', array("id" => $rsBrands['id'])) ?>">
                                             <!-- themes/kstudio/images/product/01.jpg -->
                                             <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/<?php echo $imgBrans ?>" alt="product thumbnail">
                                         </a>
@@ -282,7 +271,7 @@ $Categorys = Category::model()->findAll();
 </div>
 <!--
 <div class="call-to-action-style-1">
-    <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl;             ?>/themes/kstudio/images/call-to-action/1.jpg" alt="" />
+    <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl;                  ?>/themes/kstudio/images/call-to-action/1.jpg" alt="" />
     <div class="overlay-call-to-action"></div>
     <div class="container">
         <div class="row">
