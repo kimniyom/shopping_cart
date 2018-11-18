@@ -37,12 +37,17 @@ class Article
     }
     
     function Get_article_by_id($id = null){
+        /*
         $result = Yii::app()->db->createCommand()
                 ->select("a.*,m.name,m.lname")
                 ->from("article a")
                 ->join("masuser m","a.owner = m.id")
                 ->where("a.id = '$id' ")
                 ->queryRow();
+         * 
+         */
+        $sql = "select a.*,m.name,m.lname,c.category as category_name from article a inner join masuser m on a.owner = m.id inner join articlecategory c on a.category = c.id where a.id = '$id' ";
+        $result = Yii::app()->db->createCommand($sql)->queryRow();
         return $result;    
     }
     

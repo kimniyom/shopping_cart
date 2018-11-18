@@ -167,48 +167,31 @@ class ArticleController extends Controller {
 //$new_images = "Thumbnails_".$_FILES["Filedata"]["name"];
                 $size = getimagesize($_FILES['Filedata']['tmp_name']);
                 $height = round($width * $size[1] / $size[0]);
-                if (in_array($fileParts['extension'], $JpegType)) {
-                    $images_orig = imagecreatefromjpeg($tempFile);
-                }
 
-                if (in_array($fileParts['extension'], $PngType)) {
-                    $images_orig = imagecreatefrompng($tempFile);
-                }
+                $images_orig = imagecreatefromjpeg($tempFile);
+
                 $photoX = imagesx($images_orig);
                 $photoY = imagesy($images_orig);
 
                 $images_fin = imagecreatetruecolor($width, $height);
                 imagecopyresampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
-                if (in_array($fileParts['extension'], $JpegType)) {
-                    imagejpeg($images_fin, "uploads/article/" . $Name);
-                }
-                if (in_array($fileParts['extension'], $PngType)) {
-// integer representation of the color black (rgb: 0,0,0)
-                    $background = imagecolorallocate($images_fin, 255, 255, 255);
-// removing the black from the placeholder
-                    imagecolortransparent($images_fin, $background);
 
-// turning off alpha blending (to ensure alpha channel information is preserved, rather than removed (blending with the rest of the image in the form of black))
-                    imagesavealpha($images_fin, true);
-                    imagealphablending($images_fin, false);
-                    $transparentColor = imagecolorallocatealpha($images_fin, 255, 255, 255, 127);
-                    imagefill($images_fin, 0, 0, $transparentColor);
-// turning on alpha channel information saving (to ensure the full range of transparency is preserved)
-
-                    header('Content-Type: image/png');
-                    imagepng($images_fin, "uploads/article/" . $Name, 0, NULL);
-                }
+                imagejpeg($images_fin, "uploads/article/" . $Name);
 
                 imagedestroy($images_orig);
                 imagedestroy($images_fin);
+
+                $this->Thumbnail($Name, 600, 486);
+                $this->Thumbnail($Name, 200, 200);
+                $this->Thumbnail($Name, 870, 500);
+                $this->Thumbnail($Name, 80, 100);
+
                 /*
-                  $this->Thumbnail($Name, 600, 486);
-                  $this->Thumbnail($Name, 200, 200);
-                  $this->Thumbnail($Name, 870, 500);
-                 */
-                $this->Thumbnailpng($Name, 600, 486);
-                $this->Thumbnailpng($Name, 200, 200);
-                $this->Thumbnailpng($Name, 870, 500);
+                  $this->Thumbnailpng($Name, 600, 486);
+                  $this->Thumbnailpng($Name, 200, 200);
+                  $this->Thumbnailpng($Name, 870, 500);
+                 * */
+
                 echo $id;
             } else {
                 echo 'Invalid file type.';
@@ -280,6 +263,9 @@ class ArticleController extends Controller {
 
             if (file_exists('./uploads/article/200-' . $rs['images'])) {
                 unlink('./uploads/article/200-' . $rs['images']);
+            }
+            if (file_exists('./uploads/article/80-' . $rs['images'])) {
+                unlink('./uploads/article/80-' . $rs['images']);
             }
         }
 

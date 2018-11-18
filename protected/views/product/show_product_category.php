@@ -16,12 +16,12 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        
+
         var track_click = 0; //track user click on "load more" button, righ now it is 0 click
         //fetch_pages.php
-        var total_pages = "<?php echo $count_product_type; ?>";
-        var type_id = "<?php echo $type_id; ?>";
-        $('#results').load("<?php echo Yii::app()->createUrl('frontend/product/pages') ?>", {'page': track_click, type_id: type_id}, function () {
+        var total_pages = "<?php echo $count; ?>";
+        var category = "<?php echo $category['id']; ?>";
+        $('#results').load("<?php echo Yii::app()->createUrl('frontend/product/pagescategory') ?>", {'page': track_click, category: category}, function () {
             track_click++;
         }); //initial data to load
 
@@ -33,10 +33,10 @@
             if (track_click <= total_pages) //make sure user clicks are still less than total pages
             {
                 //post page number and load returned data into result element
-                $.post('<?php echo Yii::app()->createUrl('frontend/product/pages') ?>',
-                        {'page': track_click, type_id: type_id},
+                $.post('<?php echo Yii::app()->createUrl('frontend/product/pagescategory') ?>',
+                        {'page': track_click, category: category},
                         function (data) {
-                            if(data == 0){
+                            if (data == 0) {
                                 $('.animation_image').hide();
                                 $(".load_more").attr("disabled", "disabled");
                                 return false;
@@ -61,29 +61,23 @@
                 });
 
                 //total_pages - 1
-               
-                 if ((track_click * 8) <= (total_pages - 1)){
+
+                if ((track_click * 8) <= (total_pages - 1)) {
                     $(".load_more").attr("disabled", "disabled");
-                 }
-                 
+                }
             }
-
         });
-
-        
-        
     });
 </script>
 
 <?php
 $this->breadcrumbs = array(
-    $type['categoryname'] => array('frontend/product/category/id/' . $type['category']),
-    $type_name,
+    $category['categoryname']
 );
 ?>
 
 <div class="container" style=" padding: 30px;">
-    <h4>จำนวนที่พบ <?php echo $count_product_type ?> รายการ</h4><br/>
+    <h4>จำนวนที่พบ <?php echo $count ?> รายการ</h4><br/>
     <div class="row product-grid-equal-height-wrapper product-equal-height-4-columns flex multi-row" id="results">
     </div>
 </div>

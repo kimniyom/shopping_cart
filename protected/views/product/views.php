@@ -37,8 +37,8 @@
 <?php
 $title = $product['product_name'];
 $this->breadcrumbs = array(
-    $product['categoryname'] => array('frontend/product/view/category' . '/' . $product['category']),
-    $product['type_name'] => array('frontend/product/view/category' . '/' . $product['category'] . '/type' . '/' . $product['type_id']),
+    $product['categoryname'] => array('frontend/product/category/id' . '/' . $product['category']),
+    $product['type_name'] => array('frontend/product/view/type' . '/' . $product['type_id']),
     $title,
 );
 ?>
@@ -114,9 +114,11 @@ $this->breadcrumbs = array(
                                                     <button class="btn btn-default"><i class="fa fa-comment text-success"></i> <font class="text-success">แชทเลย</font></button></a>
                                                 <a href="https://www.messenger.com/t/kstudiothai" target="_black">
                                                     <button class="btn btn-default"><i class="fa fa-shopping-cart text-warning"></i> <font class="text-warning">สั่งซื้อ</font></button></a>
-                                                <button class="btn btn-wishlist btn-default">
+                                               <!--
+                                                    <button class="btn btn-wishlist btn-default">
                                                     <i class="fa fa-heart text-danger"></i>
                                                 </button>
+                                               -->
                                             </div>
                                         </div>
                                     </div>
@@ -282,7 +284,7 @@ $this->breadcrumbs = array(
                                             </div>
                                             <figcaption class="desc text-center" id="setColorNear">
                                                 <h3 style="height:50px; overflow: hidden;white-space: wrap;text-overflow: ellipsis;">
-                                                    <a class="product-name font-supermarket" href="product-detail.html"><?php echo $nears['product_name'] ?></a>
+                                                    <a class="product-name font-supermarket" href="<?php echo Yii::app()->createUrl('frontend/product/views',array('id' => $nears['product_id'])) ?>"><?php echo $nears['product_name'] ?></a>
                                                 </h3>
                                                 <span class="price"><?php echo number_format($nears['product_price']) ?></span>
                                             </figcaption>

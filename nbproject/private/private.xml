@@ -31,19 +31,20 @@
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/images/loadimages.php</file>
         </group>
         <group name="yii">
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/kstudio.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/product/views.php</file>
             <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/models/Article.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/update.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/CategoryController.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/assets/ckeditor/ckfinder/config.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/view.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/product/show_product_brand.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/product/show_product_category.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/review/index.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/site/index.php</file>
             <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/create.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/banner/index.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/article/index.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/components/ImageResize.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/models/Category.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/product/detail_product.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/product/product_more.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/ProductController.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/frontend/CommentController.php</file>
             <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/config/main.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ArticleController.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BannerController.php</file>
+            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/product/show_product_all.php</file>
         </group>
     </open-files>
 </project-private>

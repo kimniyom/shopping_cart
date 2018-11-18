@@ -248,7 +248,7 @@ class Product {
     }
 
     function get_count_product_type($type_id = '') {
-        $sql = "SELECT COUNT(*) AS TOTAL FROM product WHERE type_id = '$type_id' AND status != '1' AND delete_flag != '1'";
+        $sql = "SELECT COUNT(*) AS TOTAL FROM product WHERE type_id = '$type_id'";
         $rs = Yii::app()->db->createCommand($sql)->queryRow();
         return $rs['TOTAL'];
     }
@@ -330,6 +330,18 @@ class Product {
                 WHERE category = '$category' 
                 ORDER BY RAND() LIMIT 8";
         return Yii::app()->db->createCommand($sql)->queryAll();
+    }
+
+    function getProductByCategory($id){
+        $sql = "select * from product where category = '$id' ";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+
+    }
+
+    function getProductByBrand($id){
+        $sql = "select * from product where brand = '$id' ";
+        return Yii::app()->db->createCommand($sql)->queryAll();
+
     }
 
 }

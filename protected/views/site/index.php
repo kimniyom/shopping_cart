@@ -10,41 +10,41 @@ $articleCategory = Articlecategory::model()->findAll("active=:active", array(":a
 $Banner = Banner::model()->findAll("status=:status", array(":status" => "1"));
 $Categorys = Category::model()->findAll();
 ?>
-            <div class="banner banner-image-fit-screen">
-                <div class="rev_slider slider-home-1" id="slider_1" style="display:none">
-                    <ul>
-                        <?php foreach ($Banner as $baners): ?>
-                            <li>
-                                <img class="rev-slidebg" src="<?php echo Yii::app()->baseUrl; ?>/uploads/banner/<?php echo $baners['banner_images'] ?>" alt="demo" data-bgposition="center center">
-                                <?php if (isset($baners['title'])) { ?>
-                                    <div class="tp-caption" data-x="center" data-y="center" data-voffset="['-100','-100','-140','-140']" data-transform_in="y:-80px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:-80px;opacity:0;s:300;" data-start="1000">
-                                        <h2 style="color:<?php echo $baners['color'] ?>;"><?php echo $baners['title'] ?></h2>
-                                    </div>
-                                <?php } ?>
-                                <?php if (isset($baners['detail'])) { ?>
-                                    <div class="tp-caption" data-x="center" data-y="center" data-voffset="['20','20','40','40']" data-width="['650','550','480','320']" data-whitespace="normal" data-transform_in="y:80px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:80px;opacity:0;s:300;"
-                                         data-start="1400">
-                                        <h4 style="color:<?php echo $baners['color'] ?>; text-align:center;"><?php echo $baners['detail'] ?></h4>
-                                    </div>
-                                <?php } ?>
-                                <?php
-                                if (!$baners['link']) {
-                                    $style = "style='display:none;'";
-                                } else {
-                                    $style = "";
-                                }
-                                ?>
-                                <div class="tp-caption" data-x="center" data-y="center" data-voffset="['120','120','200','200']" data-transform_in="y:100px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:200px;opacity:0;s:300;" data-start="1600" <?php echo $style ?>>
+<div class="banner banner-image-fit-screen">
+    <div class="rev_slider slider-home-1" id="slider_1" style="display:none">
+        <ul>
+            <?php foreach ($Banner as $baners): ?>
+                <li>
+                    <img class="rev-slidebg" src="<?php echo Yii::app()->baseUrl; ?>/uploads/banner/<?php echo $baners['banner_images'] ?>" alt="demo" data-bgposition="center center">
+                    <?php if (isset($baners['title'])) { ?>
+                        <div class="tp-caption" data-x="center" data-y="center" data-voffset="['-100','-100','-140','-140']" data-transform_in="y:-80px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:-80px;opacity:0;s:300;" data-start="1000">
+                            <h2 style="color:<?php echo $baners['color'] ?>;"><?php echo $baners['title'] ?></h2>
+                        </div>
+                    <?php } ?>
+                    <?php if (isset($baners['detail'])) { ?>
+                        <div class="tp-caption" data-x="center" data-y="center" data-voffset="['20','20','40','40']" data-width="['650','550','480','320']" data-whitespace="normal" data-transform_in="y:80px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:80px;opacity:0;s:300;"
+                             data-start="1400">
+                            <h4 style="color:<?php echo $baners['color'] ?>; text-align:center;"><?php echo $baners['detail'] ?></h4>
+                        </div>
+                    <?php } ?>
+                    <?php
+                    if (!$baners['link']) {
+                        $style = "style='display:none;'";
+                    } else {
+                        $style = "";
+                    }
+                    ?>
+                    <div class="tp-caption" data-x="center" data-y="center" data-voffset="['120','120','200','200']" data-transform_in="y:100px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:200px;opacity:0;s:300;" data-start="1600" <?php echo $style ?>>
 
-                                    <a class="btn btn-brand pill" href="http://<?php echo $baners['link'] ?>" target="_blank" style="color:#ffffff;">SHOP NOW</a>
+                        <a class="btn btn-brand pill" href="http://<?php echo $baners['link'] ?>" target="_blank" style="color:#ffffff;">SHOP NOW</a>
 
-                                </div>
+                    </div>
 
-                            </li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-            </div>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
 <div class="heading-wrapper text-center">
     <h3 class="heading" style=" margin-bottom: 0px;">SHOP BY CATEGORY</h3>
 </div>
@@ -58,7 +58,7 @@ $Categorys = Category::model()->findAll();
                         $CountProductInCat = $productModel->countProductCategory($Category['id']);
                         ?>
                         <div class="col-sm-4 col-xs-4">
-                            <a href="#">
+                            <a href="<?php echo Yii::app()->createUrl('frontend/product/category',array('id' => $Category['id'])) ?>">
                                 <figure class="product-category-item">
                                     <div class="thumbnails">
                                         <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/category/<?php echo $Category['icons'] ?>" alt="" class="img img-responsive"/>
@@ -102,10 +102,10 @@ $Categorys = Category::model()->findAll();
                 <figure class="item Newproduct">
                     <div class="product product-style-3" style=" background: #f1f2f4;">
                         <div class="img-wrapper" style="border:none;">
-                            <a href="<?php echo Yii::app()->createUrl('frontend/product/views',array("id" => $rsProduct['product_id']))?>">
+                            <a href="<?php echo Yii::app()->createUrl('frontend/product/views', array("id" => $rsProduct['product_id'])) ?>">
                                 <span class="label label-success font-supermarket" style=" position: absolute;top: 20px;left: 0px; font-size: 14px; border-radius: 0px;">New</span>
                                 <!--
-                                <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl;                         ?>/themes/kstudio/images/product/010.jpg" alt="product thumbnail">
+                                <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl;                          ?>/themes/kstudio/images/product/010.jpg" alt="product thumbnail">
                                 -->
                                 <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img ?>" alt="product thumbnail" />
                             </a>
@@ -155,7 +155,7 @@ $Categorys = Category::model()->findAll();
                             <a href="">
                                 <span class="label label-danger font-supermarket" style=" position: absolute;top: 20px;left: 0px; font-size: 14px; border-radius: 0px;">Hot</span>
                                 <!--
-                                <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl;                         ?>/themes/kstudio/images/product/010.jpg" alt="product thumbnail">
+                                <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl;                          ?>/themes/kstudio/images/product/010.jpg" alt="product thumbnail">
                                 -->
                                 <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $imgBest ?>" alt="product thumbnail" />
                             </a>
@@ -204,7 +204,7 @@ $Categorys = Category::model()->findAll();
                             <a href="">
                                 <span class="label label-warning font-supermarket" style=" position: absolute;top: 20px;left: 0px; font-size: 14px; border-radius: 0px;">10 %</span>
                                 <!--
-                                <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl;                         ?>/themes/kstudio/images/product/010.jpg" alt="product thumbnail">
+                                <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl;                          ?>/themes/kstudio/images/product/010.jpg" alt="product thumbnail">
                                 -->
                                 <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $imgSale ?>" alt="product thumbnail" />
                             </a>
@@ -283,7 +283,7 @@ $Categorys = Category::model()->findAll();
 </div>
 <!--
 <div class="call-to-action-style-1">
-    <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl;            ?>/themes/kstudio/images/call-to-action/1.jpg" alt="" />
+    <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl;             ?>/themes/kstudio/images/call-to-action/1.jpg" alt="" />
     <div class="overlay-call-to-action"></div>
     <div class="container">
         <div class="row">
@@ -305,13 +305,13 @@ $Categorys = Category::model()->findAll();
                     <div class="col-md-4">
                         <div class="post">
                             <div class="img-wrapper js-set-bg-blog-thumb">
-                                <a href="">
+                                <a href="<?php echo Yii::app()->createUrl('frontend/article/views', array('id' => $rsblog['id'])) ?>">
                                     <img src="<?= Yii::app()->baseUrl; ?>/uploads/article/600-<?php echo $rsblog['images'] ?>" alt="Image" />
                                 </a>
                             </div>
                             <div class="desc">
                                 <h4 class="font-supermarket">
-                                    <a href=""><?php echo $rsblog['title'] ?></a>
+                                    <a href="<?php echo Yii::app()->createUrl('frontend/article/views', array('id' => $rsblog['id'])) ?>"><?php echo $rsblog['title'] ?></a>
                                 </h4>
                                 <p class="meta">
                                     <span class="time"><?php echo $rsblog['create_date'] ?></span>

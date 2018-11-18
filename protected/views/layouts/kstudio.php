@@ -108,11 +108,11 @@
                                                 if (count($Types) <= 0) {
                                                     ?>
                                                     <li id="lisubmenu">
-                                                        <a href="shop.html"><?php echo $rsCategory['categoryname'] ?></a>
+                                                        <a href="<?php echo Yii::app()->createUrl('frontend/product/category',array('id' => $rsCategory['id'])) ?>"><?php echo $rsCategory['categoryname'] ?></a>
                                                     </li>
                                                 <?php } else { ?>
                                                     <li id="lisubmenu">
-                                                        <a href="shop.html"><?php echo $rsCategory['categoryname'] ?> <i class="fa fa-angle-right" style="right:10px; top:20px; position:absolute;"></i></a>
+                                                        <a href="<?php echo Yii::app()->createUrl('frontend/product/category',array('id' => $rsCategory['id'])) ?>"><?php echo $rsCategory['categoryname'] ?> <i class="fa fa-angle-right" style="right:10px; top:20px; position:absolute;"></i></a>
                                                         <ul id="ulmenu">
                                                             <?php
                                                             foreach ($Types as $rsTypes):
@@ -121,11 +121,11 @@
                                                                 if (count($Brands) <= 0) {
                                                                     ?>
                                                                     <li id="lisubmenu">
-                                                                        <a href="shop-detail.html"><?php echo $rsTypes['type_name'] ?></a>
+                                                                        <a href="<?php echo Yii::app()->createUrl('frontend/product/view',array('type' => $rsTypes['type_id'])) ?>"><?php echo $rsTypes['type_name'] ?></a>
                                                                     </li>
                                                                 <?php } else { ?>
                                                                     <li id="lisubmenu">
-                                                                        <a href="shop-detail.html"><?php echo $rsTypes['type_name'] ?> <i class="fa fa-angle-right" style="right:10px; top:20px; position:absolute;"></i></a>
+                                                                        <a href="<?php echo Yii::app()->createUrl('frontend/product/view',array('type' => $rsTypes['type_id'])) ?>"><?php echo $rsTypes['type_name'] ?> <i class="fa fa-angle-right" style="right:10px; top:20px; position:absolute;"></i></a>
                                                                         <ul id="ulmenu">
                                                                             <?php foreach ($Brands as $rsBrand): ?>
                                                                                 <li id="lisubmenu"><a href=""><?php echo $rsBrand['brandname'] ?></a></li>
@@ -172,7 +172,7 @@
                                         <ul id="ulmenu">
                                             <?php $BrandsMenu = Brand::model()->findAll() ?>
                                             <?php foreach ($BrandsMenu as $rsBrandMenu): ?>
-                                                <li id="lisubmenu"><a href=""><?php echo $rsBrandMenu['brandname'] ?></a></li>
+                                                <li id="lisubmenu"><a href="<?php echo Yii::app()->createUrl('frontend/product/brand',array('id' => $rsBrandMenu['id'])) ?>"><?php echo $rsBrandMenu['brandname'] ?></a></li>
                                             <?php endforeach; ?>
                                         </ul>
                                     </li>

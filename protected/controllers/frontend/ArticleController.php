@@ -2,7 +2,7 @@
 
 class ArticleController extends Controller {
 
-    public $layout = "webapp";
+    public $layout = "kstudio";
 
     //public $layout = "template_product";
     public function actionIndex() {
@@ -48,6 +48,34 @@ class ArticleController extends Controller {
         $config = new Configweb_model();
         $id = $config->url_decode($_GET['id']);
         $data['result'] = $Art->Get_article_by_id($id);
+        $this->render("//article/view", $data);
+    }
+
+    public function actionViews($id) {
+        $Art = new Article();
+        $data['result'] = $Art->Get_article_by_id($id);
+        $data['category_id'] = $data['result']['category'];
+        $data['category'] = Articlecategory::model()->findAll();
+
+        $sql = "select * from article order by id desc limit 3";
+        $data['lastblog'] = Yii::app()->db->createCommand($sql)->queryAll();
+
+        $sqlnext = "select * from article where id > '$id' limit 1";
+        $data['next'] = Yii::app()->db->createCommand($sqlnext)->queryRow();
+
+        $sqlpre = "select * from article where id < '$id' limit 1";
+        $data['pre'] = Yii::app()->db->createCommand($sqlpre)->queryRow();
+
+        //near 
+        $sqlnear = "SELECT * 
+                FROM (
+                SELECT *
+                FROM article 
+                WHERE category = '" . $data['category_id'] . "' AND id != '$id'
+        ) Q WHERE RAND() LIMIT 3; ";
+
+        $data['near'] = Yii::app()->db->createCommand($sqlnear)->queryAll();
+
         $this->render("//article/view", $data);
     }
 

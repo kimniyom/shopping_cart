@@ -29,24 +29,24 @@ class ProductController extends Controller {
         $fimg = $product->firstpictures($data['product']['product_id']);
 
         Yii::app()->session['fbtitle'] = $data['product']['product_name'];
-        Yii::app()->session['fbimages'] = Yii::app()->baseUrl."/uploads/product/tumbnail/480-" . $fimg;
+        Yii::app()->session['fbimages'] = Yii::app()->baseUrl . "/uploads/product/tumbnail/480-" . $fimg;
         Yii::app()->session['fburl'] = Yii::app()->createUrl('rontend/product/views', array("id" => $data['product']));
         $this->Readproduct($id);
         $data['countreview'] = $this->Countreview($id);
         $this->render("//product/views", $data);
     }
-    
-    private function Readproduct($productID){
+
+    private function Readproduct($productID) {
         $sql = "select countread from product where product_id = '$productID' ";
         $rs = Yii::app()->db->createCommand($sql)->queryRow();
         $newsRead = $rs['countread'] + 1;
         $columns = array("countread" => $newsRead);
         Yii::app()->db->createCommand()
-                ->update("product", $columns,"product_id = '$productID'");
+                ->update("product", $columns, "product_id = '$productID'");
     }
-    
-    private function Countreview($productID){
-         $sql = "select count(*) as total from review where product_id = '$productID' ";
+
+    private function Countreview($productID) {
+        $sql = "select count(*) as total from review where product_id = '$productID' ";
         $rs = Yii::app()->db->createCommand($sql)->queryRow();
         $review = $newsRead = $rs['total'];
         return $review;
@@ -144,11 +144,14 @@ class ProductController extends Controller {
         $this->load->view('web_system/print_bill', $data);
     }
 
-    public function actionView() {
-        $config = new Configweb_model();
+    public function actionView($type) {
+        $type_id = $type;
+        //$config = new Configweb_model();
         $prodult = new Product();
 
-        $type_id = $config->url_decode($_GET['type']);
+        //$type_id = $config->url_decode($_GET['type']);
+        $sql = "select t.*,categoryname from product_type t inner join category c on t.category = c.id where type_id = '$type_id'";
+        $data['type'] = Yii::app()->db->createCommand($sql)->queryRow();
         $data['type_id'] = $type_id;
         $data['type_name'] = $prodult->get_type_name($type_id);
         $data['product'] = $prodult->get_product_all($type_id);
@@ -160,7 +163,7 @@ class ProductController extends Controller {
     public function actionPages() {
         $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
         $type_id = $_POST["type_id"];
-        $item_per_page = 6; //ให้แสดงที่ละ
+        $item_per_page = 8; //ให้แสดงที่ละ
         //throw HTTP error if page number is not valid
         if (!is_numeric($page_number)) {
             header('HTTP/1.1 500 Invalid page number!');
@@ -174,9 +177,11 @@ class ProductController extends Controller {
         //$results = mysqli_query($connecDB, "SELECT id,name,message FROM paginate ORDER BY id DESC LIMIT $position, $item_per_page");
         $query = "SELECT *
                   FROM product
-                  WHERE type_id = '$type_id' AND status != '1' AND delete_flag != '1'
+                    WHERE type_id = '$type_id'
                   ORDER BY id DESC LIMIT $position, $item_per_page";
         $rs = Yii::app()->db->createCommand($query)->queryAll();
+
+        //WHERE type_id = '$type_id'
         //output results from database
         /*
           echo '<ul class="page_result">';
@@ -188,9 +193,14 @@ class ProductController extends Controller {
          */
 
         $data['product'] = $rs;
-
-        $this->renderPartial("//product/product_more", $data);
+        if ($rs) {
+            $this->renderPartial("//product/product_more", $data);
+        } else {
+            echo 0;
+        }
     }
+    
+    
 
     public function actionReview() {
         $productID = Yii::app()->request->getPost('product_id');
@@ -210,5 +220,88 @@ class ProductController extends Controller {
         Yii::app()->db->createCommand()
                 ->insert("review", $columns);
     }
+
+    public function actionCategory($id) {
+        
+        $prodult = new Product();
+
+        $data['category'] = Category::model()->find("id=:id", array(":id" => $id));
+        $data['product'] = $prodult->getProductByCategory($id);
+        $data['count'] = count($data['product']);
+
+        $this->render("//product/show_product_category", $data);
+    }
+    
+    public function actionPagescategory() {
+        $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+        $category = $_POST["category"];
+        $item_per_page = 8; //ให้แสดงที่ละ
+        //throw HTTP error if page number is not valid
+        if (!is_numeric($page_number)) {
+            header('HTTP/1.1 500 Invalid page number!');
+            exit();
+        }
+
+        //get current starting point of records
+        $position = ($page_number * $item_per_page);
+
+        //Limit our results within a specified range.
+        //$results = mysqli_query($connecDB, "SELECT id,name,message FROM paginate ORDER BY id DESC LIMIT $position, $item_per_page");
+        $query = "SELECT *
+                  FROM product
+                    WHERE category = '$category'
+                  ORDER BY id DESC LIMIT $position, $item_per_page";
+        $rs = Yii::app()->db->createCommand($query)->queryAll();
+
+        $data['product'] = $rs;
+        if ($rs) {
+            $this->renderPartial("//product/product_more", $data);
+        } else {
+            echo 0;
+        }
+    }
+    
+    
+    public function actionBrand($id) {
+        
+        $prodult = new Product();
+
+        $data['brands'] = Brand::model()->find("id=:id", array(":id" => $id));
+        $data['product'] = $prodult->getProductByBrand($id);
+        $data['count'] = count($data['product']);
+
+        $this->render("//product/show_product_brand", $data);
+    }
+    
+    public function actionPagesbrands() {
+        $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+        $brand = $_POST["brands"];
+        
+        $item_per_page = 8; //ให้แสดงที่ละ
+        //throw HTTP error if page number is not valid
+        if (!is_numeric($page_number)) {
+            header('HTTP/1.1 500 Invalid page number!');
+            exit();
+        }
+
+        //get current starting point of records
+        $position = ($page_number * $item_per_page);
+
+        //Limit our results within a specified range.
+        //$results = mysqli_query($connecDB, "SELECT id,name,message FROM paginate ORDER BY id DESC LIMIT $position, $item_per_page");
+        $query = "SELECT *
+                  FROM product
+                    WHERE brand = '$brand'
+                  ORDER BY id DESC LIMIT $position, $item_per_page";
+        $rs = Yii::app()->db->createCommand($query)->queryAll();
+
+        $data['product'] = $rs;
+        if ($rs) {
+            $this->renderPartial("//product/product_more", $data);
+        } else {
+            echo 0;
+        }
+    }
+    
 
 }
