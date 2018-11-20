@@ -356,5 +356,7 @@ class Product {
         $sql = "select * from product where brand = '$id' ";
         return Yii::app()->db->createCommand($sql)->queryAll();
     }
+    
+    
 
 }

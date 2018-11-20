@@ -11,16 +11,13 @@ $this->breadcrumbs = array(
     $title,
 );
 ?>
+<div class=" container">
+    <br/>
+    <h1 class="font-supermarket"><?php echo $title ?></h1>
+    
+    <div id="box-article">
+        <?php echo $about['about'] ?>
+    </div>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <img src="<?php echo Yii::app()->baseUrl; ?>/images/Mail-icon.png" width="24"/>
-        <?php echo $title ?>
-    </div>
-    <div class="panel-body">
-        <div id="box-article">
-            <?php echo $about['about'] ?>
-        </div>
-    </div>
 </div>
 

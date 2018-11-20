@@ -20,7 +20,7 @@
         </style>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/css/system.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/css/bootstrap.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/css/bootstrap-theme.css" type="text/css" media="all" />
+
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/gallery_img/dist/magnific-popup.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/media/css/dataTables.bootstrap.css" type="text/css" media="all" />
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/DataTables-1.10.7/extensions/TableTools/css/dataTables.tableTools.css" type="text/css" media="all" />
@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/perfect-scrollbar/css/perfect-scrollbar.css"/>
         <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/css/card-css/card-css.css"/>
         <!-- Bootstrap CheckBox
-        <link rel="stylesheet" href="<?php //echo Yii::app()->baseUrl;        ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="<?php //echo Yii::app()->baseUrl;         ?>/css/bootstrap-checkbox/awesome-bootstrap-checkbox.css" type="text/css" media="all" />
         -->
         <script src="<?= Yii::app()->baseUrl; ?>/js/jquery.js" type="text/javascript"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/backend/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
@@ -212,7 +212,7 @@
                             <i class="fa fa-text-height"></i>  ชื่อเว็บ
                         </a>
                         <!--
-                        <a href="<?php //Yii::app()->createUrl('backend/howtoorder')    ?>" class="list-group-item">
+                        <a href="<?php //Yii::app()->createUrl('backend/howtoorder')     ?>" class="list-group-item">
                             <i class="fa fa-book"></i>  วิธีการสั่งซื้อ
                         </a>
                         -->
@@ -226,18 +226,18 @@
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group" id="side2">
-                        <a href="<?php echo Yii::app()->createUrl('backend/user/userall')  ?>"
+                        <a href="<?php echo Yii::app()->createUrl('backend/user/userall') ?>"
                            class="list-group-item"><i class="fa fa-group"></i> ผู้ใช้งาน</a>
-                           <a href="<?php echo Yii::app()->createUrl('backend/user/userall')  ?>"
+                        <a href="<?php echo Yii::app()->createUrl('backend/user/userall') ?>"
                            class="list-group-item"><i class="fa fa-group"></i> สิทธิ์การใช้งาน</a>
                         <!--
-                        <a href="<?php //echo Yii::app()->createUrl('backend/user/userall')  ?>"
+                        <a href="<?php //echo Yii::app()->createUrl('backend/user/userall')   ?>"
                            class="list-group-item"><i class="fa fa-group"></i>  ข้อมูลสมาชิก</a>
-                        <a href="<?php //echo Yii::app()->createUrl('backend/payment/view')  ?>"
+                        <a href="<?php //echo Yii::app()->createUrl('backend/payment/view')   ?>"
                            class="list-group-item"><span class="fa fa-money"></span>  ช่องทางการชำระเงิน</a>
-                        <a href="<?php //echo Yii::app()->createUrl('backend/period')  ?>"
+                        <a href="<?php //echo Yii::app()->createUrl('backend/period')   ?>"
                            class="list-group-item"><span class="fa fa-calendar"></span>  ระยะเวลาจองสินค้า</a>
-                        <a href="<?php //echo Yii::app()->createUrl('backend/transport')  ?>"
+                        <a href="<?php //echo Yii::app()->createUrl('backend/transport')   ?>"
                            class="list-group-item"><span class="fa fa-truck"></span>  ช่องทางการจัดส่ง</a>
                         -->
                     </div>
@@ -283,12 +283,31 @@
                     </div>
                 </div>
 
+                <div class="panel panel-default side5" id="panel-head">
+                    <div class="panel-heading" id="panel">
+                        <img src="<?= Yii::app()->baseUrl; ?>/images/Contacts-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px; width: 32px;">
+                        ติดต่อจากลูกค้า
+                        <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
+                    </div>
+                    <div class="list-group" id="side4">
+                        <a href="<?php echo Yii::app()->createUrl('backend/articlecategory/admin') ?>" class="list-group-item">
+                            <i class="fa fa-folder"></i> ยังไม่อ่าน
+                        </a>
+                        <a href="<?php echo Yii::app()->createUrl('backend/article/create') ?>" class="list-group-item">
+                            <i class="fa fa-folder-open"></i> อ่านแล้ว
+                        </a>
+                        <a href="<?php echo Yii::app()->createUrl('backend/contactuser/contact') ?>" class="list-group-item">
+                            <i class="fa fa-newspaper-o"></i> ทั้งหมด
+                        </a>
+                    </div>
+                </div>
+
                 <!-- รายการจัดส่งสินค้า -->
                 <!-- List รายชื่อ สินค้า -->
                 <!--
                 <div class="panel panel-default side5" id="panel-head">
                     <div class="panel-heading" id="panel">
-                        <img src="<?php //echo Yii::app()->baseUrl;     ?>/images/front-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px; width: 32px;">
+                        <img src="<?php //echo Yii::app()->baseUrl;      ?>/images/front-icon.png" style="border-radius:20px; padding:2px; border:#FFF solid 2px; width: 32px;">
                         รหัสส่งสินค้า
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
@@ -298,8 +317,8 @@
                 //foreach ($notify as $datas):
                 ?>
                             <a class="list-group-item">
-                                <span class="glyphicon glyphicon-user"></span> คุณ <?php //echo $datas['name'] . ' ' . $datas['lname'];     ?><br/>
-                                <span class="glyphicon glyphicon-send"></span>  <?php //echo $datas['postcode']     ?>
+                                <span class="glyphicon glyphicon-user"></span> คุณ <?php //echo $datas['name'] . ' ' . $datas['lname'];      ?><br/>
+                                <span class="glyphicon glyphicon-send"></span>  <?php //echo $datas['postcode']      ?>
                             </a>
                 <?php //endforeach; ?>
                     </div>

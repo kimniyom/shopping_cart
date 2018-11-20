@@ -330,4 +330,41 @@ class ProductController extends Controller {
         }
     }
 
+    public function actionSearch($product) {
+        $search = $product;
+        $sql = "select * from product where product_name like '%$search%'";
+        $data['search'] = $search;
+        $data['product'] = Yii::app()->db->createCommand($sql)->queryAll();
+        $data['count'] = count($data['product']);
+        $this->render('//product/search', $data);
+    }
+    
+    public function actionPagessearch() {
+        $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
+        $search = $_POST["search"];
+
+        $item_per_page = 8; //ให้แสดงที่ละ
+        //throw HTTP error if page number is not valid
+        if (!is_numeric($page_number)) {
+            header('HTTP/1.1 500 Invalid page number!');
+            exit();
+        }
+
+        //get current starting point of records
+        $position = ($page_number * $item_per_page);
+
+        //Limit our results within a specified range.
+        //$results = mysqli_query($connecDB, "SELECT id,name,message FROM paginate ORDER BY id DESC LIMIT $position, $item_per_page");
+        $query = "select * from product where product_name like '%$search%' order by id desc limit $position, $item_per_page";
+        
+        $rs = Yii::app()->db->createCommand($query)->queryAll();
+
+        $data['product'] = $rs;
+        if ($rs) {
+            $this->renderPartial("//product/product_more", $data);
+        } else {
+            echo 0;
+        }
+    }
+
 }

@@ -43,11 +43,11 @@ $this->breadcrumbs = array(
 );
 ?>
 <?php $productModel = new Product(); ?>
-<div class="view-products">
-    <div class="shop-detail-3 woocommerce" id="page" style=" background: #eeeeee;">
+<div class="view-products" style=" margin-top: 10px;">
+    <div class="shop-detail-3 woocommerce" id="page">
         <!--
         <section class="sub-header shop-detail-1">
-            <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl                     ?>/themes/kstudio/images/sub-header/017.jpg" alt="">
+            <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl                      ?>/themes/kstudio/images/sub-header/017.jpg" alt="">
             <div class="overlay-call-to-action"></div>
             <h3 class="heading-style-3">Shop Detail</h3>
         </section>
@@ -68,7 +68,7 @@ $this->breadcrumbs = array(
                                 <div class="thumbnail-carousel">
                                     <!--482x455
                                     <div class="item">
-                                        <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl                             ?>/themes/kstudio/images/product/01.jpg" alt="product thumbnail">
+                                        <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl                              ?>/themes/kstudio/images/product/01.jpg" alt="product thumbnail">
                                     </div>
                                     -->
                                     <?php foreach ($images as $al): ?>
@@ -114,11 +114,11 @@ $this->breadcrumbs = array(
                                                     <button class="btn btn-default"><i class="fa fa-comment text-success"></i> <font class="text-success">แชทเลย</font></button></a>
                                                 <a href="https://www.messenger.com/t/kstudiothai" target="_black">
                                                     <button class="btn btn-default"><i class="fa fa-shopping-cart text-warning"></i> <font class="text-warning">สั่งซื้อ</font></button></a>
-                                               <!--
-                                                    <button class="btn btn-wishlist btn-default">
-                                                    <i class="fa fa-heart text-danger"></i>
-                                                </button>
-                                               -->
+                                                <!--
+                                                     <button class="btn btn-wishlist btn-default">
+                                                     <i class="fa fa-heart text-danger"></i>
+                                                 </button>
+                                                -->
                                             </div>
                                         </div>
                                     </div>
@@ -277,16 +277,23 @@ $this->breadcrumbs = array(
                                 $fimg = $productModel->firstpictures($nears['product_id']);
                                 ?>
                                 <div class="item">
-                                    <figure class="item">
+                                    <figure class="item" style=" background: #fafafa;">
                                         <div class="product product-style-1">
                                             <div class="img-wrappers">                               
                                                 <img class="img-responsive" src="<?php echo Yii::app()->baseUrl ?>/uploads/product/thumbnail/482-<?php echo $fimg ?>" alt="product thumbnail">
                                             </div>
-                                            <figcaption class="desc text-center" id="setColorNear">
+                                            <figcaption class="desc text-center" id="setColorNear" style=" background: #fafafa;">
                                                 <h3 style="height:50px; overflow: hidden;white-space: wrap;text-overflow: ellipsis;">
-                                                    <a class="product-name font-supermarket" href="<?php echo Yii::app()->createUrl('frontend/product/views',array('id' => $nears['product_id'])) ?>"><?php echo $nears['product_name'] ?></a>
+                                                    <a class="product-name font-supermarket" href="<?php echo Yii::app()->createUrl('frontend/product/views', array('id' => $nears['product_id'])) ?>"><?php echo $nears['product_name'] ?></a>
                                                 </h3>
-                                                <span class="price"><?php echo number_format($nears['product_price']) ?></span>
+                                                <span class="price">
+                                                    <?php if ($nears['product_price_pro'] > 0) { ?>
+                                                        <del style=" color: #9d1419;"><?php echo number_format($nears['product_price']) ?></del> 
+                                                        <?php echo number_format($nears['product_price_pro']) ?> .-
+                                                    <?php } else { ?>
+                                                        <?php echo number_format($nears['product_price']) ?> .-
+                                                    <?php } ?>
+                                                </span>
                                             </figcaption>
                                         </div>
                                     </figure>

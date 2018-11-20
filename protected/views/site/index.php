@@ -303,7 +303,7 @@ $Categorys = Category::model()->findAll();
                                 </h4>
                                 <p class="meta">
                                     <span class="time"><?php echo $rsblog['create_date'] ?></span>
-                                    <span class="comment">2</span>
+                                    <span class="comment"><?php echo $rsblog['countread'] ?></span>
                                 </p>
                                 <p></p>
                             </div>

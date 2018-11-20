@@ -92,7 +92,7 @@ return array(
             'connectionString' => 'mysql:host=localhost;dbname=kstudio_db',
             'emulatePrepare' => true,
             'username' => 'root',
-            'password' => '',
+            'password' => 'root',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(
