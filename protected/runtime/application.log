@@ -6723,3 +6723,1397 @@ Stack trace:
 REQUEST_URI=/shopping_cart/backend/contactuser/contact
 HTTP_REFERER=http://localhost/shopping_cart/backend/backend
 ---
+2018/11/20 11:12:56 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('set_navbar')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/backend...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/backend/set_navbar
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/20 11:42:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads=0' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads=:reads.
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php (165)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/20 11:42:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads=0' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads=:reads' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php(165): CActiveRecord->findAll('reads=:reads', Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactuserController->actionNoread()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('noread')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/contact...')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/shopping_cart/backend/contactuser/noread
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/20 11:43:30 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads='0'' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads='0'.
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php (165)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/20 11:43:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads='0'' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads='0'' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php(165): CActiveRecord->findAll('reads='0'')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactuserController->actionNoread()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('noread')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/contact...')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/shopping_cart/backend/contactuser/noread
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/20 11:43:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads='0'' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads='0'.
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php (165)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/20 11:43:47 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads='0'' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads='0'' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php(165): CActiveRecord->findAll('reads='0'')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactuserController->actionNoread()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('noread')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/contact...')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/shopping_cart/backend/contactuser/noread
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/20 11:44:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads.
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php (165)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/20 11:44:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php(165): CActiveRecord->findAll('reads', '0')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactuserController->actionNoread()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('noread')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/contact...')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/shopping_cart/backend/contactuser/noread
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/20 11:45:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads.
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php (165)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/20 11:45:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php(165): CActiveRecord->findAll('reads', '0')
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactuserController->actionNoread()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('noread')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/contact...')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/shopping_cart/backend/contactuser/noread
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/20 11:45:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads=0' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads=:reads.
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php (165)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/20 11:45:19 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads=0' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads=:reads' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php(165): CActiveRecord->findAll('reads=:reads', Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactuserController->actionNoread()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('noread')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/contact...')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/shopping_cart/backend/contactuser/noread
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/20 11:45:48 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads=0' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads=:reads.
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php (165)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/20 11:45:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads=0' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads=:reads' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php(165): CActiveRecord->findAll('reads=:reads', Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactuserController->actionNoread()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('noread')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/contact...')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/shopping_cart/backend/contactuser/noread
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/20 11:46:01 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads=0' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads=:reads.
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php (165)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/20 11:46:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads=0' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads=:reads' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php(165): CActiveRecord->findAll('reads=:reads', Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactuserController->actionNoread()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('noread')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/contact...')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/shopping_cart/backend/contactuser/noread
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/20 11:46:04 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads=0' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads=:reads.
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php (165)
+in /Applications/MAMP/htdocs/shopping_cart/index.php (14)
+2018/11/20 11:46:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'reads=0' at line 1. The SQL statement executed was: SELECT * FROM `contactuser` `t` WHERE reads=:reads' in /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php:543
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/db/CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1351): CDbCommand->queryAll()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/db/ar/CActiveRecord.php(1470): CActiveRecord->query(Object(CDbCriteria), true)
+#3 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php(165): CActiveRecord->findAll('reads=:reads', Array)
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/actions/CInlineAction.php(49): ContactuserController->actionNoread()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('noread')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/contact...')
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#12 {main}
+REQUEST_URI=/shopping_cart/backend/contactuser/noread
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/01.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/03.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/02.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/06.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/05.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/04.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/07.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/08.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/09.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/010.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/011.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:40:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/012.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/01.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/03.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/02.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/05.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/04.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/06.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/07.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/08.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/09.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/010.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/011.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:41:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/012.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/03.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/02.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/01.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/05.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/04.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/06.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/07.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/08.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/09.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/010.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/011.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/012.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/01.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/02.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/03.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/04.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/05.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/06.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/07.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/08.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/09.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/010.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/011.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/012.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/05.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/02.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/01.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/03.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/04.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/06.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/07.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/08.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/09.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/010.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/011.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/012.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/01.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/02.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/03.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/04.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/05.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/06.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/07.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/08.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/09.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/010.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/011.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:42:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/012.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/05.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/01.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/04.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/02.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/03.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/06.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/07.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/08.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/09.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/010.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/011.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 13:43:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/012.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/01.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/02.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/04.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/03.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/05.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/06.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/07.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/08.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/09.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/010.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/011.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/012.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/01.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/05.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/02.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/04.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/03.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/06.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/07.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/08.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/09.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/010.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/011.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---
+2018/11/20 14:00:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('images')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('images')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/images/pro...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/images/product/012.jpg
+HTTP_REFERER=http://localhost/shopping_cart/site/index
+---

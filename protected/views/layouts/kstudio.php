@@ -76,12 +76,12 @@
             #_footer ul li a{
                 font-family: 'supermarket';
                 font-size: 16px;
-                
+
             }
 
             .widget-link ul li{
                 font-family: 'supermarket';
-            
+
                 font-size: 16px;
             }
 
@@ -254,12 +254,12 @@
                                     //$Types = ProductType::model()->findAll("category=:id", array(":id" => $rsCategory['id']));
                                     ?>
                                                             <div class="col-md-4 col-lg-4 col-sm-4">
-                                                                <label><?php //echo $rsCategory['categoryname']      ?></label>
+                                                                <label><?php //echo $rsCategory['categoryname']           ?></label>
                                                                 <hr style="border-bottom: #cccccc solid 1px; margin-top: 0px; margin-bottom: 5px;"/>
                                     <?php
                                     //foreach ($Types as $type):
                                     ?>
-                                                                    <a href=""><?php //echo $type['type_name']      ?></a>
+                                                                    <a href=""><?php //echo $type['type_name']           ?></a>
                                     <?php //endforeach; ?>
                                                             </div>
                                     <?php //endforeach; ?>
@@ -350,8 +350,8 @@
             </header>
 
             <?php if ($this->breadcrumbs): ?>
-            <div class="font-THK" style="padding: 10px; color: #666666; background: #f2f2f2;border-bottom: #cccccc solid 0px; text-align: center; font-size: 20px; z-index:0;">
-                <div class="container">
+                <div class="font-THK" style="padding: 10px; color: #666666; background: #f2f2f2;border-bottom: #cccccc solid 0px; text-align: center; font-size: 20px; z-index:0;">
+                    <div class="container">
                         <?php
                         $this->widget('zii.widgets.CBreadcrumbs', array(
                             'homeLink' => '<i class="fa fa-home"></i> ' . CHtml::link('หน้าแรก', Yii::app()->createUrl('site/index')),
@@ -462,22 +462,22 @@
                                 <ul class="list-unstyle">
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                 ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                      ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                 ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                      ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                 ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                      ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                 ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                      ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
                                         </a>
                                     </li>
                                 </ul>
@@ -661,40 +661,49 @@
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-carousel-thumbnail.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-carousel-product-quickview.js"></script>
         <!-- Demo Only-->
-        <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/demo-add-to-cart.js">
+        <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/demo-add-to-cart.js"></script>
 
+        <!-- Jquery.Bxslide-->
+        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/kstudio/jquery.bxslider/jquery.bxslider.css" media="screen">
+        <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/jquery.bxslider/jquery.bxslider.js"></script>
 
-        </script>
+        <!-- fancybox -->
+        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/themes/kstudio/fancyBox2.1.5/source/jquery.fancybox.css" media="screen">
+        <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/fancyBox2.1.5/source/jquery.fancybox.js"></script>
+
+        <!-- images hover effect -->
+        <link href="<?= Yii::app()->baseUrl; ?>/themes/kstudio/css/images-hover-effect.css" rel="stylesheet" type="text/css" />
+
         <script tyle="text/javascript">
-            setScreen();
-            //getMenu();
-            function setScreen() {
-                var w = window.innerWidth;
-                if (w >= 768) {
-                    $("#menuBar").css({"padding-bottom": "0px"});
-                } else {
-                    $("#slider_1").hide();
-                    $("#slider_1").css({"height": "20px"});
-                }
-            }
+                                setScreen();
+                                //getMenu();
+                                function setScreen() {
+                                    var w = window.innerWidth;
+                                    if (w >= 768) {
+                                        $("#menuBar").css({"padding-bottom": "0px"});
+                                    } else {
+                                        $("#slider_1").hide();
+                                        $("#slider_1").css({"height": "20px"});
+                                    }
+                                }
 
-            function getMenu() {
-                var url = "<?php echo Yii::app()->createUrl('site/getmenu') ?>";
-                $.get(url, function (data) {
-                    $("#kkmenusidebar").html(data);
-                });
-            }
+                                function getMenu() {
+                                    var url = "<?php echo Yii::app()->createUrl('site/getmenu') ?>";
+                                    $.get(url, function (data) {
+                                        $("#kkmenusidebar").html(data);
+                                    });
+                                }
 
-            function searchproduct() {
-                var url = "<?php echo Yii::app()->createUrl('frontend/product/search') ?>";
-                var search = $("#searchproduct").val();
-                if (search == "") {
-                    $("#searchproduct").focus();
-                    return false;
-                }
+                                function searchproduct() {
+                                    var url = "<?php echo Yii::app()->createUrl('frontend/product/search') ?>";
+                                    var search = $("#searchproduct").val();
+                                    if (search == "") {
+                                        $("#searchproduct").focus();
+                                        return false;
+                                    }
 
-                window.location = url + "/product/" + search;
-            }
+                                    window.location = url + "/product/" + search;
+                                }
         </script>
     </body>
 </html>

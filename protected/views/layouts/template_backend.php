@@ -290,10 +290,10 @@
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group" id="side4">
-                        <a href="<?php echo Yii::app()->createUrl('backend/articlecategory/admin') ?>" class="list-group-item">
+                        <a href="<?php echo Yii::app()->createUrl('backend/contactuser/noread') ?>" class="list-group-item">
                             <i class="fa fa-folder"></i> ยังไม่อ่าน
                         </a>
-                        <a href="<?php echo Yii::app()->createUrl('backend/article/create') ?>" class="list-group-item">
+                        <a href="<?php echo Yii::app()->createUrl('backend/contactuser/read') ?>" class="list-group-item">
                             <i class="fa fa-folder-open"></i> อ่านแล้ว
                         </a>
                         <a href="<?php echo Yii::app()->createUrl('backend/contactuser/contact') ?>" class="list-group-item">

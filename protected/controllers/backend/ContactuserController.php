@@ -28,6 +28,10 @@ class ContactuserController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
+        $columns = array("reads" => "1");
+        Yii::app()->db->createCommand()
+                ->update("contactuser", $columns, "id='$id'");
+
         $this->render('view', array(
             'model' => $this->loadModel($id),
         ));
@@ -94,12 +98,13 @@ class ContactuserController extends Controller {
      * If deletion is successful, the browser will be redirected to the 'admin' page.
      * @param integer $id the ID of the model to be deleted
      */
-    public function actionDelete($id) {
+    public function actionDelete() {
+        $id = Yii::app()->request->getPost('id');
         $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('contact'));
     }
 
     /**
@@ -152,16 +157,18 @@ class ContactuserController extends Controller {
     }
 
     public function actionRead() {
-        
+        $data['contact'] = Contactuser::model()->findAll("reads=:reads", array("reads" => 1));
+        $this->render('read', $data);
     }
 
     public function actionNoread() {
-        
+        $data['contact'] = Contactuser::model()->findAll("reads=:reads", array("reads" => 0));
+        $this->render('noread', $data);
     }
 
     public function actionContact() {
         $data['contact'] = Contactuser::model()->findAll();
-        $this->render('contact',$data);
+        $this->render('contact', $data);
     }
 
 }

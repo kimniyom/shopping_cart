@@ -48,7 +48,7 @@ class Contactuser extends CActiveRecord {
             array('verifyCode', 'captcha', 'allowEmpty' => !CCaptcha::checkRequirements()),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, name, email, subject, body', 'safe', 'on' => 'search'),
+            array('id, name, email, subject, body,body', 'safe', 'on' => 'search'),
             
             
         );

@@ -1,13 +1,13 @@
 <style type="text/css">
     .products .img-wrappers img:hover {
         opacity: 0.8;
-         transition:0.2s ease-in-out;
-         padding: 10px;
+        transition:0.2s ease-in-out;
+        padding: 10px;
     }
-    
+
     .products .img-wrappers img {
-         transition:0.2s ease-out;
-         padding: 0px;
+        transition:0.2s ease-out;
+        padding: 0px;
     }
 </style>
 <?php
@@ -174,7 +174,7 @@ $Categorys = Category::model()->findAll();
                                 <span class="label label-danger font-supermarket" style=" position: absolute;top: 20px;left: 0px; font-size: 14px; border-radius: 0px;">Hot</span>
                                 <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $imgBest ?>" alt="product thumbnail" />
                             </a>
-                            
+
                         </div>
                         <figcaption class="desc">
                             <h4 class="font-supermarket" style=" height: 50px; overflow: hidden;">
@@ -208,7 +208,7 @@ $Categorys = Category::model()->findAll();
                                 <span class="label label-warning font-supermarket" style=" position: absolute;top: 20px;left: 0px; font-size: 14px; border-radius: 0px;">Sale</span>
                                 <img class="img-responsive" src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $imgSale ?>" alt="product thumbnail" />
                             </a>
-                           
+
                         </div>
                         <figcaption class="desc">
                             <h4 class="font-supermarket" style=" height: 50px; overflow: hidden;">
@@ -231,47 +231,51 @@ $Categorys = Category::model()->findAll();
     </div>
 </section>
 <!-- Slide Brands -->
-<div class="main">
-    <div class="container-fluid">
-        <div class="relate-product">
-            <div class="heading-wrapper text-center">
-                <h3 class="heading">SHOP BY BRAND</h3>
-            </div>
-            <div class="row">
-                <div class="carousel-product">
-                    <?php
-                    $sqlBradProduct = "select t.id,t.brandname,p.product_id from product p inner join brand t on p.brand = t.id group by p.brand ";
-                    $resultBrand = Yii::app()->db->createCommand($sqlBradProduct)->queryAll();
-                    foreach ($resultBrand as $rsBrands):
-                        $img_brand = $productModel->firstpictures($rsBrands['product_id']);
-                        if (!empty($img_brand)) {
-                            $imgBrans = "uploads/product/thumbnail/600-" . $img_brand;
-                        } else {
-                            $imgBrans = "images/No_image_available.jpg";
-                        }
-                        ?>
-                        <div class="item">
-                            <figure class="item">
-                                <div class="product product-style-1">
-                                    <div class="img-wrapper">
-                                        <div style=" position: absolute;z-index:10; width:100%; bottom: 0px; right: 0px; text-align:center; font-size: 30px; background: url('<?php echo Yii::app()->baseUrl; ?>/images/bgheader.png');" class="font-supermarket"><?php echo $rsBrands['brandname'] ?></div>
-                                        <a href="<?php echo Yii::app()->createUrl('frontend/product/brand', array("id" => $rsBrands['id'])) ?>">
-                                            <!-- themes/kstudio/images/product/01.jpg -->
-                                            <img class="img-responsive" src="<?= Yii::app()->baseUrl; ?>/<?php echo $imgBrans ?>" alt="product thumbnail">
-                                        </a>
-                                    </div>
-                                </div>
-                            </figure>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+
+
+
+<div style="width: 100%; background: #f1f2f4; padding-bottom: 100px;">
+    <div class="relate-product">
+        <div class="heading-wrapper text-center">
+            <h3 class="heading">SHOP BY BRAND</h3>
         </div>
     </div>
+    <div class="slider5" style="margin-bottom:0px; padding-bottom:0px; width: 100%;">
+        <?php
+        $sqlBradProduct = "select t.id,t.brandname,p.product_id from product p inner join brand t on p.brand = t.id group by p.brand ";
+        $resultBrand = Yii::app()->db->createCommand($sqlBradProduct)->queryAll();
+        foreach ($resultBrand as $rsBrands):
+            $img_brand = $productModel->firstpictures($rsBrands['product_id']);
+            if (!empty($img_brand)) {
+                $imgBrans = "uploads/product/thumbnail/600-" . $img_brand;
+            } else {
+                $imgBrans = "images/No_image_available.jpg";
+            }
+            ?>
+
+            <a href="<?php echo Yii::app()->createUrl('frontend/product/brand', array("id" => $rsBrands['id'])) ?>" class="hover11">
+                <div class="slide">
+                    <div class="container-card" style="text-align: center; box-shadow:none; margin-bottom:0px;">
+                        <figure>
+                            <div class="img-wrapper">
+                                <img src="<?= Yii::app()->baseUrl; ?>/<?php echo $imgBrans ?>" class="img-responsive" />
+                                <div class="text-band" style="position: absolute;z-index:10; width:100%; bottom: 0px; right: 0px; text-align:center; color: #5c5c5c;  background: url('<?php echo Yii::app()->baseUrl; ?>/images/bgheader.png');" class="font-supermarket">
+                                    <?php echo $rsBrands['brandname'] ?>
+                                </div>
+                               
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </a>
+        <?php endforeach; ?>
+    </div>
 </div>
+
+
 <!--
 <div class="call-to-action-style-1">
-    <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl;                  ?>/themes/kstudio/images/call-to-action/1.jpg" alt="" />
+    <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl;                       ?>/themes/kstudio/images/call-to-action/1.jpg" alt="" />
     <div class="overlay-call-to-action"></div>
     <div class="container">
         <div class="row">
@@ -314,3 +318,76 @@ $Categorys = Category::model()->findAll();
         </div>
     </div>
 </section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var size = window.innerWidth;
+         if (size >= 1024) {
+              $('.slider5').bxSlider({
+                slideWidth: 300,
+                minSlides: 5,
+                maxSlides: 5,
+                moveSlides: 5,
+                slideMargin: 10,
+                captions: true,
+                auto: true,
+                touchEnabled: true,
+                pager: false
+            });
+            $(".text-band").css({'font-size':'30px'});
+         } else if (size >= 768) {
+            $('.slider5').bxSlider({
+                slideWidth: 300,
+                minSlides: 4,
+                maxSlides: 4,
+                moveSlides: 4,
+                slideMargin: 10,
+                captions: true,
+                auto: true,
+                touchEnabled: true,
+                pager: false
+            });
+            $(".text-band").css({'font-size':'24px'});
+        } else if(size >= 600){
+            $('.slider5').bxSlider({
+                slideWidth: 300,
+                minSlides: 3,
+                maxSlides: 3,
+                moveSlides: 3,
+                slideMargin: 10,
+                captions: true,
+                auto: true,
+                touchEnabled: true,
+                pager: false
+            });
+            $(".text-band").css({'font-size':'22px'});
+        } else if(size > 480){
+            $('.slider5').bxSlider({
+                slideWidth: 300,
+                minSlides: 3,
+                maxSlides: 3,
+                moveSlides: 3,
+                slideMargin: 10,
+                captions: true,
+                auto: true,
+                touchEnabled: true,
+                pager: false
+            });
+            $(".text-band").css({'font-size':'20px'});
+        } else {
+            $('.slider5').bxSlider({
+                slideWidth: 300,
+                minSlides: 1,
+                maxSlides: 1,
+                moveSlides: 1,
+                slideMargin: 10,
+                captions: true,
+                auto: true,
+                touchEnabled: true,
+                pager: false
+            });
+            $(".text-band").css({'font-size':'20px'});
+        }
+    });
+</script>

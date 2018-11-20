@@ -23277,6 +23277,12 @@ form.cart .btn-wishlist {
     margin-bottom: 80px;
 }
 
+#album-title{
+    position: absolute; bottom: 0px; width: 100%; height: 65px; padding: 5px; 
+    text-overflow: ellipsis; overflow: hidden; color:#FFFFFF; 
+    background: url('images/glass_black.png');
+}
+
 
 
 
