@@ -53,13 +53,14 @@ class ProductController extends Controller {
 
     public function actionViews($id) {
         $product = new Product();
+        $conFig = new Configweb_model();
         $data['product'] = $product->_get_detail_product($id);
         $data['images'] = $product->get_images_product($id);
         $data['near'] = $product->getProductNear($data['product']['category']);
         $fimg = $product->firstpictures($data['product']['product_id']);
 
         Yii::app()->session['fbtitle'] = $data['product']['product_name'];
-        Yii::app()->session['fbimages'] = Yii::app()->baseUrl . "/uploads/product/tumbnail/480-" . $fimg;
+        Yii::app()->session['fbimages'] = $conFig->GetFullLink(Yii::app()->baseUrl . "/uploads/product/tumbnail/480-" . $fimg);
         Yii::app()->session['fburl'] = Yii::app()->createUrl('rontend/product/views', array("id" => $data['product']));
         $this->Readproduct($id);
         $data['countreview'] = $this->Countreview($id);

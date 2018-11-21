@@ -42,7 +42,9 @@ $this->breadcrumbs = array(
     $title,
 );
 ?>
-<?php $productModel = new Product(); ?>
+<?php 
+$productModel = new Product(); 
+?>
 <div class="view-products" style=" margin-top: 10px;">
     <div class="shop-detail-3 woocommerce" id="page">
         <!--

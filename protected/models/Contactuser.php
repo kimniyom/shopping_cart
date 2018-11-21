@@ -42,13 +42,13 @@ class Contactuser extends CActiveRecord {
             array('name', 'length', 'max' => 100),
             array('subject', 'length', 'max' => 255),
             array('body', 'safe'),
-            array('reads','length','max' => 1),
+            array('readsmsg','length','max' => 1),
             array('create_date', 'safe'),
             // verifyCode needs to be entered correctly
             array('verifyCode', 'captcha', 'allowEmpty' => !CCaptcha::checkRequirements()),
             // The following rule is used by search().
             // @todo Please remove those attributes that should not be searched.
-            array('id, name, email, subject, body,body', 'safe', 'on' => 'search'),
+            array('id, name, email, subject, body,readsmsg', 'safe', 'on' => 'search'),
             
             
         );
@@ -74,6 +74,7 @@ class Contactuser extends CActiveRecord {
             'email' => 'Email',
             'subject' => 'Subject',
             'body' => 'Body',
+            'readsmsg' => 'reads',
             'verifyCode' => 'Verification Code',
         );
     }
@@ -100,6 +101,7 @@ class Contactuser extends CActiveRecord {
         $criteria->compare('email', $this->email, true);
         $criteria->compare('subject', $this->subject, true);
         $criteria->compare('body', $this->body, true);
+        $criteria->compare('readsmsg', $this->reads, true);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,

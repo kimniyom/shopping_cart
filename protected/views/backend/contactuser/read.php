@@ -3,14 +3,14 @@
 /* @var $model ContactForm */
 /* @var $form CActiveForm */
 
-$this->pageTitle = Yii::app()->name . ' - Contact Us';
+$this->pageTitle = 'อ่านแล้ว';
 $this->breadcrumbs = array(
-    'Contact',
+    $this->pageTitle
 );
 ?>
 
 <br/>
-<h1 class="font-supermarket">Contact Us</h1>
+<h1 class="font-supermarket"><?php echo $this->pageTitle ?></h1>
 <br/>
 <table class="table">
     <thead>
@@ -29,7 +29,7 @@ $this->breadcrumbs = array(
             <tr>
                 <td><?php echo $i ?></td>
                 <td>
-    <?php echo ($rs['reads'] == 0) ? "<i class='fa fa-folder'></i>" : "<i class='fa fa-folder-open'></i>"; ?>
+    <?php echo ($rs['readsmsg'] == 0) ? "<i class='fa fa-folder'></i>" : "<i class='fa fa-folder-open'></i>"; ?>
                 </td>
                 <td><?php echo $rs['createdate'] ?></td>
                 <td><a href="<?php echo Yii::app()->createUrl('backend/contactuser/view', array('id' => $rs['id']))?>"><b><?php echo $rs['subject'] ?></b></a></td>

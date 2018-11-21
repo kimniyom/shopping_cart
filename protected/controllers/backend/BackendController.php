@@ -40,6 +40,18 @@ class BackendController extends Controller{
 		);
     }
     
+    protected function beforeAction($action)
+   {
+       if(Yii::app()->user->isGuest)
+       {
+          $this->redirect(array('site/login'));
+       } else {
+           $this->actionIndex();
+       }
+
+       //return parent::beforeAction($action);
+   }
+    
     public function actionIndex(){
         $this->render("//backend/index");
     }

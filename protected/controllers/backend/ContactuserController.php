@@ -28,12 +28,14 @@ class ContactuserController extends Controller {
      * @param integer $id the ID of the model to be displayed
      */
     public function actionView($id) {
-        $columns = array("reads" => "1");
-        Yii::app()->db->createCommand()
-                ->update("contactuser", $columns, "id='$id'");
-
+        $columns = array("readsmsg" => "1");
+        $model = $this->loadModel($id);
+        if ($model->readsmsg == "0") {
+            Yii::app()->db->createCommand()
+                    ->update("contactuser", $columns, "id='$id'");
+        }
         $this->render('view', array(
-            'model' => $this->loadModel($id),
+            'model' => $model,
         ));
     }
 
@@ -157,12 +159,12 @@ class ContactuserController extends Controller {
     }
 
     public function actionRead() {
-        $data['contact'] = Contactuser::model()->findAll("reads=:reads", array("reads" => 1));
+        $data['contact'] = Contactuser::model()->findAll("readsmsg=:readsmsg", array(":readsmsg" => 1));
         $this->render('read', $data);
     }
 
     public function actionNoread() {
-        $data['contact'] = Contactuser::model()->findAll("reads=:reads", array("reads" => 0));
+        $data['contact'] = Contactuser::model()->findAll("readsmsg=:readsmsg", array(":readsmsg" => 0));
         $this->render('noread', $data);
     }
 

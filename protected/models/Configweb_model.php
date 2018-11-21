@@ -121,12 +121,16 @@ class Configweb_model {
         return $str;
     }
 
-    function SizeFileUpload(){
+    function SizeFileUpload() {
         return "2MB";
     }
 
-    function LimitFileUpload(){
+    function LimitFileUpload() {
         return "5";
+    }
+
+    function GetFullLink($url) {
+        return "http://www.kstudiothai.com" . $url;
     }
 
 }

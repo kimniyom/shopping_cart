@@ -95,11 +95,11 @@
                             echo "class='active'";
                         }
                         ?> onclick="set_navbar('1')">
-                            <a href="<?php echo Yii::app()->createUrl('frontend/main') ?>">
+                            <a href="<?php echo Yii::app()->createUrl('site/index') ?>">
                                 <span class="glyphicon glyphicon-home"></span>
                                 <font id="font-th">หน้าหลัก</font></a>
                         </li>
-                        <li class="dropdown">
+                        <li class="dropdowns">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <span class="glyphicon glyphicon-signal"></span>
                                 <font id="font-th">รายงาน </font><b class="caret"></b>
@@ -117,7 +117,7 @@
                             echo "class='active'";
                         }
                         ?> onclick="set_navbar('2')">
-                            <a href="<?php echo Yii::app()->createUrl('frontend/main') ?>">
+                            <a href="<?php //echo Yii::app()->createUrl('frontend/main') ?>">
                                 <span class="glyphicon glyphicon-book"></span>
                                 <font id="font-th">คู่มือการใช้งาน</font></a>
                         </li>
@@ -125,7 +125,7 @@
                         $msg = new Backend_message();
                         $msg_short = $msg->Get_message_short();
                         ?>
-                        <li class="dropdown">
+                        <li class="dropdowns">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" title="ข้อความ">
                                 <span class="label" style="top: 5px; position: absolute; left: 5px; background: #666666;">
                                     <?php echo $msg->Count_message(); ?>
@@ -182,7 +182,7 @@
                         สถานะ : <?php echo "ผู้ดูแลระบบ"; ?><br/>
                     </div>
                     <div class="panel-footer" style="border-bottom:solid 1px #eeeeee; border-radius:0px;">
-                        <a href="<?= Yii::app()->createUrl('frontend/user/from_edit_register/'); ?>">ข้อมูลส่วนตัว</a>
+                        <a href="<?php //echo Yii::app()->createUrl('frontend/user/from_edit_register/'); ?>">ข้อมูลส่วนตัว</a>
                     </div>
                 </div>
                 <!-- ส่วนของ ผู้ดูแลระบบ -->
@@ -199,16 +199,16 @@
                         <a href="<?= Yii::app()->createUrl('backend/contact') ?>" class="list-group-item" onclick="setSideMenu('side1', 'side1')">
                             <i class="fa fa-phone-square"></i> Contact
                         </a>
-                        <a href="<?= Yii::app()->createUrl('backend/about') ?>" class="list-group-item">
+                        <a href="<?= Yii::app()->createUrl('backend/about') ?>" class="list-group-item" onclick="setSideMenu('side1', 'side1')">
                             <i class="fa fa-user-secret"></i> Abount
                         </a>
-                        <a href="<?= Yii::app()->createUrl('backend/banner') ?>" class="list-group-item">
+                        <a href="<?= Yii::app()->createUrl('backend/banner') ?>" class="list-group-item" onclick="setSideMenu('side1', 'side1')">
                             <i class="fa fa-image"></i>  Banner
                         </a>
-                        <a href="<?= Yii::app()->createUrl('backend/logo') ?>" class="list-group-item">
+                        <a href="<?= Yii::app()->createUrl('backend/logo') ?>" class="list-group-item" onclick="setSideMenu('side1', 'side1')">
                             <i class="fa fa-smile-o"></i>  โลโก้
                         </a>
-                        <a href="<?= Yii::app()->createUrl('backend/web') ?>" class="list-group-item">
+                        <a href="<?= Yii::app()->createUrl('backend/web') ?>" class="list-group-item" onclick="setSideMenu('side1', 'side1')">
                             <i class="fa fa-text-height"></i>  ชื่อเว็บ
                         </a>
                         <!--
@@ -226,10 +226,10 @@
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group" id="side2">
-                        <a href="<?php echo Yii::app()->createUrl('backend/user/userall') ?>"
-                           class="list-group-item"><i class="fa fa-group"></i> ผู้ใช้งาน</a>
-                        <a href="<?php echo Yii::app()->createUrl('backend/user/userall') ?>"
-                           class="list-group-item"><i class="fa fa-group"></i> สิทธิ์การใช้งาน</a>
+                        <a href="<?php //echo Yii::app()->createUrl('backend/user/userall') ?>"
+                           class="list-group-item" onclick="setSideMenu('side2', 'side2')"><i class="fa fa-group"></i> ผู้ใช้งาน</a>
+                        <a href="<?php //echo Yii::app()->createUrl('backend/user/userall') ?>"
+                           class="list-group-item" onclick="setSideMenu('side2', 'side2')"><i class="fa fa-group"></i> สิทธิ์การใช้งาน</a>
                         <!--
                         <a href="<?php //echo Yii::app()->createUrl('backend/user/userall')   ?>"
                            class="list-group-item"><i class="fa fa-group"></i>  ข้อมูลสมาชิก</a>
@@ -271,13 +271,13 @@
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
                     <div class="list-group" id="side4">
-                        <a href="<?php echo Yii::app()->createUrl('backend/articlecategory/admin') ?>" class="list-group-item">
+                        <a href="<?php echo Yii::app()->createUrl('backend/articlecategory/admin') ?>" class="list-group-item" onclick="setSideMenu('side4', 'side4')">
                             <i class="fa fa-folder"></i> Category
                         </a>
-                        <a href="<?php echo Yii::app()->createUrl('backend/article/create') ?>" class="list-group-item">
+                        <a href="<?php echo Yii::app()->createUrl('backend/article/create') ?>" class="list-group-item" onclick="setSideMenu('side4', 'side4')">
                             <i class="fa fa-plus"></i> สร้างบทความ / event
                         </a>
-                        <a href="<?php echo Yii::app()->createUrl('backend/article') ?>" class="list-group-item">
+                        <a href="<?php echo Yii::app()->createUrl('backend/article') ?>" class="list-group-item" onclick="setSideMenu('side4', 'side4')">
                             <i class="fa fa-newspaper-o"></i> บทความ / event ทั้งหมด
                         </a>
                     </div>
@@ -289,14 +289,14 @@
                         ติดต่อจากลูกค้า
                         <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-down"></i></span>
                     </div>
-                    <div class="list-group" id="side4">
-                        <a href="<?php echo Yii::app()->createUrl('backend/contactuser/noread') ?>" class="list-group-item">
+                    <div class="list-group" id="side5">
+                        <a href="<?php echo Yii::app()->createUrl('backend/contactuser/noread') ?>" class="list-group-item" onclick="setSideMenu('side5', 'side5')">
                             <i class="fa fa-folder"></i> ยังไม่อ่าน
                         </a>
-                        <a href="<?php echo Yii::app()->createUrl('backend/contactuser/read') ?>" class="list-group-item">
+                        <a href="<?php echo Yii::app()->createUrl('backend/contactuser/read') ?>" class="list-group-item" onclick="setSideMenu('side5', 'side5')">
                             <i class="fa fa-folder-open"></i> อ่านแล้ว
                         </a>
-                        <a href="<?php echo Yii::app()->createUrl('backend/contactuser/contact') ?>" class="list-group-item">
+                        <a href="<?php echo Yii::app()->createUrl('backend/contactuser/contact') ?>" class="list-group-item" onclick="setSideMenu('side5', 'side5')">
                             <i class="fa fa-newspaper-o"></i> ทั้งหมด
                         </a>
                     </div>
@@ -332,9 +332,9 @@
             <div id="page-content-wrapper" style="padding:0px;">
                 <nav class="navbar navbar-default" role="navigation" style="margin-bottom:10px; border-radius: 0px; padding-top: 3px;">
                     <ul class="nav nav-pills pull-right" style="margin:5px;">
-                        <li><a href="<?php echo Yii::app()->createUrl('backend/orders/verify') ?>"><i class="fa fa-check-circle"></i> ตรวจสอบการชำระเงิน <span class="badge"><?php echo $order_model->count_verify(); ?> </span></a></li>
-                        <li><a href="<?php echo Yii::app()->createUrl('backend/orders/pendingshipment') ?>"><i class="fa fa-paper-plane-o"></i> รอจัดส่ง(แพ็กลงกล่อง) <span class="badge"><?php echo $order_model->count_wait_send(); ?> </span></a></li>
-                        <li><a href="<?php echo Yii::app()->createUrl('backend/orders/notification') ?>"><i class="fa fa-send"></i> แจ้งการส่งสินค้า <span class="badge"><?php echo $order_model->count_wait_inform(); ?> </span></a></li>
+                        <li><a href="<?php //echo Yii::app()->createUrl('backend/orders/verify') ?>"><i class="fa fa-check-circle"></i> ตรวจสอบการชำระเงิน <span class="badge"><?php echo $order_model->count_verify(); ?> </span></a></li>
+                        <li><a href="<?php //echo Yii::app()->createUrl('backend/orders/pendingshipment') ?>"><i class="fa fa-paper-plane-o"></i> รอจัดส่ง(แพ็กลงกล่อง) <span class="badge"><?php echo $order_model->count_wait_send(); ?> </span></a></li>
+                        <li><a href="<?php //echo Yii::app()->createUrl('backend/orders/notification') ?>"><i class="fa fa-send"></i> แจ้งการส่งสินค้า <span class="badge"><?php echo $order_model->count_wait_inform(); ?> </span></a></li>
                     </ul>
                 </nav>
                 <div class="container-fluid">
