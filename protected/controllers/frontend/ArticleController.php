@@ -70,8 +70,15 @@ class ArticleController extends Controller {
 
     public function actionViews($id) {
         $Art = new Article();
-
+        $conFig = new Configweb_model();
         $data['result'] = $Art->Get_article_by_id($id);
+
+        $fimg = $data['result']['images'];
+        Yii::app()->session['fbtitle'] = $data['result']['title'];
+        Yii::app()->session['fbimages'] = $conFig->GetFullLink(Yii::app()->baseUrl . "/uploads/article/600-" . $fimg);
+        Yii::app()->session['fburl'] = $conFig->GetFullLink(Yii::app()->createUrl('frontend/article/views', array("id" => $data['result']['id'])));
+
+
         $this->CountRead($id, $data['result']['countread']);
 
         $data['category_id'] = $data['result']['category'];

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8" />
         <title>
             <?php
             $web = new Configweb_model();
             echo $web->get_webname();
             ?>
         </title>
-        <meta charset="utf-8" />
-        <meta name="description" content="kstudio,KSTUDIO,kstudiothai,เครื่องเสียง,หูฟัง,ลำโพง" />
-        <meta name="keywords" content="kstudio,KSTUDIO,kstudiothai,เครื่องเสียง,หูฟัง,ลำโพง" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
         <meta property="og:type" content="website" />
         <meta property="fb:app_id" content="266256337158296" />
         <meta property="og:title" content="<?php echo Yii::app()->session['fbtitle']; ?>" />
-
         <meta property="og:image" content="<?php echo Yii::app()->session['fbimages']; ?>" />
         <meta property="og:url" content="<?php echo Yii::app()->session['fburl']; ?>" />
+
+        <meta name="description" content="kstudio,KSTUDIO,kstudiothai,เครื่องเสียง,หูฟัง,ลำโพง" />
+        <meta name="keywords" content="kstudio,KSTUDIO,kstudiothai,เครื่องเสียง,หูฟัง,ลำโพง" />
 
         <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i,900,900i" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet" />
@@ -104,6 +104,18 @@
         ?>
     </head>
     <body class="animsition animsition">
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id))
+                    return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
         <input value="<?php echo $logoMini ?>" id="logomini" type="hidden" />
         <?php
         $Categorys = Category::model()->findAll();
@@ -254,15 +266,15 @@
                                     //$Types = ProductType::model()->findAll("category=:id", array(":id" => $rsCategory['id']));
                                     ?>
                                                             <div class="col-md-4 col-lg-4 col-sm-4">
-                                                                <label><?php //echo $rsCategory['categoryname']           ?></label>
+                                                                <label><?php //echo $rsCategory['categoryname']                 ?></label>
                                                                 <hr style="border-bottom: #cccccc solid 1px; margin-top: 0px; margin-bottom: 5px;"/>
                                     <?php
                                     //foreach ($Types as $type):
                                     ?>
-                                                                    <a href=""><?php //echo $type['type_name']           ?></a>
-                                    <?php //endforeach; ?>
+                                                                    <a href=""><?php //echo $type['type_name']               ?></a>
+                                    <?php //endforeach;    ?>
                                                             </div>
-                                    <?php //endforeach; ?>
+                                    <?php //endforeach;     ?>
                                                     </div>
                                                 </div>
                                             </li>
@@ -462,22 +474,22 @@
                                 <ul class="list-unstyle">
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                      ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                             ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                      ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                             ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                      ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                             ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                      ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                             ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
                                         </a>
                                     </li>
                                 </ul>

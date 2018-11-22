@@ -93,8 +93,19 @@ class ProductController extends Controller {
             'd_update' => date('Y-m-d H:i:s')
         );
 
+        $productID = Yii::app()->request->getpost('product_id');
         Yii::app()->db->createCommand()
                 ->insert('product', $data);
+
+        $columns = array(
+            "product_id" => $productID,
+            "user" => Yii::app()->user->name,
+            "log" => Yii::app()->user->name . " InsertProduct " . $productID,
+            "dupdate" => date("Y-m-d H:i:s")
+        );
+
+        Yii::app()->db->createCommand()
+                ->insert("logproduct", $columns);
 
         //echo $this->redirect(array('backend/product/detail_product&product_id=' . $_POST['product_id']));
     }
@@ -130,6 +141,16 @@ class ProductController extends Controller {
 
         Yii::app()->db->createCommand()
                 ->update('product', $data, "product_id = '$product_id'");
+        
+        $columns = array(
+            "product_id" => $product_id,
+            "user" => Yii::app()->user->name,
+            "log" => Yii::app()->user->name . " UpdateProduct " . $product_id,
+            "dupdate" => date("Y-m-d H:i:s")
+        );
+
+        Yii::app()->db->createCommand()
+                ->insert("logproduct", $columns);
     }
 
     public function actionDetail_product() {
@@ -434,6 +455,17 @@ class ProductController extends Controller {
 
     public function actionDeleteproduct() {
         $product_id = Yii::app()->request->getPost('product_id');
+        
+        $columns = array(
+            "product_id" => $product_id,
+            "user" => Yii::app()->user->name,
+            "log" => Yii::app()->user->name . " DeleteProduct " . $product_id,
+            "dupdate" => date("Y-m-d H:i:s")
+        );
+
+        Yii::app()->db->createCommand()
+                ->insert("logproduct", $columns);
+        
         Yii::app()->db->createCommand()
                 ->delete("product_images", "product_id='$product_id'");
 

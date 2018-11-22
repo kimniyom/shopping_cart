@@ -23,16 +23,17 @@
 
 </style>
 <script>
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id))
-            return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.5&appId=266256337158296";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-
+    /*
+     (function (d, s, id) {
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id))
+     return;
+     js = d.createElement(s);
+     js.id = id;
+     js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.5&appId=266256337158296";
+     fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+     */
 </script>
 <?php
 $title = $product['product_name'];
@@ -42,14 +43,14 @@ $this->breadcrumbs = array(
     $title,
 );
 ?>
-<?php 
-$productModel = new Product(); 
+<?php
+$productModel = new Product();
 ?>
 <div class="view-products" style=" margin-top: 10px;">
     <div class="shop-detail-3 woocommerce" id="page">
         <!--
         <section class="sub-header shop-detail-1">
-            <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl                      ?>/themes/kstudio/images/sub-header/017.jpg" alt="">
+            <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl                          ?>/themes/kstudio/images/sub-header/017.jpg" alt="">
             <div class="overlay-call-to-action"></div>
             <h3 class="heading-style-3">Shop Detail</h3>
         </section>
@@ -70,7 +71,7 @@ $productModel = new Product();
                                 <div class="thumbnail-carousel">
                                     <!--482x455
                                     <div class="item">
-                                        <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl                              ?>/themes/kstudio/images/product/01.jpg" alt="product thumbnail">
+                                        <img class="img-responsive" src="<?php //echo Yii::app()->baseUrl                                  ?>/themes/kstudio/images/product/01.jpg" alt="product thumbnail">
                                     </div>
                                     -->
                                     <?php foreach ($images as $al): ?>
@@ -143,7 +144,12 @@ $productModel = new Product();
                                     <ul>
                                         <li>
                                             <!-- Share FaceBook -->
+                                            <!--
                                             <div style=" float: left; margin-top: 1px; margin-right: 10px;">Share : </div><div class="fb-share-button" data-layout="button_count"></div><br/>
+                                            -->
+                                            <!-- Your share button code -->
+                                            <div class="fb-share-button" data-layout="button_count">
+                                            </div>
                                             <!--
                                             <a class="facebook" data-toggle="tooltip" title="Facebook" href="http://www.facebook.com/Upperthemes">
                                                 <i class="fa fa-facebook"></i>
@@ -176,11 +182,16 @@ $productModel = new Product();
                                     <div style=" clear: both;">
                                         <i class="fa fa-eye"></i> คนเข้าดูสินค้า : <?php echo $product['countread'] ?> ครั้ง
                                     </div>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+
+
+
                 <div class="woocommerce-tabs">
                     <div class="row">
                         <div class="col-md-12 woocommerce-tabs-inner">

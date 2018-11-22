@@ -8461,3 +8461,199 @@ Stack trace:
 REQUEST_URI=/shopping_cart/site
 HTTP_REFERER=http://localhost/shopping_cart/backend/backend
 ---
+2018/11/21 11:46:14 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('set_navbar')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/backend...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/backend/set_navbar
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/21 11:46:54 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('set_navbar')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/backend...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/backend/set_navbar
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/21 12:01:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "mas_report_sale".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('mas_report_sale')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('mas_report_sale')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/report/...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/backend/report/mas_report_sale
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/21 12:01:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "mas_report_list".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('mas_report_list')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('mas_report_list')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/report/...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/backend/report/mas_report_list
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/21 12:01:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "mas_report_user".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('mas_report_user')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('mas_report_user')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/report/...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/backend/report/mas_report_user
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/21 14:30:19 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('set_navbar')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/backend...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/backend/set_navbar
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/21 14:31:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "mas_report_list".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('mas_report_list')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('mas_report_list')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/report/...')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/backend/report/mas_report_list
+HTTP_REFERER=http://localhost/shopping_cart/backend/contactuser/contact
+---
+2018/11/21 15:03:59 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('set_navbar')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/backend...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/backend/set_navbar
+HTTP_REFERER=http://localhost/shopping_cart/backend/product/brand/brandID/2
+---
+2018/11/21 15:55:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "gii".' in /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php:483
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(270): CController->missingAction('gii')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('gii')
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('site/gii')
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#4 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/shopping_cart/site/gii
+---
+2018/11/21 16:13:42 [error] [php] Undefined variable: category (/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/index.php:9)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(869): BackendController->renderFile()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(782): BackendController->renderPartial()
+#2 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php(58): BackendController->render()
+#3 /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php(44): BackendController->actionIndex()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(306): BackendController->beforeAction()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): BackendController->runAction()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): BackendController->filterAccessControl()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#11 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): BackendController->runActionWithFilters()
+#12 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): BackendController->run()
+#13 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#14 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#15 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/backend
+in /Applications/MAMP/htdocs/shopping_cart/protected/views/backend/index.php (9)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php (58)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php (44)
+2018/11/21 16:33:31 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('set_navbar')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/backend...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/backend/set_navbar
+HTTP_REFERER=http://localhost/shopping_cart/backend/backend
+---
+2018/11/21 19:14:38 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'You are not authorized to perform this action.' in /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php:182
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/auth/CAccessControlFilter.php(145): CAccessControlFilter->accessDenied(Object(CWebUser), 'You are not aut...')
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): CController->run('set_navbar')
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController('backend/backend...')
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#10 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CApplication->run()
+#11 {main}
+REQUEST_URI=/shopping_cart/backend/backend/set_navbar
+HTTP_REFERER=http://localhost/shopping_cart/backend/backend
+---
+2018/11/22 09:29:12 [error] [php] Undefined variable: s (/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php:125)
+Stack trace:
+#0 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(306): BackendController->beforeAction()
+#1 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(133): BackendController->runAction()
+#2 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilter.php(40): CFilterChain->run()
+#3 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(1145): CAccessControlFilter->filter()
+#4 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CInlineFilter.php(58): BackendController->filterAccessControl()
+#5 /Applications/MAMP/htdocs/shopping_cart/framework/web/filters/CFilterChain.php(130): CInlineFilter->filter()
+#6 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(291): CFilterChain->run()
+#7 /Applications/MAMP/htdocs/shopping_cart/framework/web/CController.php(265): BackendController->runActionWithFilters()
+#8 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(282): BackendController->run()
+#9 /Applications/MAMP/htdocs/shopping_cart/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#10 /Applications/MAMP/htdocs/shopping_cart/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#11 /Applications/MAMP/htdocs/shopping_cart/index.php(14): CWebApplication->run()
+REQUEST_URI=/shopping_cart/backend/backend
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php (125)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php (73)
+in /Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php (44)

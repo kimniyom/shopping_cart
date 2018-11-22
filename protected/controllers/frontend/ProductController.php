@@ -60,11 +60,21 @@ class ProductController extends Controller {
         $fimg = $product->firstpictures($data['product']['product_id']);
 
         Yii::app()->session['fbtitle'] = $data['product']['product_name'];
-        Yii::app()->session['fbimages'] = $conFig->GetFullLink(Yii::app()->baseUrl . "/uploads/product/tumbnail/480-" . $fimg);
-        Yii::app()->session['fburl'] = Yii::app()->createUrl('rontend/product/views', array("id" => $data['product']));
+        Yii::app()->session['fbimages'] = $conFig->GetFullLink(Yii::app()->baseUrl . "/uploads/product/thumbnail/480-" . $fimg);
+        Yii::app()->session['fburl'] = $conFig->GetFullLink(Yii::app()->createUrl('frontend/product/views', array("id" => $data['product'])));
         $this->Readproduct($id);
         $data['countreview'] = $this->Countreview($id);
+        $this->actionSaveviewproduct($id);
         $this->render("//product/views", $data);
+    }
+
+    public function actionSaveviewproduct($product_id) {
+        $columns = array(
+            "product_id" => $product_id,
+            "dupdate" => date("Y-m-d H:i:s")
+        );
+        Yii::app()->db->createCommand()
+                ->insert("viewproduct", $columns);
     }
 
     private function Readproduct($productID) {
@@ -339,7 +349,7 @@ class ProductController extends Controller {
         $data['count'] = count($data['product']);
         $this->render('//product/search', $data);
     }
-    
+
     public function actionPagessearch() {
         $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
         $search = $_POST["search"];
@@ -357,7 +367,7 @@ class ProductController extends Controller {
         //Limit our results within a specified range.
         //$results = mysqli_query($connecDB, "SELECT id,name,message FROM paginate ORDER BY id DESC LIMIT $position, $item_per_page");
         $query = "select * from product where product_name like '%$search%' order by id desc limit $position, $item_per_page";
-        
+
         $rs = Yii::app()->db->createCommand($query)->queryAll();
 
         $data['product'] = $rs;
