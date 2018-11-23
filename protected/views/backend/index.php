@@ -6,6 +6,43 @@
 
 <?php $config = new Configweb_model(); ?>
 
+<h4 style=" margin-top: 20px;"><i class="fa fa-dashboard"></i> DashBoard</h4>
+<hr/>
+<div class="row">
+    <div class="col-md-4 col-lg-4">
+        <div class="panel panel-success" style=" padding-left: 1px;">
+            <div class="panel-body text-success" style=" text-align: center;">
+                <h3><?php echo $viewMaxcategory['total'] ?></h3>
+                <h4><?php echo $viewMaxcategory['categoryname'] ?></h4>
+            </div>
+            <div class="panel-footer" style=" text-align: center;">
+                หมวดที่มีการดูมากสุด
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-4">
+        <div class="panel panel-warning" style=" padding-left: 1px;">
+            <div class="panel-body text-warning" style=" text-align: center;">
+                <h3><?php echo $viewMaxproduct['total'] ?></h3>
+                <h4><?php echo $viewMaxproduct['productname'] ?></h4>
+            </div>
+            <div class="panel-footer" style=" text-align: center;">
+                สินค้าที่มีการดูมากสุด
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 col-lg-4">
+        <div class="panel panel-danger" style=" padding-left: 1px;">
+            <div class="panel-body text-danger" style=" text-align: center;">
+                <h3><?php echo $viewMaxbrand['total'] ?></h3>
+                <h4><?php echo $viewMaxbrand['brandname'] ?></h4>
+            </div>
+            <div class="panel-footer" style=" text-align: center;">
+                Brand ที่มีการดูมากสุด
+            </div>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-6 col-lg-6">
         <div id="viewcategory"></div>
@@ -14,18 +51,12 @@
         <div id="viewbrand"></div>
     </div>
 </div>
-<div id="containers"></div>
-<center>
-    <h1>Welcome To Backend V.1</h1><br/>
-    <h2>Administrator</h2><br/>
-</center>
-<br/><br/>
-<div class="row" style="margin:0px; text-align: center;">
-    <div class="col-lg-12 col-md-12" style=" text-align: center;">
-        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/logo/<?php echo $config->get_logoweb(); ?>" style="max-height: 300px; margin-bottom: 5px;"/>
-        <?php echo $config->get_webname(); ?>
+<div class="row" style=" margin-top: 30px;">
+    <div class="col-md-12 col-lg-12">
+        <div id="containers"></div>
     </div>
 </div>
+
 
 <script type="text/javascript">
     $(document).ready(function () {

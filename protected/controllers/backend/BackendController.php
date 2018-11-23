@@ -73,8 +73,62 @@ class BackendController extends Controller {
         $viewbran = $this->GetviewBrand();
         $data['brandcat'] = $viewbran['brancat'];
         $data['brandval'] = $viewbran['branval'];
+
+        $data['viewMaxbrand'] = $this->Getmaxviewbrand();
+        
+        $data['viewMaxcategory'] = $this->Getmaxviewcategory();
+        
+        $data['viewMaxproduct'] = $this->Getmaxviewproduct();
+
         $this->render("//backend/index", $data);
     }
+
+    private function Getmaxviewbrand() {
+        $sql = "SELECT c.brandname,IFNULL(Q.total,0) AS total
+                FROM brand c
+                LEFT JOIN(
+                SELECT p.brand,IFNULL(COUNT(*),0) AS total
+                FROM viewproduct v INNER JOIN product p ON v.product_id = p.product_id
+                GROUP BY p.brand
+                ) Q ON c.id = Q.brand
+                ORDER BY total DESC
+                LIMIT 1";
+
+        $result = Yii::app()->db->createCommand($sql)->queryRow();
+        $Arr = array("brandname" => $result['brandname'], "total" => $result['total']);
+        return $Arr;
+    }
+    
+    private function Getmaxviewcategory() {
+        $sql = "SELECT c.categoryname,IFNULL(Q.total,0) AS total
+                FROM category c
+                LEFT JOIN(
+                SELECT p.category,IFNULL(COUNT(*),0) AS total
+                FROM viewproduct v INNER JOIN product p ON v.product_id = p.product_id
+                GROUP BY p.category
+                ) Q ON c.id = Q.category
+                ORDER BY total DESC
+                LIMIT 1";
+
+        $result = Yii::app()->db->createCommand($sql)->queryRow();
+        $Arr = array("categoryname" => $result['categoryname'], "total" => $result['total']);
+        return $Arr;
+    }
+    
+    private function Getmaxviewproduct() {
+        $sql = "SELECT p.product_name,IFNULL(COUNT(*),0) AS total
+                FROM viewproduct v INNER JOIN product p ON v.product_id = p.product_id
+                GROUP BY p.product_id
+                ORDER BY total DESC 
+                LIMIT 1";
+
+        $result = Yii::app()->db->createCommand($sql)->queryRow();
+        $Arr = array("productname" => $result['product_name'], "total" => $result['total']);
+        return $Arr;
+    }
+    
+    
+
 
     private function Getviewcategory() {
         $sql = "SELECT c.categoryname,IFNULL(Q.total,0) AS total

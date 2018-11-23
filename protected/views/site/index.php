@@ -56,6 +56,46 @@ $Categorys = Category::model()->findAll();
         </ul>
     </div>
 </div>
+
+<section class="boxed-sm">
+    <div class="container">
+        <div class="heading-wrapper text-center">
+            <h3 class="heading">The Blog</h3>
+        </div>
+        <div class="row">
+            <div class="row blog-h reverse flex one-row multi-row-sm" style=" margin-bottom: 0px;">
+                <?php foreach ($NewsBlog as $rsblog): ?>
+                    <div class="col-md-4">
+                        <div class="post">
+                            <div class="img-wrapper js-set-bg-blog-thumb">
+                                <a href="<?php echo Yii::app()->createUrl('frontend/article/views', array('id' => $rsblog['id'])) ?>">
+                                    <img src="<?= Yii::app()->baseUrl; ?>/uploads/article/600-<?php echo $rsblog['images'] ?>" alt="Image" />
+                                </a>
+                            </div>
+                            <div class="desc">
+                                <h4 class="font-supermarket">
+                                    <a href="<?php echo Yii::app()->createUrl('frontend/article/views', array('id' => $rsblog['id'])) ?>"><?php echo $rsblog['title'] ?></a>
+                                </h4>
+                                <p class="meta">
+                                    <span class="time"><?php echo $rsblog['create_date'] ?></span>
+                                    <span class="comment"><?php echo $rsblog['countread'] ?></span>
+                                </p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
+    <div class="container" style=" text-align: center;">
+        <div class="row">
+            <a class="btn btn-brand pill" href="<?php echo Yii::app()->createUrl('frontend/article') ?>">VIEW MORE </a>
+        </div>
+    </div>
+</section>
+
+
 <div class="heading-wrapper text-center">
     <h3 class="heading" style=" margin-bottom: 0px;">SHOP BY CATEGORY</h3>
 </div>
@@ -273,51 +313,8 @@ $Categorys = Category::model()->findAll();
 </div>
 
 
-<!--
-<div class="call-to-action-style-1">
-    <img class="rellax bg-overlay" src="<?php //echo Yii::app()->baseUrl;                       ?>/themes/kstudio/images/call-to-action/1.jpg" alt="" />
-    <div class="overlay-call-to-action"></div>
-    <div class="container">
-        <div class="row">
-            <p class="h3">Orchid Food</p>
-            <h2>Healthy - Fresh - Delicious.</h2>
-            <a class="btn btn-brand pill" href="#">VIEW MORE </a>
-        </div>
-    </div>
-</div>
--->
-<section class="boxed-sm">
-    <div class="container">
-        <div class="heading-wrapper text-center">
-            <h3 class="heading">The Blog</h3>
-        </div>
-        <div class="row">
-            <div class="row blog-h reverse flex one-row multi-row-sm">
-                <?php foreach ($NewsBlog as $rsblog): ?>
-                    <div class="col-md-4">
-                        <div class="post">
-                            <div class="img-wrapper js-set-bg-blog-thumb">
-                                <a href="<?php echo Yii::app()->createUrl('frontend/article/views', array('id' => $rsblog['id'])) ?>">
-                                    <img src="<?= Yii::app()->baseUrl; ?>/uploads/article/600-<?php echo $rsblog['images'] ?>" alt="Image" />
-                                </a>
-                            </div>
-                            <div class="desc">
-                                <h4 class="font-supermarket">
-                                    <a href="<?php echo Yii::app()->createUrl('frontend/article/views', array('id' => $rsblog['id'])) ?>"><?php echo $rsblog['title'] ?></a>
-                                </h4>
-                                <p class="meta">
-                                    <span class="time"><?php echo $rsblog['create_date'] ?></span>
-                                    <span class="comment"><?php echo $rsblog['countread'] ?></span>
-                                </p>
-                                <p></p>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-        </div>
-    </div>
-</section>
+
+
 
 <script type="text/javascript">
     $(document).ready(function () {

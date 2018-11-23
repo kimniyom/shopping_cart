@@ -1,6 +1,6 @@
 <?php
 
-class MasuserController extends Controller {
+class LogproductController extends Controller {
 
     /**
      * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
@@ -14,7 +14,7 @@ class MasuserController extends Controller {
     public function filters() {
         return array(
             'accessControl', // perform access control for CRUD operations
-                //'postOnly + delete', // we only allow deletion via POST request
+            'postOnly + delete', // we only allow deletion via POST request
         );
     }
 
@@ -30,7 +30,7 @@ class MasuserController extends Controller {
                 'users' => array('*'),
             ),
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
-                'actions' => array('create', 'update', 'admin', 'delete', 'privilege','updatepassword','savenewpassword'),
+                'actions' => array('create', 'update'),
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -58,22 +58,15 @@ class MasuserController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
-        $model = new Masuser;
+        $model = new Logproduct;
 
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Masuser'])) {
-            $model->attributes = $_POST['Masuser'];
-            $model->password = md5($model->password);
-            if ($model->save()) {
-                if ($model->id) {
-                    $columns = array("user" => $model->id);
-                    Yii::app()->db->createCommand()
-                            ->insert("privilege", $columns);
-                }
+        if (isset($_POST['Logproduct'])) {
+            $model->attributes = $_POST['Logproduct'];
+            if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
-            }
         }
 
         $this->render('create', array(
@@ -92,8 +85,8 @@ class MasuserController extends Controller {
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Masuser'])) {
-            $model->attributes = $_POST['Masuser'];
+        if (isset($_POST['Logproduct'])) {
+            $model->attributes = $_POST['Logproduct'];
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id));
         }
@@ -109,12 +102,7 @@ class MasuserController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
-
-        Yii::app()->db->createCommand()
-                ->delete("masuser", "id='$id'");
-
-        Yii::app()->db->createCommand()
-                ->delete("privilege", "user='$id'");
+        $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
         if (!isset($_GET['ajax']))
@@ -125,17 +113,18 @@ class MasuserController extends Controller {
      * Lists all models.
      */
     public function actionIndex() {
-        $this->actionAdmin();
+        $data['log'] = Logproduct::model()->findAll();
+        $this->render('index', $data);
     }
 
     /**
      * Manages all models.
      */
     public function actionAdmin() {
-        $model = new Masuser('search');
+        $model = new Logproduct('search');
         $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['Masuser']))
-            $model->attributes = $_GET['Masuser'];
+        if (isset($_GET['Logproduct']))
+            $model->attributes = $_GET['Logproduct'];
 
         $this->render('admin', array(
             'model' => $model,
@@ -146,11 +135,11 @@ class MasuserController extends Controller {
      * Returns the data model based on the primary key given in the GET variable.
      * If the data model is not found, an HTTP exception will be raised.
      * @param integer $id the ID of the model to be loaded
-     * @return Masuser the loaded model
+     * @return Logproduct the loaded model
      * @throws CHttpException
      */
     public function loadModel($id) {
-        $model = Masuser::model()->findByPk($id);
+        $model = Logproduct::model()->findByPk($id);
         if ($model === null)
             throw new CHttpException(404, 'The requested page does not exist.');
         return $model;
@@ -158,42 +147,13 @@ class MasuserController extends Controller {
 
     /**
      * Performs the AJAX validation.
-     * @param Masuser $model the model to be validated
+     * @param Logproduct $model the model to be validated
      */
     protected function performAjaxValidation($model) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'masuser-form') {
+        if (isset($_POST['ajax']) && $_POST['ajax'] === 'logproduct-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }
-    }
-
-    public function actionPrivilege() {
-        $user = Yii::app()->request->getPost('user');
-        $menu = Yii::app()->request->getPost('menu');
-        $event = Yii::app()->request->getPost('event');
-        if ($event == "add") {
-            $columns = array($menu => '1');
-            Yii::app()->db->createCommand()
-                    ->update("privilege", $columns, "user='$user'");
-        } else if ($event == "del") {
-            $columns = array($menu => '0');
-            Yii::app()->db->createCommand()
-                    ->update("privilege", $columns, "user='$user'");
-        }
-    }
-    
-    public function actionUpdatepassword(){
-        $id = Yii::app()->user->id;
-        $data['user'] = Masuser::model()->find("id=:id", array(":id" => $id));
-        $this->render('updatepassword', $data);
-    }
-    
-    public function actionSavenewpassword(){
-        $password = Yii::app()->request->getPost('newpassword');
-        $user = Yii::app()->user->id;
-        $columns = array("password" => md5($password));
-        Yii::app()->db->createCommand()
-                ->update("masuser", $columns,"id='$user'");
     }
 
 }

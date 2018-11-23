@@ -11,7 +11,7 @@
  Target Server Version : 50542
  File Encoding         : utf-8
 
- Date: 11/20/2018 16:43:39 PM
+ Date: 11/22/2018 18:35:27 PM
 */
 
 SET NAMES utf8;
@@ -99,7 +99,7 @@ CREATE TABLE `article` (
 --  Records of `article`
 -- ----------------------------
 BEGIN;
-INSERT INTO `article` VALUES ('3', 'Backup ข้อมูลในคอมพิวเตอร์ เรื่องง่ายๆ กันไว้ก่อนเสียน้ำตา', '<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">หากถามว่าระหว่างอุปกรณ์กับข้อมูลอะไรสำคัญกว่า คงต้องบอกว่า &ldquo;ข้อมูล&rdquo; สำคัญกว่ามาก เพราะอุปกรณ์ที่เสีย เรายังสามารถหาซื้อของใหม่มาทดแทน แต่ข้อมูลนี่สิ ถ้าหายหรือเสียหายละก็จะกลายเป็นเรื่องใหญ่ เพราะเมื่อเสียหายแล้ว ถึงมีเงินมากแค่ไหนก็ไม่สามารถหาซื้อข้อมูลที่สำคัญเหล่านั้นกลับมาได้ เรื่องของ Backup จึงกลายเป็นเรื่องจำเป็นที่ต้องทำอยู่ตลอดเวลา Backup ทำเองได้ไม่ง้อโปรแกรมแบ็กอัพอัตโนมัติ หลายคนอาจจะเข้าใจผิดมาตลอดว่าการแบ็กอัพนั้น ต้องทำผ่านโปรแกรมแบ็กอัพที่ทำงานให้อัตโนมัติเสมอไป ซึ่งความจริงแล้วการแบ็กอัพก็คือ การที่เราทำการคัดลอกข้อมูล จากนั้นนำไปอีกที่หนึ่ง เช่นการที่เราคัดลอกเอกสารลงใส่แฟลชไดร์ฟ หรือฮาร์ดดิสก์ภายนอก ก็ถือได้ว่าทำการแบ็กอัพอย่างหนึ่งเหมือนกัน โดยปกติเราสามารถทำผ่านโปรแกรม หรือทำเองก็สามารถทำได้ แบ็กอัพแบบนี้อาจจะเหมาะสำหรับคนที่ไม่อยากใช้งานแบ็กอัพผ่านโปรแกรม รวมไปถึงต้องมีระเบียบและเวลาจัดข้อมูลสักหน่อย&nbsp;</span></p>\n\n<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\"><img alt=\"\" src=\"http://www.theassembler.net/shopping_cart/uploads/ck_imagesimages/backup-1.jpg\" style=\"height:361px; width:650px\" /></span></p>\n\n<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">ซึ่งจะขอยกตัวอย่างการแบ็กอัพด้วยตนเองง่ายๆ อย่างการที่เราพิมพ์งานหรือแต่งภาพ เมื่อเราต้องการบันทึกก็ให้เราบันทึกลงแบบปกติอย่างในโฟลเดอร์ Documents หรือ Pictures จากนั้นเราก็มาทำการบันทึกลงโฟลเดอร์ที่อาจจะชื่อเดียวกันก็ได้ ที่อยู่ในฮาร์ดดิสก์ภายนอกอีกที แน่นอนหากสมมติว่าเราบังเอิญเผลอลบข้อมูลไป หรือข้อมูลนั้นได้หายไปโดยไม่ทราบสาเหตุ เราก็ยังสามารถดึงไฟล์ที่อยู่ใน Harddisk ภายนอกมาใช้ได้ทันที แต่จะถ้าจะให้กล่าวถึงข้อสังเกตของการแบ็กอัพไฟล์แบบนี้แล้วก็คือ เราจำเป็นต้องทำไฟล์ที่เราบันทึกไว้ให้ตรงกันเสมอ เรียกได้ว่าทุกครั้งที่บันทึก จำเป็นต้องบันทึก 2 ครั้ง ที่ 2 ฮาร์ดดิสก์เสมอ หรือไม่ก็เมื่อบันทึกลงฮาร์ดดิสก์ในเครื่องแล้ว ก็ต้องทำการคัดลอกมาลงที่ Harddisk ภายนอกอยู่เป็นประจำ เพื่อให้ข้อมูลหรือไฟล์ที่เราแบ็กอัพตรงกันอยู่เสมอ แบ็กอัพระบบปฏิบัติการ Windows 7 และ Windows 8 แบบง่ายๆ เชื่อว่าหลายๆ คนยังใช้ Windows 7 และ Windows 8 กันอยู่บ้าง แม้จะมี Windows 10 เปิดตัวให้ได้ใช้แล้ว และน่าจะเคยประสบปัญหาระบบปฏิบัติการเสียหายจนไม่สามารถเปิดเครื่องติดได้ หรือแม้กระทั่ง Windows ไม่สามารถทำงานได้ปกติ โดยปัญหาเหล่านี้มักจะเกิดจากตัวระบบปฏิบัติการ Windows อาจจะติดไวรัสที่ร้ายแรง หรือไฟล์ระบบภายใน Windows เสียหาย แม้แต่ฮาร์ดดิสก์ภายในเครื่องคอมพิวเตอร์เสีย ถ้าหากเราไม่รู้ว่าเป็นอะไร ทางเลือกในการแก้ปัญหาได้ดีที่สุดก็ต้องบอกว่าการติดตั้งระบบปฏิบัติการ Windows ใหม่นั้นคงเป็นคำตอบแน่นอน (ยกเว้นกรณีฮาร์ดดิสก์เสีย เพราะยังไงถ้าเกิดขึ้นคงต้องติดตั้ง Windows ใหม่อยู่แล้ว) ซึ่งในตอนนี้เราจะ มาแนะนำคุณสมบัติ Backup &amp; Restore ที่มีมาในระบบปฏิบัติการ Windows กัน เพื่อที่เราจะได้ใช้งานแบ็กอัพได้อย่างทันท่วงที ก่อนข้อมูลเราจะสูญหายนะครับ คุณสมบัติ Backup &amp; Restore ก็คือการที่เราทำสำเนาของตัวระบบปฎิบัติการไว้ และเมื่อมีปัญหาเราก็แค่เรียกข้อมูลระบบของ Windows คืนจากไฟล์ที่เราสำรองไว้ สะดวกและเร็วกว่าลง Windows ใหม่ แถมยังไม่ต้องมานั่งลงโปรแกรมใหม่ให้ยุ่งยาก ซึ่งโปรแกรมลักษณะนี้ในโน้ตบุ๊กหรือคอมพิวเตอร์หลายๆ แบรนด์ก็มีโปรแกรม Backup &amp; Restore อยู่แล้ว แต่ถ้าไม่มีขึ้นมาก็ยังมีตัวโปรแกรมของ Windows 7 และ Windows 8 ที่แนะนำนี้อยู่ ซึ่งการ Backup &amp; Restore นี้เหมาะกับทุกคนที่ติดตั้ง Windows และ Driver รวมไปถึงโปรแกรมต่างๆ ไว้แล้ว จากนั้นก็ทำสำเนาเอาไว้ก่อน - See more at: https://www.advice.co.th/it-news/1295#sthash.zLjaSM8T.dpuf</span></p>\n', 'img_rd34ftw65bbfx7s9psoj6iypsa869d.jpg', '1', '1', '2015-10-15 06:00:10', '9'), ('4', 'Apple ปล่อยอัพเดท iOS 9.0.1 แก้บั้กผู้ที่ใช้งาน iOS 9 แล้วมีปัญหาในการใช้งาน', '<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">หลังจากที่ Apple ได้ปล่อย iOS 9 ให้ผู้ใช้งาน</span>โทรศัพท์มือถือ<span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">&nbsp;iPhone,iPad และ iPod Touch ได้อัพเดทกันไปอย่างเป็นทางการเมื่อ วันที่ 16 กันยายนที่ผ่านมา ซึ่งก็มีผู้ใช้งานหลายคนเจอปัญหาต่างๆในการใข้งาน วันนี้ Apple ได้ได้ปล่อยอัพเดท iOS 9.0.1 ออกมาแก้ไขปัญหาดังกล่าวแล้ว ผ่านทาง OTA สามารถดาวน์โหลดอัพเดทได้โดยเข้าไปที่ Settings &gt; General &gt; Software Update - See more at: https://www.advice.co.th/it-news/1277#sthash.P3PlS0vf.dpuf</span></p>\n\n<p><img alt=\"\" src=\"http://www.theassembler.net/shopping_cart/uploads/ck_imagesimages/iOS9-6s-5Up-Features-01.jpg\" style=\"height:491px; width:968px\" /></p>\n\n<p><img alt=\"\" src=\"http://www.theassembler.net/shopping_cart/uploads/ck_imagesimages/IMG_1317.png\" style=\"height:957px; width:750px\" /></p>\n', 'img_zekf79nciwcmjxxdxxnvj3costgy2h.JPG', '1', '1', '2015-10-15 07:09:59', '23'), ('6', 'เชิญชวนเพื่อนๆมาลองฟังหูฟัง oBravo เที่ยวนี้ขนตัว ท๊อปๆมาให้ลองฟังเพียบเลยครับ', '<p><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">เชิญชวนเพื่อนๆมาลองฟังหูฟั</span><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ง oBravo เที่ยวนี้ขนตัว ท๊อปๆมาให้ลองฟังเพียบเลยคร</span><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ับ</span><br />\n<br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">จัดมุมนั่งทดสอบแบบสบายๆ คอยต้อนรับเพื่อนๆ</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">วันที่ 04-07/10/2018</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ในงาน BAV&nbsp;</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">รร.แลนด์มาร์ค ถ.สุขุมวิท<br />\n<br />\nBy K.Studio<br />\nMusic in Life Style</span></p>\n', 'img_7er3znjcoc8jjagn8cyjk0f15ewk9r.jpg', '1', '2', '2018-10-28 15:03:03', '101'), ('8', 'จัดบู๊ทในงาน BAV 2018 เตรียมของมาให้เพื่อนๆฟังเพียบ  ได้รับการสนับสนุนจาก Mr. David', '<p><span style=\"font-size:16px\"><strong>จัดบู๊ทในงาน BAV 2018</strong></span></p>\n\n<p><br />\nเตรียมของมาให้เพื่อนๆฟังเพียบ</p>\n\n<p>ได้รับการสนับสนุนจาก<br />\n☆☆☆<br />\n<span style=\"font-family:inherit\">Mr. David ผู้ผลิตหูฟัง oBravo นำหูฟัง Ra Series ที่ดังไปทั่วยุโรปมาให้ฟังทุกรุ่น<br />\nคุณเดวิทจะคอยพูดคุยต้อนรับด้วยตัวเองทึ่โซนหน้าลิฟฟ์แก้ว<br />\n☆☆☆<br />\nMr. Paul ฝ่ายการตลาด EnigmAcoustics ผู้ผลิต Super Tweeter ที่เป็น Electro Statics&nbsp;<br />\nได้นำรุ่น Sopranino ตัวพระเอกที่ทำให้ Enigma ดังกระฉ่อนไปทั่วโลก</span></p>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>พบและพูดคุยกับพวกเขาตั้งแต่วันนี้ถึงวันอาทิตย์ ในงาน BAV<br />\nบริเวณหน้าลิฟฟ์แก้ว</p>\n\n<p>By K.Studio<br />\nMusic in Life Style</p>\n</div>\n', 'img_8m6ph074gzct5q2rnna8te7yvpqj5f.jpg', '1', '2', '2018-10-28 16:16:49', '37');
+INSERT INTO `article` VALUES ('3', 'Backup ข้อมูลในคอมพิวเตอร์ เรื่องง่ายๆ กันไว้ก่อนเสียน้ำตา', '<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">หากถามว่าระหว่างอุปกรณ์กับข้อมูลอะไรสำคัญกว่า คงต้องบอกว่า &ldquo;ข้อมูล&rdquo; สำคัญกว่ามาก เพราะอุปกรณ์ที่เสีย เรายังสามารถหาซื้อของใหม่มาทดแทน แต่ข้อมูลนี่สิ ถ้าหายหรือเสียหายละก็จะกลายเป็นเรื่องใหญ่ เพราะเมื่อเสียหายแล้ว ถึงมีเงินมากแค่ไหนก็ไม่สามารถหาซื้อข้อมูลที่สำคัญเหล่านั้นกลับมาได้ เรื่องของ Backup จึงกลายเป็นเรื่องจำเป็นที่ต้องทำอยู่ตลอดเวลา Backup ทำเองได้ไม่ง้อโปรแกรมแบ็กอัพอัตโนมัติ หลายคนอาจจะเข้าใจผิดมาตลอดว่าการแบ็กอัพนั้น ต้องทำผ่านโปรแกรมแบ็กอัพที่ทำงานให้อัตโนมัติเสมอไป ซึ่งความจริงแล้วการแบ็กอัพก็คือ การที่เราทำการคัดลอกข้อมูล จากนั้นนำไปอีกที่หนึ่ง เช่นการที่เราคัดลอกเอกสารลงใส่แฟลชไดร์ฟ หรือฮาร์ดดิสก์ภายนอก ก็ถือได้ว่าทำการแบ็กอัพอย่างหนึ่งเหมือนกัน โดยปกติเราสามารถทำผ่านโปรแกรม หรือทำเองก็สามารถทำได้ แบ็กอัพแบบนี้อาจจะเหมาะสำหรับคนที่ไม่อยากใช้งานแบ็กอัพผ่านโปรแกรม รวมไปถึงต้องมีระเบียบและเวลาจัดข้อมูลสักหน่อย&nbsp;</span></p>\n\n<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\"><img alt=\"\" src=\"http://www.theassembler.net/shopping_cart/uploads/ck_imagesimages/backup-1.jpg\" style=\"height:361px; width:650px\" /></span></p>\n\n<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">ซึ่งจะขอยกตัวอย่างการแบ็กอัพด้วยตนเองง่ายๆ อย่างการที่เราพิมพ์งานหรือแต่งภาพ เมื่อเราต้องการบันทึกก็ให้เราบันทึกลงแบบปกติอย่างในโฟลเดอร์ Documents หรือ Pictures จากนั้นเราก็มาทำการบันทึกลงโฟลเดอร์ที่อาจจะชื่อเดียวกันก็ได้ ที่อยู่ในฮาร์ดดิสก์ภายนอกอีกที แน่นอนหากสมมติว่าเราบังเอิญเผลอลบข้อมูลไป หรือข้อมูลนั้นได้หายไปโดยไม่ทราบสาเหตุ เราก็ยังสามารถดึงไฟล์ที่อยู่ใน Harddisk ภายนอกมาใช้ได้ทันที แต่จะถ้าจะให้กล่าวถึงข้อสังเกตของการแบ็กอัพไฟล์แบบนี้แล้วก็คือ เราจำเป็นต้องทำไฟล์ที่เราบันทึกไว้ให้ตรงกันเสมอ เรียกได้ว่าทุกครั้งที่บันทึก จำเป็นต้องบันทึก 2 ครั้ง ที่ 2 ฮาร์ดดิสก์เสมอ หรือไม่ก็เมื่อบันทึกลงฮาร์ดดิสก์ในเครื่องแล้ว ก็ต้องทำการคัดลอกมาลงที่ Harddisk ภายนอกอยู่เป็นประจำ เพื่อให้ข้อมูลหรือไฟล์ที่เราแบ็กอัพตรงกันอยู่เสมอ แบ็กอัพระบบปฏิบัติการ Windows 7 และ Windows 8 แบบง่ายๆ เชื่อว่าหลายๆ คนยังใช้ Windows 7 และ Windows 8 กันอยู่บ้าง แม้จะมี Windows 10 เปิดตัวให้ได้ใช้แล้ว และน่าจะเคยประสบปัญหาระบบปฏิบัติการเสียหายจนไม่สามารถเปิดเครื่องติดได้ หรือแม้กระทั่ง Windows ไม่สามารถทำงานได้ปกติ โดยปัญหาเหล่านี้มักจะเกิดจากตัวระบบปฏิบัติการ Windows อาจจะติดไวรัสที่ร้ายแรง หรือไฟล์ระบบภายใน Windows เสียหาย แม้แต่ฮาร์ดดิสก์ภายในเครื่องคอมพิวเตอร์เสีย ถ้าหากเราไม่รู้ว่าเป็นอะไร ทางเลือกในการแก้ปัญหาได้ดีที่สุดก็ต้องบอกว่าการติดตั้งระบบปฏิบัติการ Windows ใหม่นั้นคงเป็นคำตอบแน่นอน (ยกเว้นกรณีฮาร์ดดิสก์เสีย เพราะยังไงถ้าเกิดขึ้นคงต้องติดตั้ง Windows ใหม่อยู่แล้ว) ซึ่งในตอนนี้เราจะ มาแนะนำคุณสมบัติ Backup &amp; Restore ที่มีมาในระบบปฏิบัติการ Windows กัน เพื่อที่เราจะได้ใช้งานแบ็กอัพได้อย่างทันท่วงที ก่อนข้อมูลเราจะสูญหายนะครับ คุณสมบัติ Backup &amp; Restore ก็คือการที่เราทำสำเนาของตัวระบบปฎิบัติการไว้ และเมื่อมีปัญหาเราก็แค่เรียกข้อมูลระบบของ Windows คืนจากไฟล์ที่เราสำรองไว้ สะดวกและเร็วกว่าลง Windows ใหม่ แถมยังไม่ต้องมานั่งลงโปรแกรมใหม่ให้ยุ่งยาก ซึ่งโปรแกรมลักษณะนี้ในโน้ตบุ๊กหรือคอมพิวเตอร์หลายๆ แบรนด์ก็มีโปรแกรม Backup &amp; Restore อยู่แล้ว แต่ถ้าไม่มีขึ้นมาก็ยังมีตัวโปรแกรมของ Windows 7 และ Windows 8 ที่แนะนำนี้อยู่ ซึ่งการ Backup &amp; Restore นี้เหมาะกับทุกคนที่ติดตั้ง Windows และ Driver รวมไปถึงโปรแกรมต่างๆ ไว้แล้ว จากนั้นก็ทำสำเนาเอาไว้ก่อน - See more at: https://www.advice.co.th/it-news/1295#sthash.zLjaSM8T.dpuf</span></p>\n', 'img_rd34ftw65bbfx7s9psoj6iypsa869d.jpg', '1', '1', '2015-10-15 06:00:10', '10'), ('4', 'Apple ปล่อยอัพเดท iOS 9.0.1 แก้บั้กผู้ที่ใช้งาน iOS 9 แล้วมีปัญหาในการใช้งาน', '<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">หลังจากที่ Apple ได้ปล่อย iOS 9 ให้ผู้ใช้งาน</span>โทรศัพท์มือถือ<span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">&nbsp;iPhone,iPad และ iPod Touch ได้อัพเดทกันไปอย่างเป็นทางการเมื่อ วันที่ 16 กันยายนที่ผ่านมา ซึ่งก็มีผู้ใช้งานหลายคนเจอปัญหาต่างๆในการใข้งาน วันนี้ Apple ได้ได้ปล่อยอัพเดท iOS 9.0.1 ออกมาแก้ไขปัญหาดังกล่าวแล้ว ผ่านทาง OTA สามารถดาวน์โหลดอัพเดทได้โดยเข้าไปที่ Settings &gt; General &gt; Software Update - See more at: https://www.advice.co.th/it-news/1277#sthash.P3PlS0vf.dpuf</span></p>\n\n<p><img alt=\"\" src=\"http://www.theassembler.net/shopping_cart/uploads/ck_imagesimages/iOS9-6s-5Up-Features-01.jpg\" style=\"height:491px; width:968px\" /></p>\n\n<p><img alt=\"\" src=\"http://www.theassembler.net/shopping_cart/uploads/ck_imagesimages/IMG_1317.png\" style=\"height:957px; width:750px\" /></p>\n', 'img_zekf79nciwcmjxxdxxnvj3costgy2h.JPG', '1', '1', '2015-10-15 07:09:59', '26'), ('6', 'เชิญชวนเพื่อนๆมาลองฟังหูฟัง oBravo เที่ยวนี้ขนตัว ท๊อปๆมาให้ลองฟังเพียบเลยครับ', '<p><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">เชิญชวนเพื่อนๆมาลองฟังหูฟั</span><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ง oBravo เที่ยวนี้ขนตัว ท๊อปๆมาให้ลองฟังเพียบเลยคร</span><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ับ</span><br />\n<br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">จัดมุมนั่งทดสอบแบบสบายๆ คอยต้อนรับเพื่อนๆ</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">วันที่ 04-07/10/2018</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ในงาน BAV&nbsp;</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">รร.แลนด์มาร์ค ถ.สุขุมวิท<br />\n<br />\nBy K.Studio<br />\nMusic in Life Style</span></p>\n', 'img_7er3znjcoc8jjagn8cyjk0f15ewk9r.jpg', '1', '2', '2018-10-28 15:03:03', '101'), ('8', 'จัดบู๊ทในงาน BAV 2018 เตรียมของมาให้เพื่อนๆฟังเพียบ  ได้รับการสนับสนุนจาก Mr. David', '<p><span style=\"font-size:16px\"><strong>จัดบู๊ทในงาน BAV 2018</strong></span></p>\n\n<p><br />\nเตรียมของมาให้เพื่อนๆฟังเพียบ</p>\n\n<p>ได้รับการสนับสนุนจาก<br />\n☆☆☆<br />\n<span style=\"font-family:inherit\">Mr. David ผู้ผลิตหูฟัง oBravo นำหูฟัง Ra Series ที่ดังไปทั่วยุโรปมาให้ฟังทุกรุ่น<br />\nคุณเดวิทจะคอยพูดคุยต้อนรับด้วยตัวเองทึ่โซนหน้าลิฟฟ์แก้ว<br />\n☆☆☆<br />\nMr. Paul ฝ่ายการตลาด EnigmAcoustics ผู้ผลิต Super Tweeter ที่เป็น Electro Statics&nbsp;<br />\nได้นำรุ่น Sopranino ตัวพระเอกที่ทำให้ Enigma ดังกระฉ่อนไปทั่วโลก</span></p>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>พบและพูดคุยกับพวกเขาตั้งแต่วันนี้ถึงวันอาทิตย์ ในงาน BAV<br />\nบริเวณหน้าลิฟฟ์แก้ว</p>\n\n<p>By K.Studio<br />\nMusic in Life Style</p>\n</div>\n', 'img_8m6ph074gzct5q2rnna8te7yvpqj5f.jpg', '1', '2', '2018-10-28 16:16:49', '37');
 COMMIT;
 
 -- ----------------------------
@@ -314,7 +314,7 @@ CREATE TABLE `contact_social` (
   `social_id` int(3) DEFAULT NULL,
   `account` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COMMENT='ตารางเก็บข้อมูลติดต่อ SocialApp';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ตารางเก็บข้อมูลติดต่อ SocialApp';
 
 -- ----------------------------
 --  Table structure for `contactuser`
@@ -393,6 +393,47 @@ INSERT INTO `logo` VALUES ('8', '1540889327logoC.png', '1', '2018-11-04 22:41:31
 COMMIT;
 
 -- ----------------------------
+--  Table structure for `logproduct`
+-- ----------------------------
+DROP TABLE IF EXISTS `logproduct`;
+CREATE TABLE `logproduct` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `log` varchar(255) DEFAULT NULL,
+  `product_id` varchar(20) DEFAULT NULL,
+  `user` varchar(100) DEFAULT NULL,
+  `dupdate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='เก็บข้อมูลการจัดการสินค้า';
+
+-- ----------------------------
+--  Records of `logproduct`
+-- ----------------------------
+BEGIN;
+INSERT INTO `logproduct` VALUES ('1', 'admin InsertProduct P20181121145729', 'P20181121145729', 'admin', '2018-11-21 14:58:00'), ('2', 'admin UpdateProduct P20181121145729', 'P20181121145729', 'admin', '2018-11-21 14:59:07'), ('3', 'admin DeleteProduct P20181121145729', 'P20181121145729', 'admin', '2018-11-21 15:02:11');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `loguserlogin`
+-- ----------------------------
+DROP TABLE IF EXISTS `loguserlogin`;
+CREATE TABLE `loguserlogin` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `log` varchar(100) DEFAULT NULL,
+  `user` varchar(100) DEFAULT NULL,
+  `dupdate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `ip` varchar(50) DEFAULT NULL,
+  `status` char(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `loguserlogin`
+-- ----------------------------
+BEGIN;
+INSERT INTO `loguserlogin` VALUES ('1', '!LoginFail | login', '', '2018-11-22 10:42:23', '::1', 'FALSE'), ('2', '!LoginFail | login', '', '2018-11-22 10:42:34', '::1', 'FALSE'), ('3', '!LoginFail | login', '', '2018-11-22 10:42:36', '::1', 'FALSE'), ('4', 'user1 | login', 'admin', '2018-11-22 10:42:59', '::1', 'TRUE'), ('5', 'user27 | login', 'demo', '2018-11-22 13:51:21', '::1', 'TRUE'), ('6', '!LoginFail | login', '', '2018-11-22 15:37:25', '::1', 'FALSE'), ('7', 'user27 | login', 'demo', '2018-11-22 15:38:47', '::1', 'TRUE'), ('8', '!LoginFail | login', '', '2018-11-22 15:39:19', '::1', 'FALSE'), ('9', '!LoginFail | login', '', '2018-11-22 15:39:21', '::1', 'FALSE'), ('10', 'user27 | login', 'demo', '2018-11-22 15:40:42', '::1', 'TRUE'), ('11', 'user1 | login', 'admin', '2018-11-22 15:41:26', '::1', 'TRUE'), ('12', '!LoginFail | login', '', '2018-11-22 15:42:06', '::1', 'FALSE'), ('13', '!LoginFail | login', '', '2018-11-22 15:42:51', '::1', 'FALSE'), ('14', 'user27 | login', 'demo', '2018-11-22 15:45:09', '::1', 'TRUE'), ('15', 'user1 | login', 'admin', '2018-11-22 15:45:47', '::1', 'TRUE'), ('16', '!LoginFail | login', '', '2018-11-22 15:46:19', '::1', 'FALSE'), ('17', '!LoginFail | login', '', '2018-11-22 15:46:21', '::1', 'FALSE'), ('18', '!LoginFail | login', '', '2018-11-22 15:46:41', '::1', 'FALSE'), ('19', 'user27 | login', 'demo', '2018-11-22 15:47:41', '::1', 'TRUE'), ('20', 'user1 | login', 'admin', '2018-11-22 15:49:19', '::1', 'TRUE'), ('21', '!LoginFail | login', '', '2018-11-22 15:52:18', '::1', 'FALSE'), ('22', 'user27 | login', 'demo', '2018-11-22 15:52:23', '::1', 'TRUE'), ('23', 'user1 | login', 'admin', '2018-11-22 15:52:57', '::1', 'TRUE'), ('24', '!LoginFail | login', '', '2018-11-22 17:51:19', '::1', 'FALSE'), ('25', 'user27 | login', 'demo', '2018-11-22 17:51:31', '::1', 'TRUE'), ('26', '!LoginFail | login', '', '2018-11-22 17:52:26', '::1', 'FALSE'), ('27', '!LoginFail | login', '', '2018-11-22 17:52:32', '::1', 'FALSE'), ('28', '!LoginFail | login', '', '2018-11-22 17:53:32', '::1', 'FALSE'), ('29', 'user27 | login', 'demo', '2018-11-22 17:53:37', '::1', 'TRUE'), ('30', 'user30 | login', 'test', '2018-11-22 17:55:13', '::1', 'TRUE'), ('31', 'user30 | login', 'test', '2018-11-22 18:32:40', '::1', 'TRUE'), ('32', 'user1 | login', 'admin', '2018-11-22 18:33:00', '::1', 'TRUE'), ('33', 'user1 | login', 'admin', '2018-11-22 18:33:27', '::1', 'TRUE');
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `massocial`
 -- ----------------------------
 DROP TABLE IF EXISTS `massocial`;
@@ -431,19 +472,35 @@ CREATE TABLE `masuser` (
   `create_date` timestamp NULL DEFAULT NULL,
   `images` varchar(255) DEFAULT NULL COMMENT 'รูปภาพประจำตัว',
   `username` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`pid`),
+  PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`) USING BTREE,
-  UNIQUE KEY `email` (`email`) USING BTREE,
   KEY `oid` (`oid`) USING BTREE,
   KEY `pid` (`pid`),
   KEY `password` (`password`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COMMENT='ตารางสมาชิก';
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8 COMMENT='ตารางสมาชิก';
 
 -- ----------------------------
 --  Records of `masuser`
 -- ----------------------------
 BEGIN;
-INSERT INTO `masuser` VALUES ('4', '003', '0000000003', 'ภาคภูมิ', 'มาแสน', 'PDK', '22222222', 'kimniyom_club1@hotmail.com', '2342343243', 'M', '2016-01-01', 'U', '2016-08-16 09:35:17', null, null, null), ('1', '001', '0000000005', 'AdminSystem', 'Admin_SK', null, '21232f297a57a5a743894a0e4a801fc3', 'admin@gmail.com', '0800260943', null, null, 'A', '2018-10-18 14:16:15', null, null, 'admin'), ('6', '004', '0000000006', 'มนัส', 'ผู้ดี', null, 'user', 'user@gmail.com', '0800300984', null, null, 'U', '2013-11-06 18:45:00', null, null, null), ('8', '006', '0000000008', 'วาสนา', 'แสงท้าว', null, '00000000', 'wasana@gmail.com', '0800260943', null, null, 'U', '2014-01-31 11:13:02', null, null, null), ('9', '001', '0000000009', 'kimnyom', 'kimniyom', null, '12345678', 'kimniyom01@gmail.com', '9797979797', null, null, 'U', '2014-02-02 11:28:23', null, null, null), ('10', '001', '0000000010', 'สมหมาย', 'มโนดี', null, '12345678', 'sk@gmail.com', '0822323252', null, null, 'U', '2014-11-17 08:19:55', null, null, null), ('11', '001', '0000000011', 'มาโนชน์', 'มาเร็ว', null, '00000000', 'manod@gmail.com', '0800232156', null, null, 'U', '2014-11-17 08:14:54', null, null, null), ('12', '001', '0000000012', 'demo', 'demo', null, 'demo', 'demo@gmail.com', '0800369888', null, null, 'U', '2014-11-17 13:19:55', null, null, null), ('13', '001', '0000000013', 'ปิยพงษ์', 'สิทธิวงค์', null, '12345678', 'tom@gmail.com', '0956359967', null, null, 'U', '2014-11-17 13:48:54', null, null, null), ('14', '001', '0000000014', 'llldsf', 'sdfdsgf', null, '12345678', 'mmmm@gmail.com', '0956359967', null, null, 'U', '2014-11-18 03:34:56', null, null, null), ('15', '002', '0000000015', 'อนิตยา', 'สมใจ', null, '12345678', 'moomoo_nog@hotmail.com', '0866712167', null, null, 'U', '2015-03-30 18:55:47', null, null, null), ('16', '001', '0000000016', 'ทรงพล', 'คำสะอาด', null, '08002609', 'kimniyom_club@hotmail.com', '0821684717', null, null, 'U', '2015-04-03 09:26:12', null, null, null), ('17', null, '0000000017', 'KIMNIYOM', 'SMEANGKEANG', 'kimniyom2015', 'kimniyom', 'kimniyom2015@gmail.com', '0821684717', 'M', '1990-06-13', 'U', '2015-10-16 07:27:42', '2015-09-02 09:25:24', '1444980747287491_250650488292206_6656065_o.jpg', null), ('18', null, '0000000018', 'KK', 'KK', 'KK', 'KK', 'KK@GMAIL.COM', '082168471', 'M', '1980-08-06', 'U', '2015-09-02 15:24:32', '2015-09-02 10:00:18', null, null), ('19', null, '0000000019', 'PDK', 'WEWE', 'kk2', 'kk2', 'kk2@gmail.com', '08002609', 'M', '2008-04-05', 'U', '2015-09-02 15:24:34', '2015-09-02 10:03:11', null, null), ('22', null, '0000000020', 'kimniyom', 'test', 'dfdfsdf', 'kmkmkm', 'sdfsdfsd@gmail.com', '343434', 'M', '1992-03-03', 'U', '2015-09-20 16:48:49', '2015-09-20 16:48:49', null, null), ('25', null, '0000000021', 'wannasa', 'wandee', 'wannasa', 'wannasa', 'wannasa@gmail.com', '0800343830', 'F', '1991-09-13', 'U', '2015-09-21 09:18:45', '2015-09-21 04:58:04', '1442825683kupFC28512.jpg', null);
+INSERT INTO `masuser` VALUES ('1', '001', '0000000005', 'AdminSystem', 'Admin', 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@gmail.com', '0800260000', 'M', null, 'A', '2018-11-22 18:33:11', null, null, 'admin'), ('27', null, '', 'demo', 'demo', 'demo', 'fe01ce2a7fbac8fafaed7c982a04e229', 'demo1@gmail.com', '0800249484', 'M', null, 'U', null, null, null, 'demo');
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `menu`
+-- ----------------------------
+DROP TABLE IF EXISTS `menu`;
+CREATE TABLE `menu` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `menu` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `menu`
+-- ----------------------------
+BEGIN;
+INSERT INTO `menu` VALUES ('1', 'ข้อมูลร้านค้า'), ('2', 'ตั้งค่าระบบ'), ('3', 'สินค้า'), ('4', 'บทความ / event'), ('5', 'ติดต่อจากลูกค้า'), ('6', 'log');
 COMMIT;
 
 -- ----------------------------
@@ -505,6 +562,7 @@ CREATE TABLE `month` (
   `id` char(2) NOT NULL,
   `month_th` varchar(100) DEFAULT NULL,
   `mount_en` varchar(100) DEFAULT NULL,
+  `monthnumber` int(2) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -512,7 +570,7 @@ CREATE TABLE `month` (
 --  Records of `month`
 -- ----------------------------
 BEGIN;
-INSERT INTO `month` VALUES ('01', 'มกราคม', 'January'), ('02', 'กุมภาพันธ์', 'February'), ('03', 'มีนาคม', 'March'), ('04', 'เมษายน', 'April'), ('05', 'พฤภาคม', 'May'), ('06', 'มิถุนายน', 'June'), ('07', 'กรกฏาคม', 'July'), ('08', 'สิงหาคม', 'August'), ('09', 'กันยายน', 'September'), ('10', 'ตุลาคม', 'October'), ('11', 'พฤศจิกายน', 'November'), ('12', 'ธันวาคม', 'December');
+INSERT INTO `month` VALUES ('01', 'มกราคม', 'January', '1'), ('02', 'กุมภาพันธ์', 'February', '2'), ('03', 'มีนาคม', 'March', '3'), ('04', 'เมษายน', 'April', '4'), ('05', 'พฤภาคม', 'May', '5'), ('06', 'มิถุนายน', 'June', '6'), ('07', 'กรกฏาคม', 'July', '7'), ('08', 'สิงหาคม', 'August', '8'), ('09', 'กันยายน', 'September', '9'), ('10', 'ตุลาคม', 'October', '10'), ('11', 'พฤศจิกายน', 'November', '11'), ('12', 'ธันวาคม', 'December', '12');
 COMMIT;
 
 -- ----------------------------
@@ -528,9 +586,7 @@ CREATE TABLE `news` (
   `new_img` varchar(100) DEFAULT NULL COMMENT 'รูปภาพ',
   `pid` char(10) DEFAULT NULL COMMENT 'รหัสผู้บันทึก',
   PRIMARY KEY (`new_id`),
-  UNIQUE KEY `id` (`id`) USING BTREE,
-  KEY `pid` (`pid`) USING BTREE,
-  CONSTRAINT `pid_mas` FOREIGN KEY (`pid`) REFERENCES `masuser` (`pid`) ON DELETE CASCADE ON UPDATE CASCADE
+  UNIQUE KEY `id` (`id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='ตารางข่าว';
 
 -- ----------------------------
@@ -569,9 +625,7 @@ CREATE TABLE `orders` (
   `payment_id` int(3) DEFAULT NULL COMMENT 'รหัสบัญชี',
   `transport` int(3) DEFAULT '1' COMMENT 'วิธีการขนส่ง',
   PRIMARY KEY (`id`,`order_id`),
-  KEY `pid` (`pid`) USING BTREE,
-  KEY `order_id` (`order_id`),
-  CONSTRAINT `pid` FOREIGN KEY (`pid`) REFERENCES `masuser` (`pid`) ON UPDATE CASCADE
+  KEY `order_id` (`order_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8 COMMENT='ตารางการสั่งซื้อสินค้า';
 
 -- ----------------------------
@@ -638,6 +692,29 @@ INSERT INTO `pername` VALUES ('001', 'นาย'), ('002', 'นาง'), ('003',
 COMMIT;
 
 -- ----------------------------
+--  Table structure for `privilege`
+-- ----------------------------
+DROP TABLE IF EXISTS `privilege`;
+CREATE TABLE `privilege` (
+  `id` int(3) NOT NULL AUTO_INCREMENT,
+  `shop` int(1) DEFAULT '0',
+  `setting` int(1) DEFAULT '0',
+  `product` int(1) DEFAULT '0',
+  `article` int(1) DEFAULT '0',
+  `contact` int(1) DEFAULT '0',
+  `log` int(1) DEFAULT '0',
+  `user` int(3) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+--  Records of `privilege`
+-- ----------------------------
+BEGIN;
+INSERT INTO `privilege` VALUES ('2', '1', '1', '1', '1', '1', '1', '1'), ('3', '1', '1', '1', '1', '1', '1', '27');
+COMMIT;
+
+-- ----------------------------
 --  Table structure for `product`
 -- ----------------------------
 DROP TABLE IF EXISTS `product`;
@@ -662,13 +739,13 @@ CREATE TABLE `product` (
   PRIMARY KEY (`product_id`),
   UNIQUE KEY `id` (`id`) USING BTREE,
   KEY `type_id` (`type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='ตารางสินค้า';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='ตารางสินค้า';
 
 -- ----------------------------
 --  Records of `product`
 -- ----------------------------
 BEGIN;
-INSERT INTO `product` VALUES ('1', 'P20181019100013', 'Bluetooth TECSUN BT-90', '1500.00', '<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">BT-90 เครื่องเล่นบลูทูธ มีขนาดเล็กกระทัดรัด น้ำหนักเบา ใช้หนีบกระเป๋าเสื้อ หรือหนีบกับปกเสื้อได้เลย </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">การใช้งานก็ง่ายๆเลยครับ </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">1. เชื่อมต่อกับคอมพิวเตอร์ ผ่านสาย usb มีให้มา สามารถใช้เป็น DAC Amp เล่นเพลงจากคอมผ่านหูฟัง ทั้งยังชาร์ตแบ๊ตในตัว BT-90 ไปพร้อมกัน ใครที่สะสมเพลงในคอมเยอะๆก็ได้เวลาขุดมาฟังแล้วครับ </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">2. ใช้ Paring กับโทรศัพท์มือถือ ใช้มือถือ Streaming หาเพลงส่งไปยัง BT-90 ระยะรับส่งบลูทูธ 10 เมตร พร้อกันนั้นตัวมันก็ใช้เป็น Small Talk เพื่อใช้พูดคุยโทรศัพท์ได้เลย </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">3. สำหรับมือถือที่มีระบบ NFC สามารถเชื่อมต่อกับ BT-90 ได้สะดวกสบาย เพียงนำโทรศัพท์มาแตะด้านหน้าของ BT-90 แค่นี้ก็เชื่อมต่อบลูทูธได้เลยครับ และอีกหนึ่งจุดเด่นคือมีกำลังขับที่มหากาฬมาก ใช้ขับหูฟังโหดๆออกหมดได้เกือบทุกรุ่น </span></p>\n\n<p>&nbsp;</p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">ทีนี้มาดูสเปคเค้ามั่ง </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">1. Bluetooth: 2.4G (Bluetooth 4.2), Supports aptX-LL / AAC </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">2. Bluetooth Effective Range: 10 meters </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">3. Headphone impedance: 8 ~ 50&Omega; </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">4. Maximum Undistorted Power output: 17mW(32&Omega;) </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">5. Battery: 3.7V/180mAh Lithium Polymer </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">6. Charging voltage: DC5V/500mA </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">7. Charging socket: Micro-USB </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">8. Size: 23 x 56 x 15.5 mm </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">9. Net weight: 15g</span></p>\n', '3', '001', '0', '0', '2', '1', '1', '2018-10-26 16:23:18', null, null, '0', '11'), ('2', 'P20181025091852', 'Khunpol', '3434.00', '<p><span style=\"background-color:rgb(249, 249, 249); color:rgb(102, 102, 102); font-family:roboto,helvetica neue,helvetica,arial,sans-serif\">Khunpol</span></p>\n', null, '001', '0', '0', '2', '3', '0', '2018-10-29 15:27:31', null, null, '0', '3'), ('3', 'P20181025092135', 'CaoGen', '23.00', '<p>Tecsun CaoGen, Grassroot High Definition Headphone</p>\n', null, '002', '0', '2', '1', '2', '0', '2018-11-05 11:42:22', 'Tecsun CaoGen, Grassroot High Definition Headphone', '0.00', '0', '33'), ('4', 'P20181025094618', 'Ra-c-cu', '350000.00', '<p>oBravo : Flagship Signature&nbsp;<br />\nModel : Ra C Cu<br />\nHousing : Solid Copper<br />\nFace Plate : Acacia Wood<br />\nNozzle : Precision Ceramic<br />\n<span style=\"font-family:inherit\">Tweeter : 8 mm Air Motion Transformer Generation 2&nbsp;<br />\nWoofer : 16 mm Dynamic Driver&nbsp;<br />\nFrequency Response : 10-45,000 Hz<br />\nImpedance : 182 Ohm</span></p>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>*** In-House Production of Driver Unit and Patented***</p>\n\n<p>เพชรเม็ดงามที่จะเป็นรางวัลส่งมอบให้กับ ผู้ชนะเลิศ<br />\nในการประกวดการทำสายอัพเกรด<br />\noBravo Cable Contest #1</p>\n\n<p>พิธีส่งมอบ.....<br />\nรางวัลเกียรติยศแด่ผู้ที่ชนะเลิศครั้งนี้ จะถูกบันทึกภาพและวิดีโอเผยแพร่ไปในสื่อหูฟังทั่วโลก</p>\n\n<p>บันไดก้าวสำคัญที่จะเดินทางไปสู่เวทีการค้าระหว่างประเทศ</p>\n\n<p>*****************************<br />\nThe 1st. Ra C Cu in Thailand<br />\nสำหรับนักเล่นที่ตระหนักถึงคุณค่าแห่งดนตรี&nbsp;<br />\nไปให้สุดเพื่อเป็นหนึ่งเดียว<br />\noBravo Flagship Signature ชุดแรกในประเทศไทย เซ็นต์ชื่อรับรองโดย Mr. David Teng เจ้าของ oBravo<br />\nราคาเปิดตัวที่ 350,000 บาท</p>\n\n<p>***โอกาสมีครั้งเดียวในชีวิต***</p>\n</div>\n', null, '001', '0', '0', '2', '5', '0', '2018-11-05 22:15:19', 'oBravo : Flagship Signature ', '30000.00', '0', '46'), ('5', 'P20181026103638', 'ssfg', '5000.00', '<p>wwerewtertery</p>\n', null, '003', '0', '0', '2', '1', '1', '2018-11-18 23:45:57', 'fhfghhfg', '0.00', '1', '23'), ('7', 'P20181029151035', 'IHIFI H6 1969', '16500.00', '<p><strong><span style=\"color:rgb(102, 102, 102); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">ข้อมูลด้านเทคนิค</span></strong></p>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>- Master control: PK-NANOD<br />\n- DAC: AK4495<br />\n- LPF: LME49990 * 2 (THD 0.00001%)<br />\n- Headphone Amplifier: JHL pure class A transistor amplifier<br />\n- Battery: 3.7V6000mah lithium battery<br />\n- Life time: about 11 hours, standard bit rate, main and vice screen off<br />\n- Main screen: 0.96 pure white OLED<br />\n- Vice screen: 0.91 pure white OLED<br />\n- Interface: 3.5mm stereo earphones, 2.5mm balanced earphones</p>\n</div>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>&nbsp;</p>\n</div>\n', null, '006', '0', '0', '1', '6', '0', '2018-11-05 11:05:02', 'เครื่องเล่นเพลง IHIFI H6 1969 จากแดนมังกร ให้รายละเอียดเสียงที่ยอดเยี่ยม รองรับไฟล์เพลงแบบ HD เอาท์พุตมีทั้งแบบ Balance และ Non Balance มาลองเดโม่ และสั่งซื้อได้', '15500.00', '0', '64');
+INSERT INTO `product` VALUES ('1', 'P20181019100013', 'Bluetooth TECSUN BT-90', '1500.00', '<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">BT-90 เครื่องเล่นบลูทูธ มีขนาดเล็กกระทัดรัด น้ำหนักเบา ใช้หนีบกระเป๋าเสื้อ หรือหนีบกับปกเสื้อได้เลย </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">การใช้งานก็ง่ายๆเลยครับ </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">1. เชื่อมต่อกับคอมพิวเตอร์ ผ่านสาย usb มีให้มา สามารถใช้เป็น DAC Amp เล่นเพลงจากคอมผ่านหูฟัง ทั้งยังชาร์ตแบ๊ตในตัว BT-90 ไปพร้อมกัน ใครที่สะสมเพลงในคอมเยอะๆก็ได้เวลาขุดมาฟังแล้วครับ </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">2. ใช้ Paring กับโทรศัพท์มือถือ ใช้มือถือ Streaming หาเพลงส่งไปยัง BT-90 ระยะรับส่งบลูทูธ 10 เมตร พร้อกันนั้นตัวมันก็ใช้เป็น Small Talk เพื่อใช้พูดคุยโทรศัพท์ได้เลย </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">3. สำหรับมือถือที่มีระบบ NFC สามารถเชื่อมต่อกับ BT-90 ได้สะดวกสบาย เพียงนำโทรศัพท์มาแตะด้านหน้าของ BT-90 แค่นี้ก็เชื่อมต่อบลูทูธได้เลยครับ และอีกหนึ่งจุดเด่นคือมีกำลังขับที่มหากาฬมาก ใช้ขับหูฟังโหดๆออกหมดได้เกือบทุกรุ่น </span></p>\n\n<p>&nbsp;</p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">ทีนี้มาดูสเปคเค้ามั่ง </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">1. Bluetooth: 2.4G (Bluetooth 4.2), Supports aptX-LL / AAC </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">2. Bluetooth Effective Range: 10 meters </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">3. Headphone impedance: 8 ~ 50&Omega; </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">4. Maximum Undistorted Power output: 17mW(32&Omega;) </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">5. Battery: 3.7V/180mAh Lithium Polymer </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">6. Charging voltage: DC5V/500mA </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">7. Charging socket: Micro-USB </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">8. Size: 23 x 56 x 15.5 mm </span></p>\n\n<p><span style=\"color:rgb(29, 33, 41); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">9. Net weight: 15g</span></p>\n', '3', '001', '0', '0', '2', '1', '1', '2018-10-26 16:23:18', null, null, '0', '23'), ('2', 'P20181025091852', 'Khunpol', '3434.00', '<p><span style=\"background-color:rgb(249, 249, 249); color:rgb(102, 102, 102); font-family:roboto,helvetica neue,helvetica,arial,sans-serif\">Khunpol</span></p>\n', null, '001', '0', '0', '2', '3', '0', '2018-10-29 15:27:31', null, null, '0', '3'), ('3', 'P20181025092135', 'CaoGen', '23.00', '<p>Tecsun CaoGen, Grassroot High Definition Headphone</p>\n', null, '002', '0', '2', '1', '2', '0', '2018-11-05 11:42:22', 'Tecsun CaoGen, Grassroot High Definition Headphone', '0.00', '0', '33'), ('4', 'P20181025094618', 'Ra-c-cu', '350000.00', '<p>oBravo : Flagship Signature&nbsp;<br />\nModel : Ra C Cu<br />\nHousing : Solid Copper<br />\nFace Plate : Acacia Wood<br />\nNozzle : Precision Ceramic<br />\n<span style=\"font-family:inherit\">Tweeter : 8 mm Air Motion Transformer Generation 2&nbsp;<br />\nWoofer : 16 mm Dynamic Driver&nbsp;<br />\nFrequency Response : 10-45,000 Hz<br />\nImpedance : 182 Ohm</span></p>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>*** In-House Production of Driver Unit and Patented***</p>\n\n<p>เพชรเม็ดงามที่จะเป็นรางวัลส่งมอบให้กับ ผู้ชนะเลิศ<br />\nในการประกวดการทำสายอัพเกรด<br />\noBravo Cable Contest #1</p>\n\n<p>พิธีส่งมอบ.....<br />\nรางวัลเกียรติยศแด่ผู้ที่ชนะเลิศครั้งนี้ จะถูกบันทึกภาพและวิดีโอเผยแพร่ไปในสื่อหูฟังทั่วโลก</p>\n\n<p>บันไดก้าวสำคัญที่จะเดินทางไปสู่เวทีการค้าระหว่างประเทศ</p>\n\n<p>*****************************<br />\nThe 1st. Ra C Cu in Thailand<br />\nสำหรับนักเล่นที่ตระหนักถึงคุณค่าแห่งดนตรี&nbsp;<br />\nไปให้สุดเพื่อเป็นหนึ่งเดียว<br />\noBravo Flagship Signature ชุดแรกในประเทศไทย เซ็นต์ชื่อรับรองโดย Mr. David Teng เจ้าของ oBravo<br />\nราคาเปิดตัวที่ 350,000 บาท</p>\n\n<p>***โอกาสมีครั้งเดียวในชีวิต***</p>\n</div>\n', null, '001', '0', '0', '2', '5', '0', '2018-11-05 22:15:19', 'oBravo : Flagship Signature ', '30000.00', '0', '51'), ('5', 'P20181026103638', 'ssfg', '5000.00', '<p>wwerewtertery</p>\n', null, '003', '0', '0', '2', '1', '1', '2018-11-18 23:45:57', 'fhfghhfg', '0.00', '1', '37'), ('7', 'P20181029151035', 'IHIFI H6 1969', '16500.00', '<p><strong><span style=\"color:rgb(102, 102, 102); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">ข้อมูลด้านเทคนิค</span></strong></p>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>- Master control: PK-NANOD<br />\n- DAC: AK4495<br />\n- LPF: LME49990 * 2 (THD 0.00001%)<br />\n- Headphone Amplifier: JHL pure class A transistor amplifier<br />\n- Battery: 3.7V6000mah lithium battery<br />\n- Life time: about 11 hours, standard bit rate, main and vice screen off<br />\n- Main screen: 0.96 pure white OLED<br />\n- Vice screen: 0.91 pure white OLED<br />\n- Interface: 3.5mm stereo earphones, 2.5mm balanced earphones</p>\n</div>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>&nbsp;</p>\n</div>\n', null, '006', '0', '0', '1', '6', '0', '2018-11-05 11:05:02', 'เครื่องเล่นเพลง IHIFI H6 1969 จากแดนมังกร ให้รายละเอียดเสียงที่ยอดเยี่ยม รองรับไฟล์เพลงแบบ HD เอาท์พุตมีทั้งแบบ Balance และ Non Balance มาลองเดโม่ และสั่งซื้อได้', '15500.00', '0', '71');
 COMMIT;
 
 -- ----------------------------
@@ -681,7 +758,7 @@ CREATE TABLE `product_images` (
   `images` varchar(100) DEFAULT NULL COMMENT 'รูปภาพ',
   `active` int(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COMMENT='ตารางเก็บรูปภาพสินค้า';
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COMMENT='ตารางเก็บรูปภาพสินค้า';
 
 -- ----------------------------
 --  Records of `product_images`
@@ -781,6 +858,24 @@ CREATE TABLE `transport` (
 -- ----------------------------
 BEGIN;
 INSERT INTO `transport` VALUES ('1', 'จัดส่งแบบ EMS', '30', '1'), ('3', 'แบบธรรมดา', '20', null), ('4', 'ไม่มีค่าจัดส่ง', '0', null);
+COMMIT;
+
+-- ----------------------------
+--  Table structure for `viewproduct`
+-- ----------------------------
+DROP TABLE IF EXISTS `viewproduct`;
+CREATE TABLE `viewproduct` (
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  `product_id` varchar(20) DEFAULT NULL,
+  `dupdate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 COMMENT='เก้บประวัติการเข้าดูสินค้า';
+
+-- ----------------------------
+--  Records of `viewproduct`
+-- ----------------------------
+BEGIN;
+INSERT INTO `viewproduct` VALUES ('1', 'P20181026103638', '2018-11-21 14:52:11'), ('2', 'P20181025094618', '2018-11-21 15:05:49'), ('3', 'P20181029151035', '2018-11-21 15:52:00'), ('4', 'P20181029151035', '2018-11-21 15:52:10'), ('5', 'P20181029151035', '2018-11-21 19:14:45'), ('6', 'P20181026103638', '2018-11-22 11:19:51'), ('7', 'P20181029151035', '2018-11-22 11:20:01'), ('8', 'P20181029151035', '2018-11-22 11:22:40'), ('9', 'P20181026103638', '2018-11-22 11:23:35'), ('10', 'P20181026103638', '2018-11-22 11:23:58'), ('11', 'P20181026103638', '2018-11-22 11:24:01'), ('12', 'P20181026103638', '2018-11-22 11:24:04'), ('13', 'P20181026103638', '2018-11-22 11:24:06'), ('14', 'P20181019100013', '2018-11-22 11:24:32'), ('15', 'P20181019100013', '2018-11-22 11:59:40'), ('16', 'P20181026103638', '2018-11-22 12:05:01'), ('17', 'P20181029151035', '2018-11-22 13:40:51');
 COMMIT;
 
 -- ----------------------------

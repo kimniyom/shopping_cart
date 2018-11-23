@@ -26,7 +26,9 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #2a323b;
+    box-shadow:#cccccc 0px 0px 10px 0px;
+    /*background: #2a323b;*/
+    background: #ffffff;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -39,11 +41,11 @@
 }
 
 #sidebar-wrapper .panel-body{
-    background: #2a323b;
+    background: #ffffff;
 }
 
 #sidebar-wrapper .list-group-item{
-    background: #2a323b;
+    background: #ffffff;
     color: #999999;
     font-weight: normal;
     font-size: 14px;
@@ -53,13 +55,14 @@
 }
 
 #sidebar-wrapper .list-group-item:hover{
-    color: #FFFFFF;
+    color: #0099ff;
     /*background: #2b323b;*/
 }
 
 #sidebar-wrapper .panel-heading{
-    background: #24282d;
-    color: #999999;
+    background: #ffffff;
+    color: #333333;
+    font-weight: bold;
 }
 
 #sidebar-wrapper .panel-body{
@@ -72,6 +75,10 @@
 
 #sidebar-wrapper .list-group{
     display: none;
+}
+
+#sidebar-wrapper #panel-head .list-group{
+    padding-left: 10px;
 }
 
 

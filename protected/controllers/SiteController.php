@@ -111,9 +111,31 @@ class SiteController extends Controller {
         if (isset($_POST['LoginForm'])) {
             $model->attributes = $_POST['LoginForm'];
             // validate user input and redirect to the previous page if valid
-            if ($model->validate() && $model->login())
+            if ($model->validate() && $model->login()) {
                 //$this->redirect(Yii::app()->user->returnUrl);
+                $columns = array(
+                    "log" => "user" . Yii::app()->user->id . " | login",
+                    "user" => Yii::app()->user->name,
+                    "dupdate" => date("Y-m-d H:i:s"),
+                    "ip" => Yii::app()->request->userHostAddress,
+                    "status" => "TRUE"
+                );
+                Yii::app()->db->createCommand()
+                        ->insert("loguserlogin", $columns);
                 $this->redirect(array('backend/backend/index'));
+            } else {
+                $columns = array(
+                    "log" => "!LoginFail | login",
+                    "user" => "",
+                    "dupdate" => date("Y-m-d H:i:s"),
+                    "ip" => Yii::app()->request->userHostAddress,
+                    "status" => "FALSE"
+                );
+                Yii::app()->db->createCommand()
+                        ->insert("loguserlogin", $columns);
+                
+                //$this->renderPartial('login', array('model' => $model));
+            }
         }
         // display the login form
         $this->renderPartial('login', array('model' => $model));

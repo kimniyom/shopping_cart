@@ -61,10 +61,15 @@ class Masuser extends CActiveRecord {
     public function relations() {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
+        /*
         return array(
             'news' => array(self::HAS_MANY, 'News', 'pid'),
             'orders' => array(self::HAS_MANY, 'Orders', 'pid'),
         );
+         * 
+         */
+        return array(
+		);
     }
 
     /**
