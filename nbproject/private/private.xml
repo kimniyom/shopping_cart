@@ -30,19 +30,6 @@
             <file>file:/D:/xampp/htdocs/kstudio/protected/models/Backend_product.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/images/loadimages.php</file>
         </group>
-        <group name="yii">
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/ContactuserController.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/layouts/template_backend.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/BackendController.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/index.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/contactuser/contact.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/backend/CategoryController.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/contactuser/view.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/controllers/SiteController.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/models/Contactuser.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/contactuser/noread.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/views/backend/contactuser/read.php</file>
-            <file>file:/Applications/MAMP/htdocs/shopping_cart/protected/config/main.php</file>
-        </group>
+        <group name="yii"/>
     </open-files>
 </project-private>
