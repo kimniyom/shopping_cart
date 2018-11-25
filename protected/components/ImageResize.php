@@ -46,7 +46,7 @@ class ImageResize
     protected $source_info;
 
 
-    protected $filters = [];
+    protected $filters = array();
 
     /**
      * Create instance from a strng

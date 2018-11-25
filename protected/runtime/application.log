@@ -9487,3 +9487,97 @@ Stack trace:
 REQUEST_URI=/shopping_cart/frontend/masuser/updatepassword
 HTTP_REFERER=http://localhost/shopping_cart/backend/backend/index
 ---
+2018/11/23 23:33:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\xampp\htdocs\kstudio\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\xampp\htdocs\kstudio\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\xampp\htdocs\kstudio\protected\models\Product.php(63): CModule->__get('db')
+#5 D:\xampp\htdocs\kstudio\protected\views\site\index.php(15): Product->_get_last_product()
+#6 D:\xampp\htdocs\kstudio\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\kstudio\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#9 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#10 D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php(32): CController->render('index')
+#11 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#12 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('index')
+#16 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#17 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/kstudio/
+---
+2018/11/23 23:34:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\xampp\htdocs\kstudio\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\xampp\htdocs\kstudio\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\xampp\htdocs\kstudio\protected\models\Product.php(63): CModule->__get('db')
+#5 D:\xampp\htdocs\kstudio\protected\views\site\index.php(15): Product->_get_last_product()
+#6 D:\xampp\htdocs\kstudio\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\kstudio\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#9 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#10 D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php(32): CController->render('index')
+#11 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#12 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('index')
+#16 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#17 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/kstudio/
+---
+2018/11/23 23:34:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)' in D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\xampp\htdocs\kstudio\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\xampp\htdocs\kstudio\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\xampp\htdocs\kstudio\protected\models\Product.php(63): CModule->__get('db')
+#5 D:\xampp\htdocs\kstudio\protected\views\site\index.php(15): Product->_get_last_product()
+#6 D:\xampp\htdocs\kstudio\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#7 D:\xampp\htdocs\kstudio\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', NULL, true)
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', NULL, true)
+#9 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): CController->renderPartial('index', NULL, true)
+#10 D:\xampp\htdocs\kstudio\protected\controllers\SiteController.php(32): CController->render('index')
+#11 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#12 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('index')
+#16 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('')
+#17 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#18 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#19 {main}
+REQUEST_URI=/kstudio/
+---
+2018/11/24 00:46:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[HY000] [1045] Access denied for user 'h516703'@'localhost' (using password: YES)' in D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php:382
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php(330): CDbConnection->open()
+#1 D:\xampp\htdocs\kstudio\framework\db\CDbConnection.php(308): CDbConnection->setActive(true)
+#2 D:\xampp\htdocs\kstudio\framework\base\CModule.php(387): CDbConnection->init()
+#3 D:\xampp\htdocs\kstudio\framework\base\CModule.php(103): CModule->getComponent('db')
+#4 D:\xampp\htdocs\kstudio\protected\models\Article.php(54): CModule->__get('db')
+#5 D:\xampp\htdocs\kstudio\protected\controllers\frontend\ArticleController.php(16): Article->Count()
+#6 [internal function]: ArticleController->actionIndex(NULL)
+#7 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#8 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#9 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('')
+#13 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/articl...')
+#14 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/kstudio/frontend/article
+HTTP_REFERER=http://localhost/kstudio/
+---
