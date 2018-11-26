@@ -56,7 +56,7 @@ $ProductModel = new Backend_Product();
 <div class="well" style=" width:100%; margin-top:20px;text-align: left; background: #FFF;">
     <div class="row">
 
-        <div class="col-lg-4 col-md-12 col-xs-12">
+        <div class="col-lg-6 col-md-6 col-xs-12">
             <a href="<?php echo Yii::app()->createUrl('backend/product/update', array("product_id" => $product['product_id'])) ?>">
                 <button type="button" class="btn btn-default"><i class="fa fa-pencil"></i> Update</button></a>
             <hr/>
@@ -84,7 +84,7 @@ $ProductModel = new Backend_Product();
             <br/>สถานะ:<?php echo $ProductModel->Status($product['status']) ?>
         </div>
 
-        <div class="col-lg-8 col-md-12 col-xs-12" style=" padding-top: 20px;">
+        <div class="col-lg-6 col-md-6 col-xs-12" style=" padding-top: 20px;">
             <?php
             $product_model = new Product();
             $img_title = $product_model->firstpictures($product['product_id']);
@@ -127,15 +127,49 @@ $ProductModel = new Backend_Product();
         </div>
     </div>
 
-    <hr/>
-    <h4 style="font-weight:bold; font-size: 24px; color: #F00;">
-        <i class="fa fa-tag"></i> รายละเอียด
-    </h4>
-    <div class="well">
-        <div class="row" id="etc_product">
-            <div class="col-lg-12 col-md-12">
-                <?= $product['product_detail'] ?>
+    <div>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">รายละเอียด</a></li>
+            <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">รีวิว(<?php echo $countreview ?>)</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+                <div class="row" id="etc_product">
+                    <div class="col-lg-12 col-md-12">
+                        <div style=" padding: 10px;">
+                            <?= $product['product_detail'] ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="review">
+                <div id="box-review" style=" padding: 10px;"></div>
             </div>
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    loadreview();
+    function loadreview() {
+        $("#box-review").html("<center><i class='fa fa-spinner fa-spin fa-2x'></i></center>");
+        var product_id = "<?php echo $product['product_id'] ?>";
+        var url = "<?php echo Yii::app()->createUrl('backend/product/review') ?>";
+        var data = {product_id: product_id};
+
+        $.post(url, data, function (result) {
+            $("#box-review").html(result);
+        });
+    }
+
+    function deleteReview(id) {
+        var url = "<?php echo Yii::app()->createUrl('backend/product/deletereview') ?>";
+        var data = {id: id};
+        $.post(url, data, function (datas) {
+            loadreview();
+        });
+    }
+</script>

@@ -9581,3 +9581,35 @@ Stack trace:
 REQUEST_URI=/kstudio/frontend/article
 HTTP_REFERER=http://localhost/kstudio/
 ---
+2018/11/27 00:20:06 [error] [php] Undefined index: email (D:\xampp\htdocs\kstudio\protected\views\backend\product\review.php:12)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ProductController->renderFile()
+#1 D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php(479): ProductController->renderPartial()
+#2 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): ProductController->actionReview()
+#3 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ProductController->runAction()
+#5 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#6 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ProductController->run()
+#7 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/product/review
+in D:\xampp\htdocs\kstudio\protected\views\backend\product\review.php (12)
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php (479)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/11/27 00:21:15 [error] [php] Undefined index: email (D:\xampp\htdocs\kstudio\protected\views\backend\product\review.php:12)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ProductController->renderFile()
+#1 D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php(479): ProductController->renderPartial()
+#2 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(49): ProductController->actionReview()
+#3 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ProductController->runAction()
+#5 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ProductController->runActionWithFilters()
+#6 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ProductController->run()
+#7 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/backend/product/review
+in D:\xampp\htdocs\kstudio\protected\views\backend\product\review.php (12)
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\ProductController.php (479)
+in D:\xampp\htdocs\kstudio\index.php (14)

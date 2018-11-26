@@ -141,7 +141,7 @@ class ProductController extends Controller {
 
         Yii::app()->db->createCommand()
                 ->update('product', $data, "product_id = '$product_id'");
-        
+
         $columns = array(
             "product_id" => $product_id,
             "user" => Yii::app()->user->name,
@@ -157,7 +157,8 @@ class ProductController extends Controller {
         $product_id = $_GET['product_id'];
 
         $product = new Backend_product();
-
+        $review = Review::model()->findAll('product_id=:product_id', array(':product_id' => $product_id));
+        $data['countreview'] = count($review);
         $data['images'] = $product->get_images_product($product_id);
         $data['product'] = $product->_get_detail_product($product_id);
 
@@ -455,7 +456,7 @@ class ProductController extends Controller {
 
     public function actionDeleteproduct() {
         $product_id = Yii::app()->request->getPost('product_id');
-        
+
         $columns = array(
             "product_id" => $product_id,
             "user" => Yii::app()->user->name,
@@ -465,12 +466,24 @@ class ProductController extends Controller {
 
         Yii::app()->db->createCommand()
                 ->insert("logproduct", $columns);
-        
+
         Yii::app()->db->createCommand()
                 ->delete("product_images", "product_id='$product_id'");
 
         Yii::app()->db->createCommand()
                 ->delete("product", "product_id='$product_id'");
+    }
+
+    public function actionReview() {
+        $productID = Yii::app()->request->getPost('product_id');
+        $data['review'] = Review::model()->findAll('product_id=:product_id', array(':product_id' => $productID));
+        $this->renderPartial("//backend/product/review", $data);
+    }
+
+    public function actionDeletereview() {
+        $id = Yii::app()->request->getPost('id');
+        Yii::app()->db->createCommand()
+                ->delete("review", "id='$id'");
     }
 
 }
