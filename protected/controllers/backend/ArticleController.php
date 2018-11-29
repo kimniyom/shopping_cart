@@ -273,4 +273,63 @@ class ArticleController extends Controller {
                 ->delete("article", "id = '$id' ");
     }
 
+    public function actionGallery($id) {
+        $targetFolder = Yii::app()->baseUrl . '/uploads/article/gallery'; // Relative to the root
+        if (!empty($_FILES)) {
+
+            $tempFile = $_FILES['Filedata']['tmp_name'];
+            $targetPath = $_SERVER['DOCUMENT_ROOT'] . $targetFolder;
+            $FULLNAME = $_FILES['Filedata']['name'];
+            $type = substr($FULLNAME, -3);
+            $Name = "img_" . $this->Randstrgen() . "." . $type;
+            $targetFile = $targetPath . '/' . $Name;
+
+
+            $fileTypes = array('jpg', 'jpeg', 'JPG', 'JPEG'); // File extensions
+            $fileParts = pathinfo($_FILES['Filedata']['name']);
+
+            if (in_array($fileParts['extension'], $fileTypes)) {
+
+//สั่งอัพเดท
+                $columns = array(
+                    "images" => $Name,
+                    "article" => $id
+                );
+
+                Yii::app()->db->createCommand()
+                        ->insert("articlegallery", $columns);
+
+                $width = 1280; //*** Fix Width & Heigh (Autu caculate) ***//
+//$new_images = "Thumbnails_".$_FILES["Filedata"]["name"];
+                $size = getimagesize($_FILES['Filedata']['tmp_name']);
+                $height = round($width * $size[1] / $size[0]);
+
+                $images_orig = imagecreatefromjpeg($tempFile);
+
+                $photoX = imagesx($images_orig);
+                $photoY = imagesy($images_orig);
+
+                $images_fin = imagecreatetruecolor($width, $height);
+                imagecopyresampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
+
+                imagejpeg($images_fin, "uploads/article/gallery" . $Name);
+
+                imagedestroy($images_orig);
+                imagedestroy($images_fin);
+
+                $this->ThumbnailGallery($Name, 600, 486);
+                $this->ThumbnailGallery($Name, 200, 200);
+                $this->ThumbnailGallery($Name, 870, 500);
+                $this->ThumbnailGallery($Name, 80, 100);
+            }
+        }
+    }
+    
+     public function ThumbnailGallery($Name, $width, $height) {
+        $image = new ImageResize("uploads/article/" . $Name);
+        $image->quality_jpg = 100;
+        $image->crop($width, $height, true, ImageResize::CROPCENTER);
+        $image->save("uploads/article/" . $width . '-' . $Name);
+    }
+
 }
