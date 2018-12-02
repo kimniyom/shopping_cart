@@ -1,5 +1,31 @@
+<?php $config = new Configweb_model(); ?>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#file_upload').uploadifive({
+            'buttonText': 'เลือกไฟล์ ...',
+            'uploadScript': '<?php echo Yii::app()->createUrl('backend/article/gallery', array('id' => $result['id'])) ?>',
+            'auto': true,
+            'removeCompleted' : true,
+            'fileSizeLimit': '<?php echo $config->SizeFileUpload() ?>',
+            'fileType': ["image/jpeg", "image/jpg", "image/JPG", "image/JPEG"],
+            'queueSizeLimit': 5, //อัพโหลดได้ครั้งละ 5 ไฟล์
+            'onAddQueueItem': function (file) {
+                $("#images").val(file.name);
+            },
+            'onError': function (errorType) {
+                alert('The error was: ' + errorType);
+                $("#images").val("");
+            },
+            'onCancel': function (file) {
+                $("#images").val("");
+            },
+            'onUploadComplete': function (file, data, response) {
+                loadgallery();
+            }
+        });
+    });
+</script>
 <?php
-$config = new Configweb_model();
 $this->breadcrumbs = array(
     "บทความทั้งหมด" => array('backend/article'),
     $result['title'],
@@ -8,7 +34,7 @@ $this->breadcrumbs = array(
 <div class="pull-right">
     <a href="<?php echo Yii::app()->createUrl('backend/article/update/id/' . $result['id']) ?>">
         <button type="button" class="btn btn-warning btn-sm" title="แก้ไข"><i class="fa fa-edit"></i> แก้ไข</button></a>
-    <button type="button" class="btn btn-danger btn-sm" title="ลบ" onclick="delete_article('<?php echo $result['id']?>')"><i class="fa fa-trash"></i> ลบ</button>
+    <button type="button" class="btn btn-danger btn-sm" title="ลบ" onclick="delete_article('<?php echo $result['id'] ?>')"><i class="fa fa-trash"></i> ลบ</button>
 </div>
 <div class="well" style="border-left: solid #009900 3px; border-radius: 0px; background: none;">
     <div class="row">
@@ -31,9 +57,14 @@ $this->breadcrumbs = array(
     <i class="fa fa-user"></i> <?php echo $result['name'] . ' ' . $result['lname'] ?>
     <i class="fa fa-calendar"></i> <?php echo $result['create_date'] ?>
     <br/><br/>
+    <h4>Gallery</h4>
+    <input type="file" name="file_upload" id="file_upload" />
+    (ไฟล์นามสกุล jpg ไม่เกิน 2MB)
+    <div id="gallery"></div>
 </div>
 
 <script>
+    loadgallery();
     function delete_article(id) {
         var url = "<?php echo Yii::app()->createUrl('backend/article/delete') ?>";
         var r = confirm("คุณแน่ใจหรือไม่ ...?");
@@ -43,5 +74,22 @@ $this->breadcrumbs = array(
                 window.location = "<?php echo Yii::app()->createUrl('backend/article') ?>";
             });
         }
+    }
+
+    function loadgallery() {
+        var url = "<?php echo Yii::app()->createUrl('backend/article/getgallery') ?>";
+        var article = "<?php echo $result['id'] ?>";
+        var data = {article: article};
+        $.post(url, data, function (datas) {
+            $("#gallery").html(datas);
+        });
+    }
+
+    function DeletGallery(id) {
+        var url = "<?php echo Yii::app()->createUrl('backend/article/deletegallery') ?>";
+        var data = {id: id};
+        $.post(url, data, function (datas) {
+            loadgallery();
+        });
     }
 </script>
