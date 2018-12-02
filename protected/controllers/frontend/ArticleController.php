@@ -103,6 +103,8 @@ class ArticleController extends Controller {
 
         $data['near'] = Yii::app()->db->createCommand($sqlnear)->queryAll();
 
+        $sqlGallery = "select * from articlegallery where article = '$id' ";
+        $data['gallery'] = Yii::app()->db->createCommand($sqlGallery)->queryAll();
         $this->render("//article/view", $data);
     }
 
