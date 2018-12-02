@@ -50,6 +50,7 @@ $this->breadcrumbs = array(
                             <span class="label label-danger" style=" font-size: 14px;"><i class="fa fa-tag"></i> <?php echo $result['category_name'] ?></span><br/><br/>
                         </div>
                     </article>
+
                     <br/>
                     <div class="row">
                         <div class="col-md-12 text-center">
@@ -57,12 +58,25 @@ $this->breadcrumbs = array(
                                 <ul>
                                     <li>
                                         <div style=" float: left; margin-top: 1px; margin-right: 10px;">Share : <i class="fa fa-facebook"></i></div><div class="fb-share-button" data-layout="button_count"></div><br/>
-
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+                    <br/>
+
+                    <?php if (count($gallery) > 0) { ?>
+                    <h4 class=" font-supermarket" style=" font-size: 24px;">Gallery</h4>
+                        <br/>
+                        <div class="row">
+                            <?php foreach ($gallery as $gallerys): ?>
+                                <div class="col-md-3 col-lg-2 col-sm-3 col-xs-3">
+                                    <img src="<?php echo Yii::app()->baseUrl ?>/uploads/article/gallery/200-<?php echo $gallerys['images'] ?>" class="img img-responsive"/>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <hr/>
+                    <?php } ?>
                     <div class="row" style=" margin-bottom: 20px;">
                         <div class="col-md-12">
                             <div class="post-control">
@@ -85,22 +99,22 @@ $this->breadcrumbs = array(
                             </div>
                         </div>
                     </div>
-                    <?php if(count($near) > 0){ ?>
-                    <hr/>
-                    <article class="blog-detail">
-                        <h3 style=" text-align: center;">ที่เกี่ยวข้อง</h3><br/>
-                    </article>
-                    <br/>
-                    <div class="row">
-                        <?php foreach ($near as $nears): ?>
-                            <div class="col-md-4 col-lg-4 col-sm-4">
-                                <img class="img img-responsive" src="<?= Yii::app()->baseUrl; ?>/uploads/article/600-<?php echo $nears['images'] ?>" alt="feature-image"><br/>
-                                <a href="<?php echo Yii::app()->createUrl('frontend/article/views', array('id' => $nears['id'])) ?>">
-                                    <?php echo $config->thaidate(substr($nears['create_date'], 0, 10)) ?><br/>
-                                    <?php echo $nears['title'] ?></a>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
+                    <?php if (count($near) > 0) { ?>
+                        <hr/>
+                        <article class="blog-detail">
+                            <h3 style=" text-align: center;">ที่เกี่ยวข้อง</h3><br/>
+                        </article>
+                        <br/>
+                        <div class="row">
+                            <?php foreach ($near as $nears): ?>
+                                <div class="col-md-4 col-lg-4 col-sm-4">
+                                    <img class="img img-responsive" src="<?= Yii::app()->baseUrl; ?>/uploads/article/600-<?php echo $nears['images'] ?>" alt="feature-image"><br/>
+                                    <a href="<?php echo Yii::app()->createUrl('frontend/article/views', array('id' => $nears['id'])) ?>">
+                                        <?php echo $config->thaidate(substr($nears['create_date'], 0, 10)) ?><br/>
+                                        <?php echo $nears['title'] ?></a>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
                     <?php } ?>
                 </div>
                 <div class="col-md-3">
@@ -140,7 +154,7 @@ $this->breadcrumbs = array(
                             <h4 class="title-widget text-center font-supermarket">Categories</h4>
                             <ul>
                                 <?php foreach ($category as $categorys): ?>
-                                <li style=" margin-bottom: 0px; padding: 0px;">
+                                    <li style=" margin-bottom: 0px; padding: 0px;">
                                         <a href="<?php echo Yii::app()->createUrl('frontend/article/index', array('category' => $categorys['id'])) ?>" class=" font-THK" style=" font-size: 22px;"><?php echo $categorys['category'] ?>
                                             <span class="badge pull-right" style=" color: #000; font-size: 18px; margin-top: 5px;"><?php echo $articleModel->CountArticleByCategory($categorys['id']) ?></span>
                                         </a>
