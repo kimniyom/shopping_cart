@@ -24,7 +24,7 @@ class ArticleController extends Controller {
             array('allow', // allow authenticated user to perform 'create' and 'update' actions
                 'actions' => array(
                     'index', 'create', 'update', 'checkproduct', 'delet', 'view', 'delete',
-                    'save', 'upload', 'save_update'
+                    'save', 'upload', 'save_update', 'getgallery', 'gallery', 'deletegallery'
                 ),
                 'users' => array('@'),
             ),
@@ -246,6 +246,7 @@ class ArticleController extends Controller {
         $id = $_POST['id'];
         $art = new Backend_article();
         $rs = $art->Get_article_by_id($id);
+        $this->Deletegalleryall($id);
         if (!empty($rs['images'])) {
             $filename = './uploads/article/' . $rs['images'];
 
@@ -312,24 +313,91 @@ class ArticleController extends Controller {
                 $images_fin = imagecreatetruecolor($width, $height);
                 imagecopyresampled($images_fin, $images_orig, 0, 0, 0, 0, $width + 1, $height + 1, $photoX, $photoY);
 
-                imagejpeg($images_fin, "uploads/article/gallery" . $Name);
+                imagejpeg($images_fin, "uploads/article/gallery/" . $Name);
 
                 imagedestroy($images_orig);
                 imagedestroy($images_fin);
 
                 $this->ThumbnailGallery($Name, 600, 486);
                 $this->ThumbnailGallery($Name, 200, 200);
-                $this->ThumbnailGallery($Name, 870, 500);
+                $this->ThumbnailGallery($Name, 480, 480);
                 $this->ThumbnailGallery($Name, 80, 100);
             }
         }
     }
-    
-     public function ThumbnailGallery($Name, $width, $height) {
-        $image = new ImageResize("uploads/article/" . $Name);
+
+    public function ThumbnailGallery($Name, $width, $height) {
+        $image = new ImageResize("uploads/article/gallery/" . $Name);
         $image->quality_jpg = 100;
         $image->crop($width, $height, true, ImageResize::CROPCENTER);
-        $image->save("uploads/article/" . $width . '-' . $Name);
+        $image->save("uploads/article/gallery/" . $width . '-' . $Name);
+    }
+
+    public function actionGetgallery() {
+        $article = Yii::app()->request->getPost('article');
+        $sql = "select * from articlegallery where article = '$article' ";
+        $data['gallery'] = Yii::app()->db->createCommand($sql)->queryAll();
+        $this->renderPartial('gallery', $data);
+    }
+
+    public function actionDeletegallery() {
+        $id = Yii::app()->request->getPost('id');
+        $sql = "select * from articlegallery where id = '$id' ";
+        $gallery = Yii::app()->db->createCommand($sql)->queryRow();
+        $path = "uploads/article/gallery/";
+        if (file_exists($path . $gallery['images'])) {
+            unlink($path . $gallery['images']);
+        }
+
+        if (file_exists($path . "80-" . $gallery['images'])) {
+            unlink($path . "80-" . $gallery['images']);
+        }
+
+        if (file_exists($path . "200-" . $gallery['images'])) {
+            unlink($path . "200-" . $gallery['images']);
+        }
+
+        if (file_exists($path . "480-" . $gallery['images'])) {
+            unlink($path . "480-" . $gallery['images']);
+        }
+
+        if (file_exists($path . "600-" . $gallery['images'])) {
+            unlink($path . "600-" . $gallery['images']);
+        }
+
+        Yii::app()->db->createCommand()
+                ->delete("articlegallery", "id='$id'");
+    }
+
+    private function Deletegalleryall($article) {
+        $sql = "select * from articlegallery where article = '$article' ";
+        $gallerys = Yii::app()->db->createCommand($sql)->queryAll();
+        $path = "uploads/article/gallery/";
+        foreach ($gallerys as $gallery):
+            if (file_exists($path . $gallery['images'])) {
+                unlink($path . $gallery['images']);
+            }
+
+            if (file_exists($path . "80-" . $gallery['images'])) {
+                unlink($path . "80-" . $gallery['images']);
+            }
+
+            if (file_exists($path . "200-" . $gallery['images'])) {
+                unlink($path . "200-" . $gallery['images']);
+            }
+
+            if (file_exists($path . "480-" . $gallery['images'])) {
+                unlink($path . "480-" . $gallery['images']);
+            }
+
+            if (file_exists($path . "600-" . $gallery['images'])) {
+                unlink($path . "600-" . $gallery['images']);
+            }
+
+        endforeach;
+
+        Yii::app()->db->createCommand()
+                ->delete("articlegallery", "article='$article'");
     }
 
 }
