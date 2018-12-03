@@ -9776,3 +9776,152 @@ Stack trace:
 REQUEST_URI=/kstudio/backend/article/deletegallery
 in D:\xampp\htdocs\kstudio\protected\controllers\backend\ArticleController.php (352)
 in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/03 15:29:28 [error] [php] Undefined variable: rs (D:\xampp\htdocs\kstudio\protected\views\article\view.php:74)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ArticleController->renderFile()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): ArticleController->renderPartial()
+#2 D:\xampp\htdocs\kstudio\protected\controllers\frontend\ArticleController.php(108): ArticleController->render()
+#3 unknown(0): ArticleController->actionViews()
+#4 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ArticleController->runAction()
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#9 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ArticleController->run()
+#10 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/frontend/article/views/id/6
+in D:\xampp\htdocs\kstudio\protected\views\article\view.php (74)
+in D:\xampp\htdocs\kstudio\protected\controllers\frontend\ArticleController.php (108)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/03 17:26:13 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (67)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/03 17:26:55 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (67)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/03 17:28:42 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (105)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/03 17:29:42 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (105)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/03 17:29:42 [error] [exception.ImageResizeException] exception 'ImageResizeException' with message 'File does not exist' in D:\xampp\htdocs\kstudio\protected\components\ImageResize.php:106
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php(124): ImageResize->__construct('uploads/categor...')
+#1 [internal function]: CategoryController->actionUpdate('1')
+#2 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(CategoryController), Array)
+#3 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CategoryController), Object(ReflectionMethod), Array)
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\kstudio\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\kstudio\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\kstudio\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\xampp\htdocs\kstudio\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\kstudio\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/categor...')
+#14 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/kstudio/backend/category/update/id/1
+HTTP_REFERER=http://localhost/kstudio/backend/category/update/id/1
+---
+2018/12/03 17:30:08 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (105)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/03 17:30:08 [error] [exception.ImageResizeException] exception 'ImageResizeException' with message 'File does not exist' in D:\xampp\htdocs\kstudio\protected\components\ImageResize.php:106
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php(124): ImageResize->__construct('uploads/categor...')
+#1 [internal function]: CategoryController->actionUpdate('1')
+#2 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(CategoryController), Array)
+#3 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(CategoryController), Object(ReflectionMethod), Array)
+#4 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 D:\xampp\htdocs\kstudio\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 D:\xampp\htdocs\kstudio\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 D:\xampp\htdocs\kstudio\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 D:\xampp\htdocs\kstudio\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 D:\xampp\htdocs\kstudio\framework\web\CController.php(291): CFilterChain->run()
+#11 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('update')
+#13 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('backend/categor...')
+#14 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/kstudio/backend/category/update/id/1
+HTTP_REFERER=http://localhost/kstudio/backend/category/update/id/1
+---
+2018/12/03 17:31:17 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (105)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/03 17:31:42 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (105)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/03 17:32:06 [warning] [application] Failed to set unsafe attribute "icons" of "Category".
+in D:\xampp\htdocs\kstudio\protected\controllers\backend\CategoryController.php (105)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/04 00:41:41 [error] [php] Illegal string offset 'categoryname' (D:\xampp\htdocs\kstudio\protected\views\article\article_all.php:69)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ArticleController->renderFile()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): ArticleController->renderPartial()
+#2 D:\xampp\htdocs\kstudio\protected\controllers\frontend\ArticleController.php(19): ArticleController->render()
+#3 unknown(0): ArticleController->actionIndex()
+#4 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ArticleController->runAction()
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#9 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ArticleController->run()
+#10 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/frontend/article/index/category/1
+in D:\xampp\htdocs\kstudio\protected\views\article\article_all.php (69)
+in D:\xampp\htdocs\kstudio\protected\controllers\frontend\ArticleController.php (19)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/04 00:41:49 [error] [php] Illegal string offset 'category_name' (D:\xampp\htdocs\kstudio\protected\views\article\article_all.php:69)
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): ArticleController->renderFile()
+#1 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): ArticleController->renderPartial()
+#2 D:\xampp\htdocs\kstudio\protected\controllers\frontend\ArticleController.php(19): ArticleController->render()
+#3 unknown(0): ArticleController->actionIndex()
+#4 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs()
+#5 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): ArticleController->runAction()
+#8 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): ArticleController->runActionWithFilters()
+#9 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): ArticleController->run()
+#10 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 D:\xampp\htdocs\kstudio\index.php(14): CWebApplication->run()
+REQUEST_URI=/kstudio/frontend/article/index/category/1
+in D:\xampp\htdocs\kstudio\protected\views\article\article_all.php (69)
+in D:\xampp\htdocs\kstudio\protected\controllers\frontend\ArticleController.php (19)
+in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/04 00:52:46 [error] [exception.CException] exception 'CException' with message 'Property "Articlecategory.categoryname" is not defined.' in D:\xampp\htdocs\kstudio\framework\base\CComponent.php:130
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\db\ar\CActiveRecord.php(145): CComponent->__get('categoryname')
+#1 D:\xampp\htdocs\kstudio\framework\base\CModel.php(596): CActiveRecord->__get('categoryname')
+#2 D:\xampp\htdocs\kstudio\protected\views\article\article_all.php(70): CModel->offsetGet('categoryname')
+#3 D:\xampp\htdocs\kstudio\framework\web\CBaseController.php(126): require('D:\\xampp\\htdocs...')
+#4 D:\xampp\htdocs\kstudio\framework\web\CBaseController.php(95): CBaseController->renderInternal('D:\\xampp\\htdocs...', Array, true)
+#5 D:\xampp\htdocs\kstudio\framework\web\CController.php(869): CBaseController->renderFile('D:\\xampp\\htdocs...', Array, true)
+#6 D:\xampp\htdocs\kstudio\framework\web\CController.php(782): CController->renderPartial('//article/artic...', Array, true)
+#7 D:\xampp\htdocs\kstudio\protected\controllers\frontend\ArticleController.php(19): CController->render('//article/artic...', Array)
+#8 [internal function]: ArticleController->actionIndex('1')
+#9 D:\xampp\htdocs\kstudio\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ArticleController), Array)
+#10 D:\xampp\htdocs\kstudio\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ArticleController), Object(ReflectionMethod), Array)
+#11 D:\xampp\htdocs\kstudio\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 D:\xampp\htdocs\kstudio\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 D:\xampp\htdocs\kstudio\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run('index')
+#15 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('frontend/articl...')
+#16 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/kstudio/frontend/article/index/category/1
+HTTP_REFERER=http://localhost/kstudio/frontend/product/category/id/1
+---

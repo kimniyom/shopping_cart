@@ -65,13 +65,45 @@
 </script>
 
 <?php
+if ($category != "") {
+    $Cat = Articlecategory::model()->find("id=:id", array(":id" => $category));
+    $title = $Cat['category'];
+} else {
+    $title = "บทความ / event";
+}
 $this->breadcrumbs = array(
-    "บทความ / event",
+    "ทั้งหมด" => array('frontend/article/index'),
+    $title,
 );
 ?>
 <div class="container">
     <br/>
-    <h4 class="font-THK" style=" font-size: 20px;">ทั้งหมด <?php echo $count ?> รายการ</h4>
+    <div class="row">
+        <div class="col-lg-12">
+            <div style=" float: left; color: #9d1419;">
+                <?php if ($category != "") { ?>
+                    <h2 class="font-supermarket"><?php echo $Cat['category'] ?></h2>
+                    <hr style=" margin: 10px 0px; border-bottom: #9d1419 solid 2px;"/>
+                    <h4 class="font-supermarket" style=" font-size: 20px;" >ทั้งหมด <?php echo $count ?> รายการ</h4>
+                <?php } else { ?>
+                    <h4 class="font-supermarket" style=" font-size: 20px; padding-top: 30px;" >ทั้งหมด <?php echo $count ?> รายการ</h4>
+                <?php } ?>
+            </div>
+            <div style=" float: left; color: #9d1419; margin-left: 20px; padding-top: 20px;">
+                <?php
+                $categoryAll = Articlecategory::model()->findAll();
+                $articleModel = new Article();
+                foreach ($categoryAll as $cats):
+                    ?>
+                    <a href="<?php echo Yii::app()->createUrl('frontend/article/index', array('category' => $cats['id'])) ?>">
+                        <button type="button" class="btn btn-default">
+                            <?php echo $cats['category'] ?>
+                            (<?php echo $articleModel->CountArticleByCategory($cats['id']) ?>)
+                        </button></a>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </div>
     <div class="row" id="results" style="margin-top:20px;"></div>
     <br/>
 

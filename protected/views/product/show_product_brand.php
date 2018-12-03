@@ -77,7 +77,7 @@ $this->breadcrumbs = array(
 ?>
 
 <div class="container" style=" padding: 30px;">
-    <h4>จำนวนที่พบ <?php echo $count ?> รายการ</h4><br/>
+    <h4 class="font-supermarket" style="color: #9d1419; font-size: 20px;">จำนวนที่พบ <?php echo $count ?> รายการ</h4><br/>
     <div class="row product-grid-equal-height-wrapper product-equal-height-4-columns flex multi-row" id="results">
     </div>
 </div>

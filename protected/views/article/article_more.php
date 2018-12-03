@@ -31,7 +31,7 @@
                 <img src="<?php echo Yii::app()->baseUrl; ?>/<?php echo $img_art; ?>" class="img img-responsive"/>
                 <div class="caption"id="article-box">
                     <i class="fa fa-calendar-o"></i> <?php echo $config->thaidate($art['create_date']) ?> <i class="fa fa-comment-o"></i> <?php echo $art['countread'] ?>
-                    <p class="font-THK" style=" font-size: 24px;"><?php echo $art['title']; ?></p>
+                    <p class="font-THK" style=" font-size: 24px; color: #333333;"><?php echo $art['title']; ?></p>
                 </div>
                 <p style=" text-align: right;"><a href="<?php echo $link; ?>" class="btn" role="button"><i class="fa fa-angle-double-right"></i> รายละเอียด</a></p>
             </div> 

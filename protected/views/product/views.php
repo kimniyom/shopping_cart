@@ -46,7 +46,7 @@ $this->breadcrumbs = array(
 <?php
 $productModel = new Product();
 ?>
-<div class="view-products" style=" margin-top: 10px;">
+<div class="view-products" style=" padding-top: 10px;">
     <div class="shop-detail-3 woocommerce" id="page">
         <!--
         <section class="sub-header shop-detail-1">

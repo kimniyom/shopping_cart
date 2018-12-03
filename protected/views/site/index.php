@@ -9,6 +9,24 @@
         transition:0.2s ease-out;
         padding: 0px;
     }
+
+    #text-price{
+        color:#000000; font-weight: bold; font-size: 18px;
+    }
+    /* centered columns styles */
+    .row-centered {
+        text-align:center;
+    }
+    .col-centered {
+        display:inline-block;
+        float:none;
+        /* reset the text-align */
+        text-align:left;
+        /* inline-block space fix */
+        margin-right:-4px;
+        text-align: center;
+
+    }
 </style>
 <?php
 $productModel = new Product();
@@ -47,9 +65,7 @@ $Categorys = Category::model()->findAll();
                     }
                     ?>
                     <div class="tp-caption" data-x="center" data-y="center" data-voffset="['120','120','200','200']" data-transform_in="y:100px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:200px;opacity:0;s:300;" data-start="1600" <?php echo $style ?>>
-
-                        <a class="btn btn-brand pill" href="http://<?php echo $baners['link'] ?>" target="_blank" style="color:#ffffff;">SHOP NOW</a>
-
+                        <a class="btn btn-default pill" href="http://<?php echo $baners['link'] ?>" target="_blank">SHOP NOW</a>
                     </div>
                 </li>
             <?php endforeach; ?>
@@ -57,10 +73,10 @@ $Categorys = Category::model()->findAll();
     </div>
 </div>
 
-<section class="boxed-sm">
+<section class="boxed-sm" style=" background: url('<?php echo Yii::app()->baseUrl ?>/images/bg_content.png');background-repeat: repeat-x; ">
     <div class="container">
         <div class="heading-wrapper text-center">
-            <h3 class="heading">The Blog</h3>
+            <h3 class="heading font-supermarket">The Blog</h3>
         </div>
         <div class="row">
             <div class="row blog-h reverse flex one-row multi-row-sm" style=" margin-bottom: 0px;">
@@ -88,46 +104,48 @@ $Categorys = Category::model()->findAll();
             </div>
         </div>
     </div>
-    <div class="container" style=" text-align: center;">
-        <div class="row">
-            <a class="btn btn-brand pill" href="<?php echo Yii::app()->createUrl('frontend/article') ?>">VIEW MORE </a>
+    <div class="container" style=" text-align: center; margin-top: 0px;">
+        <div class="row" style=" margin-top: 0px;">
+            <a class="btn btn-default pill" href="<?php echo Yii::app()->createUrl('frontend/article') ?>">VIEW MORE </a>
         </div>
     </div>
 </section>
+<br/>
 
+<div style=" background: #f1f5f9;">
+    <div class="heading-wrapper text-center">
+        <h3 class="heading font-supermarket" style=" margin-bottom: 0px;">SHOP BY CATEGORY</h3>
+    </div>
+    <section class="boxed-sm">
+        <div class="container">
+            <div class="row row-centered">
+                <div class="product-category-grid-style-1" style=" padding-bottom: 30px;">
+                    <div class="row" style=" text-align: center;">
+                        <?php
+                        foreach ($Categorys as $Category):
+                            $CountProductInCat = $productModel->countProductCategory($Category['id']);
+                            ?>
+                            <div class="col-sm-4 col-xs-6 col-sm-4 col-centered  box-category-item">
+                                <a href="<?php echo Yii::app()->createUrl('frontend/product/category', array('id' => $Category['id'])) ?>">
+                                    <figure class="product-category-item">
+                                        <div class="thumbnails" style=" position: relative;">
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/category/<?php echo $Category['icons'] ?>" alt="" class="img img-responsive"/>
+                                            <figcaption  style=" background: url('<?php echo Yii::app()->baseUrl ?>/images/bgheader.png'); text-align: center; position: absolute; bottom: 0px; width: 100%;">
+                                                <h3 class="font-supermarket"style=" color:#000000;"><?php echo $Category['categoryname'] ?> <?php echo $CountProductInCat ?> Items</h3>
+                                            </figcaption>
+                                        </div>
 
-<div class="heading-wrapper text-center">
-    <h3 class="heading" style=" margin-bottom: 0px;">SHOP BY CATEGORY</h3>
-</div>
-<section class="boxed-sm">
-    <div class="container">
-        <div class="row">
-            <div class="product-category-grid-style-1" style=" padding-bottom: 30px;">
-                <div class="row">
-                    <?php
-                    foreach ($Categorys as $Category):
-                        $CountProductInCat = $productModel->countProductCategory($Category['id']);
-                        ?>
-                        <div class="col-sm-4 col-xs-4">
-                            <a href="<?php echo Yii::app()->createUrl('frontend/product/category', array('id' => $Category['id'])) ?>">
-                                <figure class="product-category-item">
-                                    <div class="thumbnails">
-                                        <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/category/<?php echo $Category['icons'] ?>" alt="" class="img img-responsive"/>
-                                    </div>
-                                    <figcaption style=" background:#91b376;">
-                                        <h3 class="font-supermarket"><?php echo $Category['categoryname'] ?> <?php echo $CountProductInCat ?> Items</h3>
-                                    </figcaption>
-                                </figure>
-                            </a>
-                        </div>
-                    <?php endforeach; ?>
+                                    </figure>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-
+    </section>
+</div>
+<br/>
 <section class="boxed-sm">
     <div class="container">
         <div class="product-filter-home-2-wraper">
@@ -184,9 +202,9 @@ $Categorys = Category::model()->findAll();
                             <h4 class="font-supermarket" style=" height: 50px; overflow: hidden;">
                                 <a class="product-name" style="color:#5c5c5c;" href=""><?php echo $rsProduct['product_name'] ?></a>
                             </h4>
-                            <span class="price" style="color:#000000;">
+                            <span class="price font-supermarket" id="text-price">
                                 <?php if ($rsProduct['product_price_pro'] > 0) { ?> 
-                                    <del style=" color: #ff0000;"><?php echo number_format($rsProduct['product_price']) ?>  .-</del>
+                                    <del style=" color: #ff0000;"><?php echo number_format($rsProduct['product_price']) ?></del>
                                     <?php echo number_format($rsProduct['product_price_pro']) ?>  .-
                                 <?php } else { ?>
                                     <?php echo number_format($rsProduct['product_price']) ?>  .-
@@ -220,7 +238,7 @@ $Categorys = Category::model()->findAll();
                             <h4 class="font-supermarket" style=" height: 50px; overflow: hidden;">
                                 <a class="product-name" style="color:#5c5c5c;" href="<?php echo Yii::app()->createUrl('frontend/product/views', array("id" => $rsBestProduct['product_id'])) ?>"><?php echo $rsBestProduct['product_name'] ?></a>
                             </h4>
-                            <span class="price" style="color:#000000;">
+                            <span class="price" style="color:#000000;" id="text-price">
                                 <?php if ($rsBestProduct['product_price_pro'] > 0) { ?> 
                                     <del style=" color: #ff0000;"><?php echo number_format($rsBestProduct['product_price']) ?>  .-</del>
                                     <?php echo number_format($rsBestProduct['product_price_pro']) ?>  .-
@@ -254,7 +272,7 @@ $Categorys = Category::model()->findAll();
                             <h4 class="font-supermarket" style=" height: 50px; overflow: hidden;">
                                 <a class="product-name" style="color:#5c5c5c;" href="<?php echo Yii::app()->createUrl('frontend/product/views', array("id" => $rsSaleProduct['product_id'])) ?>"><?php echo $rsSaleProduct['product_name'] ?></a>
                             </h4>
-                            <span class="price" style="color:#000000;">
+                            <span class="price" style="color:#000000;" id="text-price">
                                 <?php if ($rsSaleProduct['product_price_pro'] > 0) { ?> 
                                     <del style=" color: #ff0000;"><?php echo number_format($rsSaleProduct['product_price']) ?>  .-</del>
                                     <?php echo number_format($rsSaleProduct['product_price_pro']) ?>  .-
@@ -277,7 +295,7 @@ $Categorys = Category::model()->findAll();
 <div style="width: 100%; background: #f1f2f4; padding-bottom: 100px;">
     <div class="relate-product">
         <div class="heading-wrapper text-center">
-            <h3 class="heading">SHOP BY BRAND</h3>
+            <h3 class="heading font-supermarket">SHOP BY BRAND</h3>
         </div>
     </div>
     <div class="slider5" style="margin-bottom:0px; padding-bottom:0px; width: 100%;">
@@ -302,7 +320,7 @@ $Categorys = Category::model()->findAll();
                                 <div class="text-band" style="position: absolute;z-index:10; width:100%; bottom: 0px; right: 0px; text-align:center; color: #5c5c5c;  background: url('<?php echo Yii::app()->baseUrl; ?>/images/bgheader.png');" class="font-supermarket">
                                     <?php echo $rsBrands['brandname'] ?>
                                 </div>
-                               
+
                             </div>
                         </figure>
                     </div>
@@ -318,10 +336,10 @@ $Categorys = Category::model()->findAll();
 
 <script type="text/javascript">
     $(document).ready(function () {
-
         var size = window.innerWidth;
-         if (size >= 1024) {
-              $('.slider5').bxSlider({
+        if (size >= 1024) {
+            $(".box-category-item").css({"margin-top": "30px"});
+            $('.slider5').bxSlider({
                 slideWidth: 300,
                 minSlides: 5,
                 maxSlides: 5,
@@ -332,8 +350,9 @@ $Categorys = Category::model()->findAll();
                 touchEnabled: true,
                 pager: false
             });
-            $(".text-band").css({'font-size':'30px'});
-         } else if (size >= 768) {
+            $(".text-band").css({'font-size': '30px'});
+        } else if (size >= 768) {
+            $(".box-category-item").css({"margin-top": "30px"});
             $('.slider5').bxSlider({
                 slideWidth: 300,
                 minSlides: 4,
@@ -345,8 +364,9 @@ $Categorys = Category::model()->findAll();
                 touchEnabled: true,
                 pager: false
             });
-            $(".text-band").css({'font-size':'24px'});
-        } else if(size >= 600){
+            $(".text-band").css({'font-size': '24px'});
+        } else if (size >= 600) {
+            $(".box-category-item").css({"margin-top": "0px"});
             $('.slider5').bxSlider({
                 slideWidth: 300,
                 minSlides: 3,
@@ -358,8 +378,9 @@ $Categorys = Category::model()->findAll();
                 touchEnabled: true,
                 pager: false
             });
-            $(".text-band").css({'font-size':'22px'});
-        } else if(size > 480){
+            $(".text-band").css({'font-size': '22px'});
+        } else if (size > 480) {
+            $(".box-category-item").css({"margin-top": "0px"});
             $('.slider5').bxSlider({
                 slideWidth: 300,
                 minSlides: 3,
@@ -371,20 +392,21 @@ $Categorys = Category::model()->findAll();
                 touchEnabled: true,
                 pager: false
             });
-            $(".text-band").css({'font-size':'20px'});
+            $(".text-band").css({'font-size': '20px'});
         } else {
+            $(".box-category-item").css({"margin-top": "0px"});
             $('.slider5').bxSlider({
                 slideWidth: 300,
-                minSlides: 1,
-                maxSlides: 1,
-                moveSlides: 1,
+                minSlides: 2,
+                maxSlides: 2,
+                moveSlides: 2,
                 slideMargin: 10,
                 captions: true,
                 auto: true,
                 touchEnabled: true,
                 pager: false
             });
-            $(".text-band").css({'font-size':'20px'});
+            $(".text-band").css({'font-size': '20px'});
         }
     });
 </script>

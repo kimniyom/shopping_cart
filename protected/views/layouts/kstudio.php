@@ -29,7 +29,7 @@
                 padding: 10px;
             }
             #ulmenu{
-                padding-top: 5px; box-shadow: none;
+                padding-top: 5px; 
                 z-index: 1000;
             }
 
@@ -199,7 +199,7 @@
                 </ul>
             </nav>
 
-            <header class="header-style-2" style="background:#ffffff;border-bottom: #cccccc solid 0px; padding: 10px;"><!-- /images/bgheader.png-->
+            <header class="header-style-2" id="header-nav" style="background:#FFFFFF;border-bottom: #cccccc solid 0px; padding: 10px; box-shadow: #acacac 0px 0px 10px 0px;"><!-- /images/bgheader.png-->
                 <div class="container" id="menuBar">
                     <div class="row">
                         <div class="header-1-inner">
@@ -266,12 +266,12 @@
                                     //$Types = ProductType::model()->findAll("category=:id", array(":id" => $rsCategory['id']));
                                     ?>
                                                             <div class="col-md-4 col-lg-4 col-sm-4">
-                                                                <label><?php //echo $rsCategory['categoryname']                 ?></label>
+                                                                <label><?php //echo $rsCategory['categoryname']                     ?></label>
                                                                 <hr style="border-bottom: #cccccc solid 1px; margin-top: 0px; margin-bottom: 5px;"/>
                                     <?php
                                     //foreach ($Types as $type):
                                     ?>
-                                                                    <a href=""><?php //echo $type['type_name']               ?></a>
+                                                                    <a href=""><?php //echo $type['type_name']                   ?></a>
                                     <?php //endforeach;    ?>
                                                             </div>
                                     <?php //endforeach;     ?>
@@ -362,7 +362,7 @@
             </header>
 
             <?php if ($this->breadcrumbs): ?>
-                <div class="font-THK" style="padding: 10px; color: #666666; background: #f2f2f2;border-bottom: #cccccc solid 0px; text-align: center; font-size: 20px; z-index:0;">
+            <div class="font-THK" style="padding: 10px; color: #666666; background: #f2f2f2;border-bottom: #cccccc solid 0px; text-align: center; font-size: 20px; z-index:1;">
                     <div class="container">
                         <?php
                         $this->widget('zii.widgets.CBreadcrumbs', array(
@@ -373,9 +373,11 @@
                     </div>
                 </div>
             <?php endif ?>
-            <?php
-            echo $content;
-            ?>
+            <div style="background: url('<?php echo Yii::app()->baseUrl ?>/images/bg_content.png');background-repeat: repeat-x;">
+                <?php
+                echo $content;
+                ?>
+            </div>
         </div>
 
         <footer class="footer-style-1" style=" border-top: #eeeeee solid 1px; background: #f2f2f2;">
@@ -474,22 +476,22 @@
                                 <ul class="list-unstyle">
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                             ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                                 ?>/themes/kstudio/images/icons/creadit-card-01.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                             ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                                 ?>/themes/kstudio/images/icons/creadit-card-02.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                             ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                                 ?>/themes/kstudio/images/icons/creadit-card-03.png" alt="creadit card" />
                                         </a>
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <img src="<?php //echo Yii::app()->baseUrl;                                             ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
+                                            <img src="<?php //echo Yii::app()->baseUrl;                                                 ?>/themes/kstudio/images/icons/creadit-card-04.png" alt="creadit card" />
                                         </a>
                                     </li>
                                 </ul>
@@ -659,14 +661,13 @@
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/revolution/js/extensions/revolution.extension.video.min.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/global.js"></script>
-        <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-banner-home-1.js">
-
-
-        </script>
+        <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-banner-home-1.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-mm-menu.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-set-bg-blog-thumb.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-isotope-product-home-1.js"></script>
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-isotope-product-home-2.js"></script>
+
+
 
         <script src="<?= Yii::app()->baseUrl; ?>/themes/kstudio/js/config-carousel.js"></script>
 
@@ -686,8 +687,19 @@
         <!-- images hover effect -->
         <link href="<?= Yii::app()->baseUrl; ?>/themes/kstudio/css/images-hover-effect.css" rel="stylesheet" type="text/css" />
 
+        <!-- Gallery -->
+        <link rel="stylesheet" href="<?= Yii::app()->baseUrl; ?>/assets/gallery_img/dist/magnific-popup.css" type="text/css" media="all" />
+        <script type="text/javascript" charset="utf-8"src="<?= Yii::app()->baseUrl; ?>/assets/gallery_img/dist/jquery.magnific-popup.js"></script>
+
         <script tyle="text/javascript">
                                 setScreen();
+                                $(window).scroll(function () {
+                                    if ($(this).scrollTop()) {
+                                        $("#header-nav").addClass("nav navbar-fixed-top");
+                                    } else {
+                                        $("#header-nav").removeClass("nav navbar-fixed-top");
+                                    }
+                                });
                                 //getMenu();
                                 function setScreen() {
                                     var w = window.innerWidth;

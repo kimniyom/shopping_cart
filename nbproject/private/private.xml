@@ -10,6 +10,8 @@
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/product/review.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/article/create.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/controllers/backend/ImagesController.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/article/view.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/controllers/frontend/ArticleController.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/product/detail_product.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/article/view.php</file>
         </group>

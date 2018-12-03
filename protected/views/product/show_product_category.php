@@ -77,9 +77,19 @@ $this->breadcrumbs = array(
 ?>
 
 <div class="container" style=" padding: 30px;">
-    <h4>จำนวนที่พบ <?php echo $count ?> รายการ</h4><br/>
-    <div class="row product-grid-equal-height-wrapper product-equal-height-4-columns flex multi-row" id="results">
+    <div class="row" style=" margin-bottom: 30px;">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div style=" float: left;">
+                <img src="<?php echo Yii::app()->baseUrl ?>/uploads/category/thumbnail/<?php echo $category['icons'] ?>" style=" width: 80px;"/>
+            </div>
+            <div style=" float: left; margin-left: 0px; padding-left: 20px; color: #9d1419;">
+                <h2 class="font-supermarket"><?php echo $category['categoryname'] ?></h2>
+                <hr style=" margin: 10px 0px; border-bottom: #9d1419 solid 2px;"/>
+                <h4 class="font-supermarket">จำนวนที่พบ <?php echo $count ?> รายการ</h4>
+            </div>
+        </div>
     </div>
+    <div class="row product-grid-equal-height-wrapper product-equal-height-4-columns flex multi-row" id="results"></div>
 </div>
 
 <div align="center">
