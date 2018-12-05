@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-12-04 01:25:34
+Date: 2018-12-06 02:41:42
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -1090,7 +1090,7 @@ CREATE TABLE `article` (
 -- ----------------------------
 INSERT INTO `article` VALUES ('3', 'Backup ข้อมูลในคอมพิวเตอร์ เรื่องง่ายๆ กันไว้ก่อนเสียน้ำตา', '<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">หากถามว่าระหว่างอุปกรณ์กับข้อมูลอะไรสำคัญกว่า คงต้องบอกว่า &ldquo;ข้อมูล&rdquo; สำคัญกว่ามาก เพราะอุปกรณ์ที่เสีย เรายังสามารถหาซื้อของใหม่มาทดแทน แต่ข้อมูลนี่สิ ถ้าหายหรือเสียหายละก็จะกลายเป็นเรื่องใหญ่ เพราะเมื่อเสียหายแล้ว ถึงมีเงินมากแค่ไหนก็ไม่สามารถหาซื้อข้อมูลที่สำคัญเหล่านั้นกลับมาได้ เรื่องของ Backup จึงกลายเป็นเรื่องจำเป็นที่ต้องทำอยู่ตลอดเวลา Backup ทำเองได้ไม่ง้อโปรแกรมแบ็กอัพอัตโนมัติ หลายคนอาจจะเข้าใจผิดมาตลอดว่าการแบ็กอัพนั้น ต้องทำผ่านโปรแกรมแบ็กอัพที่ทำงานให้อัตโนมัติเสมอไป ซึ่งความจริงแล้วการแบ็กอัพก็คือ การที่เราทำการคัดลอกข้อมูล จากนั้นนำไปอีกที่หนึ่ง เช่นการที่เราคัดลอกเอกสารลงใส่แฟลชไดร์ฟ หรือฮาร์ดดิสก์ภายนอก ก็ถือได้ว่าทำการแบ็กอัพอย่างหนึ่งเหมือนกัน โดยปกติเราสามารถทำผ่านโปรแกรม หรือทำเองก็สามารถทำได้ แบ็กอัพแบบนี้อาจจะเหมาะสำหรับคนที่ไม่อยากใช้งานแบ็กอัพผ่านโปรแกรม รวมไปถึงต้องมีระเบียบและเวลาจัดข้อมูลสักหน่อย&nbsp;</span></p>\n\n<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\"><img alt=\"\" src=\"http://www.theassembler.net/shopping_cart/uploads/ck_imagesimages/backup-1.jpg\" style=\"height:361px; width:650px\" /></span></p>\n\n<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">ซึ่งจะขอยกตัวอย่างการแบ็กอัพด้วยตนเองง่ายๆ อย่างการที่เราพิมพ์งานหรือแต่งภาพ เมื่อเราต้องการบันทึกก็ให้เราบันทึกลงแบบปกติอย่างในโฟลเดอร์ Documents หรือ Pictures จากนั้นเราก็มาทำการบันทึกลงโฟลเดอร์ที่อาจจะชื่อเดียวกันก็ได้ ที่อยู่ในฮาร์ดดิสก์ภายนอกอีกที แน่นอนหากสมมติว่าเราบังเอิญเผลอลบข้อมูลไป หรือข้อมูลนั้นได้หายไปโดยไม่ทราบสาเหตุ เราก็ยังสามารถดึงไฟล์ที่อยู่ใน Harddisk ภายนอกมาใช้ได้ทันที แต่จะถ้าจะให้กล่าวถึงข้อสังเกตของการแบ็กอัพไฟล์แบบนี้แล้วก็คือ เราจำเป็นต้องทำไฟล์ที่เราบันทึกไว้ให้ตรงกันเสมอ เรียกได้ว่าทุกครั้งที่บันทึก จำเป็นต้องบันทึก 2 ครั้ง ที่ 2 ฮาร์ดดิสก์เสมอ หรือไม่ก็เมื่อบันทึกลงฮาร์ดดิสก์ในเครื่องแล้ว ก็ต้องทำการคัดลอกมาลงที่ Harddisk ภายนอกอยู่เป็นประจำ เพื่อให้ข้อมูลหรือไฟล์ที่เราแบ็กอัพตรงกันอยู่เสมอ แบ็กอัพระบบปฏิบัติการ Windows 7 และ Windows 8 แบบง่ายๆ เชื่อว่าหลายๆ คนยังใช้ Windows 7 และ Windows 8 กันอยู่บ้าง แม้จะมี Windows 10 เปิดตัวให้ได้ใช้แล้ว และน่าจะเคยประสบปัญหาระบบปฏิบัติการเสียหายจนไม่สามารถเปิดเครื่องติดได้ หรือแม้กระทั่ง Windows ไม่สามารถทำงานได้ปกติ โดยปัญหาเหล่านี้มักจะเกิดจากตัวระบบปฏิบัติการ Windows อาจจะติดไวรัสที่ร้ายแรง หรือไฟล์ระบบภายใน Windows เสียหาย แม้แต่ฮาร์ดดิสก์ภายในเครื่องคอมพิวเตอร์เสีย ถ้าหากเราไม่รู้ว่าเป็นอะไร ทางเลือกในการแก้ปัญหาได้ดีที่สุดก็ต้องบอกว่าการติดตั้งระบบปฏิบัติการ Windows ใหม่นั้นคงเป็นคำตอบแน่นอน (ยกเว้นกรณีฮาร์ดดิสก์เสีย เพราะยังไงถ้าเกิดขึ้นคงต้องติดตั้ง Windows ใหม่อยู่แล้ว) ซึ่งในตอนนี้เราจะ มาแนะนำคุณสมบัติ Backup &amp; Restore ที่มีมาในระบบปฏิบัติการ Windows กัน เพื่อที่เราจะได้ใช้งานแบ็กอัพได้อย่างทันท่วงที ก่อนข้อมูลเราจะสูญหายนะครับ คุณสมบัติ Backup &amp; Restore ก็คือการที่เราทำสำเนาของตัวระบบปฎิบัติการไว้ และเมื่อมีปัญหาเราก็แค่เรียกข้อมูลระบบของ Windows คืนจากไฟล์ที่เราสำรองไว้ สะดวกและเร็วกว่าลง Windows ใหม่ แถมยังไม่ต้องมานั่งลงโปรแกรมใหม่ให้ยุ่งยาก ซึ่งโปรแกรมลักษณะนี้ในโน้ตบุ๊กหรือคอมพิวเตอร์หลายๆ แบรนด์ก็มีโปรแกรม Backup &amp; Restore อยู่แล้ว แต่ถ้าไม่มีขึ้นมาก็ยังมีตัวโปรแกรมของ Windows 7 และ Windows 8 ที่แนะนำนี้อยู่ ซึ่งการ Backup &amp; Restore นี้เหมาะกับทุกคนที่ติดตั้ง Windows และ Driver รวมไปถึงโปรแกรมต่างๆ ไว้แล้ว จากนั้นก็ทำสำเนาเอาไว้ก่อน - See more at: https://www.advice.co.th/it-news/1295#sthash.zLjaSM8T.dpuf</span></p>\n', 'img_rd34ftw65bbfx7s9psoj6iypsa869d.jpg', '1', '1', '2015-10-15 06:00:10', '20');
 INSERT INTO `article` VALUES ('4', 'Apple ปล่อยอัพเดท iOS 9.0.1 แก้บั้กผู้ที่ใช้งาน iOS 9 แล้วมีปัญหาในการใช้งาน', '<p><span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">หลังจากที่ Apple ได้ปล่อย iOS 9 ให้ผู้ใช้งาน</span>โทรศัพท์มือถือ<span style=\"font-family:helvetica neue,helvetica,arial,sans-serif; font-size:14px\">&nbsp;iPhone,iPad และ iPod Touch ได้อัพเดทกันไปอย่างเป็นทางการเมื่อ วันที่ 16 กันยายนที่ผ่านมา ซึ่งก็มีผู้ใช้งานหลายคนเจอปัญหาต่างๆในการใข้งาน วันนี้ Apple ได้ได้ปล่อยอัพเดท iOS 9.0.1 ออกมาแก้ไขปัญหาดังกล่าวแล้ว ผ่านทาง OTA สามารถดาวน์โหลดอัพเดทได้โดยเข้าไปที่ Settings &gt; General &gt; Software Update - See more at: https://www.advice.co.th/it-news/1277#sthash.P3PlS0vf.dpuf</span></p>\n\n<p><img alt=\"\" src=\"http://www.theassembler.net/shopping_cart/uploads/ck_imagesimages/iOS9-6s-5Up-Features-01.jpg\" style=\"height:491px; width:968px\" /></p>\n\n<p><img alt=\"\" src=\"http://www.theassembler.net/shopping_cart/uploads/ck_imagesimages/IMG_1317.png\" style=\"height:957px; width:750px\" /></p>\n', 'img_zekf79nciwcmjxxdxxnvj3costgy2h.JPG', '1', '1', '2015-10-15 07:09:59', '35');
-INSERT INTO `article` VALUES ('6', 'เชิญชวนเพื่อนๆมาลองฟังหูฟัง oBravo เที่ยวนี้ขนตัว ท๊อปๆมาให้ลองฟังเพียบเลยครับ', '<p><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">เชิญชวนเพื่อนๆมาลองฟังหูฟั</span><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ง oBravo เที่ยวนี้ขนตัว ท๊อปๆมาให้ลองฟังเพียบเลยคร</span><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ับ</span><br />\n<br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">จัดมุมนั่งทดสอบแบบสบายๆ คอยต้อนรับเพื่อนๆ</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">วันที่ 04-07/10/2018</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ในงาน BAV&nbsp;</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">รร.แลนด์มาร์ค ถ.สุขุมวิท<br />\n<br />\nBy K.Studio<br />\nMusic in Life Style</span></p>\n', 'img_7er3znjcoc8jjagn8cyjk0f15ewk9r.jpg', '1', '2', '2018-10-28 15:03:03', '199');
+INSERT INTO `article` VALUES ('6', 'เชิญชวนเพื่อนๆมาลองฟังหูฟัง oBravo เที่ยวนี้ขนตัว ท๊อปๆมาให้ลองฟังเพียบเลยครับ', '<p><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">เชิญชวนเพื่อนๆมาลองฟังหูฟั</span><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ง oBravo เที่ยวนี้ขนตัว ท๊อปๆมาให้ลองฟังเพียบเลยคร</span><span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ับ</span><br />\n<br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">จัดมุมนั่งทดสอบแบบสบายๆ คอยต้อนรับเพื่อนๆ</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">วันที่ 04-07/10/2018</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">ในงาน BAV&nbsp;</span><br />\n<span style=\"color:#1d2129; font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:16px\">รร.แลนด์มาร์ค ถ.สุขุมวิท<br />\n<br />\nBy K.Studio<br />\nMusic in Life Style</span></p>\n', 'img_7er3znjcoc8jjagn8cyjk0f15ewk9r.jpg', '1', '2', '2018-10-28 15:03:03', '200');
 
 -- ----------------------------
 -- Table structure for `articlecategory`
@@ -1522,7 +1522,7 @@ CREATE TABLE `logproduct` (
   `user` varchar(100) DEFAULT NULL,
   `dupdate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='เก็บข้อมูลการจัดการสินค้า';
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COMMENT='เก็บข้อมูลการจัดการสินค้า';
 
 -- ----------------------------
 -- Records of logproduct
@@ -1530,6 +1530,13 @@ CREATE TABLE `logproduct` (
 INSERT INTO `logproduct` VALUES ('1', 'admin InsertProduct P20181121145729', 'P20181121145729', 'admin', '2018-11-21 14:58:00');
 INSERT INTO `logproduct` VALUES ('2', 'admin UpdateProduct P20181121145729', 'P20181121145729', 'admin', '2018-11-21 14:59:07');
 INSERT INTO `logproduct` VALUES ('3', 'admin DeleteProduct P20181121145729', 'P20181121145729', 'admin', '2018-11-21 15:02:11');
+INSERT INTO `logproduct` VALUES ('4', 'admin InsertProduct P20181205215922', 'P20181205215922', 'admin', '2018-12-05 21:59:54');
+INSERT INTO `logproduct` VALUES ('5', 'admin InsertProduct P20181205215959', 'P20181205215959', 'admin', '2018-12-05 22:00:18');
+INSERT INTO `logproduct` VALUES ('6', 'admin InsertProduct P20181205220023', 'P20181205220023', 'admin', '2018-12-05 22:00:38');
+INSERT INTO `logproduct` VALUES ('7', 'admin UpdateProduct P20181205215959', 'P20181205215959', 'admin', '2018-12-05 22:01:09');
+INSERT INTO `logproduct` VALUES ('8', 'admin InsertProduct P20181205220116', 'P20181205220116', 'admin', '2018-12-05 22:01:32');
+INSERT INTO `logproduct` VALUES ('9', 'admin UpdateProduct P20181205220023', 'P20181205220023', 'admin', '2018-12-05 22:02:15');
+INSERT INTO `logproduct` VALUES ('10', 'admin UpdateProduct P20181205215959', 'P20181205215959', 'admin', '2018-12-05 22:02:54');
 
 -- ----------------------------
 -- Table structure for `loguserlogin`
@@ -1543,7 +1550,7 @@ CREATE TABLE `loguserlogin` (
   `ip` varchar(50) DEFAULT NULL,
   `status` char(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of loguserlogin
@@ -1587,6 +1594,7 @@ INSERT INTO `loguserlogin` VALUES ('36', 'user1 | login', 'admin', '2018-11-26 2
 INSERT INTO `loguserlogin` VALUES ('37', 'user1 | login', 'admin', '2018-11-30 00:36:23', '::1', 'TRUE');
 INSERT INTO `loguserlogin` VALUES ('38', 'user1 | login', 'admin', '2018-12-02 22:41:23', '::1', 'TRUE');
 INSERT INTO `loguserlogin` VALUES ('39', 'user1 | login', 'admin', '2018-12-03 17:25:32', '::1', 'TRUE');
+INSERT INTO `loguserlogin` VALUES ('40', 'user1 | login', 'admin', '2018-12-05 21:59:03', '::1', 'TRUE');
 
 -- ----------------------------
 -- Table structure for `massocial`
@@ -1942,7 +1950,7 @@ CREATE TABLE `product` (
   PRIMARY KEY (`product_id`),
   UNIQUE KEY `id` (`id`) USING BTREE,
   KEY `type_id` (`type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='ตารางสินค้า';
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='ตารางสินค้า';
 
 -- ----------------------------
 -- Records of product
@@ -1951,8 +1959,12 @@ INSERT INTO `product` VALUES ('1', 'P20181019100013', 'Bluetooth TECSUN BT-90', 
 INSERT INTO `product` VALUES ('2', 'P20181025091852', 'Khunpol', '3434.00', '<p><span style=\"background-color:rgb(249, 249, 249); color:rgb(102, 102, 102); font-family:roboto,helvetica neue,helvetica,arial,sans-serif\">Khunpol</span></p>\n', null, '001', '0', '0', '2', '3', '0', '2018-10-29 15:27:31', null, null, '0', '3');
 INSERT INTO `product` VALUES ('3', 'P20181025092135', 'CaoGen', '23.00', '<p>Tecsun CaoGen, Grassroot High Definition Headphone</p>\n', null, '002', '0', '2', '1', '2', '0', '2018-11-05 11:42:22', 'Tecsun CaoGen, Grassroot High Definition Headphone', '0.00', '0', '36');
 INSERT INTO `product` VALUES ('4', 'P20181025094618', 'Ra-c-cu', '350000.00', '<p>oBravo : Flagship Signature&nbsp;<br />\nModel : Ra C Cu<br />\nHousing : Solid Copper<br />\nFace Plate : Acacia Wood<br />\nNozzle : Precision Ceramic<br />\n<span style=\"font-family:inherit\">Tweeter : 8 mm Air Motion Transformer Generation 2&nbsp;<br />\nWoofer : 16 mm Dynamic Driver&nbsp;<br />\nFrequency Response : 10-45,000 Hz<br />\nImpedance : 182 Ohm</span></p>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>*** In-House Production of Driver Unit and Patented***</p>\n\n<p>เพชรเม็ดงามที่จะเป็นรางวัลส่งมอบให้กับ ผู้ชนะเลิศ<br />\nในการประกวดการทำสายอัพเกรด<br />\noBravo Cable Contest #1</p>\n\n<p>พิธีส่งมอบ.....<br />\nรางวัลเกียรติยศแด่ผู้ที่ชนะเลิศครั้งนี้ จะถูกบันทึกภาพและวิดีโอเผยแพร่ไปในสื่อหูฟังทั่วโลก</p>\n\n<p>บันไดก้าวสำคัญที่จะเดินทางไปสู่เวทีการค้าระหว่างประเทศ</p>\n\n<p>*****************************<br />\nThe 1st. Ra C Cu in Thailand<br />\nสำหรับนักเล่นที่ตระหนักถึงคุณค่าแห่งดนตรี&nbsp;<br />\nไปให้สุดเพื่อเป็นหนึ่งเดียว<br />\noBravo Flagship Signature ชุดแรกในประเทศไทย เซ็นต์ชื่อรับรองโดย Mr. David Teng เจ้าของ oBravo<br />\nราคาเปิดตัวที่ 350,000 บาท</p>\n\n<p>***โอกาสมีครั้งเดียวในชีวิต***</p>\n</div>\n', null, '001', '0', '0', '2', '5', '0', '2018-11-05 22:15:19', 'oBravo : Flagship Signature ', '30000.00', '0', '51');
-INSERT INTO `product` VALUES ('5', 'P20181026103638', 'ssfg', '5000.00', '<p>wwerewtertery</p>\n', null, '003', '0', '0', '2', '1', '1', '2018-11-18 23:45:57', 'fhfghhfg', '0.00', '1', '42');
-INSERT INTO `product` VALUES ('7', 'P20181029151035', 'IHIFI H6 1969', '16500.00', '<p><strong><span style=\"color:rgb(102, 102, 102); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">ข้อมูลด้านเทคนิค</span></strong></p>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>- Master control: PK-NANOD<br />\n- DAC: AK4495<br />\n- LPF: LME49990 * 2 (THD 0.00001%)<br />\n- Headphone Amplifier: JHL pure class A transistor amplifier<br />\n- Battery: 3.7V6000mah lithium battery<br />\n- Life time: about 11 hours, standard bit rate, main and vice screen off<br />\n- Main screen: 0.96 pure white OLED<br />\n- Vice screen: 0.91 pure white OLED<br />\n- Interface: 3.5mm stereo earphones, 2.5mm balanced earphones</p>\n</div>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>&nbsp;</p>\n</div>\n', null, '006', '0', '0', '1', '6', '0', '2018-11-05 11:05:02', 'เครื่องเล่นเพลง IHIFI H6 1969 จากแดนมังกร ให้รายละเอียดเสียงที่ยอดเยี่ยม รองรับไฟล์เพลงแบบ HD เอาท์พุตมีทั้งแบบ Balance และ Non Balance มาลองเดโม่ และสั่งซื้อได้', '15500.00', '0', '79');
+INSERT INTO `product` VALUES ('5', 'P20181026103638', 'ssfg', '5000.00', '<p>wwerewtertery</p>\n', null, '003', '0', '0', '2', '1', '1', '2018-11-18 23:45:57', 'fhfghhfg', '0.00', '1', '44');
+INSERT INTO `product` VALUES ('7', 'P20181029151035', 'IHIFI H6 1969', '16500.00', '<p><strong><span style=\"color:rgb(102, 102, 102); font-family:system-ui,-apple-system,system-ui,.sfnstext-regular,sans-serif; font-size:14px\">ข้อมูลด้านเทคนิค</span></strong></p>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>- Master control: PK-NANOD<br />\n- DAC: AK4495<br />\n- LPF: LME49990 * 2 (THD 0.00001%)<br />\n- Headphone Amplifier: JHL pure class A transistor amplifier<br />\n- Battery: 3.7V6000mah lithium battery<br />\n- Life time: about 11 hours, standard bit rate, main and vice screen off<br />\n- Main screen: 0.96 pure white OLED<br />\n- Vice screen: 0.91 pure white OLED<br />\n- Interface: 3.5mm stereo earphones, 2.5mm balanced earphones</p>\n</div>\n\n<div class=\"text_exposed_show\" style=\"display: inline; font-family: system-ui, -apple-system, system-ui, \">\n<p>&nbsp;</p>\n</div>\n', null, '006', '0', '0', '1', '6', '0', '2018-11-05 11:05:02', 'เครื่องเล่นเพลง IHIFI H6 1969 จากแดนมังกร ให้รายละเอียดเสียงที่ยอดเยี่ยม รองรับไฟล์เพลงแบบ HD เอาท์พุตมีทั้งแบบ Balance และ Non Balance มาลองเดโม่ และสั่งซื้อได้', '15500.00', '0', '81');
+INSERT INTO `product` VALUES ('8', 'P20181205215922', 'asf', '44444.00', '<p>tetetetert</p>\n', null, '002', '0', '0', '1', '4', null, '2018-12-05 21:59:54', 'sfsdf', '0.00', '0', '0');
+INSERT INTO `product` VALUES ('9', 'P20181205215959', 'eter', '60000.00', '<p>tetetryettet</p>\n', null, '006', '0', '0', '1', '1', null, '2018-12-05 22:02:53', 'etertert', '0.00', '0', '2');
+INSERT INTO `product` VALUES ('10', 'P20181205220023', 'retret', '67676.00', '<p>wyrtyryrty</p>\n', null, '004', '0', '0', '1', '1', null, '2018-12-05 22:02:15', 'ertrettert', '0.00', '0', '1');
+INSERT INTO `product` VALUES ('11', 'P20181205220116', 'try', '666666.00', '<p>6666</p>\n', null, '001', '0', '0', '2', '2', null, '2018-12-05 22:01:32', 'trytry', '0.00', '0', '1');
 
 -- ----------------------------
 -- Table structure for `product_images`
@@ -1964,7 +1976,7 @@ CREATE TABLE `product_images` (
   `images` varchar(100) DEFAULT NULL COMMENT 'รูปภาพ',
   `active` int(1) DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8 COMMENT='ตารางเก็บรูปภาพสินค้า';
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8 COMMENT='ตารางเก็บรูปภาพสินค้า';
 
 -- ----------------------------
 -- Records of product_images
@@ -1991,6 +2003,11 @@ INSERT INTO `product_images` VALUES ('44', 'P20181029151035', 'img_4v3vvxfwa3ffg
 INSERT INTO `product_images` VALUES ('45', 'P20181029151035', 'img_npgt1wvcsplcx7klv3h5pvuso53f7b.JPG', '0');
 INSERT INTO `product_images` VALUES ('46', 'P20181029151035', 'img_ih875f7oyoloj99eltez6giygzit5g.JPG', '0');
 INSERT INTO `product_images` VALUES ('47', 'P20181029151035', 'img_kp07fezzr2u7gr0z8m8l573vxancj3.JPG', '0');
+INSERT INTO `product_images` VALUES ('48', 'P20181205215922', 'img_kwdbaln9nrekd6oxeri9k8fyzchvdv.jpg', '0');
+INSERT INTO `product_images` VALUES ('51', 'P20181205215959', 'img_jprzp9llr7umqzsal37eithjnx44ps.jpg', '0');
+INSERT INTO `product_images` VALUES ('52', 'P20181205220116', 'img_s5hncu8fvx43ut70rovfjqolhn1c7s.JPG', '0');
+INSERT INTO `product_images` VALUES ('53', 'P20181205220116', 'img_4rwg2bf3n54h6lt37vxb1qo30jx4gl.jpg', '0');
+INSERT INTO `product_images` VALUES ('54', 'P20181205220023', 'img_4rwg2bf3n54h6lt37vxb1qo30jx4gl.jpg', '0');
 
 -- ----------------------------
 -- Table structure for `product_type`
@@ -10947,7 +10964,7 @@ CREATE TABLE `viewproduct` (
   `product_id` varchar(20) DEFAULT NULL,
   `dupdate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8 COMMENT='เก้บประวัติการเข้าดูสินค้า';
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8 COMMENT='เก้บประวัติการเข้าดูสินค้า';
 
 -- ----------------------------
 -- Records of viewproduct
@@ -10985,6 +11002,14 @@ INSERT INTO `viewproduct` VALUES ('30', 'P20181026103638', '2018-12-03 21:25:30'
 INSERT INTO `viewproduct` VALUES ('31', 'P20181029151035', '2018-12-03 22:00:34');
 INSERT INTO `viewproduct` VALUES ('32', 'P20181026103638', '2018-12-04 00:23:20');
 INSERT INTO `viewproduct` VALUES ('33', 'P20181029151035', '2018-12-04 01:24:28');
+INSERT INTO `viewproduct` VALUES ('34', 'P20181026103638', '2018-12-04 01:38:37');
+INSERT INTO `viewproduct` VALUES ('35', 'P20181029151035', '2018-12-05 19:50:40');
+INSERT INTO `viewproduct` VALUES ('36', 'P20181205215959', '2018-12-06 01:36:31');
+INSERT INTO `viewproduct` VALUES ('37', 'P20181205220023', '2018-12-06 02:22:55');
+INSERT INTO `viewproduct` VALUES ('38', 'P20181205220116', '2018-12-06 02:33:19');
+INSERT INTO `viewproduct` VALUES ('39', 'P20181026103638', '2018-12-06 02:33:49');
+INSERT INTO `viewproduct` VALUES ('40', 'P20181205215959', '2018-12-06 02:40:42');
+INSERT INTO `viewproduct` VALUES ('41', 'P20181029151035', '2018-12-06 02:41:07');
 
 -- ----------------------------
 -- Table structure for `webname`

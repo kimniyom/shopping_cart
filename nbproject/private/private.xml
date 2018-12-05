@@ -5,15 +5,25 @@
         <group name="yii"/>
         <group>
             <file>file:/D:/xampp/htdocs/kstudio/protected/controllers/backend/ArticleController.php</file>
-            <file>file:/D:/xampp/htdocs/kstudio/protected/controllers/backend/ProductController.php</file>
-            <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/article/gallery.php</file>
-            <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/product/review.php</file>
-            <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/article/create.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/site/index.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/layouts/kstudio.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/show_product_brand.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/product_more.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/show_product_all.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/controllers/backend/ImagesController.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/article/view.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/controllers/frontend/ArticleController.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/index.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/show_product_category.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/controllers/frontend/ProductController.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/article/gallery.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/views.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/product/review.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/more.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/article/create.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/article/article_all.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/product/detail_product.php</file>
-            <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/article/view.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/article/article_more.php</file>
         </group>
     </open-files>
 </project-private>

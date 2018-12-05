@@ -10,14 +10,17 @@ class ProductController extends Controller {
         $prodult = new Product();
         $data['product'] = $prodult->GetProductAll();
         $data['count'] = count($data['product']);
-
+        $data['categorys'] = Category::model()->findAll();
+        $data['brands'] = Brand::model()->findAll();
         $this->render("//product/index", $data);
     }
 
     public function actionPagesall() {
-        $productModel = new Product();
+        //$productModel = new Product();
+        $category = Yii::app()->request->getPost('category');
+        $brand = Yii::app()->request->getPost('brand');
         $page_number = filter_var($_POST["page"], FILTER_SANITIZE_NUMBER_INT, FILTER_FLAG_STRIP_HIGH);
-        $item_per_page = 8; //ให้แสดงที่ละ
+        $item_per_page = 12; //ให้แสดงที่ละ
         //throw HTTP error if page number is not valid
         if (!is_numeric($page_number)) {
             header('HTTP/1.1 500 Invalid page number!');
@@ -26,14 +29,39 @@ class ProductController extends Controller {
 
         //get current starting point of records
         $position = ($page_number * $item_per_page);
-        $rs = $productModel->GetProductAllBetween($position, $item_per_page);
-
+        //$rs = $productModel->GetProductAllBetween($position, $item_per_page);
+        $rs = $this->GetProductAllBetween($position, $item_per_page, $category, $brand);
         $data['product'] = $rs;
-        if ($rs) {
+        if (count($rs) > 0) {
             $this->renderPartial("//product/product_more", $data);
         } else {
             echo 0;
         }
+    }
+
+    function GetProductAllBetween($start, $end, $category, $brand) {
+        $categorys = Yii::app()->request->getPost('category');
+        $brands = Yii::app()->request->getPost('brand');
+        if ($categorys != "" || $brands != "") {
+            $where = " 1=1 ";
+            if ($categorys != "") {
+                $category = $categorys;
+                $where .= " and p.category in($category) ";
+            }
+            if ($brands != "") {
+                $brand = $brands;
+                $where .= " and p.brand in($brand) ";
+            }
+        } else {
+            $where = " 1=1";
+        }
+        $sql = "SELECT DISTINCT(p.product_id),p.*,t.type_name,c.categoryname
+                    FROM product p INNER JOIN product_type t ON p.type_id = t.type_id
+                    INNER JOIN category c ON p.category = c.id 
+                    WHERE $where
+                    ORDER BY p.id DESC LIMIT $start,$end";
+        //return $sql;
+        return Yii::app()->db->createCommand($sql)->queryAll();
     }
 
     public function actionDetail() {
@@ -376,6 +404,40 @@ class ProductController extends Controller {
         } else {
             echo 0;
         }
+    }
+
+    public function actionGetproductall() {
+        $categorys = Yii::app()->request->getPost('category');
+        $brands = Yii::app()->request->getPost('brand');
+        if ($categorys != "" || $brands != "") {
+            $where = " 1=0 ";
+            if ($categorys != "") {
+                $category = $categorys;
+                $where .= " or category in($category) ";
+            } else {
+                $category = " or 1=0 ";
+            }
+            if ($brands != "") {
+                $brand = $brands;
+                $where .= " or brand in($brand) ";
+            } else {
+                $brand .= " or 1=0";
+            }
+        } else {
+            $where = " 1 = 0";
+        }
+        $sql = "select count(DISTINCT(product_id)) as total from product  where $where  ";
+        $rs = Yii::app()->db->createCommand($sql)->queryRow();
+        echo $rs['total'];
+        //echo $sql;
+    }
+
+    public function actionDefaultpage() {
+        $category = Yii::app()->request->getPost('category');
+        $brand = Yii::app()->request->getPost('brand');
+        $rs = $this->GetProductAllBetween(0, 100, $category, $brand);
+        $data['count'] = count($rs);
+        $this->renderPartial("//product/default", $data);
     }
 
 }
