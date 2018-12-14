@@ -15,8 +15,10 @@
             <file>file:/D:/xampp/htdocs/kstudio/protected/controllers/frontend/ArticleController.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/index.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/show_product_category.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/models/Product.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/controllers/frontend/ProductController.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/article/gallery.php</file>
+            <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/default.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/views.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/backend/product/review.php</file>
             <file>file:/D:/xampp/htdocs/kstudio/protected/views/product/more.php</file>

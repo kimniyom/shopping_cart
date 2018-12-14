@@ -10826,3 +10826,14 @@ Stack trace:
 REQUEST_URI=/kstudio/frontend/product/pagesall
 in D:\xampp\htdocs\kstudio\protected\controllers\frontend\ProductController.php (22)
 in D:\xampp\htdocs\kstudio\index.php (14)
+2018/12/14 20:45:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action ":".' in D:\xampp\htdocs\kstudio\framework\web\CController.php:483
+Stack trace:
+#0 D:\xampp\htdocs\kstudio\framework\web\CController.php(270): CController->missingAction(':')
+#1 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(282): CController->run(':')
+#2 D:\xampp\htdocs\kstudio\framework\web\CWebApplication.php(141): CWebApplication->runController('site/://www.kst...')
+#3 D:\xampp\htdocs\kstudio\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 D:\xampp\htdocs\kstudio\index.php(14): CApplication->run()
+#5 {main}
+REQUEST_URI=/kstudio/site/://www.kstudiothai.com
+HTTP_REFERER=http://localhost/kstudio/site/index
+---

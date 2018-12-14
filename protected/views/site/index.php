@@ -65,7 +65,7 @@ $Categorys = Category::model()->findAll();
                     }
                     ?>
                     <div class="tp-caption" data-x="center" data-y="center" data-voffset="['120','120','200','200']" data-transform_in="y:100px;opacity:0;s:800;e:easeInOutCubic;" data-transform_out="y:200px;opacity:0;s:300;" data-start="1600" <?php echo $style ?>>
-                        <a class="btn btn-default pill" href="http://<?php echo $baners['link'] ?>" target="_blank">SHOP NOW</a>
+                        <a class="btn btn-default pill" href="<?php echo $baners['link'] ?>" target="_blank">SHOP NOW</a>
                     </div>
                 </li>
             <?php endforeach; ?>
