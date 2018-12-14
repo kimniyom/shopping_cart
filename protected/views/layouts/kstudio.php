@@ -131,7 +131,7 @@
                         <a href="">Home</a>
                     </li>
                     <li>
-                        <a class="active" href="<?php echo Yii::app()->createUrl('frontend/product') ?>" >Shop</a>
+                        <a class="active" href="<?php echo Yii::app()->createUrl('frontend/product') ?>" >SHOP</a>
                         <ul>
                             <?php
                             foreach ($Categorys as $rsCategory):
@@ -191,10 +191,10 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="<?= Yii::app()->createUrl('contactuser/create') ?>">Contact</a>
+                        <a href="<?= Yii::app()->createUrl('contactuser/create') ?>">CONTACT</a>
                     </li>
                     <li>
-                        <a href="<?= Yii::app()->createUrl('site/about') ?>">About</a>
+                        <a href="<?= Yii::app()->createUrl('site/about') ?>">ABOUNT</a>
                     </li>
                 </ul>
             </nav>
@@ -432,7 +432,7 @@
 
                                 <ul>
                                     <?php foreach ($articleCategory as $articleCategorys): ?>
-                                        <li id="lisubmenu">
+                                        <li>
                                             <a href="<?php echo Yii::app()->createUrl('frontend/article/index', array('category' => $articleCategorys['id'])) ?> "><?php echo $articleCategorys['category'] ?></a>
                                         </li>
                                     <?php endforeach; ?>

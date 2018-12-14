@@ -68,12 +68,13 @@ class CategoryController extends Controller {
             /* อัพโหลดไฟล์ */
             $rnd = rand(0, 9999);  // generate random number between 0-9999
             $uploadedFile = CUploadedFile::getInstance($model, 'icons');
-            $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+            $type = substr($uploadedFile, -3);
+            $Time = time() . "." . $type;
+            $fileName = "{$rnd}-{$Time}";  // random number + file name
             //$model->icons = $fileName;
 
             if (is_object($uploadedFile) && get_class($uploadedFile) === 'CUploadedFile') {
                 $uploadedFile->saveAs(Yii::app()->basePath . '/../uploads/category/' . $fileName);
-
                 $image = new ImageResize("uploads/category/" . $fileName);
                 $image->quality_jpg = 100;
                 $image->crop(400, 400, true, ImageResize::CROPCENTER);
@@ -107,7 +108,9 @@ class CategoryController extends Controller {
             /* อัพโหลดไฟล์ */
             $rnd = rand(0, 9999);  // generate random number between 0-9999
             $uploadedFile = CUploadedFile::getInstance($model, 'icons');
-            $fileName = "{$rnd}-{$uploadedFile}";  // random number + file name
+            $type = substr($uploadedFile, -3);
+            $Time = time() . "." . $type;
+            $fileName = "{$rnd}-{$Time}";  // random number + file name
             //$model->icons = $fileName;
 
             if (is_object($uploadedFile) && get_class($uploadedFile) === 'CUploadedFile') {

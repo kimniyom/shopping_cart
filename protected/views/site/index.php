@@ -129,7 +129,7 @@ $Categorys = Category::model()->findAll();
                                 <a href="<?php echo Yii::app()->createUrl('frontend/product/category', array('id' => $Category['id'])) ?>">
                                     <figure class="product-category-item">
                                         <div class="thumbnails" style=" position: relative;">
-                                            <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/category/<?php echo $Category['icons'] ?>" alt="" class="img img-responsive"/>
+                                            <img src="<?php echo Yii::app()->baseUrl; ?>/uploads/category/thumbnail/<?php echo $Category['icons'] ?>" alt="" class="img img-responsive"/>
                                             <figcaption  style=" background: url('<?php echo Yii::app()->baseUrl ?>/images/bgheader.png'); text-align: center; position: absolute; bottom: 0px; width: 100%;">
                                                 <h3 class="font-supermarket"style=" color:#000000;"><?php echo $Category['categoryname'] ?> <?php echo $CountProductInCat ?> Items</h3>
                                             </figcaption>

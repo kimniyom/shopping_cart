@@ -66,10 +66,19 @@ class BannerController extends Controller {
         $detail = Yii::app()->request->getPost('detail');
         $color = Yii::app()->request->getPost('color');
         $title = Yii::app()->request->getPost('title');
-        $id = Yii::app()->request->getPost('id');
+        //$id = Yii::app()->request->getPost('id');
+
+        $links = "";
+        $checklink = substr($link, 4);
+        if ($checklink === "http") {
+            $links = $link;
+        } else {
+            $links = "http://" + $link;
+        }
+
         $columns = array(
             "title" => $title,
-            "link" => $link,
+            "link" => $links,
             "detail" => $detail,
             "color" => $color
         );
@@ -96,7 +105,7 @@ class BannerController extends Controller {
 
             $fileParts = pathinfo($_FILES['Filedata']['name']);
 
-            
+
             //if (in_array($fileParts['extension'], $fileTypes)) {
             if (in_array(strtolower($fileParts['extension']), $fileTypes)) {
                 $width = 1900; //*** Fix Width & Heigh (Autu caculate) ***//
@@ -129,7 +138,7 @@ class BannerController extends Controller {
                 $columns = array(
                     "banner_images" => "banner-" . $Name
                 );
-               
+
                 Yii::app()->db->createCommand()->update("banner", $columns, "banner_id = '$id' ");
 
                 echo '1';
@@ -178,4 +187,46 @@ class BannerController extends Controller {
                 ->delete('banner', "banner_id = '$banner_id' ");
     }
 
+    public function actionUpdate($id) {
+        $data['banner'] = Banner::model()->find("banner_id=:id", array(":id" => $id));
+        $this->render("update", $data);
+    }
+
+    public function actionSaveupdate() {
+        $link = Yii::app()->request->getPost('link');
+        $detail = Yii::app()->request->getPost('detail');
+        $color = Yii::app()->request->getPost('color');
+        $title = Yii::app()->request->getPost('title');
+        $id = Yii::app()->request->getPost('id');
+        $links = "";
+        $checklink = substr($link, 4);
+        if ($checklink === "http") {
+            $links = $link;
+        } else {
+            $links = "http://" + $link;
+        }
+
+
+        $columns = array(
+            "title" => $title,
+            "link" => $link,
+            "detail" => $detail,
+            "color" => $color
+        );
+
+
+        Yii::app()->db->createCommand()
+                ->update("banner", $columns, "banner_id = '$id'");
+    }
+
 }
+
+/*
+$checklink = substr($link, 4);
+        if ($checklink == "http") {
+            $links = $link;
+        } else {
+            $links = "http://" + $link;
+        }
+ * 
+ */

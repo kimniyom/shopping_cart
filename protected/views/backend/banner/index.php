@@ -7,7 +7,7 @@ $Config = new Configweb_model();
         $('#Filedata').uploadifive({
             'buttonText': 'กรุณาเลือกรูปภาพ ...',
             'auto': false, //เปิดใช้การอัพโหลดแบบอัติโนมัติ
-            //'swf': '<?php //echo  Yii::app()->baseUrl            ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
+            //'swf': '<?php //echo  Yii::app()->baseUrl                ?>/assets/uploadify/uploadify.swf', //โฟเดอร์ที่เก็บไฟล์ปุ่มอัพโหลด
             'uploadScript': "<?= Yii::app()->createUrl('backend/banner/uploadify', array("id" => $id)) ?>",
             'fileSizeLimit': '<?php echo $Config->SizeFileUpload() ?>', //อัพโหลดได้ครั้งละไม่เกิน 2MB
             //'width': '350',
@@ -47,7 +47,7 @@ $this->breadcrumbs = array(
         <label>Title</label>
         <input type="text" class="form-control" id="title"/>
         <label>Link</label>
-        <input type="text" class="form-control" id="link"/>
+        <input type="text" class="form-control" id="link" placeholder="Ex.http://www.kstudiothai.com"/>
         <label>Detail</label>
         <textarea id="detail" class="form-control" rows="5"></textarea>
         <br/>
@@ -104,7 +104,9 @@ $this->breadcrumbs = array(
                     </td>
                     <td>
                         <?php echo $rs['title'] ?><br/>
-                        <?php echo $rs['detail'] ?>
+                        <?php echo $rs['detail'] ?><br/>
+                        <?php echo $rs['link'] ?>
+                        <a href="<?php echo Yii::app()->createUrl('backend/banner/update', array("id" => $rs['banner_id']))?>"><i class="fa fa-pencil"></i> แก้ไข</a>
                     </td>
                     <td style="text-align:center;">
             <center>
@@ -149,7 +151,7 @@ $this->breadcrumbs = array(
 
         if (img == "") {
         }
-        var data = {id: id,title: title, link: link, detail: detail, color: color};
+        var data = {id: id, title: title, link: link, detail: detail, color: color};
 
         $.post(url, data, function (success) {
             if (success == 1) {

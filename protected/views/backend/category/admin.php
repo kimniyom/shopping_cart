@@ -16,7 +16,7 @@ $this->breadcrumbs = array(
         <?php foreach ($category as $rs): ?>
             <div class="col-lg-4 col-md-4 col-sm-6">
                 <div class="panel panel-default">
-                    <img src="<?php echo Yii::app()->baseUrl ?>/uploads/category/<?php echo $rs['icons'] ?>" class="img img-responsive" />
+                    <img src="<?php echo Yii::app()->baseUrl ?>/uploads/category/thumbnail/<?php echo $rs['icons'] ?>" class="img img-responsive" />
                     <button type="button" class="btn btn-default btn-block" style="border:0px;box-shadow:none;">
                         <?php echo $rs['categoryname'] ?>
                     </button>
